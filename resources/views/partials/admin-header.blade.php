@@ -66,7 +66,9 @@
 
         <header class="main-header header-style-two">
             <!-- header-top -->
-            <div class="header-top">
+            <div class="header-top"
+            style="background: linear-gradient(to right, #000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;"
+            >
                 <div class="top-inner">
                     <div class="top-left">
                         <div class="social-links">
@@ -149,10 +151,6 @@
                                     <li class="current">
                                         <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
                                     </li>
-                                    
-
-                                   
-
                                 </ul>
                             </div>
                         </nav>
@@ -165,6 +163,12 @@
                         <li class="cart-box">
                             <a href="{{ route('bookstore') }}"><i class="icon-23"></i></a>
                         </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
+                            @csrf
+                            <button type="submit" class="btn btn-primary btn-gradient-custom" style="background: linear-gradient(to right,#000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;">
+                                <i class="bi bi-box-arrow-left me-2"></i> Logout
+                            </button>
+                        </form>
 
                     </ul>
                 </div>
