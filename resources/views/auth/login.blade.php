@@ -1,67 +1,95 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('layouts.app')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
+@section('title', '#somosAETH | Portal') 
 
-<body>
-    <div class="container d-flex justify-content-center align-items-center vh-100">
-        <div class="col-md-4">
-            <div class="card shadow-sm">
-                <div class="card-header text-center bg-primary text-white">
-                    <h4>Login</h4>
-                </div>
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
-                        @csrf
-                        <!-- Email Field -->
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email Address</label>
-                            <input type="email" name="email" class="form-control @error('email') is-invalid @enderror"
-                                id="email" value="{{ old('email') }}" required autofocus>
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+@section('meta-description', 'This is a brief description of the home page.')
+
+@section('meta-keywords', 'somosAETH, Portal, members') 
+
+@section('content')
+<style>
+    .gradient-custom-2 {
+        background: #fccb90;
+        background: -webkit-linear-gradient(to right, #b266b2, #660066, #330033);
+        background: linear-gradient(to right, #b266b2, #660066, #330033);
+    }
+
+    @media (min-width: 768px) {
+        .gradient-form {
+            height: 100vh !important;
+        }
+    }
+
+    @media (min-width: 769px) {
+        .gradient-custom-2 {
+            border-top-right-radius: .3rem;
+            border-bottom-right-radius: .3rem;
+        }
+    }
+</style>
+
+<section class="h-100 gradient-form" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+            <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                    <div class="row g-0">
+                        <div class="col-lg-6">
+                            <div class="card-body p-md-5 mx-md-4">
+
+                                <div class="text-center">
+                                    <img src="{{ asset('assets/images/aeth-logo.png') }}" alt="logo">
+                                </div>
+                         
+                                <form method="POST" action="{{ route('login') }}">
+                                    @csrf
+
+                                    <p style="margin-top:30px">Login</p>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="email" id="form2Example11" class="form-control" name="email"
+                                            placeholder="Phone number or email address" required />
+                                        <label class="form-label" for="form2Example11">Username</label>
+                                    </div>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="form2Example22" class="form-control" name="password"
+                                            required />
+                                        <label class="form-label" for="form2Example22">Password</label>
+                                    </div>
+
+                                    @if ($errors->any())
+                                        <div class="alert alert-danger">
+                                            {{ $errors->first() }}
+                                        </div>
+                                    @endif
+
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                                            style="border-color:#fccb90">Log in</button>
+                                        <a class="text-muted" href="#!">Forgot password?</a>
+                                    </div>
+
+                                </form>
+
+                            </div>
                         </div>
-                        <!-- Password Field -->
-                        <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="password" name="password"
-                                class="form-control @error('password') is-invalid @enderror" id="password" required>
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
+                        <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                            <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                <h4 class="mb-4" style="color:#fff">#somosAETH</h4>
+                                <p class="small mb-0" style="color:#fff">Lorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit, sed do
+                                    eiusmod
+                                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                    nostrud
+                                    exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            </div>
                         </div>
-                        <!-- Remember Me Checkbox -->
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" name="remember" class="form-check-input" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="remember">Remember Me</label>
-                        </div>
-                        <!-- Submit Button -->
-                        <div class="d-grid">
-                            <button type="submit" class="btn btn-primary">Login</button>
-                        </div>
-                    </form>
-                </div>
-                <div class="card-footer text-center">
-                    <a href="{{ route('password.request') }}">Forgot Your Password?</a>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS and dependencies (Optional for interactions) -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
-</body>
-
-</html>
+</section>
+@endsection
