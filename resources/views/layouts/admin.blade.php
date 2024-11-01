@@ -8,7 +8,7 @@
 </head>
 <body>
     <header>
-        <!-- Admin header, like admin navigation menu -->
+    @include('partials.admin-header') 
     </header>
     
     <div class="admin-content">

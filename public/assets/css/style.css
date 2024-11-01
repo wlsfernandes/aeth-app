@@ -3671,11 +3671,15 @@ div#mCSB_1_container{
 
 /** header-style-two **/
 
-.header-top{
+.header-top {
   position: relative;
-  background: #330033;
   padding: 11px 70px;
+
+  /* Apply the gradient background */
+  background: -webkit-linear-gradient(to right, #b266b2, #660066, #330033);
+  background: linear-gradient(to right, #b266b2, #660066, #330033);
 }
+
 
 .header-top .top-inner{
   position: relative;

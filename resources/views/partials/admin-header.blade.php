@@ -102,11 +102,10 @@
                     </div>
                     <div class="top-right">
                         <ul class="info">
-                            <li>
-                                <a href="mailto:info@aeth.org" style="font-size: 12px;color:#fff">
-                                    info@aeth.org</a>
+
                         </ul>
                     </div>
+
                 </div>
             </div>
             <!-- header-lower -->
@@ -128,38 +127,10 @@
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li class="current">
-                                        <a href="{{url('/')}}">Home</a>
+                                        <a href="{{url('/')}}">Dashboard</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.about_us')</a>
-                                        <ul>
-                                            <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
-                                            <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
-                                            <li><a
-                                                    href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
-                                            </li>
-                                            <li><a href="{{ route('events') }}">@lang('header.events')</a></li>
-                                            <li><a href="{{ route('blog') }}">@lang('header.blog')</a></li>
-                                            <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.services')</a>
-                                        <ul>
-                                            <li><a
-                                                    href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
-                                            </li>
-                                            <li><a
-                                                    href="{{ route('request_certification') }}">@lang('header.request_certification')</a>
-                                            </li>
-                                            <li><a
-                                                    href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
-                                            </li>
-                                            <li><a href="{{ route('memberships') }}">@lang('header.memberships')</a>
-                                            </li>
-                                        </ul>
+                                    <li>
+                                        <a href="#">Profile</a>
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
@@ -178,16 +149,9 @@
                                     <li class="current">
                                         <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.donations')</a>
-                                        <ul>
-                                            <li><a href="{{ route('aeth_fund') }}">@lang('header.aeth_fund')</a></li>
-                                            <li><a
-                                                    href="{{ route('gonzalez_center') }}">@lang('header.gonzalez_center')</a>
-                                            </li>
-                                        </ul>
-                                    </li>
+                                    
+
+                                   
 
                                 </ul>
                             </div>
@@ -202,19 +166,6 @@
                             <a href="{{ route('bookstore') }}"><i class="icon-23"></i></a>
                         </li>
 
-                        <a href="{{ route('login') }}" class="btn btn-primary"
-                            style="background: linear-gradient(to right,#330033,#660066,#b266b2); border-color: #330033; color: #fff;">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Login
-                        </a>
-
-                        <!--   <li class="btn-box">
-                            <button class="donate-box-btn theme-btn-one">
-                                <a href="{{ route('memberships') }}"
-                                    style="color: inherit; text-decoration: none;font-size:14px;">@lang('membership')</a></span>
-                                <i class="bi bi-person-vcard-fill"></i>
-                            </button>
-
-                        </li> -->
                     </ul>
                 </div>
             </div>
