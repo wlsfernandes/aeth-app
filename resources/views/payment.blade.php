@@ -29,7 +29,6 @@
         @endif
 
         <div class="card">
-
             <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#330033;margin-top:20px;">
                 <div class="card">
