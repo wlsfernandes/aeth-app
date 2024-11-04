@@ -76,10 +76,10 @@
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
                         </div>
-
                     </div>
-                @endforeach
+               
                 <div class="pagination-wrapper centred">
                     <ul class="pagination clearfix">
                         <li><a href="shop.html"><i class="icon-56"></i></a></li>
