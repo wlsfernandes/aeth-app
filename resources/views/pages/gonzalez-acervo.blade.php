@@ -45,11 +45,9 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 content-side">
-                @foreach ($digitalCollections as $digitalCollection)
-
-
                     <div class="our-shop">
                         <div class="row clearfix">
+                        @foreach ($digitalCollections as $digitalCollection)
                             <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
                                 <div class="shop-block-one">
                                     <div class="inner-box">
