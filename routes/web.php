@@ -3,6 +3,8 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\DigitalCollectionController;
 use App\Http\Controllers\PaymentController;
 
 /*
@@ -49,6 +51,7 @@ Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund')
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
 
 
+
 /**********************************************  Payments */
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 Route::post('/payment', [PaymentController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
@@ -66,6 +69,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+    Route::get('/video-gallery', [AdminController::class, 'videoGallery'])->name('videoGallery');
+    Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
+
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');

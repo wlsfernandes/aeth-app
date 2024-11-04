@@ -129,28 +129,13 @@
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
                                     <li class="current">
-                                        <a href="{{url('/')}}">Dashboard</a>
+                                        <a href="{{url('/dashboard')}}">Dashboard</a>
                                     </li>
                                     <li>
                                         <a href="#">Profile</a>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.programs')</a>
-                                        <ul>
-                                            <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
-                                            <li><a
-                                                    href="{{ route('resource_center') }}">@lang('header.resource_center')</a>
-                                            </li>
-                                            <li><a
-                                                    href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li class="current">
-                                        <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
-                                    </li>
+                                    
+                                  
                                 </ul>
                             </div>
                         </nav>

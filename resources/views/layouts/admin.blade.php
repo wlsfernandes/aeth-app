@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Admin Layout')</title>
     <!-- Add admin-specific CSS files here -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
 </head>
 <body>
     <header>
@@ -15,10 +17,7 @@
         @yield('content')
     </div>
 
-    <footer>
-        <!-- Admin footer -->
-    </footer>
-
+    @include('partials.footer') 
     <!-- Add admin-specific JavaScript files here -->
 </body>
 </html>
