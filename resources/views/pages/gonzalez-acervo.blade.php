@@ -5,10 +5,10 @@
 @section('content')
 <!-- Page Title -->
 <section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);"></div>
+    <div class="bg-layer" style="background-image: url(assets/images/jc_background.jpg);"></div>
     <div class="auto-container">
         <div class="content-box">
-            <h1>Our Shop</h1>
+            <h1>Justo & Catherine González Center</h1>
         </div>
     </div>
 </section>

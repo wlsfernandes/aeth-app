@@ -3,6 +3,16 @@
 @section('title', 'Admin Dashboard')
 
 @section('content')
+<!-- Page Title -->
+<section class="page-title centred">
+    <div class="bg-layer" style="background-image: url(assets/images/exclusive-content.jpg);"></div>
+    <div class="auto-container">
+        <div class="content-box">
+            <h1>AETH - Exclusive Content</h1>
+        </div>
+    </div>
+</section>
+<!-- End Page Title -->
 <section id="courses" class="container py-5">
     <div class="text-center mb-4">
         <h2>Exclusive AETH Center Video Access</h2>
