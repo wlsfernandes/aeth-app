@@ -5,13 +5,16 @@
 @section('content')
 <!-- Page Title -->
 <section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/exclusive-content.jpg);"></div>
-    <div class="auto-container">
+    <div style="background-image: url(assets/images/exclusive-content.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+    </div>
+    <div class="auto-container" style="position: relative; z-index: 2;">
         <div class="content-box">
-            <h1>AETH - Exclusive Content</h1>
+            <h1>AETH - Exclusive Premium Content</h1>
         </div>
     </div>
 </section>
+
+
 <!-- End Page Title -->
 <section id="courses" class="container py-5">
     <div class="text-center mb-4">
