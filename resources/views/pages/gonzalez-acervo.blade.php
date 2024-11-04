@@ -46,7 +46,7 @@
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 content-side">
                 @foreach ($digitalCollections as $digitalCollection)
-                    
+
 
                     <div class="our-shop">
                         <div class="row clearfix">
@@ -54,14 +54,15 @@
                                 <div class="shop-block-one">
                                     <div class="inner-box">
                                         <div class="image-box">
-                                            <figure class="image"><img src="{{  $digitalCollection->jpegPreviewPath}}" alt=""></figure>
-                                        <!--    <ul class="info clearfix">
-                                                <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
-                                                <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
-                                                        data-fancybox="gallery"><i class="icon-52"></i></a></li>
-                                            </ul> -->
+                                            <figure class="image"><img src="{{  $digitalCollection->media}}"
+                                                    alt=""></figure>
+                                            <!--    <ul class="info clearfix">
+                                                    <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
+                                                    <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
+                                                            data-fancybox="gallery"><i class="icon-52"></i></a></li>
+                                                </ul> -->
                                             <div class="btn-box">
-                                                <a href="shop-details.html" class="theme-btn-one">Access Now</a>
+                                                <a href="{{  $digitalCollection->downloadFile}}"  target="blank" class="theme-btn-one">Access Now</a>
                                             </div>
                                         </div>
                                         <div class="lower-content">
@@ -78,16 +79,17 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="pagination-wrapper centred">
-                            <ul class="pagination clearfix">
-                                <li><a href="shop.html"><i class="icon-56"></i></a></li>
-                                <li><a href="shop.html" class="current">1</a></li>
-                                <li><a href="shop.html">2</a></li>
-                                <li><a href="shop.html"><i class="icon-55"></i></a></li>
-                            </ul>
-                        </div>
+
                     </div>
                 @endforeach
+                <div class="pagination-wrapper centred">
+                    <ul class="pagination clearfix">
+                        <li><a href="shop.html"><i class="icon-56"></i></a></li>
+                        <li><a href="shop.html" class="current">1</a></li>
+                        <li><a href="shop.html">2</a></li>
+                        <li><a href="shop.html"><i class="icon-55"></i></a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
