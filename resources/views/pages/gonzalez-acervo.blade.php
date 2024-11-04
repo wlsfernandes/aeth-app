@@ -55,13 +55,13 @@
                                     <div class="inner-box">
                                         <div class="image-box">
                                             <figure class="image"><img src="{{  $digitalCollection->jpegPreviewPath}}" alt=""></figure>
-                                            <ul class="info clearfix">
+                                        <!--    <ul class="info clearfix">
                                                 <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
                                                 <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
                                                         data-fancybox="gallery"><i class="icon-52"></i></a></li>
-                                            </ul>
+                                            </ul> -->
                                             <div class="btn-box">
-                                                <a href="shop-details.html" class="theme-btn-one">Add to cart</a>
+                                                <a href="shop-details.html" class="theme-btn-one">Access Now</a>
                                             </div>
                                         </div>
                                         <div class="lower-content">
