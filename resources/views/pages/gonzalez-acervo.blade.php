@@ -3,16 +3,17 @@
 @section('title', 'Admin Dashboard')
 
 @section('content')
-<!-- Page Title -->
+
 <section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/jc_background.jpg);"></div>
-    <div class="auto-container">
+    <div
+        style="background-image: url(assets/images/jc_background.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+    </div>
+    <div class="auto-container" style="position: relative; z-index: 2;">
         <div class="content-box">
-            <h1>Justo & Catherine González Center</h1>
+            <h1>González Center Exclusive Access</h1>
         </div>
     </div>
 </section>
-<!-- End Page Title -->
 
 
 <!-- shop-page-section -->
@@ -45,22 +46,23 @@
                 </div>
             </div>
             <div class="col-lg-9 col-md-12 col-sm-12 content-side">
-                    <div class="our-shop">
-                        <div class="row clearfix">
+                <div class="our-shop">
+                    <div class="row clearfix">
                         @foreach ($digitalCollections as $digitalCollection)
                             <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
                                 <div class="shop-block-one">
                                     <div class="inner-box">
                                         <div class="image-box">
-                                            <figure class="image"><img src="{{  $digitalCollection->media}}"
-                                                    alt=""></figure>
+                                            <figure class="image"><img src="{{  $digitalCollection->media}}" alt="">
+                                            </figure>
                                             <!--    <ul class="info clearfix">
-                                                    <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
-                                                    <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
-                                                            data-fancybox="gallery"><i class="icon-52"></i></a></li>
-                                                </ul> -->
+                                                        <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
+                                                        <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
+                                                                data-fancybox="gallery"><i class="icon-52"></i></a></li>
+                                                    </ul> -->
                                             <div class="btn-box">
-                                                <a href="{{  $digitalCollection->downloadFile}}"  target="blank" class="theme-btn-one">Access Now</a>
+                                                <a href="{{  $digitalCollection->downloadFile}}" target="blank"
+                                                    class="theme-btn-one">Access Now</a>
                                             </div>
                                         </div>
                                         <div class="lower-content">
@@ -76,10 +78,10 @@
                                     </div>
                                 </div>
                             </div>
-                            @endforeach
-                        </div>
+                        @endforeach
                     </div>
-               
+                </div>
+
                 <div class="pagination-wrapper centred">
                     <ul class="pagination clearfix">
                         <li><a href="shop.html"><i class="icon-56"></i></a></li>
