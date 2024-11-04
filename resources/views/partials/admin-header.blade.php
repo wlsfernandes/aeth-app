@@ -67,8 +67,7 @@
         <header class="main-header header-style-two">
             <!-- header-top -->
             <div class="header-top"
-            style="background: linear-gradient(to right, #000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;"
-            >
+                style="background: linear-gradient(to right, #000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;">
                 <div class="top-inner">
                     <div class="top-left">
                         <div class="social-links">
@@ -128,33 +127,32 @@
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
                                 <ul class="navigation clearfix">
-                                    <li class="current">
-                                        <a href="{{url('/dashboard')}}">Dashboard</a>
+                                    <li class="cart-box">
+                                        <a href="{{ route('dashboard') }}" style="font-size: 14px;">
+                                            <i class="bi bi-speedometer2" style="font-size: 25px;"></i> Dashboard
+                                        </a>
                                     </li>
-                                    <li>
-                                        <a href="#">Profile</a>
+                                    <li class="cart-box">
+                                        <a href="#" style="font-size: 14px;">
+                                            <i class="bi bi-person" style="font-size: 25px;"></i> Profile
+                                        </a>
                                     </li>
-                                    
-                                  
+                                    <li class="cart-box">
+                                        <a href="{{ route('bookstore') }}" style="font-size: 14px;">
+                                            <i class="bi bi-basket3" style="font-size: 25px;"></i> Bookstore
+                                        </a>
+                                    </li>
+                                    <li class="cart-box">
+                                        <a href="{{ route('logout') }}" style="font-size: 14px;">
+                                            <i class="bi bi-box-arrow-left me-2" style="font-size: 25px;"></i> Logout
+                                        </a>
+                                    </li>
                                 </ul>
                             </div>
                         </nav>
 
                     </div>
                     <ul class="nav-right">
-                        <li class="search-box-outer search-toggler">
-                            <i class="icon-1"></i>
-                        </li>
-                        <li class="cart-box">
-                            <a href="{{ route('bookstore') }}"><i class="icon-23"></i></a>
-                        </li>
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: inline;">
-                            @csrf
-                            <button type="submit" class="btn btn-primary btn-gradient-custom" style="background: linear-gradient(to right,#000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;">
-                                <i class="bi bi-box-arrow-left me-2"></i> Logout
-                            </button>
-                        </form>
-
                     </ul>
                 </div>
             </div>

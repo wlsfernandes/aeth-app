@@ -14,11 +14,11 @@
         background: linear-gradient(to right, #b266b2, #660066, #330033);
     }
 
-    @media (min-width: 768px) {
+  /*  @media (min-width: 768px) {
         .gradient-form {
             height: 100vh !important;
         }
-    }
+    } */
 
     @media (min-width: 769px) {
         .gradient-custom-2 {
@@ -29,7 +29,7 @@
 </style>
 
 <section class="h-100 gradient-form" style="background-color: #eee;">
-    <div class="container py-5 h-100">
+    <div class="container py-5 h-100" style="padding:0px;">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col-xl-10">
                 <div class="card rounded-3 text-black">

@@ -28,6 +28,11 @@ Route::get('/lang/{lang}', function ($lang) {
     return redirect()->back();
 })->name('lang.switch');
 
+Route::get('/logout', function () {
+    Auth::logout();
+    return redirect('/'); // Change this to your desired redirect path
+})->name('logout');
+
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');

@@ -11,27 +11,66 @@
     <div class="row gy-4">
         <!-- Course Card 1 -->
         <div class="col-md-6 col-lg-6">
-            <div class="card">
-                <img src="assets/images/video-class.jpg" class="card-img-top" alt="Course Image">
+            <div class="card animated-zoom">
+                <img src="{{ asset('assets/images/video-class.jpg') }}" class="card-img-top" alt="Video Class">
                 <div class="card-body">
-                    <h5 class="card-title">Exclusive Video content</h5>
-                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics
-                        and skills.</p>
-                    <a href="{{ route('videoGallery') }}" class="btn btn-primary"> <i class="bi bi-box-arrow-in-right me-2"></i>  Premium Access</a>
+                    <h5 class="card-title">Exclusive Video Content</h5>
+                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics and skills.</p>
+                    <a href="{{ route('videoGallery') }}" class="btn btn-primary">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                    </a>
                 </div>
             </div>
         </div>
+        <!-- Course Card 2 -->
         <div class="col-md-6 col-lg-6">
-            <div class="card">
-                <img src="assets/images/jccenter.jpg" class="card-img-top" alt="Course Image">
+            <div class="card animated-zoom">
+                <img src="{{ asset('assets/images/jccenter.jpg') }}" class="card-img-top" alt="JC Center">
                 <div class="card-body">
                     <h5 class="card-title">Justo & Catherine González Center Access</h5>
-                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics
-                        and skills.</p>
-                    <a href="{{ route('acervo')}}" class="btn btn-primary" style="background-color:#330033; border-color:#330033"> <i class="bi bi-box-arrow-in-right me-2"></i>  Premium Access</a>
+                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics and skills.</p>
+                    <a href="{{ route('acervo') }}" class="btn btn-primary custom-btn">
+                        <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 </section>
 @endsection
+
+@push('styles')
+<style>
+    @keyframes zoomFade {
+        0% {
+            transform: scale(0.95);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+
+    .animated-zoom {
+        opacity: 0;
+        transform: scale(0.95);
+        animation: zoomFade 0.8s ease-in-out forwards;
+        animation-delay: 0.3s;
+    }
+
+    .animated-zoom:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .animated-zoom:nth-child(3) {
+        animation-delay: 0.7s;
+    }
+
+    .custom-btn {
+        background-color: #330033;
+        border-color: #330033;
+    }
+</style>
+@endpush
+
