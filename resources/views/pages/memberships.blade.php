@@ -10,14 +10,17 @@
 <!-- Content here -->
 
 @section('content') 
-<section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/gallery/membership.jpg);"></div>
-    <div class="auto-container">
-        <div class="content-box">
 
-        </div>
+<section class="page-title centred">
+    <div style="background-image: url(assets/images/gallery/membership.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+    </div>
+   <!-- <div class="auto-container" style="position: relative; z-index: 2;">
+        <div class="content-box">
+            <h1>AETH - Exclusive Premium Content</h1>
+        </div> -->
     </div>
 </section>
+
 <section class="about-section bg-color-1 p_relative sec-pad">
     <div class="auto-container">
         <div class="row align-items-center clearfix">

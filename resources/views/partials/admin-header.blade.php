@@ -65,9 +65,9 @@
         </div>
 
         <header class="main-header header-style-two">
-            <!-- header-top -->
+            <!-- header-top #04125C,#1941BA,#92bdf9  - #4a235a, #4e5b93, #f5f5f5 -->
             <div class="header-top"
-                style="background: linear-gradient(to right, #000033, #4e5b93, #f5f5f5); border-color: #000033; color: #fff;">
+                style="background: linear-gradient(to right,#6A5ACD,  #E0E0E0); border-color: #555A54; color: #fff;">
                 <div class="top-inner">
                     <div class="top-left">
                         <div class="social-links">

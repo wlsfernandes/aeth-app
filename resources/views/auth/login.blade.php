@@ -10,8 +10,8 @@
 <style>
     .gradient-custom-2 {
         background: #fccb90;
-        background: -webkit-linear-gradient(to right, #b266b2, #660066, #330033);
-        background: linear-gradient(to right, #b266b2, #660066, #330033);
+        background: -webkit-linear-gradient(to right, #4a235a, #a569bd, #e8daef);
+        background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
     }
 
   /*  @media (min-width: 768px) {
@@ -67,7 +67,7 @@
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <button data-mdb-button-init data-mdb-ripple-init
                                             class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
-                                            style="border-color:#fccb90">Log in</button>
+                                            style="border-color:#4a235a">Log in</button>
                                         <a class="text-muted" href="#!">Forgot password?</a>
                                     </div>
 
@@ -78,7 +78,7 @@
                         <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                             <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                 <h4 class="mb-4" style="color:#fff">#somosAETH</h4>
-                                <p class="small mb-0" style="color:#fff">Lorem ipsum dolor sit amet, consectetur
+                                <p class="small mb-0" style="color:#4a235a">Lorem ipsum dolor sit amet, consectetur
                                     adipisicing elit, sed do
                                     eiusmod
                                     tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
