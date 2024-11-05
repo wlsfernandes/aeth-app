@@ -5,8 +5,15 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use App\Models\Payment;
+use App\Models\Member;
+use App\Models\User;
 use Session;
 use Exception;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use App\Mail\WelcomeEmail;
 
 class PaymentController extends Controller
 {
@@ -21,7 +28,7 @@ class PaymentController extends Controller
         $type = 'Membership';
         $program = 'AETH';
         $amount = $request->input('amount');
-        return view('pages.payment-membership', compact('amount','type', 'program'));
+        return view('pages.payment-membership', compact('amount', 'type', 'program'));
     }
 
 
@@ -36,8 +43,8 @@ class PaymentController extends Controller
         if (!empty($customAmount) && $customAmount > 0) {
             $amount = $customAmount;
         }
-        return view('pages.payment', compact('amount','type', 'program'));
-       
+        return view('pages.payment', compact('amount', 'type', 'program'));
+
     }
 
 
@@ -61,78 +68,88 @@ class PaymentController extends Controller
 
 
 
-
-
     public function handlePayment(Request $request)
     {
-        Stripe::setApiKey(env('STRIPE_SECRET'));
+        $paymentResult = $this->_processPayment($request);
 
-        try { 
-            // Create a PaymentIntent
-            $paymentIntent = PaymentIntent::create([
-                "amount" => $request->amount * 100, // Convert dollars to cents
-                "currency" => "usd",
-                "payment_method" => $request->payment_method_id,
-                "confirmation_method" => "manual", // Manual confirmation
-                "confirm" => true,
-                "return_url" => route('payment.callback'), // Return URL after 3D Secure
+        if ($paymentResult['status'] === 'success') {
+            Session::flash('success', 'Payment successful!');
+            return redirect()->route('payment');
+        } elseif ($paymentResult['status'] === 'requires_action') {
+            return response()->json([
+                'requires_action' => true,
+                'payment_intent_client_secret' => $paymentResult['client_secret'],
             ]);
+        } elseif ($paymentResult['status'] === 'error') {
+            Session::flash('error', $paymentResult['message']);
+            return redirect()->route('payment');
+        }
+    }
 
-            // If payment requires additional action (e.g., 3D Secure)
-            if ($paymentIntent->status === 'requires_action' || $paymentIntent->status === 'requires_source_action') {
-                return response()->json([
-                    'requires_action' => true,
-                    'payment_intent_client_secret' => $paymentIntent->client_secret,
+/*
+TODO log \ handle type of member \ 
+*/
+
+    public function handleMembershipPayment(Request $request)
+    {
+        DB::beginTransaction();
+
+        try {
+            $paymentResult = $this->_processPayment($request);
+
+            if ($paymentResult['status'] === 'success') {
+                $paymentRecord = $paymentResult['paymentRecord'];
+                $password = Str::random(10); 
+                $user = User::create([
+                    'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
+                    'email' => $paymentRecord->email,
+                    'password' => Hash::make($password),
                 ]);
-            }
-
-
-            if ($paymentIntent->status === 'succeeded') {
-
-                $receiptUrl = null;
-                if (isset($paymentIntent->charges->data) && count($paymentIntent->charges->data) > 0) {
-                    $receiptUrl = $paymentIntent->charges->data[0]->receipt_url;
-                }
-                Payment::create([
-                    'name' => $request->name,
-                    'email' => $request->email,
-                    'type' => $request->type,
-                    'program' => $request->program,
-                    'amount' => $request->amount,
-                    'currency' => $paymentIntent->currency,
-                    'payment_method_id' => $paymentIntent->payment_method,
-                    'status' => $paymentIntent->status,
-                    'stripe_payment_intent_id' => $paymentIntent->id,
-                    'receipt_url' => $receiptUrl,
-                    'customer_id' => $paymentIntent->customer,
-                    'payment_date' => now(),
+                Member::create([
+                    'user_id' => $user->id,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $paymentRecord->email,
+                    'membership_type' => $request->membership_type,
+                    'membership_start_date' => now(),
+                    'membership_end_date' => now()->addYear(),
+                    'status' => 'active',
                 ]);
-
-                Session::flash('success', 'Payment successful!');
+                Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+                DB::commit();
+                Session::flash('success', 'Payment and membership creation successful!');
+                return redirect()->route('payment');
+            } elseif ($paymentResult['status'] === 'error') {
+                DB::rollBack();
+                Session::flash('error', $paymentResult['message']);
                 return redirect()->route('payment');
             }
 
         } catch (Exception $e) {
-            Session::flash('error', $e->getMessage());
-            return redirect()->route('payment'); 
+            DB::rollBack();
+            Session::flash('error', 'An error occurred during the payment process.');
+            return redirect()->route('payment');
         }
     }
-    public function handleMembershipPayment(Request $request)
+
+
+
+    public function _processPayment(Request $request)
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        try { 
+        try {
             // Create a PaymentIntent
             $paymentIntent = PaymentIntent::create([
                 "amount" => $request->amount * 100, // Convert dollars to cents
                 "currency" => "usd",
                 "payment_method" => $request->payment_method_id,
-                "confirmation_method" => "manual", // Manual confirmation
+                "confirmation_method" => "manual",
                 "confirm" => true,
                 "return_url" => route('payment.callback'), // Return URL after 3D Secure
             ]);
 
-            // If payment requires additional action (e.g., 3D Secure)
+            // Check if the payment requires additional actions
             if ($paymentIntent->status === 'requires_action' || $paymentIntent->status === 'requires_source_action') {
                 return response()->json([
                     'requires_action' => true,
@@ -140,15 +157,17 @@ class PaymentController extends Controller
                 ]);
             }
 
-
+            // Check if the payment succeeded
             if ($paymentIntent->status === 'succeeded') {
-
+                // Create a new payment record
                 $receiptUrl = null;
                 if (isset($paymentIntent->charges->data) && count($paymentIntent->charges->data) > 0) {
                     $receiptUrl = $paymentIntent->charges->data[0]->receipt_url;
                 }
-                Payment::create([
-                    'name' => $request->name,
+
+                $paymentRecord = Payment::create([
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
                     'email' => $request->email,
                     'type' => $request->type,
                     'program' => $request->program,
@@ -162,16 +181,15 @@ class PaymentController extends Controller
                     'payment_date' => now(),
                 ]);
 
-                Session::flash('success', 'Payment successful!');
-                return redirect()->route('payment');
+                return ['status' => 'success', 'paymentRecord' => $paymentRecord];
             }
 
         } catch (Exception $e) {
-            Session::flash('error', $e->getMessage());
-            return redirect()->route('payment'); 
+            return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
-    // Callback after redirection
+
+  
     public function paymentCallback(Request $request)
     {
         // Handle the callback after Stripe redirects back to your app

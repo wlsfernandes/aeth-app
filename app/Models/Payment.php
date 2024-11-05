@@ -9,7 +9,8 @@ class Payment extends Model
 {
     protected $table = 'web_payments';
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'amount',
         'type',

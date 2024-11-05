@@ -74,9 +74,14 @@
 
                                 </div>
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">@lang('header.name'):</label>
-                                    <input type="text" id="name" name="name" class="form-control"
-                                        placeholder="Your name..." required>
+                                    <label for="name" class="form-label">@lang('header.first_name'):</label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control"
+                                        placeholder="Your first name..." required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">@lang('header.last_name'):</label>
+                                    <input type="text" id="last_name" name="last_name" class="form-control"
+                                        placeholder="Your last name..." required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">@lang('header.email'):</label>

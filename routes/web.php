@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DigitalCollectionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\MemberController;
 
 /*
 |--------------------------------------------------------------------------
@@ -54,6 +55,7 @@ Route::get('/bookstore', [HomeController::class, 'bookstore'])->name('bookstore'
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
+Route::post('/members', [MemberController::class, 'store'])->name('members.store');
 
 
 
