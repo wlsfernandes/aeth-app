@@ -32,7 +32,7 @@
             <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                 <div class="card">
-                <form action="{{ env('APP_ENV') === 'production' ? secure_url('/handle-payment') : url('/handle-payment') }}" method="POST" class="default-form">
+                <form id="payment-form" action="{{ env('APP_ENV') === 'production' ? secure_url('/handle-payment') : url('/handle-payment') }}" method="POST" class="default-form">
                         @csrf
                         <div class="card-header p-0">
                             <h2 class="mb-0">

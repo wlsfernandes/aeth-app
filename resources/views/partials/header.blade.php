@@ -190,7 +190,7 @@
                                         </ul>
                                     </li>
                                     <li class="current">
-                                        <a href="{{ route('memberships') }}">@lang('header.signup_member')</a>
+                                     <a href="{{ route('memberships') }}"><i class="bi bi-person"></i> @lang('header.signup_member')</a>
                                     </li>
 
                                 </ul>
