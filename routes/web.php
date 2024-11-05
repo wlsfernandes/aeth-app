@@ -65,6 +65,7 @@ Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPay
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
 Route::post('/handle-payment', [PaymentController::class, 'handlePayment']);
+Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
 
 
 

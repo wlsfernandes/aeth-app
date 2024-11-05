@@ -13,7 +13,7 @@ class PaymentController extends Controller
     public function showPaymentForm()
     {
         $amount = session('amount');
-        return view('payment', compact('amount'));
+        return view('pages.payment', compact('amount'));
     }
 
     public function membershipRedirectPayment(Request $request)
@@ -21,7 +21,7 @@ class PaymentController extends Controller
         $type = 'Membership';
         $program = 'AETH';
         $amount = $request->input('amount');
-        return view('payment', compact('amount','type', 'program'));
+        return view('pages.payment-membership', compact('amount','type', 'program'));
     }
 
 
@@ -36,7 +36,7 @@ class PaymentController extends Controller
         if (!empty($customAmount) && $customAmount > 0) {
             $amount = $customAmount;
         }
-        return view('payment', compact('amount','type', 'program'));
+        return view('pages.payment', compact('amount','type', 'program'));
        
     }
 
@@ -67,7 +67,7 @@ class PaymentController extends Controller
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
-        try {
+        try { 
             // Create a PaymentIntent
             $paymentIntent = PaymentIntent::create([
                 "amount" => $request->amount * 100, // Convert dollars to cents
