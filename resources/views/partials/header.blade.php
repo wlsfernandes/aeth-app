@@ -103,7 +103,7 @@
                     <div class="top-right">
                         <ul class="info">
                             <li>
-                                <a href="mailto:info@aeth.org" style="font-size: 12px;color:#fff">
+                                <a href="mailto:info@aeth.org" style="font-size: 12px;color:#4a235a">
                                     info@aeth.org</a>
                         </ul>
                     </div>
@@ -186,7 +186,11 @@
                                             <li><a
                                                     href="{{ route('gonzalez_center') }}">@lang('header.gonzalez_center')</a>
                                             </li>
+
                                         </ul>
+                                    </li>
+                                    <li class="current">
+                                        <a href="{{ route('memberships') }}">@lang('header.signup_member')</a>
                                     </li>
 
                                 </ul>
@@ -203,7 +207,7 @@
                         </li>
 
                         <a href="{{ route('login') }}" class="btn btn-primary"
-                            style="background: linear-gradient(to right,#330033,#660066,#b266b2); border-color: #330033; color: #fff;">
+                            style="background: linear-gradient(to right,#4a235a, #a569bd, #e8daef); border-color: #4a235a; color: #fff;">
                             <i class="bi bi-box-arrow-in-right me-2"></i> Login
                         </a>
 

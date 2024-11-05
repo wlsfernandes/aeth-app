@@ -30,5 +30,6 @@ return [
     'name' => 'Name',
     'email'=> 'Email',
     'annual_fund' => 'Annual Fund Donation - AETH',
+    'signup_member' => 'Sign up for membership'
 
 ];

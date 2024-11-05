@@ -3676,8 +3676,8 @@ div#mCSB_1_container{
   padding: 11px 70px;
 
   /* Apply the gradient background */
-  background: -webkit-linear-gradient(to right, #b266b2, #660066, #330033);
-  background: linear-gradient(to right, #b266b2, #660066, #330033);
+  background: -webkit-linear-gradient(to right,#4a235a, #a569bd, #e8daef );
+  background: linear-gradient(to right,#4a235a, #a569bd, #e8daef);
 }
 
 
