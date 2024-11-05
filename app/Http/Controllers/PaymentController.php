@@ -117,6 +117,60 @@ class PaymentController extends Controller
             return redirect()->route('payment'); 
         }
     }
+    public function handleMembershipPayment(Request $request)
+    {
+        Stripe::setApiKey(env('STRIPE_SECRET'));
+
+        try { 
+            // Create a PaymentIntent
+            $paymentIntent = PaymentIntent::create([
+                "amount" => $request->amount * 100, // Convert dollars to cents
+                "currency" => "usd",
+                "payment_method" => $request->payment_method_id,
+                "confirmation_method" => "manual", // Manual confirmation
+                "confirm" => true,
+                "return_url" => route('payment.callback'), // Return URL after 3D Secure
+            ]);
+
+            // If payment requires additional action (e.g., 3D Secure)
+            if ($paymentIntent->status === 'requires_action' || $paymentIntent->status === 'requires_source_action') {
+                return response()->json([
+                    'requires_action' => true,
+                    'payment_intent_client_secret' => $paymentIntent->client_secret,
+                ]);
+            }
+
+
+            if ($paymentIntent->status === 'succeeded') {
+
+                $receiptUrl = null;
+                if (isset($paymentIntent->charges->data) && count($paymentIntent->charges->data) > 0) {
+                    $receiptUrl = $paymentIntent->charges->data[0]->receipt_url;
+                }
+                Payment::create([
+                    'name' => $request->name,
+                    'email' => $request->email,
+                    'type' => $request->type,
+                    'program' => $request->program,
+                    'amount' => $request->amount,
+                    'currency' => $paymentIntent->currency,
+                    'payment_method_id' => $paymentIntent->payment_method,
+                    'status' => $paymentIntent->status,
+                    'stripe_payment_intent_id' => $paymentIntent->id,
+                    'receipt_url' => $receiptUrl,
+                    'customer_id' => $paymentIntent->customer,
+                    'payment_date' => now(),
+                ]);
+
+                Session::flash('success', 'Payment successful!');
+                return redirect()->route('payment');
+            }
+
+        } catch (Exception $e) {
+            Session::flash('error', $e->getMessage());
+            return redirect()->route('payment'); 
+        }
+    }
     // Callback after redirection
     public function paymentCallback(Request $request)
     {

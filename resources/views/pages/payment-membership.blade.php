@@ -29,7 +29,7 @@
         @endif
 
         <div class="card">
-            <span><b>@lang('header.choose_payment')wwwwwwwwwwwwwwww</b></span>
+            <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                 <div class="card">
                 <form id="payment-form" action="{{ env('APP_ENV') === 'production' ? secure_url('/handleMembershipPayment') : url('/handleMembershipPayment') }}" method="POST" class="default-form">
