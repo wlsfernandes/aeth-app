@@ -36,15 +36,16 @@
                     <div class="row g-0">
                         <div class="col-lg-6">
                             <div class="card-body p-md-5 mx-md-4">
-
+                               
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        {{ $errors->first() }}
+                                    </div>
+                                @endif
                                 <div class="text-center">
                                     <img src="{{ asset('assets/images/aeth-logo.png') }}" alt="logo">
                                 </div>
-                                @if (Session::has('error'))
-                                    <div class="alert alert-danger" role="alert">
-                                        <i class="bx bx-error"></i> {{ Session::get('error') }}
-                                    </div>
-                                @endif
+
 
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
@@ -63,11 +64,7 @@
                                         <label class="form-label" for="form2Example22">Password</label>
                                     </div>
 
-                                    @if ($errors->any())
-                                        <div class="alert alert-danger">
-                                            {{ $errors->first() }}
-                                        </div>
-                                    @endif
+
 
                                     <div class="text-center pt-1 mb-5 pb-1">
                                         <button data-mdb-button-init data-mdb-ripple-init
