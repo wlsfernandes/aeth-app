@@ -83,7 +83,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="20">
-                                        <input type="hidden" name="membership_plan" value="Institutional_Monthly">
+                                        <input type="hidden" name="membership_plan" value="Institutional">
+                                        <input type="hidden" name="period" value="month">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.20')</span>
@@ -92,7 +93,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="200">
-                                        <input type="hidden" name="membership_plan" value="Institutional_Yearly">
+                                        <input type="hidden" name="membership_plan" value="Institutional">
+                                        <input type="hidden" name="period" value="year">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.200')</span>
@@ -148,7 +150,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="10">
-                                        <input type="hidden" name="membership_plan" value="Individual_Montlhy">
+                                        <input type="hidden" name="membership_plan" value="Individual">
+                                        <input type="hidden" name="period" value="month">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.10')</span>
@@ -157,7 +160,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="100">
-                                        <input type="hidden" name="membership_plan" value="Individual_Yearly">
+                                        <input type="hidden" name="membership_plan" value="Individual">
+                                        <input type="hidden" name="period" value="year">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.100')</span>
@@ -212,7 +216,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="5">
-                                        <input type="hidden" name="membership_plan" value="Student_Monthly">
+                                        <input type="hidden" name="membership_plan" value="Student">
+                                        <input type="hidden" name="period" value="month">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.5')</span>
@@ -221,7 +226,8 @@
                                     <form action="{{ route('membershipRedirectPayment') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="amount" value="50">
-                                        <input type="hidden" name="membership_plan" value="Student_Yearly">
+                                        <input type="hidden" name="membership_plan" value="Student">
+                                        <input type="hidden" name="period" value="year">
                                         <button type="submit" class="donate-box-btn theme-btn-one"
                                             style="padding:12px 1px 12px 12px;">
                                             <span>@lang('members.50')</span>

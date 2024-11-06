@@ -2,18 +2,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use Stripe\Stripe;
 use Stripe\PaymentIntent;
 use App\Models\Payment;
 use App\Models\Member;
 use App\Models\User;
+use App\Models\ErrorLog;
+use App\Mail\WelcomeEmail;
 use Session;
 use Exception;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
-use App\Mail\WelcomeEmail;
 
 class PaymentController extends Controller
 {
@@ -23,12 +26,20 @@ class PaymentController extends Controller
         return view('pages.payment', compact('amount'));
     }
 
+    public function showMembershipPaymentForm()
+    {
+        $amount = session('amount');
+        return view('pages.payment-membership', compact('amount'));
+    }
+
     public function membershipRedirectPayment(Request $request)
     {
         $type = 'Membership';
         $program = 'AETH';
+        $membership_plan = $request->input('membership_plan');
+        $period = $request->input('period');
         $amount = $request->input('amount');
-        return view('pages.payment-membership', compact('amount', 'type', 'program'));
+        return view('pages.payment-membership', compact('amount', 'type', 'program', 'membership_plan','period'));
     }
 
 
@@ -66,32 +77,60 @@ class PaymentController extends Controller
         return redirect()->route('payment')->with('amount', $amount);
     }
 
-
-
     public function handlePayment(Request $request)
     {
-        $paymentResult = $this->_processPayment($request);
+        try {
+            $paymentResult = $this->_processPayment($request);
 
-        if ($paymentResult['status'] === 'success') {
-            Session::flash('success', 'Payment successful!');
-            return redirect()->route('payment');
-        } elseif ($paymentResult['status'] === 'requires_action') {
-            return response()->json([
-                'requires_action' => true,
-                'payment_intent_client_secret' => $paymentResult['client_secret'],
+            if ($paymentResult['status'] === 'success') {
+                Session::flash('success', 'Payment successful!');
+                return redirect()->route('payment');
+            } elseif ($paymentResult['status'] === 'requires_action') {
+                return response()->json([
+                    'requires_action' => true,
+                    'payment_intent_client_secret' => $paymentResult['client_secret'],
+                ]);
+            } elseif ($paymentResult['status'] === 'error') {
+                Session::flash('error', $paymentResult['message']);
+                return redirect()->route('payment');
+            }
+        } catch (Exception $e) {
+            // Log the error in the database
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error', // Customize error code if necessary
             ]);
-        } elseif ($paymentResult['status'] === 'error') {
-            Session::flash('error', $paymentResult['message']);
+
+            // Optionally, you can also log the error in Laravel's default log file
+            Log::error('Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+
+            // Flash error to session
+            Session::flash('error', 'An error occurred during the payment process.');
             return redirect()->route('payment');
         }
     }
 
-/*
-TODO log \ handle type of member \ 
-*/
-
     public function handleMembershipPayment(Request $request)
     {
+
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+        ]);
+
+        if ($validator->fails()) {
+            $message = 'This email is already registered. </br>
+            Please <a href="/login">log in</a> or <a href="/renew">renew your account</a>.';
+
+            Session::flash('error', ['email' => $message]);
+            return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
+        }
+
         DB::beginTransaction();
 
         try {
@@ -99,7 +138,7 @@ TODO log \ handle type of member \
 
             if ($paymentResult['status'] === 'success') {
                 $paymentRecord = $paymentResult['paymentRecord'];
-                $password = Str::random(10); 
+                $password = Str::random(10);
                 $user = User::create([
                     'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
                     'email' => $paymentRecord->email,
@@ -110,23 +149,34 @@ TODO log \ handle type of member \
                     'first_name' => $request->first_name,
                     'last_name' => $request->last_name,
                     'email' => $paymentRecord->email,
-                    'membership_type' => $request->membership_type,
+                    'membership_type' => $request->membership_plan,
                     'membership_start_date' => now(),
-                    'membership_end_date' => now()->addYear(),
+                    'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
                     'status' => 'active',
                 ]);
+                $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful!');
-                return redirect()->route('payment');
+                return redirect()->route('payment-membership');
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
+                ErrorLog::create([
+                    'error_message' => $paymentResult['message'],
+                    'stack_trace' => 'payment result error ',
+                    'error_code' => 'payment_processing_error',
+                ]);
                 Session::flash('error', $paymentResult['message']);
-                return redirect()->route('payment');
+                return redirect()->route('payment-membership');
             }
 
         } catch (Exception $e) {
             DB::rollBack();
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => '02 - Membership Payment Error',
+            ]);
             Session::flash('error', 'An error occurred during the payment process.');
             return redirect()->route('payment');
         }
@@ -185,11 +235,16 @@ TODO log \ handle type of member \
             }
 
         } catch (Exception $e) {
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => '01 - Stripe _processPayment',
+            ]);
             return ['status' => 'error', 'message' => $e->getMessage()];
         }
     }
 
-  
+
     public function paymentCallback(Request $request)
     {
         // Handle the callback after Stripe redirects back to your app

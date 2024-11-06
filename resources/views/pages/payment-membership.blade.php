@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Payment') 
+@section('title', '#somosAETH | Membership Payment') 
 
 @section('meta-description', 'This is a brief description of the home page.')
 
@@ -18,21 +18,31 @@
                 {{ session('success') }}
             </div>
         @endif
+        @if($errors->has('email'))
+            <div class="alert alert-warning">
+                {!! $errors->first('email') !!}
+            </div>
+        @endif
+
         @if ($errors->any())
             <div class="alert alert-danger" role="alert">
                 <ul>
                     @foreach ($errors->all() as $error)
-                        <li><i class="bx bx-error"></i> {{ $error }}</li>
+                        {{-- Skip the email error to avoid duplicate --}}
+                        @if ($error !== $errors->first('email'))
+                            <li><i class="bx bx-error"></i> {{ $error }}</li>
+                        @endif
                     @endforeach
                 </ul>
             </div>
         @endif
-
         <div class="card">
             <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                 <div class="card">
-                <form id="payment-form" action="{{ env('APP_ENV') === 'production' ? secure_url('/handleMembershipPayment') : url('/handleMembershipPayment') }}" method="POST" class="default-form">
+                    <form id="payment-form"
+                        action="{{ env('APP_ENV') === 'production' ? secure_url('/handleMembershipPayment') : url('/handleMembershipPayment') }}"
+                        method="POST" class="default-form">
                         @csrf
                         <div class="card-header p-0">
                             <h2 class="mb-0">
@@ -64,29 +74,32 @@
                                             style="width: 30px; height: auto; margin-right: 5px;">
                                     </div>
                                 </div>
-                                <input type="hidden" name="type" value="{{ $type ?? '' }}">
-                                <input type="hidden" name="program" value="{{ $program ?? '' }}">
+                                <input type="hidden" name="type" value="{{ old('type', $type ?? '') }}">
+                                <input type="hidden" name="program" value="{{ old('program',$program ?? '') }}">
+                                <input type="hidden" name="membership_plan" value="{{ old('membership_plan', $membership_plan ?? '') }}">
+                                <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
+
                                 <div class="mb-3">
 
                                     <input type="number" name="amount" id="amount"
-                                        value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
+                                        value="{{ old('amount', number_format($amount ?? 0, 2, '.', '')) }}" class="form-control"
                                         required min="1" step="0.01">
 
                                 </div>
                                 <div class="mb-3">
                                     <label for="name" class="form-label">@lang('header.first_name'):</label>
                                     <input type="text" id="first_name" name="first_name" class="form-control"
-                                        placeholder="Your first name..." required>
+                                        placeholder="Your first name..." value="{{old('first_name')}}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="name" class="form-label">@lang('header.last_name'):</label>
                                     <input type="text" id="last_name" name="last_name" class="form-control"
-                                        placeholder="Your last name..." required>
+                                        placeholder="Your last name..." value="{{old('last_name')}}" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">@lang('header.email'):</label>
                                     <input type="email" id="email" name="email" class="form-control"
-                                        placeholder="email..." required>
+                                        placeholder="email..." value="{{old('email')}}" required>
                                 </div>
                                 <!-- Card Holder's Name -->
                                 <div class="mb-3">

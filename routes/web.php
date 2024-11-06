@@ -61,6 +61,7 @@ Route::post('/members', [MemberController::class, 'store'])->name('members.store
 
 /**********************************************  Payments */
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
+Route::get('/payment-membership', [PaymentController::class, 'showMembershipPaymentForm'])->name('payment-membership');
 Route::post('/payment', [PaymentController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 
