@@ -14,7 +14,7 @@
         background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
     }
 
-  /*  @media (min-width: 768px) {
+    /*  @media (min-width: 768px) {
         .gradient-form {
             height: 100vh !important;
         }
@@ -40,7 +40,12 @@
                                 <div class="text-center">
                                     <img src="{{ asset('assets/images/aeth-logo.png') }}" alt="logo">
                                 </div>
-                         
+                                @if (Session::has('error'))
+                                    <div class="alert alert-danger" role="alert">
+                                        <i class="bx bx-error"></i> {{ Session::get('error') }}
+                                    </div>
+                                @endif
+
                                 <form method="POST" action="{{ route('login') }}">
                                     @csrf
 

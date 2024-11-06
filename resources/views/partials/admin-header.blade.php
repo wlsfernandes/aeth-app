@@ -143,10 +143,16 @@
                                         </a>
                                     </li>
                                     <li class="cart-box">
-                                        <a href="{{ route('logout') }}" style="font-size: 14px;">
-                                            <i class="bi bi-box-arrow-left me-2" style="font-size: 25px;"></i> Logout
-                                        </a>
+                                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                            @csrf
+                                            <button type="submit"
+                                                style="background: none; border: none; padding: 0; font-size: 14px;">
+                                                <i class="bi bi-box-arrow-left me-2" style="font-size: 25px;"></i>
+                                                Logout
+                                            </button>
+                                        </form>
                                     </li>
+
                                 </ul>
                             </div>
                         </nav>
