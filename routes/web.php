@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DigitalCollectionController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -56,6 +57,19 @@ Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund')
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
 Route::post('/members', [MemberController::class, 'store'])->name('members.store');
 
+Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
+Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');
+Route::get('/glorie-acevedo', [TeamController::class, 'glorieAcevedo'])->name('glorie-acevedo');
+Route::get('/marta-luna', [TeamController::class, 'martaLuna'])->name('marta-luna');
+Route::get('/luz-ortiz', [TeamController::class, 'luzOrtiz'])->name('luz-ortiz');
+Route::get('/ondina-gonzalez', [TeamController::class, 'ondinaGonzalez'])->name('ondina-gonzalez');
+Route::get('/wilson-fernandes-junior', [TeamController::class, 'wilsonFernandes'])->name('wilson-fernandes-junior');
+Route::get('/shaila-munoz', [TeamController::class, 'shailaMunoz'])->name('shaila-munoz');
+Route::get('/coralys-santos', [TeamController::class, 'coralysSantos'])->name('coralys-santos');
+Route::get('/sophia-porter', [TeamController::class, 'sophiaPorter'])->name('sophia-porter');
+Route::get('/jeremy-villoch', [TeamController::class, 'jeremyVilloch'])->name('jeremy-villoch');
+Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yaheli-vargas');
+Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 
 
 /**********************************************  Payments */

@@ -1,0 +1,25 @@
+<?php
+return [
+    'board_directors' => 'Board of Directors',
+    'president' => 'Interim President',
+    'vice_president' => 'Vice President',
+    'secretary' => 'Secretary',
+    'treasurer' => 'Treasurer',
+    'vocal' => 'vocal',
+    'member' => 'member',
+    'our_team' => 'Our Team',
+    'executive_director' => 'Executive Director',
+    'compelling_preaching_program_manager' => 'Compelling Preaching Program Manager',
+    'office_business_manager' => 'Office Business Manager',
+    'community_engagement_manager' => 'Community Engagement Manager',
+    'accounting_manager' => 'Accounting Manager',
+    'director_gonzalez_resource_center' => 'González Resource Center Director',
+    'it_solutions_software_developer' => 'IT Solutions Software Developer',
+    'fundraising_manager' => 'Fundraising Manager',
+    'assistant_manager_preaching_program' => 'Assistant Manager of the Compelling Preaching Program',
+    'gonzalez_center_practitioner' => 'González Center Practitioner',
+    'intern' => 'Intern',
+    'content_curator_intern' => 'Content Curator Intern',
+    'young_leaders_program_manager' => 'Young Leaders Program Manager',
+
+];

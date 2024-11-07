@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Welcome to Our Service</title>
+    <title>Welcome to the AETH Member Exclusive Access</title>
 </head>
 <body>
     <h1>Welcome to AETH, {{ $user->name }}!</h1>
