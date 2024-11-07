@@ -149,7 +149,7 @@ class PaymentController extends Controller
                     'first_name' => $request->first_name,
                     'last_name' => $request->last_name,
                     'email' => $paymentRecord->email,
-                    'membership_type' => $request->membership_plan,
+                    'membership_plan' => $request->membership_plan,
                     'membership_start_date' => now(),
                     'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
                     'status' => 'active',
