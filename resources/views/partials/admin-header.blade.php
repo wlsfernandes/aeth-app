@@ -126,33 +126,38 @@
                         </div>
                         <nav class="main-menu navbar-expand-md navbar-light">
                             <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
-                                <ul class="navigation clearfix">
-                                    <li class="cart-box">
-                                        <a href="{{ route('dashboard') }}" style="font-size: 14px;">
+                                <ul class="navigation clearfix" style="display: flex; list-style: none; padding: 0;">
+                                    <li class="cart-box"
+                                        style="display: flex; align-items: center; margin-right: 15px;">
+                                        <a href="{{ route('dashboard') }}"
+                                            style="font-size: 14px; display: flex; align-items: center;">
                                             <i class="bi bi-speedometer2" style="font-size: 25px;"></i> Dashboard
                                         </a>
                                     </li>
-                                    <li class="cart-box">
-                                        <a href="#" style="font-size: 14px;">
+                                    <li class="cart-box"
+                                        style="display: flex; align-items: center; margin-right: 15px;">
+                                        <a href="#" style="font-size: 14px; display: flex; align-items: center;">
                                             <i class="bi bi-person" style="font-size: 25px;"></i> Profile
                                         </a>
                                     </li>
-                                    <li class="cart-box">
-                                        <a href="{{ route('bookstore') }}" style="font-size: 14px;">
+                                    <li class="cart-box"
+                                        style="display: flex; align-items: center; margin-right: 15px;">
+                                        <a href="{{ route('bookstore') }}"
+                                            style="font-size: 14px; display: flex; align-items: center;">
                                             <i class="bi bi-basket3" style="font-size: 25px;"></i> Bookstore
                                         </a>
                                     </li>
-                                    <li class="cart-box">
-                                        <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                                    <li class="cart-box" style="display: flex; align-items: center;">
+                                        <form action="{{ route('logout') }}" method="POST"
+                                            style="display: flex; align-items: center; margin: 0;">
                                             @csrf
                                             <button type="submit"
-                                                style="background: none; border: none; padding: 0; font-size: 14px;">
+                                                style="background: none; border: none; padding: 0; font-size: 14px; display: flex; align-items: center;">
                                                 <i class="bi bi-box-arrow-left me-2" style="font-size: 25px;"></i>
                                                 Logout
                                             </button>
                                         </form>
                                     </li>
-
                                 </ul>
                             </div>
                         </nav>
