@@ -76,6 +76,9 @@
                                 </div>
                                 <input type="hidden" name="type" value="{{ $type ?? '' }}">
                                 <input type="hidden" name="program" value="{{ $program ?? '' }}">
+                                <input type="hidden" name="membership_plan" value="{{ $membership_pan ?? '' }}">
+                                <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
+                                
                                 <div class="mb-3">
 
                                     <input type="number" name="amount" id="amount"

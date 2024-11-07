@@ -22,6 +22,14 @@ class Member extends Model
         'membership_start_date',
         'membership_end_date',
         'active_status',
+        'membership_plan',
+        'isYear',
+    ];
+
+    // Cast the date fields to Carbon instances
+    protected $casts = [
+        'membership_start_date' => 'date',
+        'membership_end_date' => 'date',
     ];
 
     /**

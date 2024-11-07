@@ -67,7 +67,7 @@ class MemberController extends Controller
                 'user' => $user,
             ], 201);
 
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             // Rollback the transaction if something fails
             DB::rollBack();
 

@@ -152,6 +152,7 @@ class PaymentController extends Controller
                     'membership_plan' => $request->membership_plan,
                     'membership_start_date' => now(),
                     'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                    'isYear' => $request->period == 'year' ? true : false ,
                     'status' => 'active',
                 ]);
                 $request->period;
