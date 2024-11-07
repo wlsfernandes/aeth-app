@@ -36,12 +36,11 @@
                     <div class="row g-0">
                         <div class="col-lg-6">
                             <div class="card-body p-md-5 mx-md-4">
-                                @if (session('success'))
-                                    <div class="alert alert-success">
-                                        {{ session('success') }}
+                                @if (session('warning'))
+                                    <div class="alert alert-warning">
+                                        {{ session('warning') }}
                                     </div>
                                 @endif
-
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
                                         {{ $errors->first() }}
@@ -52,32 +51,21 @@
                                 </div>
 
 
-                                <form method="POST" action="{{ route('login') }}">
+                                <form action="{{ route('force-update-password.update') }}" method="POST">
                                     @csrf
+                                    <input type="hidden" name="token" value="{{ $token }}">
 
-                                    <p style="margin-top:30px">Login</p>
-
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="email" id="form2Example11" class="form-control" name="email"
-                                            placeholder="Phone number or email address" required />
-                                        <label class="form-label" for="form2Example11">Username</label>
+                                    <div>
+                                        <label for="password">New Password</label>
+                                        <input type="password" name="password" required>
                                     </div>
 
-                                    <div data-mdb-input-init class="form-outline mb-4">
-                                        <input type="password" id="form2Example22" class="form-control" name="password"
-                                            required />
-                                        <label class="form-label" for="form2Example22">Password</label>
+                                    <div>
+                                        <label for="password_confirmation">Confirm New Password</label>
+                                        <input type="password" name="password_confirmation" required>
                                     </div>
 
-
-
-                                    <div class="text-center pt-1 mb-5 pb-1">
-                                        <button data-mdb-button-init data-mdb-ripple-init
-                                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
-                                            style="border-color:#4a235a">Log in</button>
-                                        <a class="text-muted" href="#!">Forgot password?</a>
-                                    </div>
-
+                                    <button type="submit">Update Password</button>
                                 </form>
 
                             </div>

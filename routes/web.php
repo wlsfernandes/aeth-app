@@ -29,6 +29,10 @@ Route::get('/lang/{lang}', function ($lang) {
     return redirect()->back();
 })->name('lang.switch');
 
+Route::get('/profile/force-update-password/{token}', function ($token) {
+    return view('auth.force-update-password', ['token' => $token]);
+})->name('profile.update');
+Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
@@ -76,9 +80,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/video-gallery', [AdminController::class, 'videoGallery'])->name('videoGallery');
     Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+  
 });
 
 require __DIR__ . '/auth.php';

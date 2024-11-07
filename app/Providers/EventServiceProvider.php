@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Auth\Events\Registered;
 use App\Listeners\CheckMembershipExpiry;
+use App\Listeners\RedirectIfDefaultPassword;
 use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
@@ -21,9 +22,11 @@ class EventServiceProvider extends ServiceProvider
             SendEmailVerificationNotification::class,
         ],
         Login::class => [
-            CheckMembershipExpiry::class,  
+            CheckMembershipExpiry::class,
+            RedirectIfDefaultPassword::class,
         ],
     ];
+
 
     /**
      * Register any events for your application.
