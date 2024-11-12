@@ -10,7 +10,7 @@
 <!-- Content here -->
 
 @section('content') 
-<div class="container d-flex justify-content-center mt-5 mb-5">
+<div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
     <div class="col-md-12">
         @if (session()->has('success'))
             <div class="alert alert-success" role="alert">
