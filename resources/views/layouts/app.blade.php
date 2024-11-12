@@ -17,6 +17,6 @@
         @yield('content') 
 
         </div>
-  <!-- footer aqui --> 
+  @include('partials.footer') 
 </body>
 </html>
