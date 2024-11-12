@@ -16,8 +16,8 @@
 
 </body>
 
-<footer class="main-footer" style:"margin-top:200px;">
-    <div class="auto-container">
+<footer class="main-footer" style:"margin-top:250px;">
+    <div class="auto-container"  style:"margin-top:250px;">
         <div class="footer-top">
             <figure class="footer-logo"><a href="index.php"><img src="assets/images/logo-3.png" alt=""></a></figure>
             <ul class="social-links">
