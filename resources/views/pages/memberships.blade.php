@@ -190,7 +190,7 @@
                                 <img src="assets/images/gallery/aeth-member4.jpg" alt=""
                                     style="max-width: 500px; height: auto;">
                             </figure>
-                            <h1><i class="bi bi-mortarboard"></i> @lang('members.student_membership')</h1>
+                            <h1><i class="bi bi-mortarboard"></i> @lang('programs.benefit_memberships')</h1>
                             <div class="row" style="margin-top:50px;">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <ul class="list-style-one clearfix">

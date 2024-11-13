@@ -17,7 +17,7 @@ class HomeController extends Controller
     }
     public function testimonials()
     {
-        return view('pages.about_us');
+        return view('pages.testimonials');
     }
 
     public function ourTeam()

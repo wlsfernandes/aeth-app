@@ -11,10 +11,12 @@
 
 @section('content') 
 <section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/certification.jpg);"></div>
-    <div class="auto-container">
+    <div
+        style="background-image: url(assets/images/certification.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+    </div>
+    <div class="auto-container" style="position: relative; z-index: 2;">
         <div class="content-box">
-            <h1>@lang('programs.certification_program')</h1>
+            <h1>AETH - Certification Program</h1>
         </div>
     </div>
 </section>
@@ -25,8 +27,6 @@
                 <div class="content_block_one">
                     <div class="content-box p_relative">
                         <div class="text mb_35">
-                            <!-- Image floated to the left with margin -->
-                            <!-- Thumbnail preview (initially visible) -->
                             <figure class="video video-1" style="float: left; margin: 0 20px 20px 0;">
                                 <iframe
                                     src="https://player.vimeo.com/video/917698630?color&autopause=0&loop=0&muted=0&title=1&portrait=1&byline=1"
@@ -141,116 +141,72 @@
 <section class="cta-style-two">
     <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
     <div class="auto-container">
-        <div class="inner-box"  style="display: flex; justify-content: center;">
+        <div class="inner-box" style="display: flex; justify-content: center;">
             <div class="btn-box" style="display: flex; justify-content: center;">
-                <a href="{{ route('requestCertification') }}" class="theme-btn-one">
+                <a href="{{ route('requestCertification') }}" class="theme-btn-two">
                     <span>@lang('programs.request_certification')</span>
                 </a>
             </div>
         </div>
     </div>
 </section>
+<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
+    <div class="auto-container">
+        <h2>@lang('programs.benefits_membership')</h2>
+        <div class="inner-box" style="display: flex; justify-content: center;">
+            <div class="btn-box" style="display: flex; justify-content: center;">
+
+                <div class="row" style="margin-top:50px;">
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <ul class="list-style-one clearfix">
+                            <li>@lang('programs.desc_benefit1')</li>
+                            <li>@lang('programs.desc_benefit2')</li>
+                            <li>@lang('programs.desc_benefit3')</li>
+                            <li>@lang('programs.desc_benefit4')</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12">
+                        <ul class="list-style-one clearfix">
+                            <li>@lang('programs.desc_benefit5')</li>
+                            <li>@lang('programs.desc_benefit6')</li>
+                            <li>@lang('programs.desc_benefit7')</li>
+                            <li>@lang('programs.desc_benefit8')</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="cta-style-two">
+    <div class="pattern-layer"></div>
+    <div class="auto-container">
+        <div class="inner-box" style="display: flex; justify-content: center;">
+            <div class="auto-container">
+                <div class="row align-items-start">
+                    <div class="col-lg-12 col-md-12 col-sm-12">
+                        <img src="assets/images/ats-logo.png">
+                        <h2 style="text-align: center; margin-bottom: 20px;">@lang('programs.what_ats')</h2>
+                        <p style="color:#fff"><b>@lang('programs.ats_p1')</b></p>
+                        <p style="margin-top:15px;color:#fff">@lang('programs.ats_p2')</p>
+                        <p style="color:#fff"><b>@lang('programs.ats_p3')</b></p>
+                        <p style="margin-top:15px;color:#fff"><b>@lang('programs.ats_p4')</b></p>
+                        <p style="color:#fff"><b>@lang('programs.ats_p5')</b></p>
+
+                        <div class="btn-box" style="display: flex; justify-content: center;">
+                            <a href="{{ asset('assets/images/files/pdf/ATS_Letter381_Approval_of_Standards.pdf') }}"
+                                target="blank" class="theme-btn-two">
+                                <span>@lang('programs.letter_approval')</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@include('partials.testimonial')
 
 
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h2 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-clipboard-check"></i>
-                    @lang('programs.values')</h2>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-12">
-                <h2 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-compass"></i>
-                    @lang('programs.principles')</h2>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-heart" style="color:#4a235a"></i>
-                    @lang('programs.commitment')</h5>
-                <p>@lang('programs.commitment_p1').</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-check-circle"
-                        style="color:#4a235a"></i>
-                    @lang('programs.approach')</h5>
-                <p>@lang('programs.approach_p1')</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-person-lines-fill"
-                        style="color:#4a235a"></i>
-                    @lang('programs.collaboration')</h5>
-                <p>@lang('programs.collaboration_p1').</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-arrow-repeat"
-                        style="color:#4a235a"></i>
-                    @lang('programs.agility')</h5>
-                <p>@lang('programs.agility_p1')</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-hand-thumbs-up"
-                        style="color:#4a235a"></i>
-                    @lang('programs.service')</h5>
-                <p>@lang('programs.service_p1').</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-chat-dots" style="color:#4a235a"></i>
-                    @lang('programs.responsiveness')</h5>
-                <p>@lang('programs.responsiveness_p1')</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-shield-lock"
-                        style="color:#4a235a"></i>
-                    @lang('programs.integrity')</h5>
-                <p>@lang('programs.integrity_p1').</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-eye" style="color:#4a235a"></i>
-                    @lang('programs.self_reflection')</h5>
-                <p>@lang('programs.self_reflection_p1')</p>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="two-column-section" style="background-color: #ffffff; padding: 40px 0;">
-    <div class="auto-container">
-        <div class="row align-items-start">
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-stars" style="color:#4a235a"></i>
-                    @lang('programs.excellence')</h5>
-                <p>@lang('programs.excellence_p1').</p>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-12">
-                <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-person-check"
-                        style="color:#4a235a"></i>
-                    @lang('programs.responsibility')</h5>
-                <p>@lang('programs.responsibility_p1')</p>
-            </div>
-        </div>
-    </div>
-</section>
 @endsection
