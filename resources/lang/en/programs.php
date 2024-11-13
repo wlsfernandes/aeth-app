@@ -37,6 +37,7 @@ return [
     'request_certification_p4' => 'Seminaries also benefit because Certified Bible Institutes consolidate as a source of students for their master`s and graduate programs.',
     'request_certification_p5' => 'See Letter of Approval from ATS (Association of Theological Schools)',
     'request_certification_p6' => 'To learn more about the certification process and its requirements click in the button below',
+    'institute_directory' => 'Directory of AETH Certified Institutions'
    
 
 ];
