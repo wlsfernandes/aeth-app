@@ -11,6 +11,6 @@
 <!-- Content here -->
 
 @section('content') 
-    <p>This is your content.</p>
+    <p>This is your contenssssst.</p>
     <p style="margin-top:500px;"></p>
 @endsection

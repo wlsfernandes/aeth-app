@@ -173,7 +173,7 @@ textarea:focus{
 p{
   position: relative;
   font-family: 'Poppins', sans-serif;
-  color: #676767;
+  color: #4a235a;
   font-weight: 400;
   margin: 0px;
   transition: all 500ms ease;
@@ -387,7 +387,7 @@ img {
   left: 0px;
   top: 0px;
   z-index: -1;
-  background: #A569BD;
+  background: #e8daef;
   transition: all 500ms ease;
 }
 
@@ -8105,7 +8105,8 @@ div#mCSB_1_container{
 .info-block-one .inner-box{
   position: relative;
   display: block;
-  background: #330033;
+  background: linear-gradient(to right,#4a235a, #a569bd, #e8daef) !important; 
+  border-color: #4a235a; color: #fff;
   border-radius: 15px;
   padding: 50px 50px 45px 50px;
   transition: all 500ms ease;

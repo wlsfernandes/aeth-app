@@ -241,8 +241,8 @@
 	background: #4a235a;
 }
 
-.cta-style-two{
-	background: #4a235a;
+.cta-style-two {
+  background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
 }
 
 .cta-style-two .inner-box .theme-btn-one:hover{

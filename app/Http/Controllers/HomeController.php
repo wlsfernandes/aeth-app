@@ -15,6 +15,10 @@ class HomeController extends Controller
     {
         return view('pages.about_us');
     }
+    public function testimonials()
+    {
+        return view('pages.about_us');
+    }
 
     public function ourTeam()
     {

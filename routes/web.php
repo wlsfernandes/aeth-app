@@ -44,7 +44,7 @@ Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contactUs'])->name('contact_us');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
 Route::get('/certification-program', [HomeController::class, 'certificationProgram'])->name('certification_program');
-Route::get('/request-certification', [HomeController::class, 'requestCertification'])->name('request_certification');
+Route::get('/request-certification', [HomeController::class, 'requestCertification'])->name('requestCertification');
 Route::get('/certified-institutions', [HomeController::class, 'certifiedInstitutions'])->name('certified_institutions');
 Route::get('/memberships', [HomeController::class, 'memberships'])->name('memberships');
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
@@ -56,6 +56,7 @@ Route::get('/donations', [HomeController::class, 'donations'])->name('donations'
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
 Route::post('/members', [MemberController::class, 'store'])->name('members.store');
+
 
 Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
 Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');
@@ -70,6 +71,8 @@ Route::get('/sophia-porter', [TeamController::class, 'sophiaPorter'])->name('sop
 Route::get('/jeremy-villoch', [TeamController::class, 'jeremyVilloch'])->name('jeremy-villoch');
 Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yaheli-vargas');
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
+
+Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 
 
 /**********************************************  Payments */

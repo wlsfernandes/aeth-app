@@ -141,6 +141,7 @@
                                             </li>
                                             <li><a href="{{ route('events') }}">@lang('header.events')</a></li>
                                             <li><a href="{{ route('blog') }}">@lang('header.blog')</a></li>
+                                            <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a></li>
                                             <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                         </ul>
                                     </li>
@@ -152,7 +153,7 @@
                                                     href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
                                             </li>
                                             <li><a
-                                                    href="{{ route('request_certification') }}">@lang('header.request_certification')</a>
+                                                    href="{{ route('requestCertification') }}">@lang('header.request_certification')</a>
                                             </li>
                                             <li><a
                                                     href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
