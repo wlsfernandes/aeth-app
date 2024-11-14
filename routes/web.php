@@ -73,6 +73,7 @@ Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yah
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
+Route::get('/test', [HomeController::class, 'test'])->name('test');
 
 
 /**********************************************  Payments */

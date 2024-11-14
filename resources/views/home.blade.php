@@ -56,7 +56,7 @@ height: 100%;
         </div>
     </div>
 </section>
-<!-- funfact-section -->
+
 <section class="funfact-section alternat-2 pt_80 pb_80 bg-color-1">
     <div class="auto-container">
         <div class="inner-container">

@@ -2885,14 +2885,14 @@ fieldset:disabled a.btn {
 }
 
 .btn-outline-secondary {
-  color: #6c757d;
-  border-color: #6c757d;
+  color: #a569bd;
+  border-color: #a569bd;
 }
 
 .btn-outline-secondary:hover {
   color: #fff;
-  background-color: #6c757d;
-  border-color: #6c757d;
+  background-color: #a569bd;
+  border-color: #a569bd;
 }
 
 .btn-outline-secondary:focus, .btn-outline-secondary.focus {

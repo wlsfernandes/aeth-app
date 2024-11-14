@@ -109,6 +109,10 @@ class HomeController extends Controller
     {
         return view('pages.gonzalez_center');
     }
+    public function test()
+    {
+        return view('pages.test');
+    }
 
 
 }
