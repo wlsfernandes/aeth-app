@@ -67,7 +67,7 @@
         </div>
     </div>
 </section>
-<section class="about-style-two pt_120" style="background-color:#f5f1fb">
+<section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -119,7 +119,7 @@
 </section>
 
 
-<section class="about-style-two pt_120" style="background-color:#f5f1fb">
+<section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">
     <div class="auto-container">
         <div class="row align-items-center clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 content-column">
@@ -179,7 +179,7 @@
         </div>
     </div>
 </section>
-<section class="about-style-two pt_120" style="background-color:#f5f1fb">
+<section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
