@@ -10,16 +10,16 @@
 <!-- Content here -->
 
 @section('content') 
-
+<!--
 <section class="page-title centred">
     <div style="background-image: url(assets/images/gallery/membership.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
     </div>
-   <!-- <div class="auto-container" style="position: relative; z-index: 2;">
+   < <div class="auto-container" style="position: relative; z-index: 2;">
         <div class="content-box">
             <h1>AETH - Exclusive Premium Content</h1>
-        </div> -->
+        </div> 
     </div>
-</section>
+</section> -->
 
 <section class="about-section bg-color-1 p_relative sec-pad">
     <div class="auto-container">
@@ -190,7 +190,7 @@
                                 <img src="assets/images/gallery/aeth-member4.jpg" alt=""
                                     style="max-width: 500px; height: auto;">
                             </figure>
-                            <h1><i class="bi bi-mortarboard"></i> @lang('programs.benefit_memberships')</h1>
+                            <h1><i class="bi bi-mortarboard"></i> @lang('members.student_membership')</h1>
                             <div class="row" style="margin-top:50px;">
                                 <div class="col-lg-6 col-md-6 col-sm-12">
                                     <ul class="list-style-one clearfix">
