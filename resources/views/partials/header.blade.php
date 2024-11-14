@@ -168,7 +168,7 @@
                                         <ul>
                                             <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
                                             <li><a
-                                                    href="{{ route('resource_center') }}">@lang('header.resource_center')</a>
+                                                    href="https://gonzalezcenter.org" target="blank">@lang('header.resource_center')</a>
                                             </li>
                                             <li><a
                                                     href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
