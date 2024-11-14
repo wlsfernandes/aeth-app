@@ -37,7 +37,39 @@ return [
     'request_certification_p4' => 'Seminaries also benefit because Certified Bible Institutes consolidate as a source of students for their master`s and graduate programs.',
     'request_certification_p5' => 'See Letter of Approval from ATS (Association of Theological Schools)',
     'request_certification_p6' => 'To learn more about the certification process and its requirements click in the button below',
-    'institute_directory' => 'Directory of AETH Certified Institutions'
-   
+    'institute_directory' => 'Directory of AETH Certified Institutions',
+    'theologizing' => 'THEOLOGIZING LATINAMENTE',
+    'antioquia_title' => 'Antioquia - Theological Reflection',
+    'antioquia'=>
+    [ 
+        'p1' => 'What We Do',
+        'p2' => 'We create spaces dedicated to theological, spiritual and pastoral reflection in collaboration with leaders and institutions of the AETH network.',
+        'p3' => 'We foster interaction among leaders, pastors and educators to develop new knowledge that is contextual, relevant and affirming of the diversity of Latino communities.',
+        'p4' => 'We are committed to promoting professional development, teacher training, spiritual and vocational discernment, as well as collaborative research, highlighted through specialized publications and webinars.',
+        'p5' => 'How we do it',
+        'p6' => 'We create virtual and physical meeting places for teachers, pastors, Bible college directors and active lay leaders to reflect theologically on their work.',
+        'p7' => 'We promote professional development, teaching training, spiritual and vocational discernment, and collaborative research in the form of publications and webinars.',
+        'p8' => 'We offer training through asynchronous webinars, downloadable resources and networking opportunities for Latino/Hispanic believers.',
+        'p9' => 'Co-Create',
+        'p10' => 'Ministers Leaders',
+        'p11' => 'Pastors and church leaders share their experiences to contribute to the task of building a contextual and relevant theological knowledge, according to the real needs of the congregations.',
+        'p12' => 'Educators',
+        'p13' => 'The faculty and administration of the Bible Institutes will share the process with Pastors, scholars and theologians to benefit the students of their local institutions.',
+        'p14' => 'Theologians | Academics',
+        'p15' => 'Through the lens of theological topics, Practical and Systematic Theologians will analyze data gathered from pastors and faculty, to produce contextual and relevant pieces of new theological knowledge',
+        'p16' => '"Empowering leaders, strengthening communities. Antioch is a comprehensive resource for empowering leadership in Church and society."',
+        'p17' => 'What We Expect:',
+        'p18' => 'Results:',
+        'p19' => '<b>Growth:</b> Participants experience extensive spiritual and intellectual growth, enriching their theological understanding and improving their ministerial practices.',
+        'p20' => '<b>Empowerment:</b> Participants gain a sense of empowerment through the validation of their cultural and religious identity and the acquisition of new skills and knowledge to address community-specific needs',
+        'p21' => '<b>Renewed practices:</b> Participants adopt renewed and culturally relevant theological practices, enhancing their ministry and community engagement.',
+        'p22' => 'ReDET on-line',
+        'p23' => 'redet.us',
+        'p24' => 'Unlock the potential of theological education!',
+        'p25' => 'Visit ReDET.us and join a vibrant community dedicated to promoting theological knowledge, fostering collaboration and solving shared challenges.',
+        'p26' => 'Explore resources, connect with experts and strengthen your ministry. Whether you are an educator, student or leader, ReDET offers the tools and support you need to make a lasting impact in your field.',
+        'p27' => 'Don`t miss out! Access exclusive content today and be part of a movement that is shaping the future of theological education.',
+        'p28' => 'Our Allies:'
+    ],
 
 ];
