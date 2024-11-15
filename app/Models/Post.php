@@ -24,5 +24,14 @@ class Post extends Model
         'summary_es',
         'summary_pt',
         'image_url',
+        'post_type_id'
     ];
+
+
+    public function postType()
+    {
+        return $this->belongsTo(PostType::class);
+    }
+
+
 }

@@ -107,7 +107,7 @@ height: 100%;
     </div>
 </section> -->
 <!--------------- partials.post --------------------------->
-@include('partials.post', ['posts' => $posts])
+@include('partials.article', ['articles' => $articles])
 
 
 <section class="cta-style-two" style="margin-top:48px;">
@@ -382,7 +382,7 @@ height: 100%;
 <section class="news-section home-3 sec-pad bg-color-1">
     <div class="auto-container">
         <div class="sec-title centred mb_55">
-            <span class="sub-title">Calendar</span>
+        <span class="sub-title calendar">Calendar</span>
             <h2>Events</h2>
         </div>
         <div class="row clearfix">

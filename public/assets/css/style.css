@@ -603,6 +603,9 @@ img {
   font-size: 36px;
 }
 
+.sec-title .sub-title.calendar:before {
+  content: '\e925';  /* New icon code for Calendar */
+}
 .sec-title.centred .sub-title:before{
   left: 50%;
   transform: translateX(-50%);

@@ -9,10 +9,14 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $posts = Post::where('published', true)
+        $articles = Post::where('published', true)
+        ->whereHas('postType', function ($query) {
+            $query->where('name', 'article'); 
+        })
         ->orderBy('published_at', 'desc')
-        ->get(); 
-        return view('home', compact('posts'));
+        ->get();
+    
+        return view('home', compact('articles'));
     }
 
     public function aboutUs()
