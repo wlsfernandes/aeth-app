@@ -27,6 +27,7 @@ return new class extends Migration
             $table->string('summary_es')->nullable();
             $table->string('summary_pt')->nullable();
             $table->string('image_url')->nullable();
+            $table->string('file_url')->nullable();
             $table->timestamps();
         });
     }
