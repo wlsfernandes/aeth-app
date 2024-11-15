@@ -12,7 +12,7 @@
 @section('content') 
 <section class="page-title centred">
     <div class="bg-layer">
-    <video autoplay muted loop playsinline id="background-video" style=" position: absolute;top: 0;left: 0;width: 100%;
+        <video autoplay muted loop playsinline id="background-video" style=" position: absolute;top: 0;left: 0;width: 100%;
 height: 100%;
     object-fit: cover; /* Ensures the video covers the container while maintaining aspect ratio */
     z-index: -1; /* Keeps the video behind other content, if necessary */">
@@ -26,10 +26,22 @@ height: 100%;
         </div>
     </div>
 </section>
+<section class="cta-style-two">
+    <div class="pattern-layer"></div>
+    <div class="auto-container">
+        <div class="inner-box">
+            <a href="https://gonzalezcenter.org" target="blank"><img src="assets/images/jcg-logo.png"
+                    alt="González Center"></a>
+            <img src="assets/images/bienal-log.png" alt="Biennal24">
+            <a href="{{ route('compelling_preaching') }}">
+                <img src="assets/images/predication-logo.png" alt="CompellingPreaching"></a>
+        </div>
+    </div>
+</section>
 <section class="faq-style-two sec-pad">
     <div class="auto-container">
         <div class="row clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12 video-column" style="margin-top:100px;">
+            <div class="col-lg-6 col-md-12 col-sm-12 video-column">
                 <div class="video-content p_relative d_block mr_30">
                     <div class="video-inner centred"
                         style="background-image: url(assets/images/gallery/aeth-idea.jpg);">
@@ -56,8 +68,7 @@ height: 100%;
         </div>
     </div>
 </section>
-
-<section class="funfact-section alternat-2 pt_80 pb_80 bg-color-1">
+<!--<section class="funfact-section alternat-2 pt_80 pb_80 bg-color-1">
     <div class="auto-container">
         <div class="inner-container">
             <div class="funfact-block-one">
@@ -94,72 +105,48 @@ height: 100%;
             </div>
         </div>
     </div>
+</section> -->
+<!--------------- partials.post --------------------------->
+@include('partials.post', ['posts' => $posts])
+
+
+<section class="cta-style-two" style="margin-top:48px;">
+    <div class="pattern-layer"></div>
+    <div class="auto-container">
+        <div class="inner-box">
+            <h1 style="color:#fff"><img src="assets/images/logo-3.png" alt="">@lang('messages.program_resources')</h1>
+        </div>
+    </div>
 </section>
-<!-- funfact-section end -->
-<!-- cause-section -->
 <section class="cause-section sec-pad">
     <div class="auto-container">
-        <div class="sec-title centred mb_50">
-            <h2>@lang('messages.program_resources')</h2>
-        </div>
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
-                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/certification.jpg"
-                                        alt=""></a></figure>
-                            <div class="category"><a href="#">@lang('messages.certification')</a></div>
-                        </div>
-                        <div class="lower-content">
-                            <div class="text">
-                                <h3><a href="#">xxxxxxxxxx <br />xxxxxxx</a></h3>
-                                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxx.</p>
-                            </div>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="85%">
-                                        <div class="count-text">85%</div>
-                                    </div>
-                                </div>
-                                <div class="donate-text">
-                                    <h6><span>$5,020</span> Raised</h6>
-                                    <h6><span>$8,000</span> Target</h6>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
+            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+                style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/meet1.jpg"
-                                        style="width:470px;height:270px;"></a></figure>
-                            <div class="category"><a href="#">@lang('messages.resource_center')</a></div>
+                            <figure class="video">
+                                <a href="'assets/images/gonzalezvideo.mp4">
+                                    <video width="470" height="270" autoplay muted loop>
+                                        <source src="assets/images/videos/gonzalezvideo.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </figure>
+                            <div class="category"><a href="https://gonzalezcenter.org"
+                                    target="blank">@lang('messages.resource_center')</a></div>
                         </div>
                         <div class="lower-content">
                             <div class="text">
-                                <h3><a href="#">dddd <br />ddddddd</a></h3>
-                                <p>ddddddddddddddddddddddd.</p>
-                            </div>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="50%">
-                                        <div class="count-text">50%</div>
-                                    </div>
-                                </div>
-                                <div class="donate-text">
-                                    <h6><span>$6,020</span> Raised</h6>
-                                    <h6><span>$12,000,000</span> Target</h6>
-                                </div>
+                                <p>@lang('programs.gonzalez.explore')</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block">
+            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+                style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
@@ -169,19 +156,30 @@ height: 100%;
                         </div>
                         <div class="lower-content">
                             <div class="text">
-                                <h3><a href="#">xxxxxxxxxxxx<br />ddddddd</a></h3>
-                                <p>xxxxxxxxxxxxxxxxxxxxxxxxxxx</p>
+                                <p>@lang('programs.compelling.p19')</p>
                             </div>
-                            <div class="progress-box">
-                                <div class="bar">
-                                    <div class="bar-inner count-bar" data-percent="90%">
-                                        <div class="count-text">90%</div>
-                                    </div>
-                                </div>
-                                <div class="donate-text">
-                                    <h6><span>$9,080</span> Raised</h6>
-                                    <h6><span>$10,000</span> Target</h6>
-                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+                style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
+                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="video">
+                                <a href="'assets/images/certification.mp4">
+                                    <video width="470" height="270" autoplay muted loop>
+                                        <source src="assets/images/videos/certification.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </figure>
+                            <div class="category"><a href="#">@lang('messages.certification')</a></div>
+                        </div>
+                        <div class="lower-content">
+                            <div class="text">
+                                <p>@lang('programs.certification.p1')</p>
                             </div>
                         </div>
                     </div>
@@ -192,79 +190,83 @@ height: 100%;
 </section>
 <!-- cause-section end -->
 
-<section class="about-style-three sec-pad" style="background-color:#f7f5f1; margin-top:100px; margin-bottom:100px;">
-    <div class="auto-container">
-        <div class="row align-items-center clearfix">
-            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                <div class="content_block_two">
-                    <div class="content-box ml_40">
+<!--
+<section class="about-style-three sec-pad" style="background-color:#e8daef;>
+    <div class=" auto-container">
+    <div class="row align-items-center clearfix">
+        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+            <div class="content_block_two">
+                <div class="content-box ml_40">
 
-                        <div class="text mb_40">
-                            <p>xxxxxxxxxxxxx</p>
-                            <p style="margin-top:15px;">xxxxxxxxxxxxxxxxxxxx</p>
-                            <div class="btn-box" style="margin-top:25px;">
-                                <a href="#" target="blank" class="theme-btn-one">
-                                    xxxxxxxxxxxxxxxxx</a>
-                            </div>
-                            <p style="margin-top:25px;">
-                                xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-                            </p>
+                    <div class="text mb_40">
+                        <p>xxxxxxxxxxxxx</p>
+                        <p style="margin-top:15px;">xxxxxxxxxxxxxxxxxxxx</p>
+                        <div class="btn-box" style="margin-top:25px;">
+                            <a href="#" target="blank" class="theme-btn-one">
+                                xxxxxxxxxxxxxxxxx</a>
                         </div>
+                        <p style="margin-top:25px;">
+                            xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+                        </p>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                <div class="image-box mr_40">
-                    <div class="image-shape" style="background-image: url(assets/images/shape/shape-1.png);">
-                    </div>
-                    <figure class="video" style="width:60%">
-                        <video autoplay muted loop style="width: 100%;">
-                            <source src="assets/images/videos/somosAETH.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </figure>
+        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+            <div class="image-box mr_40">
+                <div class="image-shape" style="background-image: url(assets/images/shape/shape-1.png);">
                 </div>
+                <figure class="video" style="width:60%">
+                    <video autoplay muted loop style="width: 100%;">
+                        <source src="assets/images/videos/somosAETH.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </figure>
+            </div>
 
+        </div>
+    </div>
+    </div>
+</section>
+
+
+
+<section class="about-style-two pt_120">
+    <div class="auto-container">
+        <div class="row align-items-center clearfix">
+            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                <div class="image-box mr_40">
+                    <div class="image-shape" style="background-image: url(assets/images/shape/shape-1.png);"></div>
+                    <figure class="image"><img src="assets/images/gallery/puerto-rico.jpg" alt=""></figure>
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                <div class="content_block_two">
+                    <div class="content-box ml_40">
+                        <div class="sec-title mb_60">
+                            <span class="sub-title">About Trusthand</span>
+                            <h2>Our Mission Is to Change The World</h2>
+                        </div>
+                        <div class="text mb_40">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis porttitor pulvinar
+                                faucibus a, nisi. Erat eget lectus diam tempor sed. Amet dui scelerisque vel habitant ut
+                                eget tincidunt facilisis pretium. Porttitor mi nisi, non vitae tempus vel nec habitant
+                                tristique. Aliquet dignissim venenatis pellentesque ultricies posuere id pharetra.</p>
+                            <p>Nisi vel morbi purus habitasse vitae praesent phaselus viverra Suspendise diam, amet,
+                                natoque neque non tempor ullamcorper aenean turpis dolor malesuada sit scelerisque elit
+                                vitae.</p>
+                        </div>
+                        <div class="btn-box">
+                            <a href="about.html" class="theme-btn-one">More About Us</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-
- <!-- about-style-two -->
- <section class="about-style-two pt_120">
-            <div class="auto-container">
-                <div class="row align-items-center clearfix">
-                    <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                        <div class="image-box mr_40">
-                            <div class="image-shape" style="background-image: url(assets/images/shape/shape-1.png);"></div>
-                            <figure class="image"><img src="assets/images/gallery/puerto-rico.jpg" alt=""></figure>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                        <div class="content_block_two">
-                            <div class="content-box ml_40">
-                                <div class="sec-title mb_60">
-                                    <span class="sub-title">About Trusthand</span>
-                                    <h2>Our Mission Is to Change The World</h2>
-                                </div>
-                                <div class="text mb_40">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Venenatis porttitor pulvinar faucibus a, nisi. Erat eget lectus diam tempor sed. Amet dui scelerisque vel habitant ut eget tincidunt facilisis pretium. Porttitor mi nisi, non vitae tempus vel nec habitant tristique. Aliquet dignissim venenatis pellentesque ultricies posuere id pharetra.</p>
-                                    <p>Nisi vel morbi purus habitasse vitae praesent phaselus viverra Suspendise diam, amet, natoque neque non tempor ullamcorper aenean turpis dolor malesuada sit scelerisque elit vitae.</p>
-                                </div>
-                                <div class="btn-box">
-                                    <a href="about.html" class="theme-btn-one">More About Us</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!-- about-style-two end -->
-
-<!-- feature-section -->
 <section class="feature-section p_relative sec-pad centred">
     <div class="auto-container">
         <div class="sec-title centred mb_50">
@@ -302,8 +304,7 @@ height: 100%;
         </div>
     </div>
 </section>
-<!-- feature-section end -->
-<!-- testimonial-section -->
+-->
 <section class="testimonial-section">
     <div class="bg-layer">
         <video autoplay muted loop playsinline id="background-video">
@@ -315,8 +316,8 @@ height: 100%;
         <div class="testimonial-content">
             <div class="content-box">
                 <div class="sec-title light mb_50">
-                    <div class="sub-title">Testimonials</div>
-                    <h2>What Clients Say About AETH</h2>
+                    <div class="sub-title">@lang('messages.testimonials')</div>
+                    <h1 style="color:#fff">@lang('messages.testimonial_title')</h1>
                 </div>
                 <div class="bxslider">
                     <div class="slider-content">
@@ -324,20 +325,8 @@ height: 100%;
                             <ul class="thumb-box">
                                 <li>
                                     <a class="active" data-slide-index="0" href="#">
-                                        <figure class="thumb thumb-1"><img
-                                                src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="1" href="#">
-                                        <figure class="thumb thumb-2"><img
-                                                src="assets/images/resource/testimonial-2.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="2" href="#">
-                                        <figure class="thumb thumb-3"><img
-                                                src="assets/images/resource/testimonial-3.jpg" alt=""></figure>
+                                        <figure class="thumb thumb-1"><img src="assets/images/testimonials/thumbs/1.jpg"
+                                                alt=""></figure>
                                     </a>
                                 </li>
                             </ul>
@@ -348,13 +337,12 @@ height: 100%;
                                 <li><i class="icon-13"></i></li>
                                 <li><i class="icon-13"></i></li>
                                 <li><i class="icon-13"></i></li>
-                                <li><i class="icon-14"></i></li>
+                                <li><i class="icon-13"></i></li>
                             </ul>
-                            <p>“Blandit aliquet varius id malesuada nunc euismod id tempor, malesuada sollicitudin sit
-                                nisi tellus auctor vitae dignissim lacinia convallis sapien dictum.”</p>
+                            <p><i>@lang('messages.testimonials_phrase1')</i></p>
                             <div class="author-info">
-                                <h3>Arlene McCoy</h3>
-                                <span class="designation">Manager</span>
+                                <h3>@lang('messages.testimonials_name1')</h3>
+                                <span class="designation">@lang('messages.testimonials_desc1')</span>
                             </div>
                         </div>
                     </div>
@@ -362,21 +350,9 @@ height: 100%;
                         <div class="slider-pager">
                             <ul class="thumb-box">
                                 <li>
-                                    <a class="active" data-slide-index="0" href="#">
-                                        <figure class="thumb thumb-1"><img
-                                                src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
                                     <a data-slide-index="1" href="#">
-                                        <figure class="thumb thumb-2"><img
-                                                src="assets/images/resource/testimonial-2.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="2" href="#">
-                                        <figure class="thumb thumb-3"><img
-                                                src="assets/images/resource/testimonial-3.jpg" alt=""></figure>
+                                        <figure class="thumb thumb-2"><img src="assets/images/testimonials/thumbs/2.jpg"
+                                                alt=""></figure>
                                     </a>
                                 </li>
                             </ul>
@@ -389,116 +365,107 @@ height: 100%;
                                 <li><i class="icon-13"></i></li>
                                 <li><i class="icon-14"></i></li>
                             </ul>
-                            <p>“Blandit aliquet varius id malesuada nunc euismod id tempor, malesuada sollicitudin sit
-                                nisi tellus auctor vitae dignissim lacinia convallis sapien dictum.”</p>
+                            <p><i>@lang('messages.testimonials_phrase2')</i></p>
                             <div class="author-info">
-                                <h3>Haris Gulati</h3>
-                                <span class="designation">Manager</span>
+                                <h3>@lang('messages.testimonials_name2')</h3>
+                                <span class="designation">@lang('messages.testimonials_desc2')</span>
                             </div>
                         </div>
                     </div>
-                    <div class="slider-content">
-                        <div class="slider-pager">
-                            <ul class="thumb-box">
-                                <li>
-                                    <a class="active" data-slide-index="0" href="#">
-                                        <figure class="thumb thumb-1"><img
-                                                src="assets/images/resource/testimonial-1.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="1" href="#">
-                                        <figure class="thumb thumb-2"><img
-                                                src="assets/images/resource/testimonial-2.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a data-slide-index="2" href="#">
-                                        <figure class="thumb thumb-3"><img
-                                                src="assets/images/resource/testimonial-3.jpg" alt=""></figure>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="testimonial-inner">
-                            <ul class="rating-box clearfix">
-                                <li><i class="icon-13"></i></li>
-                                <li><i class="icon-13"></i></li>
-                                <li><i class="icon-13"></i></li>
-                                <li><i class="icon-13"></i></li>
-                                <li><i class="icon-14"></i></li>
-                            </ul>
-                            <p>“Blandit aliquet varius id malesuada nunc euismod id tempor, malesuada sollicitudin sit
-                                nisi tellus auctor vitae dignissim lacinia convallis sapien dictum.”</p>
-                            <div class="author-info">
-                                <h3>Jhon Haris</h3>
-                                <span class="designation">Manager</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- testimonial-section end -->
-<!-- event-section -->
-<section class="event-section bg-color-1" style="margin-bottom:100px;">
-    <div class="auto-container">
-        <div class="sec-title mb_55 centred">
-            <span class="sub-title">Upcoming Event</span>
-            <h2>Join Upcoming Events</h2>
-        </div>
-        <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
-            <div class="events-block-one">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="assets/images/resource/event-1.jpg" alt=""></figure>
-                    <div class="content-box">
-                        <div class="date">
-                            <h2>30 <span>AUG</span></h2>
-                            <div class="date-shape" style="background-image: url(assets/images/icons/icon-bg-5.png);">
-                            </div>
-                        </div>
-                        <h3><a href="events-details.html">Our Sponsorship Meetup will be Held Again</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Sed morbi nullam et. Bibendum nunc
-                            fames fermentum lorem. Non potenti nunc ornare diam laoreet.</p>
-                        <div class="btn-box">
-                            <a href="events-details.html" class="theme-btn-one">join Event</a>
-                        </div>
-                        <ul class="lower-box">
-                            <li class="admin"><i class="icon-38"></i>08:00AM-04:00PM</li>
-                            <li class="comment"><i class="icon-39"></i>75 Roling Green Rd</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="events-block-one">
-                <div class="inner-box">
-                    <figure class="image-box"><img src="assets/images/resource/event-2.jpg" alt=""></figure>
-                    <div class="content-box">
-                        <div class="date">
-                            <h2>30 <span>AUG</span></h2>
-                            <div class="date-shape" style="background-image: url(assets/images/icons/icon-bg-5.png);">
-                            </div>
-                        </div>
-                        <h3><a href="events-details.html">Our Sponsorship Meetup will be Held Again</a></h3>
-                        <p>Lorem ipsum dolor sit amet consectetur adipiscing elit Sed morbi nullam et. Bibendum nunc
-                            fames fermentum lorem. Non potenti nunc ornare diam laoreet.</p>
-                        <div class="btn-box">
-                            <a href="events-details.html" class="theme-btn-one">join Event</a>
-                        </div>
-                        <ul class="lower-box">
-                            <li class="admin"><i class="icon-38"></i>08:00AM-04:00PM</li>
-                            <li class="comment"><i class="icon-39"></i>75 Roling Green Rd</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- event-section end -->
 
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="news-section home-3 sec-pad bg-color-1">
+    <div class="auto-container">
+        <div class="sec-title centred mb_55">
+            <span class="sub-title">Calendar</span>
+            <h2>Events</h2>
+        </div>
+        <div class="row clearfix">
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/1.jpg"
+                                    alt=""></a></figure>
+                        <div class="lower-content p_relative d_block">
+                            <div class="text">
+                                <div class="post-date">
+                                    <h3>15 <span>APRIL</span></h3>
+                                </div>
+                                <h3><a href="blog-details.html">How to Handle Unexpected Situations on Road</a></h3>
+                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
+                                    Tincidunt aurna suspit.</p>
+                                <div class="btn-box">
+                                    <a href="blog-details" class="theme-btn-two">Read more</a>
+                                </div>
+                            </div>
+                            <ul class="lower-box">
+                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
+                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/1.jpg"
+                                    alt=""></a></figure>
+                        <div class="lower-content p_relative d_block">
+                            <div class="text">
+                                <div class="post-date">
+                                    <h3>14 <span>APRIL</span></h3>
+                                </div>
+                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
+                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
+                                    Tincidunt aurna suspit.</p>
+                                <div class="btn-box">
+                                    <a href="blog-details" class="theme-btn-two">Read more</a>
+                                </div>
+                            </div>
+                            <ul class="lower-box">
+                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
+                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/2.jpg"
+                                    alt=""></a></figure>
+                        <div class="lower-content p_relative d_block">
+                            <div class="text">
+                                <div class="post-date">
+                                    <h3>12 <span>APRIL</span></h3>
+                                </div>
+                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
+                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
+                                    Tincidunt aurna suspit.</p>
+                                <div class="btn-box">
+                                    <a href="blog-details" class="theme-btn-two">Read more</a>
+                                </div>
+                            </div>
+                            <ul class="lower-box">
+                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
+                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+@include('partials.contact')
 
 <!-- clients-section -->
 <section class="clients-section" style="background:#f7f5f1">

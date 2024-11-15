@@ -2,13 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use App\Models\Post;
+
 
 class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        $posts = Post::where('published', true)
+        ->orderBy('published_at', 'desc')
+        ->get(); 
+        return view('home', compact('posts'));
     }
 
     public function aboutUs()

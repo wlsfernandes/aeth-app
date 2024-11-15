@@ -121,7 +121,9 @@
 }
   
 .testimonial-section{
-	background: #4a235a;
+	background: linear-gradient(to right, #e8daef, #a569bd,#4a235a); 
+  border-color: #4a235a;
+  color: #fff;
 }
 
 .clients-section{

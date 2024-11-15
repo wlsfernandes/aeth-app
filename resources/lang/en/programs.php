@@ -92,6 +92,15 @@ return [
             'p16' => 'We focus on the development and support of first and second generation Hispanic and Latino leaders who play an active role in preaching, either on a weekly basis or on special occasions. Recognizing the diversity and unique challenges these leaders face, our initiative seeks to provide them with resources and specific training that resonates with their experiences and needs. In addition, we extend an invitation to the leaders who supervise and mentor these preachers to participate in our educational events.',
             'p17' => 'Student Stories',
             'p18' => 'We invite you to explore the stories of students who have been part of the Transformational Preaching program. Discover how the training and support they have received has made a significant difference in their pastoral leadership, enhancing their ability to communicate powerful and transformational messages. With each story, you will understand the profound influence our program has in strengthening the vitality of congregations and empowering effective leadership. ',
+            'p19' => 'Empower preachers from Hispanic and Latino churches, fostering congregational vitality and pastoral leadership.'
+        ],
+    'gonzalez' =>
+        [
+            'explore' => 'Explore a rich array of resources designed to support your ministry, scholarship, and personal faith journey.'
+        ],
+    'certification' =>
+        [
+            'p1' => 'AETH Certification guarantees that eligible Bible institutes uphold standards of institutional and educational excellence.',
         ],
 
 ];
