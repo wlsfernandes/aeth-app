@@ -140,7 +140,7 @@
                                                     href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
                                             </li>
                                             <li><a href="{{ route('events') }}">@lang('header.events')</a></li>
-                                            <li><a href="{{ route('blog') }}">@lang('header.blog')</a></li>
+                                            <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
                                             <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a></li>
                                             <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                         </ul>

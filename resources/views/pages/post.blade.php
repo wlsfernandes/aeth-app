@@ -7,14 +7,17 @@
 @section('meta-keywords', 'blog, posts, news')
 
 @section('content')
-<div class="container">
+
+
+<div class="container" style="margin-top:50px;">
     <div class="row">
         @foreach($posts as $post)
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title_en }}"
                         style="height: 225px; width: 100%; display: block;">
-                    <div class="card-body d-flex flex-column" style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
+                    <div class="card-body d-flex flex-column"
+                        style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                         <div class="d-flex flex-column flex-grow-1">
                             <p class="card-text" style="margin-bottom:15px;">
                                 @if(App::getLocale() == 'es')
@@ -57,4 +60,14 @@
         {{ $posts->links() }}
     </div>
 </div>
+
+<section class="cta-style-two">
+    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+    <div class="auto-container">
+        <div class="inner-box">
+        
+            <h2><i class="bi bi-book" style="font-size: 1.5rem;color:#fff;"></i>   @lang('messages.resources_grow'):</h2><br>
+        </div>
+    </div>
+</section>
 @endsection

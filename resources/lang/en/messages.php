@@ -63,5 +63,7 @@ return [
     'your_phone' => 'Your Phone...',
     'your_message' => 'Your Message',
     'send_message' => 'Send a Message',
+    'resources_grow' => 'Resources to grow and inspire',
+    'publications_articles' => 'Publications and articles'
 
 ];
