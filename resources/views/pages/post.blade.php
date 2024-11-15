@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title_en }}" style="height: 225px; width: 100%; display: block;">
-                    <div class="card-body">
+                    <div class="card-body" style=" height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                         {{-- Display title based on the current locale --}}
                         <p class="card-text" style="margin-bottom:15px;">
                             @if(App::getLocale() == 'es')
