@@ -8,6 +8,7 @@ use App\Http\Controllers\DigitalCollectionController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,7 +74,8 @@ Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yah
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
-Route::get('/test', [HomeController::class, 'test'])->name('test');
+Route::get('/post', [PostController::class, 'index'])->name('post');
+Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 
 /**********************************************  Payments */
