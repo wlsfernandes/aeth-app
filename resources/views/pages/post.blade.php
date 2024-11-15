@@ -14,7 +14,7 @@
                 <div class="card mb-4 box-shadow">
                     <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title_en }}"
                         style="height: 225px; width: 100%; display: block;">
-                    <div class="card-body d-flex flex-column">
+                    <div class="card-body d-flex flex-column" style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                         <div class="d-flex flex-column flex-grow-1">
                             <p class="card-text" style="margin-bottom:15px;">
                                 @if(App::getLocale() == 'es')
@@ -29,11 +29,11 @@
                             <small class="text-muted"><i>
                                     {{-- Display summary based on the current locale and limit to 90 characters --}}
                                     @if(App::getLocale() == 'es')
-                                        {{ Str::limit($post->summary_es, 90, '...') }}
+                                        {{ Str::limit($post->summary_es, 120, '...') }}
                                     @elseif(App::getLocale() == 'pt')
-                                        {{ Str::limit($post->summary_pt, 90, '...') }}
+                                        {{ Str::limit($post->summary_pt, 120, '...') }}
                                     @else
-                                        {{ Str::limit($post->summary_en, 90, '...') }} {{-- Default to English if no locale
+                                        {{ Str::limit($post->summary_en, 120, '...') }} {{-- Default to English if no locale
                                         match --}}
                                     @endif
                                 </i></small>
