@@ -15,7 +15,7 @@ use App\Mail\WelcomeEmail;
 class MemberController extends Controller
 {
 
-    /* TODO // hardcoded member in RegisteredUserController 
+    /* TODO // hardcoded member in needs to update  
     */
     public function store(Request $request)
     {
@@ -42,7 +42,8 @@ class MemberController extends Controller
                   'email' => $request->email,
                   'password' => bcrypt($password), // Hash the generated password
               ]);
-              
+              $roleId=17;
+              $user->roles()->attach($roleId); 
             // Create a new member
             $member = Member::create([
                 'name' => $request->name,
