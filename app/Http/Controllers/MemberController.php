@@ -14,6 +14,9 @@ use App\Mail\WelcomeEmail;
 
 class MemberController extends Controller
 {
+
+    /* TODO // hardcoded member in RegisteredUserController 
+    */
     public function store(Request $request)
     {
         // Validate the request
@@ -32,15 +35,12 @@ class MemberController extends Controller
         DB::beginTransaction();
 
         try {
-              // Generate a random password
               $password = Str::random(10); // You can set the desired length
-
-              // Create a new user associated with the member
+            // hardcoded member in RegisteredUserController 
               $user = User::create([
                   'name' => $request->name,
                   'email' => $request->email,
                   'password' => bcrypt($password), // Hash the generated password
-                  // Include any other fields necessary for the user
               ]);
               
             // Create a new member
