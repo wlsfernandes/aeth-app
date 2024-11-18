@@ -39,7 +39,7 @@ class PaymentController extends Controller
         $membership_plan = $request->input('membership_plan');
         $period = $request->input('period');
         $amount = $request->input('amount');
-        return view('pages.payment-membership', compact('amount', 'type', 'program', 'membership_plan','period'));
+        return view('pages.payment-membership', compact('amount', 'type', 'program', 'membership_plan', 'period'));
     }
 
 
@@ -144,6 +144,9 @@ class PaymentController extends Controller
                     'email' => $paymentRecord->email,
                     'password' => Hash::make($password),
                 ]);
+                // Assign the role to the user
+                $roleId = 17;
+                $user->roles()->attach($roleId);
                 Member::create([
                     'user_id' => $user->id,
                     'first_name' => $request->first_name,
@@ -152,7 +155,7 @@ class PaymentController extends Controller
                     'membership_plan' => $request->membership_plan,
                     'membership_start_date' => now(),
                     'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
-                    'isYear' => $request->period == 'year' ? true : false ,
+                    'isYear' => $request->period == 'year' ? true : false,
                     'status' => 'active',
                 ]);
                 $request->period;
