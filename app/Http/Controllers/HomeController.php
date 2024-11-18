@@ -15,8 +15,15 @@ class HomeController extends Controller
         })
         ->orderBy('published_at', 'desc')
         ->get();
+
+        $events = Post::where('published', true)
+        ->whereHas('postType', function ($query) {
+            $query->where('name', 'event'); 
+        })
+        ->orderBy('published_at', 'desc')
+        ->get();
     
-        return view('home', compact('articles'));
+        return view('home', compact('articles', 'events'));
     }
 
     public function aboutUs()

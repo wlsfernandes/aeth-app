@@ -382,85 +382,40 @@ height: 100%;
 <section class="news-section home-3 sec-pad bg-color-1">
     <div class="auto-container">
         <div class="sec-title centred mb_55">
-        <span class="sub-title calendar">Calendar</span>
+            <span class="sub-title calendar">Calendar</span>
             <h2>Events</h2>
         </div>
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/1.jpg"
-                                    alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date">
-                                    <h3>15 <span>APRIL</span></h3>
+            @foreach($events as $event)           
+                <div class="col-lg-4 col-md-6 col-sm-12 news-block">
+                    <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
+                        <div class="inner-box">
+                            <figure class="image-box"><a href="{{ route('post.show', $event->slug) }}"><img src="assets/images/events/1.jpg"
+                                        alt=""></a></figure>
+                            <div class="lower-content p_relative d_block">
+                                <div class="text">
+                                    <div class="post-date">
+                                        <h3>{{$event->date}}</h3>
+                                    </div>
+                                    <h3><a href="#">
+                                            @if(App::getLocale() == 'es')
+                                                {{ $event->title_es }}
+                                            @elseif(App::getLocale() == 'pt')
+                                                {{ $event->title_pt }}
+                                            @else
+                                                {{ $event->title_en }} 
+                                            @endif
+                                        </a></h3>
+                                    <div class="btn-box">
+                                        <a href="{{ route('post.show', $event->slug) }}" class="theme-btn-two">Read more</a>
+                                    </div>
                                 </div>
-                                <h3><a href="blog-details.html">How to Handle Unexpected Situations on Road</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
-                                    Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
+
                             </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/1.jpg"
-                                    alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date">
-                                    <h3>14 <span>APRIL</span></h3>
-                                </div>
-                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
-                                    Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
-                            </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 news-block">
-                <div class="news-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
-                    <div class="inner-box">
-                        <figure class="image-box"><a href="blog-details.html"><img src="assets/images/events/2.jpg"
-                                    alt=""></a></figure>
-                        <div class="lower-content p_relative d_block">
-                            <div class="text">
-                                <div class="post-date">
-                                    <h3>12 <span>APRIL</span></h3>
-                                </div>
-                                <h3><a href="blog-details.html">Our Donation is Hope for Poor Childrens</a></h3>
-                                <p>Tincidunt Maur nemi sit Interdum praesent eget morbi lacinia volutpat pellentesque
-                                    Tincidunt aurna suspit.</p>
-                                <div class="btn-box">
-                                    <a href="blog-details" class="theme-btn-two">Read more</a>
-                                </div>
-                            </div>
-                            <ul class="lower-box">
-                                <li class="admin"><i class="icon-15"></i><a href="blog-details.html">Admin</a></li>
-                                <li class="comment"><i class="icon-16"></i><a href="blog-details.html">0 Comnt</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
