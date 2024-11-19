@@ -9,7 +9,7 @@ use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PostController;
-use Intervention\Image\Facades\Image;
+use App\Http\Controllers\CertificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -77,21 +77,9 @@ Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('may
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
-Route::get('/image', function () {
-    $imagePath = public_path('certificates/AETH_Membership.png');
 
-    if (!file_exists($imagePath)) {
-        abort(404, 'Image file not found');
-    }
-    $img = Image::make($imagePath)->resize(300, 200);
-    $savePath = public_path('bar.jpg');
-    if (is_writable(public_path())) {
-        $img->save($savePath);
-        return response()->json(['success' => 'Image saved to ' . $savePath]);
-    } else {
-        return response()->json(['error' => 'Unable to write to directory'], 500);
-    }
-});
+Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
+
 
 /**********************************************  Payments */
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
@@ -118,4 +106,21 @@ Route::middleware('auth')->group(function () {
 
 });
 
+/*
+Route::get('/image', function () {
+    $imagePath = public_path('certificates/AETH_Membership.png');
+
+    if (!file_exists($imagePath)) {
+        abort(404, 'Image file not found');
+    }
+    $img = Image::make($imagePath)->resize(300, 200);
+    $savePath = public_path('bar.jpg');
+    if (is_writable(public_path())) {
+        $img->save($savePath);
+        return response()->json(['success' => 'Image saved to ' . $savePath]);
+    } else {
+        return response()->json(['error' => 'Unable to write to directory'], 500);
+    }
+});
+*/
 require __DIR__ . '/auth.php';

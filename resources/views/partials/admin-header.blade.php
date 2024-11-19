@@ -147,6 +147,13 @@
                                             <i class="bi bi-basket3" style="font-size: 25px;"></i> Bookstore
                                         </a>
                                     </li>
+                                    <li class="cart-box"
+                                        style="display: flex; align-items: center; margin-right: 15px;">
+                                        <a href="{{ route('certification') }}"
+                                            style="font-size: 14px; display: flex; align-items: center;">
+                                            <i class="bi bi-award" style="font-size: 25px;"></i> AETH Certification
+                                        </a>
+                                    </li>
                                     <li class="cart-box" style="display: flex; align-items: center;">
                                         <form action="{{ route('logout') }}" method="POST"
                                             style="display: flex; align-items: center; margin: 0;">
