@@ -57,7 +57,7 @@ Route::get('/bookstore', [HomeController::class, 'bookstore'])->name('bookstore'
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
-Route::post('/members', [MemberController::class, 'store'])->name('members.store');
+Route::post('/members', [HomeController::class, 'store'])->name('members.store');
 
 
 Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
@@ -79,18 +79,26 @@ Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
+Route::get('/renew', [HomeController::class, 'renew'])->name('renew');
 
 
 /**********************************************  Payments */
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
+
 Route::get('/payment-membership', [PaymentController::class, 'showMembershipPaymentForm'])->name('payment-membership');
+
 Route::post('/payment', [PaymentController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
+
+Route::post('/payment', [PaymentController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
+
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
 Route::post('/handle-payment', [PaymentController::class, 'handlePayment']);
 Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
+
+Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
 
 
 

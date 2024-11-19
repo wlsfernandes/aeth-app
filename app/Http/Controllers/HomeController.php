@@ -128,6 +128,10 @@ class HomeController extends Controller
     {
         return view('pages.test');
     }
+    public function renew()
+    {
+        return view('pages.renew');
+    }
 
 
 }

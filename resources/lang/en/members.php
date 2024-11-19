@@ -33,4 +33,15 @@ return [
     '100' => '$100 a year',
     '20' => '$20 a month',
     '200' => '$200 a year',
+
+    'renew'=> 
+    [
+    'p1' => 'Do you want to renew your membership?',
+    'p2' => 'Renew your membership today and keep accessing exclusive theology content created just for you!',
+    'p3' => 'Or do you want to hoose a new AETH membership Plan',
+    'p4' => 'Choose another plan and continue enjoying all the exclusive theological content!',
+    'p5' => 'Renew',
+    'p6' => 'New Plan',
+    ],
+
 ];

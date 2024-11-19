@@ -32,6 +32,47 @@ class PaymentController extends Controller
         return view('pages.payment-membership', compact('amount'));
     }
 
+    public function membershipRedirectRenewPayment(Request $request)
+    {
+        $type = 'Membership';
+        $program = 'AETH';
+        $membership_plan = $request->input('membership_plan');
+        $period = null;
+        $amount = null;
+        switch ($membership_plan) {
+
+            case 'institutional_year':
+                $amount = 200.00;
+                $period = 'year';
+                break;
+            case 'individual_year':
+                $amount = 100.00;
+                $period = 'year';
+                break;
+            case 'student_year':
+                $amount = 50.00;
+                $period = 'year';
+                break;
+            case 'institutional_month':
+                $amount = 20.00;
+                $period = 'month';
+                break;
+            case 'individual_month':
+                $amount = 10.00;
+                $period = 'month';
+                break;
+            case 'student_month':
+                $amount = 5.00;
+                $period = 'month';
+                break;
+            default:
+                $amount = 200.00;
+                $period = 'year';
+                break;
+
+        }
+        return view('pages.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period'));
+    }
     public function membershipRedirectPayment(Request $request)
     {
         $type = 'Membership';
@@ -186,7 +227,63 @@ class PaymentController extends Controller
         }
     }
 
+    public function handleMembershipRenewPayment(Request $request)
+    {
 
+        DB::beginTransaction();
+
+        try {
+            $paymentResult = $this->_processPayment($request);
+
+            if ($paymentResult['status'] === 'success') {
+                $paymentRecord = $paymentResult['paymentRecord'];
+                $password = Str::random(10);
+                $user = User::create([
+                    'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
+                    'email' => $paymentRecord->email,
+                    'password' => Hash::make($password),
+                ]);
+                // Assign the role to the user
+                $roleId = 17;
+                $user->roles()->attach($roleId);
+                Member::create([
+                    'user_id' => $user->id,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'email' => $paymentRecord->email,
+                    'membership_plan' => $request->membership_plan,
+                    'membership_start_date' => now(),
+                    'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                    'isYear' => $request->period == 'year' ? true : false,
+                    'status' => 'active',
+                ]);
+                $request->period;
+                Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+                DB::commit();
+                Session::flash('success', 'Payment and membership creation successful!');
+                return redirect()->route('payment-membership');
+            } elseif ($paymentResult['status'] === 'error') {
+                DB::rollBack();
+                ErrorLog::create([
+                    'error_message' => $paymentResult['message'],
+                    'stack_trace' => 'payment result error ',
+                    'error_code' => 'payment_processing_error',
+                ]);
+                Session::flash('error', $paymentResult['message']);
+                return redirect()->route('payment-membership');
+            }
+
+        } catch (Exception $e) {
+            DB::rollBack();
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => '02 - Membership Payment Error',
+            ]);
+            Session::flash('error', 'An error occurred during the payment process.');
+            return redirect()->route('payment');
+        }
+    }
 
     public function _processPayment(Request $request)
     {
