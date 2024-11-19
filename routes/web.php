@@ -89,7 +89,7 @@ Route::get('/payment-membership', [PaymentController::class, 'showMembershipPaym
 
 Route::post('/payment', [PaymentController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
 
-Route::post('/payment', [PaymentController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
+Route::post('/renew-payment', [PaymentController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
 
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 
