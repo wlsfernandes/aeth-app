@@ -21,7 +21,7 @@ class CertificationController extends Controller
         $fontSize2 = 40;
         $fontColor = '#000000';
         $name = !empty($member->last_name) && !empty($member->first_name) ? $member->first_name . ' ' . $member->last_name : (!empty($user->name) ? $user->name : '');
-        $membershipInfo = !empty($member) ? 'Member ID: ' . $member->id . 'Expiration Date: ' . $member->membership_end_date : 'Member ID 98765  Expiration Date: 18/11/2025'; 
+        $membershipInfo = !empty($member) ? 'Member ID: ' . $member->id . '   Expiration Date: ' . $member->membership_end_date : 'Member ID 98765  Expiration Date: 18/11/2025'; 
         // Membership No. 13139 Valid from 11/14/2024 to 11/14/2025
         $img->text($name ?? '', $img->width() / 2, $img->height() / 2, function ($font) use ($fontSize, $fontColor) {
             $font->file(public_path('assets/fonts/arial.ttf'));
