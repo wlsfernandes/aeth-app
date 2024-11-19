@@ -1,0 +1,15 @@
+name: somosAETH
+services:
+  - name: php-service
+    github:
+      repo: https://github.com/wlsfernandes/aeth-app  # Replace with your GitHub repo
+      branch: main           # Replace with your branch name (usually 'main' or 'master')
+    build:
+      envs:
+        - key: "INSTALL_PHP_GD_SCRIPT"
+          value: "/app/install_php_gd.sh"  # Path to your script in the root of the repo
+    environment_slug: php-8.3  # Replace with the appropriate PHP version
+    instance_size_slug: basic  # Define your instance size (can be adjusted as needed)
+    routes:
+      - path: /
+        preserve_path: true
