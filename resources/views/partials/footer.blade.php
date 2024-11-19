@@ -21,12 +21,13 @@
         <div class="footer-top">
             <figure class="footer-logo"><a href="index.php"><img src="assets/images/logo-3.png" alt=""></a></figure>
             <ul class="social-links">
-                <li><a href="index.php"><i class="fab fa-facebook-f"></i></a></li>
-                <li><a href="index.php"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="index.php"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="http://www.facebook.com/groups/somosaeth/" target="blank"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="https://www.instagram.com/aeth_org/" target="blank"><i class="fab fa-instagram"></i></a></li>
+                <li><a href="https://vimeo.com/aeth" target="blank"><i class="fab fa-vimeo"></i></a></li>
+                <li><a href="https://wa.me/14077546863" target="blank"><i class="fab fa-whatsapp"></i></a></li>
             </ul>
         </div>
-        <div class="widget-section">
+     <!--   <div class="widget-section">
             <div class="row clearfix">
 
                 <div class="col-lg-3 col-md-6 col-sm-12 footer-column">
@@ -77,7 +78,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="footer-bottom centred">
             <div class="copyright">
                 <p><small>Copyright <span id="currentYear"></span> by <a href="https://devpromaster.com"
