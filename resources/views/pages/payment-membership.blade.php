@@ -36,7 +36,7 @@
                 </ul>
             </div>
         @endif
-        <div class="card">
+        <div class="card" style="margin-bottom: 100px;">
             <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                 <div class="card">
