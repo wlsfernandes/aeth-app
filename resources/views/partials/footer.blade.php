@@ -16,7 +16,7 @@
 
 </body>
 
-<div class="container d-flex flex-column justify-content-between" style="min-height: 100vh;">
+<footer class="main-footer" style="min-height: 100vh;">
     <div class="auto-container">
         <div class="footer-top">
             <figure class="footer-logo"><a href="index.php"><img src="assets/images/logo-3.png" alt=""></a></figure>
