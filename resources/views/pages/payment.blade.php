@@ -29,7 +29,6 @@
                 <div class="alert alert-danger" role="alert">
                     <ul>
                         @foreach ($errors->all() as $error)
-                            {{-- Skip the email error to avoid duplicate --}}
                             @if ($error !== $errors->first('email'))
                                 <li><i class="bx bx-error"></i> {{ $error }}</li>
                             @endif

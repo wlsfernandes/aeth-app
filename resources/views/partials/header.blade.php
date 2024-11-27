@@ -141,7 +141,8 @@
                                             </li>
                                             <li><a href="{{ route('events') }}">@lang('header.events')</a></li>
                                             <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
-                                            <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a></li>
+                                            <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a>
+                                            </li>
                                             <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                         </ul>
                                     </li>
@@ -166,13 +167,16 @@
                                         <a href="#" class="dropdown-title"
                                             style="pointer-events: none;">@lang('header.programs')</a>
                                         <ul>
-                                            <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
+                                            <li><a href="https://gonzalezcenter.org"
+                                                    target="blank">@lang('header.gonzalez_center')</a>
+                                            </li>
                                             <li><a
-                                                    href="https://gonzalezcenter.org" target="blank">@lang('header.resource_center')</a>
+                                                    href="{{ route('capacityBuilding') }}">@lang('header.capacity_building')</a>
                                             </li>
                                             <li><a
                                                     href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
                                             </li>
+                                            <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
                                         </ul>
                                     </li>
 
@@ -191,7 +195,8 @@
                                         </ul>
                                     </li>
                                     <li class="current">
-                                     <a href="{{ route('memberships') }}"><i class="bi bi-person"></i> @lang('header.signup_member')</a>
+                                        <a href="{{ route('memberships') }}"><i class="bi bi-person"></i>
+                                            @lang('header.signup_member')</a>
                                     </li>
 
                                 </ul>

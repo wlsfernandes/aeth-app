@@ -10,19 +10,19 @@ class HomeController extends Controller
     public function index()
     {
         $articles = Post::where('published', true)
-        ->whereHas('postType', function ($query) {
-            $query->where('name', 'article'); 
-        })
-        ->orderBy('published_at', 'desc')
-        ->get();
+            ->whereHas('postType', function ($query) {
+                $query->where('name', 'article');
+            })
+            ->orderBy('published_at', 'desc')
+            ->get();
 
         $events = Post::where('published', true)
-        ->whereHas('postType', function ($query) {
-            $query->where('name', 'event'); 
-        })
-        ->orderBy('published_at', 'desc')
-        ->get();
-    
+            ->whereHas('postType', function ($query) {
+                $query->where('name', 'event');
+            })
+            ->orderBy('published_at', 'desc')
+            ->get();
+
         return view('home', compact('articles', 'events'));
     }
 
@@ -131,6 +131,14 @@ class HomeController extends Controller
     public function renew()
     {
         return view('pages.renew');
+    }
+    public function application()
+    {
+        return view('pages.application');
+    }
+    public function capacityBuilding()
+    {
+        return view('pages.capacity-building');
     }
 
 

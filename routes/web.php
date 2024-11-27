@@ -10,6 +10,7 @@ use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CertificationController;
+use App\Http\Controllers\CapacityBuildingController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,7 +59,8 @@ Route::get('/donations', [HomeController::class, 'donations'])->name('donations'
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
 Route::post('/members', [HomeController::class, 'store'])->name('members.store');
-
+Route::get('/capacity-building', [HomeController::class, 'capacityBuilding'])->name('capacityBuilding');
+Route::get('/capacity-building/application', [CapacityBuildingController::class, 'application'])->name('application');
 
 Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
 Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');
@@ -83,7 +85,7 @@ Route::get('/renew', [HomeController::class, 'renew'])->name('renew');
 
 
 /**********************************************  Payments */
-Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
+//Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 
 Route::get('/payment-membership', [PaymentController::class, 'showMembershipPaymentForm'])->name('payment-membership');
 

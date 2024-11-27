@@ -31,6 +31,8 @@ return [
     'last_name' => 'Last Name',
     'email'=> 'Email',
     'annual_fund' => 'Annual Fund Donation - AETH',
-    'signup_member' => 'Sign up'
+    'signup_member' => 'Sign up',
+    'capacity_building' => 'Capacity Building',
+    
 
 ];
