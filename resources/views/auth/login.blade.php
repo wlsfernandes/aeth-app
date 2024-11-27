@@ -75,7 +75,7 @@
                                         <button data-mdb-button-init data-mdb-ripple-init
                                             class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
                                             style="border-color:#4a235a">Log in</button>
-                                        <a class="text-muted" href="#!">Forgot password?</a>
+                                        <a class="text-muted" href="{{ route('password.request') }}">Forgot password?</a>
                                     </div>
 
                                 </form>

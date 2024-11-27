@@ -204,7 +204,7 @@ class PaymentController extends Controller
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful!');
-                return redirect()->route('payment-membership');
+                return redirect()->route('login');
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
                 ErrorLog::create([
