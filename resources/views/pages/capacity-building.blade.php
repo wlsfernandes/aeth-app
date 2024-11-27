@@ -36,7 +36,7 @@
         <div class="row align-items-center clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div class="image-box ml_30 mt_19">
-                    <figure class="image"><img src="assets/images/gallery/antioquia-what.jpg" alt=""></figure>
+                    <figure class="image"><img src="assets/images/gallery/cp-what.png" alt=""></figure>
                 </div>
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -74,7 +74,7 @@
             </div>
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                 <div class="image-box ml_30 mt_19">
-                    <figure class="image"><img src="assets/images/gallery/antioquia2.jpg" alt=""></figure>
+                    <figure class="image"><img src="assets/images/gallery/cp_how.jpg" alt=""></figure>
                 </div>
             </div>
         </div>
@@ -90,7 +90,7 @@
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/certification.jpg"
+                            <figure class="image"><a href="#"><img src="assets/images/gallery/principal.jpg"
                                         alt=""></a></figure>
                             <div class="category"><a href="#">@lang('programs.cp.area_1')</a></div>
                         </div>
@@ -101,7 +101,7 @@
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/teachers.jpg"
+                            <figure class="image"><a href="#"><img src="assets/images/gallery/cp_infra.png"
                                         style="width:470px;height:270px;"></a></figure>
                             <div class="category"><a href="#">@lang('programs.cp.area_2')</a></div>
                         </div>
@@ -112,7 +112,7 @@
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/meet1.jpg"
+                            <figure class="image"><a href="#"><img src="assets/images/gallery/professor.jpg"
                                         style="width:470px;height:270px;"></a></figure>
                             <div class="category"><a href="#">@lang('programs.cp.area_3')</a></div>
                         </div>
