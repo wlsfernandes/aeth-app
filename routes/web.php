@@ -86,23 +86,25 @@ Route::get('/certification', [CertificationController::class, 'generateImage'])-
 Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
 
 
-/**********************************************  Payments */
-//Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 
-Route::get('/payment-membership', [PaymentController::class, 'showMembershipPaymentForm'])->name('payment-membership');
 
-Route::post('/payment', [PaymentController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
+/**********************************************  Members **********************************************/
 
-Route::post('/renew-payment', [PaymentController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
+Route::get('/payment-membership', [MemberController::class, 'showMembershipPaymentForm'])->name('payment-membership');
+Route::post('/renew-payment', [MemberController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
+Route::post('/member-payment', [MemberController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
 
+
+/**********************************************  Members **********************************************/
+Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.show');
+Route::post('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
+Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
+Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
-
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
 Route::post('/handle-payment', [PaymentController::class, 'handlePayment']);
-Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
 
-Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
 
 
 

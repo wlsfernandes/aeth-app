@@ -2,20 +2,93 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Member;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\DB;
-use App\Models\User;
-use Exception;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Hash;
+use App\Services\PaymentService;
+use App\Models\User;
+use App\Models\Member;
+use Illuminate\Http\Request;
+
 use Illuminate\Support\Str;
 use App\Mail\WelcomeEmail;
 use App\Models\ErrorLog;
+use Session;
+use Exception;
+
+
 
 class MemberController extends Controller
 {
 
+    protected $paymentService;
+
+    
+   
+    public function showMembershipPaymentForm()
+    {
+        $amount = session('amount');
+        return view('pages.members.member-payment', compact('amount'));
+    }
+
+    public function membershipRedirectPayment(Request $request)
+    {
+        $type = 'Membership';
+        $program = 'AETH';
+        $membership_plan = $request->input('membership_plan');
+        $period = $request->input('period');
+        $amount = $request->input('amount');
+        return view('pages.members.member-payment', compact('amount', 'type', 'program', 'membership_plan', 'period'));
+    }
+
+    public function membershipRedirectRenewPayment(Request $request)
+    {
+        $type = 'Membership';
+        $program = 'AETH';
+        $membership_plan = $request->input('membership_plan');
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $email = $request->input('email');
+        $period = null;
+        $amount = null;
+       
+
+        switch ($membership_plan) {
+
+            case 'institutional_year':
+                $amount = 200.00;
+                $period = 'year';
+                break;
+            case 'individual_year':
+                $amount = 100.00;
+                $period = 'year';
+                break;
+            case 'student_year':
+                $amount = 50.00;
+                $period = 'year';
+                break;
+            case 'institutional_month':
+                $amount = 20.00;
+                $period = 'month';
+                break;
+            case 'individual_month':
+                $amount = 10.00;
+                $period = 'month';
+                break;
+            case 'student_month':
+                $amount = 5.00;
+                $period = 'month';
+                break;
+            default:
+                $amount = 200.00;
+                $period = 'year';
+                break;
+
+        }
+        return view('pages.members.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
+    }
+   
 
     public function renew()
     {
@@ -41,8 +114,11 @@ class MemberController extends Controller
 
 
 
+
+
+
     /* TODO // hardcoded member in needs to update  
-     */
+     
     public function store(Request $request)
     {
         // Validate the request
@@ -103,4 +179,5 @@ class MemberController extends Controller
             ], 500);
         }
     }
+        */
 }

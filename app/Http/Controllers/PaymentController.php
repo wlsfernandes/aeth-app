@@ -23,7 +23,7 @@ class PaymentController extends Controller
     public function showPaymentForm()
     {
         $amount = session('amount');
-        return view('pages.payment', compact('amount'));
+        return view('pages.payments.payment', compact('amount'));
     }
 
     public function showMembershipPaymentForm()
@@ -32,61 +32,7 @@ class PaymentController extends Controller
         return view('pages.payment-membership', compact('amount'));
     }
 
-    public function membershipRedirectRenewPayment(Request $request)
-    {
-        $type = 'Membership';
-        $program = 'AETH';
-        $membership_plan = $request->input('membership_plan');
-        $first_name = $request->input('first_name');
-        $last_name = $request->input('last_name');
-        $email = $request->input('email');
-        $period = null;
-        $amount = null;
-       
-
-        switch ($membership_plan) {
-
-            case 'institutional_year':
-                $amount = 200.00;
-                $period = 'year';
-                break;
-            case 'individual_year':
-                $amount = 100.00;
-                $period = 'year';
-                break;
-            case 'student_year':
-                $amount = 50.00;
-                $period = 'year';
-                break;
-            case 'institutional_month':
-                $amount = 20.00;
-                $period = 'month';
-                break;
-            case 'individual_month':
-                $amount = 10.00;
-                $period = 'month';
-                break;
-            case 'student_month':
-                $amount = 5.00;
-                $period = 'month';
-                break;
-            default:
-                $amount = 200.00;
-                $period = 'year';
-                break;
-
-        }
-        return view('pages.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
-    }
-    public function membershipRedirectPayment(Request $request)
-    {
-        $type = 'Membership';
-        $program = 'AETH';
-        $membership_plan = $request->input('membership_plan');
-        $period = $request->input('period');
-        $amount = $request->input('amount');
-        return view('pages.payment-membership', compact('amount', 'type', 'program', 'membership_plan', 'period'));
-    }
+   
 
 
     public function donationRedirectPayment(Request $request)
@@ -100,7 +46,7 @@ class PaymentController extends Controller
         if (!empty($customAmount) && $customAmount > 0) {
             $amount = $customAmount;
         }
-        return view('pages.payment', compact('amount', 'type', 'program'));
+        return view('pages.payments.payment', compact('amount', 'type', 'program'));
 
     }
 

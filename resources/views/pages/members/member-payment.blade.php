@@ -38,11 +38,11 @@
                 </div>
             @endif
             <div class="card" style="margin-bottom: 300px !important;">
-                <span><b>@lang('header.choose_payment')</b></span>
+                <span><b>@lang('header.choose_payment') - Member</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                     <div class="card">
                         <form id="payment-form"
-                            action="{{ env('APP_ENV') === 'production' ? secure_url('/handleMembershipPayment') : url('/handleMembershipPayment') }}"
+                            action="{{url('/handleMembershipPayment') }}"
                             method="POST" class="default-form">
                             @csrf
                             <div class="card-header p-0">
