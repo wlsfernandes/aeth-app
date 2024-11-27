@@ -67,7 +67,7 @@ class ProfileController extends Controller
         if (!$user) {
             return redirect()->route('login')->with('error', 'Invalid or expired token.');
         }
-        return view('auth.force-update-password', ['token' => $token]);
+        return view('auth.force-update-password', ['token' => $token, 'email' =>$user->email]);
     }
 
     public function forceUpdatePassword(Request $request)

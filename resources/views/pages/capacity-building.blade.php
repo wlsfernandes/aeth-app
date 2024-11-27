@@ -141,7 +141,6 @@
 </section>
 <section class="about-style-two pt_120">
     <div class="auto-container">
-        <h2 style="color:#4a235a"><i>@lang('programs.cp.p7'):</i></h2>
         <div class="row align-items-center clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 content-column">
                 <div class="content_block_two" style="display: flex; gap: 20px;">

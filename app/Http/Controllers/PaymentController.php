@@ -179,7 +179,8 @@ class PaymentController extends Controller
 
             if ($paymentResult['status'] === 'success') {
                 $paymentRecord = $paymentResult['paymentRecord'];
-                $password = Str::random(10);
+                // $password = Str::random(10);
+                $password = 'adminAeth2025'; // required to change in first login 
                 $user = User::create([
                     'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
                     'email' => $paymentRecord->email,

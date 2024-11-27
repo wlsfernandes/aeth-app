@@ -34,8 +34,10 @@ Route::get('/lang/{lang}', function ($lang) {
 })->name('lang.switch');
 
 Route::get('/profile/force-update-password/{token}', function ($token) {
-    return view('auth.force-update-password', ['token' => $token]);
+    $email = request('email'); // Get email from query string
+    return view('auth.force-update-password', ['token' => $token, 'email' => $email]);
 })->name('profile.update');
+
 Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
 Route::get('/', [HomeController::class, 'index']);

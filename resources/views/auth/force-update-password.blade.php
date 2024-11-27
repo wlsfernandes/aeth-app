@@ -55,17 +55,32 @@
                                     @csrf
                                     <input type="hidden" name="token" value="{{ $token }}">
 
-                                    <div>
-                                        <label for="password">New Password</label>
-                                        <input type="password" name="password" required>
+
+                                    <p style="margin-top:30px">Login</p>
+
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="hidden" name="email" value="{{ $email ?? '' }}" />
+                                        <input type="email" id="email" class="form-control" value="{{ $email ?? '' }}"
+                                            disabled />
+                                        <label class="form-label" for="email">Email</label>
                                     </div>
 
-                                    <div>
-                                        <label for="password_confirmation">Confirm New Password</label>
-                                        <input type="password" name="password_confirmation" required>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="password" class="form-control" autocomplete="new-password"  name="password"
+                                            required />
+                                        <label class="form-label" for="password">Password</label>
                                     </div>
-
-                                    <button type="submit">Update Password</button>
+                                    <div data-mdb-input-init class="form-outline mb-4">
+                                        <input type="password" id="password_confirmation" class="form-control"
+                                            name="password_confirmation" required />
+                                        <label class="form-label" for="password_confirmation">Confirmation
+                                            Password</label>
+                                    </div>
+                                    <div class="text-center pt-1 mb-5 pb-1">
+                                        <button data-mdb-button-init data-mdb-ripple-init
+                                            class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit"
+                                            style="border-color:#4a235a">Update Password</button>
+                                    </div>
                                 </form>
 
                             </div>
