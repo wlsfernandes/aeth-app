@@ -83,7 +83,7 @@ Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
-Route::get('/renew', [HomeController::class, 'renew'])->name('renew');
+Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
 
 
 /**********************************************  Payments */

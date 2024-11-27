@@ -11,12 +11,38 @@ use Exception;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Str;
 use App\Mail\WelcomeEmail;
+use App\Models\ErrorLog;
 
 class MemberController extends Controller
 {
 
+
+    public function renew()
+    {
+        try {
+            $user = User::where('email', session('user_email'))->first();
+            $member = Member::where('user_id', $user->id)->first();
+            $email = $user->email;
+            $first_name = $member->first_name;
+            $last_name = $member->last_name;
+            return view('pages.renew', compact('email', 'first_name', 'last_name'));
+
+
+        } catch (Exception $e) {
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'renew error 0171',
+            ]);
+            return redirect()->route('login')->with('error', 'Error to renew your Membership');
+        }
+    }
+
+
+
+
     /* TODO // hardcoded member in needs to update  
-    */
+     */
     public function store(Request $request)
     {
         // Validate the request
@@ -35,15 +61,15 @@ class MemberController extends Controller
         DB::beginTransaction();
 
         try {
-              $password = Str::random(10); // You can set the desired length
+            $password = Str::random(10); // You can set the desired length
             // hardcoded member in RegisteredUserController 
-              $user = User::create([
-                  'name' => $request->name,
-                  'email' => $request->email,
-                  'password' => bcrypt($password), // Hash the generated password
-              ]);
-              $roleId=17;
-              $user->roles()->attach($roleId); 
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => bcrypt($password), // Hash the generated password
+            ]);
+            $roleId = 17;
+            $user->roles()->attach($roleId);
             // Create a new member
             $member = Member::create([
                 'name' => $request->name,
@@ -54,7 +80,7 @@ class MemberController extends Controller
                 'status' => 'active',
             ]);
 
-          
+
 
             // Send an email with the auto-generated password
             Mail::to($user->email)->send(new WelcomeEmail($user, $password));

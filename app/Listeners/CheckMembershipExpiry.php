@@ -17,7 +17,9 @@ class CheckMembershipExpiry
 
         if ($member && $member->membership_end_date <= now()) {
             Auth::logout();
-            throw new MembershipExpiredException();
+
+            // Pass the user email to the exception
+            throw new MembershipExpiredException($user->email);
         }
     }
 }

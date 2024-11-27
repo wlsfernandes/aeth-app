@@ -37,8 +37,13 @@ class PaymentController extends Controller
         $type = 'Membership';
         $program = 'AETH';
         $membership_plan = $request->input('membership_plan');
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $email = $request->input('email');
         $period = null;
         $amount = null;
+       
+
         switch ($membership_plan) {
 
             case 'institutional_year':
@@ -71,7 +76,7 @@ class PaymentController extends Controller
                 break;
 
         }
-        return view('pages.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period'));
+        return view('pages.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
     }
     public function membershipRedirectPayment(Request $request)
     {
@@ -238,31 +243,25 @@ class PaymentController extends Controller
 
             if ($paymentResult['status'] === 'success') {
                 $paymentRecord = $paymentResult['paymentRecord'];
-                $password = Str::random(10);
-                $user = User::create([
-                    'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
-                    'email' => $paymentRecord->email,
-                    'password' => Hash::make($password),
-                ]);
-                // Assign the role to the user
-                $roleId = 17;
-                $user->roles()->attach($roleId);
-                Member::create([
-                    'user_id' => $user->id,
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
-                    'email' => $paymentRecord->email,
-                    'membership_plan' => $request->membership_plan,
-                    'membership_start_date' => now(),
-                    'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
-                    'isYear' => $request->period == 'year' ? true : false,
-                    'status' => 'active',
-                ]);
-                $request->period;
-                Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+
+                $user = User::where('email', $paymentRecord->email)->first();
+
+                if ($user) {
+                    Member::updateOrCreate(
+                        ['user_id' => $user->id],
+                        [
+                            'email' => $paymentRecord->email,
+                            'membership_plan' => $request->membership_plan,
+                            'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                            'isYear' => $request->period == 'year' ? true : false,
+                            'status' => 'active',
+                        ]
+                    );
+                }
                 DB::commit();
-                Session::flash('success', 'Payment and membership creation successful!');
-                return redirect()->route('payment-membership');
+                Session::flash('success', 'Congratulations ! The operation was successful!');
+                return redirect()->route('login');
+
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
                 ErrorLog::create([

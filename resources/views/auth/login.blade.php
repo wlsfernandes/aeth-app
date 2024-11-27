@@ -44,7 +44,7 @@
 
                                 @if ($errors->any())
                                     <div class="alert alert-danger">
-                                        {{ $errors->first() }}
+                                        {!! $errors->first() !!}
                                     </div>
                                 @endif
                                 <div class="text-center">

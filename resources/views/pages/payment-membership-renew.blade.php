@@ -75,31 +75,26 @@
                                     </div>
                                 </div>
                                 <input type="hidden" name="type" value="{{ old('type', $type ?? '') }}">
-                                <input type="hidden" name="program" value="{{ old('program',$program ?? '') }}">
-                                <input type="hidden" name="membership_plan" value="{{ old('membership_plan', $membership_plan ?? '') }}">
+                                <input type="hidden" name="program" value="{{ old('program', $program ?? '') }}">
+                                <input type="hidden" name="membership_plan"
+                                    value="{{ old('membership_plan', $membership_plan ?? '') }}">
                                 <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
-
+                                <input type="hidden" name="first_name" value={{  $first_name }} />
+                                <input type="hidden" name="last_name" value={{  $last_name }} />
+                                <input type="hidden" name="email" value={{  $email }} />
                                 <div class="mb-3">
 
                                     <input type="number" name="amount" id="amount"
-                                        value="{{ old('amount', number_format($amount ?? 0, 2, '.', '')) }}" class="form-control"
-                                        required min="1" step="0.01">
+                                        value="{{ old('amount', number_format($amount ?? 0, 2, '.', '')) }}"
+                                        class="form-control" required min="1" step="0.01">
 
                                 </div>
+
                                 <div class="mb-3">
-                                    <label for="name" class="form-label">@lang('header.first_name'):</label>
-                                    <input type="text" id="first_name" name="first_name" class="form-control"
-                                        placeholder="Your first name..." value="{{old('first_name')}}" required>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="name" class="form-label">@lang('header.last_name'):</label>
-                                    <input type="text" id="last_name" name="last_name" class="form-control"
-                                        placeholder="Your last name..." value="{{old('last_name')}}" required>
-                                </div>
-                                <div class="mb-3">
+
                                     <label for="email" class="form-label">@lang('header.email'):</label>
                                     <input type="email" id="email" name="email" class="form-control"
-                                        placeholder="email..." value="{{old('email')}}" required>
+                                        placeholder="email..." value="{{old('email', $email)}}" disabled>
                                 </div>
                                 <!-- Card Holder's Name -->
                                 <div class="mb-3">

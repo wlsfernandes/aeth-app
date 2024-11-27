@@ -6,13 +6,21 @@ use Exception;
 
 class MembershipExpiredException extends Exception
 {
-    public function __construct($message = 'Your membership has expired.')
+    protected $userEmail;
+
+    public function __construct($userEmail, $message = 'Your membership has expired. <a href="/renew">Click here to renew</a>.')
     {
+        $this->userEmail = $userEmail;
+        $message = "Membership expired for user: {$userEmail}. " . $message;
         parent::__construct($message);
     }
 
     public function render($request)
     {
-        return redirect()->route('login')->withErrors(['error' => $this->getMessage()]);
+        // Store the email in session
+        session()->flash('user_email', $this->userEmail);
+
+        // Redirect the user to the renew page
+        return redirect()->route('renew')->withErrors(['error' => $this->getMessage()]);
     }
 }

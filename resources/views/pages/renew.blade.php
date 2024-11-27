@@ -15,6 +15,13 @@
             <form action="{{ route('membershipRedirectRenewPayment') }}" method="POST">
                 @csrf
                 <div class="d-flex flex-column mt-3">
+                    <input type="text" value={{$email}} disabled />
+                    <input type="hidden" name="email" value={{  $email }} />
+                    <input type="hidden" name="first_name" value={{  $first_name }} />
+                    <input type="hidden" name="last_name" value={{  $last_name }} />
+                   
+                </div>
+                <div class="d-flex flex-column mt-3">
                     <select id="membership_plan" name="membership_plan" class="form-select mb-3">
                         <option value="institutional_year">$200.00 - Institutional Membership Yearly</option>
                         <option value="individual_year">$100.00 - Individual Membership Yearly</option>
