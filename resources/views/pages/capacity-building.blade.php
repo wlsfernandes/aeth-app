@@ -235,7 +235,9 @@
                     <div class="content-box" style="flex: 1; padding-right: 20px; margin-top:50px;">
                         <div>
                             <ul class="list-style-one clearfix">
-                                <li>@lang('programs.cp.req1')</li>
+                                <li>@lang('programs.cp.req1')
+                                 <a href="{{ route('memberships') }}" style="all: unset;background-color:#4a235a; border-color: #4a235a; color: #fff;"><i class="bi bi-person"></i>
+                                @lang('header.signup_member')</a></li>
                                 <li>@lang('programs.cp.req2')</li>
                                 <li>@lang('programs.cp.req3')</li>
                                 <li>@lang('programs.cp.req4')</li>
