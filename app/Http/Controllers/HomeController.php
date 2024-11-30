@@ -105,10 +105,6 @@ class HomeController extends Controller
         return view('pages.compelling_preaching');
     }
 
-    public function bookstore()
-    {
-        return view('pages.bookstore');
-    }
 
     public function donations()
     {

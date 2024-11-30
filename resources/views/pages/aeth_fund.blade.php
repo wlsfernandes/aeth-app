@@ -30,7 +30,8 @@
                                 <img src="assets/images/gallery/meet1.jpg" alt=""
                                     style="max-width: 250px; height: auto;">
                             </figure> -->
-                            <p>@lang('messages.annual_fund')</p>
+                            <p><b>@lang('messages.annual_fund')</b></p>
+                            <p>@lang('messages.annual_fund2')</p>
                         </div>
                     </div>
                 </div>

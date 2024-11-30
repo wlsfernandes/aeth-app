@@ -6,6 +6,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\DigitalCollectionController;
 use App\Http\Controllers\PaymentController;
+use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PostController;
@@ -40,6 +42,10 @@ Route::get('/profile/force-update-password/{token}', function ($token) {
 
 Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
+Route::get('/bookstore', [ProductController::class, 'bookstore'])->name('bookstore');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
 Route::get('/our-team', [HomeController::class, 'ourTeam'])->name('our_team');
@@ -56,7 +62,7 @@ Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/antioquia', [HomeController::class, 'antioquia'])->name('antioquia');
 Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name('resource_center');
 Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching'])->name('compelling_preaching');
-Route::get('/bookstore', [HomeController::class, 'bookstore'])->name('bookstore');
+
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
