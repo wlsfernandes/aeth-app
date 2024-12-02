@@ -209,7 +209,7 @@
                             <i class="icon-1"></i>
                         </li>
                         <li class="cart-box">
-                            <a href="{{ route('bookstore') }}"><i class="icon-23"></i></a>
+                            <a href="{{ route('cart.show') }}"><i class="icon-23"></i></a>
                         </li>
 
                         <a href="{{ route('login') }}" class="btn btn-primary"

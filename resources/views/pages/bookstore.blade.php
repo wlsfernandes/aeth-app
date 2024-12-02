@@ -29,7 +29,7 @@
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-3 col-md-12 col-sm-12 sidebar-side">
-                <!--    <div class="shop-sidebar">
+                <div class="shop-sidebar">
                     <div class="search-widget">
                         <div class="widget-title">
                             <h3>Search</h3>
@@ -72,8 +72,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div> 
-                </div>-->
+                    </div>
+                </div>
             </div>
             <!-- list product -->
             <div class="col-lg-9 col-md-12 col-sm-12 content-side">
@@ -90,18 +90,24 @@
                                             </figure>
 
                                             <ul class="info clearfix">
-                                                <li><a href="{{ route('product.details', $product->id) }}"><i
-                                                            class="icon-51"></i></a></li>
+                                                <li>
+                                                    <a href="{{ route('product.details', $product->id) }}">
+                                                        <i class="icon-53"></i>
+                                                    </a>
+                                                </li>
                                                 <li>
                                                     <a href="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
                                                         class="lightbox-image" data-fancybox="gallery">
-                                                        <i class="icon-52"></i>
+                                                        <div class="image-frame">
+                                                            <img src="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                                                alt="Product Image" class="product-image">
+                                                        </div>
                                                     </a>
-
                                                 </li>
                                             </ul>
                                             <div class="btn-box">
-                                                <a href="{{ route('cart.add', $product->id) }}" class="theme-btn-one">Add to
+                                                <a href="{{ route('product.details', $product->id) }}"
+                                                    class="theme-btn-one">Add to
                                                     cart</a>
                                             </div>
                                         </div>
@@ -109,13 +115,15 @@
                                             <h4><a
                                                     href="{{ route('product.details', $product->id) }}">{{ $product->name }}</a>
                                             </h4>
-                                            <ul class="rating clearfix">
-                                                @for($i = 1; $i <= 5; $i++)
-                                                    <li>
-                                                        <i class="{{ $i <= $product->rating ? 'icon-53' : 'icon-54' }}"></i>
-                                                    </li>
-                                                @endfor
-                                            </ul>
+                                            <div class="rating-box">
+                                                <ul class="rating clearfix">
+                                                    <li><i class="icon-53"></i></li>
+                                                    <li><i class="icon-53"></i></li>
+                                                    <li><i class="icon-53"></i></li>
+                                                    <li><i class="icon-53"></i></li>
+                                                    <li><i class="icon-53"></i></li>
+                                                </ul>
+                                            </div>
                                             <h5>${{ number_format($product->price, 2) }}</h5>
                                         </div>
                                     </div>
@@ -135,7 +143,27 @@
             <!-- list product -->
         </div>
     </div>
-    </div>
+    <style>
+        .image-frame {
+            width: 300px;
+            /* Set the desired width */
+            height: 370px;
+            /* Set the desired height */
+            overflow: hidden;
+            /* Hide any overflow from the image */
+            position: relative;
+            /* Ensures the image is contained within the div */
+        }
+
+        .product-image {
+            width: 100%;
+            /* Ensure the image stretches to the container width */
+            height: 100%;
+            /* Ensure the image stretches to the container height */
+            object-fit: cover;
+            /* Ensures the image covers the container without distortion */
+        }
+    </style>
 </section>
 <!-- shop-page-section end -->
 @endsection

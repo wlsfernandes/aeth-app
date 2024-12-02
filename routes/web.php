@@ -42,9 +42,14 @@ Route::get('/profile/force-update-password/{token}', function ($token) {
 
 Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
+/***************************************** BOOKSTORE ************************************************/
 Route::get('/bookstore', [ProductController::class, 'bookstore'])->name('bookstore');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cart.update');
+
+
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
