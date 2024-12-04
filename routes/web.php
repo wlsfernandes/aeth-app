@@ -107,7 +107,8 @@ Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
 Route::post('/update-cart', [CartController::class, 'updateCart']);
 Route::post('/update-cart-total', [CartController::class, 'updateCartTotal'])->name('updateCartTotal');
-Route::delete('/remove-item/{id}', [CartController::class, 'removeItem'])->name('removeItem');
+Route::post('/cart/remove', [CartController::class, 'removeItem'])->name('cart.remove');
+
 
 
 /**********************************************  Payments **********************************************/

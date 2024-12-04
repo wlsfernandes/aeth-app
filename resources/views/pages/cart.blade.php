@@ -121,5 +121,33 @@
         updateCart();
         document.getElementById('checkout-form').submit();
     }
+
+
+    function removeItem(id) {
+        fetch('/cart/remove', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content // Ensure CSRF token is included
+            },
+            body: JSON.stringify({ id: id })
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Remove the row from the table
+                    const row = document.querySelector(`#cart-body tr[data-id="${id}"]`);
+                    if (row) row.remove();
+
+                    // Update the cart totals
+                    updateCart();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => console.error('Error removing item:', error));
+    }
+
+
 </script>
 @endsection

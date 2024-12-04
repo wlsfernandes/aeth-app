@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
 
-public function showCart()
+    public function showCart()
     {
         $cart = session()->get('cart', []);
         return view('pages.cart', compact('cart'));
@@ -58,6 +58,33 @@ public function showCart()
         return response()->json([
             'success' => true,
             'itemSubtotal' => $itemSubtotal,
+            'cartSubtotal' => $cartSubtotal,
+            'cartTotal' => $cartTotal,
+        ]);
+    }
+    public function removeItem(Request $request)
+    {
+        $cart = session('cart', []); // Assuming the cart is stored in the session
+        $id = $request->input('id');
+
+        if (!isset($cart[$id])) {
+            return response()->json(['success' => false, 'message' => 'Item not found in cart.']);
+        }
+
+        // Remove the item
+        unset($cart[$id]);
+
+        // Save the updated cart back to the session
+        session(['cart' => $cart]);
+
+        // Calculate new subtotals and totals
+        $cartSubtotal = array_sum(array_map(function ($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+        $cartTotal = $cartSubtotal; // Add additional calculations for discounts if needed
+
+        return response()->json([
+            'success' => true,
             'cartSubtotal' => $cartSubtotal,
             'cartTotal' => $cartTotal,
         ]);
