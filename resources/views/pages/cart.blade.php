@@ -17,6 +17,8 @@
                             <tr>
                                 <th>&nbsp;</th>
                                 <th class="prod-column">Product</th>
+                                <th>&nbsp;</th>
+                                <th>&nbsp;</th>
                                 <th class="price">Price</th>
                                 <th class="quantity">Quantity</th>
                                 <th>Subtotal</th>
@@ -33,18 +35,24 @@
                                     <td class="prod-column">
                                         <div class="prod-thumb">
                                             <img src="{{ isset($item['image']) && $item['image'] ? asset('assets/images/shop/' . $item['image']) : asset('assets/images/shop/no_image.jpg') }}"
-                                                alt="{{ $item['name'] ?? 'Product' }}">
+                                                alt="{{ $item['name'] ?? 'Product' }}"
+                                                style="width: 110px; height: 100px; object-fit: cover;">
                                         </div>
                                         <div class="prod-title">
                                             {{ $item['name'] ?? 'Unnamed Product' }}
                                         </div>
                                     </td>
+                                    <td></td>
+                                    <td></td>
                                     <td class="price" data-price="{{ $item['price'] ?? 0 }}">
                                         ${{ number_format($item['price'] ?? 0, 2) }}
                                     </td>
                                     <td class="qty">
-                                        <input class="quantity-spinner" type="number" value="{{ $item['quantity'] ?? 1 }}" 
-                                            name="quantity[{{ $id }}]" data-id="{{ $id }}" min="1" onchange="updateCart()">
+                                        <div class="item-quantity">
+                                            <input class="quantity-spinner" type="number"
+                                                value="{{ $item['quantity'] ?? 1 }}" name="quantity[{{ $id }}]"
+                                                data-id="{{ $id }}" min="1" onchange="updateCart()">
+                                        </div>
                                     </td>
                                     <td class="sub-total" data-id="{{ $id }}">
                                         $<span class="item-subtotal">
@@ -113,5 +121,5 @@
         updateCart();
         document.getElementById('checkout-form').submit();
     }
-    </script>
+</script>
 @endsection
