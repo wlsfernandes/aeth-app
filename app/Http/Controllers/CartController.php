@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class CartController extends Controller
 {
 
-    public function showCart()
+public function showCart()
     {
         $cart = session()->get('cart', []);
         return view('pages.cart', compact('cart'));

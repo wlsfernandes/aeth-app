@@ -33,6 +33,11 @@ return [
     'annual_fund' => 'Annual Fund Donation - AETH',
     'signup_member' => 'Sign up',
     'capacity_building' => 'Capacity Building',
-    
+    'personal_data' => 'Personal Information',
+    'address' => 'Address Information',
+    'address_complement' => 'Complement',
+    'city' => 'City',
+    'state' => 'State',
+    'zipcode' => 'zipcode',
 
 ];

@@ -40,9 +40,7 @@
                 <span><b>@lang('header.choose_payment')</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                     <div class="card">
-                        <form id="payment-form"
-                            action="{{ env('APP_ENV') === 'production' ? secure_url('/handle-payment') : url('/handle-payment') }}"
-                            method="POST" class="default-form">
+                        <form id="payment-form" action="{{route('cartPayment')  }}" method="POST" class="default-form">
                             @csrf
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
@@ -75,10 +73,6 @@
                                                 style="width: 30px; height: auto; margin-right: 5px;">
                                         </div>
                                     </div>
-                                    <input type="hidden" name="type" value="{{ $type ?? '' }}">
-                                    <input type="hidden" name="program" value="{{ $program ?? '' }}">
-                                    <input type="hidden" name="membership_plan" value="{{ $membership_plan ?? '' }}">
-                                    <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
 
                                     <div class="mb-3">
 
@@ -88,12 +82,12 @@
 
                                     </div>
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">@lang('header.first_name'):</label>
+                                        <label for="first_name" class="form-label">@lang('header.first_name'):</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
                                             placeholder="Your first name..." required>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="name" class="form-label">@lang('header.last_name'):</label>
+                                        <label for="last_name" class="form-label">@lang('header.last_name'):</label>
                                         <input type="text" id="last_name" name="last_name" class="form-control"
                                             placeholder="Your last name..." required>
                                     </div>
@@ -101,6 +95,29 @@
                                         <label for="email" class="form-label">@lang('header.email'):</label>
                                         <input type="email" id="email" name="email" class="form-control"
                                             placeholder="email..." required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address" class="form-label">@lang('header.address'):</label>
+                                        <input type="text" id="address" name="address" class="form-control"
+                                            placeholder="Your address..." required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="address_complement"
+                                            class="form-label">@lang('header.address_complement'):</label>
+                                        <input type="text" id="address_complement" name="address_complement"
+                                            class="form-control" placeholder="Apt | Building ...">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="city" class="form-label">@lang('header.city'):</label>
+                                        <input type="text" id="city" name="city" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="state" class="form-label">@lang('header.state'):</label>
+                                        <input type="text" id="state" name="state" class="form-control" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
+                                        <input type="text" id="zipcode" name="zipcode" class="form-control" required>
                                     </div>
                                     <!-- Card Holder's Name -->
                                     <div class="mb-3">
@@ -168,9 +185,9 @@
         </div>
     </div>
 
-   <!-- STRIPE PAYMENT -->
-   @include('stripe.script') 
-  <!-- STRIPE PAYMENT -->  
-   
+    <!-- STRIPE PAYMENT -->
+    @include('stripe.script') 
+    <!-- STRIPE PAYMENT -->
+
 </section>
 @endsection

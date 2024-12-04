@@ -58,8 +58,7 @@
                                 <p>{{ $product->description ?? ''}}</p>
                                 <div class="addto-cart-box p_relative d_block mb_25">
                                     <ul class="clearfix">
-                                        <li class="item-quantity p_relative d_block float_left mr_10"><input
-                                                class="quantity-spinner" type="text" value="1" name="quantity"></li>
+
                                         <li class="p_relative d_block float_left mr_10">
                                             <div class="btn-box">
                                                 <form action="{{ route('cart.add', $product->id) }}" method="POST">
@@ -69,20 +68,31 @@
                                             </div>
 
                                         </li>
-                                        <li class="like-box p_relative d_block float_left"><a href="shop-details.html"
+
+                                        <li class="like-box p_relative d_block float_left"><a
+                                                href="{{ route('cart.show') }}"
                                                 class="d_iblock p_relative fs_20 lh_55 w_50 h_50 centred b_radius_50"><i
-                                                    class="icon-51"></i></a></li>
+                                                    class="icon-23"></i></a> My Cart</li>
                                     </ul>
                                 </div>
-                                <div class="other-option">
+                                <div class="addto-cart-box p_relative d_block mb_25">
+                                    <ul class="clearfix">
+
+                                        <div class="btn-box">
+                                            <form action="{{ route('bookstore') }}" method="GET">
+                                                @csrf <!-- Add CSRF token for security -->
+                                                <button type="submit" class="theme-btn-one">Bookstore</button>
+                                            </form>
+                                        </div>
+                                    </ul>
+                                </div>
+                               <!-- <div class="other-option">
                                     <ul class="list clearfix">
-                                        <li><span>Category: </span> <a href="shop-details.html"> Chicken</a>, <a
-                                                href="shop-details.html">Launch</a></li>
-                                        <li><span>Tags:</span> <a href="shop-details.html">Healthy</a>, <a
-                                                href="shop-details.html">Organic</a>, <a
-                                                href="shop-details.html">Chicken</a></li>
+                                        <li><span>Category: </span> <a href=""> Chicken</a>, <a href="">Launch</a></li>
+                                        <li><span>Tags:</span> <a href="">Healthy</a>, <a href="">Organic</a>, <a
+                                                href="">Chicken</a></li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </div>
@@ -152,7 +162,7 @@
                                                         class="far fa-star"></i></li>
                                             </ul>
                                         </div>
-                                        <form action="shop-details.html" method="post"
+                                        <form action="" method="post"
                                             class="comment-form default-form">
                                             <div class="row clearfix">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 form-group mb_15">
@@ -196,16 +206,16 @@
                                     <div class="image-box">
                                         <figure class="image"><img src="assets/images/shop/shop-1.png" alt=""></figure>
                                         <ul class="info clearfix">
-                                            <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
+                                            <li><a href=""><i class="icon-51"></i></a></li>
                                             <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
                                                     data-fancybox="gallery"><i class="icon-52"></i></a></li>
                                         </ul>
                                         <div class="btn-box">
-                                            <a href="shop-details.html" class="theme-btn-one">Add to cart</a>
+                                            <a href="" class="theme-btn-one">Add to cart</a>
                                         </div>
                                     </div>
                                     <div class="lower-content">
-                                        <h4><a href="shop-details.html">Wooden Tea Table</a></h4>
+                                        <h4><a href="">Wooden Tea Table</a></h4>
                                         <ul class="rating clearfix">
                                             <li><i class="icon-53"></i></li>
                                             <li><i class="icon-53"></i></li>
@@ -224,16 +234,16 @@
                                     <div class="image-box">
                                         <figure class="image"><img src="assets/images/shop/shop-2.png" alt=""></figure>
                                         <ul class="info clearfix">
-                                            <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
+                                            <li><a href=""><i class="icon-51"></i></a></li>
                                             <li><a href="assets/images/shop/shop-2.png" class="lightbox-image"
                                                     data-fancybox="gallery"><i class="icon-52"></i></a></li>
                                         </ul>
                                         <div class="btn-box">
-                                            <a href="shop-details.html" class="theme-btn-one">Add to cart</a>
+                                            <a href="" class="theme-btn-one">Add to cart</a>
                                         </div>
                                     </div>
                                     <div class="lower-content">
-                                        <h4><a href="shop-details.html">White Lamp Handcraft</a></h4>
+                                        <h4><a href="">White Lamp Handcraft</a></h4>
                                         <ul class="rating clearfix">
                                             <li><i class="icon-53"></i></li>
                                             <li><i class="icon-53"></i></li>
@@ -252,16 +262,16 @@
                                     <div class="image-box">
                                         <figure class="image"><img src="assets/images/shop/shop-3.png" alt=""></figure>
                                         <ul class="info clearfix">
-                                            <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
+                                            <li><a href=""><i class="icon-51"></i></a></li>
                                             <li><a href="assets/images/shop/shop-3.png" class="lightbox-image"
                                                     data-fancybox="gallery"><i class="icon-52"></i></a></li>
                                         </ul>
                                         <div class="btn-box">
-                                            <a href="shop-details.html" class="theme-btn-one">Add to cart</a>
+                                            <a href="" class="theme-btn-one">Add to cart</a>
                                         </div>
                                     </div>
                                     <div class="lower-content">
-                                        <h4><a href="shop-details.html">Armchair Black Leather</a></h4>
+                                        <h4><a href="">Armchair Black Leather</a></h4>
                                         <ul class="rating clearfix">
                                             <li><i class="icon-53"></i></li>
                                             <li><i class="icon-53"></i></li>
@@ -295,12 +305,12 @@
                             <h3>Categories</h3>
                         </div>
                         <ul class="category-list clearfix">
-                            <li><a href="shop-details.html">Decor</a></li>
-                            <li><a href="shop-details.html">Furnitures</a></li>
-                            <li><a href="shop-details.html">Clothing</a></li>
-                            <li><a href="shop-details.html">Electronics</a></li>
-                            <li><a href="shop-details.html">Accessories</a></li>
-                            <li><a href="shop-details.html">Uncategories</a></li>
+                            <li><a href="">Decor</a></li>
+                            <li><a href="">Furnitures</a></li>
+                            <li><a href="">Clothing</a></li>
+                            <li><a href="">Electronics</a></li>
+                            <li><a href="">Accessories</a></li>
+                            <li><a href="">Uncategories</a></li>
                         </ul>
                     </div>
                     <div class="filter-widget">

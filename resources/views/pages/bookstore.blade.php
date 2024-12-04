@@ -11,7 +11,7 @@
 
 @section('content') 
 <!-- Page Title -->
-<section class="page-title centred">
+<!--<section class="page-title centred">
     <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);"></div>
     <div class="auto-container">
         <div class="content-box">
@@ -22,7 +22,7 @@
             </ul>
         </div>
     </div>
-</section>
+</section> -->
 <!-- End Page Title -->
 <!-- shop-page-section -->
 <section class="shop-page-section">
@@ -46,33 +46,12 @@
                             <h3>Categories</h3>
                         </div>
                         <ul class="category-list clearfix">
-                            <li><a href="shop-details.html">Decor</a></li>
-                            <li><a href="shop-details.html">Furnitures</a></li>
-                            <li><a href="shop-details.html">Clothing</a></li>
-                            <li><a href="shop-details.html">Electronics</a></li>
-                            <li><a href="shop-details.html">Accessories</a></li>
-                            <li><a href="shop-details.html">Uncategories</a></li>
+                            @foreach ($categorys as $category)
+                                <li><a href="">{{$category->name ?? ''}}</a></li>
+                            @endforeach
                         </ul>
                     </div>
-                    <div class="filter-widget">
-                        <div class="widget-title">
-                            <h3>Filter by Price</h3>
-                        </div>
-                        <div class="range-slider clearfix p_relative">
-                            <div class="price-range-slider"></div>
-                            <div class="clearfix">
-                                <div class="pull-left">
-                                    <button class="filter-btn theme-btn-one">Filter</button>
-                                </div>
-                                <div class="pull-right mt_8">
-                                    <p>Price:</p>
-                                    <div class="title p_relative d_iblock"></div>
-                                    <div class="input p_relative d_iblock"><input type="text" class="property-amount"
-                                            name="field-name" readonly=""></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+
                 </div>
             </div>
             <!-- list product -->
@@ -107,8 +86,7 @@
                                             </ul>
                                             <div class="btn-box">
                                                 <a href="{{ route('product.details', $product->id) }}"
-                                                    class="theme-btn-one">Add to
-                                                    cart</a>
+                                                    class="theme-btn-one">View Details</a>
                                             </div>
                                         </div>
                                         <div class="lower-content">

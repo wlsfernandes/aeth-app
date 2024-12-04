@@ -1,20 +1,28 @@
 <?php
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Str;
+use Stripe\PaymentIntent;
+use Stripe\Stripe;
+
+use App\Mail\WelcomeEmail;
+use App\Mail\OrderEmail;
+
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
-use Illuminate\Support\Facades\Validator;
-use Stripe\Stripe;
-use Stripe\PaymentIntent;
+use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+
+use App\Models\ErrorLog;
 use App\Models\Payment;
 use App\Models\Member;
+use App\Models\Product;
+use App\Models\Order;
 use App\Models\User;
-use App\Models\ErrorLog;
-use App\Mail\WelcomeEmail;
+
+
 use Session;
 use Exception;
 
@@ -32,7 +40,7 @@ class PaymentController extends Controller
         return view('pages.payment-membership', compact('amount'));
     }
 
-   
+
 
 
     public function donationRedirectPayment(Request $request)
@@ -48,6 +56,17 @@ class PaymentController extends Controller
         }
         return view('pages.payments.payment', compact('amount', 'type', 'program'));
 
+    }
+
+
+    public function redirectCartPayment(Request $request)
+    {
+        $amount = $request->input('amount', 0);
+        Session::put('cart_amount', $amount);
+        $type = 'bookstore';
+        $program = 'AETH';
+
+        return view('pages.payments.cart-payment', compact('amount', 'type', 'program'));
     }
 
 
@@ -230,6 +249,92 @@ class PaymentController extends Controller
             return redirect()->route('payment');
         }
     }
+
+    public function cartPayment(Request $request)
+    {
+        DB::beginTransaction();
+        try {
+            // Process the payment
+            $paymentResult = $this->_processPayment($request);
+
+            if ($paymentResult['status'] === 'success') {
+                $paymentRecord = $paymentResult['paymentRecord'];
+
+                // Create an order
+                $orderNumber = 'AETH_' . Str::uuid();
+                $order = Order::create([
+                    'order_number' => $orderNumber,
+                    'customer_name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
+                    'customer_email' => $paymentRecord->email,
+                    'total' => 0, // Will calculate below
+                ]);
+
+                $total = 0;
+
+                // Handle products in the request
+                foreach ($request->products as $item) {
+                    $product = Product::find($item['id']);
+
+                    if (!$product) {
+                        throw new Exception("Product with ID {$item['id']} not found.");
+                    }
+
+                    if ($product->stock < $item['quantity']) {
+                        throw new Exception("Insufficient stock for product: {$product->name}");
+                    }
+
+                    // Deduct stock
+                    $product->decrement('stock', $item['quantity']);
+
+                    // Add to order items
+                    $order->items()->create([
+                        'product_id' => $product->id,
+                        'quantity' => $item['quantity'],
+                        'price' => $product->price,
+                    ]);
+
+                    $total += $product->price * $item['quantity'];
+                }
+
+                // Update order total
+                $order->update(['total' => $total]);
+
+                // Send confirmation email
+                Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord, $order->order_number));
+
+                // Commit transaction
+                DB::commit();
+
+                Session::flash('success', 'Your payment was processed successfully!');
+                return redirect()->route('bookstore');
+            } elseif ($paymentResult['status'] === 'error') {
+                // Rollback on error
+                DB::rollBack();
+
+                ErrorLog::create([
+                    'error_message' => $paymentResult['message'],
+                    'stack_trace' => 'Payment result error',
+                    'error_code' => 'payment_processing_error',
+                ]);
+
+                Session::flash('error', $paymentResult['message']);
+                return redirect()->route('bookstore');
+            }
+        } catch (Exception $e) {
+            // Rollback on exception
+            DB::rollBack();
+
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => '03 - Bookstore Payment Error',
+            ]);
+
+            Session::flash('error', 'An error occurred during the payment process.');
+            return redirect()->route('bookstore');
+        }
+    }
+
 
     public function _processPayment(Request $request)
     {

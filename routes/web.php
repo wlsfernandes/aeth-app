@@ -42,12 +42,7 @@ Route::get('/profile/force-update-password/{token}', function ($token) {
 
 Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
-/***************************************** BOOKSTORE ************************************************/
-Route::get('/bookstore', [ProductController::class, 'bookstore'])->name('bookstore');
-Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
-Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
-Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
-Route::post('/cart/update', [CartController::class, 'updateCart'])->name('cart.update');
+
 
 
 
@@ -105,11 +100,22 @@ Route::get('/payment-membership', [MemberController::class, 'showMembershipPayme
 Route::post('/renew-payment', [MemberController::class, 'membershipRedirectRenewPayment'])->name('membershipRedirectRenewPayment');
 Route::post('/member-payment', [MemberController::class, 'membershipRedirectPayment'])->name('membershipRedirectPayment');
 
+/***************************************** BOOKSTORE ************************************************/
+Route::get('/bookstore', [ProductController::class, 'bookstore'])->name('bookstore');
+Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
+Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
+Route::post('/update-cart', [CartController::class, 'updateCart']);
+Route::post('/update-cart-total', [CartController::class, 'updateCartTotal'])->name('updateCartTotal');
+Route::delete('/remove-item/{id}', [CartController::class, 'removeItem'])->name('removeItem');
 
-/**********************************************  Members **********************************************/
+
+/**********************************************  Payments **********************************************/
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.show');
 Route::post('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
+Route::post('/redirectCartPayment', [PaymentController::class, 'redirectCartPayment'])->name('redirectCartPayment');
+Route::post('/cartPayment', [PaymentController::class, 'cartPayment'])->name('cartPayment');
 Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
