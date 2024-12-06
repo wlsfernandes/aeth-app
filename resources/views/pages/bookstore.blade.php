@@ -56,6 +56,23 @@
             </div>
             <!-- list product -->
             <div class="col-lg-9 col-md-12 col-sm-12 content-side">
+                @if (session()->has('success'))
+                    <div class="alert alert-success" role="alert">
+                        <i class="fas fa-check-circle"></i> <!-- Success icon -->
+                        {{ session('success') }}
+                    </div>
+                @endif
+                @if ($errors->any())
+                    <div class="alert alert-danger" role="alert">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                @if ($error !== $errors->first('email'))
+                                    <li><i class="bx bx-error"></i> {{ $error }}</li>
+                                @endif
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
                 <div class="our-shop">
                     <div class="row clearfix">
                         @forelse($products as $product)

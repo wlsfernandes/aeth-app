@@ -61,14 +61,12 @@ class PaymentController extends Controller
 
     public function redirectCartPayment(Request $request)
     {
-        $amount = $request->input('amount', 0);
-        Session::put('cart_amount', $amount);
+        $amount = $request->input('amount', 0); // Total amount
+        $cartItems = session('cart', []);
         $type = 'bookstore';
         $program = 'AETH';
-
-        return view('pages.payments.cart-payment', compact('amount', 'type', 'program'));
+        return view('pages.payments.cart-payment', compact('amount', 'type', 'program', 'cartItems'));
     }
-
 
 
 
@@ -250,78 +248,70 @@ class PaymentController extends Controller
         }
     }
 
+
     public function cartPayment(Request $request)
     {
+
         DB::beginTransaction();
+
         try {
+            // Retrieve the payment method
+            $paymentMethodId = $request->input('payment_method_id');
+
             // Process the payment
             $paymentResult = $this->_processPayment($request);
 
-            if ($paymentResult['status'] === 'success') {
-                $paymentRecord = $paymentResult['paymentRecord'];
+            if ($paymentResult['status'] !== 'success') {
+                throw new Exception($paymentResult['message'], 400);
+            }
 
-                // Create an order
-                $orderNumber = 'AETH_' . Str::uuid();
-                $order = Order::create([
-                    'order_number' => $orderNumber,
-                    'customer_name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
-                    'customer_email' => $paymentRecord->email,
-                    'total' => 0, // Will calculate below
-                ]);
+            $paymentRecord = $paymentResult['paymentRecord'];
 
-                $total = 0;
+            // Calculate the total and prepare order items
+            $total = 0;
+            $orderItems = [];
 
-                // Handle products in the request
-                foreach ($request->products as $item) {
-                    $product = Product::find($item['id']);
+            // Loop through the products in the request
+            foreach ($request->input('products', []) as $item) {
+                $product = Product::findOrFail($item['id']);
 
-                    if (!$product) {
-                        throw new Exception("Product with ID {$item['id']} not found.");
-                    }
-
-                    if ($product->stock < $item['quantity']) {
-                        throw new Exception("Insufficient stock for product: {$product->name}");
-                    }
-
-                    // Deduct stock
-                    $product->decrement('stock', $item['quantity']);
-
-                    // Add to order items
-                    $order->items()->create([
-                        'product_id' => $product->id,
-                        'quantity' => $item['quantity'],
-                        'price' => $product->price,
-                    ]);
-
-                    $total += $product->price * $item['quantity'];
+                if ($product->stock < $item['quantity']) {
+                    throw new Exception("Insufficient stock for product: {$product->name}");
                 }
 
-                // Update order total
-                $order->update(['total' => $total]);
+                $total += $product->price * $item['quantity'];
 
-                // Send confirmation email
-                Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord, $order->order_number));
-
-                // Commit transaction
-                DB::commit();
-
-                Session::flash('success', 'Your payment was processed successfully!');
-                return redirect()->route('bookstore');
-            } elseif ($paymentResult['status'] === 'error') {
-                // Rollback on error
-                DB::rollBack();
-
-                ErrorLog::create([
-                    'error_message' => $paymentResult['message'],
-                    'stack_trace' => 'Payment result error',
-                    'error_code' => 'payment_processing_error',
-                ]);
-
-                Session::flash('error', $paymentResult['message']);
-                return redirect()->route('bookstore');
+                $orderItems[] = [
+                    'product_id' => $product->id,
+                    'quantity' => $item['quantity'],
+                    'price' => $product->price,
+                ];
             }
+
+            // Create the order
+            $order = Order::create([
+                'order_number' => 'AETH_' . Str::uuid(),
+                'customer_name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
+                'customer_email' => $paymentRecord->email,
+                'total' => $total,
+            ]);
+
+            // Save order items and decrement stock
+            foreach ($orderItems as $orderItem) {
+                $order->items()->create($orderItem);
+
+                Product::find($orderItem['product_id'])->decrement('stock', $orderItem['quantity']);
+            }
+
+            // Send confirmation email
+            Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord, $order->order_number));
+
+            DB::commit();
+            session()->forget('cart');
+            session()->flash('success', 'Your payment was processed successfully!');
+            return redirect()->route('bookstore');
         } catch (Exception $e) {
-            // Rollback on exception
+
             DB::rollBack();
 
             ErrorLog::create([
@@ -330,7 +320,7 @@ class PaymentController extends Controller
                 'error_code' => '03 - Bookstore Payment Error',
             ]);
 
-            Session::flash('error', 'An error occurred during the payment process.');
+            session()->flash('error', $e->getMessage());
             return redirect()->route('bookstore');
         }
     }

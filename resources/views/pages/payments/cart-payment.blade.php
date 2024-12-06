@@ -40,7 +40,7 @@
                 <span><b>@lang('header.choose_payment')</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                     <div class="card">
-                        <form id="payment-form" action="{{route('cartPayment')  }}" method="POST" class="default-form">
+                        <form id="payment-form" action="{{ route('cartPayment')  }}" method="POST" class="default-form">
                             @csrf
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
@@ -144,6 +144,19 @@
                                     </div>
 
                                     <input type="hidden" name="payment_method_id" id="payment-method-id">
+
+                                    @if(session('cart') && count(session('cart')) > 0)
+                                        @foreach($cartItems as $index => $product)
+                                            <input type="hidden" name="products[{{ $index }}][id]" value="{{ $product['id'] }}">
+                                            <input type="hidden" name="products[{{ $index }}][quantity]"
+                                                value="{{ $product['quantity'] }}">
+                                        @endforeach
+                                        <button type="submit" class="theme-btn-one">
+                                            Proceed to Checkout <i class="icon-74"></i>
+                                        </button>
+                                    @else
+                                        <p>Your cart is empty.</p>
+                                    @endif
 
                                     <button type="submit" id="card-button" class="btn-block mt-3"
                                         style="background-color:#330033;color:#fff;height:50px;">
