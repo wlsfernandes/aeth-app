@@ -251,7 +251,6 @@ class PaymentController extends Controller
 
     public function cartPayment(Request $request)
     {
-
         DB::beginTransaction();
 
         try {
@@ -267,25 +266,36 @@ class PaymentController extends Controller
 
             $paymentRecord = $paymentResult['paymentRecord'];
 
-            // Calculate the total and prepare order items
+            // Calculate the total and group quantities for each product
             $total = 0;
-            $orderItems = [];
-
-            // Loop through the products in the request
+            $productQuantities = [];
             foreach ($request->input('products', []) as $item) {
-                $product = Product::findOrFail($item['id']);
+                if (!isset($productQuantities[$item['id']])) {
+                    $productQuantities[$item['id']] = 0;
+                }
+                $productQuantities[$item['id']] += $item['quantity'];
+            }
 
-                if ($product->stock < $item['quantity']) {
+            // Validate stock and prepare order items
+            $orderItems = [];
+            foreach ($productQuantities as $productId => $quantity) {
+                $product = Product::findOrFail($productId);
+
+                // Check if the requested total quantity is available in stock
+                if ($product->stock < $quantity) {
                     throw new Exception("Insufficient stock for product: {$product->name}");
                 }
 
-                $total += $product->price * $item['quantity'];
+                $total += $product->price * $quantity;
 
                 $orderItems[] = [
                     'product_id' => $product->id,
-                    'quantity' => $item['quantity'],
+                    'quantity' => $quantity,
                     'price' => $product->price,
                 ];
+
+                // Decrement the stock for the product
+                $product->decrement('stock', $quantity);
             }
 
             // Create the order
@@ -296,11 +306,9 @@ class PaymentController extends Controller
                 'total' => $total,
             ]);
 
-            // Save order items and decrement stock
+            // Save order items
             foreach ($orderItems as $orderItem) {
                 $order->items()->create($orderItem);
-
-                Product::find($orderItem['product_id'])->decrement('stock', $orderItem['quantity']);
             }
 
             // Send confirmation email
@@ -311,7 +319,6 @@ class PaymentController extends Controller
             session()->flash('success', 'Your payment was processed successfully!');
             return redirect()->route('bookstore');
         } catch (Exception $e) {
-
             DB::rollBack();
 
             ErrorLog::create([
@@ -324,6 +331,7 @@ class PaymentController extends Controller
             return redirect()->route('bookstore');
         }
     }
+
 
 
     public function _processPayment(Request $request)
