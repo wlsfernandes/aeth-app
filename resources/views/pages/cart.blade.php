@@ -53,7 +53,7 @@
                                             <div class="item-quantity">
                                                 <input class="quantity-spinner" type="number"
                                                     value="{{ $item['quantity'] ?? 1 }}" name="quantity[{{ $id }}]"
-                                                    data-id="{{ $id }}" min="1" onchange="updateCart()">
+                                                    data-id="{{ $id }}" min="1" onchange="updateCart(event)">
                                             </div>
                                         </td>
                                         <td class="sub-total" data-id="{{ $id }}">
@@ -119,23 +119,39 @@
 @endif
 
 <script>
-    function updateCart() {
-        const rows = document.querySelectorAll('#cart-body tr');
-        let total = 0;
+    function updateCart(event) {
+        if (!event) return; // If event is undefined, exit early to prevent errors
 
-        rows.forEach(row => {
-            const price = parseFloat(row.querySelector('.price').dataset.price || 0);
-            const quantity = parseInt(row.querySelector('.quantity-spinner').value || 1);
-            const subtotal = price * quantity;
+        const input = event.target; // The quantity input field
+        const quantity = input.value;
+        const id = input.dataset.id;
 
-            row.querySelector('.item-subtotal').textContent = subtotal.toFixed(2);
-            total += subtotal;
-        });
+        // Send the updated quantity to the server
+        fetch('/update-cart', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+            },
+            body: JSON.stringify({ id, quantity }),
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Update the frontend with new totals
+                    const row = input.closest('tr');
+                    row.querySelector('.item-subtotal').textContent = data.itemSubtotal;
 
-        document.getElementById('cart-subtotal').textContent = total.toFixed(2);
-        document.getElementById('cart-total').textContent = total.toFixed(2);
-        document.getElementById('amount').value = total.toFixed(2);
-
+                    document.getElementById('cart-subtotal').textContent = data.cartSubtotal;
+                    document.getElementById('cart-total').textContent = data.cartTotal;
+                    document.getElementById('amount').value = data.cartTotal;
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(error => {
+                console.error('Error updating cart:', error);
+            });
     }
 
 

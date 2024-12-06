@@ -151,11 +151,7 @@
                                             <input type="hidden" name="products[{{ $index }}][quantity]"
                                                 value="{{ $product['quantity'] }}">
                                         @endforeach
-                                        <button type="submit" class="theme-btn-one">
-                                            Proceed to Checkout <i class="icon-74"></i>
-                                        </button>
-                                    @else
-                                        <p>Your cart is empty.</p>
+
                                     @endif
 
                                     <button type="submit" id="card-button" class="btn-block mt-3"
