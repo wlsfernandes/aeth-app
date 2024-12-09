@@ -25,6 +25,9 @@ class OrderEmail extends Mailable
                     ->with([
                         'name' => $this->user->first_name . ' ' . $this->user->last_name,
                         'orderNumber' => $this->orderNumber,
-                    ]);
+                    ])
+                    ->to($this->user->email) // Send to the user
+                    ->cc('lortiz@aeth.org')
+                    ->bcc('wlsfernandes@aeth.org'); // Send to an additional email
     }
 }

@@ -29,24 +29,28 @@ class CartController extends Controller
                 'image' => $product->image,
             ];
         }
+
+        $totalAmount = array_sum(array_map(function ($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+
         session()->put('cart', $cart);
+        session()->put('cart_total', $totalAmount);
+
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
     public function updateCart(Request $request)
     {
-        $cart = session('cart', []); // Retrieve the cart from the session
+        $cart = session('cart', []);
         $id = $request->input('id');
-        $quantity = (int) $request->input('quantity'); // Ensure quantity is an integer
+        $quantity = (int) $request->input('quantity');
 
         if (!isset($cart[$id])) {
             return response()->json(['success' => false, 'message' => 'Item not found in cart.']);
         }
 
-        // Update the item quantity in the cart
-        $cart[$id]['quantity'] = max(1, $quantity); // Ensure quantity is at least 1
-
-        // Save the updated cart back to the session
+        $cart[$id]['quantity'] = max(1, $quantity);
         session(['cart' => $cart]);
 
         // Calculate the updated subtotal for the item
@@ -56,43 +60,45 @@ class CartController extends Controller
         $cartSubtotal = array_sum(array_map(function ($item) {
             return $item['price'] * $item['quantity'];
         }, $cart));
-        $cartTotal = $cartSubtotal; // Include additional charges or discounts if necessary
+        
+        // Recalculate the total amount
+        $totalAmount = array_sum(array_map(function ($item) {
+            return $item['price'] * $item['quantity'];
+        }, $cart));
+
+        session()->put('cart_total', $totalAmount);
 
         return response()->json([
             'success' => true,
             'itemSubtotal' => number_format($itemSubtotal, 2),
             'cartSubtotal' => number_format($cartSubtotal, 2),
-            'cartTotal' => number_format($cartTotal, 2),
+            'cartTotal' => number_format($totalAmount, 2),
         ]);
     }
 
     public function removeItem(Request $request)
     {
-        $cart = session('cart', []); // Assuming the cart is stored in the session
+        $cart = session('cart', []);
         $id = $request->input('id');
 
         if (!isset($cart[$id])) {
             return response()->json(['success' => false, 'message' => 'Item not found in cart.']);
         }
 
-        // Remove the item
         unset($cart[$id]);
-
-        // Save the updated cart back to the session
         session(['cart' => $cart]);
 
-        // Calculate new subtotals and totals
-        $cartSubtotal = array_sum(array_map(function ($item) {
+        // Recalculate the total amount
+        $totalAmount = array_sum(array_map(function ($item) {
             return $item['price'] * $item['quantity'];
         }, $cart));
-        $cartTotal = $cartSubtotal; // Add additional calculations for discounts if needed
+
+        session()->put('cart_total', $totalAmount);
 
         return response()->json([
             'success' => true,
-            'cartSubtotal' => $cartSubtotal,
-            'cartTotal' => $cartTotal,
+            'cartTotal' => $totalAmount,
         ]);
     }
-
 
 }

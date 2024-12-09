@@ -79,9 +79,9 @@
                             <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
                                 <div class="shop-block-one">
                                     <div class="inner-box">
-                                        <div class="image-box">
+                                        <div class="image-box" style="width: 300px; height: 370px; object-fit: cover;">
                                             <figure class="image">
-                                                <img src="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                                <img src="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
                                                     alt="{{ $product->name }}">
                                             </figure>
 
@@ -92,10 +92,10 @@
                                                     </a>
                                                 </li>
                                                 <li>
-                                                    <a href="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                                    <a href="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
                                                         class="lightbox-image" data-fancybox="gallery">
                                                         <div class="image-frame">
-                                                            <img src="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                                            <img src="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
                                                                 alt="Product Image" class="product-image">
                                                         </div>
                                                     </a>
@@ -131,34 +131,31 @@
                 </div>
                 <div class="pagination-wrapper centred">
                     <ul class="pagination clearfix">
-                        {{ $products->links() }}
+                        @if ($products->onFirstPage())
+                            <li><a href="#" aria-disabled="true"><i class="icon-56"></i></a></li>
+                        @else
+                            <li><a href="{{ $products->previousPageUrl() }}"><i class="icon-56"></i></a></li>
+                        @endif
+
+                        @foreach ($products->getUrlRange(1, $products->lastPage()) as $page => $url)
+                            <li>
+                                <a href="{{ $url }}" class="{{ $products->currentPage() === $page ? 'current' : '' }}">
+                                    {{ $page }}
+                                </a>
+                            </li>
+                        @endforeach
+
+                        @if ($products->hasMorePages())
+                            <li><a href="{{ $products->nextPageUrl() }}"><i class="icon-55"></i></a></li>
+                        @else
+                            <li><a href="#" aria-disabled="true"><i class="icon-55"></i></a></li>
+                        @endif
                     </ul>
                 </div>
+                <!-- list product -->
             </div>
-            <!-- list product -->
         </div>
-    </div>
-    <style>
-        .image-frame {
-            width: 300px;
-            /* Set the desired width */
-            height: 370px;
-            /* Set the desired height */
-            overflow: hidden;
-            /* Hide any overflow from the image */
-            position: relative;
-            /* Ensures the image is contained within the div */
-        }
 
-        .product-image {
-            width: 100%;
-            /* Ensure the image stretches to the container width */
-            height: 100%;
-            /* Ensure the image stretches to the container height */
-            object-fit: cover;
-            /* Ensures the image covers the container without distortion */
-        }
-    </style>
 </section>
 <!-- shop-page-section end -->
 @endsection

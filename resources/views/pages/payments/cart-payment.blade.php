@@ -105,19 +105,22 @@
                                         <label for="address_complement"
                                             class="form-label">@lang('header.address_complement'):</label>
                                         <input type="text" id="address_complement" name="address_complement"
-                                            class="form-control" placeholder="Apt | Building ...">
+                                            class="form-control" placeholder="Apartment, suite, etc.">
                                     </div>
                                     <div class="mb-3">
                                         <label for="city" class="form-label">@lang('header.city'):</label>
-                                        <input type="text" id="city" name="city" class="form-control" required>
+                                        <input type="text" id="city" name="city" class="form-control"
+                                            placeholder="City..." required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="state" class="form-label">@lang('header.state'):</label>
-                                        <input type="text" id="state" name="state" class="form-control" required>
+                                        <input type="text" id="state" name="state" class="form-control"
+                                            placeholder="State..." required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
-                                        <input type="text" id="zipcode" name="zipcode" class="form-control" required>
+                                        <input type="text" id="zipcode" name="zipcode" class="form-control"
+                                            placeholder="Zip Code..." required>
                                     </div>
                                     <!-- Card Holder's Name -->
                                     <div class="mb-3">

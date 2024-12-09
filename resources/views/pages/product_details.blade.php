@@ -34,11 +34,11 @@
 
                 <div class="shop-details-content">
                     <div class="row clearfix">
-                        <div class="col-lg-5 col-md-12 col-sm-12 image-column">
+                        <div class="col-lg-5 col-md-12 col-sm-12 image-column" style="width: 410px; height: 410px; object-fit: cover;">
                             <figure class="image-box">
-                                <a href="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                <a href="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
                                     class="lightbox-image" data-fancbox><img
-                                        src="{{ isset($product->image) && $product->image ? asset('assets/images/shop/' . $product->image) : asset('assets/images/shop/no_image.jpg') }}"
+                                        src="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
                                         alt=""></a>
                             </figure>
                         </div>

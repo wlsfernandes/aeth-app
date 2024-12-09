@@ -255,6 +255,11 @@ class PaymentController extends Controller
         DB::beginTransaction();
 
         try {
+            $address = $request->input('address');
+            $address_complement = $request->input('address_complement');
+            $city = $request->input('city');
+            $state = $request->input('state');
+            $zipcode = $request->input('zipcode');
             // Retrieve the payment method
             $paymentMethodId = $request->input('payment_method_id');
 
@@ -305,6 +310,11 @@ class PaymentController extends Controller
                 'customer_name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
                 'customer_email' => $paymentRecord->email,
                 'total' => $total,
+                'address' => $address,
+                'address_complement' => $address_complement,
+                'city' => $city,
+                'state' => $state,
+                'zipcode' => $zipcode,
             ]);
 
             // Save order items

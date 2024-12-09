@@ -9,7 +9,7 @@ use App\Models\OrderItem;
 class Order extends Model
 {
 
-    protected $fillable = ['order_number', 'customer_name', 'customer_email', 'total'];
+    protected $fillable = ['order_number', 'customer_name', 'customer_email', 'total', 'address', 'address_complement', 'city', 'state', 'zipcode'];
 
     public function items()
     {

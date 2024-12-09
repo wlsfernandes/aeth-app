@@ -35,10 +35,10 @@
                                             </button>
                                         </td>
                                         <td class="prod-column">
-                                            <div class="prod-thumb">
-                                                <img src="{{ isset($item['image']) && $item['image'] ? asset('assets/images/shop/' . $item['image']) : asset('assets/images/shop/no_image.jpg') }}"
+                                            <div class="prod-thumb" style="width: 110px; height: 100px; object-fit: cover;">
+                                                <img src="{{ $item['image'] ?? asset('assets/images/shop/no_image.jpg') }}"
                                                     alt="{{ $item['name'] ?? 'Product' }}"
-                                                    style="width: 110px; height: 100px; object-fit: cover;">
+                                                    style="width: 100%; height: 100%; object-fit: cover;">
                                             </div>
                                             <div class="prod-title">
                                                 {{ $item['name'] ?? 'Unnamed Product' }}
@@ -88,8 +88,8 @@
                             </ul>
                             <form action="{{ route('redirectCartPayment') }}" method="POST" id="checkout-form">
                                 @csrf
-                                <input type="hidden" name="amount" id="amount">
-
+                             <!--   <input type="hidden" name="amount" id="amount"> -->
+                                <input type="hidden" name="amount" id="amount" value="{{ session('cart_total', 0) }}">
                                 @if(session('cart') && count(session('cart')) > 0)
                                     <button type="button" class="theme-btn-one" id="checkout-button" onclick="submitForm()">
                                         Proceed to Checkout <i class="icon-74"></i>
