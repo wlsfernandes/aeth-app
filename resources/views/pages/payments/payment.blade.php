@@ -41,7 +41,7 @@
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                     <div class="card">
                         <form id="payment-form"
-                            action="{{ env('APP_ENV') === 'production' ? secure_url('/handle-payment') : url('/handle-payment') }}"
+                            action="{{ url('/handle-payment') }}"
                             method="POST" class="default-form">
                             @csrf
                             <div class="card-header p-0">
@@ -90,24 +90,24 @@
                                     <div class="mb-3">
                                         <label for="name" class="form-label">@lang('header.first_name'):</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
-                                            placeholder="Your first name..." required>
+                                            placeholder="@lang('header.first_name')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="name" class="form-label">@lang('header.last_name'):</label>
                                         <input type="text" id="last_name" name="last_name" class="form-control"
-                                            placeholder="Your last name..." required>
+                                            placeholder="@lang('header.last_name')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">@lang('header.email'):</label>
                                         <input type="email" id="email" name="email" class="form-control"
-                                            placeholder="email..." required>
+                                            placeholder="@lang('header.email')" required>
                                     </div>
                                     <!-- Card Holder's Name -->
                                     <div class="mb-3">
                                         <label for="card-holder-name"
                                             class="form-label">@lang('header.card_name')</label>
                                         <input type="text" id="card-holder-name" name="card_holder_name"
-                                            class="form-control" placeholder="Name on card" required>
+                                            class="form-control" placeholder="@lang('header.name_on_card')" required>
                                     </div>
 
                                     <!-- Stripe Elements Placeholder -->

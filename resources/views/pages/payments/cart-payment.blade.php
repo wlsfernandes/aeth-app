@@ -84,50 +84,50 @@
                                     <div class="mb-3">
                                         <label for="first_name" class="form-label">@lang('header.first_name'):</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
-                                            placeholder="Your first name..." required>
+                                            placeholder="@lang('header.first_name')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="last_name" class="form-label">@lang('header.last_name'):</label>
                                         <input type="text" id="last_name" name="last_name" class="form-control"
-                                            placeholder="Your last name..." required>
+                                            placeholder="@lang('header.last_name')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="form-label">@lang('header.email'):</label>
                                         <input type="email" id="email" name="email" class="form-control"
-                                            placeholder="email..." required>
+                                            placeholder="@lang('header.email')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="address" class="form-label">@lang('header.address'):</label>
                                         <input type="text" id="address" name="address" class="form-control"
-                                            placeholder="Your address..." required>
+                                            placeholder="@lang('header.address')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="address_complement"
                                             class="form-label">@lang('header.address_complement'):</label>
                                         <input type="text" id="address_complement" name="address_complement"
-                                            class="form-control" placeholder="Apartment, suite, etc.">
+                                            class="form-control" placeholder="@lang('header.address_complement')">
                                     </div>
                                     <div class="mb-3">
                                         <label for="city" class="form-label">@lang('header.city'):</label>
                                         <input type="text" id="city" name="city" class="form-control"
-                                            placeholder="City..." required>
+                                            placeholder="@lang('header.city')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="state" class="form-label">@lang('header.state'):</label>
                                         <input type="text" id="state" name="state" class="form-control"
-                                            placeholder="State..." required>
+                                            placeholder="@lang('header.state')" required>
                                     </div>
                                     <div class="mb-3">
                                         <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
                                         <input type="text" id="zipcode" name="zipcode" class="form-control"
-                                            placeholder="Zip Code..." required>
+                                            placeholder="@lang('header.zipcode')" required>
                                     </div>
                                     <!-- Card Holder's Name -->
                                     <div class="mb-3">
                                         <label for="card-holder-name"
                                             class="form-label">@lang('header.card_name')</label>
                                         <input type="text" id="card-holder-name" name="card_holder_name"
-                                            class="form-control" placeholder="Name on card" required>
+                                            class="form-control" placeholder="@lang('header.name_on_card')" required>
                                     </div>
 
                                     <!-- Stripe Elements Placeholder -->
@@ -137,7 +137,7 @@
                                         <div id="card-number-element" class="stripe-element-container">
                                             <!-- Stripe's Card Number Element will be inserted here -->
                                         </div>
-                                        <div id="card-expiry-element" class="stripe-element-container mr-2">
+                                        <div id="card-expiry-element" class="stripe-element-container mt-3">
                                             <!-- Stripe's Expiry Date Element will be inserted here -->
                                         </div>
                                         <div id="card-cvc-element" class="stripe-element-container mt-3">

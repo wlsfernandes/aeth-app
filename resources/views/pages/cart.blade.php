@@ -18,11 +18,11 @@
                             <thead class="cart-header">
                                 <tr>
                                     <th>&nbsp;</th>
-                                    <th class="prod-column">Product</th>
+                                    <th class="prod-column">@lang('bookstore.product')</th>
                                     <th>&nbsp;</th>
                                     <th>&nbsp;</th>
-                                    <th class="price">Price</th>
-                                    <th class="quantity">Quantity</th>
+                                    <th class="price">@lang('bookstore.price')</th>
+                                    <th class="quantity">@lang('bookstore.quantity')</th>
                                     <th>Subtotal</th>
                                 </tr>
                             </thead>
@@ -92,7 +92,7 @@
                                 <input type="hidden" name="amount" id="amount" value="{{ session('cart_total', 0) }}">
                                 @if(session('cart') && count(session('cart')) > 0)
                                     <button type="button" class="theme-btn-one" id="checkout-button" onclick="submitForm()">
-                                        Proceed to Checkout <i class="icon-74"></i>
+                                    @lang('bookstore.proceed') <i class="icon-74"></i>
                                     </button>
                                 @endif
                             </form>
@@ -107,10 +107,10 @@
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 table-column">
-                    <h5 style="color:#4a235a">"Your cart is currently empty. Add items to proceed with checkout."</h5>
+                    <h5 style="color:#4a235a">@lang('bookstore.cart_empty')</h5>
                     <button type="button" class="theme-btn-one" style="margin-top:200px;">
                         <a href="{{ route('bookstore') }}" style="all: unset;">
-                            Go Back to Bookstore <i class="icon-74"></i></a>
+                        @lang('bookstore.back_bookstore') <i class="icon-74"></i></a>
                     </button>
                 </div>
             </div>

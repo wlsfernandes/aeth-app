@@ -32,9 +32,9 @@
                 <div class="shop-sidebar">
                     <div class="search-widget">
                         <div class="widget-title">
-                            <h3>Search</h3>
+                            <h3>@lang('bookstore.search')</h3>
                         </div>
-                        <form action="shop.html" method="post">
+                        <form action="" method="post">
                             <div class="form-group">
                                 <input type="search" name="search-field" placeholder="Search" required="">
                                 <button type="submit"><i class="icon-1"></i></button>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="category-widget">
                         <div class="widget-title">
-                            <h3>Categories</h3>
+                            <h3>@lang('bookstore.categories')</h3>
                         </div>
                         <ul class="category-list clearfix">
                             @foreach ($categorys as $category)
@@ -125,7 +125,7 @@
                                 </div>
                             </div>
                         @empty
-                            <p class="text-center">No products available.</p>
+                            <p class="text-center">@lang('bookstore.no_products')</p>
                         @endforelse
                     </div>
                 </div>

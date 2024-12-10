@@ -39,5 +39,6 @@ return [
     'city' => 'City',
     'state' => 'State',
     'zipcode' => 'zipcode',
+    'name_on_card'=> 'Name on Card',
 
 ];
