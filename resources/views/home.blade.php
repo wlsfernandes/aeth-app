@@ -10,7 +10,63 @@
 <!-- Content here -->
 
 @section('content') 
-<section class="page-title centred">
+<section>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+        </ol>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="assets/images/gallery/aeth_graduation.jpg" alt="AETH">
+                    <div class="auto-container"
+                        style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
+                        <div class="content-box">
+                            <h1 style="font-size:48px;color:#fff"><b>@lang('header.complete_aeth_name')</b></h1>
+                            <h5 style="font-size:24px;color:#fff">@lang('header.education_p1')</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/gallery/excelence.jpg" alt="Second slide">
+                    <div class="auto-container"
+                        style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
+                        <div class="content-box">
+                            <h1 style="font-size:48px;color:#4a235a"><b>@lang('header.aeth_values')</b></h1>
+                            <h5 style="font-size:24px;color:#4a235a">@lang('header.values_p1')</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/gallery/bookstore.jpg" alt="Third slide">
+                    <div class="auto-container"
+                        style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
+                        <div class="content-box">
+                        <h1 style="font-size:48px;color:#4a235a"><b>@lang('header.bookstore')</b></h1>
+                        <h5 style="font-size:24px;color:#4a235a">@lang('header.bookstore_enjoy')</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="assets/images/gallery/advent2024.jpg" alt="Third slide">
+                </div>
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+</section>
+<!--<section class="page-title centred">
     <div class="bg-layer">
         <video autoplay muted loop playsinline id="background-video" style=" position: absolute;top: 0;left: 0;width: 100%;
 height: 100%;
@@ -25,7 +81,7 @@ height: 100%;
             <h1>@lang('header.complete_aeth_name')</h1>
         </div>
     </div>
-</section>
+</section> -->
 <section class="cta-style-two">
     <div class="pattern-layer"></div>
     <div class="auto-container">
