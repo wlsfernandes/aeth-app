@@ -90,8 +90,6 @@
                                 @csrf
                              <!--   <input type="hidden" name="amount" id="amount"> -->
                                 <input type="hidden" name="amount" id="amount" value="{{ session('cart_total', 0) }}">
-                                <input type="hidden" name="type" value="Bookstore">
-                                <input type="hidden" name="type" value="AETH">
                                 @if(session('cart') && count(session('cart')) > 0)
                                     <button type="button" class="theme-btn-one" id="checkout-button" onclick="submitForm()">
                                     @lang('bookstore.proceed') <i class="icon-74"></i>

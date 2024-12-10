@@ -147,6 +147,8 @@
                                     </div>
 
                                     <input type="hidden" name="payment_method_id" id="payment-method-id">
+                                    <input type="hidden" name="type" value="Bookstore">
+                                    <input type="hidden" name="program" value="AETH">
 
                                     @if(session('cart') && count(session('cart')) > 0)
                                         @foreach($cartItems as $index => $product)
