@@ -60,6 +60,8 @@ return [
     'excellence_p1' => 'We operate and perform to the highest standards, demonstrating mastery in what we do, committing to continuous learning, growth and improvement. mastery in what we do, committing to continuous learning, growth and improvement.',
     'responsibility' => 'Responsibility',
     'responsibility_p1' => 'We are proactive, empathetic in providing solutions to meet expectations about what we do and attentive to our environment.',
+    'accountability' => 'Accountability',
+    'accountability_p1' => 'We take responsibility and are accountable for the actions and decisions made while using resources wisely and with care.',
     'email_address' => 'Email address',
     'our_location' => 'Our Location',
     'feel_free' => 'Feel free to contact us',
@@ -71,7 +73,7 @@ return [
     'send_message' => 'Send a Message',
     'resources_grow' => 'Resources to grow and inspire',
     'publications_articles' => 'Publications and articles',
-    'annual_fund'=> 'Annual Fund Donation - AETH',
-    'annual_fund2'=> 'For thirty years, AETH has worked to equip Hispanic leaders and provide avenues of theological education for the edification and strengthening of the Hispanic Church. Providing theological education is our mission. Your input will enable us to accomplish this through our daily operations and development initiatives.',
+    'annual_fund' => 'Annual Fund Donation - AETH',
+    'annual_fund2' => 'For thirty years, AETH has worked to equip Hispanic leaders and provide avenues of theological education for the edification and strengthening of the Hispanic Church. Providing theological education is our mission. Your input will enable us to accomplish this through our daily operations and development initiatives.',
 
 ];

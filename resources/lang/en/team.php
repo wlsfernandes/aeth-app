@@ -156,4 +156,5 @@ return [
         'p9' => 'The Bible, no doubt about it.',
         'p10' => 'A pastor from Brazil named Paulo Jr. He is a great man of God who has a clear and impacting vision of the Scriptures.',
     ],
+    
 ];
