@@ -22,7 +22,8 @@
             </div>
             <div class="col-lg-8 col-md-12 col-sm-12 form-column">
                 <div class="form-inner">
-                    <form method="post" action="sendemail.php" id="contact-form">
+                    <form method="post" action="{{ route('contact.send') }}" id="contact-form">
+                        @csrf
                         <div class="row clearfix">
                             <div class="col-lg-6 col-md-6 col-sm-12 form-group">
                                 <input type="text" name="username" placeholder="@lang('messages.your_name')" required>

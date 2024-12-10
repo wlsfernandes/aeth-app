@@ -11,6 +11,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
 
@@ -43,7 +44,7 @@ Route::get('/profile/force-update-password/{token}', function ($token) {
 Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePassword'])->name('force-update-password.update');
 
 
-
+Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('contact.send');
 
 
 Route::get('/', [HomeController::class, 'index']);
