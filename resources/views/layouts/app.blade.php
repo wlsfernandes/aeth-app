@@ -10,7 +10,7 @@
     <meta name="description" content="@yield('meta-description', 'Default description')"> 
     <meta name="keywords" content="@yield('meta-keywords', 'default, keywords')"> 
     
-    @include('partials.header');
+    @include('partials.header')
     @yield('scripts')
 </head>
 <body>
