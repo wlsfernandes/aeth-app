@@ -11,7 +11,7 @@ class ProductController extends Controller
     
     public function bookstore()
     {
-        $products = Product::paginate(6);
+        $products = Product::where('stock', '>', 0)->paginate(6);
         $categorys = Category::all();
         return view('pages.bookstore', compact('products', 'categorys'));
     }

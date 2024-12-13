@@ -13,6 +13,11 @@ return [
     | a conventional file to locate the various service credentials.
     |
     */
+    'usps' => [
+        'api_url' => env('USPS_API_URL', 'https://secure.shippingapis.com/ShippingAPI.dll'),
+        'user_id' => env('USPS_USER_ID'),
+    ],
+
 
     'mailgun' => [
         'domain' => env('MAILGUN_DOMAIN'),

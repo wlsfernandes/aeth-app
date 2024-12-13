@@ -14,6 +14,11 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
+use App\Services\UPSService;
+
+
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -138,6 +143,96 @@ Route::middleware('auth')->group(function () {
 
 
 });
+
+
+Route::get('/ups/login', function () {
+    $upsService = new UPSService();
+    return redirect($upsService->getAuthorizationUrl());
+});
+
+Route::get('/ups/callback', function (Request $request) {
+    $authorizationCode = $request->query('code');
+
+    if (!$authorizationCode) {
+        return response()->json(['error' => 'Authorization code not provided'], 400);
+    }
+
+    $upsService = new UPSService();
+
+    try {
+        $accessToken = $upsService->exchangeCodeForToken($authorizationCode);
+        return response()->json(['message' => 'Token received successfully', 'access_token' => $accessToken]);
+    } catch (\Exception $e) {
+        return response()->json(['error' => $e->getMessage()], 500);
+    }
+});
+Route::post('/ups/rate', function (Request $request) {
+    try {
+        $shipmentDetails = $request->all();
+
+        $upsService = new UPSService();
+        $rates = $upsService->getRates($shipmentDetails);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $rates
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
+
+
+Route::get('/ups/test-rate', function () {
+    try {
+        $shipmentDetails = [
+            'RateRequest' => [
+                'Shipment' => [
+                    'Shipper' => [
+                        'Address' => [
+                            'PostalCode' => '30301',
+                            'CountryCode' => 'US'
+                        ]
+                    ],
+                    'ShipTo' => [
+                        'Address' => [
+                            'PostalCode' => '90210',
+                            'CountryCode' => 'US'
+                        ]
+                    ],
+                    'Package' => [
+                        'PackagingType' => [
+                            'Code' => '02'
+                        ],
+                        'PackageWeight' => [
+                            'UnitOfMeasurement' => [
+                                'Code' => 'LBS'
+                            ],
+                            'Weight' => '10'
+                        ]
+                    ]
+                ]
+            ]
+        ];
+
+        $upsService = new UPSService();
+        $rates = $upsService->getRates($shipmentDetails);
+
+        return response()->json([
+            'status' => 'success',
+            'data' => $rates
+        ]);
+    } catch (\Exception $e) {
+        return response()->json([
+            'status' => 'error',
+            'message' => $e->getMessage()
+        ], 500);
+    }
+});
+
 
 /*
 Route::get('/image', function () {
