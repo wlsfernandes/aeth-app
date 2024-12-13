@@ -87,7 +87,7 @@ class UPSService
             $this->accessToken = cache()->get('ups_access_token');
         }
 
-        $url = rtrim($this->baseUrl, '/') . '/ship/v1807/rating/Rate';
+        $url = rtrim($this->baseUrl, '/') . '/ship/v2409/rating/Rate';
 
         try {
             $response = $this->client->post($url, [
