@@ -14,6 +14,7 @@ use App\Http\Controllers\PostController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
+use App\Http\Controllers\ShippingController;
 use App\Services\UPSService;
 
 
@@ -50,6 +51,8 @@ Route::post('/force-update-password', [ProfileController::class, 'forceUpdatePas
 
 
 Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('contact.send');
+
+Route::get('/calculate-shipping/{zip}', [ShippingController::class, 'calculateShippingCost']);
 
 
 Route::get('/', [HomeController::class, 'index']);

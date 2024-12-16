@@ -134,8 +134,7 @@ class PaymentController extends Controller
         ]);
 
         if ($validator->fails()) {
-            $message = 'This email is already registered. </br>
-            Please <a href="/login">log in</a> or <a href="/renew">renew your account</a>.';
+            $message = 'This email is already registered.';
 
             Session::flash('error', ['email' => $message]);
             return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
@@ -255,11 +254,13 @@ class PaymentController extends Controller
         DB::beginTransaction();
 
         try {
+            $shipmentCost = $request->input('hidden_shipment_cost') ?? 0; 
             $address = $request->input('address');
             $address_complement = $request->input('address_complement');
             $city = $request->input('city');
             $state = $request->input('state');
             $zipcode = $request->input('zipcode');
+
             // Retrieve the payment method
             $paymentMethodId = $request->input('payment_method_id');
 
@@ -310,6 +311,7 @@ class PaymentController extends Controller
                 'customer_name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
                 'customer_email' => $paymentRecord->email,
                 'total' => $total,
+                'shipment_cost' => $shipmentCost,
                 'address' => $address,
                 'address_complement' => $address_complement,
                 'city' => $city,
@@ -350,9 +352,15 @@ class PaymentController extends Controller
         Stripe::setApiKey(env('STRIPE_SECRET'));
 
         try {
+           
+            $amount = $request->input('amount'); 
+            $shipmentCost = $request->input('hidden_shipment_cost') ?? 0; 
+            $totalAmount = $amount + $shipmentCost;
+            $totalAmountInCents = $totalAmount * 100;
+            
             // Create a PaymentIntent
             $paymentIntent = PaymentIntent::create([
-                "amount" => $request->amount * 100, // Convert dollars to cents
+                "amount" => $totalAmountInCents, // Convert dollars to cents
                 "currency" => "usd",
                 "payment_method" => $request->payment_method_id,
                 "confirmation_method" => "manual",
@@ -383,6 +391,7 @@ class PaymentController extends Controller
                     'type' => $request->type,
                     'program' => $request->program,
                     'amount' => $request->amount,
+                    'shipment_cost' => $request->hidden_shipment_cost ?? 0,
                     'currency' => $paymentIntent->currency,
                     'payment_method_id' => $paymentIntent->payment_method,
                     'status' => $paymentIntent->status,

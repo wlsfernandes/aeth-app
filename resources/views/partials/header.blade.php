@@ -15,7 +15,7 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-   
+
     <!-- Stylesheets -->
     <link href="{{ asset('assets/css/font-awesome-all.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/flaticon.css') }}" rel="stylesheet">
@@ -117,13 +117,13 @@
                     {{ session('success') }}
                 </div>
             @endif
-            @if ($errors->any())
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li><i class="bx bx-error"></i> {{ $error }}</li>
-                        @endforeach
-                    </ul>
+            @if (session('error'))
+                <div class="alert alert-danger">
+                    @if (is_array(session('error')))
+                        {{ implode(', ', session('error')) }}
+                    @else
+                        {{ session('error') }}
+                    @endif
                 </div>
             @endif
 

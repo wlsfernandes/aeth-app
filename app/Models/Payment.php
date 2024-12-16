@@ -22,6 +22,7 @@ class Payment extends Model
         'receipt_url',
         'customer_id',
         'payment_date',
+        'shipment_cost'
     ];
     use HasFactory;
 }

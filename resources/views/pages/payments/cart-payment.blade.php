@@ -13,29 +13,7 @@
 <section>
     <div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
         <div class="col-md-12">
-            @if (session()->has('success'))
-                <div class="alert alert-success" role="alert">
-                    <i class="fas fa-check-circle"></i> <!-- Success icon -->
-                    {{ session('success') }}
-                </div>
-            @endif
-            @if($errors->has('email'))
-                <div class="alert alert-warning">
-                    {!! $errors->first('email') !!}
-                </div>
-            @endif
-
-            @if ($errors->any())
-                <div class="alert alert-danger" role="alert">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            @if ($error !== $errors->first('email'))
-                                <li><i class="bx bx-error"></i> {{ $error }}</li>
-                            @endif
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+           
             <div class="card" style="margin-bottom: 300px !important;">
                 <span><b>@lang('header.choose_payment')</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
@@ -61,7 +39,7 @@
                                 data-parent="#accordionExample">
                                 <div class="card-body payment-card-body">
                                     <div class="d-flex align-items-center justify-content-between">
-                                        <label for="amount" class="form-label">@lang('header.amount_usd')</label>
+                                        <label for="amount_label" class="form-label"></label>
                                         <div class="icons">
                                             <img src="{{ asset('assets/images/icons/visa.jpg') }}" alt="Visa"
                                                 style="width: 30px; height: auto; margin-right: 5px;">
@@ -74,13 +52,7 @@
                                         </div>
                                     </div>
 
-                                    <div class="mb-3">
 
-                                        <input type="number" name="amount" id="amount"
-                                            value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
-                                            required min="1" step="0.01">
-
-                                    </div>
                                     <div class="mb-3">
                                         <label for="first_name" class="form-label">@lang('header.first_name'):</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
@@ -117,11 +89,27 @@
                                         <input type="text" id="state" name="state" class="form-control"
                                             placeholder="@lang('header.state')" required>
                                     </div>
+
                                     <div class="mb-3">
                                         <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
                                         <input type="text" id="zipcode" name="zipcode" class="form-control"
-                                            placeholder="@lang('header.zipcode')" required>
+                                            placeholder="@lang('header.zipcode')" required onblur="calculateShipping()"
+                                            oninput="calculateShipping()">
                                     </div>
+                                    <div class="mb-3">
+                                        <label for="amount" class="form-label">@lang('header.amount_usd')</label>
+                                        <input type="number" name="amount" id="amount"
+                                            value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
+                                            required min="1" step="0.01" disabled>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="shipment_cost"
+                                            class="form-label">@lang('header.shipment_cost'):</label>
+                                        <input type="number" name="shipment_cost" id="shipment_cost"
+                                            value="{{ number_format($shipment_cost ?? 0, 2, '.', '') }}"
+                                            class="form-control" required min="1" step="0.01" disabled>
+                                    </div>
+
                                     <!-- Card Holder's Name -->
                                     <div class="mb-3">
                                         <label for="card-holder-name"
@@ -149,6 +137,8 @@
                                     <input type="hidden" name="payment_method_id" id="payment-method-id">
                                     <input type="hidden" name="type" value="Bookstore">
                                     <input type="hidden" name="program" value="AETH">
+                                    <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
+                                    <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost">
 
                                     @if(session('cart') && count(session('cart')) > 0)
                                         @foreach($cartItems as $index => $product)
@@ -202,6 +192,41 @@
     <!-- STRIPE PAYMENT -->
     @include('stripe.script') 
     <!-- STRIPE PAYMENT -->
+    <script>
+        function calculateShipping() {
+            const zipCode = document.getElementById('zipcode').value;
+            const shipmentCostInput = document.getElementById('shipment_cost');
+            const hiddenShipmentCostInput = document.getElementById('hidden_shipment_cost');
 
+
+            if (!zipCode) {
+                alert('Please enter a ZIP code.');
+                return;
+            }
+
+            fetch(`/calculate-shipping/${zipCode}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content,
+                },
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert('Error fetching shipping cost.');
+                        return;
+                    }
+                    // Update shipment cost and super total
+                    const shippingCost = parseFloat(data.cost);
+                    shipmentCostInput.value = shippingCost.toFixed(2);
+                    hiddenShipmentCostInput.value = shippingCost.toFixed(2); // Set hidden value for form submission
+                })
+                .catch(error => {
+                    console.error('Error fetching shipping cost:', error);
+                });
+        }
+
+    </script>
 </section>
 @endsection

@@ -43,6 +43,7 @@ return [
     'aeth_values' => 'AETH Values and Principles',
     'values_p1' => 'They are the fundamental believe that drive our actions and our way of doing things',
     'education_p1' => 'Educating to Impact, Inspiring to Serve',
-    'bookstore_enjoy' => 'Enjoy exclusive access to resources created to inspire you and help you grow as an influencer in your community.'
+    'bookstore_enjoy' => 'Enjoy exclusive access to resources created to inspire you and help you grow as an influencer in your community.',
+    'shipment_cost' => 'Shipment Cost',
 
 ];

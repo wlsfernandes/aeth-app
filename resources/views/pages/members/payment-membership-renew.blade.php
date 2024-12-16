@@ -12,30 +12,7 @@
 @section('content') 
 <div class="container d-flex justify-content-center mt-5 mb-5">
     <div class="col-md-12">
-        @if (session()->has('success'))
-            <div class="alert alert-success" role="alert">
-                <i class="fas fa-check-circle"></i> <!-- Success icon -->
-                {{ session('success') }}
-            </div>
-        @endif
-        @if($errors->has('email'))
-            <div class="alert alert-warning">
-                {!! $errors->first('email') !!}
-            </div>
-        @endif
-
-        @if ($errors->any())
-            <div class="alert alert-danger" role="alert">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        {{-- Skip the email error to avoid duplicate --}}
-                        @if ($error !== $errors->first('email'))
-                            <li><i class="bx bx-error"></i> {{ $error }}</li>
-                        @endif
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+       
         <div class="card">
             <span><b>@lang('header.choose_payment')</b></span>
             <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
