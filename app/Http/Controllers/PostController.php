@@ -10,6 +10,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::where('published', true)
+            ->whereHas('postType', function ($query) {
+                $query->where('name', 'article');
+            })
             ->orderBy('published_at', 'desc')
             ->paginate(3);
 
@@ -36,7 +39,7 @@ class PostController extends Controller
             ->orderBy('published_at', 'desc')
             ->paginate(3);
 
-            return view('pages.events', compact('posts'));
+        return view('pages.events', compact('posts'));
     }
 
 
