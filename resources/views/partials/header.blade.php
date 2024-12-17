@@ -156,7 +156,7 @@
                                             <li><a
                                                     href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
                                             </li>
-                                            <li><a href="{{ route('events') }}">@lang('header.events')</a></li>
+                                            <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
                                             <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
                                             <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a>
                                             </li>

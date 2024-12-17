@@ -45,10 +45,6 @@ class HomeController extends Controller
         return view('pages.open_positions');
     }
 
-    public function events()
-    {
-        return view('pages.events');
-    }
 
     public function blog()
     {

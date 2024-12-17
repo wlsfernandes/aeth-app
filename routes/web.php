@@ -59,7 +59,7 @@ Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
 Route::get('/our-team', [HomeController::class, 'ourTeam'])->name('our_team');
 Route::get('/open-positions', [HomeController::class, 'openPositions'])->name('open_positions');
-Route::get('/events', [HomeController::class, 'events'])->name('events');
+
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contactUs'])->name('contact_us');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
@@ -94,7 +94,9 @@ Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yah
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
+
 Route::get('/post', [PostController::class, 'index'])->name('post');
+Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
