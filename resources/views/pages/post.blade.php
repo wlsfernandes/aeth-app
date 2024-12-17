@@ -55,18 +55,38 @@
         @endforeach
     </div>
 
-    <div class="d-flex justify-content-center">
-        {{-- Pagination Links --}}
-        {{ $posts->links() }}
+    <div class="pagination-wrapper centred">
+        <ul class="pagination clearfix">
+            @if ($posts->onFirstPage())
+                <li><a href="#" aria-disabled="true"><i class="icon-56"></i></a></li>
+            @else
+                <li><a href="{{ $posts->previousPageUrl() }}"><i class="icon-56"></i></a></li>
+            @endif
+
+            @foreach ($posts->getUrlRange(1, $posts->lastPage()) as $page => $url)
+                <li>
+                    <a href="{{ $url }}" class="{{ $posts->currentPage() === $page ? 'current' : '' }}">
+                        {{ $page }}
+                    </a>
+                </li>
+            @endforeach
+
+            @if ($posts->hasMorePages())
+                <li><a href="{{ $posts->nextPageUrl() }}"><i class="icon-55"></i></a></li>
+            @else
+                <li><a href="#" aria-disabled="true"><i class="icon-55"></i></a></li>
+            @endif
+        </ul>
     </div>
 </div>
 
-<section class="cta-style-two">
+<section class="cta-style-two" style="margin-top:75px;">
     <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
     <div class="auto-container">
         <div class="inner-box">
-        
-            <h2><i class="bi bi-book" style="font-size: 1.5rem;color:#fff;"></i>   @lang('messages.resources_grow'):</h2><br>
+
+            <h2><i class="bi bi-book" style="font-size: 1.5rem;color:#fff;"></i> @lang('messages.resources_grow'):</h2>
+            <br>
         </div>
     </div>
 </section>

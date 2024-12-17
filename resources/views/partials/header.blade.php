@@ -43,7 +43,7 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="index.php"><img src="assets/images/aeth-logo.png"
+                    <figure class="logo-box pull-left"><a href=""><img src="assets/images/aeth-logo.png"
                                 alt=""></a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
@@ -251,7 +251,7 @@
                 <div class="outer-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href="index.php"><img src="assets/images/aeth-logo.png" alt=""></a>
+                            <figure class="logo"><a href=""><img src="assets/images/aeth-logo.png" alt=""></a>
                             </figure>
                         </div>
                         <div class="menu-area clearfix">
@@ -277,7 +277,7 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href="index.php"><img src="assets/images/aeth-logo.png" alt="" title=""></a>
+                <div class="nav-logo"><a href=""><img src="assets/images/aeth-logo.png" alt="" title=""></a>
                 </div>
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->

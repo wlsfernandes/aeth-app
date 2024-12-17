@@ -62,10 +62,9 @@
                             <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
                                 <div class="shop-block-one">
                                     <div class="inner-box">
-                                        <div class="image-box" style="width: 300px; height: 370px; object-fit: cover;">
+                                        <div class="image-box">
                                             <figure class="image">
-                                                <img src="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}"
-                                                    alt="{{ $product->name }}">
+                                                <img src="{{ isset($product->image) && $product->image ? $product->image : asset('assets/images/shop/no_image.jpg') }}" style="width: 300px; height: 370px; object-fit: cover; display: block;">
                                             </figure>
 
                                             <ul class="info clearfix">
