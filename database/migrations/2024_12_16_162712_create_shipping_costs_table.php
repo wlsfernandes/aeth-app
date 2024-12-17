@@ -13,7 +13,9 @@ return new class extends Migration
 {
     Schema::create('shipping_costs', function (Blueprint $table) {
         $table->id();
-        $table->integer('area')->unsigned(); // Area 0-9
+        
+        $table->integer('zone')->unsigned(); // Shipping zone (e.g., 1-8)
+        $table->decimal('weight', 8, 2); // Weight in pounds (e.g., up to 70 lbs)
         $table->decimal('cost', 8, 2); // Cost for shipping
         $table->timestamps();
     });
