@@ -35,12 +35,7 @@
                                 </a>
                             </div>
                             <p style="margin-top:20px;">@lang('programs.request_certification_p6')</p>
-                            <div class="btn-box" style="display: flex; justify-content: center; margin:25px;">
-                                <a href="{{ route('requestCertification') }}" class="theme-btn-one">
-                                    <span>@lang('programs.request_certification')</span>
-                                </a>
-                            </div>
-
+                            @include('partials.contact-message')           
                         </div>
                     </div>
                 </div>
