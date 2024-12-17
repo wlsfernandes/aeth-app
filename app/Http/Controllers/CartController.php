@@ -26,16 +26,23 @@ class CartController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'quantity' => 1,
+                'weight' => $product->weight,
                 'image' => $product->image,
             ];
         }
-
+        // Calculate the total amount
         $totalAmount = array_sum(array_map(function ($item) {
             return $item['price'] * $item['quantity'];
         }, $cart));
-
+        
+        // Calculate the total weight
+        $totalWeight = array_sum(array_map(function ($item) {
+            return $item['weight'] * $item['quantity'];
+        }, $cart));
+        
         session()->put('cart', $cart);
         session()->put('cart_total', $totalAmount);
+        session()->put('cart_total_weight', $totalWeight);
 
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
@@ -60,19 +67,27 @@ class CartController extends Controller
         $cartSubtotal = array_sum(array_map(function ($item) {
             return $item['price'] * $item['quantity'];
         }, $cart));
-        
+
         // Recalculate the total amount
         $totalAmount = array_sum(array_map(function ($item) {
             return $item['price'] * $item['quantity'];
         }, $cart));
 
+        // Calculate the total weight
+        $totalWeight = array_sum(array_map(function ($item) {
+            return $item['weight'] * $item['quantity'];
+        }, $cart));
+
+
         session()->put('cart_total', $totalAmount);
+        session()->put('cart_total_weight', $totalWeight);
 
         return response()->json([
             'success' => true,
             'itemSubtotal' => number_format($itemSubtotal, 2),
             'cartSubtotal' => number_format($cartSubtotal, 2),
             'cartTotal' => number_format($totalAmount, 2),
+            'cartTotalWeight' => number_format($totalWeight, 2),
         ]);
     }
 
@@ -93,11 +108,19 @@ class CartController extends Controller
             return $item['price'] * $item['quantity'];
         }, $cart));
 
+        // Calculate the total weight
+        $totalWeight = array_sum(array_map(function ($item) {
+            return $item['weight'] * $item['quantity'];
+        }, $cart));
+
+
         session()->put('cart_total', $totalAmount);
+        session()->put('cart_total_weight', $totalWeight);
 
         return response()->json([
             'success' => true,
             'cartTotal' => $totalAmount,
+            'cart_total_weight' => $totalWeight,
         ]);
     }
 

@@ -13,7 +13,7 @@
 <section>
     <div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
         <div class="col-md-12">
-           
+
             <div class="card" style="margin-bottom: 300px !important;">
                 <span><b>@lang('header.choose_payment')</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
@@ -137,7 +137,10 @@
                                     <input type="hidden" name="payment_method_id" id="payment-method-id">
                                     <input type="hidden" name="type" value="Bookstore">
                                     <input type="hidden" name="program" value="AETH">
-                                    <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
+                                    <input type="hidden" name="amount"
+                                        value="{{ number_format($amount ?? 0, 2, '.', '') }}">
+                                    <input type="hidden" name="weight" id="weight"
+                                        value="{{ number_format($weight ?? 0, 2, '.', '') }}">
                                     <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost">
 
                                     @if(session('cart') && count(session('cart')) > 0)
@@ -195,16 +198,14 @@
     <script>
         function calculateShipping() {
             const zipCode = document.getElementById('zipcode').value;
-            const shipmentCostInput = document.getElementById('shipment_cost');
-            const hiddenShipmentCostInput = document.getElementById('hidden_shipment_cost');
+            const weight = parseFloat(document.getElementById('weight').value); // Get weight value
 
-
-            if (!zipCode) {
-                alert('Please enter a ZIP code.');
+            if (!zipCode || !weight || weight <= 0) {
+                alert('Please enter both ZIP code and valid weight.');
                 return;
             }
 
-            fetch(`/calculate-shipping/${zipCode}`, {
+            fetch(`/calculate-shipping/${zipCode}?weight=${weight}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
@@ -214,19 +215,31 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.error) {
-                        alert('Error fetching shipping cost.');
-                        return;
+                        if (!window.errorDisplayed) {
+                            alert('Error: ' + data.error); // Show the error message in an alert
+                            window.errorDisplayed = true; // Flag to prevent displaying the error again
+
+                            if (data.redirect) {
+                                window.location.href = data.redirect; // Redirect if provided
+                            }
+                        }
+                        return; // Stop further execution if there's an error
                     }
-                    // Update shipment cost and super total
+
+                    // Reset the error flag on success
+                    window.errorDisplayed = false;
+
                     const shippingCost = parseFloat(data.cost);
-                    shipmentCostInput.value = shippingCost.toFixed(2);
-                    hiddenShipmentCostInput.value = shippingCost.toFixed(2); // Set hidden value for form submission
+                    document.getElementById('shipment_cost').value = shippingCost.toFixed(2);
+                    document.getElementById('hidden_shipment_cost').value = shippingCost.toFixed(2); // Set hidden value for form submission
                 })
                 .catch(error => {
                     console.error('Error fetching shipping cost:', error);
                 });
         }
 
+
     </script>
+
 </section>
 @endsection

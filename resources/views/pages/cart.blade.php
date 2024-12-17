@@ -88,8 +88,11 @@
                             </ul>
                             <form action="{{ route('redirectCartPayment') }}" method="POST" id="checkout-form">
                                 @csrf
-                             <!--   <input type="hidden" name="amount" id="amount"> -->
+                           
                                 <input type="hidden" name="amount" id="amount" value="{{ session('cart_total', 0) }}">
+
+                                <input type="hidden" name="weight" id="weight" value="{{ session('cart_total_weight', 0) }}">
+
                                 @if(session('cart') && count(session('cart')) > 0)
                                     <button type="button" class="theme-btn-one" id="checkout-button" onclick="submitForm()">
                                     @lang('bookstore.proceed') <i class="icon-74"></i>
@@ -145,6 +148,7 @@
                     document.getElementById('cart-subtotal').textContent = data.cartSubtotal;
                     document.getElementById('cart-total').textContent = data.cartTotal;
                     document.getElementById('amount').value = data.cartTotal;
+                    document.getElementById('weight').value = data.cartTotalWeight;
                 } else {
                     alert(data.message);
                 }

@@ -62,11 +62,13 @@ class PaymentController extends Controller
     public function redirectCartPayment(Request $request)
     {
         $amount = $request->input('amount', 0); // Total amount
+        $weight = $request->input('weight', 0); // Total amount
         session(['amount' => $amount]);
+        session(['weight' => $weight]);
         $cartItems = session('cart', []);
         $type = 'bookstore';
         $program = 'AETH';
-        return view('pages.payments.cart-payment', compact('amount', 'type', 'program', 'cartItems'));
+        return view('pages.payments.cart-payment', compact('amount', 'type', 'program', 'cartItems', 'weight'));
     }
 
 

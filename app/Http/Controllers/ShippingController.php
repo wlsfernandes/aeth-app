@@ -3,28 +3,60 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Shipping; // Import the ShippingCost model
+use App\Models\Shipping;
 
 class ShippingController extends Controller
 {
+
     public function calculateShippingCost($targetZip)
     {
-        $startingZip = '32867'; // Your fixed starting zip code
-        $zone = $this->calculateAreaFromZip($startingZip, $targetZip); // Call the method using $this
+        try {
+            $startingZip = '32867'; // PO Box Orlando, Florida
+            $weight = request()->input('weight');
 
-        $shippingCost = Shipping::where('zone', $zone)->first();
+            // Check if weight is null and redirect
+            if (is_null($weight)) {
+                return response()->json([
+                    'error' => 'Error to calculate shipment. Product Weight is empty',
+                    'redirect' => route('bookstore')
+                ]);
+            }
 
-        if (!$shippingCost) {
-            return response()->json(['error' => 'No shipping cost found for this zone'], 404);
+            // Check if weight exceeds 10 pounds and throw exception
+            if ($weight > 10) {
+                return response()->json([
+                    'error' => 'Weight exceeds the allowed limit of 10 pounds.',
+                    'redirect' => route('bookstore')
+                ]);
+            }
+
+            $roundedWeight = round($weight);
+            $zone = $this->calculateAreaFromZip($startingZip, $targetZip); 
+
+            // Find shipping cost based on zone and weight
+            $shippingCost = Shipping::where('zone', $zone)
+                ->where('weight', '>=', $roundedWeight)
+                ->first();
+
+            // If no shipping cost is found, return an error response
+            if (!$shippingCost) {
+                return response()->json([
+                    'error' => 'No Shipping cost for this zone',
+                    'redirect' => route('bookstore')
+                ]);
+            }
+            return response()->json([
+                'starting_zip' => $startingZip,
+                'target_zip' => $targetZip,
+                'zone' => $zone,
+                'cost' => $shippingCost->cost
+            ]);
+
+        } catch (\Exception $e) {
+            return redirect()->route('bookstore')->with('error', $e->getMessage());
         }
-
-        return response()->json([
-            'starting_zip' => $startingZip,
-            'target_zip' => $targetZip,
-            'zone' => $zone,
-            'cost' => $shippingCost->cost
-        ]);
     }
+
 
     private function calculateAreaFromZip($startingZip, $targetZip)
     {
