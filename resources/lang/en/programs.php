@@ -147,10 +147,10 @@ return [
 
     ],
     'young_leaders' => [
-        'title' => 'Young Leaders',
-        'welcome' => 'Welcome to Young Leaders!',
+        'title' => 'Young Líderes',
+        'welcome' => 'Welcome to Young Líderes!',
         'p1' => 'Who we are',
-        'p2' => 'Christian leaders ages 18-35. The group consists of pastors, denominational leaders, Bible institute directors, educators, young scholars and practical ministers nationwide.',
+        'p2' => 'Christian Líderes ages 18-35. The group consists of pastors, denominational Líderes, Bible institute directors, educators, young scholars and practical ministers nationwide.',
         'p3' => 'As young líderes we walk with integrity within our calling. We are committed to the transformation of the church of today for the hope of Mañana. We want to connect young líderes to available resources and create collaborating spaces of
 critical thinking.',
         'p4' => 'What we do',
@@ -164,7 +164,7 @@ critical thinking.',
         'vision' => 'Vision',
         'vision_p1' => 'The young líderes of AETH exist to empower young latino/a/x líderes to engage in theology and critical thinking. Our purpose is to create a safe space where we can share insights, connect, grow with one another and celebrate what God is doing in our communities. Cultivateting young líderes to transform the church of today for the hope of Mañana.',
         'mission' => 'Mission',
-        'mission_p1' => 'Our mission is to foster intergenerational connections between experienced and emerging Christian leaders. Young Líderes is a Network of young Latino/a/x líderes exploring the intersection of faith, identity, justice and calling.',
+        'mission_p1' => 'Our mission is to foster intergenerational connections between experienced and emerging Christian Líderes. Young Líderes is a Network of young Latino/a/x líderes exploring the intersection of faith, identity, justice and calling.',
 
     ],
 ];
