@@ -49,6 +49,8 @@
                             <div class="text">
                                 <p>@lang('programs.young_leaders.p2') </p>
                                 <p>@lang('programs.young_leaders.p3')</p>
+                                <p>@lang('programs.young_leaders.p3a')</p>
+                                <p>@lang('programs.young_leaders.p3b')</p>
                             </div>
                         </div>
 
