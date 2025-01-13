@@ -125,5 +125,24 @@ return [
         'exp2' => 'O curso de liderança administrativa ajudará a fortalecer o escritório de gestão do instituto bíblico.',
         'exp3' => 'O curso para instrutores fornecerá as ferramentas necessárias aos professores, aumentando sua eficácia em sala de aula.'
     ],
+    'young_leaders' => [
+        'title' => 'Jovens Líderes',
+        'welcome' => 'Bem-vindos ao Jovens Líderes!',
+        'p1' => 'Quem somos',
+        'p2' => 'Líderes cristãos de 18 a 35 anos. O grupo é composto por pastores, líderes denominacionais, diretores de institutos bíblicos, educadores, jovens acadêmicos e ministros práticos em todo o país.',
+        'p3' => 'Como jovens líderes, caminhamos com integridade dentro do nosso chamado. Estamos comprometidos com a transformação da igreja de hoje pela esperança do Amanhã. Queremos conectar jovens líderes com recursos disponíveis e criar espaços de colaboração e pensamento crítico.',
+        'p4' => 'O que fazemos',
+        'p5' => 'Junto com a Associação de Educação Teológica Hispânica, criamos espaços seguros para que os jovens líderes participem de formas não tradicionais de educação teológica, como webinars, podcasts e conversatórios.',
+        'key_points' => 'Pontos Principais',
+        'kp_1' => '<b>Integridade e Chamado:</b> Como Jovens Líderes, há um forte compromisso de caminhar com integridade alinhados ao seu chamado.',
+        'kp_2' => '<b>Transformação da Igreja:</b> O foco está na transformação da igreja atual, com uma visão de um futuro melhor ("esperança do Amanhã").',
+        'kp_3' => '<b>Conexão e Colaboração:</b> Conectar jovens líderes em todo o país e promover espaços onde possam colaborar.',
+        'kp_4' => '<b>Auto-reflexão e Recursos:</b> Criar oportunidades para auto-reflexão e tornar os recursos acessíveis a todos.',
+        'kp_5' => '<b>Pensamento Crítico:</b> Ter um espaço seguro onde os jovens líderes possam explorar e participar do pensamento crítico.',
+        'vision' => 'Visão',
+        'vision_p1' => 'Os jovens líderes da AETH existem para capacitar jovens líderes latino/a/x a se envolverem na teologia e no pensamento crítico. Nosso propósito é criar um espaço seguro onde possamos compartilhar ideias, nos conectar, crescer juntos e celebrar o que Deus está fazendo em nossas comunidades. Cultivando jovens líderes para transformar a igreja de hoje pela esperança do Amanhã.',
+        'mission' => 'Missão',
+        'mission_p1' => 'Nossa missão é promover conexões intergeracionais entre líderes cristãos experientes e emergentes. Jovens Líderes é uma rede de jovens líderes latino/a/x que exploram a interseção de fé, identidade, justiça e chamado.',
+    ],
 
 ];

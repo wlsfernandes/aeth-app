@@ -166,5 +166,5 @@ critical thinking.',
         'mission' => 'Mission',
         'mission_p1' => 'Our mission is to foster intergenerational connections between experienced and emerging Christian leaders. Young Líderes is a Network of young Latino/a/x líderes exploring the intersection of faith, identity, justice and calling.',
 
-    ]
+    ],
 ];

@@ -125,5 +125,23 @@ return [
         'exp2' => 'El curso de liderazgo administrativo ayudará a fortalecer la oficina de gestión del instituto bíblico.',
         'exp3' => 'El curso para instructores proporcionará las herramientas necesarias a los maestros, aumentando su efectividad en el aula.'
     ],
-
+    'young_leaders' => [
+        'title' => 'Young Líderes',
+        'welcome' => '¡Bienvenidos a Young Líderes!',
+        'p1' => 'Quiénes somos',
+        'p2' => 'Líderes cristianos de entre 18 y 35 años. El grupo está compuesto por pastores, líderes denominacionales, directores de institutos bíblicos, educadores, Young académicos y ministros prácticos en todo el país.',
+        'p3' => 'Como Young líderes, caminamos con integridad dentro de nuestro llamado. Estamos comprometidos con la transformación de la iglesia de hoy por la esperanza del Mañana. Queremos conectar a Young líderes con recursos disponibles y crear espacios de colaboración y pensamiento crítico.',
+        'p4' => 'Qué hacemos',
+        'p5' => 'Junto con la Asociación para la Educación Teológica Hispana, creamos espacios seguros para que los Young líderes participen en formas no tradicionales de educación teológica, como webinars, podcasts y conversatorios.',
+        'key_points' => 'Puntos Clave',
+        'kp_1' => '<b>Integridad y Llamado:</b> Como Young Líderes, existe un fuerte compromiso de caminar con integridad en alineación con su llamado.',
+        'kp_2' => '<b>Transformación de la Iglesia:</b> El enfoque está en la transformación de la iglesia actual, con una visión de un mejor futuro ("esperanza del Mañana").',
+        'kp_3' => '<b>Conexión y Colaboración:</b> Conectar a Young líderes en todo el país y fomentar espacios donde puedan colaborar.',
+        'kp_4' => '<b>Auto-reflexión y Recursos:</b> Crear oportunidades para la auto-reflexión y hacer que los recursos sean accesibles para todos.',
+        'kp_5' => '<b>Pensamiento crítico:</b> Tener un espacio seguro en el cual los Young líderes puedan explorar y participar en el pensamiento crítico.',
+        'vision' => 'Visión',
+        'vision_p1' => 'Los Young líderes de AETH existen para empoderar a Young líderes latino/a/x a involucrarse en la teología y el pensamiento crítico. Nuestro propósito es crear un espacio seguro donde podamos compartir ideas, conectarnos, crecer juntos y celebrar lo que Dios está haciendo en nuestras comunidades. Cultivando Young líderes para transformar la iglesia de hoy por la esperanza del Mañana.',
+        'mission' => 'Misión',
+        'mission_p1' => 'Nuestra misión es fomentar conexiones intergeneracionales entre líderes cristianos experimentados y emergentes. Young Líderes es una red de Young líderes latino/a/x que exploran la intersección de fe, identidad, justicia y llamado.',
+    ],
 ];
