@@ -45,5 +45,5 @@ return [
     'education_p1' => 'Educating to Impact, Inspiring to Serve',
     'bookstore_enjoy' => 'Enjoy exclusive access to resources created to inspire you and help you grow as an influencer in your community.',
     'shipment_cost' => 'Shipment Cost',
-
+    'young_leaders' => 'Young Leaders',
 ];

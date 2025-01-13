@@ -70,6 +70,7 @@ Route::get('/memberships', [HomeController::class, 'memberships'])->name('member
 Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/antioquia', [HomeController::class, 'antioquia'])->name('antioquia');
 Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name('resource_center');
+Route::get('/young-leaders', [HomeController::class, 'youngLeaders'])->name('young-leaders');
 Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching'])->name('compelling_preaching');
 
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');

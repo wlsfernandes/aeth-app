@@ -43,8 +43,7 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href=""><img src="assets/images/aeth-logo.png"
-                                alt=""></a>
+                    <figure class="logo-box pull-left"><a href=""><img src="assets/images/aeth-logo.png" alt=""></a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -194,6 +193,8 @@
                                                     href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
                                             </li>
                                             <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
+                                            <li><a href="{{ route('young-leaders') }}">@lang('header.young_leaders')</a>
+                                            </li>
                                         </ul>
                                     </li>
 

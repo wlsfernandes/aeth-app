@@ -39,5 +39,6 @@ return [
     'city' => 'Cidade',
     'state' => 'Estado',
     'zipcode' => 'CEP',
-    'name_on_card' => 'Nome no cartão'
+    'name_on_card' => 'Nome no cartão',
+    'young_leaders' => 'Young Líderes',
 ];

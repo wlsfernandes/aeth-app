@@ -95,7 +95,10 @@ class HomeController extends Controller
     {
         return view('pages.resource_center');
     }
-
+    public function youngLeaders()
+    {
+        return view('pages.young-leaders');
+    }
     public function compellingPreaching()
     {
         return view('pages.compelling_preaching');
@@ -120,7 +123,7 @@ class HomeController extends Controller
     {
         return view('pages.test');
     }
-   
+
     public function application()
     {
         return view('pages.application');
