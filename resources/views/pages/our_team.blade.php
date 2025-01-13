@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Our Team') 
+@section('title', '#somosAETH | Our Team')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'home, welcome, introduction')
 
 <style>
     /* FontAwesome for working BootSnippet :> */
@@ -141,7 +141,7 @@
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="page-title centred">
     <div class="bg-layer" style="background-image: url(assets/images/gallery/team.jpg);"></div>
     <div class="auto-container">
@@ -524,8 +524,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('oscar-merlo')}}"><img src="assets/images/team/Oscar.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('oscar-merlo')}}"><img src="assets/images/team/Oscar.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('oscar-merlo')}}" style="color:#4a235a;"> Oscar Merlo</a></h3>
@@ -538,8 +537,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('glorie-acevedo')}}"><img src="assets/images/team/glorie.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('glorie-acevedo')}}"><img src="assets/images/team/glorie.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('glorie-acevedo')}}" style="color:#4a235a;"> Glorie Acevedo</a></h3>
@@ -556,8 +554,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('marta-luna')}}"><img src="assets/images/team/marta.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('marta-luna')}}"><img src="assets/images/team/marta.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('marta-luna')}}" style="color:#4a235a;"> Marta Luna</a></h3>
@@ -570,8 +567,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('luz-ortiz')}}"><img src="assets/images/team/Luz.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('luz-ortiz')}}"><img src="assets/images/team/Luz.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('luz-ortiz')}}" style="color:#4a235a;"> Luz Ortiz</a></h3>
@@ -584,8 +580,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('ondina-gonzalez')}}"><img src="assets/images/team/Ondina.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('ondina-gonzalez')}}"><img src="assets/images/team/Ondina.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('ondina-gonzalez')}}" style="color:#4a235a;"> Ondina González</a></h3>
@@ -595,18 +590,19 @@
                 </div>
             </div>
         </div>
-           
-         <!-- ******************************************* row ******************* -->
-         <div class="row clearfix">
+
+        <!-- ******************************************* row ******************* -->
+        <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('wilson-fernandes-junior')}}"><img src="assets/images/team/WilsonFernandesJunior.jpg"
-                                    alt=""></a>
+                            <a href="{{ route('wilson-fernandes-junior')}}"><img
+                                    src="assets/images/team/WilsonFernandesJunior.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
-                            <h3><a href="{{ route('wilson-fernandes-junior')}}" style="color:#4a235a;">Wilson Fernandes Junior</a></h3>
+                            <h3><a href="{{ route('wilson-fernandes-junior')}}" style="color:#4a235a;">Wilson Fernandes
+                                    Junior</a></h3>
                             <span class="designation">@lang('team.it_solutions_software_developer')</span>
                         </div>
                     </div>
@@ -616,8 +612,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('shaila-munoz')}}"><img src="assets/images/team/Shaila.png"
-                                    alt=""></a>
+                            <a href="{{ route('shaila-munoz')}}"><img src="assets/images/team/Shaila.png" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('shaila-munoz')}}" style="color:#4a235a;"> Shaila Muñoz</a></h3>
@@ -630,8 +625,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('coralys-santos')}}"><img src="assets/images/team/Coralys.jpeg"
-                                    alt=""></a>
+                            <a href="{{ route('coralys-santos')}}"><img src="assets/images/team/Coralys.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('coralys-santos')}}" style="color:#4a235a;"> Coralys Santos</a></h3>
@@ -641,14 +635,13 @@
                 </div>
             </div>
         </div>
-         <!-- ******************************************* row ******************* -->
-         <div class="row clearfix">
+        <!-- ******************************************* row ******************* -->
+        <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('sophia-porter')}}"><img src="assets/images/team/sophia.png"
-                                    alt=""></a>
+                            <a href="{{ route('sophia-porter')}}"><img src="assets/images/team/sophia.png" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('sophia-porter')}}" style="color:#4a235a;">Sophia Porter</a></h3>
@@ -675,8 +668,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('yaheli-vargas')}}"><img src="assets/images/team/yaheli.png"
-                                    alt=""></a>
+                            <a href="{{ route('yaheli-vargas')}}"><img src="assets/images/team/yaheli.png" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('yaheli-vargas')}}" style="color:#4a235a;"> Yaheli Vargas</a></h3>
@@ -686,8 +678,8 @@
                 </div>
             </div>
         </div>
-         <!-- ******************************************* row ******************* -->
-         <div class="row clearfix">
+        <!-- ******************************************* row ******************* -->
+        <div class="row clearfix">
             <div class="col-lg-4 col-md-6 col-sm-12 team-block">
                 <div class="team-block-two">
                     <div class="inner-box">
