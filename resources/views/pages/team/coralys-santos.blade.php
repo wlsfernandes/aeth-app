@@ -15,7 +15,7 @@
         <div class="team-details-content">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-12 col-sm-12 image-column">
-                    <figure class="image-box"><img src="assets/images/team/Coralys.jpg" alt=""></figure>
+                    <figure class="image-box"><img src="assets/images/team/Coralys Santos.jpg" alt=""></figure>
                 </div>
                 <div class="col-lg-9 col-md-12 col-sm-12 content-column">
                     <div class="content-box">

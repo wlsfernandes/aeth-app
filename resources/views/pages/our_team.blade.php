@@ -163,7 +163,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/jeffry_caballero.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Jeffry Caballero.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Jeffry Caballero</h4>
                                     <p class="card-text">@lang('team.president')</p>
@@ -177,7 +177,7 @@
                             <div class="card">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/jeffry_caballero.jpg"
+                                        <p><img class=" img-fluid" src="assets/images/team/Jeffry Caballero.jpg"
                                                 alt="card image"></p>
                                     </div>
                                 </div>
@@ -194,7 +194,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Luis-Rivera.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Luis Rivera</h4>
                                     <p class="card-text">@lang('team.vice_president')</p>
@@ -208,7 +208,7 @@
                             <div class="card">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/Luis-Rivera.jpg"
+                                        <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
                                                 alt="card image"></p>
                                     </div>
                                 </div>
@@ -225,8 +225,8 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/MariaAntoniaAmao.jpg"
-                                            alt="card image"></p>
+                                    <p><img class=" img-fluid" src="assets/images/team/Maria Amao.jpg" alt="card image">
+                                    </p>
                                     <h4 class="card-title" style="margin-top:30px;">Maria A. Amao</h4>
                                     <p class="card-text">@lang('secretary')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
@@ -238,8 +238,8 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/MariaAntoniaAmao.jpg"
-                                            alt="card image"></p>
+                                    <p><img class=" img-fluid" src="assets/images/team/Maria Amao.jpg" alt="card image">
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -255,7 +255,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/About-Carlos-G-Ramos.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Carlos Ramos.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Carlos Ramos</h4>
                                     <p class="card-text">@lang('team.treasurer')</p>
@@ -268,7 +268,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/About-Carlos-G-Ramos.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Carlos Ramos.jpg"
                                             alt="card image"></p>
                                 </div>
                             </div>
@@ -287,7 +287,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/PeterRios.jpg" alt="card image">
+                                    <p><img class=" img-fluid" src="assets/images/team/Peter Rios.jpg" alt="card image">
                                     </p>
                                     <h4 class="card-title" style="margin-top:30px;">Peter Rios</h4>
                                     <p class="card-text">@lang('team.vocal')</p>
@@ -300,7 +300,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card">
-                                    <p><img class=" img-fluid" src="assets/images/team/PeterRios.jpg" alt="card image">
+                                    <p><img class=" img-fluid" src="assets/images/team/Peter Rios.jpg" alt="card image">
                                     </p>
                                 </div>
                             </div>
@@ -347,7 +347,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Richard-Serrano.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Richard Serrano.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Richard Serrano</h4>
                                     <p class="card-text">@lang('member')</p>
@@ -360,7 +360,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/Richard-Serrano.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Richard Serrano.jpg"
                                             alt="card image"></p>
                                 </div>
                             </div>
@@ -377,7 +377,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/DannySantiago.png"
+                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.png"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Danny Santiago</h4>
                                     <p class="card-text">@lang('team.member')</p>
@@ -390,7 +390,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/DannySantiago.png"
+                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.png"
                                             alt="card image"></p>
                                 </div>
                             </div>
@@ -409,7 +409,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Miguel-Alvarez.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Miguel Alvarez.jpg"
                                             alt="card image">
                                     </p>
                                     <h4 class="card-title" style="margin-top:30px;">Miguel Alvarez</h4>
@@ -423,7 +423,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card">
-                                    <p><img class=" img-fluid" src="assets/images/team/Miguel-Alvarez.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Miguel Alvarez.jpg"
                                             alt="card image">
                                     </p>
                                 </div>
@@ -440,7 +440,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/JustoGonzalez.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Justo Gonzalez.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Justo González</h4>
                                     <p class="card-text">@lang('team.member')</p>
@@ -454,7 +454,7 @@
                             <div class="card">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/JustoGonzalez.jpg"
+                                        <p><img class=" img-fluid" src="assets/images/team/Justo Gonzalez.jpg"
                                                 alt="card image"></p>
                                     </div>
                                 </div>
@@ -471,7 +471,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/JessicaLugo.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Jessica Lugo.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Jessica Lugo</h4>
                                     <p class="card-text">@lang('member')</p>
@@ -484,7 +484,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/JessicaLugo.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Jessica Lugo.jpg"
                                             alt="card image"></p>
                                 </div>
                             </div>
@@ -510,7 +510,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('jessica-lugo')}}"><img src="assets/images/team/JessicaLugo.jpg"
+                            <a href="{{ route('jessica-lugo')}}"><img src="assets/images/team/Jessica Lugo.jpg"
                                     alt=""></a>
                         </figure>
                         <div class="lower-content">
@@ -524,7 +524,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('oscar-merlo')}}"><img src="assets/images/team/Oscar.jpg" alt=""></a>
+                            <a href="{{ route('oscar-merlo')}}"><img src="assets/images/team/Oscar Merlo.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('oscar-merlo')}}" style="color:#4a235a;"> Oscar Merlo</a></h3>
@@ -537,7 +538,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('glorie-acevedo')}}"><img src="assets/images/team/glorie.jpg" alt=""></a>
+                            <a href="{{ route('glorie-acevedo')}}"><img src="assets/images/team/Glorie Acevedo.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('glorie-acevedo')}}" style="color:#4a235a;"> Glorie Acevedo</a></h3>
@@ -554,7 +556,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('marta-luna')}}"><img src="assets/images/team/marta.jpg" alt=""></a>
+                            <a href="{{ route('marta-luna')}}"><img src="assets/images/team/Marta Luna.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('marta-luna')}}" style="color:#4a235a;"> Marta Luna</a></h3>
@@ -567,7 +569,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('luz-ortiz')}}"><img src="assets/images/team/Luz.jpg" alt=""></a>
+                            <a href="{{ route('luz-ortiz')}}"><img src="assets/images/team/Luz Ortiz.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('luz-ortiz')}}" style="color:#4a235a;"> Luz Ortiz</a></h3>
@@ -580,7 +582,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('ondina-gonzalez')}}"><img src="assets/images/team/Ondina.jpg" alt=""></a>
+                            <a href="{{ route('ondina-gonzalez')}}"><img src="assets/images/team/Ondina Gonzalez.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('ondina-gonzalez')}}" style="color:#4a235a;"> Ondina González</a></h3>
@@ -598,7 +601,7 @@
                     <div class="inner-box">
                         <figure class="image-box">
                             <a href="{{ route('wilson-fernandes-junior')}}"><img
-                                    src="assets/images/team/WilsonFernandesJunior.jpg" alt=""></a>
+                                    src="assets/images/team/Wilson Fernandes.jpg" alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('wilson-fernandes-junior')}}" style="color:#4a235a;">Wilson Fernandes
@@ -612,7 +615,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('shaila-munoz')}}"><img src="assets/images/team/Shaila.png" alt=""></a>
+                            <a href="{{ route('shaila-munoz')}}"><img src="assets/images/team/Shaila Munoz.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('shaila-munoz')}}" style="color:#4a235a;"> Shaila Muñoz</a></h3>
@@ -625,7 +629,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('coralys-santos')}}"><img src="assets/images/team/Coralys.jpg" alt=""></a>
+                            <a href="{{ route('coralys-santos')}}"><img src="assets/images/team/Coralys Santos.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('coralys-santos')}}" style="color:#4a235a;"> Coralys Santos</a></h3>
@@ -641,7 +646,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('sophia-porter')}}"><img src="assets/images/team/sophia.png" alt=""></a>
+                            <a href="{{ route('sophia-porter')}}"><img src="assets/images/team/Sophia Porter.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('sophia-porter')}}" style="color:#4a235a;">Sophia Porter</a></h3>
@@ -654,7 +660,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('jeremy-villoch')}}"><img src="assets/images/team/jeremyVilloch.png"
+                            <a href="{{ route('jeremy-villoch')}}"><img src="assets/images/team/Jeremy Villoch.jpg"
                                     alt=""></a>
                         </figure>
                         <div class="lower-content">
@@ -668,7 +674,8 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('yaheli-vargas')}}"><img src="assets/images/team/yaheli.png" alt=""></a>
+                            <a href="{{ route('yaheli-vargas')}}"><img src="assets/images/team/Yaheli Vargas.jpg"
+                                    alt=""></a>
                         </figure>
                         <div class="lower-content">
                             <h3><a href="{{ route('yaheli-vargas')}}" style="color:#4a235a;"> Yaheli Vargas</a></h3>
@@ -684,7 +691,7 @@
                 <div class="team-block-two">
                     <div class="inner-box">
                         <figure class="image-box">
-                            <a href="{{ route('maylin-escala')}}"><img src="assets/images/team/maylinEscala.png"
+                            <a href="{{ route('maylin-escala')}}"><img src="assets/images/team/Maylin Escala.jpg"
                                     alt=""></a>
                         </figure>
                         <div class="lower-content">

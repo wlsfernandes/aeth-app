@@ -1,22 +1,21 @@
-
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Our team') 
+@section('title', '#somosAETH | Our team')
 
 @section('meta-description', 'AETH - Team')
 
-@section('meta-keywords', 'aeth, team') 
+@section('meta-keywords', 'aeth, team')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="team-details">
     <div class="auto-container">
         <div class="team-details-content">
             <div class="row clearfix">
                 <div class="col-lg-3 col-md-12 col-sm-12 image-column">
-                    <figure class="image-box"><img src="assets/images/team/Oscar.jpg" alt=""></figure>
+                    <figure class="image-box"><img src="assets/images/team/Oscar Merlo.jpg" alt=""></figure>
                 </div>
                 <div class="col-lg-9 col-md-12 col-sm-12 content-column">
                     <div class="content-box">
@@ -27,7 +26,7 @@
                         <p>@lang('team.oscar.p4')</p>
                         <p>@lang('team.oscar.p5')</p>
                         <p>@lang('team.oscar.p6')</p>
-                       
+
                         <p><b>@lang('team.what_excites_about_aeth')</b></p>
                         <p>@lang('team.oscar.p7')</p>
                         <p><b>@lang('team.spare_time')</b></p>
