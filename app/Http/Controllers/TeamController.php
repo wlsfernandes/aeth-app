@@ -58,5 +58,11 @@ class TeamController extends Controller
     {
         return view('pages.team.maylin-escala');
     }
-    
+
+    public function yajairaRuiz()
+    {
+        return view('pages.team.yajaira-ruiz');
+    }
+
+
 }

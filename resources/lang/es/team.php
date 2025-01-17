@@ -153,5 +153,18 @@ return [
             'p9' => 'La Biblia, sin lugar a dudas.',
             'p10' => 'Un pastor de Brasil llamado Paulo Jr. Es un gran hombre de Dios que tiene una visión clara e impactante de las Escrituras.',
         ],
+    'yajaira' =>
+        [
+            'p1' => 'Community Engagement Assistant',
+            'p2' => 'Yajaira Ruiz es una destacada líder, educadora y pastora, apasionada por empoderar a comunidades diversas a través de la educación, la espiritualidad y el liderazgo. Nacida en Puerto Rico y actualmente residente en Estados Unidos, Yajaira ha dedicado su vida a servir y fortalecer a las personas en diversas esferas.',
+            'p3' => 'Cuenta con una sólida formación académica, incluyendo una Maestría en Administración de Empresas (MBA) con especialización en Recursos Humanos y una Maestría en Estudios Cristianos con enfoque en Liderazgo Eclesial. Actualmente está cursando un Doctorado en Administración de Empresas (D.B.A.) en Gerencia y un Doctorado en Ministerio (D.Min.), reflejo de su compromiso con el crecimiento continuo.',
+            'p4' => 'Como directora del centro de extensión de la Universidad Teológica ECHAM, Yajaira lidera programas de formación teológica y de liderazgo. Ha enseñado liderazgo cristiano y teología pastoral, tanto en los Estados Unidos como a nivel internacional, incluyendo cursos virtuales para líderes en la India.',
+            'p6' => 'Es fundadora del ministerio "Dosis de Esperanza," donde aborda temas espirituales, emocionales y matrimoniales, y ha establecido un cuerpo de capellanes dentro de su organización sin fines de lucro. Su visión es ampliar el impacto de este ministerio a nivel global.',
+            'p7' => 'Es fundadora del ministerio "Dosis de Esperanza," donde aborda temas espirituales, emocionales y matrimoniales, y ha establecido un cuerpo de capellanes dentro de su organización sin fines de lucro. Su visión es ampliar el impacto de este ministerio a nivel global.',
+            'p8' => 'La oportunidad de impactar positivamente la vida de los líderes y comunidades hispanas. AETH ofrece un espacio único para promover la educación teológica contextualizada, lo cual considero fundamental para empoderar a los líderes en su vocación ministerial. Poder colaborar con otros líderes comprometidos, compartir conocimientos y fortalecer el desarrollo de iglesias y comunidades es una experiencia profundamente enriquecedora.',
+            'p9' => 'Yajaira disfruta pasar momentos de calidad con su familia, especialmente con su esposo, el pastor Ángel Ruiz, y su hija. Cuando tiene la oportunidad, Yajaira disfruta explorar la naturaleza, ya que le recuerda la grandeza de la creación de Dios, y viajar, especialmente a lugares donde pueda aprender de otras culturas y contribuir al crecimiento de comunidades diversas.',
 
+            'p11' => 'La Biblia',
+            'p12' => 'profundamente es su madre, quien le enseñó la importancia de la fe, el trabajo arduo y la dedicación a la familia. Su madre no solo fue un ejemplo de resiliencia en momentos de desafío, sino también de compasión y servicio hacia los demás, valores que Yajaira aplica en su vida personal y ministerial.',
+        ],
 ];

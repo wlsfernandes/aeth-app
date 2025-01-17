@@ -43,7 +43,7 @@ return [
         'p5' => 'Besides the Bible, one of her favorite books is "Divergent". It is a science fiction novel, but it contains a very strong social reality about our humanity and the beauty of being a thinking human being. ',
         'p6' => 'Jesus is his inspiration and every day he tries to be more like Him.',
     ],
-    'glorie' =>[
+    'glorie' => [
         'p1' => 'CPS/CAP, MBA / Office Business Manager',
         'p2' => 'She is an administrative professional with over 25 years of successful and diversified experience in the pharmaceutical, educational and management industries. During her career, she has held various leadership positions in non-profit organizations, both secular and Christian.',
         'p3' => 'She holds a Bachelor`s Degree in Secretarial Sciences and a Master`s Degree in Business Administration with a concentration in Human Resources, in addition to professional certifications such as CPS (Certified Professional Secretary) and CAP (Certified Administrative Professional).',
@@ -53,108 +53,122 @@ return [
         'p7' => 'The book of Proverbs is his favorite book because it is a compendium of advice and practical wisdom for living a righteous and prudent life. It is a source of moral and spiritual guidance because it covers topics such as: justice, honesty, obedience to God, friendship, diligent work, family, respect for parents and the fear of the Lord.',
         'p8' => 'Her inspiration and motivation come from her mother, who served as a role model and mentor, demonstrating resilience, determination and integrity in the face of adversity. Her mother`s example also instilled in her qualities such as compassion, empathy, creativity and commitment to service. Her mother`s legacy of spiritual transformation and positive outlook fuels her drive to face challenges with courage and optimism.',
     ],
-    'jeremy' => 
-    [
-        'p1' => 'Biennial Assistant Student Intern',
-        'p2' => 'Jeremy Villoch Galarza was born and raised in the center of a Puerto Rican Baptist pastoral family. From an early age one of the pillars of his life has been to work in the formation and education of children and young people on issues of history, society and Christianity. She is currently pursuing her Bachelor of Arts with a concentration in Political Science at the University of Puerto Rico Mayagüez Campus. Among her plans for graduate school are theological and public administration training in Puerto Rico and the United States. She is currently a member of the Board of Directors of the Baptist Churches of Puerto Rico and a student research mentor in the Department of Social Sciences at RUM.',
-        'p3' => 'I am passionate about the opportunity to connect youthful passion and strength with veteran knowledge and hope in the theological endeavor for a world that urges our God.',
-        'p4' => 'My main hobbies are reading, watching series and occasionally drinking coffee.',
-        'p5' => 'My top favorite book is the Bible. Among my other favorite books are Mondays with my old pastor, A Summer at Villa Fe, The Best Leader Ever, Team of Rivals and A Faith that Thinks.',
-        'p6' => 'I am inspired every day by my mother and grandmother, Jesus, Jeremiah and the Apostle Paul.',
-    ],
-    'luz' => 
-    [
-        'p1'=> 'Bookstore Administrator',
-        'p2'=> 'She is a daughter of God. Since she was born in 1974 in the beautiful island of enchantment PR and with only 8 years old, she remembers that her heart longed to live in the presence of her creator. Married with two children, her family perseveres in the Lord. She recognizes that God`s grace is what has allowed her to say "I and my house will serve the Lord" (Joshua 24:15).',
-        'p3'=> 'He is currently completing a Master of Divinity degree at Wesley Seminary at Indiana Wesleyan University.',
-        'p4'=> 'She is an approved candidate for ordained ministry in The United Methodist Church, Florida Conference. For the past years she has collaborated in the Conference Lay Speakers ministry and in the Angola-Florida Mission Covenant. In her local church she is a Lay Leader, her job is to support and develop the leadership of the local church. She also collaborates with her husband in the Marriage Ministry. They seek to strengthen marriage and family life through the Word of God. She lives and will live for God.',
-        'p5'=> 'She is passionate about assisting AETH members with their registrations, memberships, book purchases. Her passion is that their time at AETH is always one that motivates them to continue to grow through Theological Education.',
-        'p6'=> 'He enjoys spending time with the Lord and going to the mission field. He also enjoys talking and spending time with family and friends.',
-        'p7'=> 'By far, the Bible is his favorite book. The reason is because through it God reveals himself to her life.',
-        'p8'=> 'His greatest inspiration is Jesus; his life and leadership are his guide, frame of reference and driving force. His greatest desire is to give a good testimony of his grace and love.',
-    ],
-    'marta'=>
-    [ 
-        'p1' => 'Community Manager Members & Biblical Institutes',
-        'p2' => 'She is the Community Engagement Manager for AETH. Marta earned a Master of Divinity and a Doctorate in Education from Liberty University. Her areas of interest include effectiveness evaluation, leadership training, Bible college certification, accreditation of higher education programs, Christian curriculum development, and event coordination for the promotion of theological education.',
-        'p3' => 'Your role at AETH allows you to collaborate with various groups of people with whom you share similar interests that benefit both AETH and its members and community. In addition, you can identify and broker solutions to problems that affect the community we serve by implementing collaborations, involvement, participation and interaction.',
-        'p4' => 'She spends her leisure time reading, listening to music, embroidering and knitting.',
-        'p5' => 'The Bible, historical books and recipe books.',
-        'p6' => 'His father',
-    ],
-    'maylin'=>
-    [ 
-        'p1' => 'Young Leaders Program Manager',
-        'p2' => 'Born and raised in one of the most diverse cities in the world! Queens, New York. She is the daughter of immigrant parents who emigrated from Ecuador, raised by a single mother who with God`s help moved mountains for her and her siblings. She has been working in the field of Education for more than 10 years. Her passion is to see people discover their potential through family, community and resources. There are many challenges faced by first generation immigrant families in building communities, connections and bridges in a new country. Her passion for community development is rooted in education; she offers experience and knowledge to work together for the common goal of seeing families flourish. She has worked alongside organizations and churches such as: FLORA and Expansion Church. Where she worked with young adults as they navigated faith in today`s context. Therefore, I am excited to join the AETH team, where we will work together to build bridges and make theology accessible to all.',
-        'p3' => 'Her passion is to bring people together and create spaces where everyone is heard. Leverage these conversations and put them into practice.',
-        'p4' => 'She enjoys movies and singing. She also loves spending time with her loved ones.',
-        'p5' => '"The God who sees" by Joana Garcia',
-        'p6' => 'Her mother is her inspiration. Their mother`s heart is as big as hers. The Lord has been at the forefront of their lives and they know they would not be here today if it were not for grace and mercy.',
-    ],
-    'ondina'=>
-    [ 
-        'p1' => 'González Resource Center - Director',
-        'p2' => 'Ondina was born in Havana, Cuba, and came to the United States with her parents and siblings. They settled in Rome, Georgia, where her parents found employment at Berry College. She earned a B.A. and M.A. in History simultaneously, an M.A. in International Finance, and a Ph.D. in History. Most of her working life has been in the non-profit sector, initially in small organizations and then as a teacher. Her greatest joy is her family, especially her husband, Karl, and her son, Jorge, both of whom are extraordinary men from whom she learns every day how to be more faithful and loving. These days, she volunteers at the Justo and Catherine Gonzalez Resource Center.',
-        'p3' => 'To be part of AETH`s mission and work to disseminate and preserve the legacy of Justo and Catherine Gonzalez through the Justo and Catherine Gonzalez Resource Center.',
-        'p4' => 'She gardens, spends time with her husband and friends, reads and does puzzles.',
-        'p5' => 'Mysteries and anything by Jane Austen.',
-        'p6' => 'Karl (husband), Jorge (son), Ondina (mother), Jorge (father), Justo (uncle), Thomas Thangaraj (theologian), Milo Thornberry (former colleague).',
-    ],
-    'sophia'=>
-    [ 
-        'p1' => 'González Resource Center - Intern',
-        'p2' => 'Sophia Porter was born and raised in Marion, Indiana, where she also did her undergraduate work. She graduated from Indiana Wesleyan University with majors in Community Development and Pastoral Ministries. Following her undergraduate career, she studied Spanish linguistics and history at the University of Nebrija in Madrid, Spain. She is in her graduate studies, pursuing a Master of Divinity degree at Candler School of Theology and lives in Atlanta, Georgia.',
-        'p3' => 'She has very much enjoyed her time at the Justo and Catherine Gonzalez Resource Center and hopes to continue the work that is being done. Her favorite part of the job is working with and learning from the Center`s team.',
-        'p4' => 'Aside from her studies, she loves spending time with her family and close friends.',
-        'p5' => 'Life Together by Dietrich Bonhoeffer.',
-        'p6' => 'Kismet and Doug Porter (parents), Betty Osborne (Great Grandmother), her siblings and grandparents',
-    ],
-    'yaheli'=>
-    [ 
-        'p1' => 'Content Curator Intern',
-        'p2' => 'Yaheli Vargas-Ramos is a doctoral student in Theology at Drew University in Madison New Jersey. Her academic interests include the relationship between theology and economics, decolonial theory and liberatory theologies. His ministry work has been centered on initiatives focused on ministering to the "least of these", including several mission trips to Haiti, student director of a food center in Rio Piedras, P.R. and collaborator in a Food Bank in Nashville TN. ',
-        'p3' => 'I am thrilled to have the opportunity to highlight the rich history of an organization as important to the Latino community as AETH.',
-        'p4' => 'I love playing basketball',
-        'p5' => 'Occupy Religion: Theology of the Multitude by Kwok Pui-lan and Joerg Rieger.',
-        'p6' => 'My dear mother, Marilyn Ramos Hernández.',
-    ],
-    'oscar'=>
-    [ 
-        'p1' => 'Program Manager Compelling Preaching',
-        'p2' => 'Dr. Oscar Merlo, Ph.D. (son, husband, father and entrepreneur) is passionate about Christian service, evangelism, preaching and empowering new generations of professionals to transform the world around them. Dr. Merlo holds 5 university degrees (two bachelor´s degrees, two master`s degrees and a Doctor of Philosophy, Ph.D.) from the University of La Verne, Phoenix Graduate School of Business and Fuller Seminary). His research interests are: `Epistemological Imagination of Spirit` vis-a-vis `Relational Aesthetics`, and its influence on the `Imaginary` of renewed neo-Pentecostal communities in cities under dictatorial regimes and in free market economies.',
-        'p3' => 'Dr. Merlo has held executive leadership positions at academic institutions such as Biola University, and organizations such as Target Corporation and ConAgra Foods.',
-        'p4' => 'As a practitioner, Dr. Merlo has traveled to over 40 countries on five continents deciphering how the Missio-Dei is `imagined` in: Cuba, Tel Aviv, Bissau, Istanbul, the Dry Corridor in Guatemala, Los Angeles and in other urban cities in the US and the global south. He led global plans in Evangelization and Transformation initiatives, social justice advocacy in humanitarian aid, Corruption Free Latin America and global leadership training programs.',
-        'p5' => 'Dr. Merlo co-founded the OMEGA generation project; an initiative to mentor Latino millennials and Gen Z in the 21st century. He developed academic programs at Biola University and AMU that expanded to 136 international centers throughout Latin America, Africa, Europe and the Middle East. As founding Director of the Center for the Holy Spirit, he provided research publications, conferences and services for students, faculty and the community.',
-        'p6' => 'Oscar was born into chronic poverty in a fishing neighborhood, La Laguna de Puerto Cortez Honduras. He came to the US at the age of 10 as an underage immigrant. He grew up in an urban center in the city of Pomona, where he met the girl of his dreams, `Lexa`. Today they have two beautiful young adult daughters, Priscilla and Danae.',
-        'p7' => 'He joined AETH because of the transformative impact it has in promoting and improving theological education, benefiting individuals, churches, communities and the next generation of Latino leaders.',
-        'p8' => 'He loves spending time with his wife and daughters, traveling and exploring the world`s cuisine. He also enjoys gardening',
-        'p9' => 'They include Joshua, Esther, Matthew, John and `The Cost of Discipleship`.',
-        'p10' => 'He is inspired by the deep faith that his grandmother and mother demonstrated and passed on to him',
-    ],
-    'shaila'=>
-    [ 
-        'p1' => 'Fundraising Manager',
-        'p2' => 'Shaila Muñoz was born and raised on the beautiful island of Puerto Rico in a family deeply rooted in ministry. From an early age she was immersed in the teachings of faith and the importance of serving others. Guided by her upbringing, Shaila cultivated a deep passion for spreading the Word of God, which would later shape her personal and professional trajectory.',
-        'p3' => 'After completing her bachelor`s degree in Business Administration, Shaila embarked on a purpose-driven path, combining her academic acumen with her spiritual calling. Upon moving to Nashville, Tennessee, she found herself in the heart of the Christian publishing industry, where she has flourished for over 14 years.',
-        'p4' => 'In her career, Shaila has become a beacon of inspiration, combining her background in business administration with her unwavering commitment to her faith. Her work is not simply a profession but a calling: a vehicle through which she continues the work of spreading the Gospel to diverse audiences. Whether through the creation of literature, sales and marketing strategies and initiatives, Shaila`s contributions have resonated deeply within the Christian community and beyond.',
-        'p5' => 'In Nashville, she found professional success and great opportunities to serve where her passion for ministry found fertile ground. Shaila Muñoz is a testament to the profound impact one can have when faith and vocation intersect.',
-        'p6' => 'Believes in the transformative power of theological education for pastors and leaders. Helping to raise funds and foster growth allows him to support the journey to deepen their understanding of faith, empowering them to better serve their communities and fulfill their calling.',
-        'p7' => 'She enjoys helping others, mentoring young people in faith and baking. In addition, she finds renewal in nature, spending time outdoors, spending quality time with her family and friends and, most importantly, nurturing her spiritual growth through prayer and reading.',
-        'p8' => 'This is a difficult question, one of the first books she read that impacted her, and remains one of her favorites, is "Redeeming Love" by Francine Rivers. It is a powerful Amos-inspired story about unconditional love, redemption and faith, reminding her of God`s relentless pursuit of each of us, regardless of our past or our mistakes.',
-        'p9' => 'None like Jesus',
-    ],
-    'junior'=>
-    [ 
-        'p1' => 'IT Solutions - Software Developer',
-        'p2' => 'Wilson Fernandes Junior, although most simply call him Junior. Originally from Brazil, his journey has been intertwined with his beloved wife Keyla for the past 26 years. Together, they are raising two sons, Daniel, 23, and Vitor, 21, in the serene landscapes of North Georgia since 2018.',
-        'p3' => 'By profession, he is a software developer, creating digital solutions with passion. But beyond code and screens, his true calling urges him to serve the Lord Jesus Christ.',
-        'p4' => 'Music resonates deeply with him. As a keyboardist and worship leader at Brazil House Church in Johns Creek, GA, he finds comfort and purpose in leading others to participate as an integral part of the body of Christ, following His will.',
-        'p5' => 'His faith journey began early, at the tender age of 12. Since then, he has been driven to spread the message of love and hope, contributing to the establishment of churches in both Brazil and the United States.',
-        'p6' => 'With every keystroke and every note, he seeks to combine his dedication to both craft and faith, leaving a lasting impression of positivity on those around him.',
-        'p7' => 'To be able to use their skills and experience for a divine purpose.',
-        'p8' => 'He plays the piano and likes to read',
-        'p9' => 'The Bible, no doubt about it.',
-        'p10' => 'A pastor from Brazil named Paulo Jr. He is a great man of God who has a clear and impacting vision of the Scriptures.',
-    ],
-    
+    'jeremy' =>
+        [
+            'p1' => 'Biennial Assistant Student Intern',
+            'p2' => 'Jeremy Villoch Galarza was born and raised in the center of a Puerto Rican Baptist pastoral family. From an early age one of the pillars of his life has been to work in the formation and education of children and young people on issues of history, society and Christianity. She is currently pursuing her Bachelor of Arts with a concentration in Political Science at the University of Puerto Rico Mayagüez Campus. Among her plans for graduate school are theological and public administration training in Puerto Rico and the United States. She is currently a member of the Board of Directors of the Baptist Churches of Puerto Rico and a student research mentor in the Department of Social Sciences at RUM.',
+            'p3' => 'I am passionate about the opportunity to connect youthful passion and strength with veteran knowledge and hope in the theological endeavor for a world that urges our God.',
+            'p4' => 'My main hobbies are reading, watching series and occasionally drinking coffee.',
+            'p5' => 'My top favorite book is the Bible. Among my other favorite books are Mondays with my old pastor, A Summer at Villa Fe, The Best Leader Ever, Team of Rivals and A Faith that Thinks.',
+            'p6' => 'I am inspired every day by my mother and grandmother, Jesus, Jeremiah and the Apostle Paul.',
+        ],
+    'luz' =>
+        [
+            'p1' => 'Bookstore Administrator',
+            'p2' => 'She is a daughter of God. Since she was born in 1974 in the beautiful island of enchantment PR and with only 8 years old, she remembers that her heart longed to live in the presence of her creator. Married with two children, her family perseveres in the Lord. She recognizes that God`s grace is what has allowed her to say "I and my house will serve the Lord" (Joshua 24:15).',
+            'p3' => 'He is currently completing a Master of Divinity degree at Wesley Seminary at Indiana Wesleyan University.',
+            'p4' => 'She is an approved candidate for ordained ministry in The United Methodist Church, Florida Conference. For the past years she has collaborated in the Conference Lay Speakers ministry and in the Angola-Florida Mission Covenant. In her local church she is a Lay Leader, her job is to support and develop the leadership of the local church. She also collaborates with her husband in the Marriage Ministry. They seek to strengthen marriage and family life through the Word of God. She lives and will live for God.',
+            'p5' => 'She is passionate about assisting AETH members with their registrations, memberships, book purchases. Her passion is that their time at AETH is always one that motivates them to continue to grow through Theological Education.',
+            'p6' => 'He enjoys spending time with the Lord and going to the mission field. He also enjoys talking and spending time with family and friends.',
+            'p7' => 'By far, the Bible is his favorite book. The reason is because through it God reveals himself to her life.',
+            'p8' => 'His greatest inspiration is Jesus; his life and leadership are his guide, frame of reference and driving force. His greatest desire is to give a good testimony of his grace and love.',
+        ],
+    'marta' =>
+        [
+            'p1' => 'Community Manager Members & Biblical Institutes',
+            'p2' => 'She is the Community Engagement Manager for AETH. Marta earned a Master of Divinity and a Doctorate in Education from Liberty University. Her areas of interest include effectiveness evaluation, leadership training, Bible college certification, accreditation of higher education programs, Christian curriculum development, and event coordination for the promotion of theological education.',
+            'p3' => 'Your role at AETH allows you to collaborate with various groups of people with whom you share similar interests that benefit both AETH and its members and community. In addition, you can identify and broker solutions to problems that affect the community we serve by implementing collaborations, involvement, participation and interaction.',
+            'p4' => 'She spends her leisure time reading, listening to music, embroidering and knitting.',
+            'p5' => 'The Bible, historical books and recipe books.',
+            'p6' => 'His father',
+        ],
+    'maylin' =>
+        [
+            'p1' => 'Young Leaders Program Manager',
+            'p2' => 'Born and raised in one of the most diverse cities in the world! Queens, New York. She is the daughter of immigrant parents who emigrated from Ecuador, raised by a single mother who with God`s help moved mountains for her and her siblings. She has been working in the field of Education for more than 10 years. Her passion is to see people discover their potential through family, community and resources. There are many challenges faced by first generation immigrant families in building communities, connections and bridges in a new country. Her passion for community development is rooted in education; she offers experience and knowledge to work together for the common goal of seeing families flourish. She has worked alongside organizations and churches such as: FLORA and Expansion Church. Where she worked with young adults as they navigated faith in today`s context. Therefore, I am excited to join the AETH team, where we will work together to build bridges and make theology accessible to all.',
+            'p3' => 'Her passion is to bring people together and create spaces where everyone is heard. Leverage these conversations and put them into practice.',
+            'p4' => 'She enjoys movies and singing. She also loves spending time with her loved ones.',
+            'p5' => '"The God who sees" by Joana Garcia',
+            'p6' => 'Her mother is her inspiration. Their mother`s heart is as big as hers. The Lord has been at the forefront of their lives and they know they would not be here today if it were not for grace and mercy.',
+        ],
+    'ondina' =>
+        [
+            'p1' => 'González Resource Center - Director',
+            'p2' => 'Ondina was born in Havana, Cuba, and came to the United States with her parents and siblings. They settled in Rome, Georgia, where her parents found employment at Berry College. She earned a B.A. and M.A. in History simultaneously, an M.A. in International Finance, and a Ph.D. in History. Most of her working life has been in the non-profit sector, initially in small organizations and then as a teacher. Her greatest joy is her family, especially her husband, Karl, and her son, Jorge, both of whom are extraordinary men from whom she learns every day how to be more faithful and loving. These days, she volunteers at the Justo and Catherine Gonzalez Resource Center.',
+            'p3' => 'To be part of AETH`s mission and work to disseminate and preserve the legacy of Justo and Catherine Gonzalez through the Justo and Catherine Gonzalez Resource Center.',
+            'p4' => 'She gardens, spends time with her husband and friends, reads and does puzzles.',
+            'p5' => 'Mysteries and anything by Jane Austen.',
+            'p6' => 'Karl (husband), Jorge (son), Ondina (mother), Jorge (father), Justo (uncle), Thomas Thangaraj (theologian), Milo Thornberry (former colleague).',
+        ],
+    'sophia' =>
+        [
+            'p1' => 'González Resource Center - Intern',
+            'p2' => 'Sophia Porter was born and raised in Marion, Indiana, where she also did her undergraduate work. She graduated from Indiana Wesleyan University with majors in Community Development and Pastoral Ministries. Following her undergraduate career, she studied Spanish linguistics and history at the University of Nebrija in Madrid, Spain. She is in her graduate studies, pursuing a Master of Divinity degree at Candler School of Theology and lives in Atlanta, Georgia.',
+            'p3' => 'She has very much enjoyed her time at the Justo and Catherine Gonzalez Resource Center and hopes to continue the work that is being done. Her favorite part of the job is working with and learning from the Center`s team.',
+            'p4' => 'Aside from her studies, she loves spending time with her family and close friends.',
+            'p5' => 'Life Together by Dietrich Bonhoeffer.',
+            'p6' => 'Kismet and Doug Porter (parents), Betty Osborne (Great Grandmother), her siblings and grandparents',
+        ],
+    'yaheli' =>
+        [
+            'p1' => 'Content Curator Intern',
+            'p2' => 'Yaheli Vargas-Ramos is a doctoral student in Theology at Drew University in Madison New Jersey. Her academic interests include the relationship between theology and economics, decolonial theory and liberatory theologies. His ministry work has been centered on initiatives focused on ministering to the "least of these", including several mission trips to Haiti, student director of a food center in Rio Piedras, P.R. and collaborator in a Food Bank in Nashville TN. ',
+            'p3' => 'I am thrilled to have the opportunity to highlight the rich history of an organization as important to the Latino community as AETH.',
+            'p4' => 'I love playing basketball',
+            'p5' => 'Occupy Religion: Theology of the Multitude by Kwok Pui-lan and Joerg Rieger.',
+            'p6' => 'My dear mother, Marilyn Ramos Hernández.',
+        ],
+    'oscar' =>
+        [
+            'p1' => 'Program Manager Compelling Preaching',
+            'p2' => 'Dr. Oscar Merlo, Ph.D. (son, husband, father and entrepreneur) is passionate about Christian service, evangelism, preaching and empowering new generations of professionals to transform the world around them. Dr. Merlo holds 5 university degrees (two bachelor´s degrees, two master`s degrees and a Doctor of Philosophy, Ph.D.) from the University of La Verne, Phoenix Graduate School of Business and Fuller Seminary). His research interests are: `Epistemological Imagination of Spirit` vis-a-vis `Relational Aesthetics`, and its influence on the `Imaginary` of renewed neo-Pentecostal communities in cities under dictatorial regimes and in free market economies.',
+            'p3' => 'Dr. Merlo has held executive leadership positions at academic institutions such as Biola University, and organizations such as Target Corporation and ConAgra Foods.',
+            'p4' => 'As a practitioner, Dr. Merlo has traveled to over 40 countries on five continents deciphering how the Missio-Dei is `imagined` in: Cuba, Tel Aviv, Bissau, Istanbul, the Dry Corridor in Guatemala, Los Angeles and in other urban cities in the US and the global south. He led global plans in Evangelization and Transformation initiatives, social justice advocacy in humanitarian aid, Corruption Free Latin America and global leadership training programs.',
+            'p5' => 'Dr. Merlo co-founded the OMEGA generation project; an initiative to mentor Latino millennials and Gen Z in the 21st century. He developed academic programs at Biola University and AMU that expanded to 136 international centers throughout Latin America, Africa, Europe and the Middle East. As founding Director of the Center for the Holy Spirit, he provided research publications, conferences and services for students, faculty and the community.',
+            'p6' => 'Oscar was born into chronic poverty in a fishing neighborhood, La Laguna de Puerto Cortez Honduras. He came to the US at the age of 10 as an underage immigrant. He grew up in an urban center in the city of Pomona, where he met the girl of his dreams, `Lexa`. Today they have two beautiful young adult daughters, Priscilla and Danae.',
+            'p7' => 'He joined AETH because of the transformative impact it has in promoting and improving theological education, benefiting individuals, churches, communities and the next generation of Latino leaders.',
+            'p8' => 'He loves spending time with his wife and daughters, traveling and exploring the world`s cuisine. He also enjoys gardening',
+            'p9' => 'They include Joshua, Esther, Matthew, John and `The Cost of Discipleship`.',
+            'p10' => 'He is inspired by the deep faith that his grandmother and mother demonstrated and passed on to him',
+        ],
+    'shaila' =>
+        [
+            'p1' => 'Fundraising Manager',
+            'p2' => 'Shaila Muñoz was born and raised on the beautiful island of Puerto Rico in a family deeply rooted in ministry. From an early age she was immersed in the teachings of faith and the importance of serving others. Guided by her upbringing, Shaila cultivated a deep passion for spreading the Word of God, which would later shape her personal and professional trajectory.',
+            'p3' => 'After completing her bachelor`s degree in Business Administration, Shaila embarked on a purpose-driven path, combining her academic acumen with her spiritual calling. Upon moving to Nashville, Tennessee, she found herself in the heart of the Christian publishing industry, where she has flourished for over 14 years.',
+            'p4' => 'In her career, Shaila has become a beacon of inspiration, combining her background in business administration with her unwavering commitment to her faith. Her work is not simply a profession but a calling: a vehicle through which she continues the work of spreading the Gospel to diverse audiences. Whether through the creation of literature, sales and marketing strategies and initiatives, Shaila`s contributions have resonated deeply within the Christian community and beyond.',
+            'p5' => 'In Nashville, she found professional success and great opportunities to serve where her passion for ministry found fertile ground. Shaila Muñoz is a testament to the profound impact one can have when faith and vocation intersect.',
+            'p6' => 'Believes in the transformative power of theological education for pastors and leaders. Helping to raise funds and foster growth allows him to support the journey to deepen their understanding of faith, empowering them to better serve their communities and fulfill their calling.',
+            'p7' => 'She enjoys helping others, mentoring young people in faith and baking. In addition, she finds renewal in nature, spending time outdoors, spending quality time with her family and friends and, most importantly, nurturing her spiritual growth through prayer and reading.',
+            'p8' => 'This is a difficult question, one of the first books she read that impacted her, and remains one of her favorites, is "Redeeming Love" by Francine Rivers. It is a powerful Amos-inspired story about unconditional love, redemption and faith, reminding her of God`s relentless pursuit of each of us, regardless of our past or our mistakes.',
+            'p9' => 'None like Jesus',
+        ],
+    'junior' =>
+        [
+            'p1' => 'IT Solutions - Software Developer',
+            'p2' => 'Wilson Fernandes Junior, although most simply call him Junior. Originally from Brazil, his journey has been intertwined with his beloved wife Keyla for the past 26 years. Together, they are raising two sons, Daniel, 23, and Vitor, 21, in the serene landscapes of North Georgia since 2018.',
+            'p3' => 'By profession, he is a software developer, creating digital solutions with passion. But beyond code and screens, his true calling urges him to serve the Lord Jesus Christ.',
+            'p4' => 'Music resonates deeply with him. As a keyboardist and worship leader at Brazil House Church in Johns Creek, GA, he finds comfort and purpose in leading others to participate as an integral part of the body of Christ, following His will.',
+            'p5' => 'His faith journey began early, at the tender age of 12. Since then, he has been driven to spread the message of love and hope, contributing to the establishment of churches in both Brazil and the United States.',
+            'p6' => 'With every keystroke and every note, he seeks to combine his dedication to both craft and faith, leaving a lasting impression of positivity on those around him.',
+            'p7' => 'To be able to use their skills and experience for a divine purpose.',
+            'p8' => 'He plays the piano and likes to read',
+            'p9' => 'The Bible, no doubt about it.',
+            'p10' => 'A pastor from Brazil named Paulo Jr. He is a great man of God who has a clear and impacting vision of the Scriptures.',
+        ],
+
+    'yajaira' =>
+        [
+            'p1' => 'Community Engagement Assistant',
+            'p2' => 'Yajaira Ruiz is a distinguished leader, educator, and pastor, passionate about empowering diverse communities through education, spirituality, and leadership. Born in Puerto Rico and currently residing in the United States, Yajaira has dedicated her life to serving and strengthening people in various spheres.',
+            'p3' => '  She has a solid academic background, including a Master’s in Business Administration (MBA) with a specialization in Human Resources and a Master’s in Christian Studies focusing on Church Leadership. She is currently pursuing a Doctorate in Business Administration (D.B.A.) in Management and a Doctorate in Ministry (D.Min.), reflecting her commitment to continuous growth.',
+            'p4' => ' As the director of the extension center of ECHAM Theological University, Yajaira leads programs in theological and leadership training. She has taught Christian leadership and pastoral theology both in the United States and internationally, including virtual courses for leaders in India.',
+            'p6' => 'She is the founder of the ministry "Dosis de Esperanza," where she addresses spiritual, emotional, and marital topics, and has established a body of chaplains within her nonprofit organization. Her vision is to expand the impact of this ministry globally.',
+            'p7' => ' In her personal life, she is the wife of Pastor Reverend Ángel Ruiz and mother to a daughter. Her approach combines faith, resilience, and leadership to inspire others to flourish in their own contexts.',
+            'p8' => ' The opportunity to positively impact the lives of Hispanic leaders and communities. AETH provides a unique space to promote contextualized theological education, which I consider essential for empowering leaders in their ministerial calling. Collaborating with other committed leaders, sharing knowledge, and strengthening the development of churches and communities is a deeply enriching experience.',
+            'p9' => 'Yajaira enjoys spending quality time with her family, especially her husband, Pastor Ángel Ruiz, and her daughter. When she has the chance, Yajaira loves exploring nature, as it reminds her of the greatness of God’s creation, and traveling, especially to places where she can learn about other cultures and contribute to the growth of diverse communities.',
+            'p11' => 'The Bible',
+            'p12' => 'Deeply is her mother, who taught her the importance of faith, hard work, and dedication to family. Her mother was not only an example of resilience during challenging times but also of compassion and service to others, values that Yajaira applies in her personal and ministerial life.',
+        ],
+
 ];

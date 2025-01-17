@@ -702,6 +702,20 @@
                     </div>
                 </div>
             </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 team-block">
+                <div class="team-block-two">
+                    <div class="inner-box">
+                        <figure class="image-box">
+                            <a href="{{ route('yajaira-ruiz')}}"><img src="assets/images/team/Yajaira Ruiz.jpg"
+                                    alt=""></a>
+                        </figure>
+                        <div class="lower-content">
+                            <h3><a href="{{ route('yajaira-ruiz')}}" style="color:#4a235a;">Yajaira Ruiz</a></h3>
+                            <span class="designation">@lang('team.yajaira.p1')</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
