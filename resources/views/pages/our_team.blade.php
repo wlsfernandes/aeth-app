@@ -316,7 +316,8 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Aracelis.jpg" alt="card image">
+                                    <p><img class=" img-fluid" src="assets/images/team/Aracelis Haye.jpg"
+                                            alt="card image">
                                     </p>
                                     <h4 class="card-title" style="margin-top:30px;">Aracelis Haye</h4>
                                     <p class="card-text">@lang('team.member')</p>
@@ -330,7 +331,7 @@
                             <div class="card">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/Aracelis.jpg"
+                                        <p><img class=" img-fluid" src="assets/images/team/Aracelis Haye.jpg"
                                                 alt="card image"></p>
                                     </div>
                                 </div>
