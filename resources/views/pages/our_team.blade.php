@@ -377,7 +377,7 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.png"
+                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Danny Santiago</h4>
                                     <p class="card-text">@lang('team.member')</p>
@@ -390,7 +390,7 @@
                         <div class="backside">
                             <div class="card">
                                 <div class="card-body text-center mt-4">
-                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.png"
+                                    <p><img class=" img-fluid" src="assets/images/team/Danny Santiago.jpg"
                                             alt="card image"></p>
                                 </div>
                             </div>
