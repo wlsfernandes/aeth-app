@@ -134,7 +134,7 @@ Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleM
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
-Route::post('/handle-payment', [PaymentController::class, 'handlePayment']);
+Route::post('/handle-payment', [PaymentController::class, 'handleDonation']);
 
 
 

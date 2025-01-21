@@ -41,4 +41,5 @@ return [
     'zipcode' => 'Código Postal',
     'name_on_card' => 'Nombre en la tarjeta',
     'young_leaders' => 'Young Líderes',
+    'recurring_donation' => 'Donación Recurrente'
 ];

@@ -1,26 +1,25 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Payment') 
+@section('title', '#somosAETH | Payment')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'home, welcome, introduction')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section>
     <div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
         <div class="col-md-12">
-           
+
             <div class="card" style="margin-bottom: 300px !important;">
                 <span><b>@lang('header.choose_payment')</b></span>
                 <div class="accordion" id="accordionExample" style="color:#4A235A;margin-top:20px;">
                     <div class="card">
-                        <form id="payment-form"
-                            action="{{ url('/handle-payment') }}"
-                            method="POST" class="default-form">
+                        <form id="payment-form" action="{{ url('/handle-payment') }}" method="POST"
+                            class="default-form">
                             @csrf
                             <div class="card-header p-0">
                                 <h2 class="mb-0">
@@ -57,14 +56,27 @@
                                     <input type="hidden" name="program" value="{{ $program ?? '' }}">
                                     <input type="hidden" name="membership_plan" value="{{ $membership_plan ?? '' }}">
                                     <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
+                                    <div class="mb-3 d-flex align-items-center">
+                                        <div>
+                                            <input type="number" name="amount" id="amount"
+                                                value="{{ number_format($amount ?? 0, 2, '.', '') }}"
+                                                class="form-control" required min="1" step="0.01">
+                                        </div>
+                                        <span style="width: 20px;"></span> <!-- Spacer -->
+                                        <div class="d-flex align-items-center">
+                                            <input type="checkbox" id="is_recurring" name="is_recurring" value="1">
+                                            <span style="width: 10px;"></span> <!-- Spacer -->
+                                            <i class="fas fa-sync me-2"></i>
+                                            <span style="width: 10px;"></span> <!-- Spacer -->
+                                            <label for="is_recurring"
+                                                class="form-label mb-0 me-2">@lang('header.recurring_donation')</label>
 
-                                    <div class="mb-3">
-
-                                        <input type="number" name="amount" id="amount"
-                                            value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
-                                            required min="1" step="0.01">
-
+                                        </div>
                                     </div>
+
+
+
+
                                     <div class="mb-3">
                                         <label for="name" class="form-label">@lang('header.first_name'):</label>
                                         <input type="text" id="first_name" name="first_name" class="form-control"
@@ -146,9 +158,9 @@
         </div>
     </div>
 
-   <!-- STRIPE PAYMENT -->
-   @include('stripe.script') 
-  <!-- STRIPE PAYMENT -->  
-   
+    <!-- STRIPE PAYMENT -->
+    @include('stripe.script')
+    <!-- STRIPE PAYMENT -->
+
 </section>
 @endsection

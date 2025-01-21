@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Payment') 
+@section('title', '#somosAETH | Payment')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'home, welcome, introduction')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section>
     <div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
         <div class="col-md-12">
@@ -193,7 +193,7 @@
     </div>
 
     <!-- STRIPE PAYMENT -->
-    @include('stripe.script') 
+    @include('stripe.script')
     <!-- STRIPE PAYMENT -->
     <script>
         function calculateShipping() {

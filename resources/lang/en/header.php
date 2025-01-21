@@ -46,4 +46,5 @@ return [
     'bookstore_enjoy' => 'Enjoy exclusive access to resources created to inspire you and help you grow as an influencer in your community.',
     'shipment_cost' => 'Shipment Cost',
     'young_leaders' => 'Young Leaders',
+    'recurring_donation' => 'Recurring Donation',
 ];
