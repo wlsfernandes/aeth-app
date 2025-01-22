@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Compelling Preaching') 
+@section('title', '#somosAETH | Compelling Preaching')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'AETH, Compelling Preaching, introduction') 
+@section('meta-keywords', 'AETH, Compelling Preaching, introduction')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="page-title centred">
     <div
         style="background-image: url(assets/images/gallery/compelling_preaching.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
@@ -67,7 +67,7 @@
         </div>
     </div>
 </section>
-<section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">
+<section class="about-style-two pt_120">
     <div class="auto-container">
         <div class="row clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -91,7 +91,7 @@
     </div>
 </section>
 
-<section class="about-style-two pt_120">
+<!--<section class="about-style-two pt_120">
     <div class="auto-container">
         <div class="row align-items-center clearfix">
             <div class="col-lg-6 col-md-12 col-sm-12 image-column">
@@ -116,7 +116,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->
 
 
 <section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">

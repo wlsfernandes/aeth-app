@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Members') 
+@section('title', '#somosAETH | Members')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Unlock the benefits of AETH membership: Support Hispanic, Latino, Latine, and Latinx communities through accessible theological education and leadership development. Enjoy exclusive discounts, resources, and access to workshops, lectures, conferences, and a curated bookstore. Join a network of pastors, scholars, and lay leaders committed to faith, justice, and ministry. Empower communities through mentorship, practical theology, and intergenerational collaboration. Become part of a transformative mission today!')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'benefits, institutional, individual, mission, vision, theological education, theology, experts, Bible institutes, preaching, advocacy, pastors, students, lay persons, accessible theological education, empower, certification, community, communities of practice, instructor education, leadership, capacity building, young, leaders, intergenerational, values, nonprofit, organization, Hispanic, Latino, Latine, Latinx, curriculum, contextualized, library resources, collaboration, relations,donations, donors, coordination, lectures, conferences, workshops, membership, network, faith, identity, justice, calling, ministry, migrant, immigrant, church, generation, research, study, reflection, practical theology, mentorship, publications, resources, evaluation, scholars, relevancy, critical thinking, initiatives, engagement, learning experiences, interviews, recordings, discounts, bookstore, ReDET,beneficios, institucional, individual, misión, visión, educación teológica, teología, expertos, institutos bíblicos, predicación, defensa de derechos, pastores, estudiantes, laicos, educación teológica accesible, empoderamiento, certificación, comunidad, comunidades de práctica, formación de instructores, liderazgo, desarrollo de capacidades, jóvenes, líderes, intergeneracional, valores, sin fines de lucro, organización, hispano, latino, latinx, currículo, contextualizado, recursos de biblioteca, colaboración, relaciones, donaciones, donantes, coordinación, charlas, conferencias, conversatorios, talleres, membresía, red, fe, identidad, justicia, llamado, ministerio, migrante inmigrante, iglesia, generación, investigación, estudio, reflexión, teología práctica, mentoría, publicaciones, recursos, evaluación, académicos, relevancia, pensamiento crítico, iniciativas, compromiso, experiencias de aprendizaje, entrevistas, grabaciones, descuentos, librería, ReDET')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <!--
 <section class="page-title centred">
     <div style="background-image: url(assets/images/gallery/membership.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
@@ -17,7 +17,7 @@
    < <div class="auto-container" style="position: relative; z-index: 2;">
         <div class="content-box">
             <h1>AETH - Exclusive Premium Content</h1>
-        </div> 
+        </div>
     </div>
 </section> -->
 

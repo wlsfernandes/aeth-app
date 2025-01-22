@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Certification Program') 
+@section('title', '#somosAETH | Certification Program')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Discover the AET Certification Program: Empowering Hispanic, Latino, and Latine communities with accessible, contextualized theological education. Build leadership, faith identity, and critical thinking through innovative curriculum, mentorship, and collaboration. Join our network of scholars, students, and faith leaders committed to justice, ministry, and community transformation.')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'mission, vision, theological education, theology, experts, Bible institutes, students, lay persons, accessible theological education, empower, certification, community, communities of practice, instructor education, leadership, capacity building,  organization, Hispanic, Latino, Latine, Latinx, curriculum, contextualized, library resources, collaboration, relations, membership, network, faith, identity, justice, calling, ministry, migrant, immigrant, church, research, study, reflection, practical theology, mentorship, publications, resources, evaluation, scholars, relevancy, critical thinking, initiatives, engagement, learning experiences, application, self-study, certified, institution, improvement, leadership development, standards, educational standards, organizational standards')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="page-title centred">
     <div
         style="background-image: url(assets/images/certification.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">

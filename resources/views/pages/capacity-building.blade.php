@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Certification Program') 
+@section('title', '#somosAETH | Certification Program')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Explore our mission to empower Hispanic communities through accessible and contextualized theological education. We foster leadership development, intergenerational engagement, and capacity building with workshops, mentorship, and resources. Join a network of scholars, students, and faith leaders dedicated to critical thinking, practical theology, and community transformation. Learn more about grants, subawards, and initiatives driving impactful change.')
 
-@section('meta-keywords', 'AETH, Antioquia, introduction') 
+@section('meta-keywords', 'somosAETH,mission, vision, theological education, theology, experts, Bible institutes, students, lay persons, accessible theological education, empower, certification, community, communities of practice, instructor education, leadership, capacity building, young, leaders, intergenerational, values, nonprofit, organization, Hispanic, Latino, Latine, Latinx, curriculum, contextualized, library resources, collaboration, relations, workshops, membership, network, study, reflection, practical theology, mentorship, publications, resources, evaluation, scholars, relevancy, critical thinking, initiatives, engagement, learning experiences, grant, subaward, proposal, application,misión, visión, educación teológica, teología, expertos, institutos bíblicos, estudiantes, laicos, educación teológica accesible, empoderamiento, certificación, comunidad, comunidades de práctica, formación de instructores, liderazgo, desarrollo de capacidades, jóvenes, líderes, intergeneracional, valores, sin fines de lucro, organización, hispano, latino, latinx, currículo, contextualizado, recursos de biblioteca, colaboración, relaciones, talleres, membresía, red, estudio, reflexión, teología práctica, tutoría, publicaciones, recursos, evaluación, académicos, relevancia, pensamiento crítico, iniciativas, compromiso, experiencias de aprendizaje, subvención, subvención, propuesta')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="page-title centred">
     <div
         style="background-image: url(assets/images/gallery/cp-program.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
@@ -90,8 +90,8 @@
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/principal.jpg"
-                                        alt=""></a></figure>
+                            <figure class="image"><a href="#"><img src="assets/images/gallery/principal.jpg" alt=""></a>
+                            </figure>
                             <div class="category"><a href="#">@lang('programs.cp.area_1')</a></div>
                         </div>
                     </div>
@@ -235,8 +235,11 @@
                         <div>
                             <ul class="list-style-one clearfix">
                                 <li>@lang('programs.cp.req1')
-                                 <a href="{{ route('memberships') }}" style="all: unset;background-color:#4a235a; border-color: #4a235a; color: #fff;"><i class="bi bi-person"></i>
-                                @lang('header.signup_member')</a></li>
+                                    <a href="{{ route('memberships') }}"
+                                        style="all: unset;background-color:#4a235a; border-color: #4a235a; color: #fff;"><i
+                                            class="bi bi-person"></i>
+                                        @lang('header.signup_member')</a>
+                                </li>
                                 <li>@lang('programs.cp.req2')</li>
                                 <li>@lang('programs.cp.req3')</li>
                                 <li>@lang('programs.cp.req4')</li>
