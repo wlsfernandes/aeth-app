@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Home') 
+@section('title', '#somosAETH | Home')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Discover comprehensive Hispanic theological education and Latino ministry training programs. Explore Bible institute certifications, leadership development, and theological resources for Hispanic pastors and church leaders. Empower your ministry with tailored courses and Spanish-language resources.')
 
-@section('meta-keywords', 'home, welcome, introduction') 
+@section('meta-keywords', 'somosAETH,Hispanic theological education, Latino ministry training, Bible institute certification, Hispanic church leadership, theological resources for Hispanics, Hispanic ministry programs, Latino religious education, Hispanic theology courses, Spanish theological resources, Hispanic pastoral training, leadership development, Latino church leaders resources, certification for Hispanic Bible institutes,Preaching, Compelling, Teologia, Teologica, Educacion, Education, Servicio, Comunidad, Hispano, Latino, Predicacion, Transformacion, America Latina, Caribe, Educadores, Scholars, Autores, Historiadores, Teologia Integral, Teologia Sistematica, Migración, Justicia Social, Adiestramiento, Formacion, Antioquia, Reflexión, Recursos, Libros, Storytelling, Colaboracion, En Conjunto')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
@@ -45,8 +45,8 @@
                     <div class="auto-container"
                         style="position: absolute; top: 75%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
                         <div class="content-box">
-                        <h1 style="font-size:48px;color:#4a235a"><b>@lang('header.bookstore')</b></h1>
-                        <h5 style="font-size:24px;color:#4a235a">@lang('header.bookstore_enjoy')</h5>
+                            <h1 style="font-size:48px;color:#4a235a"><b>@lang('header.bookstore')</b></h1>
+                            <h5 style="font-size:24px;color:#4a235a">@lang('header.bookstore_enjoy')</h5>
                         </div>
                     </div>
                 </div>
@@ -442,7 +442,7 @@ height: 100%;
             <h2>Events</h2>
         </div>
         <div class="row clearfix">
-            @foreach($events as $event)           
+            @foreach($events as $event)
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                     <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="inner-box">

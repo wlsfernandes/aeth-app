@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Contact') 
+@section('title', '#somosAETH | Contact')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'home, contact, introduction') 
+@section('meta-keywords', 'home, contact, introduction')
 
 
 <!-- Content here -->
 
-@section('content') 
+@section('content')
 <section class="contact-info-section bg-color-1 centred">
     <div class="auto-container">
         <div class="row clearfix">
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-           
+
             <div class="col-lg-4 col-md-6 col-sm-12 info-column">
                 <div class="info-block-one">
                     <div class="inner-box">
@@ -66,8 +66,10 @@
                     <h3>@lang('messages.feel_free')</h3>
                     <p>@lang('messages.feel_free_p1')</p>
                     <ul class="social-links clearfix">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/groups/662799037578468" target="blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/aeth_org/" target="blank"><i
+                                    class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

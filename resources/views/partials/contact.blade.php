@@ -15,8 +15,10 @@
                     <h3>@lang('messages.feel_free')</h3>
                     <p>@lang('messages.feel_free_p1')</p>
                     <ul class="social-links clearfix">
-                        <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        <li><a href="https://www.facebook.com/groups/662799037578468" target="blank"><i
+                                    class="fab fa-facebook-f"></i></a></li>
+                        <li><a href="https://www.instagram.com/aeth_org/" target="blank"><i
+                                    class="fab fa-instagram"></i></a></li>
                     </ul>
                 </div>
             </div>

@@ -87,7 +87,7 @@ return [
             'p11' => '<b>Spanish and English:</b>  The program is offered in both languages.',
             'p12' => '<b>Hybrid Meetings:</b>  The content is taught both in person and virtually via Zoom.',
             'p13' => '<b>Flexible Schedules:</b> Study at your own pace, with personalized support and free orientation.',
-            'p14' => '<b>Connections</b>Participate in our program and become part of a network of leaders.',
+            'p14' => '<b>Connections:</b> Participate in our program and become part of a network of leaders.',
             'p15' => 'Who can benefit?',
             'p16' => 'We focus on the development and support of first and second generation Hispanic and Latino leaders who play an active role in preaching, either on a weekly basis or on special occasions. Recognizing the diversity and unique challenges these leaders face, our initiative seeks to provide them with resources and specific training that resonates with their experiences and needs. In addition, we extend an invitation to the leaders who supervise and mentor these preachers to participate in our educational events.',
             'p17' => 'Student Stories',
