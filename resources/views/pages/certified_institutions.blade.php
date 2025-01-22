@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Certified Institutes') 
+@section('title', '#somosAETH | Certified Institutes')
 
 @section('meta-description', 'This is a brief description of the home page.')
 
-@section('meta-keywords', 'AETH, Bible`s Intitutes, introduction') 
+@section('meta-keywords', 'AETH, Bible`s Intitutes, introduction')
 
 <style>
     /* FontAwesome for working BootSnippet :> */
@@ -139,7 +139,7 @@
     }
 </style>
 
-@section('content') 
+@section('content')
 
 <section id="team" class="pb-5">
     <div class="container">
@@ -305,7 +305,7 @@
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Center for Latin Studies</h4>
                                     <p class="card-text"> Dr. R. Lamar Vest</p>
-                                    <p><a href="https://www.centroparaestudioslatinos.org" target="blank"
+                                    <p><a href="https://www.centroparaestudioslatinos.net/" target="blank"
                                             class="btn btn-primary btn-sm"
                                             style="background-color: #4a235a;border-color:#4a235a"><i
                                                 class="fa fa-plus"></i></a></p>
@@ -420,7 +420,8 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/gallery/institutes/harbor.jpg"
                                             alt="card image"></p>
-                                    <h4 class="card-title" style="margin-top:30px;"> Harbor Genesis Christian College (HGCC)</h4>
+                                    <h4 class="card-title" style="margin-top:30px;"> Harbor Genesis Christian College
+                                        (HGCC)</h4>
                                     <p class="card-text"> Dr. Jeffry Caballero</p>
                                     <p><a href="https://www.harborgenesiscc.org" target="blank"
                                             class="btn btn-primary btn-sm"
@@ -438,7 +439,8 @@
                                                 href="https://www.harborgenesiscc.org"
                                                 target="blank">www.harborgenesiscc.org</a></b></p>
                                         <p style="margin-top:15px"><i class="bi bi-telephone"></i> (310) 957-2984</p>
-                                        <p style="margin-top:15px"> 500 North State College Boulevard, Suite 1100 Orange, CA, 9286</p>
+                                        <p style="margin-top:15px"> 500 North State College Boulevard, Suite 1100
+                                            Orange, CA, 9286</p>
                                     </div>
                                 </div>
                             </div>
@@ -454,10 +456,10 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/gallery/institutes/unilimi.png"
                                             alt="card image"></p>
-                                    <h4 class="card-title" style="margin-top:30px;">University of Leadership and Ministry (UNILIMI)</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">University of Leadership and
+                                        Ministry (UNILIMI)</h4>
                                     <p class="card-text">Dr. Wilfredo Estrada Adorno</p>
-                                    <p><a href="https://www.unilimi.org" target="blank"
-                                            class="btn btn-primary btn-sm"
+                                    <p><a href="https://www.unilimi.org" target="blank" class="btn btn-primary btn-sm"
                                             style="background-color: #4a235a;border-color:#4a235a"><i
                                                 class="fa fa-plus"></i></a></p>
 
@@ -472,7 +474,8 @@
                                                 href="https://www.unilimi.org" target="blank">
                                                 www.unilimi.org</a></b></p>
                                         <p style="margin-top:15px"><i class="bi bi-telephone"></i> (919) 803-3262</p>
-                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 94 Technology Drive, Garner, NC 27529</p>
+                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 94 Technology Drive,
+                                            Garner, NC 27529</p>
                                     </div>
                                 </div>
                             </div>
@@ -484,7 +487,7 @@
         </div>
 
         <div class="row">
-        <div class="col-xs-12 col-sm-6 col-md-4">
+            <div class="col-xs-12 col-sm-6 col-md-4">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
                         <div class="frontside">
@@ -494,8 +497,7 @@
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;"> ECHAM Theological University</h4>
                                     <p class="card-text"> Dr. Danny Santiago Torres</p>
-                                    <p><a href="https://www.utecham.org" target="blank"
-                                            class="btn btn-primary btn-sm"
+                                    <p><a href="https://www.utecham.org" target="blank" class="btn btn-primary btn-sm"
                                             style="background-color: #4a235a;border-color:#4a235a"><i
                                                 class="fa fa-plus"></i></a></p>
 
@@ -507,10 +509,11 @@
                                 <div class="card">
                                     <div class="card-body text-center">
                                         <p style="margin-top:15px"><i class="bi bi-globe"></i> <a
-                                                href="https://www.utecham.org"
-                                                target="blank">www.utecham.org</a></b></p>
+                                                href="https://www.utecham.org" target="blank">www.utecham.org</a></b>
+                                        </p>
                                         <p style="margin-top:15px"><i class="bi bi-telephone"></i> (787) 912-8088</p>
-                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 58 Calle De la Cruz, Rio Grande, PR 00745</p>
+                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 58 Calle De la Cruz,
+                                            Rio Grande, PR 00745</p>
                                     </div>
                                 </div>
                             </div>
@@ -526,7 +529,8 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/gallery/institutes/espiritu.jpg"
                                             alt="card image"></p>
-                                    <h4 class="card-title" style="margin-top:30px;"> Spirit and Life Seminar, Church of God of Prophecy</h4>
+                                    <h4 class="card-title" style="margin-top:30px;"> Spirit and Life Seminar, Church of
+                                        God of Prophecy</h4>
                                     <p class="card-text"> Dr. Michael Hernandez</p>
                                     <p><a href="https://www.seminarioespirituyvida.org" target="blank"
                                             class="btn btn-primary btn-sm"
@@ -543,8 +547,9 @@
                                         <p style="margin-top:15px"><i class="bi bi-globe"></i> <a
                                                 href="https://www.seminarioespirituyvida.org"
                                                 target="blank">www.seminarioespirituyvida.org</a></b></p>
-                                        <p style="margin-top:15px"><i class="bi bi-telephone"></i>  (423) 559-5515</p>
-                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 3800 Keith St NW, Cleveland TN 37312</p>
+                                        <p style="margin-top:15px"><i class="bi bi-telephone"></i> (423) 559-5515</p>
+                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 3800 Keith St NW,
+                                            Cleveland TN 37312</p>
                                     </div>
                                 </div>
                             </div>
@@ -578,7 +583,8 @@
                                                 href="https://www.revelationuniversity.us" target="blank">
                                                 www.revelationuniversity.us</a></b></p>
                                         <p style="margin-top:15px"><i class="bi bi-telephone"></i> (305) 969-9448</p>
-                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 10658 SW 186th St, Miami, FL 33157</p>
+                                        <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 10658 SW 186th St,
+                                            Miami, FL 33157</p>
                                     </div>
                                 </div>
                             </div>
