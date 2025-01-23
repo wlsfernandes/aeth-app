@@ -446,8 +446,13 @@ height: 100%;
                 <div class="col-lg-4 col-md-6 col-sm-12 news-block">
                     <div class="news-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="inner-box">
-                            <figure class="image-box"><a href="{{ route('post.show', $event->slug) }}"><img
-                                        src="assets/images/events/1.jpg" alt=""></a></figure>
+                            <figure class="image-box">
+                                <a href="{{ route('post.show', $event->slug) }}">
+                                    <img src="{{$event->image_url}}" alt=""
+                                        style="width: 440px; height: 220px; object-fit: cover; object-position: top;">
+                                </a>
+                            </figure>
+
                             <div class="lower-content p_relative d_block">
                                 <div class="text">
                                     <div class="post-date">

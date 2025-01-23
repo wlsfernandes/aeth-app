@@ -24,7 +24,10 @@ class Post extends Model
         'summary_es',
         'summary_pt',
         'image_url',
-        'post_type_id'
+        'post_type_id',
+        'file_url',
+        'file_url_es',
+        'file_url_ptBR',
     ];
 
 

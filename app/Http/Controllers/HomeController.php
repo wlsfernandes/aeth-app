@@ -11,7 +11,7 @@ class HomeController extends Controller
     {
         $articles = Post::where('published', true)
             ->whereHas('postType', function ($query) {
-                $query->where('name', 'article');
+                $query->where('name', 'blog');
             })
             ->orderBy('published_at', 'desc')
             ->get();
