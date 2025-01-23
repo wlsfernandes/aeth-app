@@ -17,10 +17,14 @@
             <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
             <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
         </ol>
         <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
+                    <img class="d-block w-100" src="assets/images/gallery/Banner-Website-Impactando.jpg" alt="AETH">
+                </div>
+                <div class="carousel-item">
                     <img class="d-block w-100" src="assets/images/gallery/aeth_graduation.jpg" alt="AETH">
                     <div class="auto-container"
                         style="position: absolute; top: 70%; left: 50%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
