@@ -11,7 +11,7 @@ class PostController extends Controller
     {
         $posts = Post::where('published', true)
             ->whereHas('postType', function ($query) {
-                $query->where('name', 'article');
+                $query->where('name', 'blog');
             })
             ->orderBy('published_at', 'desc')
             ->paginate(3);
