@@ -352,7 +352,7 @@
                                     <p><img class=" img-fluid" src="assets/images/team/Richard Serrano.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Richard Serrano</h4>
-                                    <p class="card-text">@lang('member')</p>
+                                    <p class="card-text">@lang('team.member')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
                                             class="fa fa-plus"></i></a>
@@ -518,6 +518,101 @@
                                         <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
                                                 alt="card image"></p>
                                     </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- ********************** end row ********************** -->
+        <!-- ********************** row ********************** -->
+        <div class="row">
+            <!-- Team member Peter -->
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="assets/images/team/Jose Daniel Montanez.jpg"
+                                            alt="card image">
+                                    </p>
+                                    <h4 class="card-title" style="margin-top:30px;">Jose Daniel Montanez</h4>
+                                    <p class="card-text">@lang('team.member')</p>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
+                                        style="background-color: #4a235a;border-color:#4a235a"><i
+                                            class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card">
+                                    <p><img class=" img-fluid" src="assets/images/team/Jose Daniel Montanez.jpg"
+                                            alt="card image">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="assets/images/team/Daniel Ruarte.jpg"
+                                            alt="card image">
+                                    </p>
+                                    <h4 class="card-title" style="margin-top:30px;">Daniel Ruarte</h4>
+                                    <p class="card-text">@lang('team.member')</p>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
+                                        style="background-color: #4a235a;border-color:#4a235a"><i
+                                            class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card">
+                                    <p><img class=" img-fluid" src="assets/images/team/Daniel Ruarte.jpg"
+                                            alt="card image">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="assets/images/team/Wilmer Estrada.jpg"
+                                            alt="card image">
+                                    </p>
+                                    <h4 class="card-title" style="margin-top:30px;">Wilmer Estrada</h4>
+                                    <p class="card-text">@lang('team.member')</p>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
+                                        style="background-color: #4a235a;border-color:#4a235a"><i
+                                            class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card">
+                                    <p><img class=" img-fluid" src="assets/images/team/Wilmer Estrada.jpg"
+                                            alt="card image">
+                                    </p>
                                 </div>
                             </div>
                         </div>

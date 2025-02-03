@@ -535,11 +535,45 @@ height: 100%;
     </div>
     <div class="auto-container">
         <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-            <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-3.png" alt=""></a>
+            <figure class="clients-logo"><a href="https://candler.emory.edu/" target="blank"><img
+                        src="assets/images/clients/clients-2.png" alt=""></a>
             </figure>
-            <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-4.png" alt=""></a>
+            <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
+                        src="assets/images/clients/clients-3.png" alt=""></a>
             </figure>
-            <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-5.png" alt=""></a>
+            <figure class="clients-logo"><a href="https://cbf.net/" target="blank"><img
+                        src="assets/images/clients/clients-4.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
+                        src="assets/images/clients/clients-5.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo"><a href="https://www.ats.edu/" target="blank"><img
+                        src="assets/images/clients/ats-logo.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://hti.ptsem.edu/" target="blank"><img
+                        src="assets/images/clients/client-6.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://hispanicscholarsprogram.org/"
+                    target="blank"><img src="assets/images/clients/clients-7.svg" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://www.intrust.org/" target="blank"><img
+                        src="assets/images/clients/clients-8.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://www.inter.edu/en/" target="blank"><img
+                        src="assets/images/clients/clients-9.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://www.wabash.edu/" target="blank"><img
+                        src="assets/images/clients/clients-10.png" alt=""></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a href="https://tertuhablemos.com/" target="blank"><img
+                        src="assets/images/clients/clients-11.webp"></a>
+            </figure>
+            <figure class="clients-logo" style="width:150px;"><a
+                    href="https://www.worldvision.org/country/latin-america-caribbean" target="blank"><img
+                        src="assets/images/clients/clients-12.svg" alt=""></a>
+            </figure>
+            <figure class="clients-logo"><a href="https://se-pr.edu/" target="blank"><img
+                        src="assets/images/clients/clients-13.png" alt=""></a>
             </figure>
         </div>
     </div>
