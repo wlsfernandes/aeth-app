@@ -194,9 +194,9 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
+                                    <p><img class=" img-fluid" src="assets/images/team/Elizabeth Tamez.jpg"
                                             alt="card image"></p>
-                                    <h4 class="card-title" style="margin-top:30px;">Luis Rivera</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">Elizabeth Tamez</h4>
                                     <p class="card-text">@lang('team.vice_president')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
@@ -208,7 +208,7 @@
                             <div class="card">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
+                                        <p><img class=" img-fluid" src="assets/images/team/Elizabeth Tamez.jpg"
                                                 alt="card image"></p>
                                     </div>
                                 </div>
@@ -218,6 +218,7 @@
                 </div>
 
             </div>
+
             <!-- Team member Maria Amao-->
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="image-flip">
@@ -228,7 +229,7 @@
                                     <p><img class=" img-fluid" src="assets/images/team/Maria Amao.jpg" alt="card image">
                                     </p>
                                     <h4 class="card-title" style="margin-top:30px;">Maria A. Amao</h4>
-                                    <p class="card-text">@lang('secretary')</p>
+                                    <p class="card-text">@lang('team.secretary')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
                                             class="fa fa-plus"></i></a>
@@ -487,6 +488,36 @@
                                 <div class="card-body text-center mt-4">
                                     <p><img class=" img-fluid" src="assets/images/team/Jessica Lugo.jpg"
                                             alt="card image"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- Team member Luis-->
+            <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="image-flip">
+                    <div class="mainflip flip-0">
+                        <div class="frontside">
+                            <div class="card">
+                                <div class="card-body text-center">
+                                    <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
+                                            alt="card image"></p>
+                                    <h4 class="card-title" style="margin-top:30px;">Luis Rivera</h4>
+                                    <p class="card-text">@lang('member')</p>
+                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
+                                        style="background-color: #4a235a;border-color:#4a235a"><i
+                                            class="fa fa-plus"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="backside">
+                            <div class="card">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
+                                                alt="card image"></p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

@@ -52,14 +52,14 @@
 <section class="contact-section sec-pad">
     <div class="auto-container">
         <!-- iframe div -->
-
+        <!--
         <div class="iframe-container" style="margin-bottom: 30px;">
             <iframe
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=PO%20Box%20677848%20Orlando%20FL%2032867&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
                 width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
         </div>
-
+-->
         <div class="row clearfix">
             <div class="col-lg-4 col-md-12 col-sm-12 content-column">
                 <div class="content-box p_relative mr_70">

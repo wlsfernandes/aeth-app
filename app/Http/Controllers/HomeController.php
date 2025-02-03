@@ -21,6 +21,7 @@ class HomeController extends Controller
                 $query->where('name', 'event');
             })
             ->orderBy('published_at', 'desc')
+            ->limit(3)
             ->get();
 
         return view('home', compact('articles', 'events'));

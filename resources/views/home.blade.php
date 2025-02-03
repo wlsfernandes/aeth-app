@@ -90,11 +90,18 @@ height: 100%;
     <div class="pattern-layer"></div>
     <div class="auto-container">
         <div class="inner-box">
-            <a href="https://gonzalezcenter.org" target="blank"><img src="assets/images/jcg-logo.png"
-                    alt="González Center"></a>
-            <img src="assets/images/bienal-log.png" alt="Biennal24">
+            <!-- <img src="assets/images/bienal-log.png" alt="Biennal24"> -->
+            <a href="{{ route('antioquia') }}">
+                <img src="assets/images/antioquia-logo.png" alt="Antioquia"></a>
+
+            <a href="{{ route('capacityBuilding') }}">
+                <img src="assets/images/cp_logo_white_transparent.png" alt="Capacity Building"></a>
+
             <a href="{{ route('compelling_preaching') }}">
                 <img src="assets/images/predication-logo.png" alt="CompellingPreaching"></a>
+
+            <a href="https://gonzalezcenter.org" target="blank"><img src="assets/images/jcg-logo.png"
+                    alt="González Center"></a>
         </div>
     </div>
 </section>
@@ -178,17 +185,18 @@ height: 100%;
         </div>
     </div>
 </section>
+
 <section class="cause-section sec-pad">
     <div class="auto-container">
         <div class="row clearfix">
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+            <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
                 style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="video">
-                                <a href="'assets/images/gonzalezvideo.mp4">
-                                    <video width="470" height="270" autoplay muted loop>
+                                <a href="https://gonzalezcenter.org" target="blank">
+                                    <video width="100%" height="auto" autoplay muted loop>
                                         <source src="assets/images/videos/gonzalezvideo.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
@@ -205,14 +213,18 @@ height: 100%;
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+
+            <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
                 style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image"><a href="#"><img src="assets/images/gallery/compelling.jpg"
-                                        style="width:470px;height:270px;"></a></figure>
-                            <div class="category"><a href="#">@lang('messages.preaching')</a></div>
+                            <figure class="image">
+                                <a href="{{route('compelling_preaching')}}"><img
+                                        src="assets/images/gallery/compelling.jpg" style="width:100%;height:auto;"></a>
+                            </figure>
+                            <div class="category"><a
+                                    href="{{route('compelling_preaching')}}">@lang('messages.preaching')</a></div>
                         </div>
                         <div class="lower-content">
                             <div class="text">
@@ -222,20 +234,22 @@ height: 100%;
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 col-md-6 col-sm-12 cause-block"
+
+            <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
                 style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                 <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
                             <figure class="video">
-                                <a href="'assets/images/certification.mp4">
-                                    <video width="470" height="270" autoplay muted loop>
+                                <a href="{{route('requestCertification')}}">
+                                    <video width="100%" height="auto" autoplay muted loop>
                                         <source src="assets/images/videos/certification.mp4" type="video/mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </a>
                             </figure>
-                            <div class="category"><a href="#">@lang('messages.certification')</a></div>
+                            <div class="category"><a
+                                    href="{{route('requestCertification')}}">@lang('messages.certification')</a></div>
                         </div>
                         <div class="lower-content">
                             <div class="text">
@@ -245,9 +259,36 @@ height: 100%;
                     </div>
                 </div>
             </div>
+
+            <!-- New fourth block -->
+            <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
+                style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
+                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="900ms" data-wow-duration="1500ms">
+                    <div class="inner-box">
+                        <div class="image-box">
+                            <figure class="video">
+                                <a href="{{route('bookstore')}}">
+                                    <video width="100%" height="auto" autoplay muted loop>
+                                        <source src="assets/images/videos/bookstore-video.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
+                            </figure>
+                            <div class="category"><a href="{{route('bookstore')}}">@lang('messages.bookstore')</a></div>
+                        </div>
+                        <div class="lower-content">
+                            <div class="text">
+                                <p>@lang('messages.bookstore_p1')</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
+
+
 <!-- cause-section end -->
 
 <!--
@@ -489,12 +530,11 @@ height: 100%;
 
 <!-- clients-section -->
 <section class="clients-section" style="background:#f7f5f1">
+    <div class="sec-title centred mb_55">
+        <span class="sub-title calendar">@lang('messages.important_partners')</span>
+    </div>
     <div class="auto-container">
         <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-            <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-1.png" alt=""></a>
-            </figure>
-            <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-2.png" alt=""></a>
-            </figure>
             <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-3.png" alt=""></a>
             </figure>
             <figure class="clients-logo"><a href="#"><img src="assets/images/clients/clients-4.png" alt=""></a>

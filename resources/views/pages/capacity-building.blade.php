@@ -24,7 +24,7 @@
     <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
     <div class="auto-container">
         <div class="inner-box">
-            <img src="assets/images/antioquia-logo.png">
+            <img src="assets/images/cp_logo_white_transparent.png">
             <h2>@lang('programs.cp.developing')</h2><br>
         </div>
     </div>
@@ -129,7 +129,7 @@
             <div class="auto-container">
                 <div class="row align-items-start">
                     <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
-                        <img src="assets/images/antioquia-logo.png" alt="Antioquia Logo">
+                        <img src="assets/images/cp_logo_white_transparent.png" alt="Antioquia Logo">
                         <h1 style="margin-bottom: 20px; color:#fff"><b><i>@lang('programs.cp.p1')</i></b>
                         </h1>
                     </div>
@@ -261,7 +261,7 @@
             <div class="auto-container">
                 <div class="row align-items-start">
                     <div class="col-lg-12 col-md-12 col-sm-12" style="text-align: center;">
-                        <img src="assets/images/antioquia-logo.png" alt="Antioquia Logo">
+                        <img src="assets/images/cp_logo_white_transparent.png" alt="Antioquia Logo">
                         <h1 style="margin-bottom: 20px; color:#fff"><b><i>@lang('programs.cp.p20')</i></b>
                         </h1>
                     </div>
