@@ -246,18 +246,21 @@ height: 100%;
                     </div>
                 </div>
             </div>
-
             <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
                 style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
-                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
+                <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                     <div class="inner-box">
                         <div class="image-box">
-                            <figure class="image">
-                                <a href="{{route('compelling_preaching')}}"><img
-                                        src="assets/images/gallery/compelling.jpg" style="width:100%;height:auto;"></a>
+                            <figure class="video">
+                                <a href="{{route('compelling_preaching')}}" target="blank">
+                                    <video width="100%" height="auto" autoplay muted loop>
+                                        <source src="assets/images/videos/preaching.mp4" type="video/mp4">
+                                        Your browser does not support the video tag.
+                                    </video>
+                                </a>
                             </figure>
-                            <div class="category"><a
-                                    href="{{route('compelling_preaching')}}">@lang('messages.preaching')</a></div>
+                            <div class="category"><a href="{{route('compelling_preaching')}}"
+                                    target="blank">@lang('messages.preaching')</a></div>
                         </div>
                         <div class="lower-content">
                             <div class="text">
@@ -267,6 +270,7 @@ height: 100%;
                     </div>
                 </div>
             </div>
+
 
             <div class="col-lg-3 col-md-6 col-sm-12 cause-block"
                 style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
