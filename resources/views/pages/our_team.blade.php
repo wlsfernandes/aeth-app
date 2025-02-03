@@ -228,7 +228,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/team/Maria Amao.jpg" alt="card image">
                                     </p>
-                                    <h4 class="card-title" style="margin-top:30px;">Maria A. Amao</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">María A. Amao</h4>
                                     <p class="card-text">@lang('team.secretary')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
@@ -290,7 +290,7 @@
                                 <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/team/Peter Rios.jpg" alt="card image">
                                     </p>
-                                    <h4 class="card-title" style="margin-top:30px;">Peter Rios</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">Peter Ríos</h4>
                                     <p class="card-text">@lang('team.vocal')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
@@ -414,7 +414,7 @@
                                     <p><img class=" img-fluid" src="assets/images/team/Miguel Alvarez.jpg"
                                             alt="card image">
                                     </p>
-                                    <h4 class="card-title" style="margin-top:30px;">Miguel Alvarez</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">Miguel Álvarez</h4>
                                     <p class="card-text">@lang('team.member')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
@@ -476,7 +476,7 @@
                                     <p><img class=" img-fluid" src="assets/images/team/Jessica Lugo.jpg"
                                             alt="card image"></p>
                                     <h4 class="card-title" style="margin-top:30px;">Jessica Lugo</h4>
-                                    <p class="card-text">@lang('member')</p>
+                                    <p class="card-text">@lang('team.member')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
                                             class="fa fa-plus"></i></a>
@@ -501,45 +501,10 @@
                         <div class="frontside">
                             <div class="card">
                                 <div class="card-body text-center">
-                                    <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
-                                            alt="card image"></p>
-                                    <h4 class="card-title" style="margin-top:30px;">Luis Rivera</h4>
-                                    <p class="card-text">@lang('member')</p>
-                                    <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
-                                        style="background-color: #4a235a;border-color:#4a235a"><i
-                                            class="fa fa-plus"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="backside">
-                            <div class="card">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/team/Luis Rivera.jpg"
-                                                alt="card image"></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-        <!-- ********************** end row ********************** -->
-        <!-- ********************** row ********************** -->
-        <div class="row">
-            <!-- Team member Peter -->
-            <div class="col-xs-12 col-sm-6 col-md-3">
-                <div class="image-flip">
-                    <div class="mainflip flip-0">
-                        <div class="frontside">
-                            <div class="card">
-                                <div class="card-body text-center">
                                     <p><img class=" img-fluid" src="assets/images/team/Jose Daniel Montanez.jpg"
                                             alt="card image">
                                     </p>
-                                    <h4 class="card-title" style="margin-top:30px;">Jose Daniel Montanez</h4>
+                                    <h4 class="card-title" style="margin-top:30px;">José Daniel Montañez</h4>
                                     <p class="card-text">@lang('team.member')</p>
                                     <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"
                                         style="background-color: #4a235a;border-color:#4a235a"><i
@@ -560,6 +525,11 @@
                 </div>
 
             </div>
+        </div>
+        <!-- ********************** end row ********************** -->
+        <!-- ********************** row ********************** -->
+        <div class="row">
+
             <div class="col-xs-12 col-sm-6 col-md-3">
                 <div class="image-flip">
                     <div class="mainflip flip-0">
