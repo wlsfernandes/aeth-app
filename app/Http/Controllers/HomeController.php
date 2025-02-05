@@ -82,10 +82,6 @@ class HomeController extends Controller
         return view('pages.memberships');
     }
 
-    public function programs()
-    {
-        return view('pages.programs');
-    }
 
     public function antioquia()
     {

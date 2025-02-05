@@ -67,7 +67,6 @@ Route::get('/certification-program', [HomeController::class, 'certificationProgr
 Route::get('/request-certification', [HomeController::class, 'requestCertification'])->name('requestCertification');
 Route::get('/certified-institutions', [HomeController::class, 'certifiedInstitutions'])->name('certified_institutions');
 Route::get('/memberships', [HomeController::class, 'memberships'])->name('memberships');
-Route::get('/programs', [HomeController::class, 'programs'])->name('programs');
 Route::get('/antioquia', [HomeController::class, 'antioquia'])->name('antioquia');
 Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name('resource_center');
 Route::get('/young-leaders', [HomeController::class, 'youngLeaders'])->name('young-leaders');
@@ -145,6 +144,23 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
+
+    Route::get('/audio', [AdminController::class, 'audio'])->name('audio');
+    Route::get('/article', [AdminController::class, 'article'])->name('article');
+    Route::get('/category', [AdminController::class, 'category'])->name('category');
+    Route::get('/ebook', [AdminController::class, 'ebook'])->name('ebook');
+    Route::get('/spreadsheet', [AdminController::class, 'spreadsheet'])->name('spreadsheet');
+    Route::get('/pdf', [AdminController::class, 'pdf'])->name('pdf');
+    Route::get('/powerpoint', [AdminController::class, 'powerpoint'])->name('powerpoint');
+
+
+    Route::get('/programs', [AdminController::class, 'programs'])->name('programs');
+    Route::get('/antioquia-exclusive', [AdminController::class, 'antioquiaExclusive'])->name('antioquiaExclusive');
+    Route::get('/capacity-building-exclusive', [AdminController::class, 'capacityBuildingExclusive'])->name('capacityBuildingExclusive');
+    Route::get('/compelling-preaching-exclusive', [AdminController::class, 'compellingPreachingExclusive'])->name('compellingPreachingExclusive');
+    Route::get('/gonzalez-exclusive', [AdminController::class, 'gonzalezExclusive'])->name('gonzalezExclusive');
+    Route::get('/young-lideres-exclusive', [AdminController::class, 'youngLideresExclusive'])->name('youngLideresExclusive');
+
     Route::get('/video-gallery', [AdminController::class, 'videoGallery'])->name('videoGallery');
     Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
 

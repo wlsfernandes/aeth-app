@@ -14,9 +14,9 @@
             <div class="card animated-zoom">
                 <img src="{{ asset('assets/images/video-class.jpg') }}" class="card-img-top" alt="Video Class">
                 <div class="card-body">
-                    <h5 class="card-title">Exclusive Video Content</h5>
-                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics and skills.</p>
-                    <a href="{{ route('videoGallery') }}" class="btn btn-primary">
+                    <h5 class="card-title">@lang('exclusive.dashboard.p1')</h5>
+                    <p class="card-text">@lang('exclusive.dashboard.p2')</p>
+                    <a href="{{ route('category') }}" class="btn btn-primary">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
                     </a>
                 </div>
@@ -25,11 +25,11 @@
         <!-- Course Card 2 -->
         <div class="col-md-6 col-lg-6">
             <div class="card animated-zoom">
-                <img src="{{ asset('assets/images/jccenter.jpg') }}" class="card-img-top" alt="JC Center">
+                <img src="{{ asset('assets/images/aeth-programs2.png') }}" class="card-img-top" alt="JC Center">
                 <div class="card-body">
-                    <h5 class="card-title">Justo & Catherine González Center Access</h5>
-                    <p class="card-text">Brief description of the course goes here. It covers all the essential topics and skills.</p>
-                    <a href="{{ route('acervo') }}" class="btn btn-primary custom-btn">
+                    <h5 class="card-title">@lang('exclusive.dashboard.p3')</h5>
+                    <p class="card-text">@lang('exclusive.dashboard.p4')</p>
+                    <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
                     </a>
                 </div>
@@ -40,37 +40,37 @@
 @endsection
 
 @push('styles')
-<style>
-    @keyframes zoomFade {
-        0% {
-            transform: scale(0.95);
+    <style>
+        @keyframes zoomFade {
+            0% {
+                transform: scale(0.95);
+                opacity: 0;
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .animated-zoom {
             opacity: 0;
+            transform: scale(0.95);
+            animation: zoomFade 0.8s ease-in-out forwards;
+            animation-delay: 0.3s;
         }
-        100% {
-            transform: scale(1);
-            opacity: 1;
+
+        .animated-zoom:nth-child(2) {
+            animation-delay: 0.5s;
         }
-    }
 
-    .animated-zoom {
-        opacity: 0;
-        transform: scale(0.95);
-        animation: zoomFade 0.8s ease-in-out forwards;
-        animation-delay: 0.3s;
-    }
+        .animated-zoom:nth-child(3) {
+            animation-delay: 0.7s;
+        }
 
-    .animated-zoom:nth-child(2) {
-        animation-delay: 0.5s;
-    }
-
-    .animated-zoom:nth-child(3) {
-        animation-delay: 0.7s;
-    }
-
-    .custom-btn {
-        background-color: #330033;
-        border-color: #330033;
-    }
-</style>
+        .custom-btn {
+            background-color: #330033;
+            border-color: #330033;
+        }
+    </style>
 @endpush
-
