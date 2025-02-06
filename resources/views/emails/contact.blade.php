@@ -1,4 +1,4 @@
-<h1>Contact From #somosAETH</h1>
+<h1>Contact Form #somosAETH</h1>
 <p><strong>Name:</strong> {{ $data['username'] }}</p>
 <p><strong>Email:</strong> {{ $data['email'] }}</p>
 <p><strong>Phone:</strong> {{ $data['phone'] }}</p>

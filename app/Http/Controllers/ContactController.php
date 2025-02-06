@@ -19,12 +19,12 @@ class ContactController extends Controller
         ]);
 
         $data = $request->all();
-
-        Mail::to('info@aeth.org', 'wlsfernandes@aeth.org')->send(new ContactFormMessage($data));
+        $recipients = ['info@aeth.org', 'wlsfernandes@aeth.org'];
+        Mail::to($recipients)->send(new ContactFormMessage($data));
 
         return redirect()->back()
-        ->with('success', 'Your message has been sent! An Aeth Member will reach you out');
-       
+            ->with('success', 'Your message has been sent! An Aeth Member will reach you out');
+
 
     }
 }
