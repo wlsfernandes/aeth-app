@@ -44,8 +44,9 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href="index.php"><img src="assets/images/aeth-logo.png"
-                                alt=""></a>
+                    <figure class="logo-box pull-left"><a href="index.php"><img
+                                src="{{ asset('assets/images/aeth-logo.png') }}" alt="AETH Logo">
+                        </a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -115,8 +116,8 @@
             <div class="header-lower">
                 <div class="outer-box">
                     <div class="logo-box">
-                        <figure class="logo"> <a href="{{ url('/') }}"><img src="assets/images/aeth-logo.png"
-                                    alt=""></a>
+                        <figure class="logo"> <a href="{{ url('/') }}"><img
+                                    src="{{ asset('assets/images/aeth-logo.png') }}" alt="AETH Logo">
                         </figure>
                     </div>
                     <div class="menu-area clearfix">

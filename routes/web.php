@@ -78,6 +78,7 @@ Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name(
 Route::post('/members', [HomeController::class, 'store'])->name('members.store');
 Route::get('/capacity-building', [HomeController::class, 'capacityBuilding'])->name('capacityBuilding');
 Route::get('/capacity-building/application', [CapacityBuildingController::class, 'application'])->name('application');
+Route::get('/web-application', [HomeController::class, 'webApplication'])->name('webApplication');
 
 Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
 Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');
@@ -163,6 +164,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/video-gallery', [AdminController::class, 'videoGallery'])->name('videoGallery');
     Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
+
+    Route::get('/view-content/{id}', [AdminController::class, 'showContent'])->name('view-content');
 
 
 });

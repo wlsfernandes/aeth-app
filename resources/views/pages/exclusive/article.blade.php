@@ -1,7 +1,7 @@
 @extends('layouts.admin-categories')
 
 @section('title')
-DataTables Example
+AETH Member
 @endsection
 
 

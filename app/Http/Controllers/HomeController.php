@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Faq;
 
 
 class HomeController extends Controller
@@ -119,6 +120,12 @@ class HomeController extends Controller
     public function test()
     {
         return view('pages.test');
+    }
+
+    public function webApplication()
+    {
+        $faqs = Faq::all();
+        return view('pages.web-application', compact('faqs'));
     }
 
     public function application()

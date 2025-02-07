@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\PortalContent;
 
 class AdminController extends Controller
 {
@@ -30,7 +31,10 @@ class AdminController extends Controller
 
     public function pdf()
     {
-        return view('pages.exclusive.pdf');
+        $portal_contents = PortalContent::where('media_type', 'PDF')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.pdf', compact('portal_contents'));
     }
 
     public function powerpoint()
@@ -44,7 +48,8 @@ class AdminController extends Controller
 
     public function videoGallery()
     {
-        return view('pages.exclusive.video-gallery');
+        $portal_contents = PortalContent::where('media_type', 'Video')->get();
+        return view('pages.exclusive.video-gallery', compact('portal_contents'));
     }
 
     public function antioquiaExclusive()
@@ -67,4 +72,14 @@ class AdminController extends Controller
     {
         return view('pages.exclusive.young-lideres');
     }
+
+    public function showContent($id)
+    {
+        $portal_content = PortalContent::findOrFail($id);  // Fetch the content by ID
+
+        // Directly return the view with the URL
+        return view('pages.exclusive.content-view', compact('portal_content'));
+    }
+
+
 }
