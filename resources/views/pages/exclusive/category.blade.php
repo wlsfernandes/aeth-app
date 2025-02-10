@@ -31,7 +31,7 @@
 
                 <div class="card">
                     <a href="{{route('assemblies')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/assemblie.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Assemblies</h4>
@@ -45,7 +45,7 @@
 
                 <div class="card">
                     <a href="{{route('conversatorios')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/conversatorio.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Conversatorios</h4>
@@ -63,7 +63,7 @@
             <div class="card-group">
                 <div class="card">
                     <a href="{{route('lectures')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/lectures2.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Lecture Series</h4>
@@ -77,7 +77,7 @@
 
                 <div class="card">
                     <a href="{{route('elet')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/elet.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">3ELECT</h4>

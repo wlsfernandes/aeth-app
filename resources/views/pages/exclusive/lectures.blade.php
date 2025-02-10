@@ -40,7 +40,7 @@
                     <tr>
                         <td>
                             <a href="{{ route('view-content', $content->id) }}" class="px-3 text-primary">
-                                <img src="{{ asset('assets/images/aeth-watch.png') }}" style="width:32px;height:auto">
+                                <img src="{{ asset('assets/images/aeth-watch.png') }}" style="width:48px;height:48px;">
                             </a>
                         </td>
                         <td>{{ $content->title ?? '' }}</td>

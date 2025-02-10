@@ -16,7 +16,7 @@
 
                 <div class="card">
                     <a href="{{route('aethProgram')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-doc.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/findByProgram.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">AETH</h4>
@@ -31,7 +31,7 @@
 
                 <div class="card">
                     <a href="{{route('antioquiaExclusive')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/antioquia-program.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Antioquia</h4>
@@ -45,7 +45,7 @@
 
                 <div class="card">
                     <a href="{{route('capacityBuildingExclusive')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/capacity.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Capacity Building</h4>
@@ -63,7 +63,7 @@
             <div class="card-group">
                 <div class="card">
                     <a href="{{route('compellingPreachingExclusive')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/compelling_preaching.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Compelling Preaching</h4>
@@ -77,7 +77,7 @@
 
                 <div class="card">
                     <a href="{{route('gonzalezExclusive')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/gonzalez-program.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">González Center</h4>
@@ -90,7 +90,7 @@
                 </div><!-- end card -->
                 <div class="card">
                     <a href="{{route('youngLideresExclusive')}}">
-                        <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
+                        <img class="card-img-top img-fluid" src="{{asset('assets/images/young-leaders.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">Young Líderes</h4>

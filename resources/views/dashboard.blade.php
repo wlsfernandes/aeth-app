@@ -9,12 +9,26 @@
         <p>Explore our wide range of courses and learn from the best instructors.</p>
     </div>
     <div class="row gy-4">
-        <!-- Course Card 1 -->
+        <div class="col-md-6 col-lg-6">
+            <a href="{{ route('programs') }}">
+                <div class="card animated-zoom">
+                    <img src="{{ asset('assets/images/findByProgram.jpg') }}" class="card-img-top" alt="JC Center">
+                    <div class="card-body">
+                        <h5 class="card-title">Explore by AETH Programs</h5>
+                        <p class="card-text">@lang('exclusive.dashboard.p4')</p>
+                        <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                        </a>
+                    </div>
+                </div>
+            </a>
+        </div>
         <div class="col-md-6 col-lg-6">
             <div class="card animated-zoom">
-                <img src="{{ asset('assets/images/video-class.jpg') }}" class="card-img-top" alt="Video Class">
+                <a href="{{ route('category') }}">
+                    <img src="{{ asset('assets/images/browse.jpg') }}" class="card-img-top"></a>
                 <div class="card-body">
-                    <h5 class="card-title">Categories</h5>
+                    <h5 class="card-title">Find by Category</h5>
                     <p class="card-text">@lang('exclusive.dashboard.p2')</p>
                     <a href="{{ route('category') }}" class="btn btn-primary">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
@@ -23,18 +37,7 @@
             </div>
         </div>
         <!-- Course Card 2 -->
-        <div class="col-md-6 col-lg-6">
-            <div class="card animated-zoom">
-                <img src="{{ asset('assets/images/aeth-programs2.png') }}" class="card-img-top" alt="JC Center">
-                <div class="card-body">
-                    <h5 class="card-title">Programs</h5>
-                    <p class="card-text">@lang('exclusive.dashboard.p4')</p>
-                    <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
-                        <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
-                    </a>
-                </div>
-            </div>
-        </div>
+
     </div>
 </section>
 @endsection
