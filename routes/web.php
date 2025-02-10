@@ -146,26 +146,26 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
-    Route::get('/audio', [AdminController::class, 'audio'])->name('audio');
-    Route::get('/article', [AdminController::class, 'article'])->name('article');
+    Route::get('/view-content/{id}', [AdminController::class, 'showContent'])->name('view-content');
     Route::get('/category', [AdminController::class, 'category'])->name('category');
-    Route::get('/ebook', [AdminController::class, 'ebook'])->name('ebook');
-    Route::get('/spreadsheet', [AdminController::class, 'spreadsheet'])->name('spreadsheet');
-    Route::get('/pdf', [AdminController::class, 'pdf'])->name('pdf');
-    Route::get('/powerpoint', [AdminController::class, 'powerpoint'])->name('powerpoint');
-
-
     Route::get('/programs', [AdminController::class, 'programs'])->name('programs');
+
+    Route::get('/aeth-events', [AdminController::class, 'aethEvents'])->name('aethEvents');
+    Route::get('/assemblies', [AdminController::class, 'assemblies'])->name('assemblies');
+    Route::get('/conversatorios', [AdminController::class, 'conversatorios'])->name('conversatorios');
+    Route::get('/lectures', [AdminController::class, 'lectures'])->name('lectures');
+    Route::get('/elet', [AdminController::class, 'elet'])->name('elet');
+
+    Route::get('/aeth-program', [AdminController::class, 'aethProgram'])->name('aethProgram');
     Route::get('/antioquia-exclusive', [AdminController::class, 'antioquiaExclusive'])->name('antioquiaExclusive');
     Route::get('/capacity-building-exclusive', [AdminController::class, 'capacityBuildingExclusive'])->name('capacityBuildingExclusive');
     Route::get('/compelling-preaching-exclusive', [AdminController::class, 'compellingPreachingExclusive'])->name('compellingPreachingExclusive');
     Route::get('/gonzalez-exclusive', [AdminController::class, 'gonzalezExclusive'])->name('gonzalezExclusive');
     Route::get('/young-lideres-exclusive', [AdminController::class, 'youngLideresExclusive'])->name('youngLideresExclusive');
 
-    Route::get('/video-gallery', [AdminController::class, 'videoGallery'])->name('videoGallery');
+
     Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
 
-    Route::get('/view-content/{id}', [AdminController::class, 'showContent'])->name('view-content');
 
 
 });

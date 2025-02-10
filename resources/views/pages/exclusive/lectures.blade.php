@@ -5,9 +5,18 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.5/css/jquery.dataTables.min.css">
 @endpush
 @section('content')
-<div class="text-center mb-4">
-    <h2>@lang('exclusive.dashboard.pdf')</h2>
-    <p>@lang('exclusive.dashboard.explore')</p>
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="d-flex justify-content-between" style="margin:15px">
+                <a href="{{ route('category') }}" class="btn btn-secondary waves-effect">
+                    <i class="bx bx-arrow-back"></i> Go Back
+                </a>
+                <h2>Lectures Series</h2>
+                <h2>
+            </div>
+        </div>
+    </div>
 </div>
 <section style="margin-bottom:350px;">
     <div class="card-body">
@@ -47,7 +56,17 @@
         </table>
     </div>
 </section>
-
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="d-flex justify-content-between" style="margin:15px">
+                <a href="{{ route('category') }}" class="btn btn-secondary waves-effect">
+                    <i class="bx bx-arrow-back"></i> Go Back
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
 
 @endsection
 @section('scripts')

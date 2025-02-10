@@ -14,7 +14,7 @@
             <div class="card animated-zoom">
                 <img src="{{ asset('assets/images/video-class.jpg') }}" class="card-img-top" alt="Video Class">
                 <div class="card-body">
-                    <h5 class="card-title">@lang('exclusive.dashboard.p1')</h5>
+                    <h5 class="card-title">Categories</h5>
                     <p class="card-text">@lang('exclusive.dashboard.p2')</p>
                     <a href="{{ route('category') }}" class="btn btn-primary">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
@@ -27,7 +27,7 @@
             <div class="card animated-zoom">
                 <img src="{{ asset('assets/images/aeth-programs2.png') }}" class="card-img-top" alt="JC Center">
                 <div class="card-body">
-                    <h5 class="card-title">@lang('exclusive.dashboard.p3')</h5>
+                    <h5 class="card-title">Programs</h5>
                     <p class="card-text">@lang('exclusive.dashboard.p4')</p>
                     <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
                         <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access

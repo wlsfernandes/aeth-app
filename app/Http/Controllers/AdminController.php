@@ -20,57 +20,90 @@ class AdminController extends Controller
     {
         return view('pages.exclusive.category');
     }
-    public function ebook()
+    /*Begin*/
+    public function aethEvents()
     {
-        return view('pages.exclusive.ebook');
-    }
-    public function spreadsheet()
-    {
-        return view('pages.exclusive.spreadsheet');
-    }
-
-    public function pdf()
-    {
-        $portal_contents = PortalContent::where('media_type', 'PDF')
+        $portal_contents = PortalContent::where('category', 'AETH Events')
             ->orderBy('date_of_publication', 'desc')
             ->get();
-        return view('pages.exclusive.pdf', compact('portal_contents'));
+        return view('pages.exclusive.aeth-events', compact('portal_contents'));
     }
 
-    public function powerpoint()
+    public function assemblies()
     {
-        return view('pages.exclusive.powerpoint');
+        $portal_contents = PortalContent::where('category', 'Assemblies')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.assemblies', compact('portal_contents'));
     }
+    public function conversatorios()
+    {
+        $portal_contents = PortalContent::where('category', 'Conversatorios')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.conversatorios', compact('portal_contents'));
+    }
+    public function lectures()
+    {
+        $portal_contents = PortalContent::where('category', 'Lectures Series')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.lectures', compact('portal_contents'));
+    }
+    public function elet()
+    {
+        $portal_contents = PortalContent::where('category', '3ELET')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.conversatorios', compact('portal_contents'));
+    }
+
     public function programs()
     {
         return view('pages.exclusive.programs');
     }
-
-    public function videoGallery()
+    public function aethProgram()
     {
-        $portal_contents = PortalContent::where('media_type', 'Video')->get();
-        return view('pages.exclusive.video-gallery', compact('portal_contents'));
+        $portal_contents = PortalContent::where('program', 'AETH')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.aeth-program', compact('portal_contents'));
     }
 
     public function antioquiaExclusive()
     {
-        return view('pages.exclusive.antioquia');
+        $portal_contents = PortalContent::where('program', 'Antioquia')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.antioquia', compact('portal_contents'));
     }
     public function capacityBuildingExclusive()
     {
-        return view('pages.exclusive.capacity-building');
+        $portal_contents = PortalContent::where('program', 'Capacity Building')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.capacity-building', compact('portal_contents'));
     }
     public function compellingPreachingExclusive()
     {
-        return view('pages.exclusive.compelling-preaching');
+        $portal_contents = PortalContent::where('program', 'Compelling Preaching')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.compelling-preaching', compact('portal_contents'));
     }
     public function gonzalezExclusive()
     {
-        return view('pages.exclusive.gonzalez');
+        $portal_contents = PortalContent::where('program', 'González Center')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.gonzalez', compact('portal_contents'));
     }
     public function youngLideresExclusive()
     {
-        return view('pages.exclusive.young-lideres');
+        $portal_contents = PortalContent::where('program', 'Young Líderes')
+            ->orderBy('date_of_publication', 'desc')
+            ->get();
+        return view('pages.exclusive.young-lideres', compact('portal_contents'));
     }
 
     public function showContent($id)

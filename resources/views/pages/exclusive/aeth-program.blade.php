@@ -12,7 +12,7 @@
                 <a href="{{ route('programs') }}" class="btn btn-secondary waves-effect">
                     <i class="bx bx-arrow-back"></i> Go Back
                 </a>
-                <h2>Capacity Building Program</h2>
+                <h2>AETH</h2>
                 <h2>
             </div>
         </div>
