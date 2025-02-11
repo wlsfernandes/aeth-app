@@ -15,7 +15,7 @@
             <div class="card-group">
 
                 <div class="card">
-                    <a href="{{route('aethEvents')}}">
+                    <a href="{{route('articles')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-doc.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
@@ -30,7 +30,7 @@
 
 
                 <div class="card">
-                    <a href="{{route('assemblies')}}">
+                    <a href="{{route('bibleStudies')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth_bible.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
@@ -44,7 +44,7 @@
                 </div><!-- end card -->
 
                 <div class="card">
-                    <a href="{{route('conversatorios')}}">
+                    <a href="{{route('conference')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/conversatorio.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
@@ -62,7 +62,7 @@
         <div class="col-12">
             <div class="card-group">
                 <div class="card">
-                    <a href="{{route('lectures')}}">
+                    <a href="{{route('sermons')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/lectures2.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
@@ -75,7 +75,7 @@
                     </a>
                 </div><!-- end card -->
                 <div class="card">
-                    <a href="{{route('lectures')}}">
+                    <a href="{{route('workshops')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/elet.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">
@@ -89,7 +89,7 @@
                 </div><!-- end card -->
 
                 <div class="card">
-                    <a href="{{route('elet')}}">
+                    <a href="{{route('others')}}">
                         <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
                             alt="Card image cap">
                         <div class="card-body">

@@ -9,10 +9,10 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="d-flex justify-content-between" style="margin:15px">
-                <a href="{{ route('findByEvent') }}" class="btn btn-secondary waves-effect">
+                <a href="{{ route('category') }}" class="btn btn-secondary waves-effect">
                     <i class="bx bx-arrow-back"></i> Go Back
                 </a>
-                <h2>Conversatorios</h2>
+                <h2>Workshops</h2>
                 <h2>
             </div>
         </div>
@@ -60,7 +60,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="d-flex justify-content-between" style="margin:15px">
-                <a href="{{ route('category') }}" class="btn btn-secondary waves-effect">
+                <a href="{{ route('programs') }}" class="btn btn-secondary waves-effect">
                     <i class="bx bx-arrow-back"></i> Go Back
                 </a>
             </div>

@@ -156,6 +156,12 @@ Route::middleware('auth')->group(function () {
     Route::get('/conversatorios', [AdminController::class, 'conversatorios'])->name('conversatorios');
     Route::get('/lectures', [AdminController::class, 'lectures'])->name('lectures');
     Route::get('/elet', [AdminController::class, 'elet'])->name('elet');
+    Route::get('/articles', [AdminController::class, 'articles'])->name('articles');
+    Route::get('/bibles-studies', [AdminController::class, 'bibleStudies'])->name('bibleStudies');
+    Route::get('/conference', [AdminController::class, 'conference'])->name('conference');
+    Route::get('/sermons', [AdminController::class, 'sermons'])->name('sermons');
+    Route::get('/workshops', [AdminController::class, 'workshops'])->name('workshops');
+    Route::get('/others', [AdminController::class, 'others'])->name('others');
 
     Route::get('/aeth-program', [AdminController::class, 'aethProgram'])->name('aethProgram');
     Route::get('/antioquia-exclusive', [AdminController::class, 'antioquiaExclusive'])->name('antioquiaExclusive');
