@@ -149,6 +149,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/view-content/{id}', [AdminController::class, 'showContent'])->name('view-content');
     Route::get('/category', [AdminController::class, 'category'])->name('category');
     Route::get('/programs', [AdminController::class, 'programs'])->name('programs');
+    Route::get('/findByEvent', [AdminController::class, 'findByEvent'])->name('findByEvent');
 
     Route::get('/aeth-events', [AdminController::class, 'aethEvents'])->name('aethEvents');
     Route::get('/assemblies', [AdminController::class, 'assemblies'])->name('assemblies');

@@ -62,6 +62,11 @@ class AdminController extends Controller
     {
         return view('pages.exclusive.programs');
     }
+
+    public function findByEvent()
+    {
+        return view('pages.exclusive.find-event');
+    }
     public function aethProgram()
     {
         $portal_contents = PortalContent::where('program', 'AETH')
