@@ -61,6 +61,32 @@ class PaymentController extends Controller
 
     }
 
+    public function redirectContactPayment(Request $request)
+    {
+        $amount = $request->input('amount', 0);
+        $weight = $request->input('weight', 0);
+        $minimumWeight = 0.1; // Default weight in pounds
+        $weight = $weight > 0 ? $weight : $minimumWeight;
+        session(['amount' => $amount]);
+        session(['weight' => $weight]);
+        $cartItems = session('cart', []);
+        $type = 'bookstore';
+        $program = 'AETH';
+        return view('pages.payments.contact-payment', compact('amount', 'type', 'program', 'cartItems', 'weight'));
+    }
+
+
+    public function redirectCreditPayment(Request $request)
+    {
+        $amount = $request->input('amount', 0);
+        $shipment_cost = $request->input('hidden_shipment_cost', 0);
+        $first_name = $request->input('first_name');
+        $last_name = $request->input('last_name');
+        $email = $request->input('email');
+        session(['amount' => $amount]);
+        $cartItems = session('cart', []);
+        return view('pages.payments.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email'));
+    }
 
     public function redirectCartPayment(Request $request)
     {

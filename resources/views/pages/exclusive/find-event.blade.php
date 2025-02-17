@@ -77,10 +77,10 @@
 
                     <div class="card">
                         <a href="{{route('elet')}}">
-                            <img class="card-img-top img-fluid" src="{{asset('assets/images/elet.jpg')}}"
-                                alt="Card image cap">
+                            <img class="card-img-top img-fluid" src="{{ asset('assets/images/LOGO 3ELET.jpg') }}"
+                                alt="3ELET" width="600" height="400">
                             <div class="card-body">
-                                <h4 class="card-title">3ELECT</h4>
+                                <h4 class="card-title">3ELET</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program11')</p>
                                 <p class="card-text">
                                     <small class="text-muted">Last updated 3 mins ago</small>

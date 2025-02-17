@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
 use App\Http\Controllers\ShippingController;
+use App\Http\Controllers\PayPalController;
 use App\Services\UPSService;
 
 
@@ -128,7 +129,8 @@ Route::post('/cart/remove', [CartController::class, 'removeItem'])->name('cart.r
 Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment.show');
 Route::post('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
-Route::post('/redirectCartPayment', [PaymentController::class, 'redirectCartPayment'])->name('redirectCartPayment');
+Route::post('/redirectCreditPayment', [PaymentController::class, 'redirectCreditPayment'])->name('redirectCreditPayment');
+Route::post('/redirectContactPayment', [PaymentController::class, 'redirectContactPayment'])->name('redirectContactPayment');
 Route::post('/cartPayment', [PaymentController::class, 'cartPayment'])->name('cartPayment');
 Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
 Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
@@ -136,6 +138,18 @@ Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
 Route::post('/handle-payment', [PaymentController::class, 'handleDonation']);
 
+
+Route::post('/paypal/payment', [PayPalController::class, 'createPayment'])->name('paypal.payment');
+Route::get('paypal/capture', [PayPalController::class, 'capturePayment'])->name('paypal.capture');
+Route::get('payment/success', function () {
+    return view('paypal.payment-success');
+})->name('success');
+Route::get('payment/error', function () {
+    return view('paypal.payment-failed');
+})->name('error');
+Route::get('test/paypal', function () {
+    return view('paypal.test-paypal');
+})->name('test.paypal');
 
 
 
