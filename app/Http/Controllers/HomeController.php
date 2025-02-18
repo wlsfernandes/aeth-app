@@ -136,6 +136,10 @@ class HomeController extends Controller
     {
         return view('pages.capacity-building');
     }
+    public function lectureSeries2025()
+    {
+        return view('pages.lecture-series-2025');
+    }
 
 
 }

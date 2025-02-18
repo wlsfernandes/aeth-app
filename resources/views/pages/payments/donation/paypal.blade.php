@@ -30,10 +30,4 @@
         style="background-color:#330033;color:#fff;height:50px;">
         @lang('header.pay_now') with Paypal
     </button>
-
-    <p class="small" style="color:#330033;margin-top:20px;">
-        <img src="{{ asset('assets/images/icons/locked-card.png') }}"
-            style="width: 40px; height: auto; margin-right: 15px;">
-        @lang('header.disclaimer')</i>
-    </p>
 </form>
