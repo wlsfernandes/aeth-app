@@ -17,19 +17,64 @@
                             <form id="payment-form" action="{{ route('cartPayment')  }}" method="POST" class="default-form">
                                 @csrf
                                 <div class="card-body payment-card-body">
+                                    <div class="icons">
+                                        <img src="{{ asset('assets/images/icons/visa.jpg') }}" alt="Visa"
+                                            style="width: 30px; height: auto; margin-right: 5px;">
+                                        <img src="{{ asset('assets/images/icons/mastercard.jpg') }}" alt="Master"
+                                            style="width: 30px; height: auto; margin-right: 5px;">
+                                        <img src="{{ asset('assets/images/icons/americanexpress.jpg') }}" alt="Amex"
+                                            style="width: 30px; height: auto; margin-right: 5px;">
+                                        <img src="{{ asset('assets/images/icons/discover.jpg') }}" alt="Discover"
+                                            style="width: 30px; height: auto; margin-right: 5px;">
+                                    </div>
+                                    <div class="row justify-content-center text-center">
+                                        <div class="col-md-3">
+                                            <label for="amount" class="form-label">@lang('header.amount_usd')</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <input type="number" name="amount" id="amount"
+                                                    value="{{ number_format($amount ?? 0, 2, '.', '') }}"
+                                                    class="form-control" required min="1" step="0.01" disabled>
+                                            </div>
+                                        </div>
 
-                                    <div class="mb-3">
-                                        <label for="amount" class="form-label">@lang('header.amount_usd')</label>
-                                        <input type="number" name="amount" id="amount"
-                                            value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
-                                            required min="1" step="0.01" disabled>
+                                        <div class="col-md-3">
+                                            <label for="shipment_cost"
+                                                class="form-label">@lang('header.shipment_cost')</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <input type="number" name="shipment_cost" id="shipment_cost"
+                                                    value="{{ number_format($shipment_cost ?? 0, 2, '.', '') }}"
+                                                    class="form-control" required min="1" step="0.01" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="taxAmount" class="form-label">@lang('header.taxAmount')</label>
+                                            <div class="input-group">
+                                                <span class="input-group-text">$</span>
+                                                <input type="number" name="taxAmount" id="taxAmount"
+                                                    value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}"
+                                                    class="form-control" required min="1" step="0.01" disabled>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <label for="totalAmount" class="form-label"
+                                                style="color: #4A235A; font-weight: bold;">
+                                                @lang('header.totalAmount')
+                                            </label>
+                                            <div class="input-group">
+                                                <span class="input-group-text"
+                                                    style="background-color: #4A235A; color: white;">$</span>
+                                                <input type="number" name="totalAmount" id="totalAmount"
+                                                    value="{{ number_format($totalAmount ?? 0, 2, '.', '') }}"
+                                                    class="form-control" required min="1" step="0.01" disabled
+                                                    style="color: #4A235A; font-weight: bold;">
+                                            </div>
+                                        </div>
                                     </div>
-                                    <div class="mb-3">
-                                        <label for="shipment_cost" class="form-label">@lang('header.shipment_cost'):</label>
-                                        <input type="number" name="shipment_cost" id="shipment_cost"
-                                            value="{{ number_format($shipment_cost ?? 0, 2, '.', '') }}"
-                                            class="form-control" required min="1" step="0.01" disabled>
-                                    </div>
+
                                     <div class="mb-3">
                                         <label for="card-holder-name" class="form-label">@lang('header.card_name')</label>
                                         <input type="text" id="card-holder-name" name="card_holder_name"
@@ -62,6 +107,8 @@
                                         value="{{ number_format($weight ?? 0, 2, '.', '') }}">
                                     <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost"
                                         value="{{  number_format($shipment_cost ?? 0, 2, '.', '')}}">
+                                    <input type="hidden" name="taxAmount" id="taxAmount"
+                                        value="{{  number_format($taxAmount ?? 0, 2, '.', '')}}">
 
                                     @if(session('cart') && count(session('cart')) > 0)
                                         @foreach($cartItems as $index => $product)

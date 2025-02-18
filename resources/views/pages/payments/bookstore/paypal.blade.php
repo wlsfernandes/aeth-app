@@ -1,4 +1,4 @@
-<form id="payment-form" action="{{ url('/paypal/payment') }}" method="POST" class="default-form">
+<form id="payment-form" action="{{ url('/paypal/bookstore') }}" method="POST" class="default-form">
     @csrf
     <div class="mb-3">
         <label for="first_name" class="form-label">@lang('header.first_name'):</label>

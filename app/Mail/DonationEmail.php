@@ -5,7 +5,7 @@ use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class OrderEmail extends Mailable
+class DonationEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -13,23 +13,21 @@ class OrderEmail extends Mailable
     public $orderNumber;
     public $email;
 
-    public function __construct($firstName, $orderNumber, $email)
+    public function __construct($firstName, $email)
     {
         $this->firstName = $firstName;
-        $this->orderNumber = $orderNumber;
         $this->email = $email;
     }
 
     public function build()
     {
-        return $this->view('emails.order')
-            ->subject('Your Order Confirmation')
+        return $this->view('emails.donation')
+            ->subject('Your Donation Confirmation')
             ->with([
                 'name' => $this->firstName, // Only passing first name
-                'orderNumber' => $this->orderNumber,
             ])
             ->to($this->email) // Send to the provided email
-            ->cc('lorsstiz@aeth.org')
+            ->cc('lzortssiz@aeth.org')
             ->bcc('wlsfernandes@aeth.org'); // Additional recipients
     }
 }

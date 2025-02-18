@@ -23,7 +23,10 @@ class Payment extends Model
         'customer_id',
         'payment_date',
         'shipment_cost',
-        'isRecurring'
+        'isRecurring',
+        'processed_by',
+        'tax',
+        'totalAmount',
     ];
     use HasFactory;
 }

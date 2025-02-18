@@ -12,11 +12,12 @@
             <div class="col-md-12">
                 <div class="card" style="margin-bottom: 300px !important;">
                     <div class="card-body">
-                        <form id="payment-form" action="{{ route(name: 'redirectCreditPayment')  }}" method="POST">
+                        <form id="payment-form" method="POST">
                             @csrf
                             <input type="hidden" name="type" value="Bookstore">
                             <input type="hidden" name="program" value="AETH">
                             <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
+                            <input type="hidden" name="taxAmount" value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="weight" id="weight"
                                 value="{{ number_format($weight ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost">
@@ -28,72 +29,102 @@
                                 @endforeach
 
                             @endif
+                            <div class="row justify-content-center text-center">
+                                <div class="col-md-4">
+                                    <label for="amount" class="form-label">@lang('header.amount_usd')</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" name="amount" id="amount"
+                                            value="{{ number_format($amount ?? 0, 2, '.', '') }}" class="form-control"
+                                            required min="1" step="0.01" disabled>
+                                    </div>
+                                </div>
 
-                            <div class="mb-3">
-                                <label for="first_name" class="form-label">@lang('header.first_name'):</label>
-                                <input type="text" id="first_name" name="first_name" class="form-control"
-                                    placeholder="@lang('header.first_name')" required>
+                                <div class="col-md-4">
+                                    <label for="shipment_cost" class="form-label">@lang('header.shipment_cost')</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" name="shipment_cost" id="shipment_cost"
+                                            value="{{ number_format($shipment_cost ?? 0, 2, '.', '') }}"
+                                            class="form-control" required min="1" step="0.01" disabled>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="taxAmount" class="form-label">@lang('header.taxAmount')</label>
+                                    <div class="input-group">
+                                        <span class="input-group-text">$</span>
+                                        <input type="number" name="taxAmount" id="taxAmount"
+                                            value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}" class="form-control"
+                                            required min="1" step="0.01" disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-md-4">
+                                    <label for="first_name" class="form-label">@lang('header.first_name'):</label>
+                                    <input type="text" id="first_name" name="first_name" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="last_name" class="form-label">@lang('header.last_name'):</label>
+                                    <input type="text" id="last_name" name="last_name" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-4">
+                                    <label for="email" class="form-label">@lang('header.email'):</label>
+                                    <input type="email" id="email" name="email" class="form-control" required>
+                                </div>
+                            </div>
+                            <div class="row justify-content-center text-center">
+                                <div class="col-md-7">
+                                    <label for="address" class="form-label">@lang('header.address'):</label>
+                                    <input type="text" id="address" name="address" class="form-control" required>
+                                </div>
+                                <div class="col-md-2">
+                                    <label for="city" class="form-label">@lang('header.city'):</label>
+                                    <input type="text" id="city" name="city" class="form-control" required>
+                                </div>
+                                <div class="col-md-1">
+                                    <label for="state" class="form-label">@lang('header.state'):</label>
+                                    <input type="text" id="state" name="state" class="form-control" required>
+                                </div>
+
+                                <div class="col-md-2">
+                                    <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
+                                    <input type="text" id="zipcode" name="zipcode" class="form-control" required
+                                        onblur="calculateShipping()" oninput="calculateShipping()">
+                                </div>
+                            </div>
+                            <div class="row justify-content-center text-center">
+
+
+
                             </div>
 
-                            <div class="mb-3">
-                                <label for="last_name" class="form-label">@lang('header.last_name'):</label>
-                                <input type="text" id="last_name" name="last_name" class="form-control"
-                                    placeholder="@lang('header.last_name')" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="email" class="form-label">@lang('header.email'):</label>
-                                <input type="email" id="email" name="email" class="form-control"
-                                    placeholder="@lang('header.email')" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="address" class="form-label">@lang('header.address'):</label>
-                                <input type="text" id="address" name="address" class="form-control"
-                                    placeholder="@lang('header.address')" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="city" class="form-label">@lang('header.city'):</label>
-                                <input type="text" id="city" name="city" class="form-control"
-                                    placeholder="@lang('header.city')" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="state" class="form-label">@lang('header.state'):</label>
-                                <input type="text" id="state" name="state" class="form-control"
-                                    placeholder="@lang('header.state')" required>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
-                                <input type="text" id="zipcode" name="zipcode" class="form-control"
-                                    placeholder="@lang('header.zipcode')" required onblur="calculateShipping()"
-                                    oninput="calculateShipping()">
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="amount" class="form-label">@lang('header.amount_usd')</label>
-                                <input type="number" id="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}"
-                                    class="form-control" disabled>
-                            </div>
-
-                            <div class="mb-3">
-                                <label for="shipment_cost" class="form-label">@lang('header.shipment_cost'):</label>
-                                <input type="number" id="shipment_cost"
-                                    value="{{ number_format($shipment_cost ?? 0, 2, '.', '') }}" class="form-control"
-                                    disabled>
+                            <div class="container text-center" style="margin-top:50px;">
+                                <div class="row justify-content-center">
+                                    <div class="col-auto">
+                                        <button type="submit" id="card-button" class="btn btn-primary px-4"
+                                            onclick="setPaymentAction('credit')">
+                                            <i class="fas fa-credit-card"></i> Pay with Credit Card
+                                        </button>
+                                    </div>
+                                    <div class="col-auto">
+                                        <button type="submit" id="paypal-button" class="btn btn-primary px-4"
+                                            onclick="setPaymentAction('paypal')">
+                                            <i class="fab fa-paypal"></i> Pay with PayPal
+                                        </button>
+                                    </div>
+                                    <p class="small" style="color:#330033;margin-top:20px;">
+                                        <img src="{{ asset('assets/images/icons/locked-card.png') }}"
+                                            style="width: 40px; height: auto; margin-right: 15px;">
+                                        @lang('header.disclaimer')</i>
+                                    </p>
+                                </div>
                             </div>
 
 
-
-
-                            <button type="submit" id="card-button" class="btn btn-primary btn-block mt-3">
-                                credit
-                            </button>
-                            <button type="submit" id="card-button" class="btn btn-primary btn-block mt-3">
-                                paypal
-                            </button>
                         </form>
                     </div>
                 </div>
@@ -101,6 +132,38 @@
         </div>
 
         <script>
+            function setPaymentAction(paymentType) {
+                let form = document.getElementById('payment-form');
+
+                if (paymentType === 'credit') {
+                    form.action = "{{ route('redirectCreditPayment') }}";
+                } else if (paymentType === 'paypal') {
+                    form.action = "{{ route('paypal.payment') }}";
+                }
+            };
+            function checkZipcode() {
+                let zipcodeInput = document.getElementById('zipcode');
+                let paymentButton = document.getElementById('payment-button');
+
+                if (!zipcodeInput || !paymentButton) {
+                    console.warn("Zipcode input or payment button not found.");
+                    return;
+                }
+
+                paymentButton.disabled = zipcodeInput.value.trim() === '';
+            }
+
+            // Run this when DOM is fully loaded
+            document.addEventListener('DOMContentLoaded', function () {
+                let zipcodeInput = document.getElementById('zipcode');
+
+                if (zipcodeInput) {
+                    zipcodeInput.addEventListener('input', checkZipcode);
+                    checkZipcode(); // Initial check in case input is pre-filled
+                } else {
+                    console.warn("Zipcode input field not found on the page.");
+                }
+            });
             function calculateShipping() {
                 const zipCodeInput = document.getElementById('zipcode');
                 const weightInput = document.getElementById('weight');
@@ -154,7 +217,7 @@
                     .catch(error => {
                         console.error('Error fetching shipping cost:', error);
                     });
-            }
+            };
 
 
         </script>

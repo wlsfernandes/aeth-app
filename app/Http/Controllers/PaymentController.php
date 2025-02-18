@@ -67,13 +67,29 @@ class PaymentController extends Controller
         $weight = $request->input('weight', 0);
         $minimumWeight = 0.1; // Default weight in pounds
         $weight = $weight > 0 ? $weight : $minimumWeight;
+
+        // Define Florida state and county sales tax (Orlando, FL 32867)
+        $stateTax = 0.06;  // 6% Florida state sales tax
+        $countySurtax = 0.005; // 0.5% Orange County surtax
+        $totalTaxRate = $stateTax + $countySurtax; // 6.5% total tax rate
+
+        // Calculate tax
+        $taxAmount = $amount * $totalTaxRate;
+        $totalAmount = $amount + $taxAmount;
+
+        // Store values in session
         session(['amount' => $amount]);
         session(['weight' => $weight]);
+        session(['taxAmount' => $taxAmount]);
+        session(['totalAmount' => $totalAmount]);
+
         $cartItems = session('cart', []);
         $type = 'bookstore';
         $program = 'AETH';
-        return view('pages.payments.contact-payment', compact('amount', 'type', 'program', 'cartItems', 'weight'));
+
+        return view('pages.payments.contact-payment', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount'));
     }
+
 
 
     public function redirectCreditPayment(Request $request)
@@ -83,9 +99,22 @@ class PaymentController extends Controller
         $first_name = $request->input('first_name');
         $last_name = $request->input('last_name');
         $email = $request->input('email');
+
+        // Define Florida state and county sales tax (Orlando, FL 32867)
+        $stateTax = 0.06;  // 6% Florida state sales tax
+        $countySurtax = 0.005; // 0.5% Orange County surtax
+        $totalTaxRate = $stateTax + $countySurtax; // 6.5% total tax rate
+
+        // Calculate tax
+        $taxAmount = $amount * $totalTaxRate;
+        $totalAmount = $amount + $shipment_cost + $taxAmount;
+
+        // Store values in session
         session(['amount' => $amount]);
+        session(['taxAmount' => $taxAmount]);
+        session(['totalAmount' => $totalAmount]);
         $cartItems = session('cart', []);
-        return view('pages.payments.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email'));
+        return view('pages.payments.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
     }
 
     public function redirectCartPayment(Request $request)
@@ -398,8 +427,7 @@ class PaymentController extends Controller
             }
 
             // Send confirmation email
-            Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord, $order->order_number));
-
+            Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord->first_name, $order->order_number, $paymentRecord->email));
             DB::commit();
             session()->forget('cart');
             session()->flash('success', 'Your payment was processed successfully!');
@@ -501,7 +529,8 @@ class PaymentController extends Controller
         try {
             $amount = $request->input('amount');
             $shipmentCost = $request->input('hidden_shipment_cost') ?? 0;
-            $totalAmount = $amount + $shipmentCost;
+            $taxAmount = $request->input('taxAmount') ?? 0;
+            $totalAmount = $amount + $shipmentCost + $taxAmount;
             $totalAmountInCents = $totalAmount * 100;
 
             $paymentData = [
@@ -514,6 +543,8 @@ class PaymentController extends Controller
                 'shipment_cost' => $shipmentCost,
                 'isRecurring' => $request->is_recurring ?? false,
                 'payment_date' => now(),
+                'tax' => $taxAmount ?? 0,
+                'totalAmount' => $totalAmount,
             ];
 
             if ($request->is_recurring) {

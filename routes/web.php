@@ -130,6 +130,7 @@ Route::get('/payment', [PaymentController::class, 'showPaymentForm'])->name('pay
 Route::post('/payment', [PaymentController::class, 'showPaymentForm'])->name('payment');
 Route::post('/handleMembershipPayment', [PaymentController::class, 'handleMembershipPayment']);
 Route::post('/redirectCreditPayment', [PaymentController::class, 'redirectCreditPayment'])->name('redirectCreditPayment');
+Route::post('/redirectPaypalPayment', [PaymentController::class, 'redirectPaypalPayment'])->name('redirectPaypalPayment');
 Route::post('/redirectContactPayment', [PaymentController::class, 'redirectContactPayment'])->name('redirectContactPayment');
 Route::post('/cartPayment', [PaymentController::class, 'cartPayment'])->name('cartPayment');
 Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
@@ -139,8 +140,10 @@ Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->
 Route::post('/handle-payment', [PaymentController::class, 'handleDonation']);
 
 
-Route::post('/paypal/payment', [PayPalController::class, 'createPayment'])->name('paypal.payment');
+Route::post('/paypal/bookstore', [PayPalController::class, 'createBookstorePayment'])->name('paypal.payment');
+Route::post('/paypal/donate', [PayPalController::class, 'donate'])->name('paypal.donate');
 Route::get('paypal/capture', [PayPalController::class, 'capturePayment'])->name('paypal.capture');
+Route::get('/paypal/capture/donation', [PayPalController::class, 'captureDonationPayment'])->name('paypal.capture.donation');
 Route::get('payment/success', function () {
     return view('paypal.payment-success');
 })->name('success');

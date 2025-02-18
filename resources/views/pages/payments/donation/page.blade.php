@@ -17,19 +17,19 @@
     <div class="title-text centred" style="margin:50px;">
         <h2 style="margin:50px;color:#330033"><i>Donate</i></h2>
     </div>
-    <form action="{{ env('APP_ENV') === 'production' ? secure_url('payment-donation') : url('payment-donation') }}" method="POST" class="default-form">
-    @csrf
+    <form action="{{ route('donationRedirectPayment')  }}" method="POST" class="default-form">
+        @csrf
         @csrf
         <div class="row clearfix">
             <div class="col-lg-12 col-md-12 col-sm-12 donate-column">
                 <div class="donate-box">
                     <div class="donate-option">
-                    <input type="hidden" name="type" value="{{ $type }}">
-                    <input type="hidden" name="program" value="{{ $program }}">
+                        <input type="hidden" name="type" value="{{ $type }}">
+                        <input type="hidden" name="program" value="{{ $program }}">
                         <h3>How Much?</h3>
                         <ul class="donate-list clearfix">
                             <li>
-                                <input type="radio" id="donate-amount-1" name="donate-amount" value="15"  />
+                                <input type="radio" id="donate-amount-1" name="donate-amount" value="15" />
                                 <label for="donate-amount-1">$15</label>
                             </li>
                             <li>
