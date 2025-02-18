@@ -1,5 +1,9 @@
 <?php
 return [
+    'staff' => 'Staff',
+    'consultants' => 'Consultants',
+    'service_partners' => 'Service Partners',
+    'interns' => 'Interns',
     'board_directors' => 'Board of Directors',
     'president' => 'President',
     'vice_president' => 'Vice President',

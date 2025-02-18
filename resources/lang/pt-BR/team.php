@@ -1,5 +1,9 @@
 <?php
 return [
+    'staff' => 'Equipe',
+    'consultants' => 'Consultores',
+    'service_partners' => 'Parceiros de Serviço',
+    'interns' => 'Estagiários',
     'board_directors' => 'Conselho Diretor',
     'president' => 'Presidente',
     'vice_president' => 'Vice-Presidente',
