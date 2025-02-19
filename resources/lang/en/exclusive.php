@@ -4,6 +4,9 @@ return [
     'dashboard' =>
         [
             'exclusive_content' => 'AETH - Exclusive Premium Content',
+            'findByProgram' => 'Find By Program',
+            'findByCategory' => 'Find By Category',
+            'findByEvent' => 'Find By Event',
             'p1' => 'Unlock Wisdom: Access Theology’s Finest Minds',
             'p2' => 'Gain access to video lectures, classes, and a wealth of valuable and reliable theological resources, crafted from the minds and hearts of trusted masters and doctors in the field.',
             'audio' => 'Exclusive AETH Audio Content',

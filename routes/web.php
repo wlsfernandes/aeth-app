@@ -164,6 +164,9 @@ Route::get('/dashboard', function () {
 
 Route::middleware('auth')->group(function () {
 
+    Route::get('/profile', [AdminController::class, 'profile'])->name('profile');
+    Route::put('/member/{id}', [MemberController::class, 'update'])->name('members.update');
+
     Route::get('/view-content/{id}', [AdminController::class, 'showContent'])->name('view-content');
     Route::get('/category', [AdminController::class, 'category'])->name('category');
     Route::get('/programs', [AdminController::class, 'programs'])->name('programs');

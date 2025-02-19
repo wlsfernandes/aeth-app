@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PortalContent;
+use App\Models\Member;
 
 class AdminController extends Controller
 {
+
+    public function profile()
+    {
+        $user = auth()->user()->load('member');
+        $member = Member::where('user_id', $user->id)->first();
+        return view('pages.exclusive.profile', compact('user', 'member'));
+    }
     public function audio()
     {
         return view('pages.exclusive.audio');

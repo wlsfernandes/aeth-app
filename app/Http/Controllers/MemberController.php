@@ -24,8 +24,8 @@ class MemberController extends Controller
 
     protected $paymentService;
 
-    
-   
+
+
     public function showMembershipPaymentForm()
     {
         $amount = session('amount');
@@ -52,7 +52,7 @@ class MemberController extends Controller
         $email = $request->input('email');
         $period = null;
         $amount = null;
-       
+
 
         switch ($membership_plan) {
 
@@ -88,7 +88,7 @@ class MemberController extends Controller
         }
         return view('pages.members.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
     }
-   
+
 
     public function renew()
     {
@@ -112,13 +112,28 @@ class MemberController extends Controller
     }
 
 
+    public function update(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
+            $member = Member::findOrFail($id);
+            $member->update($request->all());
+            $member->save();
+            DB::commit();
+            session()->flash('success', 'Member updated successfully.');
+            return redirect()->route('profile');
+        } catch (Exception $e) {
+            DB::rollBack();
+            session()->now('error', 'Failed to update Member: ' . $e->getMessage());
+            return redirect()->back()->withInput()->withErrors(['error' => 'Failed to update Member: ']);
+        }
+    }
 
 
 
 
+    /* TODO // hardcoded member in needs to update
 
-    /* TODO // hardcoded member in needs to update  
-     
     public function store(Request $request)
     {
         // Validate the request
@@ -138,7 +153,7 @@ class MemberController extends Controller
 
         try {
             $password = Str::random(10); // You can set the desired length
-            // hardcoded member in RegisteredUserController 
+            // hardcoded member in RegisteredUserController
             $user = User::create([
                 'name' => $request->name,
                 'email' => $request->email,

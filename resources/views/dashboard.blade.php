@@ -3,55 +3,55 @@
 @section('title', 'Admin Dashboard')
 
 @section('content')
-<section id="courses" class="container py-5">
-    <div class="text-center mb-4">
-        <h2>AETH - Exclusive Membership Content</h2>
-        <p>Explore our wide range of courses and learn from the best instructors.</p>
-    </div>
-    <div class="row gy-4">
-        <div class="col-md-4 col-lg-4">
-            <a href="{{ route('programs') }}">
+    <section id="courses" class="container py-5">
+        <div class="text-center mb-4">
+            <h2>AETH - Exclusive Membership Content</h2>
+            <p>Explore our wide range of courses and learn from the best instructors.</p>
+        </div>
+        <div class="row gy-4">
+            <div class="col-md-4 col-lg-4">
+                <a href="{{ route('programs') }}">
+                    <div class="card animated-zoom">
+                        <img src="{{ asset('assets/images/findByProgram.jpg') }}" class="card-img-top" alt="JC Center">
+                        <div class="card-body">
+                            <h5 class="card-title">@lang('exclusive.dashboard.findByProgram')</h5>
+                            <!--   <p class="card-text">@lang('exclusive.dashboard.p4')</p>-->
+                            <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
+                                <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                            </a>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4 col-lg-4">
                 <div class="card animated-zoom">
-                    <img src="{{ asset('assets/images/findByProgram.jpg') }}" class="card-img-top" alt="JC Center">
+                    <a href="{{ route('category') }}">
+                        <img src="{{ asset('assets/images/browse.jpg') }}" class="card-img-top"></a>
                     <div class="card-body">
-                        <h5 class="card-title">Explore by AETH Programs</h5>
-                        <p class="card-text">@lang('exclusive.dashboard.p4')</p>
-                        <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
+                        <h5 class="card-title">@lang('exclusive.dashboard.findByCategory')</h5>
+                        <!--<p class="card-text">@lang('exclusive.dashboard.p2')</p>-->
+                        <a href="{{ route('category') }}" class="btn btn-primary">
                             <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
                         </a>
                     </div>
                 </div>
-            </a>
-        </div>
-        <div class="col-md-4 col-lg-4">
-            <div class="card animated-zoom">
-                <a href="{{ route('category') }}">
-                    <img src="{{ asset('assets/images/browse.jpg') }}" class="card-img-top"></a>
-                <div class="card-body">
-                    <h5 class="card-title">Find by Category</h5>
-                    <p class="card-text">@lang('exclusive.dashboard.p2')</p>
-                    <a href="{{ route('category') }}" class="btn btn-primary">
-                        <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
-                    </a>
+            </div>
+            <div class="col-md-4 col-lg-4">
+                <div class="card animated-zoom">
+                    <a href="{{ route('findByEvent') }}">
+                        <img src="{{ asset('assets/images/assemblie.jpg') }}" class="card-img-top"></a>
+                    <div class="card-body">
+                        <h5 class="card-title">@lang('exclusive.dashboard.findByEvent')</h5>
+                        <!--<p class="card-text">@lang('exclusive.dashboard.p2')</p>-->
+                        <a href="{{ route('category') }}" class="btn btn-primary">
+                            <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div class="col-md-4 col-lg-4">
-            <div class="card animated-zoom">
-                <a href="{{ route('findByEvent') }}">
-                    <img src="{{ asset('assets/images/assemblie.jpg') }}" class="card-img-top"></a>
-                <div class="card-body">
-                    <h5 class="card-title">Find by Event</h5>
-                    <p class="card-text">@lang('exclusive.dashboard.p2')</p>
-                    <a href="{{ route('category') }}" class="btn btn-primary">
-                        <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
-                    </a>
-                </div>
-            </div>
-        </div>
 
-    </div>
-</section>
+        </div>
+    </section>
 @endsection
 
 @push('styles')
