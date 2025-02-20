@@ -12,53 +12,25 @@ use App\Mail\OrderEmail;
 use App\Mail\DonationEmail;
 
 use App\Models\Product;
+use App\Models\User;
+use App\Models\Member;
 use App\Models\Payment;
 use App\Models\Order;
 use Exception;
+
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\Hash;
+use App\Mail\WelcomeEmail;
+use PayPalHttp\HttpException;
+use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
+use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
 
 class PayPalController extends Controller
 {
     /**
      * Create a PayPal order for payment.
      */
-
-    public function createPayment(Request $request)
-    {
-
-        $amount = 100;
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $provider->setAccessToken($provider->getAccessToken());
-
-        // Create an order with PayPal
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE", // Indicates that payment will be captured immediately
-            "purchase_units" => [
-                [
-                    "amount" => [
-                        "currency_code" => "USD", // Currency set to BRL
-                        "value" => $amount, // The amount to charge
-                    ]
-                ]
-            ],
-            "application_context" => [
-                "return_url" => route('paypal.capture', ['amount' => $amount]),
-                "cancel_url" => route('test.paypal')
-            ]
-        ]);
-
-        // Redirect the user to PayPal to approve the payment
-        if (isset($response['id']) && isset($response['links'])) {
-            foreach ($response['links'] as $link) {
-                if ($link['rel'] === 'approve') {
-                    return redirect($link['href']);
-                }
-            }
-        }
-
-        // If something goes wrong, redirect back with an error
-        return redirect()->back()->withErrors('Something went wrong while creating the payment.');
-    }
 
 
     public function donate(Request $request)
@@ -208,7 +180,7 @@ class PayPalController extends Controller
                 'customer_email' => $request->input('email'),
                 'total' => $total,
                 'shipment_cost' => $shipmentCost,
-                'address' => $request->input('address'),
+                'address_line_1' => $request->input('address_line_1'),
                 'city' => $request->input('city'),
                 'state' => $request->input('state'),
                 'zipcode' => $request->input('zipcode'),
@@ -318,6 +290,206 @@ class PayPalController extends Controller
         }
     }
 
+    public function membership(Request $request)
+    {
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email|unique:users,email',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+            'membership_plan' => 'required|string',
+            'period' => 'required|string',
+        ]);
 
+        if ($validator->fails()) {
+            $message = 'This email is already registered.';
+            Session::flash('error', ['email' => $message]);
+            return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
+        }
+
+        return $this->captureMembershipPayment($request);
+    }
+
+    public function captureMembershipPayment(Request $request)
+    {
+        $totalAmount = (float) $request->input('amount');
+        if ($totalAmount <= 0) {
+            throw new Exception('Invalid amount: must be greater than zero.');
+        }
+        $totalAmount = number_format($totalAmount, 2, '.', '');
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->setAccessToken($provider->getAccessToken());
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "purchase_units" => [
+                [
+                    "amount" => [
+                        "currency_code" => "USD",
+                        "value" => $totalAmount,
+                    ]
+                ]
+            ],
+            "application_context" => [
+                "return_url" => route('paypal.capture.membership.success', [
+                    'email' => $request->email,
+                    'first_name' => $request->first_name,
+                    'last_name' => $request->last_name,
+                    'membership_plan' => $request->membership_plan,
+                    'period' => $request->period,
+                    'amount' => $totalAmount,
+                ]),
+            ]
+        ]);
+
+        if (!isset($response['id'])) {
+            throw new Exception('PayPal order creation failed: ' . json_encode($response));
+        }
+
+        $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
+        if (!$approvalUrl) {
+            throw new Exception('Approval URL not found in PayPal response.');
+        }
+
+        // Redirect the user to PayPal for approval
+        return redirect()->away($approvalUrl);
+    }
+
+    public function handlePayPalSuccess(Request $request)
+    {
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->setAccessToken($provider->getAccessToken());
+
+        $orderId = $request->query('token'); // PayPal returns token as order ID
+
+        $response = $provider->capturePaymentOrder($orderId);
+
+        if (!isset($response['status']) || $response['status'] !== 'COMPLETED') {
+            throw new Exception('Payment was not successful.');
+        }
+
+        DB::beginTransaction();
+        try {
+            $password = 'adminAeth2025';
+
+            $user = User::create([
+                'name' => $request->query('first_name') . ' ' . $request->query('last_name'),
+                'email' => $request->query('email'),
+                'password' => Hash::make($password),
+            ]);
+
+            $roleId = 17;
+            $user->roles()->attach($roleId);
+
+            Member::create([
+                'user_id' => $user->id,
+                'first_name' => $request->query('first_name'),
+                'last_name' => $request->query('last_name'),
+                'email' => $request->query('email'),
+                'membership_plan' => $request->query('membership_plan'),
+                'membership_start_date' => now(),
+                'membership_end_date' => $request->query('period') == 'year' ? now()->addYear() : now()->addDays(31),
+                'isYear' => $request->query('period') == 'year',
+                'status' => 'active',
+            ]);
+
+            Payment::create([
+                'first_name' => $request->query('first_name'),
+                'last_name' => $request->query('last_name'),
+                'email' => $request->query('email'),
+                'type' => 'Membership',
+                'program' => 'AETH',
+                'amount' => $request->query(key: 'amount'),
+                'shipment_cost' => 0,
+                'isRecurring' => false,
+                'payment_date' => now(),
+                'processed_by' => 'Paypal',
+                'tax' => 0,
+                'totalAmount' => $request->query(key: 'amount'),
+            ]);
+
+            Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+
+            DB::commit();
+            Session::flash('success', 'Payment and membership creation successful!');
+            return redirect()->route('login');
+        } catch (Exception $e) {
+            DB::rollBack();
+            throw new Exception('User and membership creation failed: ' . $e->getMessage());
+        }
+
+    }
+
+
+
+    /*public function captureMembershipPayment($request)
+    {
+
+        $totalAmount = $request->membership_plan === 'premium' ? '99.99' : '49.99';
+
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->setAccessToken($provider->getAccessToken());
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "purchase_units" => [
+                [
+                    "amount" => [
+                        "currency_code" => "USD",
+                        "value" => $totalAmount,
+                    ]
+                ]
+            ],
+            "application_context" => [
+                "return_url" => route('paypal.capture', ['email' => $request->email]),
+                "cancel_url" => route('payment-membership')
+            ]
+        ]);
+
+        if (!isset($response['id'])) {
+            throw new Exception('PayPal order creation failed: ' . json_encode($response));
+        }
+
+        $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
+        if (!$approvalUrl) {
+            throw new Exception('Approval URL not found in PayPal response.');
+        }
+
+        DB::beginTransaction();
+        try {
+            $password = 'adminAeth2025';
+
+            $user = User::create([
+                'name' => $request->first_name . ' ' . $request->last_name,
+                'email' => $request->email,
+                'password' => Hash::make($password),
+            ]);
+
+            $roleId = 17;
+            $user->roles()->attach($roleId);
+
+            Member::create([
+                'user_id' => $user->id,
+                'first_name' => $request->first_name,
+                'last_name' => $request->last_name,
+                'email' => $request->email,
+                'membership_plan' => $request->membership_plan,
+                'membership_start_date' => now(),
+                'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                'isYear' => $request->period == 'year',
+                'status' => 'active',
+            ]);
+
+            Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+
+            DB::commit();
+            Session::flash('success', 'Payment and membership creation successful!');
+            return redirect()->route('login');
+        } catch (Exception $e) {
+            DB::rollBack();
+            throw new Exception('User and membership creation failed: ' . $e->getMessage());
+        }
+
+    } */
 
 }

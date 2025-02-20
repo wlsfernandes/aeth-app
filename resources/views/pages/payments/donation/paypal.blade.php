@@ -26,8 +26,22 @@
             <input type="email" id="email" name="email" class="form-control" required>
         </div>
     </div>
-    <button type="submit" id="card-button" class="btn-block mt-3"
+
+    <button type="submit" id="card-button" class="btn-block mt-3 d-flex align-items-center justify-content-center"
         style="background-color:#330033;color:#fff;height:50px;">
-        @lang('header.pay_now') with Paypal
+        <span id="button-text">@lang('header.pay_now') with Paypal</span>
+        <span id="button-spinner" class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
     </button>
 </form>
+
+<script>
+    document.getElementById("payment-paypal-form").addEventListener("submit", function () {
+        let button = document.getElementById("card-button");
+        let spinner = document.getElementById("button-spinner");
+        let buttonText = document.getElementById("button-text");
+
+        button.disabled = true; // Disable button
+        spinner.classList.remove("d-none"); // Show spinner
+        buttonText.textContent = "Processing..."; // Change button text
+    });
+</script>

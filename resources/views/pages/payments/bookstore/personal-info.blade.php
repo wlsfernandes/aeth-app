@@ -16,6 +16,7 @@
                             @csrf
                             <input type="hidden" name="type" value="Bookstore">
                             <input type="hidden" name="program" value="AETH">
+
                             <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="taxAmount" value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="weight" id="weight"
@@ -79,7 +80,7 @@
                             <div class="row justify-content-center text-center">
                                 <div class="col-md-7">
                                     <label for="address" class="form-label">@lang('header.address'):</label>
-                                    <input type="text" id="address" name="address" class="form-control" required>
+                                    <input type="text" id="address" name="address_line_1" class="form-control" required>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="city" class="form-label">@lang('header.city'):</label>
@@ -106,13 +107,13 @@
                                 <div class="row justify-content-center">
                                     <div class="col-auto">
                                         <button type="submit" id="card-button" class="btn btn-primary px-4"
-                                            onclick="setPaymentAction('credit')">
+                                            onclick="setPaymentAction(event, 'credit')">
                                             <i class="fas fa-credit-card"></i> Pay with Credit Card
                                         </button>
                                     </div>
                                     <div class="col-auto">
                                         <button type="submit" id="paypal-button" class="btn btn-primary px-4"
-                                            onclick="setPaymentAction('paypal')">
+                                            onclick="setPaymentAction(event, 'paypal')">
                                             <i class="fab fa-paypal"></i> Pay with PayPal
                                         </button>
                                     </div>
@@ -132,7 +133,9 @@
         </div>
 
         <script>
-            function setPaymentAction(paymentType) {
+            function setPaymentAction(event, paymentType) {
+                event.preventDefault(); // Prevents default submission until action is set
+
                 let form = document.getElementById('payment-form');
 
                 if (paymentType === 'credit') {
@@ -140,17 +143,12 @@
                 } else if (paymentType === 'paypal') {
                     form.action = "{{ route('paypal.payment') }}";
                 }
-            };
-            function checkZipcode() {
-                let zipcodeInput = document.getElementById('zipcode');
-                let paymentButton = document.getElementById('payment-button');
 
-                if (!zipcodeInput || !paymentButton) {
-                    console.warn("Zipcode input or payment button not found.");
-                    return;
-                }
+                console.log("Form action set to: ", form.action); // Debugging
 
-                paymentButton.disabled = zipcodeInput.value.trim() === '';
+                setTimeout(() => {
+                    form.submit();
+                }, 100); // Allows the browser to register the action before submitting
             }
 
             // Run this when DOM is fully loaded

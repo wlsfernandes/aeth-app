@@ -29,7 +29,7 @@ class MemberController extends Controller
     public function showMembershipPaymentForm()
     {
         $amount = session('amount');
-        return view('pages.members.member-payment', compact('amount'));
+        return view('pages.payments.membership.page', compact('amount'));
     }
 
     public function membershipRedirectPayment(Request $request)
@@ -39,7 +39,7 @@ class MemberController extends Controller
         $membership_plan = $request->input('membership_plan');
         $period = $request->input('period');
         $amount = $request->input('amount');
-        return view('pages.members.member-payment', compact('amount', 'type', 'program', 'membership_plan', 'period'));
+        return view('pages.payments.membership.page', compact('amount', 'type', 'program', 'membership_plan', 'period'));
     }
 
     public function membershipRedirectRenewPayment(Request $request)
@@ -86,7 +86,7 @@ class MemberController extends Controller
                 break;
 
         }
-        return view('pages.members.payment-membership-renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
+        return view('pages.payments.membership.renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
     }
 
 

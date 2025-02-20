@@ -28,7 +28,6 @@
                 <input type="checkbox" id="is_recurring" name="is_recurring" value="1">
                 <i class="fas fa-sync me-2"></i>
                 <label for="is_recurring" class="form-label mb-0 me-2">@lang('header.recurring_donation')</label>
-
             </div>
         </div>
 
@@ -46,31 +45,23 @@
                 <input type="email" id="email" name="email" class="form-control" required>
             </div>
         </div>
-        <!-- Card Holder's Name -->
+
         <div class="mb-3" style="margin-top:25px;">
             <label for="card-holder-name" class="form-label">@lang('header.card_name')</label>
             <input type="text" id="card-holder-name" name="card_holder_name" class="form-control"
                 placeholder="@lang('header.name_on_card')" required>
         </div>
 
-        <!-- Stripe Elements Placeholder -->
         <label for="card-element" class="form-label">@lang('header.credit_debit')</label>
         <div class="row justify-content-center text-center">
-
             <div class="col-md-6">
-                <div id="card-number-element" class="stripe-element-container">
-                    <!-- Stripe's Card Number Element will be inserted here -->
-                </div>
+                <div id="card-number-element" class="stripe-element-container"></div>
             </div>
             <div class="col-md-3">
-                <div id="card-expiry-element" class="stripe-element-container">
-                    <!-- Stripe's Expiry Date Element will be inserted here -->
-                </div>
+                <div id="card-expiry-element" class="stripe-element-container"></div>
             </div>
             <div class="col-md-3">
-                <div id="card-cvc-element" class="stripe-element-container">
-                    <!-- Stripe's CVC Element will be inserted here -->
-                </div>
+                <div id="card-cvc-element" class="stripe-element-container"></div>
             </div>
             <div id="card-errors" class="text-danger mt-2" role="alert"></div>
         </div>
@@ -78,15 +69,27 @@
 
     <input type="hidden" name="payment_method_id" id="payment-method-id">
 
-    <button type="submit" id="card-button" class="btn-block mt-3"
+    <button type="submit" id="card-button" class="btn-block mt-3 d-flex align-items-center justify-content-center"
         style="background-color:#330033;color:#fff;height:50px;">
-        @lang('header.pay_now')
+        <span id="button-text">@lang('header.pay_now')</span>
+        <span id="button-spinner" class="spinner-border spinner-border-sm d-none ms-2" role="status"></span>
     </button>
 
     <p class="small" style="color:#330033;margin-top:20px;">
         <img src="{{ asset('assets/images/icons/locked-card.png') }}"
             style="width: 40px; height: auto; margin-right: 15px;">
-        @lang('header.disclaimer')</i>
+        @lang('header.disclaimer')
     </p>
-    </div>
 </form>
+
+<script>
+    document.getElementById("payment-form").addEventListener("submit", function () {
+        let button = document.getElementById("card-button");
+        let spinner = document.getElementById("button-spinner");
+        let buttonText = document.getElementById("button-text");
+
+        button.disabled = true; // Disable button
+        spinner.classList.remove("d-none"); // Show spinner
+        buttonText.textContent = "Processing..."; // Change button text
+    });
+</script>

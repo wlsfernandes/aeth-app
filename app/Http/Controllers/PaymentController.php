@@ -87,7 +87,7 @@ class PaymentController extends Controller
         $type = 'bookstore';
         $program = 'AETH';
 
-        return view('pages.payments.contact-payment', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount'));
+        return view('pages.payments.bookstore.personal-info', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount'));
     }
 
 
@@ -114,24 +114,24 @@ class PaymentController extends Controller
         session(['taxAmount' => $taxAmount]);
         session(['totalAmount' => $totalAmount]);
         $cartItems = session('cart', []);
-        return view('pages.payments.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
+        return view('pages.payments.bookstore.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
     }
+    /*
+        public function redirectCartPayment(Request $request)
+        {
+            $amount = $request->input('amount', 0);
+            $weight = $request->input('weight', 0);
+            $minimumWeight = 0.1; // Default weight in pounds
+            $weight = $weight > 0 ? $weight : $minimumWeight;
+            session(['amount' => $amount]);
+            session(['weight' => $weight]);
+            $cartItems = session('cart', []);
+            $type = 'bookstore';
+            $program = 'AETH';
+            return view('pages.payments.bookstore.page', compact('amount', 'type', 'program', 'cartItems', 'weight'));
+        }
 
-    public function redirectCartPayment(Request $request)
-    {
-        $amount = $request->input('amount', 0);
-        $weight = $request->input('weight', 0);
-        $minimumWeight = 0.1; // Default weight in pounds
-        $weight = $weight > 0 ? $weight : $minimumWeight;
-        session(['amount' => $amount]);
-        session(['weight' => $weight]);
-        $cartItems = session('cart', []);
-        $type = 'bookstore';
-        $program = 'AETH';
-        return view('pages.payments.cart-payment', compact('amount', 'type', 'program', 'cartItems', 'weight'));
-    }
-
-
+    */
 
     public function handleRedirect(Request $request)
     {
