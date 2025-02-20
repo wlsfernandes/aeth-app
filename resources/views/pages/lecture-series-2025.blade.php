@@ -36,15 +36,7 @@
                             </div>
                             <div class="inner mb_45">
                                 <div class="row clearfix">
-                                    <!--  <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                                                                                                                                                                                                                                                                                                                    <div class="single-item">
-                                                                                                                                                                                                                                                                                                                                        <div class="upper">
-                                                                                                                                                                                                                                                                                                                                            <div class="icon-box"><i class="icon-4"></i></div>
-                                                                                                                                                                                                                                                                                                                                            <h3>Quick Fundraising</h3>
-                                                                                                                                                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                                                                                                                                                        <p>Amet minim mollit no deserunt ulamco sit enim.</p>
-                                                                                                                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                                                                                                                </div> -->
+
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
@@ -56,9 +48,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <!--     <div class="btn-box">
-                                                                                                                                                                                                                                                                                                                                <a href="contact.html" class="theme-btn-one">Contact Us</a>
-                                                                                                                                                                                                                                                                                                                            </div> -->
+
                         </div>
                     </div>
                 </div>
@@ -70,13 +60,11 @@
                                 <div class="shape-2" style="background-image: url(assets/images/shape/shape-1.png);"></div>
                                 <div class="shape-3"></div>
                             </div>
-                            <figure class="image image-1"><img src="assets/images/resource/Migration.jpg" alt="" style="
-                                                                                                    height: 250px; /* Match the rendered height */
-                                                                                                    object-fit: cover;">
+                            <figure class="image image-1"><img src="assets/images/resource/Migration.jpg" alt=""
+                                    style="height: 250px;object-fit: cover;">
                             </figure>
-                            <figure class="image image-2"><img src="assets/images/resource/Preaching.jpg" alt="" style="
-                                                                                                    height: 220px; /* Match the rendered height */
-                                                                                                    object-fit: cover;">>
+                            <figure class="image image-2"><img src="assets/images/resource/Preaching.jpg" alt=""
+                                    style="height: 220px;object-fit: cover;">>
                             </figure>
                         </div>
                     </div>
@@ -104,7 +92,7 @@
 
         </div>
     </section>
-    <section class="about-style-two">
+    <section class="about-style-two" style="background-color:#f5f1fb">
         <div class="iframe-container" style="margin-bottom: 30px;">
             <iframe
                 src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=Life%20Pacific%20University,%20San%20Dimas,%20California&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
@@ -127,9 +115,9 @@
                             </div>
                             <div class="d-flex justify-content-between">
                                 <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Lecture+Series+25+Agenda+English+Version.pdf"
-                                    class="theme-btn-one" target="blank">@lang('header.down_en')</a>
+                                    class="theme-btn-one" target="blank"><small>@lang('header.down_en')</small></a>
                                 <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Agenda+Lecture+Series+25+Espan%CC%83ol.pdf"
-                                    class="theme-btn-one" target="_blank">@lang('header.down_es')</a>
+                                    class="theme-btn-one" target="_blank"><small>@lang('header.down_es')</small></a>
                             </div>
 
                         </div>
@@ -137,7 +125,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div class="image-box ml_30 mt_19">
-                        <figure class="image"><img src="assets/images/resource/hotel.jpg" alt=""></figure>
+                        <figure class="image"><img src="assets/images/resource/agenda.png" alt=""></figure>
                     </div>
                 </div>
             </div>
@@ -221,7 +209,7 @@
         </div>
     </section>
     <!-- clients-section -->
-    <section class="clients-section" style="background:#f7f5f1">
+    <section class="clients-section" style="background-color:#f5f1fb">
         <div class="sec-title centred mb_55">
             <span class="sub-title calendar">@lang('messages.important_partners')</span>
         </div>
