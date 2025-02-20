@@ -37,14 +37,14 @@
                             <div class="inner mb_45">
                                 <div class="row clearfix">
                                     <!--  <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                                                                                                                                                                                                                <div class="single-item">
-                                                                                                                                                                                                                                    <div class="upper">
-                                                                                                                                                                                                                                        <div class="icon-box"><i class="icon-4"></i></div>
-                                                                                                                                                                                                                                        <h3>Quick Fundraising</h3>
-                                                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                                                    <p>Amet minim mollit no deserunt ulamco sit enim.</p>
-                                                                                                                                                                                                                                </div>
-                                                                                                                                                                                                                            </div> -->
+                                                                                                                                                                                                                                                                                                                                    <div class="single-item">
+                                                                                                                                                                                                                                                                                                                                        <div class="upper">
+                                                                                                                                                                                                                                                                                                                                            <div class="icon-box"><i class="icon-4"></i></div>
+                                                                                                                                                                                                                                                                                                                                            <h3>Quick Fundraising</h3>
+                                                                                                                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                                                                                                                        <p>Amet minim mollit no deserunt ulamco sit enim.</p>
+                                                                                                                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                                                                                                                </div> -->
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
@@ -57,8 +57,8 @@
                                 </div>
                             </div>
                             <!--     <div class="btn-box">
-                                                                                                                                                                                                                            <a href="contact.html" class="theme-btn-one">Contact Us</a>
-                                                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                <a href="contact.html" class="theme-btn-one">Contact Us</a>
+                                                                                                                                                                                                                                                                                                                            </div> -->
                         </div>
                     </div>
                 </div>
@@ -70,8 +70,14 @@
                                 <div class="shape-2" style="background-image: url(assets/images/shape/shape-1.png);"></div>
                                 <div class="shape-3"></div>
                             </div>
-                            <figure class="image image-1"><img src="assets/images/resource/about-1.jpg" alt=""></figure>
-                            <figure class="image image-2"><img src="assets/images/resource/about-2.jpg" alt=""></figure>
+                            <figure class="image image-1"><img src="assets/images/resource/Migration.jpg" alt="" style="
+                                                                                                    height: 250px; /* Match the rendered height */
+                                                                                                    object-fit: cover;">
+                            </figure>
+                            <figure class="image image-2"><img src="assets/images/resource/Preaching.jpg" alt="" style="
+                                                                                                    height: 220px; /* Match the rendered height */
+                                                                                                    object-fit: cover;">>
+                            </figure>
                         </div>
                     </div>
                 </div>
