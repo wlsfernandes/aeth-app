@@ -31,35 +31,34 @@
                                 <h2>LS25 Predicación y Migración</h2>
                             </div>
                             <div class="text mb_35">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quam turpis nulla magnis
-                                    vestibulum tempor quam molestie. Dolor tortor pulvinar mus et Euismod rhoncus imperdiet
-                                    diam.Quis nibh massa nullam nunc, quis ridiculus. Est nisl, consectetur nunc.</p>
+                                <p>@lang('pages.lectures.p1')</p>
+                                <p>@lang('pages.lectures.p2')</p>
                             </div>
                             <div class="inner mb_45">
                                 <div class="row clearfix">
-                                    <div class="col-lg-6 col-md-6 col-sm-12 single-column">
-                                        <div class="single-item">
-                                            <div class="upper">
-                                                <div class="icon-box"><i class="icon-4"></i></div>
-                                                <h3>Quick Fundraising</h3>
-                                            </div>
-                                            <p>Amet minim mollit no deserunt ulamco sit enim.</p>
-                                        </div>
-                                    </div>
+                                    <!--  <div class="col-lg-6 col-md-6 col-sm-12 single-column">
+                                                                                                                                                                                                                                <div class="single-item">
+                                                                                                                                                                                                                                    <div class="upper">
+                                                                                                                                                                                                                                        <div class="icon-box"><i class="icon-4"></i></div>
+                                                                                                                                                                                                                                        <h3>Quick Fundraising</h3>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                    <p>Amet minim mollit no deserunt ulamco sit enim.</p>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div> -->
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
                                                 <div class="icon-box"><i class="icon-5"></i></div>
                                                 <h3>Join our Team</h3>
                                             </div>
-                                            <p>Amet minim mollit no deserunt ulamco sit enim.</p>
+                                            <!-- <p>Amet minim mollit no deserunt ulamco sit enim.</p>-->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="btn-box">
-                                <a href="contact.html" class="theme-btn-one">Contact Us</a>
-                            </div>
+                            <!--     <div class="btn-box">
+                                                                                                                                                                                                                            <a href="contact.html" class="theme-btn-one">Contact Us</a>
+                                                                                                                                                                                                                        </div> -->
                         </div>
                     </div>
                 </div>
@@ -79,35 +78,7 @@
             </div>
         </div>
     </section>
-    <!--  <section class="about-style-two pt_120" style="background-color:#f5f1fb">
-                                                                                    <div class="auto-container">
-                                                                                        <div class="row align-items-center clearfix">
-                                                                                            <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                                                                                <div class="image-box ml_30 mt_19">
-                                                                                                    <figure class="image"><img src="assets/images/resource/calendar.png" alt=""></figure>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                                                                                <div class="content_block_two">
-                                                                                                    <div class="content-box ml_40">
-                                                                                                        <div class="sec-title mb_55">
-                                                                                                            <h2>When</h2>
-                                                                                                            <h3>09th - 10th - 11th | OCTOBER</h3>
-                                                                                                        </div>
-                                                                                                        <div class="text mb_40">
-                                                                                                            <div class="text">
-                                                                                                                <p>@lang('programs.antioquia.p2') </p>
-                                                                                                                <p>@lang('programs.antioquia.p3')</p>
-                                                                                                                <p>@lang('programs.antioquia.p4')</p>
-                                                                                                            </div>
-                                                                                                        </div>
 
-                                                                                                    </div>
-                                                                                                </div>
-                                                                                            </div>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </section>-->
     <section class="cta-style-two">
         <div class="pattern-layer"></div>
         <div class="auto-container">
@@ -143,13 +114,18 @@
                     <div class="content_block_three">
                         <div class="content-box mr_30">
                             <div class="sec-title mb_55">
-                                <h2>Hotel and Local info</h2>
+                                <h2>LS25 Predicación y Migración - Agenda</h2>
                             </div>
                             <div class="text mb_40">
-                                <p>@lang('programs.antioquia.p6') </p>
-                                <p>@lang('programs.antioquia.p7') </p>
-                                <p>@lang('programs.antioquia.p8') </p>
+                                <p>@lang('pages.lectures.p3') </p>
                             </div>
+                            <div class="d-flex justify-content-between">
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Lecture+Series+25+Agenda+English+Version.pdf"
+                                    class="theme-btn-one" target="blank">@lang('header.down_en')</a>
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Agenda+Lecture+Series+25+Espan%CC%83ol.pdf"
+                                    class="theme-btn-one" target="_blank">@lang('header.down_es')</a>
+                            </div>
+
                         </div>
                     </div>
                 </div>
@@ -167,10 +143,9 @@
             <div class="row clearfix">
                 <div class="col-lg-4 col-md-12 col-sm-12 title-column">
                     <div class="sec-title mr_70">
-                        <span class="sub-title">Oradores</span>
-                        <h2>Meet <br />Our Awesome Oradores</h2>
-                        <p class="mt_30">Amet dui scelerisque vel habitant eget tincidunt facilisis pretium. Porttitor mi
-                            nisi, non vitae tempus.</p>
+                        <span class="sub-title">@lang('header.speakers')</span>
+                        <h2>@lang('pages.lectures.keynote')</h2>
+                        <p class="mt_30">@lang('pages.lectures.meet')</p>
                     </div>
                 </div>
                 <div class="col-lg-8 col-md-12 col-sm-12 content-column">
@@ -179,17 +154,17 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="team-details.html"><img
-                                                    src="assets/images/team/Justo Gonzalez.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="#"><img src="assets/images/resource/justo.png"
+                                                    alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="team-details.html">Dr. Justo González</a></h3>
-                                            <span class="designation">Volunteer</span>
+                                            <h3><a href="#">Dr. Justo González</a></h3>
+                                            <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -198,17 +173,17 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="team-details.html"><img
-                                                    src="assets/images/team/team-2.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="#"><img src="assets/images/resource/Dr.Alma.png"
+                                                    alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="team-details.html">Dra. Alma Tinoco Ruiz</a></h3>
-                                            <span class="designation">Volunteer</span>
+                                            <h3><a href="#">Dra. Alma Tinoco Ruiz</a></h3>
+                                            <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -217,17 +192,17 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="team-details.html"><img
-                                                    src="assets/images/team/team-2.jpg" alt=""></a></figure>
+                                        <figure class="image"><a href="#"><img src="assets/images/resource/salvatierra.png"
+                                                    alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="team-details.html">Dr. Oscar Garcia Johnson</a></h3>
-                                            <span class="designation">Volunteer</span>
+                                            <h3><a href="#">Dr. Oscar Garcia Johnson</a></h3>
+                                            <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
-                                                <li><a href="index.html"><i class="fab fa-facebook-f"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-twitter"></i></a></li>
-                                                <li><a href="index.html"><i class="fab fa-instagram"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -239,27 +214,24 @@
             </div>
         </div>
     </section>
-    <section class="clients-section"
-        style="margin-bottom:75px;height:150px;background: linear-gradient(to right,#4a235a, #a569bd, #e8daef); border-color: #4a235a; color: #fff;">
-
+    <!-- clients-section -->
+    <section class="clients-section" style="background:#f7f5f1">
+        <div class="sec-title centred mb_55">
+            <span class="sub-title calendar">@lang('messages.important_partners')</span>
+        </div>
         <div class="auto-container">
-            <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                <figure class="clients-logo" style="width: 180px;height:auto;"><a href="index.html"><img
-                            src="assets/images/team/Jessica Lugo.jpg" alt=""></a>
+            <div class="two-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
+                            src="assets/images/clients/clients-3.png" alt=""></a>
                 </figure>
-                <figure class="clients-logo" style="width: 180px;height:auto;"><a href="index.html"><img
-                            src="assets/images/team/Ondina Gonzalez.jpg" alt=""></a>
-                </figure>
-                <figure class="clients-logo" style="width: 180px;height:auto;"><a href="index.html"><img
-                            src="assets/images/team/Wilson Fernandes.jpg" alt=""></a>
-                </figure>
-                <figure class="clients-logo" style="width: 180px;height:auto;"><a href="index.html"><img
-                            src="assets/images/team/Maylin Escala.jpg" alt=""></a>
+                <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
+                            src="assets/images/clients/clients-5.png" alt=""></a>
                 </figure>
 
             </div>
         </div>
     </section>
+    <!-- clients-section end -->
 
     <section class="cause-section sec-pad">
         <div class="auto-container">
@@ -273,11 +245,11 @@
                             <div class="image-box">
                                 <figure class="image"><a href="#"><img src="assets/images/gallery/certification.jpg"
                                             alt=""></a></figure>
-                                <div class="category"><a href="#">@lang('programs.antioquia.p10')</a></div>
+                                <div class="category"><a href="#">@lang('pages.lectures.p4')</a></div>
                             </div>
                             <div class="lower-content">
                                 <div class="text">
-                                    <p>@lang('programs.antioquia.p11')</p>
+                                    <p>@lang('pages.lectures.p5')</p>
                                 </div>
 
                             </div>
@@ -290,12 +262,12 @@
                             <div class="image-box">
                                 <figure class="image"><a href="#"><img src="assets/images/gallery/teachers.jpg"
                                             style="width:470px;height:270px;"></a></figure>
-                                <div class="category"><a href="#">@lang('programs.antioquia.p12')</a></div>
+                                <div class="category"><a href="#">@lang('pages.lectures.p6')</a></div>
                             </div>
                             <div class="lower-content">
                                 <div class="text">
 
-                                    <p>@lang('programs.antioquia.p13')</p>
+                                    <p>@lang('pages.lectures.p7')</p>
                                 </div>
 
                             </div>
@@ -308,11 +280,11 @@
                             <div class="image-box">
                                 <figure class="image"><a href="#"><img src="assets/images/gallery/meet1.jpg"
                                             style="width:470px;height:270px;"></a></figure>
-                                <div class="category"><a href="#">@lang('programs.antioquia.p14')</a></div>
+                                <div class="category"><a href="#">@lang('pages.lectures.p8')</a></div>
                             </div>
                             <div class="lower-content">
                                 <div class="text">
-                                    <p>@lang('programs.antioquia.p11')</p>
+                                    <p>@lang('pages.lectures.p9')</p>
                                 </div>
 
                             </div>

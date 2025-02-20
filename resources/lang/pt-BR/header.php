@@ -1,5 +1,9 @@
 <?php
 return [
+    'speakers' => 'Oradores',
+    'speaker' => 'Orador',
+    'down_en' => 'Baixar versão em inglês',
+    'down_es' => 'Baixar versão em espanhol',
     'about_us' => 'Sobre Nós',
     'our_team' => 'Nossa Equipe',
     'open_positions' => 'Vagas Abertas',

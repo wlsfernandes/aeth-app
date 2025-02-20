@@ -1,5 +1,9 @@
 <?php
 return [
+    'speakers' => 'Speakers',
+    'speaker' => 'Speaker',
+    'down_en' => 'Donwload English Version',
+    'down_es' => 'Download Spanish Version',
     'about_us' => 'About Us',
     'our_team' => 'Our Team',
     'open_positions' => 'Open Positions',
