@@ -45,5 +45,8 @@ return [
     'zipcode' => 'CEP',
     'name_on_card' => 'Nome no cartão',
     'young_leaders' => 'Young Líderes',
-    'recurring_donation' => 'Doação Recorrente'
+    'recurring_donation' => 'Doação Recorrente',
+    'login_p1' => 'Bem-vindo ao portal exclusivo para Membros da AETH. Você se juntou a muitos membros interessados na educação teológica e na educação teológica hispânica. Como valioso membro da AETH, você tem acesso a recursos e programas inestimáveis necessários no processo de formar pessoas que buscam servir a Deus, servindo ao próximo, cuidando de toda a criação e promovendo a plenitude da vida',
+    'login_p2' => 'Convidamos você a explorar nossa ampla gama de conteúdos e recursos. Esperamos que esses recursos selecionados possam ter um impacto positivo em sua vida e ministério.',
+
 ];
