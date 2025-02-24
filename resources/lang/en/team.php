@@ -124,7 +124,7 @@ return [
         ],
     'oscar' =>
         [
-            'p1' => 'Program Manager Compelling Preaching',
+            'p1' => 'Manager: Compelling Preaching & National Initiative to Strengthen Hispanic Pastors Leaders and Congregations.',
             'p2' => 'Dr. Oscar Merlo, Ph.D. (son, husband, father and entrepreneur) is passionate about Christian service, evangelism, preaching and empowering new generations of professionals to transform the world around them. Dr. Merlo holds 5 university degrees (two bachelor´s degrees, two master`s degrees and a Doctor of Philosophy, Ph.D.) from the University of La Verne, Phoenix Graduate School of Business and Fuller Seminary). His research interests are: `Epistemological Imagination of Spirit` vis-a-vis `Relational Aesthetics`, and its influence on the `Imaginary` of renewed neo-Pentecostal communities in cities under dictatorial regimes and in free market economies.',
             'p3' => 'Dr. Merlo has held executive leadership positions at academic institutions such as Biola University, and organizations such as Target Corporation and ConAgra Foods.',
             'p4' => 'As a practitioner, Dr. Merlo has traveled to over 40 countries on five continents deciphering how the Missio-Dei is `imagined` in: Cuba, Tel Aviv, Bissau, Istanbul, the Dry Corridor in Guatemala, Los Angeles and in other urban cities in the US and the global south. He led global plans in Evangelization and Transformation initiatives, social justice advocacy in humanitarian aid, Corruption Free Latin America and global leadership training programs.',

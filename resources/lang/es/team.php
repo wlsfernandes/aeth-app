@@ -124,7 +124,7 @@ return [
         ],
     'oscar' =>
         [
-            'p1' => 'Gerente de Programa Predicación Persuasiva',
+            'p1' => 'Gerente: Predicación Persuasiva e Iniciativa Nacional para Fortalecer a Pastores, Líderes y Congregaciones Hispanas',
             'p2' => 'El Dr. Oscar Merlo, Ph.D. (hijo, esposo, padre y empresario) es un apasionado del servicio cristiano, la evangelización, la predicación y el empoderamiento de las nuevas generaciones de profesionales para transformar el mundo que les rodea. El Dr. Merlo posee 5 grados universitarios (dos licenciaturas, dos maestrías y un Doctorado en Filosofía) de la Universidad de La Verne, Phoenix Graduate School of Business y Fuller Seminary. Sus intereses de investigación son: `Imaginación Epistemológica del Espíritu` frente a `Estética Relacional`, y su influencia en el `Imaginario` de las comunidades neopentecostales renovadas en ciudades bajo regímenes dictatoriales y en economías de mercado libre.',
             'p3' => 'El Dr. Merlo ha ocupado cargos de liderazgo ejecutivo en instituciones académicas como la Universidad Biola y organizaciones como Target Corporation y ConAgra Foods.',
             'p4' => 'Como practicante, el Dr. Merlo ha viajado a más de 40 países en cinco continentes descifrando cómo la Missio-Dei es `imaginada` en: Cuba, Tel Aviv, Bissau, Estambul, el Corredor Seco en Guatemala, Los Ángeles y otras ciudades urbanas en los EE. UU. y el sur global. Lideró planes globales en iniciativas de Evangelización y Transformación, defensa de justicia social en ayuda humanitaria, América Latina libre de corrupción y programas de capacitación en liderazgo global.',
