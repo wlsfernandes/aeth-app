@@ -171,4 +171,13 @@ return [
             'p11' => 'La Biblia',
             'p12' => 'profundamente es su madre, quien le enseñó la importancia de la fe, el trabajo arduo y la dedicación a la familia. Su madre no solo fue un ejemplo de resiliencia en momentos de desafío, sino también de compasión y servicio hacia los demás, valores que Yajaira aplica en su vida personal y ministerial.',
         ],
+    'juan' =>
+        [
+            'p1' => 'Interno ReDET - Comunidades de Practica',
+            'p2' => 'Nacido y criado en San Salvador, tierra ancestral del pueblo nahua, Juan tiene una maestría en Teología Latinoamericana de la Universidad Centroamericana “José Simeón Cañas” y una Maestría en Divinidades del Seminario Teológico Fuller. Después de varios años en el ministerio pastoral en El Salvador, ahora forma parte del equipo de Centro Latino en el Seminario Teológico Fuller. También es estudiante doctoral en Religión y Sociedad en Drew University Theological School. Sus intereses de investigación incluyen el trauma cultural, el discurso político, la teoría crítica y las teologías de la liberación, particularmente en el contexto de posguerra salvadoreño.',
+            'p3' => 'Me apasiona ser parte del cambio histórico que la educación teológica evangélica latina esta experimentando. Tengo la esperanza de ver espacios de formación teológica más conectados a las realidades de dolor y esperanza de los diversos pueblos latinoamericanos. ',
+            'p4' => 'Veo series, juego con mis gatos y me gusta comer con mis amigos',
+            'p5' => 'No tengo un sólo libro favorito, pero uno que de los que ha impactado mucho mi estilo de vida es Un Lider Emocionalmente Saludable de Petter Scazzero. ',
+            'p6' => 'El Obispo y mártir salvadoreño Oscar A. Romero. ',
+        ]
 ];

@@ -96,6 +96,7 @@ Route::get('/jeremy-villoch', [TeamController::class, 'jeremyVilloch'])->name('j
 Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yaheli-vargas');
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 Route::get('/yajaira-ruiz', [TeamController::class, 'yajairaRuiz'])->name('yajaira-ruiz');
+Route::get('/juan-martinez', [TeamController::class, 'juanMartinez'])->name('juan-martinez');
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 

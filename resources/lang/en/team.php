@@ -22,7 +22,7 @@ return [
     'fundraising_manager' => 'Growth & Fundraising Manager',
     'assistant_manager_preaching_program' => 'Antioquia Program Coordinator',
     'gonzalez_center_practitioner' => 'González Center Program Specialist',
-    'intern' => 'Compelling Preaching Assistant',
+    'intern' => 'Intern',
     'content_curator_intern' => 'Content Curator Intern',
     'young_leaders_program_manager' => 'Young Líderes Program Manager',
     'what_excites_about_aeth' => 'What excites you about your role at AETH?',
@@ -174,5 +174,13 @@ return [
             'p11' => 'The Bible',
             'p12' => 'Deeply is her mother, who taught her the importance of faith, hard work, and dedication to family. Her mother was not only an example of resilience during challenging times but also of compassion and service to others, values that Yajaira applies in her personal and ministerial life.',
         ],
+    'juan' => [
+        'p1' => 'Intern ReDET - Communities of Practice',
+        'p2' => 'Born and raised in San Salvador, ancestral land of the Nahua people, Juan holds a Master’s degree in Latin American Theology from the Universidad Centroamericana “José Simeón Cañas” and a Master of Divinity from Fuller Theological Seminary. After several years in pastoral ministry in El Salvador, he is now part of the Centro Latino team at Fuller Theological Seminary. He is also a doctoral student in Religion and Society at Drew University Theological School. His research interests include cultural trauma, political discourse, critical theory, and liberation theologies, particularly in the Salvadoran post-war context.',
+        'p3' => 'I am passionate about being part of the historic change that Latin evangelical theological education is experiencing. I hope to see theological training spaces more connected to the realities of pain and hope of the diverse Latin American peoples.',
+        'p4' => 'I watch series, play with my cats, and enjoy eating with my friends.',
+        'p5' => 'I don’t have a single favorite book, but one that has greatly impacted my lifestyle is *Emotionally Healthy Leader* by Peter Scazzero.',
+        'p6' => 'The Salvadoran bishop and martyr Oscar A. Romero.',
+    ],
 
 ];

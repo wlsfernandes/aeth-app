@@ -63,6 +63,10 @@ class TeamController extends Controller
     {
         return view('pages.team.yajaira-ruiz');
     }
+    public function juanMartinez()
+    {
+        return view('pages.team.juan-martinez');
+    }
 
 
 }
