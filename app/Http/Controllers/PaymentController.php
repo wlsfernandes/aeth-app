@@ -563,7 +563,8 @@ class PaymentController extends Controller
                     'unit_amount' => $totalAmountInCents,
                     'currency' => 'usd',
                     'recurring' => ['interval' => 'month'],
-                    'product' => 'prod_Rd0XFvJV9PsaO2',
+                    // 'product' => 'prod_Rd0XFvJV9PsaO2', test mode
+                    'product' => 'prod_RsPxHERatW29WB',
                 ]);
 
                 // Create a subscription using the dynamic price

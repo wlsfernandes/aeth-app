@@ -15,7 +15,7 @@
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
                         <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title_en }}"
-                            style="height: 225px; width: 100%; display: block; object-fit: cover;">
+                            style="height: 225px; width: 100%; display: block; object-fit: cover; object-position: left top;">
                         <div class="card-body d-flex flex-column"
                             style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
                             <div class="d-flex flex-column flex-grow-1">

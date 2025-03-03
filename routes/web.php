@@ -136,7 +136,7 @@ Route::post('/redirectPaypalPayment', [PaymentController::class, 'redirectPaypal
 Route::post('/redirectContactPayment', [PaymentController::class, 'redirectContactPayment'])->name('redirectContactPayment');
 Route::post('/cartPayment', [PaymentController::class, 'cartPayment'])->name('cartPayment');
 Route::post('/handleMembershipRenewPayment', [PaymentController::class, 'handleMembershipRenewPayment']);
-Route::post('/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
+Route::match(['get', 'post'], '/payment-donation', [PaymentController::class, 'donationRedirectPayment'])->name('donationRedirectPayment');
 Route::post('/payment-redirect', [PaymentController::class, 'handleRedirect'])->name('payment.redirect');
 Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->name('payment.callback');
 Route::post('/handle-payment', [PaymentController::class, 'handleDonation']);

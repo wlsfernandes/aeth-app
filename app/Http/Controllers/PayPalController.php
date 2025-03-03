@@ -88,7 +88,11 @@ class PayPalController extends Controller
 
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->withErrors($e->getMessage());
+            // Log the error for debugging
+            Log::error('PayPal Error: ' . $e->getMessage());
+            // Redirect back with error message
+            return redirect()->route('donationRedirectPayment')->withInput()->with('error', 'PayPal Error: ' . $e->getMessage());
+
         }
     }
 
@@ -415,7 +419,10 @@ class PayPalController extends Controller
             return redirect()->route('login');
         } catch (Exception $e) {
             DB::rollBack();
-            throw new Exception('User and membership creation failed: ' . $e->getMessage());
+            // Log the error for debugging
+            Log::error('PayPal Error: ' . $e->getMessage());
+            // Redirect back with error message
+            return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed: ' . $e->getMessage());
         }
 
     }
