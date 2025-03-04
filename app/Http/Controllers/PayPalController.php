@@ -16,6 +16,7 @@ use App\Models\User;
 use App\Models\Member;
 use App\Models\Payment;
 use App\Models\Order;
+use App\Models\ErrorLog;
 use Exception;
 
 use Illuminate\Support\Facades\Validator;
@@ -88,10 +89,20 @@ class PayPalController extends Controller
 
         } catch (Exception $e) {
             DB::rollBack();
-            // Log the error for debugging
-            Log::error('PayPal Error: ' . $e->getMessage());
-            // Redirect back with error message
-            return redirect()->route('donationRedirectPayment')->withInput()->with('error', 'PayPal Error: ' . $e->getMessage());
+            // Log the error in the database
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error donate PaypalController',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            // Optionally, you can also log the error in Laravel's default log file
+            Log::error('Paypal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+
+            return redirect()->route('donationRedirectPayment')->withInput()->with('error', 'PayPal Error: Error to process payment 0568');
 
         }
     }
@@ -125,7 +136,18 @@ class PayPalController extends Controller
 
             return redirect()->route('payment')->withErrors('Donation failed. Please try again.');
         } catch (Exception $e) {
-            return redirect()->route('payment')->withErrors('An error occurred: ' . $e->getMessage());
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error captureDonationPayment PaypalController',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            // Optionally, you can also log the error in Laravel's default log file
+            Log::error('Paypal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+            return redirect()->route('payment')->withErrors('Paypal: An error occurred: ( 0690 ) ');
         }
     }
 
@@ -247,7 +269,17 @@ class PayPalController extends Controller
 
         } catch (Exception $e) {
             DB::rollBack();
-            return redirect()->back()->withErrors($e->getMessage());
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error createBookstorePayment PaypalController',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            Log::error('Paypal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+            return redirect()->back()->withErrors('Paypal: Error to process payment ( 0754 )');
         }
     }
 
@@ -290,7 +322,17 @@ class PayPalController extends Controller
 
             return redirect()->route('payment')->withErrors('Payment failed. Please try again.');
         } catch (Exception $e) {
-            return redirect()->route('payment')->withErrors('An error occurred: ' . $e->getMessage());
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error capturePayment PaypalController',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            Log::error('Paypal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+            return redirect()->route('payment')->withErrors('Paypal: An error occurred: (777)');
         }
     }
 
@@ -415,14 +457,21 @@ class PayPalController extends Controller
             Mail::to($user->email)->send(new WelcomeEmail($user, $password));
 
             DB::commit();
-            Session::flash('success', 'Payment and membership creation successful!');
+            Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
             return redirect()->route('login');
         } catch (Exception $e) {
             DB::rollBack();
-            // Log the error for debugging
-            Log::error('PayPal Error: ' . $e->getMessage());
-            // Redirect back with error message
-            return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed: ' . $e->getMessage());
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error handlePayPalSuccess PaypalController',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            Log::error('Paypal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+            return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed:(0153) ');
         }
 
     }

@@ -35,6 +35,24 @@
 </head>
 
 <!-- START BODY -->
+<style>
+    .cart-count {
+        background-color: #4a235a;
+        color: white;
+        font-size: 12px;
+        font-weight: bold;
+        width: 18px;
+        height: 18px;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        top: -5px;
+        right: -5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
 
 <body>
     <div class="boxed_wrapper">
@@ -227,8 +245,15 @@
                             <i class="icon-1"></i>
                         </li>
                         <li class="cart-box">
-                            <a href="{{ route('cart.show') }}"><i class="icon-23"></i></a>
+                            <a href="{{ route('cart.show') }}">
+                                <i class="icon-23"></i>
+                                <span class="cart-count" style="display: {{ session('cart_count', 0) }};">
+                                    {{ session('cart_count', 0) }}
+                                </span>
+                            </a>
                         </li>
+
+
 
                         <a href="{{ route('login') }}" class="btn btn-primary"
                             style="background: linear-gradient(to right,#4a235a, #a569bd, #e8daef); border-color: #4a235a; color: #fff;">

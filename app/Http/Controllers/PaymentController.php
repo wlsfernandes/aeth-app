@@ -1,20 +1,21 @@
 <?php
 namespace App\Http\Controllers;
 
+use App\Models\UspsMediaMailShipping;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
 use Stripe\Customer;
 use Stripe\Subscription;
-use Stripe\Exception\ApiErrorException;
 
+use Illuminate\Support\Facades\Mail;
 use App\Mail\WelcomeEmail;
+use App\Mail\DonationEmail;
 use App\Mail\OrderEmail;
 
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -24,7 +25,6 @@ use App\Models\Member;
 use App\Models\Product;
 use App\Models\Order;
 use App\Models\User;
-
 
 use Session;
 use Exception;
@@ -64,6 +64,11 @@ class PaymentController extends Controller
     public function redirectContactPayment(Request $request)
     {
         $amount = $request->input('amount', 0);
+
+        if ($amount == 0) {
+            return redirect()->back()->with('error', 'Your cart is empty!');
+        }
+
         $weight = $request->input('weight', 0);
         $minimumWeight = 0.1; // Default weight in pounds
         $weight = $weight > 0 ? $weight : $minimumWeight;
@@ -76,18 +81,24 @@ class PaymentController extends Controller
         // Calculate tax
         $taxAmount = $amount * $totalTaxRate;
         $totalAmount = $amount + $taxAmount;
+        $shipment_cost = UspsMediaMailShipping::where('weight_not_over', '>=', $weight)
+            ->orderBy('weight_not_over', 'asc')
+            ->value('rate');
 
         // Store values in session
-        session(['amount' => $amount]);
-        session(['weight' => $weight]);
-        session(['taxAmount' => $taxAmount]);
-        session(['totalAmount' => $totalAmount]);
+        session([
+            'amount' => $amount,
+            'weight' => $weight,
+            'taxAmount' => $taxAmount,
+            'totalAmount' => $totalAmount,
+            'shipment_cost' => $shipment_cost,
+        ]);
 
         $cartItems = session('cart', []);
         $type = 'bookstore';
         $program = 'AETH';
 
-        return view('pages.payments.bookstore.personal-info', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount'));
+        return view('pages.payments.bookstore.personal-info', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount', 'shipment_cost'));
     }
 
 
@@ -116,22 +127,7 @@ class PaymentController extends Controller
         $cartItems = session('cart', []);
         return view('pages.payments.bookstore.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
     }
-    /*
-        public function redirectCartPayment(Request $request)
-        {
-            $amount = $request->input('amount', 0);
-            $weight = $request->input('weight', 0);
-            $minimumWeight = 0.1; // Default weight in pounds
-            $weight = $weight > 0 ? $weight : $minimumWeight;
-            session(['amount' => $amount]);
-            session(['weight' => $weight]);
-            $cartItems = session('cart', []);
-            $type = 'bookstore';
-            $program = 'AETH';
-            return view('pages.payments.bookstore.page', compact('amount', 'type', 'program', 'cartItems', 'weight'));
-        }
 
-    */
 
     public function handleRedirect(Request $request)
     {
@@ -163,15 +159,15 @@ class PaymentController extends Controller
                     'payment_intent_client_secret' => $paymentResult['client_secret'],
                 ]);
             } elseif ($paymentResult['status'] === 'error') {
-                Session::flash('error', $paymentResult['message']);
+                Session::flash('error', $paymentResult['message'] ?? 'An error occurred during the payment process.');
                 return redirect()->route('payment');
             }
         } catch (Exception $e) {
             // Log the error in the database
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error handlePayment PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => 'payment_error', // Customize error code if necessary
+                'error_code' => 'payment_error',
             ]);
 
             // Optionally, you can also log the error in Laravel's default log file
@@ -191,6 +187,14 @@ class PaymentController extends Controller
             $donationResult = $this->_processPayment($request);
 
             if ($donationResult['status'] === 'success') {
+                // send donation email
+                if (!empty($donationResult['email'])) {
+                    Mail::to($donationResult['email'])->send(
+                        new DonationEmail($donationResult['first_name'], $donationResult['email'])
+                    );
+                } else {
+                    Log::warning('Skipping email sending: No email found in donationResult.', $donationResult);
+                }
                 if (isset($donationResult['subscription_id'])) {
                     Session::flash('success', 'Thank you for your monthly recurring donation!');
                 } else {
@@ -209,9 +213,9 @@ class PaymentController extends Controller
         } catch (Exception $e) {
             // Log the error in the database
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error handleDonation PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => 'donation_error', // Customize error code if necessary
+                'error_code' => 'payment_error',
             ]);
 
             // Optionally, you can also log the error in Laravel's default log file
@@ -273,25 +277,25 @@ class PaymentController extends Controller
                 $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();
-                Session::flash('success', 'Payment and membership creation successful!');
+                Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
                 return redirect()->route('login');
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
                 ErrorLog::create([
-                    'error_message' => $paymentResult['message'],
+                    'error_message' => $paymentResult['message'] ?? 'error paymentController handleMembershipPayment',
                     'stack_trace' => 'payment result error ',
                     'error_code' => 'payment_processing_error',
                 ]);
-                Session::flash('error', $paymentResult['message']);
+                Session::flash('error', $paymentResult['message'] ?? 'An error occurred during the payment process.');
                 return redirect()->route('payment-membership');
             }
 
         } catch (Exception $e) {
             DB::rollBack();
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error handleMembershipPayment PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => '02 - Membership Payment Error',
+                'error_code' => 'payment_error',
             ]);
             Session::flash('error', 'An error occurred during the payment process.');
             return redirect()->route('payment');
@@ -330,20 +334,20 @@ class PaymentController extends Controller
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
                 ErrorLog::create([
-                    'error_message' => $paymentResult['message'],
+                    'error_message' => $paymentResult['message'] ?? 'error handleMembershipRenewPayment',
                     'stack_trace' => 'payment result error ',
                     'error_code' => 'payment_processing_error',
                 ]);
-                Session::flash('error', $paymentResult['message']);
+                Session::flash('error', $paymentResult['message'] ?? 'An error occurred during the payment process.');
                 return redirect()->route('payment-membership');
             }
 
         } catch (Exception $e) {
             DB::rollBack();
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error handleMembershipRenewPayment PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => '02 - Membership Payment Error',
+                'error_code' => 'payment_error',
             ]);
             Session::flash('error', 'An error occurred during the payment process.');
             return redirect()->route('payment');
@@ -436,9 +440,9 @@ class PaymentController extends Controller
             DB::rollBack();
 
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error cartPayment PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => '03 - Bookstore Payment Error',
+                'error_code' => 'payment_error',
             ]);
 
             session()->flash('error', $e->getMessage());
@@ -447,74 +451,7 @@ class PaymentController extends Controller
     }
 
 
-    /*
-        public function _processPayment(Request $request)
-        {
-            Stripe::setApiKey(env('STRIPE_SECRET'));
 
-            try {
-
-                $amount = $request->input('amount');
-                $shipmentCost = $request->input('hidden_shipment_cost') ?? 0;
-                $totalAmount = $amount + $shipmentCost;
-                $totalAmountInCents = $totalAmount * 100;
-
-                // Create a PaymentIntent
-                $paymentIntent = PaymentIntent::create([
-                    "amount" => $totalAmountInCents, // Convert dollars to cents
-                    "currency" => "usd",
-                    "payment_method" => $request->payment_method_id,
-                    "confirmation_method" => "manual",
-                    "confirm" => true,
-                    "return_url" => route('payment.callback'), // Return URL after 3D Secure
-                ]);
-
-                // Check if the payment requires additional actions
-                if ($paymentIntent->status === 'requires_action' || $paymentIntent->status === 'requires_source_action') {
-                    return response()->json([
-                        'requires_action' => true,
-                        'payment_intent_client_secret' => $paymentIntent->client_secret,
-                    ]);
-                }
-
-                // Check if the payment succeeded
-                if ($paymentIntent->status === 'succeeded') {
-                    // Create a new payment record
-                    $receiptUrl = null;
-                    if (isset($paymentIntent->charges->data) && count($paymentIntent->charges->data) > 0) {
-                        $receiptUrl = $paymentIntent->charges->data[0]->receipt_url;
-                    }
-
-                    $paymentRecord = Payment::create([
-                        'first_name' => $request->first_name,
-                        'last_name' => $request->last_name,
-                        'email' => $request->email,
-                        'type' => $request->type,
-                        'program' => $request->program,
-                        'amount' => $request->amount,
-                        'shipment_cost' => $request->hidden_shipment_cost ?? 0,
-                        'currency' => $paymentIntent->currency,
-                        'payment_method_id' => $paymentIntent->payment_method,
-                        'status' => $paymentIntent->status,
-                        'stripe_payment_intent_id' => $paymentIntent->id,
-                        'receipt_url' => $receiptUrl,
-                        'customer_id' => $paymentIntent->customer,
-                        'payment_date' => now(),
-                    ]);
-
-                    return ['status' => 'success', 'paymentRecord' => $paymentRecord];
-                }
-
-            } catch (Exception $e) {
-                ErrorLog::create([
-                    'error_message' => $e->getMessage(),
-                    'stack_trace' => $e->getTraceAsString(),
-                    'error_code' => '01 - Stripe _processPayment',
-                ]);
-                return ['status' => 'error', 'message' => $e->getMessage()];
-            }
-        }
-    */
 
     public function paymentCallback(Request $request)
     {
@@ -589,7 +526,12 @@ class PaymentController extends Controller
 
                 $paymentRecord = Payment::create($paymentData);
 
-                return ['status' => 'success', 'paymentRecord' => $paymentRecord];
+                return [
+                    'status' => 'success',
+                    'paymentRecord' => $paymentRecord,
+                    'email' => $paymentData['email'],
+                    'first_name' => $paymentData['first_name']
+                ];
             } else {
                 // One-Time Payment
                 $paymentIntent = PaymentIntent::create([
@@ -623,16 +565,21 @@ class PaymentController extends Controller
 
                     $paymentRecord = Payment::create($paymentData);
 
-                    return ['status' => 'success', 'paymentRecord' => $paymentRecord];
+                    return [
+                        'status' => 'success',
+                        'paymentRecord' => $paymentRecord,
+                        'email' => $paymentData['email'],
+                        'first_name' => $paymentData['first_name']
+                    ];
                 }
             }
         } catch (Exception $e) {
             ErrorLog::create([
-                'error_message' => $e->getMessage(),
+                'error_message' => $e->getMessage() ?? 'Unknown error _processPayment PaymentController',
                 'stack_trace' => $e->getTraceAsString(),
-                'error_code' => '01 - Stripe _processPayment',
+                'error_code' => 'payment_error',
             ]);
-            return ['status' => 'error', 'message' => $e->getMessage()];
+            return ['status' => 'error', 'message' => 'An unexpected error occurred. Please try again later.'];
         }
     }
 

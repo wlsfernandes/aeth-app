@@ -106,13 +106,11 @@
                 </div>
             </div>
         </section>
-    @endif
-    <section class="cart-section p_relative pt_120 pb_120 bg-color-4">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-12 col-md-12 col-sm-12 table-column">
-                    <div class="empty-cart"
-                        style="display: {{ session('cart') && count(session('cart')) > 0 ? 'none' : 'block' }};">
+    @else
+        <section class="cart-section p_relative pt_120 pb_120 bg-color-4">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="col-lg-12 col-md-12 col-sm-12 table-column">
                         <h5 style="color:#4a235a">@lang('bookstore.cart_empty')</h5>
                         <button type="button" class="theme-btn-one" style="margin-top:200px;">
                             <a href="{{ route('bookstore') }}" style="all: unset;">
@@ -121,9 +119,8 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
+        </section>
+    @endif
 
     <script>
         function updateCartCount() {
@@ -143,14 +140,8 @@
             if (!event) return;
 
             const input = event.target;
-            let quantity = parseInt(input.value);
+            const quantity = input.value;
             const id = input.dataset.id;
-
-            // Prevent negative values
-            if (quantity < 1) {
-                quantity = 1;
-                input.value = 1;
-            }
 
             fetch('/update-cart', {
                 method: 'POST',
@@ -163,14 +154,9 @@
                 .then(response => response.json())
                 .then(data => {
                     if (data.success) {
+                        // ✅ Update item subtotal in the table
                         const row = input.closest('tr');
-
-                        if (quantity === 0) {
-                            row.remove(); // Remove row when quantity is 0
-                        } else {
-                            // ✅ Update item subtotal
-                            row.querySelector('.item-subtotal').textContent = data.itemSubtotal;
-                        }
+                        row.querySelector('.item-subtotal').textContent = data.itemSubtotal;
 
                         // ✅ Update total amounts
                         document.getElementById('cart-subtotal').textContent = data.cartSubtotal;
@@ -178,11 +164,8 @@
                         document.getElementById('amount').value = data.cartTotal;
                         document.getElementById('weight').value = data.cartTotalWeight;
 
-                        // ✅ Update cart count in header dynamically
+                        // ✅ Update cart count in the header dynamically
                         updateCartCountWithValue(data.cartCount);
-
-                        // ✅ Check if the cart is empty and show the empty cart message
-                        checkEmptyCart();
                     } else {
                         alert(data.message);
                     }
@@ -214,19 +197,14 @@
                 .then(data => {
                     if (data.success) {
                         const row = document.querySelector(`#cart-body tr[data-id="${id}"]`);
-                        if (row) row.remove();  // ✅ Remove the item row from the table
+                        if (row) row.remove();  // ✅ Remove the item from the cart table
 
-                        // ✅ Update cart count in header dynamically
+                        // ✅ Update cart count dynamically
                         updateCartCountWithValue(data.cartCount);
 
                         // ✅ Update cart totals dynamically
                         document.getElementById('cart-subtotal').textContent = data.cartTotal;
                         document.getElementById('cart-total').textContent = data.cartTotal;
-                        document.getElementById('amount').value = data.cartTotal;
-                        document.getElementById('weight').value = data.cartTotalWeight;
-
-                        // ✅ Check if the cart is empty and show the empty cart message
-                        checkEmptyCart();
                     } else {
                         alert(data.message);
                     }
@@ -234,19 +212,10 @@
                 .catch(error => console.error('Error removing item:', error));
         }
 
+
         function submitForm() {
             updateCart();
             document.getElementById('checkout-form').submit();
-        }
-        function checkEmptyCart() {
-            const cartBody = document.querySelector('#cart-body');
-            const cartTable = document.querySelector('#cart-table');
-            const emptyCartMessage = document.querySelector('.empty-cart');
-
-            if (cartBody && cartBody.children.length === 0) {
-                cartTable.style.display = 'none'; // Hide the cart table
-                emptyCartMessage.style.display = 'block'; // Show empty cart message
-            }
         }
 
 

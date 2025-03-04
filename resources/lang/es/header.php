@@ -1,5 +1,8 @@
 <?php
 return [
+    'info_button' => 'El botón de pago se habilitará una vez que hayas completado toda tu información personal.',
+    'totalAmount' => 'Monto Total',
+    'taxAmount' => 'Impuesto',
     'speakers' => 'Oradores',
     'speaker' => 'Orador',
     'down_en' => 'Descargar versión en inglés',

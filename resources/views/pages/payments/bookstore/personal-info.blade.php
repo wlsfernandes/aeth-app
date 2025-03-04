@@ -21,7 +21,9 @@
                             <input type="hidden" name="taxAmount" value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="weight" id="weight"
                                 value="{{ number_format($weight ?? 0, 2, '.', '') }}">
-                            <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost">
+
+                            <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost"
+                                value="{{ $shipment_cost }}">
 
                             @if(session('cart') && count(session('cart')) > 0)
                                 @foreach($cartItems as $index => $product)
@@ -62,6 +64,9 @@
                                 </div>
                             </div>
                             <div class="row justify-content-center text-center">
+                                <p class="small" style="color:#330033;margin-top:20px;">
+                            </div>
+                            <div class="row justify-content-center text-center">
                                 <div class="col-md-4">
                                     <label for="first_name" class="form-label">@lang('header.first_name'):</label>
                                     <input type="text" id="first_name" name="first_name" class="form-control" required>
@@ -93,13 +98,14 @@
 
                                 <div class="col-md-2">
                                     <label for="zipcode" class="form-label">@lang('header.zipcode'):</label>
-                                    <input type="text" id="zipcode" name="zipcode" class="form-control" required
-                                        onblur="calculateShipping()" oninput="calculateShipping()">
+                                    <input type="text" id="zipcode" name="zipcode" class="form-control" required>
                                 </div>
                             </div>
                             <div class="row justify-content-center text-center">
 
-
+                                <p class="small" style="color:#330033;margin-top:20px;">
+                                    <i>(*) @lang('header.info_button')</i>
+                                </p>
 
                             </div>
 
@@ -133,90 +139,80 @@
         </div>
 
         <script>
-            function setPaymentAction(event, paymentType) {
-                event.preventDefault(); // Prevents default submission until action is set
+            document.addEventListener("DOMContentLoaded", function () {
+                let form = document.getElementById("payment-form");
+                let requiredFields = document.querySelectorAll("#payment-form input[required]");
+                let cardButton = document.getElementById("card-button");
+                let paypalButton = document.getElementById("paypal-button");
+                let paymentType = null; // Stores selected payment type
 
-                let form = document.getElementById('payment-form');
+                // Disable buttons initially
+                cardButton.disabled = true;
+                paypalButton.disabled = true;
 
-                if (paymentType === 'credit') {
-                    form.action = "{{ route('redirectCreditPayment') }}";
-                } else if (paymentType === 'paypal') {
-                    form.action = "{{ route('paypal.payment') }}";
-                }
+                // Function to check if all required fields are filled
+                function checkFields() {
+                    let allFilled = true;
 
-                console.log("Form action set to: ", form.action); // Debugging
-
-                setTimeout(() => {
-                    form.submit();
-                }, 100); // Allows the browser to register the action before submitting
-            }
-
-            // Run this when DOM is fully loaded
-            document.addEventListener('DOMContentLoaded', function () {
-                let zipcodeInput = document.getElementById('zipcode');
-
-                if (zipcodeInput) {
-                    zipcodeInput.addEventListener('input', checkZipcode);
-                    checkZipcode(); // Initial check in case input is pre-filled
-                } else {
-                    console.warn("Zipcode input field not found on the page.");
-                }
-            });
-            function calculateShipping() {
-                const zipCodeInput = document.getElementById('zipcode');
-                const weightInput = document.getElementById('weight');
-
-                // Debugging: Check if elements exist
-                if (!zipCodeInput) {
-                    console.error('Zipcode input not found.');
-                    return;
-                }
-                if (!weightInput) {
-                    console.error('Weight input not found.');
-                    return;
-                }
-
-                const zipCode = zipCodeInput.value;
-                const weight = parseFloat(weightInput.value) || 0; // Ensure valid number
-
-                if (!zipCode || weight <= 0) {
-                    alert('Please enter both ZIP code and a valid weight.');
-                    console.warn(`Invalid inputs: zipCode=${zipCode}, weight=${weight}`);
-                    return;
-                }
-
-                fetch(`/calculate-shipping/${zipCode}?weight=${weight}`, {
-                    method: 'GET',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]')?.content || '',
-                    },
-                })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.error) {
-                            if (!window.errorDisplayed) {
-                                alert('Error: ' + data.error);
-                                window.errorDisplayed = true;
-
-                                if (data.redirect) {
-                                    window.location.href = data.redirect;
-                                }
-                            }
-                            return;
+                    requiredFields.forEach(field => {
+                        if (field.value.trim() === "") {
+                            allFilled = false;
                         }
-
-                        window.errorDisplayed = false;
-
-                        const shippingCost = parseFloat(data.cost);
-                        document.getElementById('shipment_cost').value = shippingCost.toFixed(2);
-                        document.getElementById('hidden_shipment_cost').value = shippingCost.toFixed(2);
-                    })
-                    .catch(error => {
-                        console.error('Error fetching shipping cost:', error);
                     });
-            };
 
+                    // Enable or disable buttons based on validation
+                    cardButton.disabled = !allFilled;
+                    paypalButton.disabled = !allFilled;
+                }
+
+                // Attach event listener to each required field to check input
+                requiredFields.forEach(field => {
+                    field.addEventListener("input", checkFields);
+                });
+
+                // Function to set the payment type and validate fields before submitting
+                function setPaymentAction(event, type) {
+                    event.preventDefault(); // Prevent form from submitting immediately
+                    paymentType = type; // Store the selected payment type
+
+                    // Final validation before submission
+                    let allFieldsValid = true;
+
+                    requiredFields.forEach(field => {
+                        if (field.value.trim() === "") {
+                            field.classList.add("is-invalid"); // Bootstrap class to indicate error
+                            allFieldsValid = false;
+                        } else {
+                            field.classList.remove("is-invalid");
+                        }
+                    });
+
+                    if (!allFieldsValid) {
+                        alert("Please fill in all required fields before proceeding.");
+                        return;
+                    }
+
+                    // Set form action based on payment type
+                    if (type === "credit") {
+                        form.action = "{{ route('redirectCreditPayment') }}";
+                    } else if (type === "paypal") {
+                        form.action = "{{ route('paypal.payment') }}";
+                    }
+
+                    console.log("Form action set to:", form.action);
+
+                    setTimeout(() => {
+                        form.submit();
+                    }, 100);
+                }
+
+                // Attach click events to the buttons
+                cardButton.addEventListener("click", (event) => setPaymentAction(event, "credit"));
+                paypalButton.addEventListener("click", (event) => setPaymentAction(event, "paypal"));
+
+                // Initial check in case form fields are prefilled
+                checkFields();
+            });
 
         </script>
     </section>

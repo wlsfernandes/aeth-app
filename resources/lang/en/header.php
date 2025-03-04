@@ -1,5 +1,8 @@
 <?php
 return [
+    'info_button' => 'The payment button will be enabled once you have filled in all your personal information.',
+    'totalAmount' => 'Total Amount',
+    'taxAmount' => 'Tax',
     'speakers' => 'Speakers',
     'speaker' => 'Speaker',
     'down_en' => 'Donwload English Version',

@@ -14,18 +14,13 @@
         <div
             style="background-image: url(assets/images/gallery/antioquia-program.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
-        <div class="auto-container" style="position: relative; z-index: 2;">
-            <div class="content-box">
-                <h1>@lang('programs.antioquia_title')</h1>
-            </div>
-        </div>
     </section>
     <section class="cta-style-two">
         <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
         <div class="auto-container">
             <div class="inner-box">
                 <img src="assets/images/logo/antioquia-logo.png">
-                <h2>@lang('programs.theologizing')</h2><br>
+                <h1 style="color:#fff">@lang('programs.antioquia_title')</h1><br>
             </div>
         </div>
     </section>

@@ -28,7 +28,7 @@
                     <label for="amount" class="form-label">(USD):</label>
                     <input type="number" name="amount" id="amount"
                         value="{{ old('amount', number_format($amount ?? 0, 2, '.', '')) }}" class="form-control"
-                        required min="1" step="0.01">
+                        required min="1" step="0.01" readonly>
                 </div>
                 <div class="col-md-3">
                     <label for="first_name" class="form-label">@lang('header.first_name'):</label>

@@ -144,9 +144,10 @@
 @section('content')
     <section class="page-title centred">
         <div class="bg-layer" style="background-image: url(assets/images/gallery/team.jpg);"></div>
-        <div class="auto-container">
+        <div class="auto-container"
+            style="position: absolute; top: 70%; left: 30%; transform: translate(-50%, -50%); z-index: 2; text-align: center;">
             <div class="content-box">
-                <h1>@lang('messages.our_team')</h1>
+                <h1 style="color:#fff"><b>@lang('messages.our_team')</b></h1>
             </div>
         </div>
     </section>
