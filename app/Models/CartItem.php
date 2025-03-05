@@ -4,6 +4,27 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+/**
+ * Class CartItem
+ *
+ * Represents an item within a shopping cart.
+ *
+ * @package App\Models
+ *
+ * @property int $id Unique identifier for the cart item.
+ * @property int $cart_id Identifier for the associated cart.
+ * @property int $product_id Identifier for the associated product.
+ * @property int $quantity Quantity of the product in the cart.
+ * @property float $price Price of the product at the time of adding to the cart.
+ * @property \Illuminate\Support\Carbon|null $created_at Timestamp when the cart item was created.
+ * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the cart item was last updated.
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|CartItem newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CartItem newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|CartItem query()
+ *
+ * @mixin \Eloquent
+ */
 
 class CartItem extends Model
 {
