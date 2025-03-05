@@ -29,8 +29,17 @@ use App\Models\User;
 use Session;
 use Exception;
 
+/**
+ * Class PaymentController
+ *
+ * Handles all payment-related operations, including membership payments, bookstore purchases,
+ * donations, and tax calculations.
+ *
+ * @package App\Http\Controllers
+ */
 class PaymentController extends Controller
 {
+
     public function showPaymentForm()
     {
         $amount = session('amount');
@@ -44,7 +53,12 @@ class PaymentController extends Controller
     }
 
 
-
+    /**
+     * Handle donation payment redirection and amount processing.
+     *
+     * @param Request $request
+     * @return
+     */
 
     public function donationRedirectPayment(Request $request)
     {
@@ -60,6 +74,15 @@ class PaymentController extends Controller
         return view('pages.payments.payment', compact('amount', 'type', 'program'));
 
     }
+    /**
+     * Redirects the user to the payment page after calculating taxes and shipping costs.
+     *
+     * This method validates the cart amount, calculates applicable sales tax and shipping costs,
+     * stores the values in the session, and then redirects the user to enter personal payment information.
+     *
+     * @param Request $request The HTTP request containing order details.
+     * @return *\Illuminate\View\View Redirects to the personal information page for payment.
+     */
 
     public function redirectContactPayment(Request $request)
     {
@@ -101,6 +124,15 @@ class PaymentController extends Controller
         return view('pages.payments.bookstore.personal-info', compact('amount', 'type', 'program', 'cartItems', 'weight', 'taxAmount', 'totalAmount', 'shipment_cost'));
     }
 
+    /**
+     * Redirects the user to the credit payment page after calculating taxes and total cost.
+     *
+     * This method retrieves the order details, calculates applicable sales tax, shipping costs,
+     * stores the values in the session, and redirects the user to the credit payment page.
+     *
+     * @param Request $request The HTTP request containing payment details.
+     * @return \Illuminate\View\View Redirects to the credit payment page with order details.
+     */
 
 
     public function redirectCreditPayment(Request $request)
@@ -128,6 +160,15 @@ class PaymentController extends Controller
         return view('pages.payments.bookstore.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
     }
 
+    /**
+     * Handles donation amount selection and redirects to the payment page.
+     *
+     * This method checks if a custom donation amount is provided, validates the final donation amount,
+     * and redirects the user to the payment page with the selected amount.
+     *
+     * @param Request $request The HTTP request containing donation details.
+     * @return \Illuminate\Http\RedirectResponse Redirects to the payment page with the donation amount.
+     */
 
     public function handleRedirect(Request $request)
     {
@@ -144,6 +185,20 @@ class PaymentController extends Controller
 
         return redirect()->route('payment')->with('amount', $amount);
     }
+
+    /**
+     * Handles the payment processing and redirects the user based on the payment result.
+     *
+     * This method attempts to process the payment, handles different payment statuses, and
+     * redirects the user accordingly. If additional authentication is required, it returns a JSON response.
+     * In case of an error, it logs the issue and redirects the user back to the payment page.
+     *
+     * @param Request $request The HTTP request containing payment details.
+     * @return *\Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse Redirects to the payment page or
+     *         returns a JSON response if additional authentication is required.
+     *
+     * @throws \Exception Logs any payment processing errors and redirects the user with an error message.
+     */
 
     public function handlePayment(Request $request)
     {
@@ -181,6 +236,21 @@ class PaymentController extends Controller
             return redirect()->route('payment');
         }
     }
+    /**
+     * Handles donation processing and manages the payment response.
+     *
+     * This method processes the donation payment, sends a confirmation email if an email is provided,
+     * and provides feedback to the user based on the payment status. If it's a recurring donation,
+     * a special message is displayed. Errors are logged and handled accordingly.
+     *
+     * @param Request $request The HTTP request containing donation details.
+     * @return *\Illuminate\Http\RedirectResponse|\Illuminate\Http\JsonResponse Redirects to the payment page
+     *         or returns a JSON response if additional authentication is required.
+     *
+     * @throws \Exception Logs any errors that occur during the donation process and redirects the user
+     *                    with an error message.
+     */
+
     public function handleDonation(Request $request)
     {
         try {
@@ -229,6 +299,20 @@ class PaymentController extends Controller
             return redirect()->route('payment');
         }
     }
+    /**
+     * Handles membership payment processing and user registration.
+     *
+     * This method validates the user's email, processes the membership payment, creates a new user account,
+     * assigns a membership role, registers the user as a member, and sends a welcome email with login credentials.
+     * If the payment fails, the transaction is rolled back, and an error is logged.
+     *
+     * @param Request $request The HTTP request containing membership payment and user details.
+     * @return *\Illuminate\Http\RedirectResponse Redirects to the login page on success or back to the membership
+     *         payment page on failure.
+     *
+     * @throws \Exception Logs any errors encountered during payment processing and membership creation,
+     *                    then redirects the user with an error message.
+     */
 
     public function handleMembershipPayment(Request $request)
     {
@@ -301,6 +385,20 @@ class PaymentController extends Controller
             return redirect()->route('payment');
         }
     }
+    /**
+     * Handles membership renewal payment processing.
+     *
+     * This method processes the renewal payment, updates the user's membership details,
+     * and extends the membership duration based on the selected period. If the payment fails,
+     * the transaction is rolled back, and an error is logged.
+     *
+     * @param Request $request The HTTP request containing membership renewal payment details.
+     * @return *\Illuminate\Http\RedirectResponse Redirects to the login page on success or back
+     *         to the membership payment page on failure.
+     *
+     * @throws \Exception Logs any errors encountered during the renewal process and redirects
+     *                    the user with an error message.
+     */
 
     public function handleMembershipRenewPayment(Request $request)
     {
@@ -354,6 +452,19 @@ class PaymentController extends Controller
         }
     }
 
+    /**
+     * Handles cart payment processing and order creation.
+     *
+     * This method processes the cart payment, validates stock availability, updates product stock,
+     * creates an order with order items, and sends a confirmation email to the customer.
+     * If any step fails, the transaction is rolled back, and an error is logged.
+     *
+     * @param Request $request The HTTP request containing cart and payment details.
+     * @return *\Illuminate\Http\RedirectResponse Redirects to the bookstore page on success or failure.
+     *
+     * @throws \Exception Logs any errors encountered during payment processing or order creation
+     *                    and redirects the user with an error message.
+     */
 
     public function cartPayment(Request $request)
     {
@@ -452,13 +563,34 @@ class PaymentController extends Controller
 
 
 
-
+    /**
+     * Return callback from stripe to redirect.
+     *
+     * @param Request $request
+     * @return
+     */
     public function paymentCallback(Request $request)
     {
         // Handle the callback after Stripe redirects back to your app
         Session::flash('success', 'Payment completed!');
         return redirect()->route('payment.form');
     }
+
+    /**
+     * Processes a payment transaction using Stripe for both one-time and recurring payments.
+     *
+     * This method calculates the total amount, processes the payment through Stripe,
+     * and stores payment details in the database. It supports both one-time payments and
+     * recurring subscriptions. In case of failure, it logs errors and returns an error response.
+     *
+     * @param Request $request The HTTP request containing payment details.
+     * @return *array Returns an array with payment status and details or a JSON response for
+     *               additional authentication if required.
+     *
+     * @throws \Exception Logs any errors encountered during the payment process and returns an
+     *                    appropriate error response.
+     */
+
     public function _processPayment(Request $request)
     {
         Stripe::setApiKey(env('STRIPE_SECRET'));

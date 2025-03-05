@@ -7,6 +7,16 @@ use App\Models\Post;
 
 class PostController extends Controller
 {
+    /**
+     * Displays a paginated list of published blog posts.
+     *
+     * This method retrieves posts that are marked as published and belong to the 'blog' post type.
+     * The posts are ordered by their publication date in descending order and paginated with
+     * a limit of 3 posts per page.
+     *
+     * @return *\Illuminate\View\View Returns the blog posts view with paginated posts.
+     */
+
     public function index()
     {
         $posts = Post::where('published', true)
@@ -19,6 +29,18 @@ class PostController extends Controller
         return view('pages.post', compact('posts'));
     }
 
+    /**
+     * Displays a single published blog post based on the provided slug.
+     *
+     * This method retrieves a post using its slug, ensuring that it is published.
+     * If the post is not found, it returns a 404 error.
+     *
+     * @param string $slug The unique slug of the post.
+     * @return *\Illuminate\View\View Returns the view displaying the blog post.
+     *
+     * @throws *\Illuminate\Database\Eloquent\ModelNotFoundException If the post is not found.
+     */
+
     public function show($slug)
     {
         // Find the post by slug, ensuring it is published
@@ -29,6 +51,15 @@ class PostController extends Controller
     }
 
 
+    /**
+     * Displays a paginated list of published events.
+     *
+     * This method retrieves posts that are marked as published and belong to the 'event' post type.
+     * The events are ordered by their publication date in descending order and paginated with
+     * a limit of 3 events per page.
+     *
+     * @return *\Illuminate\View\View Returns the events view with paginated event posts.
+     */
 
     public function showAllEvents()
     {

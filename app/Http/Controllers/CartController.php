@@ -4,10 +4,23 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\View\View;
+use Illuminate\Http\JsonResponse;
 
+/**
+ * Class CartController
+ *
+ * Handles shopping cart functionality including adding, updating, and removing items.
+ *
+ * @package App\Http\Controllers
+ */
 class CartController extends Controller
 {
-
+    /**
+     * CartController constructor.
+     *
+     * Initializes the cart session and provides cart count data to all views.
+     */
     public function __construct()
     {
         view()->composer('*', function ($view) {
@@ -17,7 +30,12 @@ class CartController extends Controller
         });
     }
 
-    public function showCart()
+    /**
+     * Display the cart page.
+     *
+     * @return View
+     */
+    public function showCart(): View
     {
         $cart = session()->get('cart', []);
         $cartCount = session()->get('cart_count', 0);
@@ -26,9 +44,14 @@ class CartController extends Controller
         return view('pages.cart', compact('cart', 'cartCount', 'cartTotal'));
     }
 
-
-
-    public function add(Request $request, $id)
+    /**
+     * Add a product to the cart.
+     *
+     * @param Request $request
+     * @param int $id Product ID
+     * @return JsonResponse|\Illuminate\Http\RedirectResponse
+     */
+    public function add(Request $request, int $id)
     {
         $product = Product::findOrFail($id);
         $cart = session()->get('cart', []);
@@ -49,11 +72,10 @@ class CartController extends Controller
         // Store updated cart in session
         session()->put('cart', $cart);
 
-        // Store cart count in session
+        // Update session totals
         $cartCount = array_sum(array_column($cart, 'quantity'));
         session()->put('cart_count', $cartCount);
 
-        // Store total price in session
         $cartTotal = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
         session()->put('cart_total', $cartTotal);
 
@@ -68,7 +90,13 @@ class CartController extends Controller
         return redirect()->back()->with('success', 'Product added to cart successfully!');
     }
 
-    public function updateCart(Request $request)
+    /**
+     * Update the quantity of a product in the cart.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function updateCart(Request $request): JsonResponse
     {
         $cart = session('cart', []);
         $id = $request->input('id');
@@ -78,11 +106,11 @@ class CartController extends Controller
             return response()->json(['success' => false, 'message' => 'Item not found in cart.']);
         }
 
-        // Update quantity
+        // Update quantity (ensure at least 1)
         $cart[$id]['quantity'] = max(1, $quantity);
         session(['cart' => $cart]);
 
-        // Recalculate total amount and cart count
+        // Recalculate totals
         $cartCount = array_sum(array_column($cart, 'quantity'));
         $totalAmount = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
         $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0) * $item['quantity'], $cart));
@@ -101,8 +129,13 @@ class CartController extends Controller
         ]);
     }
 
-
-    public function removeItem(Request $request)
+    /**
+     * Remove an item from the cart.
+     *
+     * @param Request $request
+     * @return JsonResponse
+     */
+    public function removeItem(Request $request): JsonResponse
     {
         $cart = session('cart', []);
         $id = $request->input('id');
@@ -112,7 +145,7 @@ class CartController extends Controller
             session()->put('cart', $cart);
         }
 
-        // ✅ Check if the cart is empty, then remove session values
+        // If cart is empty, clear all related session values
         if (empty($cart)) {
             session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
             return response()->json([
@@ -122,7 +155,7 @@ class CartController extends Controller
             ]);
         }
 
-        // ✅ Recalculate cart count and total
+        // Recalculate cart count and total
         $cartCount = array_sum(array_column($cart, 'quantity'));
         $totalAmount = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
         $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0) * $item['quantity'], $cart));
@@ -137,7 +170,4 @@ class CartController extends Controller
             'cartCount' => $cartCount
         ]);
     }
-
-
-
 }

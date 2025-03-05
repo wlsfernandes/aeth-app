@@ -26,14 +26,27 @@ use App\Mail\WelcomeEmail;
 use PayPalHttp\HttpException;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 use PayPalCheckoutSdk\Orders\OrdersCaptureRequest;
-
+/**
+ * Class PayPalController
+ *
+ * Handles all payment-related operations, including membership payments, bookstore purchases,
+ * donations, and tax calculations.
+ *
+ * @package App\Http\Controllers
+ */
 class PayPalController extends Controller
 {
     /**
-     * Create a PayPal order for payment.
+     * Handle Donation via Paylpal.
+     *
+     * This method retrieves all data and
+     * passes them to the corresponding Paypal webservice to manage the payment
+     * If an error occurs, it logs the error
+     * and redirects the user back with an error message.
+     *
+     * @return *View|RedirectResponse Returns the view with the digital collections if successful,
+     *                               otherwise redirects back with an error message.
      */
-
-
     public function donate(Request $request)
     {
         DB::beginTransaction(); // Start transaction
@@ -106,7 +119,15 @@ class PayPalController extends Controller
 
         }
     }
-
+    /**
+     * Capture PayPal donation payment.
+     *
+     * This method processes a PayPal donation payment by capturing the transaction,
+     * updating the payment record, and sending a confirmation email.
+     *
+     * @param Request $request The incoming HTTP request containing the PayPal token and payment ID.
+     * @return *RedirectResponse Redirects to the payment page with success or error messages.
+     */
     public function captureDonationPayment(Request $request)
     {
         $provider = new PayPalClient;
@@ -152,7 +173,25 @@ class PayPalController extends Controller
     }
 
 
-
+    /**
+     * Handles the creation of a bookstore payment order and initiates PayPal payment processing.
+     *
+     * This function performs the following steps:
+     * 1. Begins a database transaction.
+     * 2. Validates and retrieves order data from the request.
+     * 3. Calculates total order cost, including product prices, tax, and shipment cost.
+     * 4. Checks stock availability and updates product inventory.
+     * 5. Creates an order and associates purchased products with it.
+     * 6. Creates a payment record and sets its status to "pending".
+     * 7. Initiates a PayPal payment request and redirects the user to PayPal for approval.
+     * 8. Handles errors by rolling back the transaction and logging the issue.
+     *
+     * @param Request $request The incoming HTTP request containing order and payment details.
+     *
+     * @return \Illuminate\Http\RedirectResponse Redirects the user to PayPal for payment approval or back with an error.
+     *
+     * @throws Exception If there are validation issues, stock shortages, PayPal API errors, or database failures.
+     */
     public function createBookstorePayment(Request $request)
     {
         DB::beginTransaction(); // Start transaction
@@ -286,8 +325,18 @@ class PayPalController extends Controller
 
 
     /**
-     * Capture the payment after user approval.
+     * Capture and process a PayPal payment.
+     *
+     * This method retrieves the PayPal payment details using the provided token,
+     * verifies the payment status, updates the order and payment records accordingly,
+     * and sends a confirmation email to the user if the payment is successful.
+     *
+     * @param Request $request The HTTP request containing payment details.
+     * @return \Illuminate\Http\RedirectResponse Redirects to the payment route with success or error message.
+     *
+     * @throws \Exception Logs any errors that occur during the payment capture process.
      */
+
     public function capturePayment(Request $request)
     {
         $provider = new PayPalClient;
@@ -354,6 +403,18 @@ class PayPalController extends Controller
 
         return $this->captureMembershipPayment($request);
     }
+    /**
+     * Initiates and processes a PayPal membership payment.
+     *
+     * This method validates the provided amount, creates a PayPal order for membership purchase,
+     * and redirects the user to PayPal for payment approval.
+     *
+     * @param Request $request The HTTP request containing membership payment details.
+     * @return \Illuminate\Http\RedirectResponse Redirects the user to PayPal for payment approval.
+     *
+     * @throws \Exception Throws an exception if the amount is invalid, PayPal order creation fails,
+     *                    or the approval URL is not found in the response.
+     */
 
     public function captureMembershipPayment(Request $request)
     {
@@ -399,6 +460,17 @@ class PayPalController extends Controller
         // Redirect the user to PayPal for approval
         return redirect()->away($approvalUrl);
     }
+    /**
+     * Handles the PayPal payment success and processes user membership creation.
+     *
+     * This method captures the PayPal payment, creates a new user account, assigns a membership role,
+     * registers the user as a member, logs the payment, and sends a welcome email with login credentials.
+     *
+     * @param Request $request The HTTP request containing payment and user details.
+     * @return \Illuminate\Http\RedirectResponse Redirects to login upon success or back to memberships on failure.
+     *
+     * @throws \Exception Throws an exception if the payment is not successful or any database operation fails.
+     */
 
     public function handlePayPalSuccess(Request $request)
     {
@@ -478,74 +550,6 @@ class PayPalController extends Controller
 
 
 
-    /*public function captureMembershipPayment($request)
-    {
 
-        $totalAmount = $request->membership_plan === 'premium' ? '99.99' : '49.99';
-
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $provider->setAccessToken($provider->getAccessToken());
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "purchase_units" => [
-                [
-                    "amount" => [
-                        "currency_code" => "USD",
-                        "value" => $totalAmount,
-                    ]
-                ]
-            ],
-            "application_context" => [
-                "return_url" => route('paypal.capture', ['email' => $request->email]),
-                "cancel_url" => route('payment-membership')
-            ]
-        ]);
-
-        if (!isset($response['id'])) {
-            throw new Exception('PayPal order creation failed: ' . json_encode($response));
-        }
-
-        $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
-        if (!$approvalUrl) {
-            throw new Exception('Approval URL not found in PayPal response.');
-        }
-
-        DB::beginTransaction();
-        try {
-            $password = 'adminAeth2025';
-
-            $user = User::create([
-                'name' => $request->first_name . ' ' . $request->last_name,
-                'email' => $request->email,
-                'password' => Hash::make($password),
-            ]);
-
-            $roleId = 17;
-            $user->roles()->attach($roleId);
-
-            Member::create([
-                'user_id' => $user->id,
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'membership_plan' => $request->membership_plan,
-                'membership_start_date' => now(),
-                'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
-                'isYear' => $request->period == 'year',
-                'status' => 'active',
-            ]);
-
-            Mail::to($user->email)->send(new WelcomeEmail($user, $password));
-
-            DB::commit();
-            Session::flash('success', 'Payment and membership creation successful!');
-            return redirect()->route('login');
-        } catch (Exception $e) {
-            DB::rollBack();
-            throw new Exception('User and membership creation failed: ' . $e->getMessage());
-        }
-
-    } */
 
 }

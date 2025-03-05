@@ -7,6 +7,19 @@ use App\Models\Shipping;
 
 class ShippingController extends Controller
 {
+    /**
+     * Calculates the shipping cost based on the target ZIP code and product weight.
+     *
+     * This method retrieves the shipping zone based on the provided target ZIP code and determines
+     * the shipping cost based on weight. If the weight is not provided or exceeds 10 pounds, an
+     * error response is returned. If no shipping cost is found for the zone, an error message is sent.
+     *
+     * @param string $targetZip The destination ZIP code for shipping.
+     * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse Returns a JSON response
+     *         with the shipping cost or an error message with a redirection if applicable.
+     *
+     * @throws \Exception Returns an error message if an exception occurs during the process.
+     */
 
     public function calculateShippingCost($targetZip)
     {
@@ -31,7 +44,7 @@ class ShippingController extends Controller
             }
 
             $roundedWeight = round($weight);
-            $zone = $this->calculateAreaFromZip($startingZip, $targetZip); 
+            $zone = $this->calculateAreaFromZip($startingZip, $targetZip);
 
             // Find shipping cost based on zone and weight
             $shippingCost = Shipping::where('zone', $zone)
@@ -57,6 +70,17 @@ class ShippingController extends Controller
         }
     }
 
+    /**
+     * Calculates the shipping zone based on ZIP code differences.
+     *
+     * This method extracts numeric values from the starting and target ZIP codes,
+     * calculates the zone as the difference in the thousands place, and ensures
+     * the zone remains within a range of 0 to 9.
+     *
+     * @param string $startingZip The originating ZIP code.
+     * @param string $targetZip The destination ZIP code.
+     * @return int The calculated shipping zone, constrained between 0 and 9.
+     */
 
     private function calculateAreaFromZip($startingZip, $targetZip)
     {

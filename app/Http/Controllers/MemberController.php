@@ -25,12 +25,28 @@ class MemberController extends Controller
     protected $paymentService;
 
 
+    /**
+     * Displays the membership payment form.
+     *
+     * This method retrieves the membership amount from the session and passes it to the view.
+     *
+     * @return \Illuminate\View\View Returns the membership payment form view with the amount.
+     */
 
     public function showMembershipPaymentForm()
     {
         $amount = session('amount');
         return view('pages.payments.membership.page', compact('amount'));
     }
+    /**
+     * Redirects the user to the membership payment page with selected details.
+     *
+     * This method retrieves the membership plan, period, and amount from the request and
+     * passes them to the membership payment page for processing.
+     *
+     * @param Request $request The HTTP request containing membership payment details.
+     * @return * \Illuminate\View\View Returns the membership payment page with the provided details.
+     */
 
     public function membershipRedirectPayment(Request $request)
     {
@@ -41,6 +57,16 @@ class MemberController extends Controller
         $amount = $request->input('amount');
         return view('pages.payments.membership.page', compact('amount', 'type', 'program', 'membership_plan', 'period'));
     }
+    /**
+     * Redirects the user to the membership renewal payment page with selected details.
+     *
+     * This method determines the membership renewal amount and period based on the selected
+     * membership plan. It retrieves user details from the request and passes them to the
+     * membership renewal payment page.
+     *
+     * @param Request $request The HTTP request containing membership renewal details.
+     * @return \Illuminate\View\View Returns the membership renewal payment page with the provided details.
+     */
 
     public function membershipRedirectRenewPayment(Request $request)
     {
@@ -89,6 +115,18 @@ class MemberController extends Controller
         return view('pages.payments.membership.renew', compact('amount', 'type', 'program', 'membership_plan', 'period', 'email', 'first_name', 'last_name'));
     }
 
+    /**
+     * Displays the membership renewal page with user details.
+     *
+     * This method retrieves the authenticated user's information and membership details
+     * from the session and database. If successful, it passes the user's email and name
+     * to the renewal page. If an error occurs, it logs the issue and redirects to the login page.
+     *
+     * @return \Illuminate\View\View|\Illuminate\Http\RedirectResponse Returns the membership renewal
+     *         page with user details or redirects to login with an error message.
+     *
+     * @throws \Exception Logs any errors encountered while retrieving user membership details.
+     */
 
     public function renew()
     {
@@ -111,86 +149,8 @@ class MemberController extends Controller
         }
     }
 
-    /*
-        public function update(Request $request, $id)
-        {
-            try {
-                DB::beginTransaction();
-                $member = Member::findOrFail($id);
-                $member->update($request->all());
-                $member->save();
-                DB::commit();
-                session()->flash('success', 'Member updated successfully.');Member
-              //  DB::rollBack();
-                session()->now('error', 'Failed to update Member: ' . $e->getMessage());
-                return redirect()->back()->withInput()->withErrors(['error' => 'Failed to update Member: ']);
-            }
-        }
-
-    */
-
-
-    /* TODO // hardcoded member in needs to update
-
-    public function store(Request $request)
-    {
-        // Validate the request
-        $validator = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|email|unique:members,email',
-            'membership_type' => 'required|string|max:50',
-            // No password validation here since it will be auto-generated
-        ]);
-
-        if ($validator->fails()) {
-            return response()->json($validator->errors(), 422);
-        }
-
-        // Begin a database transaction
-        DB::beginTransaction();
-
-        try {
-            $password = Str::random(10); // You can set the desired length
-            // hardcoded member in RegisteredUserController
-            $user = User::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'password' => bcrypt($password), // Hash the generated password
-            ]);
-            $roleId = 17;
-            $user->roles()->attach($roleId);
-            // Create a new member
-            $member = Member::create([
-                'name' => $request->name,
-                'email' => $request->email,
-                'membership_type' => $request->membership_type,
-                'start_date' => now(),
-                'end_date' => now()->addYear(), // Example duration of 1 year
-                'status' => 'active',
-            ]);
 
 
 
-            // Send an email with the auto-generated password
-            Mail::to($user->email)->send(new WelcomeEmail($user, $password));
 
-            // Commit the transaction
-            DB::commit();
-
-            return response()->json([
-                'message' => 'Member and user added successfully!',
-                'member' => $member,
-                'user' => $user,
-            ], 201);
-
-        } catch (Exception $e) {
-            // Rollback the transaction if something fails
-            DB::rollBack();
-
-            return response()->json([
-                'error' => 'Failed to create member and user: ' . $e->getMessage(),
-            ], 500);
-        }
-    }
-        */
 }
