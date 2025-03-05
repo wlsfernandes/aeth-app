@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 /**
  * Class Membership
- *
+ * 
  * Represents a membership subscription for a user.
  *
  * @package App\Models
- *
  * @property int $id Unique identifier for the membership.
  * @property int $user_id Identifier for the associated user.
  * @property string $membership_plan Type of membership plan subscribed to.
@@ -20,11 +19,20 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool $is_active Indicates if the membership is currently active.
  * @property \Illuminate\Support\Carbon|null $created_at Timestamp when the membership was created.
  * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the membership record was last updated.
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Membership newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Membership newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Membership query()
- *
+ * @property-read \App\Models\Member $member
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereEndDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereMembershipPlan($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership wherePrice($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereStartDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Membership whereUserId($value)
  * @mixin \Eloquent
  */
 

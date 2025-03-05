@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 /**
  * Class Post
- *
+ * 
  * Represents a multilingual blog post or article.
  *
  * @package App\Models
- *
  * @property int $id Unique identifier for the post.
  * @property string $title_en Title of the post in English.
  * @property string|null $title_es Title of the post in Spanish.
@@ -32,11 +31,31 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $file_url_ptBR URL of an attached file (Portuguese-BR version).
  * @property \Illuminate\Support\Carbon|null $created_at Timestamp when the post was created.
  * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the post was last updated.
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Post newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Post newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Post query()
- *
+ * @property-read \App\Models\PostType $postType
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereContentEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereContentEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereContentPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereFileUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereFileUrlEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereFileUrlPtBR($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereImageUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePostTypeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublished($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post wherePublishedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSummaryEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSummaryEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereSummaryPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Post whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 

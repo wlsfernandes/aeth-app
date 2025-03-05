@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Member
- *
+ * 
  * Represents a registered member with personal details and membership information.
  *
  * @package App\Models
- *
  * @property int $id Unique identifier for the member.
  * @property int $user_id Identifier for the associated user.
  * @property string $first_name First name of the member.
@@ -30,11 +29,30 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool $isYear Indicates if the membership plan is based on a yearly subscription.
  * @property \Illuminate\Support\Carbon|null $created_at Timestamp when the member was registered.
  * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the member record was last updated.
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Member newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Member newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Member query()
- *
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Membership> $memberships
+ * @property-read int|null $memberships_count
+ * @property-read \App\Models\User $user
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereActiveStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereAddressLine1($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereAddressLine2($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereIsYear($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereMembershipEndDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereMembershipPlan($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereMembershipStartDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member wherePhoneNumber($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereState($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Member whereZipcode($value)
  * @mixin \Eloquent
  */
 

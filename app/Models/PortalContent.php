@@ -7,11 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class PortalContent
- *
+ * 
  * Represents content published on the portal, such as media, articles, or resources.
  *
  * @package App\Models
- *
  * @property int $id Unique identifier for the portal content.
  * @property string $title Title of the content.
  * @property string $creator Name of the content creator or author.
@@ -27,11 +26,26 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null $date_of_publication Date when the content was published.
  * @property \Illuminate\Support\Carbon|null $created_at Timestamp when the content was created.
  * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the content was last updated.
- *
  * @method static \Illuminate\Database\Eloquent\Builder|PortalContent newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PortalContent newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|PortalContent query()
- *
+ * @property string|null $event
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereCategory($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereContact($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereCreator($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereDateOfPublication($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereEvent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereMediaType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereOccasion($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent wherePermissionLevel($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereProgram($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereTags($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PortalContent whereUrl($value)
  * @mixin \Eloquent
  */
 

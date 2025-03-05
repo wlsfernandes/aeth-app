@@ -23,6 +23,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Post> $posts
+ * @property-read int|null $posts_count
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType query()
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|PostType whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class PostType extends Model
 {
     protected $fillable = ['name'];

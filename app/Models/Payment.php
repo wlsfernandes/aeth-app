@@ -6,11 +6,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 /**
  * Class Payment
- *
+ * 
  * Represents a payment transaction within the system.
  *
  * @package App\Models
- *
  * @property int $id Unique identifier for the payment.
  * @property string $first_name First name of the payer.
  * @property string $last_name Last name of the payer.
@@ -29,11 +28,33 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool $isRecurring Indicates whether the payment is recurring.
  * @property string|null $processed_by Identifier of the user or system that processed the
  * @property \Illuminate\Support\Carbon|null $updated_at Timestamp when the payment record was last updated.
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Payment newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Payment query()
- *
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property string $tax
+ * @property string $totalAmount
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereCurrency($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereCustomerId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereFirstName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereIsRecurring($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereLastName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePaymentDate($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePaymentMethod($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereProcessedBy($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereProgram($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereReceiptUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereShipmentCost($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereStripePaymentIntentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereTax($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereTotalAmount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Payment extends Model
