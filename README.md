@@ -1,66 +1,177 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# somosAETH Documentation
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Overview
+This project is a Laravel-based web application that includes various models for managing users, orders, payments, products, and other functionalities. Below is a detailed breakdown of the key models and their relationships.
 
-## About Laravel
+## Installation
+### Prerequisites
+- PHP 10+
+- Composer
+- Laravel Framework
+- MySQL or PostgreSQL (Database)
+- Node.js & npm (for frontend assets if applicable)
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+### Steps to Install
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/wlsfernandes/aeth-app
+   cd your-project
+   ```
+2. Install dependencies:
+   ```bash
+   composer install
+   npm install
+   ```
+3. Copy the `.env` file and configure it:
+   ```bash
+   cp .env.example .env
+   ```
+4. Generate the application key:
+   ```bash
+   php artisan key:generate
+   ```
+5. Run database migrations:
+   ```bash
+   php artisan migrate --seed
+   ```
+6. Start the server:
+   ```bash
+   php artisan serve
+   ```
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Database Models
+### 1️⃣ User Model
+- Represents an authenticated user.
+- Has relationships with `Role` and `Member` models.
+- Fields:
+  - `name`, `email`, `password`
+  - `email_verified_at`, `remember_token`
+- Relationships:
+  - `roles()` → Many-to-Many with `Role`
+  - `member()` → One-to-One with `Member`
 
-## Learning Laravel
+### 2️⃣ Role Model
+- Defines different user roles.
+- Fields:
+  - `name`
+- Relationships:
+  - `users()` → Many-to-Many with `User`
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3️⃣ Order Model
+- Stores customer orders.
+- Fields:
+  - `order_number`, `customer_name`, `customer_email`
+  - `total`, `shipment_cost`, `address`, `zipcode`
+- Relationships:
+  - `items()` → One-to-Many with `OrderItem`
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 4️⃣ OrderItem Model
+- Represents an item within an order.
+- Fields:
+  - `order_id`, `product_id`, `quantity`, `price`
+- Relationships:
+  - `product()` → Belongs to `Product`
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 5️⃣ Product Model
+- Represents an available product.
+- Fields:
+  - `name`, `description`, `price`, `stock`, `sku`, `type`
+- Relationships:
+  - `cartItems()` → One-to-Many with `CartItem`
 
-## Laravel Sponsors
+### 6️⃣ Cart Model
+- Stores a user's cart items.
+- Fields:
+  - `user_identifier`
+- Relationships:
+  - `items()` → One-to-Many with `CartItem`
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 7️⃣ Payment Model
+- Stores payment transactions.
+- Fields:
+  - `first_name`, `last_name`, `email`, `amount`, `currency`
+  - `status`, `payment_method`, `receipt_url`
+- Relationships:
+  - None directly, but can be linked to `Order`
 
-### Premium Partners
+### 8️⃣ Membership Model
+- Tracks user memberships.
+- Fields:
+  - `user_id`, `membership_plan`, `price`, `is_active`
+- Relationships:
+  - `user()` → Belongs to `User`
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 9️⃣ PortalContent Model
+- Stores content published on the portal.
+- Fields:
+  - `title`, `creator`, `description`, `url`, `media_type`
+  - `category`, `program`, `date_of_publication`
 
-## Contributing
+### 🔟 Post & PostType Models
+- `Post` represents multilingual blog posts.
+- `PostType` categorizes different types of posts.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 🛠 Additional Models
+- `Category`: Defines content or product categories.
+- `Faq`: Stores frequently asked questions.
+- `ErrorLog`: Logs system errors.
+- `Shipping`: Manages shipping costs.
+- `UspsMediaMailShipping`: Handles USPS Media Mail shipping details.
 
-## Code of Conduct
+---
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## API Documentation
+To generate API documentation, you can use:
+```bash
+php artisan ide-helper:generate
+php artisan ide-helper:models -W
+php artisan scribe:generate
+```
+This will create API documentation for the project.
 
-## Security Vulnerabilities
+---
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+## Deployment
+### Steps for Production Deployment
+1. **Set Up Environment**
+   ```bash
+   php artisan config:cache
+   php artisan route:cache
+   php artisan view:cache
+   ```
+2. **Queue and Schedule Jobs** (If using jobs)
+   ```bash
+   php artisan queue:work
+   ```
+3. **Run Migrations and Optimize**
+   ```bash
+   php artisan migrate --force
+   composer install --optimize-autoloader --no-dev
+   ```
+4. **Set Proper Permissions**
+   ```bash
+   chmod -R 775 storage bootstrap/cache
+   ```
+
+---
 
 ## License
+This software is licensed under the **DevProMaster** license. All rights reserved.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+© [2025] [DevPromaster]. Unauthorized use, copying, modification, or distribution of this software without prior written permission is strictly prohibited.
+
+For licensing inquiries, please contact [wlsfernandes@gmail.com].
+
+---
+
+## Contributors
+- **Wilson Fernandes Junior** - Lead Developer
+
+
+---
+
+## Contact
+For support, contact **wlsfernandes@gmail.com**.
+
