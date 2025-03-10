@@ -170,6 +170,7 @@
                                         <ul>
                                             <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
                                             <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
+                                            <li><a href="{{ route('helpDesk') }}">@lang('pages.help_desk')</a></li>
                                             <li><a
                                                     href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
                                             </li>
