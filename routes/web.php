@@ -55,6 +55,9 @@ Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('conta
 
 Route::get('/calculate-shipping/{zip}', [ShippingController::class, 'calculateShippingCost']);
 
+Route::get('/temp-download', function () {
+    return response()->download(storage_path('failed_users.php'));
+});
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
