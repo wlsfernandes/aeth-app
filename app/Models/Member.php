@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Member
- * 
+ *
  * Represents a registered member with personal details and membership information.
  *
  * @package App\Models
@@ -80,12 +80,15 @@ class Member extends Model
         'active_status',
         'membership_plan',
         'isYear',
+        'old_membership_id'
     ];
 
     // Cast the date fields to Carbon instances
     protected $casts = [
-        'membership_start_date' => 'date',
-        'membership_end_date' => 'date',
+        'active_status' => 'boolean',
+        'membership_start_date' => 'datetime',
+        'membership_end_date' => 'datetime',
+        'isYear' => 'boolean',
     ];
 
     /**
