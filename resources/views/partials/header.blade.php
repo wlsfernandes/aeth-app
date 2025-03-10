@@ -241,8 +241,11 @@
 
                     </div>
                     <ul class="nav-right">
-                        <li class="search-box-outer search-toggler">
-                            <i class="icon-1"></i>
+                        <!-- <li class="search-box-outer search-toggler">
+                            <i class="fa fa-life-ring"></i>
+                        </li> -->
+                        <li class="cart-box">
+                            <a href="{{ route('helpDesk') }}"> <i class="bi bi-headset"></i></a>
                         </li>
                         <li class="cart-box">
                             <a href="{{ route('cart.show') }}">
@@ -260,14 +263,6 @@
                             <i class="bi bi-box-arrow-in-right me-2"></i> Login
                         </a>
 
-                        <!--   <li class="btn-box">
-                            <button class="donate-box-btn theme-btn-one">
-                                <a href="{{ route('memberships') }}"
-                                    style="color: inherit; text-decoration: none;font-size:14px;">@lang('membership')</a></span>
-                                <i class="bi bi-person-vcard-fill"></i>
-                            </button>
-
-                        </li> -->
                     </ul>
                 </div>
             </div>

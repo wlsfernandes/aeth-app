@@ -55,9 +55,6 @@ Route::post('/send-email', [ContactController::class, 'sendEmail'])->name('conta
 
 Route::get('/calculate-shipping/{zip}', [ShippingController::class, 'calculateShippingCost']);
 
-Route::get('/temp-download', function () {
-    return response()->download(storage_path('app/failed_users.php'));
-});
 
 Route::get('/', [HomeController::class, 'index']);
 Route::get('/about-us', [HomeController::class, 'aboutUs'])->name('about_us');
@@ -76,6 +73,7 @@ Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name(
 Route::get('/young-leaders', [HomeController::class, 'youngLeaders'])->name('young-leaders');
 Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching'])->name('compelling_preaching');
 Route::get('/lecture-series-2025', [HomeController::class, 'lectureSeries2025'])->name('lectureSeries2025');
+Route::get('/help-desk', [HomeController::class, 'helpDesk'])->name('helpDesk');
 
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');

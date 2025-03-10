@@ -15,4 +15,16 @@ return [
             'p9' => 'Effective preaching requires not only inspiration but also technique/homiletics (methods of sermon delivery). These workshops will provide strategies to communicate the message of the Good News clearly in migration contexts. Aspects such as the use of language, the development of narratives, and storytelling that connects with diverse and mobile audiences will be explored.',
 
         ],
+    'help_desk' => 'Help Desk',
+    'helpDesk' => [
+        'p1' => 'Thank you for reaching out to our Help Desk!',
+        'p2' => 'Your inquiry is important to us, and we aim to respond within 48 hours. Please use the message form below to describe your issue or question clearly and concisely.',
+        'p3' => 'We are here to assist you with various types of requests, including:',
+        'p4' => 'Technical support',
+        'p5' => 'Questions regarding your membership plan',
+        'p7' => 'Financial or transactional concerns',
+        'p8' => 'Issues related to bookstore purchases',
+        'p9' => 'General inquiries',
+        'p10' => 'We appreciate your patience and look forward to assisting you shortly.',
+    ],
 ];

@@ -9,4 +9,17 @@ return [
             'keynote' => 'Palestras principais',
 
         ],
+    'help_desk' => 'Central de Ajuda',
+    'helpDesk' => [
+        'p1' => 'Obrigado por entrar em contato com a nossa Central de Ajuda!',
+        'p2' => 'Sua solicitação é importante para nós, e nosso objetivo é responder em até 48 horas. Por favor, utilize o formulário abaixo para descrever claramente e de forma concisa sua dúvida ou problema.',
+        'p3' => 'Estamos aqui para ajudá-lo com vários tipos de solicitações, incluindo:',
+        'p4' => 'Suporte técnico',
+        'p5' => 'Dúvidas sobre seu plano de assinatura',
+        'p7' => 'Questões financeiras ou relacionadas a transações',
+        'p8' => 'Problemas relacionados a compras na livraria',
+        'p9' => 'Dúvidas gerais',
+        'p10' => 'Agradecemos sua paciência e esperamos poder ajudá-lo em breve.',
+    ],
+
 ];

@@ -15,4 +15,17 @@ return [
             'p9' => 'La predicación efectiva requiere no sólo inspiración, sino también técnica/homilética (métodos de entrega del sermón). Estos talleres brindarán estrategias para comunicar el mensaje de las Buenas Nuevas  con claridad en contextos de migración. Se explorarán aspectos como el uso del lenguaje, el desarrollo de narrativas e historias que conecten con audiencias diversas y en movimiento humano. ',
             'p10' => '',
         ],
+    'help_desk' => 'Centro de Ayuda',
+    'helpDesk' => [
+        'p1' => '¡Gracias por ponerte en contacto con nuestro Centro de Ayuda!',
+        'p2' => 'Tu consulta es importante para nosotros, y nuestro objetivo es responder en un plazo de 48 horas. Por favor, utiliza el formulario de mensaje a continuación para describir tu problema o pregunta de manera clara y concisa.',
+        'p3' => 'Estamos aquí para ayudarte con varios tipos de solicitudes, incluyendo:',
+        'p4' => 'Soporte técnico',
+        'p5' => 'Preguntas relacionadas con tu plan de membresía',
+        'p7' => 'Consultas financieras o transaccionales',
+        'p8' => 'Problemas relacionados con compras en la librería',
+        'p9' => 'Consultas generales',
+        'p10' => 'Agradecemos tu paciencia y esperamos poder ayudarte pronto.',
+    ],
+
 ];

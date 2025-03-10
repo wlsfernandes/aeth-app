@@ -275,4 +275,15 @@ class HomeController extends Controller
     {
         return view('pages.lecture-series-2025');
     }
+
+    /**
+     * Display the Help Desk page.
+     *
+     * @return View
+     */
+
+    public function helpDesk(): View
+    {
+        return view('pages.help-desk');
+    }
 }

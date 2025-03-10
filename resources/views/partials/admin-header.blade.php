@@ -151,6 +151,13 @@
                                             <i class="bi bi-basket3" style="font-size: 25px;"></i> Bookstore
                                         </a>
                                     </li>
+                                    <li class="cart-box"
+                                        style="display: flex; align-items: center; margin-right: 15px;">
+                                        <a href="{{ route('helpDesk') }}"
+                                            style="font-size: 14px; display: flex; align-items: center;">
+                                            <i class="bi bi-headset" style="font-size: 25px;"></i> Help Desk
+                                        </a>
+                                    </li>
                                     <!-- <li class="cart-box"
                                         style="display: flex; align-items: center; margin-right: 15px;">
                                         <a href="{{ route('certification') }}"
