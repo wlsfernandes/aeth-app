@@ -16,7 +16,7 @@
         </div>
         <div class="auto-container" style="position: relative; z-index: 2;">
             <div class="content-box">
-                <h1>@lang('programs.young_leaders.title')</h1>
+
             </div>
         </div>
     </section>
