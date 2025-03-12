@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\UspsMediaMailShipping;
 use Stripe\PaymentIntent;
 use Stripe\Stripe;
+use Stripe\Exception\InvalidRequestException;
 use Stripe\Customer;
 use Stripe\Subscription;
 
@@ -321,18 +322,28 @@ class PaymentController extends Controller
             'email' => 'required|email|unique:users,email',
             'first_name' => 'required|string',
             'last_name' => 'required|string',
+            'amount' => 'required|numeric|min:0.01',
         ]);
 
         if ($validator->fails()) {
-            $message = 'This email is already registered.';
+            $errors = $validator->errors();
 
-            Session::flash('error', ['email' => $message]);
-            return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
+            if ($errors->has('email')) {
+                $message = 'This email is already registered.';
+            } elseif ($errors->has('amount')) {
+                $message = 'The amount must be greater than 0. Return to the membership page to try again.';
+            } else {
+                $message = $errors->first(); // Get the first error message as a string
+            }
+
+            Session::flash('error', $message); // Store only a single string message
+            return redirect()->route('payment-membership')->withInput()->withErrors($errors);
         }
 
         DB::beginTransaction();
 
         try {
+            $request->merge(['is_recurring' => true]); // Set All Memberships to be recurring payment
             $paymentResult = $this->_processPayment($request);
 
             if ($paymentResult['status'] === 'success') {
@@ -354,11 +365,16 @@ class PaymentController extends Controller
                     'email' => $paymentRecord->email,
                     'membership_plan' => $request->membership_plan,
                     'membership_start_date' => now(),
-                    'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                    'membership_end_date' => $request->is_recurring
+                        ? '2099-12-31'
+                        : ($request->period == 'year'
+                            ? now()->addYear()
+                            : now()->addDays(31)),
                     'isYear' => $request->period == 'year' ? true : false,
                     'status' => 'active',
+                    'is_recurring' => true,
                 ]);
-                $request->period;
+                // $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
@@ -406,6 +422,7 @@ class PaymentController extends Controller
         DB::beginTransaction();
 
         try {
+            $request->merge(['is_recurring' => true]); // Set All Memberships to be recurring payment
             $paymentResult = $this->_processPayment($request);
 
             if ($paymentResult['status'] === 'success') {
@@ -419,9 +436,14 @@ class PaymentController extends Controller
                         [
                             'email' => $paymentRecord->email,
                             'membership_plan' => $request->membership_plan,
-                            'membership_end_date' => $request->period == 'year' ? now()->addYear() : now()->addDays(31),
+                            'membership_end_date' => $request->is_recurring
+                                ? '2099-12-31'
+                                : ($request->period == 'year'
+                                    ? now()->addYear()
+                                    : now()->addDays(31)),
                             'isYear' => $request->period == 'year' ? true : false,
                             'status' => 'active',
+                            'is_recurring' => true,
                         ]
                     );
                 }
@@ -626,14 +648,15 @@ class PaymentController extends Controller
                         'default_payment_method' => $request->payment_method_id,
                     ],
                 ]);
-
+                $interval = $request->period == 'year' ? 'year' : 'month';
                 // Dynamically create a Price object with custom amount
                 $price = \Stripe\Price::create([
                     'unit_amount' => $totalAmountInCents,
                     'currency' => 'usd',
-                    'recurring' => ['interval' => 'month'],
+                    'recurring' => ['interval' => $interval],
+                    'product' => env('STRIPE_PRODUCT_ID'),
                     // 'product' => 'prod_Rd0XFvJV9PsaO2', test mode
-                    'product' => 'prod_RsPxHERatW29WB',
+                    // 'product' => 'prod_RsPxHERatW29WB',
                 ]);
 
                 // Create a subscription using the dynamic price
@@ -705,6 +728,13 @@ class PaymentController extends Controller
                     ];
                 }
             }
+        } catch (InvalidRequestException $e) {
+            ErrorLog::create([
+                'error_message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'stripe_invalid_request',
+            ]);
+            return ['status' => 'error', 'message' => $e->getMessage()];
         } catch (Exception $e) {
             ErrorLog::create([
                 'error_message' => $e->getMessage() ?? 'Unknown error _processPayment PaymentController',

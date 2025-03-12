@@ -80,11 +80,13 @@ class Member extends Model
         'active_status',
         'membership_plan',
         'isYear',
-        'old_membership_id'
+        'old_membership_id',
+        'is_recurring'
     ];
 
     // Cast the date fields to Carbon instances
     protected $casts = [
+        'is_recurring' => 'boolean',
         'active_status' => 'boolean',
         'membership_start_date' => 'datetime',
         'membership_end_date' => 'datetime',
