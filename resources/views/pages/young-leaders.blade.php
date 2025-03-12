@@ -12,7 +12,7 @@
 @section('content')
     <section class="page-title centred">
         <div
-            style="background-image: url(assets/images/gallery/young-leaders.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+            style="background-image: url(assets/images/gallery/young_lideres_10.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
         <div class="auto-container" style="position: relative; z-index: 2;">
             <div class="content-box">
@@ -36,7 +36,7 @@
             <div class="row align-items-center clearfix">
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div class="image-box ml_30 mt_19">
-                        <figure class="image"><img src="assets/images/gallery/aeth-member6.jpg" alt=""></figure>
+                        <figure class="image"><img src="assets/images/gallery/Young Líderes5.jpg" alt=""></figure>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
@@ -77,7 +77,7 @@
                 </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 image-column">
                     <div class="image-box ml_30 mt_19">
-                        <figure class="image"><img src="assets/images/gallery/aeth-member5.jpg" alt=""></figure>
+                        <figure class="image"><img src="assets/images/gallery/Young Líderes6.jpg" alt=""></figure>
                     </div>
                 </div>
             </div>
