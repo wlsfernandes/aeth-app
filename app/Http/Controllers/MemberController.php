@@ -149,7 +149,23 @@ class MemberController extends Controller
         }
     }
 
+    public function update(Request $request, $id)
+    {
+        try {
+            DB::beginTransaction();
 
+            $member = Member::findOrFail($id);
+            $member->update($request->all());
+            $member->save();
+            DB::commit();
+            session()->flash('success', 'Member updated successfully.');
+            return redirect()->route('profile');
+        } catch (Exception $e) {
+            DB::rollBack();
+            session()->now('error', 'Failed to update Member: ' . $e->getMessage());
+            return redirect()->back()->withInput()->withErrors(['error' => 'Failed to update Member: ']);
+        }
+    }
 
 
 
