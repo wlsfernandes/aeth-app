@@ -374,6 +374,22 @@ class PaymentController extends Controller
                     'status' => 'active',
                     'is_recurring' => true,
                 ]);
+
+                Payment::create([
+                    'first_name' => $request->first_name ?? 'first_name',
+                    'last_name' => $request->last_name ?? 'last_name',
+                    'email' => $paymentRecord->email ?? 'email',
+                    'type' => 'Membership',
+                    'program' => 'AETH',
+                    'amount' => $request->amount ?? 0,
+                    'shipment_cost' => 0,
+                    'isRecurring' => true,
+                    'payment_date' => now(),
+                    'processed_by' => 'Stripe',
+                    'tax' => 0,
+                    'totalAmount' => $request->amount ?? 0,
+                ]);
+
                 // $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();

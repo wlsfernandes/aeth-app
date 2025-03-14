@@ -401,7 +401,7 @@ class PayPalController extends Controller
             return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
         }
 
-        return $this->captureMembershipPayment($request);
+        return $this->createMembershipSubscription($request);
     }
     /**
      * Initiates and processes a PayPal membership payment.
@@ -415,51 +415,96 @@ class PayPalController extends Controller
      * @throws \Exception Throws an exception if the amount is invalid, PayPal order creation fails,
      *                    or the approval URL is not found in the response.
      */
-
-    public function captureMembershipPayment(Request $request)
+    public function createMembershipSubscription(Request $request)
     {
-        $totalAmount = (float) $request->input('amount');
-        if ($totalAmount <= 0) {
-            throw new Exception('Invalid amount: must be greater than zero.');
-        }
-        $totalAmount = number_format($totalAmount, 2, '.', '');
-        $provider = new PayPalClient;
-        $provider->setApiCredentials(config('paypal'));
-        $provider->setAccessToken($provider->getAccessToken());
-        $response = $provider->createOrder([
-            "intent" => "CAPTURE",
-            "purchase_units" => [
-                [
-                    "amount" => [
-                        "currency_code" => "USD",
-                        "value" => $totalAmount,
-                    ]
+        try {
+            // Validate input
+            $request->validate([
+                'membership_plan' => 'required|string', // student, individual, institutional
+                'period' => 'required|string|in:month,year', // month or year
+                'email' => 'required|email',
+            ]);
+
+            // Define the plan IDs dynamically
+            $plans = [
+                'Student' => [
+                    'month' => 'P-5CX85384NM145064PM7KDNKY', // Student Monthly $5.00
+                    'year' => 'P-78U41933W3514331BM7KEAQY',  // Student Year Subscription $50.00
+                ],
+                'Individual' => [
+                    'month' => 'P-10543624KD995412LM7KEBZY', // Individual Monthly Subscription $10.00
+                    'year' => 'P-0HK51523YK7745929M7KEDQI',  // Individual Yearly Subscription $100.00
+                ],
+                'Institutional' => [
+                    'month' => 'P-53872832X2665454MM7KEEDA', // Institutional Monthly Subscription $20.00
+                    'year' => 'P-1KE8066506540523DM7KEEXA',  // Institutional Yearly Subscription $200.00
+                ],
+            ];
+
+            // Check if membership plan & period exist
+            if (!isset($plans[$request->membership_plan][$request->period])) {
+                throw new Exception('Invalid membership plan or period.');
+            }
+
+            // Assign the correct PayPal Plan ID
+            $plan_id = $plans[$request->membership_plan][$request->period];
+
+            // Initialize PayPal Client
+            $provider = new PayPalClient;
+            $provider->setApiCredentials(config('paypal'));
+            $provider->setAccessToken($provider->getAccessToken());
+
+            // Create Subscription
+            $response = $provider->createSubscription([
+                "plan_id" => $plan_id,
+                "subscriber" => [
+                    "email_address" => $request->email
+                ],
+                "application_context" => [
+                    "return_url" => route('paypal.capture.membership.success', [
+                        'amount' => $request->amount,
+                        'email' => $request->email,
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'membership_plan' => $request->membership_plan,
+                        'period' => $request->period,
+                        'subscription_id' => '{subscription_id}'
+                    ]),
+                    "cancel_url" => route('payment-membership')
                 ]
-            ],
-            "application_context" => [
-                "return_url" => route('paypal.capture.membership.success', [
-                    'email' => $request->email,
-                    'first_name' => $request->first_name,
-                    'last_name' => $request->last_name,
-                    'membership_plan' => $request->membership_plan,
-                    'period' => $request->period,
-                    'amount' => $totalAmount,
-                ]),
-            ]
-        ]);
+            ]);
 
-        if (!isset($response['id'])) {
-            throw new Exception('PayPal order creation failed: ' . json_encode($response));
+            if (!isset($response['id'])) {
+                throw new Exception('Failed to create PayPal subscription. Debug Info: ' . json_encode($response));
+            }
+            $subscriptionId = $response['id'];
+            $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
+            if (!$approvalUrl) {
+                throw new Exception('Approval URL not found in PayPal response.');
+            }
+            // Redirect the user to PayPal for approval
+            return redirect()->away($approvalUrl);
+        } catch (Exception $e) {
+            // Log error details
+            ErrorLog::create([
+                'error_message' => $e->getMessage() ?? 'Unknown error in createMembershipSubscription',
+                'stack_trace' => $e->getTraceAsString(),
+                'error_code' => 'payment_error',
+            ]);
+
+            Log::error('PayPal Payment processing error', [
+                'message' => $e->getMessage(),
+                'stack_trace' => $e->getTraceAsString(),
+            ]);
+
+            return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed: (0189)');
         }
-
-        $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
-        if (!$approvalUrl) {
-            throw new Exception('Approval URL not found in PayPal response.');
-        }
-
-        // Redirect the user to PayPal for approval
-        return redirect()->away($approvalUrl);
     }
+
+
+
+
+
     /**
      * Handles the PayPal payment success and processes user membership creation.
      *
@@ -472,18 +517,17 @@ class PayPalController extends Controller
      * @throws \Exception Throws an exception if the payment is not successful or any database operation fails.
      */
 
-    public function handlePayPalSuccess(Request $request)
+    public function handleMembershipPayPalSuccess(Request $request)
     {
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $provider->setAccessToken($provider->getAccessToken());
 
-        $orderId = $request->query('token'); // PayPal returns token as order ID
-
-        $response = $provider->capturePaymentOrder($orderId);
-
-        if (!isset($response['status']) || $response['status'] !== 'COMPLETED') {
-            throw new Exception('Payment was not successful.');
+        $subscriptionId = $request->query('subscription_id');
+        $response = $provider->showSubscriptionDetails($subscriptionId);
+        Log::info('PayPal Subscription Response:', $response);
+        if (!isset($response['status']) || $response['status'] !== 'ACTIVE') {
+            throw new Exception('Subscription was not successful.');
         }
 
         DB::beginTransaction();
@@ -498,7 +542,7 @@ class PayPalController extends Controller
 
             $roleId = 17;
             $user->roles()->attach($roleId);
-
+            $is_recurring = true; // make all memberships recurring
             Member::create([
                 'user_id' => $user->id,
                 'first_name' => $request->query('first_name'),
@@ -506,9 +550,14 @@ class PayPalController extends Controller
                 'email' => $request->query('email'),
                 'membership_plan' => $request->query('membership_plan'),
                 'membership_start_date' => now(),
-                'membership_end_date' => $request->query('period') == 'year' ? now()->addYear() : now()->addDays(31),
-                'isYear' => $request->query('period') == 'year',
+                'membership_end_date' => $is_recurring
+                    ? '2099-12-31'
+                    : ($request->query('period') == 'year'
+                        ? now()->addYear()
+                        : now()->addDays(31)),
+                'isYear' => $request->query('period') == 'year' ? true : false,
                 'status' => 'active',
+                'is_recurring' => true,
             ]);
 
             Payment::create([
@@ -517,13 +566,13 @@ class PayPalController extends Controller
                 'email' => $request->query('email'),
                 'type' => 'Membership',
                 'program' => 'AETH',
-                'amount' => $request->query(key: 'amount'),
+                'amount' => $request->query(key: 'amount') ?? 0,
                 'shipment_cost' => 0,
-                'isRecurring' => false,
+                'isRecurring' => true,
                 'payment_date' => now(),
                 'processed_by' => 'Paypal',
                 'tax' => 0,
-                'totalAmount' => $request->query(key: 'amount'),
+                'totalAmount' => $request->query(key: 'amount') ?? 0,
             ]);
 
             Mail::to($user->email)->send(new WelcomeEmail($user, $password));
@@ -550,6 +599,51 @@ class PayPalController extends Controller
 
 
 
+    /******** OLD Member Payment creating order ID
+     * public function captureMembershipPayment(Request $request)
+        {
+            $totalAmount = (float) $request->input('amount');
+            if ($totalAmount <= 0) {
+                throw new Exception('Invalid amount: must be greater than zero.');
+            }
+            $totalAmount = number_format($totalAmount, 2, '.', '');
+            $provider = new PayPalClient;
+            $provider->setApiCredentials(config('paypal'));
+            $provider->setAccessToken($provider->getAccessToken());
+            $response = $provider->createOrder([
+                "intent" => "CAPTURE",
+                "purchase_units" => [
+                    [
+                        "amount" => [
+                            "currency_code" => "USD",
+                            "value" => $totalAmount,
+                        ]
+                    ]
+                ],
+                "application_context" => [
+                    "return_url" => route('paypal.capture.membership.success', [
+                        'email' => $request->email,
+                        'first_name' => $request->first_name,
+                        'last_name' => $request->last_name,
+                        'membership_plan' => $request->membership_plan,
+                        'period' => $request->period,
+                        'amount' => $totalAmount,
+                    ]),
+                ]
+            ]);
 
+            if (!isset($response['id'])) {
+                throw new Exception('PayPal order creation failed: ' . json_encode($response));
+            }
+
+            $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
+            if (!$approvalUrl) {
+                throw new Exception('Approval URL not found in PayPal response.');
+            }
+
+            // Redirect the user to PayPal for approval
+            return redirect()->away($approvalUrl);
+        }
+     */
 
 }

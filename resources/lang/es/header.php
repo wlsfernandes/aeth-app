@@ -51,5 +51,5 @@ return [
     'recurring_donation' => 'Donación Recurrente',
     'login_p1' => 'Bienvenido al portal Exclusivo para Miembros de AETH. Se ha unido a los muchos miembros que están interesados   en la educación teológica y la educación teológica hispana. Como valioso miembro de AETH, tiene acceso a recursos y programas invaluables necesarios en el proceso de formar personas que buscan servir a Dios sirviendo a su prójimo, cuidando toda la creación y promoviendo la plenitud de vida.',
     'login_p2' => 'Le invitamos a explorar nuestra amplia gama de contenido y recursos. Esperamos que estos recursos seleccionados puedan tener un impacto positivo en su vida y ministerio.',
-
+    'AETH_disclaimer' => '<b>Aviso de Autorrenovación de Membresía:</b> No almacenamos ni vemos la información de su tarjeta de crédito. Este servicio de pago en línea se ofrece únicamente para la comodidad de nuestros clientes actuales. Esta suscripción se renueva automáticamente cada año, utilizando el método de pago registrado. La renovación se realizará al precio vigente en ese momento. Esta membresía puede ser cancelada en cualquier momento escribiendo a memberships@aeth.org . No se otorgarán reembolsos por períodos de membresía ya facturados. Al continuar con su suscripción, usted reconoce y acepta estos términos.'
 ];

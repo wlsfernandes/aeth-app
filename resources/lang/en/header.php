@@ -56,6 +56,6 @@ return [
     'recurring_donation' => 'Recurring Donation',
     'login_p1' => 'Welcome to the AETH Members Only portal. You have joined the many members that are  interested in theological education and Hispanic theological education. As a valued AETH member, you have access to invaluable resources and programs necessary in the process of forming people who seek to serve God by serving their neighbor, caring for all creation and promoting fullness of life.',
     'login_p2' => 'We invite you to explore our wide range of content and resources. It is our hope that these curated resources may positively impact your life and ministry.',
-
+    'AETH_disclaimer' => '<b>Membership Auto-Renewal Notice:</b> We do not store or see your credit card information. This online payment service is offered for the convenience of our existing clients only. This subscription automatically renews annually using the payment method on file. Renewal will be at the then-current price. This membership may be canceled at any time by writing to memberships@aeth.org. No refunds will be given for previously billed membership periods. By continuing your subscription, you acknowledge and agree to these terms.'
 
 ];

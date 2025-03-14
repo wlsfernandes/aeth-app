@@ -143,7 +143,7 @@ Route::get('/payment/callback', [PaymentController::class, 'paymentCallback'])->
 Route::post('/handle-payment', [PaymentController::class, 'handleDonation']);
 
 Route::post('/paypal/membership', [PayPalController::class, 'membership'])->name('paypal.membership');
-Route::get('/paypal/capture/membership/success', [PayPalController::class, 'handlePayPalSuccess'])->name('paypal.capture.membership.success');
+Route::get('/paypal/capture/membership/success', [PayPalController::class, 'handleMembershipPayPalSuccess'])->name('paypal.capture.membership.success');
 
 
 Route::post('/paypal/donate', [PayPalController::class, 'donate'])->name('paypal.donate');
