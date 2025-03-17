@@ -69,7 +69,8 @@ return [
             'p25' => 'Visit ReDET.us and join a vibrant community dedicated to promoting theological knowledge, fostering collaboration and solving shared challenges.',
             'p26' => 'Explore resources, connect with experts and strengthen your ministry. Whether you are an educator, student or leader, ReDET offers the tools and support you need to make a lasting impact in your field.',
             'p27' => 'Don`t miss out! Access exclusive content today and be part of a movement that is shaping the future of theological education.',
-            'p28' => 'Our Allies:'
+            'p28' => 'Our Allies:',
+            'p29' => '<b>ReDET</b> is a space that promotes collaboration and mutual strengthening among institutions dedicated to theological education. By gathering in communities of practice, these entities share experiences, resources, and knowledge that enrich their educational and pastoral processes. This space for dialogue and joint reflection fosters the development of new methodologies, the contextualization of theological teaching, and effective responses to the contemporary challenges faced by the church and academia. In this way, the network contributes to a more holistic, relevant, and committed formation aligned with the transformative mission of the gospel, while also cultivating a community where its members accompany one another on their theological journey.'
         ],
     'compelling' =>
         [

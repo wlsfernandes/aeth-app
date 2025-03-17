@@ -207,6 +207,9 @@
                     <div class="text mb_40" style="margin-top:25px;">
                         <div class="text">
                             <p>
+                                @lang('programs.antioquia.p29')
+                            </p>
+                            <p>
                                 @lang('programs.antioquia.p25')
                             </p>
                             <p>

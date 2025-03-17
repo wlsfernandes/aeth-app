@@ -38,7 +38,8 @@
 
     <h3>Próximos Pasos:</h3>
     <ol>
-        <li><strong>Visite nuestro sitio web:</strong> Explore <a href="https://www.aeth.org">www.aeth.org</a> [confirme
+        <li><strong>Visite nuestro sitio web:</strong> Explore <a href="https://www.somosaeth.com">www.somosaeth.com</a>
+            [confirme
             la nueva dirección web aquí] para obtener más información sobre nuestros programas y próximos eventos.</li>
         <li><strong>Acceda a sus Beneficios:</strong> Cree su perfil y cuenta <a href="#">Regístrese aquí</a>. Luego,
             utilice su número de identificación único para acceder a seminarios web, grabaciones y otros recursos.</li>
@@ -85,7 +86,8 @@
 
     <h3>Next Steps:</h3>
     <ol>
-        <li><strong>Visit Our Website:</strong> Explore <a href="https://www.aeth.org">www.aeth.org</a> [confirm the new
+        <li><strong>Visit Our Website:</strong> Explore <a href="https://www.somosaeth.com">www.somosaeth.com</a>
+            [confirm the new
             web address here] to learn more about our programs and upcoming events.</li>
         <li><strong>Access Your Benefits:</strong> Create your profile and account <a href="#">Sign up here</a>. Then
             use your unique identifier number to access webinars, recordings, and other resources.</li>
