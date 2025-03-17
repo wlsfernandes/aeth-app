@@ -428,16 +428,16 @@ class PayPalController extends Controller
             // Define the plan IDs dynamically
             $plans = [
                 'Student' => [
-                    'month' => 'P-5CX85384NM145064PM7KDNKY', // Student Monthly $5.00
-                    'year' => 'P-78U41933W3514331BM7KEAQY',  // Student Year Subscription $50.00
+                    'month' => env('PAYPAL_STUDENT_MONTHLY'),
+                    'year' => env('PAYPAL_STUDENT_YEARLY'),
                 ],
                 'Individual' => [
-                    'month' => 'P-10543624KD995412LM7KEBZY', // Individual Monthly Subscription $10.00
-                    'year' => 'P-0HK51523YK7745929M7KEDQI',  // Individual Yearly Subscription $100.00
+                    'month' => env('PAYPAL_INDIVIDUAL_MONTHLY'),
+                    'year' => env('PAYPAL_INDIVIDUAL_YEARLY'),
                 ],
                 'Institutional' => [
-                    'month' => 'P-53872832X2665454MM7KEEDA', // Institutional Monthly Subscription $20.00
-                    'year' => 'P-1KE8066506540523DM7KEEXA',  // Institutional Yearly Subscription $200.00
+                    'month' => env('PAYPAL_INSTITUTIONAL_MONTHLY'),
+                    'year' => env('PAYPAL_INSTITUTIONAL_YEARLY'),
                 ],
             ];
 
