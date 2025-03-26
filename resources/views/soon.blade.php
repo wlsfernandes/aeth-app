@@ -25,9 +25,8 @@
 
                                     <div>
 
-                                        <img class="logo-size"
-                                            src="{{ asset('assets/images/aeth_logo_transparent.png') }}"
-                                            alt="AETH Logo">
+                                        <img class="logo-size" src="{{ asset('assets/images/transparent_logo.png') }}"
+                                            alt="AETH Logo" style="width: 100px;">
                                     </div>
                                     <h5>https://somosaeth.org</h5>
                                 </div>
@@ -45,7 +44,6 @@
                         <h3>#somosAETH</h3>
                         <p>Soon, a new space for equipping Hispanic pastors, leaders, and learners will rise. Stay
                             tuned — your journey in faith and formation begins here.
-                            — your journey in faith and formation begins here.
                         </p>
                         <form class="form-row">
                             <input class="form-control" type="text" name="firstname" placeholder="Your Name" required>
