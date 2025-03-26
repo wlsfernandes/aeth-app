@@ -56,11 +56,11 @@ class PayPalController extends Controller
 
             // Create payment record first
             $payment = Payment::create([
-                'first_name' => $request->input('first_name'),
-                'last_name' => $request->input('last_name'),
-                'email' => $request->input('email'),
+                'first_name' => $request->input('first_name') ?? '***',
+                'last_name' => $request->input('last_name') ?? '***',
+                'email' => $request->input('email') ?? '***@***.com',
                 'type' => 'donation',
-                'amount' => $amount,
+                'amount' => $amount ?? 0,
                 'shipment_cost' => 0,
                 'isRecurring' => $request->input('is_recurring', false),
                 'payment_date' => now(),
@@ -258,18 +258,18 @@ class PayPalController extends Controller
 
             // Store the pending payment record
             $payment = Payment::create([
-                'first_name' => $request->input('first_name'),
-                'last_name' => $request->input('last_name'),
-                'email' => $request->input('email'),
-                'type' => $request->input('type'),
-                'program' => $request->input('program'),
-                'amount' => $amount,
-                'shipment_cost' => $shipmentCost,
+                'first_name' => $request->input('first_name') ?? '***',
+                'last_name' => $request->input('last_name') ?? '***',
+                'email' => $request->input('email') ?? '***@***.com',
+                'type' => $request->input('type') ?? '***',
+                'program' => $request->input('program') ?? '***',
+                'amount' => $amount ?? 0,
+                'shipment_cost' => $shipmentCost ?? 0,
                 'isRecurring' => $request->input('is_recurring', false),
                 'payment_date' => now(),
                 'processed_by' => 'Paypal',
-                'tax' => $request->input('taxAmount'),
-                'totalAmount' => $totalAmount,
+                'tax' => $request->input('taxAmount') ?? 0,
+                'totalAmount' => $totalAmount ?? 0,
                 'status' => 'pending', // Set initial status as "pending"
             ]);
 
@@ -561,9 +561,9 @@ class PayPalController extends Controller
             ]);
 
             Payment::create([
-                'first_name' => $request->query('first_name'),
-                'last_name' => $request->query('last_name'),
-                'email' => $request->query('email'),
+                'first_name' => $request->query('first_name') ?? '***',
+                'last_name' => $request->query('last_name') ?? '***',
+                'email' => $request->query('email') ?? '***@***.com',
                 'type' => 'Membership',
                 'program' => 'AETH',
                 'amount' => $request->query(key: 'amount') ?? 0,

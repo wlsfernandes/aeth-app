@@ -375,21 +375,6 @@ class PaymentController extends Controller
                     'is_recurring' => true,
                 ]);
 
-                Payment::create([
-                    'first_name' => $request->first_name ?? 'first_name',
-                    'last_name' => $request->last_name ?? 'last_name',
-                    'email' => $paymentRecord->email ?? 'email',
-                    'type' => 'Membership',
-                    'program' => 'AETH',
-                    'amount' => $request->amount ?? 0,
-                    'shipment_cost' => 0,
-                    'isRecurring' => true,
-                    'payment_date' => now(),
-                    'processed_by' => 'Stripe',
-                    'tax' => 0,
-                    'totalAmount' => $request->amount ?? 0,
-                ]);
-
                 // $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();
@@ -641,17 +626,17 @@ class PaymentController extends Controller
             $totalAmountInCents = $totalAmount * 100;
 
             $paymentData = [
-                'first_name' => $request->first_name,
-                'last_name' => $request->last_name,
-                'email' => $request->email,
-                'type' => $request->type,
-                'program' => $request->program,
-                'amount' => $amount,
-                'shipment_cost' => $shipmentCost,
+                'first_name' => $request->first_name ?? '***',
+                'last_name' => $request->last_name ?? '***',
+                'email' => $request->email ?? 'email@notfound',
+                'type' => $request->type ?? '***',
+                'program' => $request->program ?? '***',
+                'amount' => $amount ?? 0,
+                'shipment_cost' => $shipmentCost ?? 0,
                 'isRecurring' => $request->is_recurring ?? false,
                 'payment_date' => now(),
                 'tax' => $taxAmount ?? 0,
-                'totalAmount' => $totalAmount,
+                'totalAmount' => $totalAmount ?? 0,
             ];
 
             if ($request->is_recurring) {
