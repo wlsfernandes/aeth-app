@@ -22,12 +22,15 @@
                         <div class="form-row logo-social">
                             <div class="col-6">
                                 <div>
+
                                     <div>
+
                                         <img class="logo-size"
                                             src="{{ asset('assets/images/aeth_logo_transparent.png') }}"
                                             alt="AETH Logo">
                                     </div>
-                                </div>https://somosaeth.org/
+                                    <h5>https://somosaeth.org</h5>
+                                </div>
                             </div>
                             <div class="col-6">
                                 <div class="other-links no-bg-icon">
