@@ -27,7 +27,7 @@
                                             src="{{ asset('assets/images/aeth_logo_transparent.png') }}"
                                             alt="AETH Logo">
                                     </div>
-                                </div>
+                                </div>https://somosaeth.org/
                             </div>
                             <div class="col-6">
                                 <div class="other-links no-bg-icon">
@@ -51,7 +51,7 @@
                                 <button id="submit" type="submit" class="ibtn">Register now</button>
                             </div>
                         </form>
-                        <h5>Event will starts in</h5>
+                        <h5>It will be launching in...</h5>
                         <div class="time-counter form-row other-style">
                             <div class="days count col">
                                 <div class="num">6</div>
