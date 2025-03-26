@@ -167,7 +167,9 @@ class AdminController extends Controller
      */
     public function aethProgram()
     {
-        $portal_contents = PortalContent::where('program', 'AETH')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'AETH');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.aeth-program', compact('portal_contents'));
@@ -182,7 +184,9 @@ class AdminController extends Controller
      */
     public function antioquiaExclusive()
     {
-        $portal_contents = PortalContent::where('program', 'Antioquia')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'Antioquia');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.antioquia', compact('portal_contents'));
@@ -197,7 +201,9 @@ class AdminController extends Controller
      */
     public function capacityBuildingExclusive()
     {
-        $portal_contents = PortalContent::where('program', 'Capacity Building')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'Capacity Building');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.capacity-building', compact('portal_contents'));
@@ -212,7 +218,9 @@ class AdminController extends Controller
      */
     public function compellingPreachingExclusive()
     {
-        $portal_contents = PortalContent::where('program', 'Compelling Preaching')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'Compelling Preaching');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.compelling-preaching', compact('portal_contents'));
@@ -227,7 +235,9 @@ class AdminController extends Controller
      */
     public function gonzalezExclusive()
     {
-        $portal_contents = PortalContent::where('program', 'González Center')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'González Center');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.gonzalez', compact('portal_contents'));
@@ -242,7 +252,9 @@ class AdminController extends Controller
      */
     public function youngLideresExclusive()
     {
-        $portal_contents = PortalContent::where('program', 'Young Líderes')
+        $portal_contents = PortalContent::whereHas('programs', function ($query) {
+            $query->where('name', 'Young Líderes');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.young-lideres', compact('portal_contents'));
@@ -257,7 +269,9 @@ class AdminController extends Controller
      */
     public function articles()
     {
-        $portal_contents = PortalContent::where('category', 'Articles')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Articles');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.articles', compact('portal_contents'));
@@ -272,7 +286,9 @@ class AdminController extends Controller
      */
     public function bibleStudies()
     {
-        $portal_contents = PortalContent::where('category', 'Bible Studies')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Bible Studies');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.bible-studies', compact('portal_contents'));
@@ -287,7 +303,9 @@ class AdminController extends Controller
      */
     public function conference()
     {
-        $portal_contents = PortalContent::where('category', 'Conference')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Conference');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.conference', compact('portal_contents'));
@@ -302,7 +320,9 @@ class AdminController extends Controller
      */
     public function sermons()
     {
-        $portal_contents = PortalContent::where('category', 'Sermons')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Sermons');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.sermons', compact('portal_contents'));
@@ -317,7 +337,9 @@ class AdminController extends Controller
      */
     public function workshops()
     {
-        $portal_contents = PortalContent::where('category', 'Workshops')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Workshop');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.workshops', compact('portal_contents'));
@@ -332,7 +354,9 @@ class AdminController extends Controller
      */
     public function others()
     {
-        $portal_contents = PortalContent::where('category', 'Others')
+        $portal_contents = PortalContent::whereHas('categories', function ($query) {
+            $query->where('name', 'Others');
+        })
             ->orderBy('date_of_publication', 'desc')
             ->get();
         return view('pages.exclusive.others', compact('portal_contents'));

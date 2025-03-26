@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class PortalContent
- * 
+ *
  * Represents content published on the portal, such as media, articles, or resources.
  *
  * @package App\Models
@@ -67,5 +67,14 @@ class PortalContent extends Model
     ];
 
     protected $casts = ['date_of_publication' => 'datetime:Y-m-d'];
+
+    public function programs()
+    {
+        return $this->belongsToMany(Program::class, 'portal_content_program');
+    }
+    public function categories()
+    {
+        return $this->belongsToMany(PortalCategory::class, 'portal_content_category');
+    }
     use HasFactory;
 }
