@@ -82,6 +82,9 @@ class Post extends Model
         'file_url',
         'file_url_es',
         'file_url_ptBR',
+        'button_text_en',
+        'button_text_es',
+        'button_text_pt'
     ];
 
 

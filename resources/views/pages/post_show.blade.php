@@ -55,10 +55,10 @@
                     <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
                     <div class="d-flex justify-content-between align-items-center w-100">
     @if($post->file_url)
-    <a href="{{$post->file_url}}" target="_blank" class="btn btn-primary btn-md">Download English here</a>
+    <a href="{{$post->file_url}}" target="_blank" class="btn btn-primary btn-md">{{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}</a>
     @endif
     @if($post->file_url_es)
-    <a href="{{$post->file_url_es}}" target="_blank" class="btn btn-primary btn-md">Descargar Español aquí</a>
+    <a href="{{$post->file_url_es}}" target="_blank" class="btn btn-primary btn-md">{{ $post->button_text_es ? $post->button_text_es : 'Descargar Español aquí' }}</a>
     @endif
 </div>
 
