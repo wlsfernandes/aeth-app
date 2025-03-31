@@ -43,7 +43,36 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
 
-    protected $fillable = ['name', 'description', 'price', 'stock', 'sku', 'type'];
+    protected $fillable = [
+
+        'book_no', //string
+        'name', //title 
+        'author', //string
+        'publisher', //string
+        'year_of_publication', // date
+        'shelf_location', //string
+        'storage_1_office', //number
+        'storage_2_almacen', // number
+        'stock', // number
+        'printer_cost',  // money
+        'price', // change position to after printer_cost 
+        'isbn', //string
+        'notes', //text
+        'costo_invertido_q', // money
+        'costo_y_venta', // money
+        'margen', // % percente
+        'porcentaje_margen', //string
+        'contrato_editorial', //string
+        'contrato_regalias', //string
+        'permiso', //string
+        'reimpresion', //string
+        'stop', //string
+        'baja_destruccion', //string
+        'description', // string default ''
+        'weight', //number
+        'image', //string
+        'notes',
+    ];
 
     public function cartItems()
     {
