@@ -20,9 +20,9 @@
         <div class="col-md-12">
             <div class="card mb-12 box-shadow">
                 <img class="card-img-top"
-                    src="{{ $post->image_url }}"
-                    alt="{{ $post->title_en }}">
-                <div class="card-body">
+                     src="{{ $post->image_url }}"
+                     alt="{{ $post->title_en }}">
+                <div class="card-body" style="min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
                     <h2>
                         @switch(App::getLocale())
                             @case('es')
@@ -50,24 +50,31 @@
                     </p>
 
                     <small class="text-muted">{{ $post->date }}</small>
-                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
-                    @if($post->external_link)
-    <a href="{{$post->external_link}}" target="_blank" class="btn btn-danger btn-md">{{ $post->external_link_button ?? 'Click here to access' }}</a>
-    @endif
-                        </div>
-                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
-                    <div class="d-flex justify-content-between align-items-center w-100">
-    @if($post->file_url)
-    <a href="{{$post->file_url}}" target="_blank" class="btn btn-primary btn-md">{{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}</a>
-    @endif
-    @if($post->file_url_es)
-    <a href="{{$post->file_url_es}}" target="_blank" class="btn btn-primary btn-md">{{ $post->button_text_es ? $post->button_text_es : 'Descargar Español aquí' }}</a>
-    @endif
-</div>
 
+                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
+                        @if($post->external_link)
+                            <a href="{{ $post->external_link }}" target="_blank" class="btn btn-danger btn-md">
+                                {{ $post->external_link_button ?? 'Click here to access' }}
+                            </a>
+                        @endif
+                    </div>
+                    @if($post->file_url)
+                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
+                    <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
+                                    {{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}
+                                </a>
 </div>
-                </div>
-            </div>
+                    @endif
+                    @if($post->file_url_es)
+                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
+                    <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
+                                    {{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}
+                                </a>
+</div>
+                    @endif
+                   
+                </div> <!-- end card-body -->
+            </div> <!-- end card -->
         </div>
     </div>
 </div>
