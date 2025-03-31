@@ -40,10 +40,13 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
-                                                <div class="icon-box"><i class="icon-5"></i></div>
-                                                <h3>Join our Team</h3>
+                                                <a href="https://www.eventbrite.com/e/8th-justo-and-catherine-gonzalez-lecture-series-tickets-1270760511899?aff=oddtdtcreator"
+                                                    target="blank">
+                                                    <div class="icon-box"><i
+                                                            class="bi bi-person-plus font-size-20"></i></i></i></div>
+                                                    <h3>@lang('header.register_here')</h3>
+                                                </a>
                                             </div>
-                                            <!-- <p>Amet minim mollit no deserunt ulamco sit enim.</p>-->
                                         </div>
                                     </div>
                                 </div>
@@ -237,8 +240,9 @@
                     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="00ms" data-wow-duration="1500ms">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="#"><img src="assets/images/gallery/certification.jpg"
-                                            alt=""></a></figure>
+                                <figure class="image"><a href="#"><img src="assets/images/gallery/Identity.jpg" alt=""
+                                            style="width:470px;height:auto;"></a>
+                                </figure>
                                 <div class="category"><a href="#">@lang('pages.lectures.p4')</a></div>
                             </div>
                             <div class="lower-content">
@@ -254,8 +258,8 @@
                     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="300ms" data-wow-duration="1500ms">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="#"><img src="assets/images/gallery/teachers.jpg"
-                                            style="width:470px;height:270px;"></a></figure>
+                                <figure class="image"><a href="#"><img src="assets/images/gallery/Trauma.jpg"
+                                            style="width:470px;height:auto;"></a></figure>
                                 <div class="category"><a href="#">@lang('pages.lectures.p6')</a></div>
                             </div>
                             <div class="lower-content">
@@ -272,8 +276,8 @@
                     <div class="cause-block-one wow fadeInUp animated" data-wow-delay="600ms" data-wow-duration="1500ms">
                         <div class="inner-box">
                             <div class="image-box">
-                                <figure class="image"><a href="#"><img src="assets/images/gallery/meet1.jpg"
-                                            style="width:470px;height:270px;"></a></figure>
+                                <figure class="image"><a href="#"><img src="assets/images/gallery/Technique .jpg"
+                                            style="width:470px;height:auto;"></a></figure>
                                 <div class="category"><a href="#">@lang('pages.lectures.p8')</a></div>
                             </div>
                             <div class="lower-content">
