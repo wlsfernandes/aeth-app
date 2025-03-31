@@ -52,6 +52,35 @@
         justify-content: center;
         align-items: center;
     }
+
+    .lecture-series-pulse {
+        position: relative;
+        color: orange;
+        font-weight: bold;
+    }
+
+
+
+    .lecture-series-pulse .rounded-circle {
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            transform: scale(0.95);
+            opacity: 1;
+        }
+
+        70% {
+            transform: scale(1.3);
+            opacity: 0.7;
+        }
+
+        100% {
+            transform: scale(0.95);
+            opacity: 1;
+        }
+    }
 </style>
 
 <body>
@@ -220,6 +249,7 @@
                                     <li class="current">
                                         <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
                                     </li>
+
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
                                             style="pointer-events: none;">@lang('header.donations')</a>
@@ -230,6 +260,17 @@
                                             </li>
 
                                         </ul>
+                                    </li>
+                                    <li class="current">
+                                        <a href="{{ route('lectureSeries2025') }}" class="lecture-series-pulse">
+                                            <span class="position-relative">
+                                                Lecture Series 2025
+                                                <span
+                                                    class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                                                    <span class="visually-hidden"></span>
+                                                </span>
+                                            </span>
+                                        </a>
                                     </li>
                                     <li class="current">
                                         <a href="{{ route('memberships') }}"><i class="bi bi-person"></i>
