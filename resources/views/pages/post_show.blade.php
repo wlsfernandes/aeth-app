@@ -53,6 +53,11 @@
 
                     <small class="text-muted">{{ $post->date }}</small>
                     <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
+                    @if($post->external_link)
+    <a href="{{$post->external_link}}" target="_blank" class="btn btn-danger btn-md">{{ $post->external_link_button ?? 'Click here to access' }}</a>
+    @endif
+                        </div>
+                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
                     <div class="d-flex justify-content-between align-items-center w-100">
     @if($post->file_url)
     <a href="{{$post->file_url}}" target="_blank" class="btn btn-primary btn-md">{{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}</a>
