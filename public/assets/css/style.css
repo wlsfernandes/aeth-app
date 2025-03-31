@@ -477,7 +477,7 @@ img {
 .pagination li {
   position: relative;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .pagination li:last-child {
@@ -487,14 +487,14 @@ img {
 .pagination li a {
   position: relative;
   display: inline-block;
-  font-size: 18px;
+  font-size: 9px;
   font-weight: 500;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
+  height: 30px;         /* Reduced from 60px */
+  width: 30px;          /* Reduced from 60px */
+  line-height: 30px;    /* Reduced from 60px */
   background: #ffffff;
   font-family: 'Poppins', sans-serif;
-  border: 1px solid #E5E5E5;
+  border: 0.5px solid #E5E5E5;
   text-align: center;
   color: #333;
   z-index: 1;
@@ -504,7 +504,7 @@ img {
 
 .pagination li a:hover,
 .pagination li a.current {
-  box-shadow: 0px 15px 40px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 7.5px 20px 5px rgba(0, 0, 0, 0.1); 
   color: #fff;
 }
 
