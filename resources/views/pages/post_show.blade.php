@@ -26,38 +26,38 @@
                     <h2>
                         @switch(App::getLocale())
                             @case('es')
-                                {{ $post->title_es }}
+                                {{ $post->title_es ?? '' }}
                                 @break
                             @case('pt')
-                                {{ $post->title_pt }}
+                                {{ $post->title_pt ?? '' }}
                                 @break
                             @default
-                                {{ $post->title_en }}
+                                {{ $post->title_en ?? '' }}
                         @endswitch
                     </h2>
 
                     <p class="card-text" style="margin-top: 50px;">
                         @switch(App::getLocale())
                             @case('es')
-                                {{ $post->content_es }}
+                                {{ $post->content_es ?? '' }}
                                 @break
                             @case('pt')
-                                {{ $post->content_pt }}
+                                {{ $post->content_pt ?? ''}}
                                 @break
                             @default
-                                {{ $post->content_en }}
+                                {{ $post->content_en ?? '' }}
                         @endswitch
                     </p>
                     <p class="card-text" style="margin-top: 50px;">
                         @switch(App::getLocale())
                             @case('es')
-                                {{ $post->summary_es }}
+                                {{ $post->summary_es ?? ''}}
                                 @break
                             @case('pt')
-                                {{ $post->summary_pt }}
+                                {{ $post->summary_pt ?? ''}}
                                 @break
                             @default
-                                {{ $post->summary_en }}
+                                {{ $post->summary_en ?? ''}}
                         @endswitch
                     </p>
                     <small class="text-muted">{{ $post->date }}</small>
