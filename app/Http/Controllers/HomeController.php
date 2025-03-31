@@ -40,8 +40,8 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
 
-        //     return view('home', compact('articles', 'events'));
-        return view('soon', compact('articles', 'events'));
+           return view('home', compact('articles', 'events'));
+    //    return view('soon', compact('articles', 'events'));
     }
 
     /**

@@ -17,16 +17,11 @@
                 <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
                 <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
-                <li data-target="#carouselExampleIndicators" data-slide-to="5"></li>
             </ol>
             <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="assets/images/banner/Cuaresma Web Banner Spa.jpg"
-                            alt="AETH Cuaresma">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100" src="assets/images/banner/banner3.jpeg" alt="Third slide">
+                    <img class="d-block w-100" src="assets/images/banner/banner3.jpeg" alt="Third slide">
                     </div>
                     <div class="carousel-item ">
                         <img class="d-block w-100" src="assets/images/banner/Banner-Website-Impactando.jpg" alt="AETH">
