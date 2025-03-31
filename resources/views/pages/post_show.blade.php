@@ -19,11 +19,9 @@
     <div class="row">
         <div class="col-md-12">
             <div class="card mb-12 box-shadow">
-                <img
-                    class="card-img-top"
+                <img class="card-img-top"
                     src="{{ $post->image_url }}"
-                    alt="{{ $post->title_en }}"
-                >
+                    alt="{{ $post->title_en }}">
                 <div class="card-body">
                     <h2>
                         @switch(App::getLocale())
