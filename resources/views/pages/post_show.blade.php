@@ -48,7 +48,18 @@
                                 {{ $post->content_en }}
                         @endswitch
                     </p>
-
+                    <p class="card-text" style="margin-top: 50px;">
+                        @switch(App::getLocale())
+                            @case('es')
+                                {{ $post->summary_es }}
+                                @break
+                            @case('pt')
+                                {{ $post->summary_pt }}
+                                @break
+                            @default
+                                {{ $post->summary_en }}
+                        @endswitch
+                    </p>
                     <small class="text-muted">{{ $post->date }}</small>
 
                     <div class="d-flex justify-content-center align-items-center" style="margin-top: 75px;">
