@@ -5348,6 +5348,13 @@ input[type="button"].btn-block {
 .card-img-top {
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+  max-height: 400px;
+  /* Optional */
 }
 
 .card-img,
