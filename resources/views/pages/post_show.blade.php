@@ -58,19 +58,21 @@
                             </a>
                         @endif
                     </div>
+                    
                     @if($post->file_url)
-                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
-                    <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
-                                    {{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}
-                                </a>
-</div>
+                        <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
+                            <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
+                                {{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}
+                            </a>
+                        </div>
                     @endif
+                    
                     @if($post->file_url_es)
-                    <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
-                    <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
-                                    {{ $post->button_text_en ? $post->button_text_en : 'Download English here' }}
-                                </a>
-</div>
+                        <div class="d-flex justify-content-center align-items-center" style="margin-top: 50px;">
+                            <a href="{{ $post->file_url_es }}" target="_blank" class="btn btn-primary btn-md">
+                                {{ $post->button_text_es ? $post->button_text_es : 'Descargar Español aquí' }}
+                            </a>
+                        </div>
                     @endif
                    
                 </div> <!-- end card-body -->
