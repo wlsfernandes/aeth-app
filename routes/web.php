@@ -16,8 +16,9 @@ use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\PayPalController;
-use App\Services\UPSService;
-
+use Spatie\Sitemap\Sitemap;
+use Spatie\Sitemap\Tags\Url;
+use Illuminate\Support\Facades\File;
 
 
 
@@ -206,6 +207,84 @@ Route::middleware('auth')->group(function () {
 
 });
 
+
+
+Route::get('/sitemap', function () {
+    $sitemap = Sitemap::create();
+
+    // Static Pages
+    $sitemap->add(Url::create('/'));
+    $sitemap->add(Url::create('/about-us'));
+    $sitemap->add(Url::create('/our-team'));
+    $sitemap->add(Url::create('/open-positions'));
+    $sitemap->add(Url::create('/blog'));
+    $sitemap->add(Url::create('/contact'));
+    $sitemap->add(Url::create('/services'));
+    $sitemap->add(Url::create('/certification-program'));
+    $sitemap->add(Url::create('/request-certification'));
+    $sitemap->add(Url::create('/certified-institutions'));
+    $sitemap->add(Url::create('/memberships'));
+    $sitemap->add(Url::create('/antioquia'));
+    $sitemap->add(Url::create('/resource-center'));
+    $sitemap->add(Url::create('/young-leaders'));
+    $sitemap->add(Url::create('/compelling-preaching'));
+    $sitemap->add(Url::create('/lecture-series-2025'));
+    $sitemap->add(Url::create('/help-desk'));
+    $sitemap->add(Url::create('/donations'));
+    $sitemap->add(Url::create('/aeth-fund'));
+    $sitemap->add(Url::create('/gonzalez-center'));
+    $sitemap->add(Url::create('/capacity-building'));
+    $sitemap->add(Url::create('/capacity-building/application'));
+    $sitemap->add(Url::create('/web-application'));
+    $sitemap->add(Url::create('/testimonials'));
+    $sitemap->add(Url::create('/post'));
+    $sitemap->add(Url::create('/events'));
+    $sitemap->add(Url::create('/certification'));
+    $sitemap->add(Url::create('/renew'));
+    $sitemap->add(Url::create('/bookstore'));
+    $sitemap->add(Url::create('/payment'));
+    $sitemap->add(Url::create('/payment/success'));
+    $sitemap->add(Url::create('/payment/error'));
+
+    // Team Members
+    $teamSlugs = [
+        'jessica-lugo',
+        'oscar-merlo',
+        'glorie-acevedo',
+        'marta-luna',
+        'luz-ortiz',
+        'ondina-gonzalez',
+        'wilson-fernandes-junior',
+        'shaila-munoz',
+        'coralys-santos',
+        'sophia-porter',
+        'jeremy-villoch',
+        'yaheli-vargas',
+        'maylin-escala',
+        'yajaira-ruiz',
+        'juan-martinez'
+    ];
+    foreach ($teamSlugs as $slug) {
+        $sitemap->add(Url::create("/{$slug}"));
+    }
+
+    // Dynamic posts (optional: replace with actual slugs from DB)
+    $posts = \App\Models\Post::all();
+    foreach ($posts as $post) {
+        $url = Url::create("/posts/{$post->slug}");
+
+        if (!is_null($post->updated_at)) {
+            $url->setLastModificationDate(new \DateTime($post->updated_at));
+        }
+
+        $sitemap->add($url);
+    }
+
+    // Save to public folder
+    $sitemap->writeToFile(public_path('sitemap.xml'));
+
+    return '✅ Sitemap generated at /sitemap.xml';
+});
 
 
 require __DIR__ . '/auth.php';
