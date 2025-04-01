@@ -14,10 +14,12 @@
             @foreach($posts as $post)
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{ $post->image_url }}"
-                            srcset="{{ $post->image_url }} 1x, {{ $post->image_url_2x ?? $post->image_url }} 2x"
-                            alt="{{ $post->title_en }}"
-                            style="width: 100%; height: auto; display: block; object-fit: cover; object-position: left top;">
+                        <a href="{{ route('post.show', $post->slug) }}">
+                            <img class="card-img-top" src="{{ $post->image_url }}"
+                                srcset="{{ $post->image_url }} 1x, {{ $post->image_url_2x ?? $post->image_url }} 2x"
+                                alt="{{ $post->title_en }}"
+                                style="width: 100%; height: auto; display: block; object-fit: cover; object-position: left top;">
+                        </a>
                         <div class="card-body d-flex flex-column"
                             style="min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
                             <div class="d-flex flex-column flex-grow-1">
