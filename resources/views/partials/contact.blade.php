@@ -1,7 +1,7 @@
 <section class="contact-section sec-pad">
     <div class="auto-container">
         <div class="sec-title centred mb_55">
-            <span class="sub-title calendar">@lang('header.contact_us')</span>
+            <span class="sub-title calendar"><b>@lang('header.contact_us')</b></span>
             <!--  <h2>Events</h2> -->
         </div>
         <!-- iframe div -->

@@ -1,14 +1,15 @@
 <section class="event-section bg-color-1" style="background-color:#f5f1fb">
     <div class="auto-container">
         <div class="sec-title mb_55 centred">
-            <span class="sub-title">@lang('messages.our_blog')</span>
-            <h2 style="color:#4a235a ">@lang('messages.articles_news')</h2>
+            <span class="sub-title"><b>@lang('messages.our_blog')</b></span>
+            <h4 style="color:#4a235a ">@lang('messages.articles_news')</h4>
         </div>
         <div class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
             @foreach($articles as $article)
                 <div class="events-block-one">
                     <div class="inner-box">
-                        <figure class="image-box"><img src="{{ $article->image_url }}" alt="{{ $article->title_en }}"></figure>
+                        <figure class="image-box"><img src="{{ $article->image_url }}" alt="{{ $article->title_en }}">
+                        </figure>
                         <div class="content-box">
                             <h3>
                                 @if(App::getLocale() == 'es')
