@@ -60,30 +60,45 @@
 
     .lecture-series-pulse {
         position: relative;
-        color: orange;
+        color: #4a235a;
         font-weight: bold;
+        text-align: center;
     }
 
-
-
     .lecture-series-pulse .rounded-circle {
-        animation: pulse 1.5s infinite;
+        background-color: #4a235a;
+        width: 16px;
+        height: 16px;
+        display: inline-block;
+        border-radius: 50%;
+        animation: pulse 1.8s infinite ease-in-out;
+        box-shadow: 0 0 8px rgba(74, 35, 90, 0.5);
+    }
+
+    .pulse-icon {
+        font-size: 1rem;
+        animation: pulse 1.5s infinite ease-in-out;
+        color: #f39c12;
+        /* Deep warm orange - better than plain yellow */
     }
 
     @keyframes pulse {
         0% {
-            transform: scale(0.95);
-            opacity: 1;
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 0.9;
+            text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
         }
 
-        70% {
-            transform: scale(1.3);
-            opacity: 0.7;
+        50% {
+            transform: scale(1.4) translate(-50%, -50%);
+            opacity: 0.5;
+            text-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
         }
 
         100% {
-            transform: scale(0.95);
-            opacity: 1;
+            transform: scale(1) translate(-50%, -50%);
+            opacity: 0.9;
+            text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
         }
     }
 </style>
@@ -267,16 +282,14 @@
                                         </ul>
                                     </li>
                                     <li class="current">
-                                        <a href="{{ route('lectureSeries2025') }}" class="lecture-series-pulse">
-                                            <span class="position-relative">
-                                                Lecture Series 2025
-                                                <span
-                                                    class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
-                                                    <span class="visually-hidden"></span>
-                                                </span>
-                                            </span>
+                                        <a href="{{ route('lectureSeries2025') }}"
+                                            class="lecture-series-pulse d-inline-flex align-items-center">
+                                            <span class="me-2">Lecture Series 2025</span>
+                                            <i class="bi bi-star-fill pulse-icon ms-1"></i>
                                         </a>
                                     </li>
+
+
                                     <li class="current">
                                         <a href="{{ route('memberships') }}"><i class="bi bi-person"></i>
                                             @lang('header.signup_member')</a>
@@ -306,7 +319,7 @@
 
 
                         <a href="{{ route('login') }}" class="btn btn-primary"
-                            style="background: linear-gradient(to right,#4a235a, #a569bd, #e8daef); border-color: #4a235a; color: #fff;">
+                            style="background: linear-gradient(to right,#4a235a, #a569bd); border-color: #4a235a; color: #fff;">
                             <i class="bi bi-box-arrow-in-right me-2"></i> Login
                         </a>
 

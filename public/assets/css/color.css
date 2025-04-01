@@ -33,7 +33,8 @@
 }
 
 .theme-btn-one {
-  background: #4a235a;
+  background: linear-gradient(to right, #4a235a, #a569bd);
+
 }
 
 .donate-content .donate-option .donate-list :checked+label {
@@ -108,7 +109,7 @@
 }
 
 .team-block-one .inner-box .image-box .image {
-  background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
+  background: linear-gradient(to right, #4a235a, #a569bd);
   border-color: #4a235a;
   color: #fff;
 }
@@ -123,7 +124,7 @@
 }
 
 .testimonial-section {
-  background: linear-gradient(to right, #e8daef, #a569bd, #4a235a);
+  background: linear-gradient(to right, #a569bd, #4a235a);
   border-color: #4a235a;
   color: #fff;
 }
@@ -202,7 +203,7 @@
 }
 
 .accordion-box .block.active-block {
-  background: #4a235a;
+  background: none;
 }
 
 .cta-section .inner-box h3 {
@@ -246,7 +247,7 @@
 }
 
 .cta-style-two {
-  background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
+  background: linear-gradient(to right, #4a235a, #a569bd);
 }
 
 .cta-style-two .inner-box .theme-btn-one:hover {

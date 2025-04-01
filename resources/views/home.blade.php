@@ -69,7 +69,8 @@
         </div>
     </section>
 
-    <section class="clients-section">
+    <section class="clients-section"
+        style="background: linear-gradient(to right,#4a235a, #a569bd); border-color: #4a235a; color: #fff;">
         <div class="auto-container">
             <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
                 <div class="client-logo-item">
