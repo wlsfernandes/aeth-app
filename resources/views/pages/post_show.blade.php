@@ -45,12 +45,13 @@
                 </div>
 
                 {{-- Image --}}
-                <img class="card-img-top mt-4"
+                <img class="card-img-top" style="max-height:600px"
                      src="{{ $post->image_url }}"
                      alt="{{ $post->title_en }}">
 
                 {{-- Content --}}
-                <div class="card-body" style="min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
+       
+                <div class="card-body">
                     <p class="card-text mt-4">
                         @switch(App::getLocale())
                             @case('es')
