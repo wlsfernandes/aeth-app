@@ -480,3 +480,16 @@
 .contact-section .form-inner form .form-group textarea:focus {
   border-color: #4a235a !important;
 }
+
+.btn-gradient {
+  background: linear-gradient(to right, #4a235a, #a569bd);
+  color: #fff !important;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-gradient:hover {
+  opacity: 0.9;
+  color: #fff !important;
+  text-decoration: none;
+}

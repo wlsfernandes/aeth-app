@@ -10,15 +10,15 @@
     <style>
         .gradient-custom-2 {
             background: #fccb90;
-            background: -webkit-linear-gradient(to right, #4a235a, #a569bd, #e8daef);
-            background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
+            background: -webkit-linear-gradient(to right, #4a235a, #a569bd);
+            background: linear-gradient(to right, #4a235a, #a569bd);
         }
 
         /*  @media (min-width: 768px) {
-                    .gradient-form {
-                        height: 100vh !important;
-                    }
-                } */
+                                        .gradient-form {
+                                            height: 100vh !important;
+                                        }
+                                    } */
 
         @media (min-width: 769px) {
             .gradient-custom-2 {

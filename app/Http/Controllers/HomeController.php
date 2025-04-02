@@ -30,6 +30,7 @@ class HomeController extends Controller
                 $query->where('name', 'blog');
             })
             ->orderBy('published_at', 'desc')
+            ->limit(3)
             ->get();
 
         $events = Post::where('published', true)

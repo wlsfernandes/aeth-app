@@ -323,8 +323,7 @@
 
 
 
-                        <a href="{{ route('login') }}" class="btn btn-primary"
-                            style="background: linear-gradient(to right,#4a235a, #a569bd); border-color: #4a235a; color: #fff;">
+                        <a href="{{ route('login') }}" class="btn btn-sm btn-gradient">
                             <i class="bi bi-box-arrow-in-right me-2"></i> Login
                         </a>
 

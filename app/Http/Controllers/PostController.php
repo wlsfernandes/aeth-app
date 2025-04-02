@@ -24,7 +24,7 @@ class PostController extends Controller
                 $query->where('name', 'blog');
             })
             ->orderBy('published_at', 'desc')
-            ->paginate(3);
+            ->paginate(6);
 
         return view('pages.post', compact('posts'));
     }

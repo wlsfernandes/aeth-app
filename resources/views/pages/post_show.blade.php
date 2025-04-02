@@ -90,7 +90,7 @@
                     {{-- Download Buttons --}}
                     @if($post->file_url)
                         <div class="d-flex justify-content-center mt-4">
-                            <a href="{{ $post->file_url }}" target="_blank" class="btn btn-primary btn-md">
+                            <a href="{{ $post->file_url }}" target="_blank" class="btn btn-sm btn-gradient">
                                 {{ $post->button_text_en ?? 'Download English here' }}
                             </a>
                         </div>
@@ -98,7 +98,7 @@
 
                     @if($post->file_url_es)
                         <div class="d-flex justify-content-center mt-4">
-                            <a href="{{ $post->file_url_es }}" target="_blank" class="btn btn-primary btn-md">
+                            <a href="{{ $post->file_url_es }}" target="_blank" class="btn btn-sm btn-gradient">
                                 {{ $post->button_text_es ?? 'Descargar Español aquí' }}
                             </a>
                         </div>

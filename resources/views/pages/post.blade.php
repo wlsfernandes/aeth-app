@@ -7,58 +7,58 @@
 @section('meta-keywords', 'blog, posts, news')
 
 @section('content')
+    <div class="container my-5">
+        <div class="sec-title mb_55 centred">
+            <a href="{{ route('post') }}"> <span class="sub-title"><b>@lang('messages.our_blog')</b></span>
+                <h4 style="color:#4a235a ">@lang('messages.articles_news')</h4>
+            </a>
+        </div>
 
-
-    <div class="container" style="margin-top:50px;">
-        <div class="row">
+        <div class="row g-4">
             @foreach($posts as $post)
-                <div class="col-md-4">
-                    <div class="card mb-4 box-shadow">
+                <div class="col-md-6 col-lg-4" style="margin-bottom:48px;">
+                    <div class="card h-100 shadow-sm border-0">
                         <a href="{{ route('post.show', $post->slug) }}">
-                            <img class="card-img-top" src="{{ $post->image_url }}"
+                            <img src="{{ $post->image_url }}"
                                 srcset="{{ $post->image_url }} 1x, {{ $post->image_url_2x ?? $post->image_url }} 2x"
-                                alt="{{ $post->title_en }}"
-                                style="width: 100%; height: auto; display: block; object-fit: cover; object-position: left top;">
+                                class="card-img-top" alt="{{ $post->title_en }}"
+                                style="height: 400px; object-fit: cover;object-position: left top;">
                         </a>
-                        <div class="card-body d-flex flex-column"
-                            style="min-height: 300px; display: flex; flex-direction: column; justify-content: space-between;">
-                            <div class="d-flex flex-column flex-grow-1">
-                                <p class="card-text" style="margin-bottom:15px;">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">
+                                @if(App::getLocale() == 'es')
+                                    {{ $post->title_es }}
+                                @elseif(App::getLocale() == 'pt')
+                                    {{ $post->title_pt }}
+                                @else
+                                    {{ $post->title_en }}
+                                @endif
+                            </h5>
+                            <p class="text-muted small flex-grow-1">
+                                <i>
                                     @if(App::getLocale() == 'es')
-                                        {{ $post->title_es }}
+                                        {{ Str::limit($post->summary_es, 120, '...') }}
                                     @elseif(App::getLocale() == 'pt')
-                                        {{ $post->title_pt }}
+                                        {{ Str::limit($post->summary_pt, 120, '...') }}
                                     @else
-                                        {{ $post->title_en }}
+                                        {{ Str::limit($post->summary_en, 120, '...') }}
                                     @endif
-                                </p>
-                                <small class="text-muted">
-                                    <i>
-                                        @if(App::getLocale() == 'es')
-                                            {{ Str::limit($post->summary_es, 120, '...') }}
-                                        @elseif(App::getLocale() == 'pt')
-                                            {{ Str::limit($post->summary_pt, 120, '...') }}
-                                        @else
-                                            {{ Str::limit($post->summary_en, 120, '...') }}
-                                        @endif
-                                    </i>
-                                </small>
-                            </div>
+                                </i>
+                            </p>
                             <div class="d-flex justify-content-between align-items-center mt-3">
-                                <div class="btn-group">
-                                    <a href="{{ route('post.show', $post->slug) }}"
-                                        class="btn btn-sm btn-outline-secondary">View</a>
-                                </div>
+                                <a href="{{ route('post.show', $post->slug) }}" class="btn btn-sm btn-gradient">
+                                    <i class="bi bi-box-arrow-in-right me-1"></i> @lang('messages.read_more')
+                                </a>
                                 <small class="text-muted">{{ $post->date }}</small>
                             </div>
                         </div>
                     </div>
                 </div>
-
             @endforeach
         </div>
 
-        <div class="pagination-wrapper centred">
+        {{-- ✅ Custom Pagination --}}
+        <div class="pagination-wrapper centred mt-5">
             <ul class="pagination clearfix">
                 @if ($posts->onFirstPage())
                     <li><a href="#" aria-disabled="true"><i class="icon-56"></i></a></li>
@@ -83,13 +83,15 @@
         </div>
     </div>
 
-    <section class="cta-style-two" style="margin-top:75px;">
+    {{-- CTA --}}
+    <section class="cta-style-two mt-5">
         <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
         <div class="auto-container">
             <div class="inner-box">
-
-                <h2><i class="bi bi-book" style="font-size: 1.5rem;color:#fff;"></i> @lang('messages.resources_grow'):</h2>
-                <br>
+                <h2>
+                    <i class="bi bi-book" style="font-size: 1.5rem; color: #fff;"></i>
+                    @lang('messages.resources_grow'):
+                </h2>
             </div>
         </div>
     </section>
