@@ -288,13 +288,18 @@
                                             <i class="bi bi-star-fill pulse-icon ms-1"></i>
                                         </a>
                                     </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-title" style="pointer-events: none;"><i
+                                                class="bi bi-person"></i> @lang('header.memberships')</a>
+                                        <ul>
+                                            <li><a href="{{ route('memberships') }}"><i class="bi bi-person-plus"></i>
+                                                    @lang('header.signup_member')</a></li>
+                                            <li><a href="{{ route('renew') }}"> <i class="bi bi-arrow-clockwise"></i>
+                                                    @lang('header.renew')</a>
+                                            </li>
 
-
-                                    <li class="current">
-                                        <a href="{{ route('memberships') }}"><i class="bi bi-person"></i>
-                                            @lang('header.signup_member')</a>
+                                        </ul>
                                     </li>
-
                                 </ul>
                             </div>
                         </nav>

@@ -420,10 +420,18 @@ class PaymentController extends Controller
     public function handleMembershipRenewPayment(Request $request)
     {
 
+        $validator = Validator::make($request->all(), [
+            'email' => 'required|email',
+            'first_name' => 'required|string',
+            'last_name' => 'required|string',
+        ]);
+
         DB::beginTransaction();
 
         try {
+
             $request->merge(['is_recurring' => true]); // Set All Memberships to be recurring payment
+
             $paymentResult = $this->_processPayment($request);
 
             if ($paymentResult['status'] === 'success') {

@@ -133,6 +133,44 @@
                                                 </li>
                                             </ul>
                                         </div>
+                                        <!-- new accordion line -->
+                                        <div class="accordion-inner">
+                                            <ul class="accordion-box">
+                                                <li class="accordion block">
+                                                    <div class="acc-btn">
+                                                        <div class="icon-outer"></div>
+                                                        <h3 style="color:#4a235a">{{ __('help.renew.title') }}</h3>
+                                                    </div>
+                                                    <div class="acc-content">
+                                                        <div class="text" style="text-align: center;">
+                                                            <h3>Step 1</h3>
+                                                            <p>{!! __('help.renew.step1.line1') !!}</p>
+                                                            <img src="assets/images/help/21.png" alt="Step 1"
+                                                                style="width: 100%; max-width: 600px;" />
+
+                                                            <h3>Step 2</h3>
+                                                            <p>{!! __('help.renew.step2.line1') !!}</p>
+                                                            <img src="assets/images/help/22.png" alt="Step 2"
+                                                                style="width: 100%; max-width: 600px;" />
+
+                                                            <h3>Step 3</h3>
+                                                            <p>{!! __('help.renew.step3.line1') !!}</p>
+                                                            <img src="assets/images/help/23.png" alt="Step 3"
+                                                                style="width: 100%; max-width: 600px;" />
+
+                                                            <h3>Step 4</h3>
+                                                            <p>{!! __('help.renew.step4.line1') !!}</p>
+                                                            <img src="assets/images/help/24.png" alt="Step 4"
+                                                                style="width: 100%; max-width: 600px;" />
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <!-- end accordion line -->
+
+
+
                                     </div>
                                 </div>
 

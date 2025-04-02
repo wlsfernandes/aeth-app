@@ -1,5 +1,6 @@
 <?php
 return [
+    'renew' => 'Renew',
     'register_here' => 'Register Here !',
     'info_button' => 'The payment button will be enabled once you have filled in all your personal information.',
     'totalAmount' => 'Total Amount',
@@ -39,7 +40,7 @@ return [
     'last_name' => 'Last Name',
     'email' => 'Email',
     'annual_fund' => 'Annual Fund Donation - AETH',
-    'signup_member' => 'Become a Member',
+    'signup_member' => 'New Member',
     'capacity_building' => 'Capacity Building',
     'personal_data' => 'Personal Information',
     'address' => 'Address Information',

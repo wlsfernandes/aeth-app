@@ -32,4 +32,21 @@ return [
 
     'step8.title' => 'Step 8: Access the Portal',
     'step8.line1' => 'Now you can log in anytime at <a href="https://somosaeth.org/login" target="_blank">https://somosaeth.org/login</a> using your new password to access all the content.',
+
+    'renew' => [
+        'title' => 'How to Renew Membership',
+        'step1' => [
+            'line1' => '1 - Go to <a href="https://somosaeth.org/renew" target="_blank">https://somosaeth.org/renew</a> or access the menu <strong>Memberships / Renew</strong>',
+        ],
+        'step2' => [
+            'line1' => '2 - Insert your First Name, Last Name, and Email, select the type of membership and click the <strong>Renew</strong> button.<br><strong>Important:</strong> You can renew only if your current membership is expired.',
+        ],
+        'step3' => [
+            'line1' => '3 - Insert your payment information and click <strong>Pay now</strong>',
+        ],
+        'step4' => [
+            'line1' => '4 - Congratulations, your membership is renewed. Now you can access our <strong>AETH Portal</strong>.',
+        ],
+    ],
+
 ];

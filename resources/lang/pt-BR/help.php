@@ -32,4 +32,20 @@ return [
 
     'step8.title' => 'Passo 8: Acesse o portal',
     'step8.line1' => 'Agora você pode acessar <a href="https://somosaeth.org/login" target="_blank">https://somosaeth.org/login</a> a qualquer momento com sua nova senha.',
+
+    'renew' => [
+        'title' => 'Como renovar a associação',
+        'step1' => [
+            'line1' => '1 - Vá para <a href="https://somosaeth.org/renew" target="_blank">https://somosaeth.org/renew</a> ou acesse o menu <strong>Associações / Renovar</strong>',
+        ],
+        'step2' => [
+            'line1' => '2 - Insira seu Nome, Sobrenome e E-mail, selecione o tipo de associação e clique no botão <strong>Renovar</strong>.<br><strong>Importante:</strong> Você só pode renovar se sua associação atual estiver expirada.',
+        ],
+        'step3' => [
+            'line1' => '3 - Insira suas informações de pagamento e clique em <strong>Pagar agora</strong>',
+        ],
+        'step4' => [
+            'line1' => '4 - Parabéns! Sua associação foi renovada. Agora você pode acessar nosso <strong>Portal AETH</strong>.',
+        ],
+    ],
 ];

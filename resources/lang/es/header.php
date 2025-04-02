@@ -1,5 +1,6 @@
 <?php
 return [
+    'renew' => 'Renovar',
     'register_here' => '¡Regístrate aquí!',
     'info_button' => 'El botón de pago se habilitará una vez que hayas completado toda tu información personal.',
     'totalAmount' => 'Monto Total',

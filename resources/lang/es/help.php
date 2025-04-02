@@ -32,4 +32,20 @@ return [
 
     'step8.title' => 'Paso 8: Acceda al portal',
     'step8.line1' => 'Ahora puede iniciar sesión en <a href="https://somosaeth.org/login" target="_blank">https://somosaeth.org/login</a> usando su nueva contraseña para acceder al contenido.',
+
+    'renew' => [
+        'title' => 'Cómo renovar la membresía',
+        'step1' => [
+            'line1' => '1 - Ve a <a href="https://somosaeth.org/renew" target="_blank">https://somosaeth.org/renew</a> o accede al menú <strong>Membresías / Renovar</strong>',
+        ],
+        'step2' => [
+            'line1' => '2 - Ingresa tu Nombre, Apellido y Correo electrónico, selecciona el tipo de membresía y haz clic en el botón <strong>Renovar</strong>.<br><strong>Importante:</strong> Solo puedes renovar si tu membresía actual está vencida.',
+        ],
+        'step3' => [
+            'line1' => '3 - Ingresa tu información de pago y haz clic en <strong>Pagar ahora</strong>',
+        ],
+        'step4' => [
+            'line1' => '4 - ¡Felicidades! Tu membresía ha sido renovada. Ahora puedes acceder a nuestro <strong>Portal AETH</strong>.',
+        ],
+    ],
 ];

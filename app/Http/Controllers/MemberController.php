@@ -10,7 +10,8 @@ use App\Services\PaymentService;
 use App\Models\User;
 use App\Models\Member;
 use Illuminate\Http\Request;
-
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
 use App\Mail\WelcomeEmail;
 use App\Models\ErrorLog;
@@ -68,8 +69,26 @@ class MemberController extends Controller
      * @return \Illuminate\View\View Returns the membership renewal payment page with the provided details.
      */
 
-    public function membershipRedirectRenewPayment(Request $request)
+    public function membershipRedirectRenewPayment(Request $request): View|RedirectResponse
     {
+
+        // Get the current logged-in user by session email
+        $user = User::where('email', $request->email)->first();
+
+        if (!$user) {
+            return redirect()->back()->with('error', 'User not found.');
+        }
+
+        $member = Member::where('user_id', $user->id)->first();
+
+        if (!$member) {
+            return redirect()->back()->with('error', 'Membership record not found.');
+        }
+
+        // Check if membership is still active
+        if ($member->membership_end_date && $member->membership_end_date >= now()->toDateString()) {
+            return redirect()->back()->with('error', 'Your membership is currently active. You cannot renew at this time.');
+        }
         $type = 'Membership';
         $program = 'AETH';
         $membership_plan = $request->input('membership_plan');
@@ -131,12 +150,12 @@ class MemberController extends Controller
     public function renew()
     {
         try {
-            $user = User::where('email', session('user_email'))->first();
-            $member = Member::where('user_id', $user->id)->first();
-            $email = $user->email;
-            $first_name = $member->first_name;
-            $last_name = $member->last_name;
-            return view('pages.renew', compact('email', 'first_name', 'last_name'));
+            //    $user = User::where('email', session('user_email'))->first();
+            //    $member = Member::where('user_id', $user->id)->first();
+            //  $email = $user->email;
+            //   $first_name = $member->first_name;
+            //    $last_name = $member->last_name;
+            return view('pages.renew');
 
 
         } catch (Exception $e) {
