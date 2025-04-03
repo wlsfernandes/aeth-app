@@ -12,7 +12,7 @@
 @section('content')
     <section class="page-title centred">
         <div
-            style="background-image: url(assets/images/gallery/8lseries.jpeg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+            style="background-image: url(assets/images/gallery/LS_25.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
 
     </section>
