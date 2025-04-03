@@ -18,8 +18,8 @@
 
     <div class="container py-5">
         <div class="text-center mb-5">
-            <img src="{{ asset('assets/images/logo/hispanic-initiative.png') }}" alt="NISHPLC Logo" class="img-fluid mb-3"
-                style="max-height: 250px;">
+            <!--  <img src="{{ asset('assets/images/logo/hispanic-initiative.png') }}" alt="NISHPLC Logo" class="img-fluid mb-3"
+                                    style="max-height: 250px;"> -->
             <blockquote class="blockquote fst-italic" style="color:#4a235a">
                 <i>{{ __('hispanic_initiative.verse') }}</i>
             </blockquote>
