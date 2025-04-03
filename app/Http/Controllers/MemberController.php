@@ -76,7 +76,7 @@ class MemberController extends Controller
         $user = User::where('email', $request->email)->first();
 
         if (!$user) {
-            return redirect()->back()->with('error', 'User not found.');
+            return redirect()->back()->with('error', 'User Email Account Membershipnot found.');
         }
 
         $member = Member::where('user_id', $user->id)->first();

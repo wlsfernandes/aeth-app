@@ -288,6 +288,10 @@ class HomeController extends Controller
     {
         return view('pages.help-desk');
     }
+    public function nishplc(): View
+    {
+        return view('pages.hispanic-initiative');
+    }
 
 
 }

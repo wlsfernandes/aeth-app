@@ -101,7 +101,9 @@ Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('may
 Route::get('/yajaira-ruiz', [TeamController::class, 'yajairaRuiz'])->name('yajaira-ruiz');
 Route::get('/juan-martinez', [TeamController::class, 'juanMartinez'])->name('juan-martinez');
 
+
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
+Route::get('/hispanic-initiative', [HomeController::class, 'nishplc'])->name('nishplc');
 
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');

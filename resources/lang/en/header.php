@@ -1,5 +1,6 @@
 <?php
 return [
+    'hispanic_initiative' => 'Hispanic Initiative',
     'renew' => 'Renew',
     'register_here' => 'Register Here !',
     'info_button' => 'The payment button will be enabled once you have filled in all your personal information.',
