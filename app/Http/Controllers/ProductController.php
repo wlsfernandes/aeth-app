@@ -19,18 +19,14 @@ class ProductController extends Controller
 
     public function bookstore(Request $request)
     {
-        \DB::enableQueryLog();
 
         $query = $request->input('search-field');
-        \Log::info('Search query received: ' . $query);
 
         $productsQuery = Product::where('stock', '>', 0);
 
         if ($query) {
             // Split the search query into words and remove any extra spaces.
             $words = array_filter(array_map('trim', explode(' ', $query)));
-            \Log::info('Search words:', $words);
-
             $productsQuery->where(function ($q) use ($words) {
                 foreach ($words as $word) {
                     // Use ilike for case-insensitive search in PostgreSQL.
@@ -42,10 +38,6 @@ class ProductController extends Controller
         // Log the final SQL query (before pagination)
         $querySql = $productsQuery->toSql();
         $queryBindings = $productsQuery->getBindings();
-        \Log::info('Final SQL Query:', [
-            'query' => $querySql,
-            'bindings' => $queryBindings,
-        ]);
 
         $products = $productsQuery->paginate(12);
         $categorys = Category::all();

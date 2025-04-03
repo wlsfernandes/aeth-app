@@ -31,7 +31,8 @@ class DigitalCollectionController extends Controller
     {
         try {
             // Retrieve all published digital collections
-            $digitalCollections = DigitalCollection::where('workflow', 'Published')->get();
+            $digitalCollections = DigitalCollection::where('workflow', 'Published')->paginate(12);
+
             return view('pages.gonzalez-acervo', compact('digitalCollections'));
         } catch (Exception $e) {
             // Log the error for debugging
@@ -41,5 +42,11 @@ class DigitalCollectionController extends Controller
             session()->now('error', 'An error occurred while fetching digitalCollections.');
             return redirect()->back();
         }
+    }
+
+    public function show($id)
+    {
+        $digitalCollection = DigitalCollection::findOrFail($id);
+        return view('pages.digital-collections-details', compact('digitalCollection'));
     }
 }

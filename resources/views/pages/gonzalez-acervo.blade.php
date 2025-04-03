@@ -1,95 +1,132 @@
-@extends('layouts.admin')
+@extends('layouts.app')
 
-@section('title', 'Admin Dashboard')
+@section('title', '#somosAETH | Bookstore')
+
+@section('meta-description', 'This is a brief description of the home page.')
+
+@section('meta-keywords', 'home, welcome, introduction')
+
+
+<!-- Content here -->
 
 @section('content')
-<!-- Page Title -->
-<section class="page-title centred">
-    <div class="bg-layer" style="background-image: url(assets/images/jc_background.jpg);"></div>
-    <div class="auto-container">
-        <div class="content-box">
-            <h1>González Center Member Access</h1>
-        </div>
-    </div>
-</section>
 
-
-<!-- shop-page-section -->
-<section class="shop-page-section">
-    <div class="auto-container">
-        <div class="row clearfix">
-            <div class="col-lg-3 col-md-12 col-sm-12 sidebar-side">
-                <div class="shop-sidebar">
-                    <div class="search-widget">
-                        <form action="shop.html" method="post">
-                            <div class="form-group">
-                                <input type="search" name="search-field" placeholder="Search" required="">
-                                <button type="submit"><i class="icon-1"></i></button>
+    <section class="shop-page-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-3 col-md-12 col-sm-12 sidebar-side">
+                    <div class="shop-sidebar">
+                        <div class="search-widget">
+                            <div class="widget-title">
+                                <h3>@lang('bookstore.search')</h3>
                             </div>
-                        </form>
-                    </div>
-                    <div class="category-widget">
-                        <div class="widget-title">
-                            <h3>Categories</h3>
+                            <form action="{{ route('bookstore') }}" method="GET">
+                                <div class="form-group">
+                                    <input type="search" name="search-field" placeholder="Search"
+                                        value="{{ request('search-field') }}" required>
+                                    <button type="submit"><i class="icon-1"></i></button>
+                                </div>
+                            </form>
                         </div>
-                        <ul class="category-list clearfix">
-                            <li><a href="shop-details.html">Decor</a></li>
-                            <li><a href="shop-details.html">Furnitures</a></li>
-                            <li><a href="shop-details.html">Clothing</a></li>
-                            <li><a href="shop-details.html">Electronics</a></li>
-                            <li><a href="shop-details.html">Accessories</a></li>
-                            <li><a href="shop-details.html">Uncategories</a></li>
-                        </ul>
+                        <div class="category-widget">
+                            <div class="widget-title">
+                                <h3>@lang('bookstore.categories')</h3>
+                            </div>
+                            <ul class="category-list clearfix">
+                                <li><a href="">xxxxxx</a></li>
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-9 col-md-12 col-sm-12 content-side">
+                <!-- list digitalCollection -->
+                <div class="col-lg-9 col-md-12 col-sm-12 content-side">
                     <div class="our-shop">
                         <div class="row clearfix">
-                        @foreach ($digitalCollections as $digitalCollection)
-                            <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
-                                <div class="shop-block-one">
-                                    <div class="inner-box">
-                                        <div class="image-box">
-                                            <figure class="image"><img src="{{  $digitalCollection->media}}"
-                                                    alt=""></figure>
-                                            <!--    <ul class="info clearfix">
-                                                    <li><a href="shop-details.html"><i class="icon-51"></i></a></li>
-                                                    <li><a href="assets/images/shop/shop-1.png" class="lightbox-image"
-                                                            data-fancybox="gallery"><i class="icon-52"></i></a></li>
-                                                </ul> -->
-                                            <div class="btn-box">
-                                                <a href="{{  $digitalCollection->downloadFile}}"  target="blank" class="theme-btn-one">Access Now</a>
+                            @forelse($digitalCollections as $digitalCollection)
+                                <div class="col-lg-4 col-md-6 col-sm-12 shop-block">
+                                    <div class="shop-block-one">
+                                        <div class="inner-box">
+                                            <div class="image-box">
+                                                <figure class="image">
+                                                    <img src="assets/images/shop/no_image.jpg"
+                                                        style="width: 300px; height: 370px; object-fit: cover; display: block;">
+                                                </figure>
+
+                                                <ul class="info clearfix">
+                                                    <li>
+                                                        <a href="{{ route('details', $digitalCollection->id) }}">
+                                                            <i class="icon-53"></i>
+                                                        </a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="{{ isset($digitalCollection->jpegPreviewPath) && $digitalCollection->jpegPreviewPath ? $digitalCollection->jpegPreviewPath : asset('assets/images/shop/no_image.jpg') }}"
+                                                            class="lightbox-image" data-fancybox="gallery">
+                                                            <div class="image-frame">
+                                                                <img src="{{ isset($digitalCollection->jpegPreviewPath) && $digitalCollection->jpegPreviewPath ? $digitalCollection->jpegPreviewPath : asset('assets/images/shop/no_image.jpg') }}"
+                                                                    alt="digitalCollection Image"
+                                                                    class="digitalCollection-image">
+                                                            </div>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="btn-box">
+                                                    <a href="{{ route('details', $digitalCollection->id) }}"
+                                                        class="theme-btn-one">View Details</a>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="lower-content">
-                                            <h4><a href="shop-details.html">{{ $digitalCollection->title }}</a></h4>
-                                            <ul class="rating clearfix">
-                                                <li><i class="icon-53"></i></li>
-                                                <li><i class="icon-53"></i></li>
-                                                <li><i class="icon-53"></i></li>
-                                                <li><i class="icon-53"></i></li>
-                                                <li><i class="icon-53"></i></li>
-                                            </ul>
+                                            <div class="lower-content">
+                                                <h4><a
+                                                        href="{{ route('details', $digitalCollection->id) }}">{{ $digitalCollection->title }}</a>
+                                                </h4>
+                                                <div class="rating-box">
+                                                    <ul class="rating clearfix">
+                                                        <li><i class="icon-53"></i></li>
+                                                        <li><i class="icon-53"></i></li>
+                                                        <li><i class="icon-53"></i></li>
+                                                        <li><i class="icon-53"></i></li>
+                                                        <li><i class="icon-53"></i></li>
+                                                    </ul>
+                                                </div>
+                                                <h5>${{ number_format($digitalCollection->price, 2) }}</h5>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            @endforeach
+                            @empty
+                                <p class="text-center">@lang('bookstore.no_digitalCollections')</p>
+                            @endforelse
                         </div>
                     </div>
-               
-                <div class="pagination-wrapper centred">
-                    <ul class="pagination clearfix">
-                        <li><a href="shop.html"><i class="icon-56"></i></a></li>
-                        <li><a href="shop.html" class="current">1</a></li>
-                        <li><a href="shop.html">2</a></li>
-                        <li><a href="shop.html"><i class="icon-55"></i></a></li>
-                    </ul>
+                    <div class="pagination-wrapper centred">
+                        <ul class="pagination pagination-sm clearfix">
+                            @if ($digitalCollections->onFirstPage())
+                                <li><a href="#" aria-disabled="true"><i class="icon-56"></i></a></li>
+                            @else
+                                <li><a href="{{ $digitalCollections->previousPageUrl() }}"><i class="icon-56"></i></a></li>
+                            @endif
+
+                            @foreach ($digitalCollections->getUrlRange(1, $digitalCollections->lastPage()) as $page => $url)
+                                <li>
+                                    <a href="{{ $url }}"
+                                        class="{{ $digitalCollections->currentPage() === $page ? 'current' : '' }}">
+                                        {{ $page }}
+                                    </a>
+                                </li>
+                            @endforeach
+
+                            @if ($digitalCollections->hasMorePages())
+                                <li><a href="{{ $digitalCollections->nextPageUrl() }}"><i class="icon-55"></i></a></li>
+                            @else
+                                <li><a href="#" aria-disabled="true"><i class="icon-55"></i></a></li>
+                            @endif
+                        </ul>
+                    </div>
+
+                    <!-- list digitalCollection -->
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-<!-- shop-page-section end -->
+
+    </section>
+    <!-- shop-page-section end -->
 @endsection

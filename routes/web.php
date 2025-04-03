@@ -126,6 +126,7 @@ Route::post('/member-payment', [MemberController::class, 'membershipRedirectPaym
 /***************************************** BOOKSTORE ************************************************/
 Route::get('/bookstore', [ProductController::class, 'bookstore'])->name('bookstore');
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.details');
+Route::get('/digital-collection/{id}', [DigitalCollectionController::class, 'show'])->name('details');
 Route::post('/cart/add/{id}', [CartController::class, 'add'])->name('cart.add');
 Route::get('/cart', [CartController::class, 'showCart'])->name('cart.show');
 Route::post('/update-cart', [CartController::class, 'updateCart']);
