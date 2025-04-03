@@ -9,8 +9,7 @@
             @foreach($articles->take(3) as $article)
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm border-0 hover-shadow transition">
-                        <a href="{{ $article->image_url }}" data-bs-toggle="modal" data-bs-target="#lightboxModal"
-                            data-img="{{ $article->image_url }}">
+                        <a href="{{ route('post.show', $article->slug) }}">
                             <img src="{{ $article->image_url }}" class="card-img-top" alt="{{ $article->title_en }}">
                         </a>
                         <div class="card-body d-flex flex-column">
