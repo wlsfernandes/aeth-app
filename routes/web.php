@@ -107,6 +107,8 @@ Route::get('/hispanic-initiative', [HomeController::class, 'nishplc'])->name('ni
 
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');
+Route::get('/aeth-pages', [PostController::class, 'showAllPages'])->name('showAllPages');
+
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');

@@ -73,6 +73,17 @@ class PostController extends Controller
         return view('pages.events', compact('posts'));
     }
 
+    public function showAllPages()
+    {
+        $posts = Post::where('published', true)
+            ->whereHas('postType', function ($query) {
+                $query->where('name', 'simple page');
+            })
+            ->orderBy('published_at', 'desc')
+            ->paginate(3);
+
+        return view('pages.aeth-pages', compact('posts'));
+    }
 
 
 }

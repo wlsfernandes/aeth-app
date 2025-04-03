@@ -4,6 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
+
 /**
  * Class Post
  * 
@@ -92,6 +94,16 @@ class Post extends Model
     {
         return $this->belongsTo(PostType::class);
     }
+    public function getPlainSummaryAttribute(): string
+    {
+        $locale = app()->getLocale();
+        $summary = match ($locale) {
+            'es' => $this->summary_es,
+            'pt' => $this->summary_pt,
+            default => $this->summary_en,
+        };
 
+        return Str::limit(strip_tags($summary), 120, '...');
+    }
 
 }

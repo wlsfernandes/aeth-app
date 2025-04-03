@@ -24,16 +24,9 @@
                                 @endif
                             </h5>
                             <p class="card-text text-muted small flex-grow-1">
-                                <i>
-                                    @if(App::getLocale() == 'es')
-                                        {{ Str::limit($article->summary_es, 120, '...') }}
-                                    @elseif(App::getLocale() == 'pt')
-                                        {{ Str::limit($article->summary_pt, 120, '...') }}
-                                    @else
-                                        {{ Str::limit($article->summary_en, 120, '...') }}
-                                    @endif
-                                </i>
+                                <i>{{ $article->plain_summary }}</i>
                             </p>
+
                             <div class="mt-3 d-flex justify-content-between align-items-center">
                                 <a href="{{ route('post.show', $article->slug) }}" class="btn btn-sm btn-gradient">
                                     <i class="bi bi-box-arrow-in-right me-1"></i> @lang('messages.read_more')

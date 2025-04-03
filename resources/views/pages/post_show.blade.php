@@ -52,7 +52,7 @@
                 {{-- Content --}}
        
                 <div class="card-body">
-                    <p class="card-text mt-4">
+                <h3 style="color:#4a235a"><i>
                         @switch(App::getLocale())
                             @case('es')
                                 {{ $post->content_es ?? '' }}
@@ -63,20 +63,23 @@
                             @default
                                 {{ $post->content_en ?? '' }}
                         @endswitch
-                    </p>
+                        </i></h3>
 
-                    <p class="card-text mt-4">
-                        @switch(App::getLocale())
-                            @case('es')
-                                {{ $post->summary_es ?? '' }}
-                                @break
-                            @case('pt')
-                                {{ $post->summary_pt ?? '' }}
-                                @break
-                            @default
-                                {{ $post->summary_en ?? '' }}
-                        @endswitch
-                    </p>
+                    <p class="card-text flex-grow-1 text-muted" style="margin-top:24px;">
+    <small style="color: #6c757d;">
+        @switch(App::getLocale())
+            @case('es')
+                {!! $post->summary_es ?? '' !!}
+                @break
+            @case('pt')
+                {!! $post->summary_pt ?? '' !!}
+                @break
+            @default
+                {!! $post->summary_en ?? '' !!}
+        @endswitch
+    </small>
+</p>
+
 
                     {{-- External Link Button --}}
                     @if($post->external_link)

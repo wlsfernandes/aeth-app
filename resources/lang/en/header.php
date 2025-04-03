@@ -1,5 +1,6 @@
 <?php
 return [
+    'articles' => 'Articles',
     'hispanic_initiative' => 'Hispanic Initiative',
     'renew' => 'Renew',
     'register_here' => 'Register Here !',

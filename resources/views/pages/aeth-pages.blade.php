@@ -9,8 +9,7 @@
 @section('content')
     <div class="container my-5">
         <div class="sec-title mb_55 centred">
-            <a href="{{ route('post') }}"> <span class="sub-title"><b>@lang('messages.our_blog')</b></span>
-                <h4 style="color:#4a235a ">@lang('messages.articles_news')</h4>
+            <a href="{{ route('post') }}"> <span class="sub-title"><b>@lang('messages.articles_news')</b></span>
             </a>
         </div>
 

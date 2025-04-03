@@ -30,17 +30,9 @@
                                     @endif
                                 </p>
 
-                                <small class="text-muted"><i>
-                                        {{-- Display summary based on the current locale and limit to 90 characters --}}
-                                        @if(App::getLocale() == 'es')
-                                            {{ Str::limit($post->summary_es, 120, '...') }}
-                                        @elseif(App::getLocale() == 'pt')
-                                            {{ Str::limit($post->summary_pt, 120, '...') }}
-                                        @else
-                                            {{ Str::limit($post->summary_en, 120, '...') }} {{-- Default to English if no locale
-                                            match --}}
-                                        @endif
-                                    </i></small>
+                                <p class="card-text text-muted small flex-grow-1">
+                                    <i>{{ $post->plain_summary }}</i>
+                                </p>
                             </div>
 
                             <div class="d-flex justify-content-between align-items-center mt-3">
