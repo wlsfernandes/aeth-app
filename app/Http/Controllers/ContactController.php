@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Mail\ContactFormMessage;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Http;
+
 
 /**
  * Class ContactController
@@ -28,13 +30,25 @@ class ContactController extends Controller
     public function sendEmail(Request $request): RedirectResponse
     {
         // Validate the form input
-        $validated = $request->validate([
+        $request->validate([
             'username' => 'required|string|max:255',
             'email' => 'required|email',
-            'phone' => 'required|string|max:15',
+            'phone' => 'required|string',
             'message' => 'required|string',
+            'g-recaptcha-response' => 'required|captcha'
+        ]);
+        // Verify with Google
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => env('RECAPTCHA_SECRET_KEY'),
+            'response' => $request->input('g-recaptcha-response'),
+            'remoteip' => $request->ip(),
         ]);
 
+        $result = $response->json();
+
+        if (!($result['success'] ?? false) || ($result['score'] ?? 0) < 0.5) {
+            return back()->withErrors(['g-recaptcha-response' => 'reCAPTCHA verification failed.'])->withInput();
+        }
         // Collect form data
         $data = $request->all();
 

@@ -56,14 +56,15 @@
                                                 <ul class="info clearfix">
                                                     <li>
                                                         <a href="{{ route('details', $digitalCollection->id) }}">
-                                                            <i class="icon-53"></i>
+                                                            <i class="bi bi-arrow-right"></i>
                                                         </a>
                                                     </li>
+
                                                     <li>
-                                                        <a href="{{ isset($digitalCollection->jpegPreviewPath) && $digitalCollection->jpegPreviewPath ? $digitalCollection->jpegPreviewPath : asset('assets/images/shop/no_image.jpg') }}"
+                                                        <a href="{{ isset($digitalCollection->media) && $digitalCollection->media ? $digitalCollection->media : asset('assets/images/shop/no_image.jpg') }}"
                                                             class="lightbox-image" data-fancybox="gallery">
                                                             <div class="image-frame">
-                                                                <img src="{{ isset($digitalCollection->jpegPreviewPath) && $digitalCollection->jpegPreviewPath ? $digitalCollection->jpegPreviewPath : asset('assets/images/shop/no_image.jpg') }}"
+                                                                <img src="{{ isset($digitalCollection->media) && $digitalCollection->media ? $digitalCollection->media : asset('assets/images/shop/no_image.jpg') }}"
                                                                     alt="digitalCollection Image"
                                                                     class="digitalCollection-image">
                                                             </div>
