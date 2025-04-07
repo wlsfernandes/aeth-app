@@ -35,7 +35,7 @@ class ContactController extends Controller
             'email' => 'required|email',
             'phone' => 'required|string',
             'message' => 'required|string',
-            'g-recaptcha-response' => 'required|captcha'
+            'g-recaptcha-response' => 'required|string',
         ]);
         // Verify with Google
         $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
