@@ -262,8 +262,8 @@
                                             <li><a href="https://gonzalezcenter.org"
                                                     target="blank">@lang('header.gonzalez_center')</a>
                                             </li>
-                                            <!--  <li><a href="{{ route('nishplc') }}">@lang('header.hispanic_initiative')</a>
-                                            </li> -->
+                                            <li><a href="{{ route('nishplc') }}">@lang('header.hispanic_initiative')</a>
+                                            </li>
                                             <li><a href="{{ route('young-leaders') }}">@lang('header.young_leaders')</a>
                                             </li>
                                         </ul>
