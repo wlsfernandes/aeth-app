@@ -29,7 +29,7 @@ class OrderEmail extends Mailable
                 'orderNumber' => $this->orderNumber,
             ])
             ->to($this->email) // Send to the provided email
-            ->cc('lzortiz@aeth.org')
-            ->bcc('wlsfernandes@aeth.org', 'info@aeth.org'); // Additional recipients
+            ->cc('admin@aeth.org')
+            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']); // Additional recipients
     }
 }

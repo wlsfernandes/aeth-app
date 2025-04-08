@@ -27,7 +27,7 @@ class DonationEmail extends Mailable
                 'name' => $this->firstName, // Only passing first name
             ])
             ->to($this->email) // Send to the provided email
-            ->cc('lzortiz@aeth.org')
-            ->bcc('wlsfernandes@aeth.org', 'info@aeth.org'); // Additional recipients
+            ->cc('admin@aeth.org')
+            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']); // Additional recipients
     }
 }
