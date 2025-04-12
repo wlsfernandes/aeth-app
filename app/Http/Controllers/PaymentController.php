@@ -575,7 +575,7 @@ class PaymentController extends Controller
             // Send confirmation email
             Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord->first_name, $order->order_number, $paymentRecord->email));
             DB::commit();
-            session()->forget('cart');
+            session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
             session()->flash('success', 'Your payment was processed successfully!');
             return redirect()->route('bookstore');
         } catch (Exception $e) {

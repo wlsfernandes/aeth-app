@@ -101,8 +101,15 @@
                         </a>
                     </figure>
                 </div>
+                <!--<div class="client-logo-item">
+                                <figure class="clients-logo">
+                                    <a href="{{route('young-leaders')}}" target="_blank">
+                                        <img src="assets/images/logo/yl_logo.png" alt="" width="180px">
+                                    </a>
+                                </figure>
+                            </div>
+                        </div> -->
             </div>
-        </div>
     </section>
 
     <section class="faq-style-two sec-pad">
