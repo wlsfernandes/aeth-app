@@ -1,5 +1,6 @@
 <?php
 return [
+    'certification' => 'Certificação',
     'articles' => 'Artigos',
     'hispanic_initiative' => 'Iniciativa Hispana',
     'renew' => 'Renovar',

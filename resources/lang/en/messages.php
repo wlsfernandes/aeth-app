@@ -78,6 +78,7 @@ return [
     'annual_fund2' => 'For thirty years, AETH has worked to equip Hispanic leaders and provide avenues of theological education for the edification and strengthening of the Hispanic Church. Providing theological education is our mission. Your input will enable us to accomplish this through our daily operations and development initiatives.',
     'bookstore' => 'AETH Bookstore',
     'bookstore_p1' => 'Whether you’re a casual reader, a dedicated scholar, or someone seeking inspiration, our carefully curated collection of books is sure to ignite your faith!',
-    'important_partners' => 'Important Parnerships'
+    'important_partners' => 'Important Parnerships',
+    'article_p1' => 'To enjoy exclusive reading and relevant articles, become a member and access our portal.',
 
 ];

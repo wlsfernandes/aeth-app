@@ -11,6 +11,7 @@
         <div class="sec-title mb_55 centred">
             <a href="{{ route('post') }}"> <span class="sub-title"><b>@lang('messages.articles_news')</b></span>
             </a>
+            <p>@lang('messages.article_p1')</p>
         </div>
 
         <div class="row g-4">

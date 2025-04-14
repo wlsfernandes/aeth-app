@@ -78,7 +78,8 @@ return [
     'annual_fund2' => 'Durante treinta años, AETH ha trabajado para equipar a líderes hispanos y proporcionar vías de educación teológica para la edificación y el fortalecimiento de la Iglesia Hispana. Brindar educación teológica es nuestra misión. Tu aporte nos permitirá lograr esto a través de nuestras operaciones diarias e iniciativas de desarrollo',
     'bookstore' => 'Librería AETH',
     'bookstore_p1' => 'Ya seas un lector ocasional, un estudioso dedicado o alguien en busca de inspiración, nuestra colección cuidadosamente seleccionada de libros seguramente avivará tu fe.',
-    'important_partners' => 'Alianzas importantes'
+    'important_partners' => 'Alianzas importantes',
+    'article_p1' => 'Para disfrutar de lectura exclusiva y artículos de relevancia, hazte miembro y accede el nuestro portal.',
 
 
 ];

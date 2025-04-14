@@ -1,5 +1,6 @@
 <?php
 return [
+    'certification' => 'Certificatión',
     'articles' => 'Artículos',
     'hispanic_initiative' => 'Iniciativa Hispana',
     'renew' => 'Renovar',
@@ -25,7 +26,7 @@ return [
     'programs' => 'Programas',
     'antioquia' => 'Antioquía',
     'resource_center' => 'Centro Justo & Catherine González',
-    'compeling_preaching' => 'Predicación Impactante',
+    'compeling_preaching' => 'Predicación Transformadora',
     'bookstore' => 'Librería',
     'donations' => 'Donaciones',
     'aeth_fund' => 'Fondo Educativo de AETH',

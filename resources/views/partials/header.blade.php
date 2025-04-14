@@ -233,7 +233,7 @@
                                     </li>
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.services')</a>
+                                            style="pointer-events: none;">@lang('header.certification')</a>
                                         <ul>
                                             <li><a
                                                     href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
@@ -244,8 +244,7 @@
                                             <li><a
                                                     href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
                                             </li>
-                                            <li><a href="{{ route('memberships') }}">@lang('header.memberships')</a>
-                                            </li>
+
                                         </ul>
                                     </li>
                                     <li class="dropdown">
@@ -295,6 +294,8 @@
                                         <a href="#" class="dropdown-title" style="pointer-events: none;"><i
                                                 class="bi bi-person"></i> @lang('header.memberships')</a>
                                         <ul>
+                                            <li><a href="{{ route('memberships') }}">Info</a>
+                                            </li>
                                             <li><a href="{{ route('memberships') }}"><i class="bi bi-person-plus"></i>
                                                     @lang('header.signup_member')</a></li>
                                             <li><a href="{{ route('renew') }}"> <i class="bi bi-arrow-clockwise"></i>
