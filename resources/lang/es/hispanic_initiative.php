@@ -23,7 +23,7 @@ return [
     'enable_title' => 'Habilitar: Hacerlo Posible',
     'enable_text' => 'Provee apoyo dedicado para la gestión, comunicación y finanzas de los beneficiarios.',
 
-    'annual_title' => 'Encuentros Anuales de los Beneficiarios',
+    'annual_title' => 'Encuentros Anuales de los Participantes',
     'annual_subtitle' => '¡Todos en la mesa!',
     'annual_1' => 'Celebrar la colaboración y el aprendizaje compartido',
     'annual_2' => 'Fortalecer relaciones entre instituciones',

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'p1' => 'Únete a nuestra comunidad y ten acceso a expertos y profesionales hispanos en educación teológica. Haz preguntas, comparte tu experiencia y aprende de los mejores en la industria.',
-    'p2' => 'Con esta membresía, tendrás acceso a horas de conferencias, entrevistas, talleres, discusiones y debates con expertos en el campo. Hasta 2021, se han realizado 15 Asambleas Bienales y 6 Series de Conferencias.',
+    'p1' => 'Únete a nuestra comunidad y ten acceso a expertos y profesionales hispanos en educación teológica. Ten acceso exclusivo al portal de miembros que te permite explorar literatura, recursos y lecturas únicamente disponibles para nuestra membresía activa.',
+    'p2' => 'Con esta membresía, tendrás acceso a horas de conferencias, entrevistas, talleres, discusiones y debates con expertos en el campo. Hasta 2024, se han realizado 16 Asambleas Bienales y 7 Series de Conferencias.',
     'p3' => 'Únete hoy por una baja tarifa mensual o anual y obtén acceso a descuentos exclusivos, acceso a nuestra librería, centro de recursos y mucho más. También tendrás la oportunidad de conectarte con personas afines que buscan mentores o simplemente alguien con quien hablar de teología.',
     'p4' => 'Selecciona el plan preferido y únete a AETH.',
     'inst_membership' => 'Membresía Institucional',
