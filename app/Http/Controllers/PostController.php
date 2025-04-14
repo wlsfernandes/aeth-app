@@ -25,7 +25,7 @@ class PostController extends Controller
                 $query->where('name', 'blog');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '>=', Carbon::today())
+            ->whereDate('date_of_publication', '<=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
