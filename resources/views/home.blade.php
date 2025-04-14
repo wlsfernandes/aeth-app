@@ -334,9 +334,11 @@
 
                                 <div class="lower-content p_relative d_block">
                                     <div class="text">
-                                        <div class="post-date">
-                                            <h3>{{$event->date}}</h3>
-                                        </div>
+                                        @if($event->date_of_event)
+                                            <div class="post-date">
+                                                <h3>{{ \Carbon\Carbon::parse($event->date_of_event)->format('d M') }}</h3>
+                                            </div>
+                                        @endif
                                         <h3><a href="{{ route('post.show', $event->slug) }}">
                                                 @if(App::getLocale() == 'es')
                                                     {{ $event->title_es }}

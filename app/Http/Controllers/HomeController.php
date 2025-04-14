@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Faq;
+use Carbon\Carbon;
 use Illuminate\View\View;
 
 /**
@@ -29,6 +30,8 @@ class HomeController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('name', 'blog');
             })
+            ->where('published', true)
+            ->whereDate('date_of_publication', '<=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->limit(3)
             ->get();
@@ -37,6 +40,8 @@ class HomeController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('name', 'event');
             })
+            ->where('published', true)
+            ->whereDate('date_of_publication', '<=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->limit(3)
             ->get();

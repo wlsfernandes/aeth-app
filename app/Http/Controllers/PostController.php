@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Post;
+use Carbon\Carbon;
 
 
 
@@ -23,6 +24,8 @@ class PostController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('name', 'blog');
             })
+            ->where('published', true)
+            ->whereDate('date_of_publication', '>=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->paginate(6);
 
@@ -44,7 +47,7 @@ class PostController extends Controller
     public function show($slug)
     {
         // Find the post by slug, ensuring it is published
-        $post = Post::where('slug', $slug)->where('published', true)->firstOrFail();
+        $post = Post::where('slug', $slug)->firstOrFail();
 
         // Return the view with the post data
         return view('pages.post_show', compact('post'));
@@ -67,6 +70,8 @@ class PostController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('name', 'event');
             })
+            ->where('published', true)
+            ->whereDate('date_of_publication', '>=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->paginate(3);
 
@@ -79,6 +84,8 @@ class PostController extends Controller
             ->whereHas('postType', function ($query) {
                 $query->where('name', 'simple page');
             })
+            ->where('published', true)
+            ->whereDate('date_of_publication', '>=', Carbon::today())
             ->orderBy('published_at', 'desc')
             ->paginate(3);
 
