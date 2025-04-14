@@ -19,10 +19,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-doc.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Articles</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.articles')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div><!-- end cardbody -->
                         </a>
@@ -34,10 +34,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth_bible.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Bible Studies</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.bible_studies')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -48,10 +48,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/conversatorio.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Conference</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.conference')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -66,10 +66,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/lectures2.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Sermons</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.sermons')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -79,10 +79,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/elet.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Workshop</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.workshop')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -93,10 +93,10 @@
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/aeth-category.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">
-                                <h4 class="card-title">Others</h4>
+                                <h4 class="card-title">@lang('exclusive.dashboard.others')</h4>
                                 <!--  <p class="card-text">xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx</p> -->
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>

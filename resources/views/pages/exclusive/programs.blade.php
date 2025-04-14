@@ -22,7 +22,7 @@
                                 <h4 class="card-title">AETH</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program1')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div><!-- end cardbody -->
                         </a>
@@ -37,7 +37,7 @@
                                 <h4 class="card-title">Antioquia</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program3')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -51,7 +51,7 @@
                                 <h4 class="card-title">Capacity Building</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program5')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -69,7 +69,7 @@
                                 <h4 class="card-title">Compelling Preaching</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program2')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -83,7 +83,7 @@
                                 <h4 class="card-title">González Center</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program6')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>
@@ -96,7 +96,7 @@
                                 <h4 class="card-title">Young Líderes</h4>
                                 <p class="card-text">@lang('exclusive.dashboard.program4')</p>
                                 <p class="card-text">
-                                    <small class="text-muted">Last updated 3 mins ago</small>
+                                    <small class="text-muted">@lang('exclusive.dashboard.last_update')</small>
                                 </p>
                             </div>
                         </a>

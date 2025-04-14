@@ -5,8 +5,8 @@
 @section('content')
     <section id="courses" class="container py-5">
         <div class="text-center mb-4">
-            <h2>AETH - Exclusive Membership Content</h2>
-            <p>Explore our wide range of courses and learn from the best instructors.</p>
+            <h2>@lang('exclusive.dashboard.aeth_exclusive_content')</h2>
+            <p>@lang('exclusive.dashboard.explore')</p>
         </div>
         <div class="row gy-4">
             <div class="col-md-4 col-lg-4">
@@ -17,7 +17,7 @@
                             <h5 class="card-title">@lang('exclusive.dashboard.findByProgram')</h5>
                             <!--   <p class="card-text">@lang('exclusive.dashboard.p4')</p>-->
                             <a href="{{ route('programs') }}" class="btn btn-primary custom-btn">
-                                <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                                <i class="bi bi-box-arrow-in-right me-2"></i> @lang('exclusive.dashboard.premium_access')
                             </a>
                         </div>
                     </div>
@@ -31,7 +31,7 @@
                         <h5 class="card-title">@lang('exclusive.dashboard.findByCategory')</h5>
                         <!--<p class="card-text">@lang('exclusive.dashboard.p2')</p>-->
                         <a href="{{ route('category') }}" class="btn btn-primary">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                            <i class="bi bi-box-arrow-in-right me-2"></i> @lang('exclusive.dashboard.premium_access')
                         </a>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                         <h5 class="card-title">@lang('exclusive.dashboard.findByEvent')</h5>
                         <!--<p class="card-text">@lang('exclusive.dashboard.p2')</p>-->
                         <a href="{{ route('category') }}" class="btn btn-primary">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Premium Access
+                            <i class="bi bi-box-arrow-in-right me-2"></i> @lang('exclusive.dashboard.premium_access')
                         </a>
                     </div>
                 </div>
