@@ -19,42 +19,28 @@
                     aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                     aria-label="Slide 4"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4"
-                    aria-label="Slide 5"></button>
+
             </div>
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="assets/images/banner/banner3.jpeg" class="d-block w-100" alt="Slide 1">
+                    <img src="assets/images/banner/Banner-Website-Impactando.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/banner/Banner-Website-Impactando.jpg" class="d-block w-100" alt="Slide 2">
+                    <img src="assets/images/banner/banner3.jpeg" class="d-block w-100" alt="Slide 2">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/banner/aeth_graduation.jpg" class="d-block w-100" alt="Slide 3">
-                    <div class="carousel-caption d-block">
-                        <div class="content-box">
-                            <h1><b>@lang('header.complete_aeth_name')</b></h1>
-                            <h5>@lang('header.education_p1')</h5>
-                        </div>
-                    </div>
+                    <a href="{{  route('lectureSeries2025')}}"> <img src="assets/images/gallery/LS_25.jpg"
+                            class="d-block w-100" alt="Slide 3"></a>
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/banner/excelence.jpg" class="d-block w-100" alt="Slide 4">
-                    <div class="carousel-caption d-none d-md-block">
-                        <div class="content-box">
-                            <h1><b>@lang('header.aeth_values')</b></h1>
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="assets/images/gallery/bookstore.jpg" class="d-block w-100" alt="Slide 4">
+                    <a href="{{  route('bookstore')}}"><img src="assets/images/gallery/bookstore.jpg" class="d-block w-100"
+                            alt="Slide 4"></a>
                     <div class="carousel-caption d-none d-md-block">
                         <div class="content-box">
                             <h1><b>@lang('header.bookstore')</b></h1>
                         </div>
                     </div>
                 </div>
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
                 data-bs-slide="prev">
@@ -101,14 +87,6 @@
                         </a>
                     </figure>
                 </div>
-                <!--<div class="client-logo-item">
-                                <figure class="clients-logo">
-                                    <a href="{{route('young-leaders')}}" target="_blank">
-                                        <img src="assets/images/logo/yl_logo.png" alt="" width="180px">
-                                    </a>
-                                </figure>
-                            </div>
-                        </div> -->
             </div>
     </section>
 
@@ -340,7 +318,7 @@
     <section class="news-section home-3 sec-pad bg-color-1">
         <div class="auto-container">
             <div class="sec-title centred mb_55">
-                <span class="sub-title calendar"><b>Calendar</b></span>
+                <span class="sub-title calendar"><b>@lang('messages.calendar')</b></span>
             </div>
             <div class="row clearfix">
                 @foreach($events as $event)
@@ -430,6 +408,12 @@
                 </figure>
                 <figure class="clients-logo"><a href="https://se-pr.edu/" target="blank"><img
                             src="assets/images/clients/clients-13.png" alt=""></a>
+                </figure>
+                <figure class="clients-logo"><a href="https://www.vanguard.edu/" target="blank"><img
+                            src="assets/images/clients/vanguard.jpg" alt=""></a>
+                </figure>
+                <figure class="clients-logo"><a href="https://sitb.edu.ar/" target="blank"><img
+                            src="assets/images/clients/sitb.webp" alt=""></a>
                 </figure>
             </div>
         </div>

@@ -84,8 +84,8 @@
         </div> -->
         <div class="footer-bottom centred">
             <div class="copyright">
-                <p><small>Copyright <span id="currentYear"></span> by <a href="https://devpromaster.com"
-                            target="_blank">devpromaster</a> All Right Reserved.</small>
+                <p><small>Copyright <span id="currentYear"></span> by <a href="https://aeth.org"
+                            target="_blank">AETH</a> All Right Reserved.</small>
                 </p>
             </div>
         </div>

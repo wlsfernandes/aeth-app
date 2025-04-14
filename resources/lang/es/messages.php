@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'calendar' => 'Calendario',
     'program_resources' => 'Programas y Recursos',
     'certification_of_theological' => 'Certificación de Programas de Educación Teológica',
     'certification' => 'Certificación',
