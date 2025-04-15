@@ -213,40 +213,26 @@
                                     <li class="current">
                                         <a href="{{url('/')}}">Home</a>
                                     </li>
+                                    <!-- About Us -->
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
                                             style="pointer-events: none;">@lang('header.about_us')</a>
                                         <ul>
                                             <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
-                                            <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
+                                            <li><a href="{{ route('showAllPages') }}">@lang('header.articles')</a></li>
+                                            <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
+                                            <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
+                                            <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
                                             <li><a href="{{ route('helpDesk') }}">@lang('pages.help_desk')</a></li>
                                             <li><a
                                                     href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
                                             </li>
-                                            <li><a href="{{ route('showAllPages') }}">@lang('header.articles')</a></li>
-                                            <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
-                                            <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
+                                            <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
                                             <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a>
                                             </li>
-                                            <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                         </ul>
                                     </li>
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.certification')</a>
-                                        <ul>
-                                            <li><a
-                                                    href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
-                                            </li>
-                                            <li><a
-                                                    href="{{ route('requestCertification') }}">@lang('header.request_certification')</a>
-                                            </li>
-                                            <li><a
-                                                    href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
+                                    <!-- Programs-->
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
                                             style="pointer-events: none;">@lang('header.programs')</a>
@@ -267,11 +253,38 @@
                                             </li>
                                         </ul>
                                     </li>
+                                    <!-- Certification -->
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-title"
+                                            style="pointer-events: none;">@lang('header.certification')</a>
+                                        <ul>
+                                            <li><a
+                                                    href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('requestCertification') }}">@lang('header.request_certification')</a>
+                                            </li>
 
+
+                                        </ul>
+                                    </li>
+
+                                    <!-- Bookstore -->
                                     <li class="current">
                                         <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
                                     </li>
-
+                                    <!-- LS25 -->
+                                    <li class="current">
+                                        <a href="{{ route('lectureSeries2025') }}"
+                                            class="lecture-series-pulse d-inline-flex align-items-center">
+                                            <span class="me-2">Lecture Series 2025</span>
+                                            <i class="bi bi-star-fill pulse-icon ms-1"></i>
+                                        </a>
+                                    </li>
+                                    <!-- Donations -->
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title"
                                             style="pointer-events: none;">@lang('header.donations')</a>
@@ -283,13 +296,8 @@
 
                                         </ul>
                                     </li>
-                                    <li class="current">
-                                        <a href="{{ route('lectureSeries2025') }}"
-                                            class="lecture-series-pulse d-inline-flex align-items-center">
-                                            <span class="me-2">Lecture Series 2025</span>
-                                            <i class="bi bi-star-fill pulse-icon ms-1"></i>
-                                        </a>
-                                    </li>
+
+                                    <!-- Memberships -->
                                     <li class="dropdown">
                                         <a href="#" class="dropdown-title" style="pointer-events: none;"><i
                                                 class="bi bi-person"></i> @lang('header.memberships')</a>
