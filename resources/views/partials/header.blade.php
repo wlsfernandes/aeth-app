@@ -228,7 +228,8 @@
                                                     href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
                                             </li>
                                             <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
-                                            <li><a href="{{ route('testimonials') }}">@lang('messages.testimonials')</a>
+                                            <li><a
+                                                    href="{{ route('testimonials') }}">@lang('testimonial.testimonials')</a>
                                             </li>
                                         </ul>
                                     </li>

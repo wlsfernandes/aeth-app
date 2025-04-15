@@ -252,10 +252,36 @@
             <div class="testimonial-content">
                 <div class="content-box">
                     <div class="sec-title light mb_50">
-                        <div class="sub-title">@lang('messages.testimonials')</div>
-                        <h1 style="color:#fff">@lang('messages.testimonial_title')</h1>
+                        <div class="sub-title">@lang('testimonial.testimonials')</div>
+                        <h1 style="color:#fff">@lang('testimonial.testimonial_title')</h1>
                     </div>
                     <div class="bxslider">
+                        <div class="slider-content">
+                            <div class="slider-pager">
+                                <ul class="thumb-box">
+                                    <li>
+                                        <a data-slide-index="1" href="#">
+                                            <figure class="thumb thumb-2"><img
+                                                    src="assets/images/testimonials/thumbs/jose.png" alt=""></figure>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-inner">
+                                <ul class="rating-box clearfix">
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                </ul>
+                                <p><i>@lang('testimonial.jose.p1')</i></p>
+                                <div class="author-info">
+                                    <h3>@lang('testimonial.jose.name')</h3>
+                                    <span class="designation">@lang('testimonial.jose.desc')</span>
+                                </div>
+                            </div>
+                        </div>
                         <div class="slider-content">
                             <div class="slider-pager">
                                 <ul class="thumb-box">
@@ -275,10 +301,10 @@
                                     <li><i class="icon-13"></i></li>
                                     <li><i class="icon-13"></i></li>
                                 </ul>
-                                <p><i>@lang('messages.testimonials_phrase1')</i></p>
+                                <p><i>@lang('testimonial.esteban.phrase1')</i></p>
                                 <div class="author-info">
-                                    <h3>@lang('messages.testimonials_name1')</h3>
-                                    <span class="designation">@lang('messages.testimonials_desc1')</span>
+                                    <h3>@lang('testimonial.esteban.name')</h3>
+                                    <span class="designation">@lang('testimonial.esteban.desc')</span>
                                 </div>
                             </div>
                         </div>
@@ -301,10 +327,10 @@
                                     <li><i class="icon-13"></i></li>
                                     <li><i class="icon-14"></i></li>
                                 </ul>
-                                <p><i>@lang('messages.testimonials_phrase2')</i></p>
+                                <p><i>@lang('testimonial.elimelec.phrase1')</i></p>
                                 <div class="author-info">
-                                    <h3>@lang('messages.testimonials_name2')</h3>
-                                    <span class="designation">@lang('messages.testimonials_desc2')</span>
+                                    <h3>@lang('testimonial.elimelec.name')</h3>
+                                    <span class="designation">@lang('testimonial.elimelec.desc')</span>
                                 </div>
                             </div>
                         </div>
