@@ -66,7 +66,7 @@ return [
     'email_address' => 'Email address',
     'our_location' => 'Our Location',
     'feel_free' => 'Feel free to contact us',
-    'feel_free_p1' => 'Our team is here to help you with any questions or concerns. Whether you need support, have feedback, or just want to learn more about our services, do not hesitate to reach out. We are committed to providing the best service and support possible',
+    'feel_free_p1' => 'Our team is here to help you with any questions or concerns. Whether you need assistance, have feedback, or just want to learn more about our services, do not hesitate to reach out. We are committed to providing the best service and support possible.',
     'your_name' => 'Your Name...',
     'your_email' => 'Your Email...',
     'your_phone' => 'Your Phone...',

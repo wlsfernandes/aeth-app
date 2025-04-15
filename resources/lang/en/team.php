@@ -14,15 +14,15 @@ return [
     'our_team' => 'Our Team',
     'executive_director' => 'Executive Director',
     'compelling_preaching_program_manager' => 'Compelling Preaching',
-    'office_business_manager' => 'Office Business Manager',
-    'community_engagement_manager' => 'Community Engagement Manager',
+    'office_business_manager' => 'Office Business ',
+    'community_engagement_manager' => 'Community Engagement ',
     'accounting_manager' => 'Finance Coordinator',
     'director_gonzalez_resource_center' => 'González Resource Center',
     'it_solutions_software_developer' => 'González Resource Center',
     'fundraising_manager' => 'Growth & Fundraising',
     'assistant_manager_preaching_program' => 'Antioquia Program',
     'gonzalez_center_practitioner' => 'González Resource Center',
-    'intern' => 'Compelling Preaching',
+    '' => 'Compelling Preaching',
     'content_curator_intern' => 'AETH',
     'young_leaders_program_manager' => 'Young Líderes',
     'what_excites_about_aeth' => 'What excites you about your role at AETH?',
@@ -40,7 +40,7 @@ return [
         'p8' => 'Jesus, her model, is her aspiration to follow.',
     ],
     'coralys' => [
-        'p1' => 'Compelling Preaching Program Assistant Manager',
+        'p1' => 'Compelling Preaching Program  ',
         'p2' => 'Coralys Santos is a candidate for the pastoral ministry of the Baptist Churches of Puerto Rico. She was born into a Christian home and a humble family that loves God above all things. Because of this instilled love, she is passionate about serving others through her gifts and talents.She earned a Bachelor`s degree in Arts in Social Sciences with a concentration in Sociocultural Anthropology from the University of Puerto Rico, Río Piedras Campus, and is currently pursuing her Master’s degree in Theology and Ministry at Fuller Theological Seminary in California.Since the age of thirteen, she has served alongside her family at the First Baptist Church of Canóvanas in Puerto Rico, the church where she grew up and developed.',
         'p3' => 'His passion is to change those social paradigms where it is believed that theology is only for scholars and academics. With his work he wants to bring theology to every person who has a genuine desire to learn more about God, regardless of their degrees, or academic levels. Knowing and understanding that we all do theology every day.',
         'p4' => 'He enjoys watching series, going to the movies, playing guitar, singing and traveling. Most of all, the thing he loves to do most is spend time with his family and friends.',
@@ -59,7 +59,7 @@ return [
     ],
     'jeremy' =>
         [
-            'p1' => 'Biennial Assistant Student Intern',
+            'p1' => 'Biennial  Student ',
             'p2' => 'Jeremy Villoch Galarza was born and raised in the center of a Puerto Rican Baptist pastoral family. From an early age one of the pillars of his life has been to work in the formation and education of children and young people on issues of history, society and Christianity. She is currently pursuing her Bachelor of Arts with a concentration in Political Science at the University of Puerto Rico Mayagüez Campus. Among her plans for graduate school are theological and public administration training in Puerto Rico and the United States. She is currently a member of the Board of Directors of the Baptist Churches of Puerto Rico and a student research mentor in the Department of Social Sciences at RUM.',
             'p3' => 'I am passionate about the opportunity to connect youthful passion and strength with veteran knowledge and hope in the theological endeavor for a world that urges our God.',
             'p4' => 'My main hobbies are reading, watching series and occasionally drinking coffee.',
@@ -88,7 +88,7 @@ return [
         ],
     'maylin' =>
         [
-            'p1' => 'Young Leaders Program Manager',
+            'p1' => 'Young Leaders Program ',
             'p2' => 'Born and raised in one of the most diverse cities in the world! Queens, New York. She is the daughter of immigrant parents who emigrated from Ecuador, raised by a single mother who with God`s help moved mountains for her and her siblings. She has been working in the field of Education for more than 10 years. Her passion is to see people discover their potential through family, community and resources. There are many challenges faced by first generation immigrant families in building communities, connections and bridges in a new country. Her passion for community development is rooted in education; she offers experience and knowledge to work together for the common goal of seeing families flourish. She has worked alongside organizations and churches such as: FLORA and Expansion Church. Where she worked with young adults as they navigated faith in today`s context. Therefore, I am excited to join the AETH team, where we will work together to build bridges and make theology accessible to all.',
             'p3' => 'Her passion is to bring people together and create spaces where everyone is heard. Leverage these conversations and put them into practice.',
             'p4' => 'She enjoys movies and singing. She also loves spending time with her loved ones.',
@@ -106,7 +106,7 @@ return [
         ],
     'sophia' =>
         [
-            'p1' => 'González Resource Center - Intern',
+            'p1' => 'González Resource Center - ',
             'p2' => 'Sophia Porter was born and raised in Marion, Indiana, where she also did her undergraduate work. She graduated from Indiana Wesleyan University with majors in Community Development and Pastoral Ministries. Following her undergraduate career, she studied Spanish linguistics and history at the University of Nebrija in Madrid, Spain. She is in her graduate studies, pursuing a Master of Divinity degree at Candler School of Theology and lives in Atlanta, Georgia.',
             'p3' => 'She has very much enjoyed her time at the Justo and Catherine Gonzalez Resource Center and hopes to continue the work that is being done. Her favorite part of the job is working with and learning from the Center`s team.',
             'p4' => 'Aside from her studies, she loves spending time with her family and close friends.',
@@ -115,7 +115,7 @@ return [
         ],
     'yaheli' =>
         [
-            'p1' => 'Content Curator Intern',
+            'p1' => 'Content Curator ',
             'p2' => 'Yaheli Vargas-Ramos is a doctoral student in Theology at Drew University in Madison New Jersey. Her academic interests include the relationship between theology and economics, decolonial theory and liberatory theologies. His ministry work has been centered on initiatives focused on ministering to the "least of these", including several mission trips to Haiti, student director of a food center in Rio Piedras, P.R. and collaborator in a Food Bank in Nashville TN. ',
             'p3' => 'I am thrilled to have the opportunity to highlight the rich history of an organization as important to the Latino community as AETH.',
             'p4' => 'I love playing basketball',
@@ -124,7 +124,7 @@ return [
         ],
     'oscar' =>
         [
-            'p1' => 'Manager: Compelling Preaching & National Initiative to Strengthen Hispanic Pastors Leaders and Congregations.',
+            'p1' => ': Compelling Preaching & National Initiative to Strengthen Hispanic Pastors Leaders and Congregations.',
             'p2' => 'Dr. Oscar Merlo, Ph.D. (son, husband, father and entrepreneur) is passionate about Christian service, evangelism, preaching and empowering new generations of professionals to transform the world around them. Dr. Merlo holds 5 university degrees (two bachelor´s degrees, two master`s degrees and a Doctor of Philosophy, Ph.D.) from the University of La Verne, Phoenix Graduate School of Business and Fuller Seminary). His research interests are: `Epistemological Imagination of Spirit` vis-a-vis `Relational Aesthetics`, and its influence on the `Imaginary` of renewed neo-Pentecostal communities in cities under dictatorial regimes and in free market economies.',
             'p3' => 'Dr. Merlo has held executive leadership positions at academic institutions such as Biola University, and organizations such as Target Corporation and ConAgra Foods.',
             'p4' => 'As a practitioner, Dr. Merlo has traveled to over 40 countries on five continents deciphering how the Missio-Dei is `imagined` in: Cuba, Tel Aviv, Bissau, Istanbul, the Dry Corridor in Guatemala, Los Angeles and in other urban cities in the US and the global south. He led global plans in Evangelization and Transformation initiatives, social justice advocacy in humanitarian aid, Corruption Free Latin America and global leadership training programs.',
@@ -137,7 +137,7 @@ return [
         ],
     'shaila' =>
         [
-            'p1' => 'Fundraising Manager',
+            'p1' => 'Fundraising ',
             'p2' => 'Shaila Muñoz was born and raised on the beautiful island of Puerto Rico in a family deeply rooted in ministry. From an early age she was immersed in the teachings of faith and the importance of serving others. Guided by her upbringing, Shaila cultivated a deep passion for spreading the Word of God, which would later shape her personal and professional trajectory.',
             'p3' => 'After completing her bachelor`s degree in Business Administration, Shaila embarked on a purpose-driven path, combining her academic acumen with her spiritual calling. Upon moving to Nashville, Tennessee, she found herself in the heart of the Christian publishing industry, where she has flourished for over 14 years.',
             'p4' => 'In her career, Shaila has become a beacon of inspiration, combining her background in business administration with her unwavering commitment to her faith. Her work is not simply a profession but a calling: a vehicle through which she continues the work of spreading the Gospel to diverse audiences. Whether through the creation of literature, sales and marketing strategies and initiatives, Shaila`s contributions have resonated deeply within the Christian community and beyond.',
@@ -163,7 +163,7 @@ return [
 
     'yajaira' =>
         [
-            'p1' => 'Community Engagement Assistant',
+            'p1' => 'Community Engagement ',
             'p2' => 'Yajaira Ruiz is a distinguished leader, educator, and pastor, passionate about empowering diverse communities through education, spirituality, and leadership. Born in Puerto Rico and currently residing in the United States, Yajaira has dedicated her life to serving and strengthening people in various spheres.',
             'p3' => '  She has a solid academic background, including a Master’s in Business Administration (MBA) with a specialization in Human Resources and a Master’s in Christian Studies focusing on Church Leadership. She is currently pursuing a Doctorate in Business Administration (D.B.A.) in Management and a Doctorate in Ministry (D.Min.), reflecting her commitment to continuous growth.',
             'p4' => ' As the director of the extension center of ECHAM Theological University, Yajaira leads programs in theological and leadership training. She has taught Christian leadership and pastoral theology both in the United States and internationally, including virtual courses for leaders in India.',
@@ -175,7 +175,7 @@ return [
             'p12' => 'Deeply is her mother, who taught her the importance of faith, hard work, and dedication to family. Her mother was not only an example of resilience during challenging times but also of compassion and service to others, values that Yajaira applies in her personal and ministerial life.',
         ],
     'juan' => [
-        'p1' => 'Intern ReDET - Communities of Practice',
+        'p1' => ' ReDET - Communities of Practice',
         'p2' => 'Born and raised in San Salvador, ancestral land of the Nahua people, Juan holds a Master’s degree in Latin American Theology from the Universidad Centroamericana “José Simeón Cañas” and a Master of Divinity from Fuller Theological Seminary. After several years in pastoral ministry in El Salvador, he is now part of the Centro Latino team at Fuller Theological Seminary. He is also a doctoral student in Religion and Society at Drew University Theological School. His research interests include cultural trauma, political discourse, critical theory, and liberation theologies, particularly in the Salvadoran post-war context.',
         'p3' => 'I am passionate about being part of the historic change that Latin evangelical theological education is experiencing. I hope to see theological training spaces more connected to the realities of pain and hope of the diverse Latin American peoples.',
         'p4' => 'I watch series, play with my cats, and enjoy eating with my friends.',

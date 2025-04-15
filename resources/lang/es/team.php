@@ -159,7 +159,7 @@ return [
         ],
     'yajaira' =>
         [
-            'p1' => 'Community Engagement Assistant',
+            'p1' => 'Community Engagement ',
             'p2' => 'Yajaira Ruiz es una destacada líder, educadora y pastora, apasionada por empoderar a comunidades diversas a través de la educación, la espiritualidad y el liderazgo. Nacida en Puerto Rico y actualmente residente en Estados Unidos, Yajaira ha dedicado su vida a servir y fortalecer a las personas en diversas esferas.',
             'p3' => 'Cuenta con una sólida formación académica, incluyendo una Maestría en Administración de Empresas (MBA) con especialización en Recursos Humanos y una Maestría en Estudios Cristianos con enfoque en Liderazgo Eclesial. Actualmente está cursando un Doctorado en Administración de Empresas (D.B.A.) en Gerencia y un Doctorado en Ministerio (D.Min.), reflejo de su compromiso con el crecimiento continuo.',
             'p4' => 'Como directora del centro de extensión de la Universidad Teológica ECHAM, Yajaira lidera programas de formación teológica y de liderazgo. Ha enseñado liderazgo cristiano y teología pastoral, tanto en los Estados Unidos como a nivel internacional, incluyendo cursos virtuales para líderes en la India.',
@@ -173,7 +173,7 @@ return [
         ],
     'juan' =>
         [
-            'p1' => 'Interno ReDET - Comunidades de Practica',
+            'p1' => ' ReDET - Comunidades de Practica',
             'p2' => 'Nacido y criado en San Salvador, tierra ancestral del pueblo nahua, Juan tiene una maestría en Teología Latinoamericana de la Universidad Centroamericana “José Simeón Cañas” y una Maestría en Divinidades del Seminario Teológico Fuller. Después de varios años en el ministerio pastoral en El Salvador, ahora forma parte del equipo de Centro Latino en el Seminario Teológico Fuller. También es estudiante doctoral en Religión y Sociedad en Drew University Theological School. Sus intereses de investigación incluyen el trauma cultural, el discurso político, la teoría crítica y las teologías de la liberación, particularmente en el contexto de posguerra salvadoreño.',
             'p3' => 'Me apasiona ser parte del cambio histórico que la educación teológica evangélica latina esta experimentando. Tengo la esperanza de ver espacios de formación teológica más conectados a las realidades de dolor y esperanza de los diversos pueblos latinoamericanos. ',
             'p4' => 'Veo series, juego con mis gatos y me gusta comer con mis amigos',

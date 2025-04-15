@@ -66,7 +66,7 @@ return [
     'email_address' => 'Endereço de E-mail',
     'our_location' => 'Nossa Localização',
     'feel_free' => 'Sinta-se à vontade para nos contatar',
-    'feel_free_p1' => 'Nossa equipe está aqui para ajudar com qualquer dúvida ou preocupação. Seja para obter suporte, enviar comentários ou apenas conhecer mais sobre nossos serviços, não hesite em entrar em contato. Estamos comprometidos em oferecer o melhor serviço e suporte possível.',
+    'feel_free_p1' => 'Nossa equipe está aqui para te ajudar com qualquer dúvida ou preocupação. Seja para solicitar assistência, enviar comentários ou simplesmente conhecer mais sobre nossos serviços, não hesite em entrar em contato. Estamos comprometidos em oferecer o melhor atendimento e suporte possível.',
     'your_name' => 'Seu Nome...',
     'your_email' => 'Seu E-mail...',
     'your_phone' => 'Seu Telefone...',

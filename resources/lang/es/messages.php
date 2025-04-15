@@ -66,7 +66,7 @@ return [
     'email_address' => 'Correo Electrónico',
     'our_location' => 'Nuestra Ubicación',
     'feel_free' => 'No dudes en contactarnos',
-    'feel_free_p1' => 'Nuestro equipo está aquí para ayudarte con cualquier pregunta o inquietud. Ya sea que necesites apoyo, tengas comentarios o simplemente quieras conocer más sobre nuestros servicios, no dudes en comunicarte. Estamos comprometidos a ofrecer el mejor servicio y soporte posible.',
+    'feel_free_p1' => 'Nuestro equipo está aquí para ayudarte con cualquier pregunta o inquietud. Ya sea que necesites asistencia, tengas comentarios o simplemente quieras conocer más sobre nuestros servicios, no dudes en comunicarte. Estamos comprometidos a ofrecer el mejor servicio y apoyo posible.',
     'your_name' => 'Tu Nombre...',
     'your_email' => 'Tu Correo Electrónico...',
     'your_phone' => 'Tu Teléfono...',
@@ -79,7 +79,7 @@ return [
     'bookstore' => 'Librería AETH',
     'bookstore_p1' => 'Ya seas un lector ocasional, un estudioso dedicado o alguien en busca de inspiración, nuestra colección cuidadosamente seleccionada de libros seguramente avivará tu fe.',
     'important_partners' => 'Alianzas importantes',
-    'article_p1' => 'Para disfrutar de lectura exclusiva y artículos de relevancia, hazte miembro y accede el nuestro portal.',
+    'article_p1' => 'Para disfrutar de lectura exclusiva y artículos de relevancia, házte miembro y accede nuestro portal.',
 
 
 ];

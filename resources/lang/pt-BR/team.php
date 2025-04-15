@@ -40,7 +40,7 @@ return [
         'p8' => 'Jesus, seu modelo, é sua aspiração a seguir.',
     ],
     'coralys' => [
-        'p1' => 'Assistente de Gerente do Programa de Pregação Impactante',
+        'p1' => 'Assistente de  do Programa de Pregação Impactante',
         'p2' => 'Coralys Santos é candidata ao ministério pastoral das Igrejas Batistas de Porto Rico. Ela nasceu em um lar cristão e em uma família humilde que ama a Deus acima de todas as coisas. Por esse amor inculcado, tem paixão por servir aos outros por meio de seus dons e talentos.Ela obteve um Bacharelado em Artes em Ciências Sociais com concentração em Antropologia Sociocultural pela Universidade de Porto Rico, no Campus de Río Piedras, e atualmente está cursando seu Mestrado em Teologia e Ministério no Seminário Teológico Fuller, na Califórnia.Desde os treze anos, serve junto com sua família na Primeira Igreja Batista de Canóvanas, em Porto Rico, igreja onde cresceu e se desenvolveu.',
         'p3' => 'Sua paixão é mudar os paradigmas sociais que acreditam que a teologia é apenas para acadêmicos e estudiosos. Com seu trabalho, quer levar a teologia a todas as pessoas que têm o desejo genuíno de aprender mais sobre Deus, independentemente de seus títulos ou níveis acadêmicos. Ela sabe e entende que todos fazem teologia todos os dias.',
         'p4' => 'Ela gosta de assistir a séries, ir ao cinema, tocar violão, cantar e viajar. O que mais gosta de fazer é passar tempo com sua família e amigos.',
@@ -84,7 +84,7 @@ return [
         'p6' => 'Seu pai.',
     ],
     'maylin' => [
-        'p1' => 'Gerente do Programa de Líderes Jovens',
+        'p1' => ' do Programa de Líderes Jovens',
         'p2' => 'Nascida e criada em uma das cidades mais diversas do mundo: Queens, Nova York! Filha de pais imigrantes que emigraram do Equador, foi criada por uma mãe solteira que, com a ajuda de Deus, moveu montanhas por ela e seus irmãos. Ela trabalha no campo da educação há mais de 10 anos. Sua paixão é ver as pessoas descobrirem seu potencial por meio da família, da comunidade e dos recursos. As famílias imigrantes de primeira geração enfrentam muitos desafios para construir comunidades, conexões e pontes em um novo país. Sua paixão pelo desenvolvimento comunitário está enraizada na educação, e ela oferece sua experiência e conhecimentos para trabalhar juntos com o objetivo comum de ver as famílias florescerem.',
         'p3' => 'Sua paixão é reunir as pessoas e criar espaços onde todos possam ser ouvidos. Aproveitar essas conversas e transformá-las em ação prática.',
         'p4' => 'Ela gosta de filmes e de cantar. Também ama passar tempo com seus entes queridos.',
@@ -117,7 +117,7 @@ return [
     ],
 
     'oscar' => [
-        'p1' => 'Gerente: Pregação Impactante e Iniciativa Nacional para Fortalecer Pastores, Líderes e Congregações Hispânicas.',
+        'p1' => ': Pregação Impactante e Iniciativa Nacional para Fortalecer Pastores, Líderes e Congregações Hispânicas.',
         'p2' => 'O Dr. Oscar Merlo, Ph.D. (filho, esposo, pai e empresário) é apaixonado pelo serviço cristão, evangelização, pregação e empoderamento das novas gerações de profissionais para transformar o mundo ao seu redor. O Dr. Merlo possui 5 diplomas universitários (duas graduações, duas especializações e um Doutorado em Filosofia) obtidos na Universidade de La Verne, Phoenix Graduate School of Business e Fuller Seminary. Seus interesses de pesquisa incluem a "Imaginação Epistemológica do Espírito" em contraste com a "Estética Relacional" e sua influência no "Imaginário" das comunidades neopentecostais renovadas em cidades sob regimes ditatoriais e economias de mercado livre.',
         'p3' => 'O Dr. Merlo ocupou cargos de liderança executiva em instituições acadêmicas, como a Universidade Biola, e em organizações como Target Corporation e ConAgra Foods.',
         'p4' => 'Como praticante, o Dr. Merlo viajou para mais de 40 países em cinco continentes, decifrando como a Missio-Dei é "imaginada" em lugares como: Cuba, Tel Aviv, Bissau, Istambul, o Corredor Seco na Guatemala, Los Angeles e outras cidades urbanas nos EUA e no sul global. Ele liderou planos globais de iniciativas de evangelização e transformação, defesa da justiça social em ajuda humanitária, iniciativas anticorrupção na América Latina e programas de treinamento em liderança global.',
@@ -126,7 +126,7 @@ return [
     ],
 
     'shaila' => [
-        'p1' => 'Gerente de Captação de Recursos',
+        'p1' => ' de Captação de Recursos',
         'p2' => 'Shaila Muñoz nasceu e foi criada na bela ilha de Porto Rico, em uma família profundamente enraizada no ministério. Desde muito jovem, ela foi imersa nos ensinamentos da fé e na importância de servir aos outros. Guiada por sua criação, Shaila cultivou uma paixão profunda por disseminar a Palavra de Deus, o que mais tarde moldaria sua trajetória pessoal e profissional.',
         'p3' => 'Depois de concluir sua graduação em Administração de Empresas, Shaila seguiu um caminho intencional, combinando sua perspicácia acadêmica com seu chamado espiritual. Ao se mudar para Nashville, Tennessee, ela se encontrou no coração da indústria editorial cristã, onde prosperou por mais de 14 anos.',
         'p4' => 'Em sua carreira, Shaila se tornou uma inspiração, combinando sua formação em administração de empresas com seu inabalável compromisso com sua fé. Seu trabalho não é apenas uma profissão, mas um chamado: um meio pelo qual ela continua a obra de disseminar o Evangelho para diversas audiências. Seja por meio da criação de literatura, estratégias de vendas e marketing, as contribuições de Shaila ressoaram profundamente na comunidade cristã e além.',
@@ -162,7 +162,7 @@ return [
         'p12' => 'profundamente sua mãe, que lhe ensinou a importância da fé, do trabalho árduo e da dedicação à família. Sua mãe não foi apenas um exemplo de resiliência em momentos desafiadores, mas também de compaixão e serviço aos outros, valores que Yajaira aplica em sua vida pessoal e ministerial.',
     ],
     'juan' => [
-        'p1' => 'Interno ReDET - Comunidades de Prática',
+        'p1' => ' ReDET - Comunidades de Prática',
         'p2' => 'Nascido e criado em San Salvador, terra ancestral do povo nahua, Juan tem um mestrado em Teologia Latino-Americana pela Universidad Centroamericana “José Simeón Cañas” e um Mestrado em Divindades pelo Seminário Teológico Fuller. Após vários anos no ministério pastoral em El Salvador, agora faz parte da equipe do Centro Latino no Seminário Teológico Fuller. Também é estudante de doutorado em Religião e Sociedade na Drew University Theological School. Seus interesses de pesquisa incluem trauma cultural, discurso político, teoria crítica e teologias da libertação, particularmente no contexto do pós-guerra salvadorenho.',
         'p3' => 'Tenho paixão por fazer parte da mudança histórica que a educação teológica evangélica latina está vivendo. Tenho esperança de ver espaços de formação teológica mais conectados às realidades de dor e esperança dos diversos povos latino-americanos.',
         'p4' => 'Assisto a séries, brinco com meus gatos e gosto de comer com meus amigos.',

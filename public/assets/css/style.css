@@ -8031,7 +8031,7 @@ div#mCSB_1_container {
 .info-block-one .inner-box {
   position: relative;
   display: block;
-  background: linear-gradient(to right, #4a235a, #a569bd, #e8daef) !important;
+  background: linear-gradient(to right, #4a235a, #a569bd) !important;
   border-color: #4a235a;
   color: #fff;
   border-radius: 15px;

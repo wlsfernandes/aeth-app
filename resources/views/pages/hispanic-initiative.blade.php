@@ -117,8 +117,6 @@
                     {{ __('hispanic_initiative.contact_funded_by') }}</li>
                 <li><strong>{{ __('hispanic_initiative.contact_address_label') }}</strong>
                     {{ __('hispanic_initiative.contact_address') }}</li>
-                <li><strong>{{ __('hispanic_initiative.contact_phone_label') }}</strong>
-                    {{ __('hispanic_initiative.contact_phone') }}</li>
                 <li><strong>{{ __('hispanic_initiative.contact_email_label') }}</strong>
                     <a href="mailto:hispanicinitiative@aeth.org">{{ __('hispanic_initiative.contact_email') }}</a>
                 </li>
