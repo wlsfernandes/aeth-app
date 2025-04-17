@@ -64,7 +64,7 @@ class CartController extends Controller
                 'name' => $product->name,
                 'price' => $product->price,
                 'quantity' => 1,
-                'weight' => $product->weight,
+                'weight' => $product->weight ?? 0.1,
                 'image' => $product->image,
             ];
         }
@@ -113,7 +113,7 @@ class CartController extends Controller
         // Recalculate totals
         $cartCount = array_sum(array_column($cart, 'quantity'));
         $totalAmount = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
-        $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0) * $item['quantity'], $cart));
+        $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0.1) * $item['quantity'], $cart));
 
         session()->put('cart_total', $totalAmount);
         session()->put('cart_total_weight', $totalWeight);
@@ -158,7 +158,7 @@ class CartController extends Controller
         // Recalculate cart count and total
         $cartCount = array_sum(array_column($cart, 'quantity'));
         $totalAmount = array_sum(array_map(fn($item) => $item['price'] * $item['quantity'], $cart));
-        $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0) * $item['quantity'], $cart));
+        $totalWeight = array_sum(array_map(fn($item) => ($item['weight'] ?? 0.1) * $item['quantity'], $cart));
 
         session()->put('cart_total', $totalAmount);
         session()->put('cart_total_weight', $totalWeight);

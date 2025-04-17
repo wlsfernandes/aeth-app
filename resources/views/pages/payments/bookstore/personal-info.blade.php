@@ -19,8 +19,7 @@
 
                             <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
                             <input type="hidden" name="taxAmount" value="{{ number_format($taxAmount ?? 0, 2, '.', '') }}">
-                            <input type="hidden" name="weight" id="weight"
-                                value="{{ number_format($weight ?? 0, 2, '.', '') }}">
+                            <input type="hidden" name="weight" id="weight" value="{{ $weight ?? 0.1 }}">
 
                             <input type="hidden" name="hidden_shipment_cost" id="hidden_shipment_cost"
                                 value="{{ $shipment_cost }}">
