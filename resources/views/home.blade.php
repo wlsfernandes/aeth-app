@@ -262,6 +262,58 @@
                                     <li>
                                         <a data-slide-index="1" href="#">
                                             <figure class="thumb thumb-2"><img
+                                                    src="assets/images/testimonials/thumbs/meylin.png" alt=""></figure>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-inner">
+                                <ul class="rating-box clearfix">
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                </ul>
+                                <p><i>@lang('testimonial.meylin.front')</i></p>
+                                <div class="author-info">
+                                    <h3>@lang('testimonial.meylin.name')</h3>
+                                    <span class="designation">@lang('testimonial.meylin.desc')</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-content">
+                            <div class="slider-pager">
+                                <ul class="thumb-box">
+                                    <li>
+                                        <a data-slide-index="1" href="#">
+                                            <figure class="thumb thumb-2"><img
+                                                    src="assets/images/testimonials/thumbs/margot.png" alt=""></figure>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="testimonial-inner">
+                                <ul class="rating-box clearfix">
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                    <li><i class="icon-13"></i></li>
+                                </ul>
+                                <p><i>@lang('testimonial.margot.front')</i></p>
+                                <div class="author-info">
+                                    <h3>@lang('testimonial.margot.name')</h3>
+                                    <span class="designation">@lang('testimonial.margot.desc')</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-content">
+                            <div class="slider-pager">
+                                <ul class="thumb-box">
+                                    <li>
+                                        <a data-slide-index="1" href="#">
+                                            <figure class="thumb thumb-2"><img
                                                     src="assets/images/testimonials/thumbs/jose.png" alt=""></figure>
                                         </a>
                                     </li>
@@ -275,7 +327,7 @@
                                     <li><i class="icon-13"></i></li>
                                     <li><i class="icon-13"></i></li>
                                 </ul>
-                                <p><i>@lang('testimonial.jose.p1')</i></p>
+                                <p><i>@lang('testimonial.jose.front')</i></p>
                                 <div class="author-info">
                                     <h3>@lang('testimonial.jose.name')</h3>
                                     <span class="designation">@lang('testimonial.jose.desc')</span>

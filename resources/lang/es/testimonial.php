@@ -21,6 +21,18 @@ return [
         'name' => 'José Daniel Montañez, D.Min',
         'desc' => 'Instructor de Teología Práctica (Programa de Ministerios Hispanos) en el Seminario Teológico Gordon Conwell',
         'p1' => '"La experiencia fue sumamente enriquecedora. La diversidad de los participantes y la excelencia de los recursos generaron un ambiente ideal para el diálogo, la exploración de nuevas ideas y la identificación de herramientas que nos permiten servir mejor en nuestros contextos ministeriales. Valoro profundamente el trabajo que están realizando a través del Proyecto Antioquía y AETH..."',
+        'front' => 'Valoro profundamente el trabajo que están realizando a través del Proyecto Antioquía y AETH...'
     ],
-
+    'margot' => [
+        'name' => 'Pastora Margot Camacho',
+        'desc' => ' Primera Iglesia Bautista de Carolina',
+        'p1' => '"Felicito a la Asociación para la Educación Teológica Hispana (AETH) por su excelente taller intensivo sobre la mujer y la predicación. Este fue un espacio transformador que destacó el llamado, ministerio e impacto de la mujer en el ministerio pastoral. Este taller no solo ofreció definiciones claras y profundas sobre lo que significa un llamado, la distinción entre proclamación y predicación, y la esencia del ministerio,(entre otras), sino que también subrayó la importancia de visibilizar el rol de la mujer en las Escrituras. Se mencionó que más de 122 mujeres hablaron (proclamaron y predicaron) en la Biblia. Fue una experiencia enriquecedora que no solo aportó conocimiento, sino que también afirmó y fortaleció mi propio llamado pastoral como mujer, inspirándome a continuar trabajando para la gloria de Dios. ¡Gracias por este valioso aporte al fortalecimiento del liderazgo femenino en la iglesia! Dios les bendiga grandemente y adelante sembrando en el Reino de Dios."',
+        'front' => '"Felicito a la Asociación para la Educación Teológica Hispana (AETH) por su excelente taller intensivo sobre la mujer y la predicación. Este fue un espacio transformador que destacó el llamado, ministerio e impacto de la mujer en el ministerio pastoral...',
+    ],
+    'meylin' => [
+        'name' => 'Meylin Rivera Allende',
+        'desc' => 'ex-alumna de Universidad Teológica ECHAM.',
+        'p1' => '"En cuanto a la experiencia, puedo decir que le doy un 20 de 10. ¡Fue increíble! La temática fue muy puntual y sumamente necesaria para nuestra realidad. El aspecto más destacado de todo lo que se habló, y que me encantó, fue que no se trató de un espacio para menospreciar a los hombres. Al contrario, toda la palabra compartida fue dirigida a resaltar que, así como el ministerio del hombre es importante para el Reino de Dios, el ministerio de la mujer también lo es. Con esto en mente, es fundamental que, como iglesia y cuerpo de Cristo, comencemos a abrir espacios de diálogo en los que se nos invite a deconstruir ciertos pensamientos que, de una forma u otra, distorsionan lo que debería ser el ministerio de la mujer, y, en consecuencia, afectan la esencia misma del evangelio. Con mucho amor y discernimiento, debemos comenzar a enseñar que Dios no decide otorgar ministerios en función de nuestro género. Él nos escoge y nos da ministerios basados en lo que hay en nuestro corazón."',
+        'front' => 'En cuanto a la experiencia, puedo decir que le doy un 20 de 10. ¡Fue increíble! La temática fue muy puntual y sumamente necesaria para nuestra realidad...',
+    ],
 ];
