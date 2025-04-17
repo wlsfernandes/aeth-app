@@ -98,6 +98,10 @@
                                 <input type="hidden" name="last_name" value="{{ $last_name }}">
                                 <input type="hidden" name="email" value="{{ $email }}">
                                 <input type="hidden" name="program" value="AETH">
+                                <input type="hidden" name="address" value="{{ $address ?? '' }}">
+                                <input type="hidden" name="city" value="{{ $city ?? '' }}">
+                                <input type="hidden" name="state" value="{{ $state ?? '' }}">
+                                <input type="hidden" name="zipcode" value="{{ $zipcode ?? '' }}">
                                 <input type="hidden" name="amount" value="{{ number_format($amount ?? 0, 2, '.', '') }}">
                                 <input type="hidden" name="weight" id="weight"
                                     value="{{ number_format($weight ?? 0, 2, '.', '') }}">

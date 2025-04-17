@@ -84,7 +84,7 @@
                             <div class="row justify-content-center text-center">
                                 <div class="col-md-7">
                                     <label for="address" class="form-label">@lang('header.address'):</label>
-                                    <input type="text" id="address" name="address_line_1" class="form-control" required>
+                                    <input type="text" id="address" name="address" class="form-control" required>
                                 </div>
                                 <div class="col-md-2">
                                     <label for="city" class="form-label">@lang('header.city'):</label>

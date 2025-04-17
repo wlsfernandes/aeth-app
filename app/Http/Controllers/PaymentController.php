@@ -143,6 +143,11 @@ class PaymentController extends Controller
         $first_name = $request->input('first_name');
         $last_name = $request->input('last_name');
         $email = $request->input('email');
+        $address = $request->input('address');
+        $city = $request->input('city');
+        $state = $request->input('state');
+        $zipcode = $request->input('zipcode');
+
 
         // Define Florida state and county sales tax (Orlando, FL 32867)
         $stateTax = 0.06;  // 6% Florida state sales tax
@@ -158,7 +163,7 @@ class PaymentController extends Controller
         session(['taxAmount' => $taxAmount]);
         session(['totalAmount' => $totalAmount]);
         $cartItems = session('cart', []);
-        return view('pages.payments.bookstore.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount'));
+        return view('pages.payments.bookstore.credit-payment', compact('amount', 'cartItems', 'shipment_cost', 'first_name', 'last_name', 'email', 'taxAmount', 'totalAmount', 'address', 'city', 'state', 'zipcode'));
     }
 
     /**
@@ -503,6 +508,7 @@ class PaymentController extends Controller
 
         try {
             $shipmentCost = $request->input('hidden_shipment_cost') ?? 0;
+            $taxAmount = $request->input('taxAmount') ?? 0;
             $address = $request->input('address');
             $address_complement = $request->input('address_complement');
             $city = $request->input('city');
@@ -560,6 +566,8 @@ class PaymentController extends Controller
                 'customer_email' => $paymentRecord->email,
                 'total' => $total,
                 'shipment_cost' => $shipmentCost,
+                'tax_amount' => $taxAmount ?? 0,
+                'super_total' => $paymentRecord->totalAmount,
                 'address' => $address,
                 'address_complement' => $address_complement,
                 'city' => $city,

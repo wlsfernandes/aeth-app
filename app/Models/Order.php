@@ -54,7 +54,7 @@ use App\Models\OrderItem;
 class Order extends Model
 {
 
-    protected $fillable = ['order_number', 'customer_name', 'customer_email', 'total', 'shipment_cost', 'address', 'address_complement', 'city', 'state', 'zipcode'];
+    protected $fillable = ['order_number', 'customer_name', 'customer_email', 'total', 'shipment_cost', 'address', 'address_complement', 'city', 'state', 'zipcode', 'tax_amount', 'super_total'];
 
     public function items()
     {
