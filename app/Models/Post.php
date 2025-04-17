@@ -99,7 +99,7 @@ class Post extends Model
         $locale = app()->getLocale();
         $summary = match ($locale) {
             'es' => $this->summary_es,
-            'pt' => $this->summary_pt,
+            'pt-BR' => $this->summary_pt,
             default => $this->summary_en,
         };
 

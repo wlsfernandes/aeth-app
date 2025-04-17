@@ -14,8 +14,10 @@
             @foreach($posts as $post)
                 <div class="col-md-4">
                     <div class="card mb-4 box-shadow">
-                        <img class="card-img-top" src="{{ $post->image_url }}" alt="{{ $post->title_en }}"
-                            style="height: 225px; width: 100%; display: block; object-fit: cover; object-position: left top;">
+                        <a href="{{ route('post.show', $post->slug) }}"><img class="card-img-top" src="{{ $post->image_url }}"
+                                alt="{{ $post->title_en }}"
+                                style="height: 225px; width: 100%; display: block; object-fit: cover; object-position: left top;">
+                        </a>
 
                         <div class="card-body d-flex flex-column"
                             style="min-height: 300px;display: flex;flex-direction: column;justify-content: space-between;">
@@ -23,7 +25,7 @@
                                 <p class="card-text" style="margin-bottom:15px;">
                                     @if(App::getLocale() == 'es')
                                         {{ $post->title_es }}
-                                    @elseif(App::getLocale() == 'pt')
+                                    @elseif(App::getLocale() == 'pt-BR')
                                         {{ $post->title_pt }}
                                     @else
                                         {{ $post->title_en }} {{-- Default to English if no locale match --}}
