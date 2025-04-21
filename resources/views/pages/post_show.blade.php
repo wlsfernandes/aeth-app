@@ -51,7 +51,7 @@
                             @case('es')
                                 {{ $post->content_es ?? '' }}
                                 @break
-                            @case('pt-Br')
+                            @case('pt-BR')
                                 {{ $post->content_pt ?? '' }}
                                 @break
                             @default
