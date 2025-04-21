@@ -265,9 +265,10 @@ class PaymentController extends Controller
             if ($donationResult['status'] === 'success') {
                 // send donation email
                 if (!empty($donationResult['email'])) {
-                    Mail::to($donationResult['email'])->send(
-                        new DonationEmail($donationResult['first_name'], $donationResult['email'])
-                    );
+                    Mail::to($donationResult['email'])
+                        ->cc('administration@aeth.org')
+                        ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
+                        ->send(new DonationEmail($donationResult['email'] ?? ''));
                 } else {
                     Log::warning('Skipping email sending: No email found in donationResult.', $donationResult);
                 }

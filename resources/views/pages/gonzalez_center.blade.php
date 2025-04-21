@@ -40,7 +40,7 @@
                 </div>
             </div>
             <!-- Donation form -->
-            @include('pages.payments.donation.page', ['type' => 'donation', 'program' => 'González Center']);
+            @include('pages.payments.donation.page', ['type' => 'Donation', 'program' => 'González Center']);
             <!-- Donation form end -->
         </div>
     </section>

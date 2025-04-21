@@ -150,7 +150,12 @@ class PayPalController extends Controller
                 ]);
 
                 // Send confirmation email
-                Mail::to($payment->email)->send(new DonationEmail($payment->first_name, $payment->email));
+                if (!empty($payment->email)) {
+                    Mail::to($payment->email)
+                        ->cc('administration@aeth.org')
+                        ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
+                        ->send(new DonationEmail($payment->email ?? ''));
+                }
 
                 return redirect()->route('payment')->with('success', 'Payment successful.');
             }
