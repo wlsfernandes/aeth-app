@@ -27,7 +27,7 @@
                             @case('es')
                                 {{ $post->title_es ?? '' }}
                                 @break
-                            @case('pt')
+                            @case('pt-BR')
                                 {{ $post->title_pt ?? '' }}
                                 @break
                             @default
