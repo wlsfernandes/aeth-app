@@ -72,7 +72,7 @@ class PostController extends Controller
             })
             ->where('published', true)
             ->whereDate('date_of_publication', '<=', Carbon::today())
-            ->orderBy('published_at', 'desc')
+            ->orderBy('date_of_event', 'desc')
             ->paginate(3);
 
         return view('pages.events', compact('posts'));
@@ -86,7 +86,7 @@ class PostController extends Controller
             })
             ->where('published', true)
             ->whereDate('date_of_publication', '<=', Carbon::today())
-            ->orderBy('published_at', 'desc')
+            ->orderBy('date_of_publication', 'desc')
             ->paginate(3);
 
         return view('pages.aeth-pages', compact('posts'));

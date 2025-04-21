@@ -84,11 +84,21 @@ class Post extends Model
         'file_url',
         'file_url_es',
         'file_url_ptBR',
+        'created_at',
+        'updated_at',
         'button_text_en',
         'button_text_es',
-        'button_text_pt'
+        'button_text_pt',
+        'external_link',
+        'external_link_button',
+        'date_of_publication',
+        'date_of_event',
     ];
 
+    protected $casts = [
+        'date_of_publication' => 'datetime',
+        'date_of_event' => 'datetime',
+    ];
 
     public function postType()
     {

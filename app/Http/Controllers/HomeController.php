@@ -32,7 +32,7 @@ class HomeController extends Controller
             })
             ->where('published', true)
             ->whereDate('date_of_publication', '<=', Carbon::today())
-            ->orderBy('published_at', 'desc')
+            ->orderBy('date_of_publication', 'desc')
             ->limit(3)
             ->get();
 
@@ -42,7 +42,7 @@ class HomeController extends Controller
             })
             ->where('published', true)
             ->whereDate('date_of_publication', '<=', Carbon::today())
-            ->orderBy('published_at', 'desc')
+            ->orderBy('date_of_event', 'desc')
             ->limit(3)
             ->get();
 
