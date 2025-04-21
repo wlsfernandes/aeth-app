@@ -26,7 +26,7 @@ class PostController extends Controller
             })
             ->where('published', true)
             ->whereDate('date_of_publication', '<=', Carbon::today())
-            ->orderBy('published_at', 'desc')
+            ->orderBy('date_of_publication', 'desc')
             ->paginate(6);
 
         return view('pages.post', compact('posts'));
