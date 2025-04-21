@@ -420,7 +420,7 @@
                                         <h3><a href="{{ route('post.show', $event->slug) }}">
                                                 @if(App::getLocale() == 'es')
                                                     {{ $event->title_es }}
-                                                @elseif(App::getLocale() == 'pt')
+                                                @elseif(App::getLocale() == 'pt-BR')
                                                     {{ $event->title_pt }}
                                                 @else
                                                     {{ $event->title_en }}

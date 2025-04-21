@@ -28,7 +28,7 @@
                             <h5 class="card-title">
                                 @if(App::getLocale() == 'es')
                                     {{ $post->title_es }}
-                                @elseif(App::getLocale() == 'pt')
+                                @elseif(App::getLocale() == 'pt-BR')
                                     {{ $post->title_pt }}
                                 @else
                                     {{ $post->title_en }}
