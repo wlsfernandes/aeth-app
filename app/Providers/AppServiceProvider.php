@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // Redirect all other domains to somosaeth.org
+        // Redirect all other domains to aeth.org
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
 
