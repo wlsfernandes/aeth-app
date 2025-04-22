@@ -503,8 +503,7 @@
                 <figure class="clients-logo"><a href="https://se-pr.edu/" target="blank"><img
                             src="assets/images/clients/clients-13.png" alt=""></a>
                 </figure>
-                <figure class="clients-logo"><a href="https://www.vanguard.edu/" target="blank"><img
-                            src="assets/images/clients/vanguard.jpg" alt=""></a>
+                <figure class="clients-logo"><a href=" https://explore.vanguard.edu/degree-programs/maestria/maestria-en-estudios-de-liderazgo/ " target="blank"><img src="assets/images/clients/vanguard.jpg" alt=""></a>
                 </figure>
                 <figure class="clients-logo"><a href="https://sitb.edu.ar/" target="blank"><img
                             src="assets/images/clients/sitb.webp" alt=""></a>
