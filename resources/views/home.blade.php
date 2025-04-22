@@ -19,10 +19,24 @@
                     aria-label="Slide 3"></button>
                 <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
                     aria-label="Slide 4"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                    aria-label="Slide 5"></button>
 
             </div>
             <div class="carousel-inner">
-                <div class="carousel-item active">
+            <div class="carousel-item active">
+                @switch(App::getLocale())
+                    @case('es')
+                      <img src="assets/images/banner/new-es.jpg" class="d-block w-100" alt="Slide 1 (ES)">
+                    @break
+                    @case('pt-BR')
+                    <img src="assets/images/banner/new-es.jpg" class="d-block w-100" alt="Slide 1 (ES)">
+                    @break
+                    @default
+                    <img src="assets/images/banner/new-en.jpg" class="d-block w-100" alt="Slide 1 (EN)">
+                @endswitch
+                </div>
+                <div class="carousel-item">
                     <img src="assets/images/banner/Banner-Website-Impactando.jpg" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
