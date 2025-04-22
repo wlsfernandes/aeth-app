@@ -27,13 +27,13 @@
             <div class="carousel-item active">
                 @switch(App::getLocale())
                     @case('es')
-                      <img src="assets/images/banner/new-es.jpg" class="d-block w-100" alt="Slide 1 (ES)">
+                      <img src="assets/images/banner/3.jpg" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
                     @case('pt-BR')
-                    <img src="assets/images/banner/new-es.jpg" class="d-block w-100" alt="Slide 1 (ES)">
+                    <img src="assets/images/banner/3.jpg" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
                     @default
-                    <img src="assets/images/banner/new-en.jpg" class="d-block w-100" alt="Slide 1 (EN)">
+                    <img src="assets/images/banner/4.jpg" class="d-block w-100" alt="Slide 1 (EN)">
                 @endswitch
                 </div>
                 <div class="carousel-item">
