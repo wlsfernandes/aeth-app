@@ -30,8 +30,8 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
 
-            if (in_array($host, ['www.aeth.org', 'aeth.org'])) {
-                Redirect::to('https://somosaeth.org' . request()->getRequestUri(), 301)->send();
+            if (in_array($host, ['https://www.aeth.org', 'https://somosaeth.org', 'somosaeth.org'])) {
+                Redirect::to('https://aeth.org' . request()->getRequestUri(), 301)->send();
             }
         }
     }
