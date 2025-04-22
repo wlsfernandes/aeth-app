@@ -679,7 +679,7 @@
                             </figure>
                             <div class="lower-content">
                                 <h3><a href="{{ route('oscar-merlo')}}" style="color:#4a235a;"> Oscar Merlo</a></h3>
-                                <span class="designation">@lang('team.compelling_preaching_program_manager')</span>
+                                <span class="designation">@lang('team.compelling_preaching')</span>
                             </div>
                         </div>
                     </div>
@@ -723,7 +723,7 @@
                                 <div class="lower-content">
                                     <h3><a href="{{ route('jeremy-villoch')}}" style="color:#4a235a;"> Jeremy Villoch</a>
                                     </h3>
-                                    <span class="designation">@lang('team.intern')</span>
+                                    <span class="designation">@lang('team.compelling_preaching')</span>
                                 </div>
                             </div>
                         </div>

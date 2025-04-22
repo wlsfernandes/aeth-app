@@ -13,7 +13,7 @@ return [
     'member' => 'Miembro',
     'our_team' => 'Nuestro Equipo',
     'executive_director' => 'Directora Ejecutiva',
-    'compelling_preaching_program_manager' => 'Predicación Transformadora',
+    'compelling_preaching' => 'Predicación Transformadora',
     'office_business_manager' => 'Gerente Administrativo',
     'community_engagement_manager' => 'Gerente de Participación Comunitaria',
     'accounting_manager' => 'Coordinador Financiero',
