@@ -298,5 +298,8 @@ class HomeController extends Controller
         return view('pages.hispanic-initiative');
     }
 
-
+    public function grantees(): View
+    {
+        return view('pages.hispanic-initiative-grantees');
+    }
 }

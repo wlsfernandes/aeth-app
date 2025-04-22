@@ -104,6 +104,7 @@ Route::get('/juan-martinez', [TeamController::class, 'juanMartinez'])->name('jua
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 Route::get('/hispanic-initiative', [HomeController::class, 'nishplc'])->name('nishplc');
+Route::get('/hispanic-initiative-grantees', [HomeController::class, 'grantees'])->name('grantees');
 
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');

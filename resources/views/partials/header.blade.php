@@ -246,10 +246,17 @@
                                                     href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
                                             </li>
                                             <li><a href="https://gonzalezcenter.org"
-                                                    target="blank">@lang('header.gonzalez_center')</a>
+                                                    target="_blank">@lang('header.gonzalez_center')</a></li>
+
+                                            <li class="dropdown">
+                                                <a href="{{ route('nishplc') }}">@lang('header.hispanic_initiative')</a>
+                                                <ul>
+                                                    <li><a
+                                                            href="{{ route('grantees') }}">@lang('hispanic_initiative.grantees')</a>
+                                                    </li>
+                                                </ul>
                                             </li>
-                                            <li><a href="{{ route('nishplc') }}">@lang('header.hispanic_initiative')</a>
-                                            </li>
+
                                             <li><a href="{{ route('young-leaders') }}">@lang('header.young_leaders')</a>
                                             </li>
                                         </ul>

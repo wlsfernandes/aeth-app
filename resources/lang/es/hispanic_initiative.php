@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'grantee' => [
+        'verse' => 'La Iniciativa Nacional para Fortalecer a los Líderes Pastorales y Congregaciones Hispanas celebra las contribuciones únicas que cada institución, congregación, denominación, seminario, universidad, colegio y organización sin fines de lucro desarrolla para fortalecer y apoyar la ecología de la Iglesia Hispano-Latina en los Estados Unidos y el Caribe.',
+    ],
+    'grantees' => 'Beneficiarios',
     'meta_description' => 'Esta es una breve descripción de la página de inicio.',
     'meta_keywords' => 'inicio, bienvenida, introducción',
 

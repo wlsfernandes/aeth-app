@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'grantee' => [
+        'verse' => 'The National Initiative to Strengthen Hispanic Pastoral Leaders and Congregations  celebrates the unique contributions that every institution, congregation, denomination, seminary, university, college and non-profit organizations develop to strengthen and support the ecology of the Hispanic-Latine Church in the US and the Caribbean. ',
+    ],
+    'grantees' => 'Grantees',
     'meta_description' => 'This is a brief description of the home page.',
     'meta_keywords' => 'home, welcome, introduction',
 
@@ -43,4 +47,6 @@ return [
     'contact_phone' => '407-754-6863 / 407-773-1234',
     'contact_email_label' => 'Email:',
     'contact_email' => 'hispanicinitiative@aeth.org',
+
+
 ];
