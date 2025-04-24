@@ -157,7 +157,7 @@ class PayPalController extends Controller
                         ->send(new DonationEmail($payment->email ?? ''));
                 }
 
-                return redirect()->route('payment')->with('success', 'Payment successful.');
+                return redirect()->route('gracias', ['text' => 'donation']);
             }
 
             return redirect()->route('payment')->withErrors('Donation failed. Please try again.');
@@ -373,7 +373,7 @@ class PayPalController extends Controller
                 // Send confirmation email **only now**
                 Mail::to($payment->email)->send(new OrderEmail($payment->first_name, $order->order_number, $payment->email));
                 session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
-                return redirect()->route('payment')->with('success', 'Payment successful.');
+                return redirect()->route('gracias', ['text' => 'purchase']);
             }
 
             return redirect()->route('payment')->withErrors('Payment failed. Please try again.');

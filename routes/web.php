@@ -114,7 +114,7 @@ Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
 Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
-
+Route::get('/gracias/{text}', [HomeController::class, 'gracias'])->name('gracias');
 
 
 

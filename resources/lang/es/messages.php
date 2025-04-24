@@ -1,6 +1,14 @@
 <?php
 
 return [
+    "gracias" => [
+        'title' => '¡Gracias!',
+        'subtitle' => '¡Excelente! Tu :text ha sido completado.',
+        'message' => 'Agradecemos mucho tu apoyo. Tu :text nos ayuda a continuar nuestra misión.',
+        'go_home' => 'Ir a Inicio',
+        'email_note' => '¿No recibiste el correo?',
+        'contact_link' => 'Haz clic aquí para contactarnos',
+    ],
     'calendar' => 'Calendario',
     'program_resources' => 'Programas y Recursos',
     'certification_of_theological' => 'Certificación de Programas de Educación Teológica',

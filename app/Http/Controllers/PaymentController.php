@@ -213,7 +213,7 @@ class PaymentController extends Controller
 
             if ($paymentResult['status'] === 'success') {
                 Session::flash('success', 'Payment successful!');
-                return redirect()->route('payment');
+                return redirect()->route('gracias', ['text' => 'purchase']);
             } elseif ($paymentResult['status'] === 'requires_action') {
                 return response()->json([
                     'requires_action' => true,
@@ -277,7 +277,7 @@ class PaymentController extends Controller
                 } else {
                     Session::flash('success', 'Thank you for your generous donation!');
                 }
-                return redirect()->route('payment');
+                return redirect()->route('gracias', ['text' => 'donation']);
             } elseif ($donationResult['status'] === 'requires_action') {
                 return response()->json([
                     'requires_action' => true,
@@ -586,7 +586,7 @@ class PaymentController extends Controller
             DB::commit();
             session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
             session()->flash('success', 'Your payment was processed successfully!');
-            return redirect()->route('bookstore');
+            return redirect()->route('gracias', ['text' => 'purchase']);
         } catch (Exception $e) {
             DB::rollBack();
 
@@ -613,7 +613,7 @@ class PaymentController extends Controller
     {
         // Handle the callback after Stripe redirects back to your app
         Session::flash('success', 'Payment completed!');
-        return redirect()->route('payment.form');
+        return redirect()->route('gracias', ['text' => 'purchase']);
     }
 
     /**

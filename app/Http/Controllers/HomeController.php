@@ -50,6 +50,20 @@ class HomeController extends Controller
         //    return view('soon', compact('articles', 'events'));
     }
 
+
+
+
+    /**
+     * Display the Thank You page.
+     *
+     * @return View
+     */
+    public function gracias($text): View
+    {
+        return view('pages.gracias', compact('text'));
+    }
+
+
     /**
      * Display the About Us page.
      *
