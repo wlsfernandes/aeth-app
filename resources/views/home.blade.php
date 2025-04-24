@@ -505,7 +505,7 @@
                 </figure>
                 <figure class="clients-logo"><a href=" https://explore.vanguard.edu/degree-programs/maestria/maestria-en-estudios-de-liderazgo/ " target="blank"><img src="assets/images/clients/vanguard.jpg" alt=""></a>
                 </figure>
-                <figure class="clients-logo"><a href="https://sitb.edu.ar/" target="blank"><img
+                <figure class="clients-logo"><a href="https://sitb.edu.ar/institucionales/" target="blank"><img
                             src="assets/images/clients/sitb.webp" alt=""></a>
                 </figure>
             </div>
