@@ -26,11 +26,11 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // Redirect all other domains to aeth.org
+        // Redirect all non-primary domains to aeth.org
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
 
-            if (in_array($host, ['https://www.aeth.org', 'https://somosaeth.org', 'somosaeth.org', 'https://aeth.info', 'https://www.aeth.info'])) {
+            if (in_array($host, ['aeth.info', 'www.aeth.info', 'somosaeth.org', 'www.somosaeth.org'])) {
                 Redirect::to('https://aeth.org' . request()->getRequestUri(), 301)->send();
             }
         }
