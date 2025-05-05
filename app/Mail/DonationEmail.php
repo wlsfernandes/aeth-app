@@ -22,6 +22,10 @@ class DonationEmail extends Mailable
             ->subject('Your Donation Confirmation')
             ->with([
                 'name' => $this->firstName,
-            ]);
+            ])->cc('administration@aeth.org')
+            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']);
     }
+
+
+
 }

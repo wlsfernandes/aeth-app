@@ -25,11 +25,10 @@ class OrderEmail extends Mailable
         return $this->view('emails.order')
             ->subject('Your Order Confirmation')
             ->with([
-                'name' => $this->firstName, // Only passing first name
+                'name' => $this->firstName,
                 'orderNumber' => $this->orderNumber,
             ])
-            ->to($this->email) // Send to the provided email
             ->cc('administration@aeth.org')
-            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']); // Additional recipients
+            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']);
     }
 }
