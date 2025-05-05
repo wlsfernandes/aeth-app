@@ -53,13 +53,14 @@ class PayPalController extends Controller
 
         try {
             $amount = $request->input('amount', 100);
-
+            $program = $request->input('program');
             // Create payment record first
             $payment = Payment::create([
                 'first_name' => $request->input('first_name') ?? '***',
                 'last_name' => $request->input('last_name') ?? '***',
                 'email' => $request->input('email') ?? '***@***.com',
-                'type' => 'donation',
+                'type' => 'Donation',
+                'program' => $request->program ?? '',
                 'amount' => $amount ?? 0,
                 'shipment_cost' => 0,
                 'isRecurring' => $request->input('is_recurring', false),
