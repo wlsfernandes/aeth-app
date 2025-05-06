@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+
 use Illuminate\Auth\Events\Registered;
 use App\Listeners\CheckMembershipExpiry;
 use App\Listeners\RedirectIfDefaultPassword;
@@ -9,6 +10,7 @@ use Illuminate\Auth\Events\Login;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use App\Listeners\LogSuccessfulLogin;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -24,6 +26,7 @@ class EventServiceProvider extends ServiceProvider
         Login::class => [
             CheckMembershipExpiry::class,
             RedirectIfDefaultPassword::class,
+            LogSuccessfulLogin::class,
         ],
     ];
 
