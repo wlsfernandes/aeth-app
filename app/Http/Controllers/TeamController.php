@@ -171,8 +171,56 @@ class TeamController extends Controller
      */
     public function juanMartinez()
     {
-        return view('pages.team.juan-martinez');
+        return view('pages.speakers.juan-martinez');
     }
 
+
+    public function davi()
+    {
+        return view('pages.speakers.david-vazquez-levy');
+    }
+
+
+    public function perea()
+    {
+        return view('pages.speakers.guesnerth-perea');
+    }
+
+
+    public function tapia()
+    {
+        return view('pages.speakers.lori-tapia');
+    }
+
+
+    public function harris()
+    {
+        return view('pages.speakers.marty-harris');
+    }
+
+
+    public function romero()
+    {
+        return view('pages.speakers.romero');
+    }
+    public function estrada()
+    {
+        return view('pages.speakers.wilmer-estrada');
+    }
+    public function oscar()
+    {
+        return view('pages.speakers.oscar-garcia-johnson');
+    }
+
+
+    public function justo()
+    {
+        return view('pages.speakers.justo-gonzalez');
+    }
+
+    public function alma()
+    {
+        return view('pages.speakers.alma-tinoco-ruiz');
+    }
 
 }

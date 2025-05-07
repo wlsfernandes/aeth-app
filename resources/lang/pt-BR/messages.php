@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'workshops' => 'Talleres',
     "gracias" => [
         'title' => 'Obrigado!',
         'subtitle' => 'Perfeito! Sua :text foi concluída.',

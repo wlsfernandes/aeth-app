@@ -74,6 +74,7 @@ Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name(
 Route::get('/young-leaders', [HomeController::class, 'youngLeaders'])->name('young-leaders');
 Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching'])->name('compelling_preaching');
 Route::get('/lecture-series-2025', [HomeController::class, 'lectureSeries2025'])->name('lectureSeries2025');
+Route::get('/ls20259444401', [HomeController::class, 'ls20259444401'])->name('ls20259444401');
 Route::get('/help-desk', [HomeController::class, 'helpDesk'])->name('helpDesk');
 
 
@@ -100,6 +101,15 @@ Route::get('/yaheli-vargas', [TeamController::class, 'yaheliVargas'])->name('yah
 Route::get('/maylin-escala', [TeamController::class, 'maylinEscala'])->name('maylin-escala');
 Route::get('/yajaira-ruiz', [TeamController::class, 'yajairaRuiz'])->name('yajaira-ruiz');
 Route::get('/juan-martinez', [TeamController::class, 'juanMartinez'])->name('juan-martinez');
+Route::get('/david-vazquez-levy', [TeamController::class, 'davi'])->name('davi');
+Route::get('/guesnerth-perea', [TeamController::class, 'perea'])->name('perea');
+Route::get('/lori-tapia', [TeamController::class, 'tapia'])->name('tapia');
+Route::get('/marty-harris', [TeamController::class, 'harris'])->name('harris');
+Route::get('/roberto-chao-romero', [TeamController::class, 'romero'])->name('romero');
+Route::get('/wilmer-estrada', [TeamController::class, 'estrada'])->name('estrada');
+Route::get('/oscar-garcia-johnson', [TeamController::class, 'oscar'])->name('oscar');
+Route::get('/justo-gonzalez', [TeamController::class, 'justo'])->name('justo');
+Route::get('/alma-tinoco-ruiz', [TeamController::class, 'alma'])->name('alma');
 
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
