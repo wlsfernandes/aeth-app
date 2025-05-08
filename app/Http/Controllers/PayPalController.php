@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use App\Mail\OrderEmail;
 use App\Mail\DonationEmail;
 
+use App\Models\YoungLideres;
 use App\Models\Product;
 use App\Models\User;
 use App\Models\Member;
@@ -409,6 +410,15 @@ class PayPalController extends Controller
             return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
         }
 
+        if ($request->has('young_lideres_membership') && $request->young_lideres_membership === 'true') {
+            $young_lider_id = YoungLideres::where('email', $request->email)->value('id');
+            if (!$young_lider_id) {
+                Session::flash('error', 'To be a participant of the Young Líderes Program, please email mescala@aeth.org.');
+                return redirect()->route('payment-membership')->withInput();
+            }
+            $request->merge(['young_lider_id' => $young_lider_id]);
+        }
+
         return $this->createMembershipSubscription($request);
     }
     /**
@@ -434,21 +444,31 @@ class PayPalController extends Controller
             ]);
 
             // Define the plan IDs dynamically
-            $plans = [
-                'Student' => [
-                    'month' => env('PAYPAL_STUDENT_MONTHLY'),
-                    'year' => env('PAYPAL_STUDENT_YEARLY'),
-                ],
-                'Individual' => [
-                    'month' => env('PAYPAL_INDIVIDUAL_MONTHLY'),
-                    'year' => env('PAYPAL_INDIVIDUAL_YEARLY'),
-                ],
-                'Institutional' => [
-                    'month' => env('PAYPAL_INSTITUTIONAL_MONTHLY'),
-                    'year' => env('PAYPAL_INSTITUTIONAL_YEARLY'),
-                ],
-            ];
+            $plans = [];
 
+            if ($request->boolean('young_lideres_membership')) {
+                // Special plan for Young Líderes
+                $plans['Student'] = [
+                    'month' => env('PAYPAL_YOUNG_LIDERES'),
+                    'year' => env('PAYPAL_YOUNG_LIDERES'),
+                ];
+            } else {
+                // Standard membership plans
+                $plans = [
+                    'Student' => [
+                        'month' => env('PAYPAL_STUDENT_MONTHLY'),
+                        'year' => env('PAYPAL_STUDENT_YEARLY'),
+                    ],
+                    'Individual' => [
+                        'month' => env('PAYPAL_INDIVIDUAL_MONTHLY'),
+                        'year' => env('PAYPAL_INDIVIDUAL_YEARLY'),
+                    ],
+                    'Institutional' => [
+                        'month' => env('PAYPAL_INSTITUTIONAL_MONTHLY'),
+                        'year' => env('PAYPAL_INSTITUTIONAL_YEARLY'),
+                    ],
+                ];
+            }
             // Check if membership plan & period exist
             if (!isset($plans[$request->membership_plan][$request->period])) {
                 throw new Exception('Invalid membership plan or period.');
@@ -476,6 +496,7 @@ class PayPalController extends Controller
                         'last_name' => $request->last_name,
                         'membership_plan' => $request->membership_plan,
                         'period' => $request->period,
+                        'young_lider_id' => $request->young_lider_id ?? null,
                         'subscription_id' => '{subscription_id}'
                     ]),
                     "cancel_url" => route('payment-membership')
@@ -582,6 +603,13 @@ class PayPalController extends Controller
                 'tax' => 0,
                 'totalAmount' => $request->query(key: 'amount') ?? 0,
             ]);
+
+            if ($request->query('young_lider_id')) {
+                $youngLider = YoungLideres::find($request->query('young_lider_id'));
+                if ($youngLider) {
+                    $youngLider->update(['young_lideres_membership' => true]);
+                }
+            }
 
             Mail::to($user->email)->send(new WelcomeEmail($user, $password));
 

@@ -74,7 +74,6 @@ Route::get('/resource-center', [HomeController::class, 'resourceCenter'])->name(
 Route::get('/young-leaders', [HomeController::class, 'youngLeaders'])->name('young-leaders');
 Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching'])->name('compelling_preaching');
 Route::get('/lecture-series-2025', [HomeController::class, 'lectureSeries2025'])->name('lectureSeries2025');
-Route::get('/ls20259444401', [HomeController::class, 'ls20259444401'])->name('ls20259444401');
 Route::get('/help-desk', [HomeController::class, 'helpDesk'])->name('helpDesk');
 
 
@@ -126,7 +125,9 @@ Route::get('/certification', [CertificationController::class, 'generateImage'])-
 Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
 Route::get('/gracias/{text}', [HomeController::class, 'gracias'])->name('gracias');
 
-
+/*******************************************************Temporary tests URL for approval */
+Route::get('/ls20259444401', [HomeController::class, 'ls20259444401'])->name('ls20259444401');
+Route::get('/younglideres20259444401', [HomeController::class, 'youngLideres20259444401'])->name('youngLideres20259444401');
 
 /**********************************************  Members **********************************************/
 

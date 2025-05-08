@@ -21,6 +21,8 @@
             <input type="hidden" name="program" value="{{ old('program', $program ?? '') }}">
             <input type="hidden" name="membership_plan" value="{{ old('membership_plan', $membership_plan ?? '') }}">
             <input type="hidden" name="period" value="{{ old('period', $period ?? '') }}">
+            <input type="hidden" name="young_lideres_membership"
+                value="{{ old('young_lideres_membership', $young_lideres_membership ?? '') }}">
 
             <!-- Payment Fields -->
             <div class="row justify-content-center text-center">

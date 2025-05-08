@@ -20,6 +20,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
+use App\Models\YoungLideres;
 use App\Models\ErrorLog;
 use App\Models\Payment;
 use App\Models\Member;
@@ -345,7 +346,15 @@ class PaymentController extends Controller
             Session::flash('error', $message); // Store only a single string message
             return redirect()->route('payment-membership')->withInput()->withErrors($errors);
         }
-
+        // ✅ Young Lideres check
+        if ($request->has('young_lideres_membership') && $request->young_lideres_membership === 'true') {
+            $young_lider = YoungLideres::where('email', $request->email)->first();
+            if (!$young_lider) {
+                Session::flash('error', 'To be a participant of the Young Líderes Program, please email mescala@aeth.org.');
+                return redirect()->route('payment-membership')->withInput();
+            }
+            $request->merge(['young_lider' => $young_lider]);
+        }
         DB::beginTransaction();
 
         try {
@@ -354,8 +363,7 @@ class PaymentController extends Controller
 
             if ($paymentResult['status'] === 'success') {
                 $paymentRecord = $paymentResult['paymentRecord'];
-                // $password = Str::random(10);
-                $password = 'adminAeth2025'; // required to change in first login
+                $password = 'adminAeth2025';
                 $user = User::create([
                     'name' => $paymentRecord->first_name . ' ' . $paymentRecord->last_name,
                     'email' => $paymentRecord->email,
@@ -381,6 +389,12 @@ class PaymentController extends Controller
                     'is_recurring' => true,
                 ]);
 
+                if ($request->has('young_lider') && $request->young_lider instanceof YoungLideres) {
+                    $youngLider = YoungLideres::find($request->young_lider->id);
+                    if ($youngLider) {
+                        $youngLider->update(['young_lideres_membership' => true]);
+                    }
+                }
                 // $request->period;
                 Mail::to($user->email)->send(new WelcomeEmail($user, $password));
                 DB::commit();

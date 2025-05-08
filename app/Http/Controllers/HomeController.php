@@ -297,10 +297,7 @@ class HomeController extends Controller
         return view('pages.lecture-series-2025');
     }
 
-    public function ls20259444401(): View
-    {
-        return view('pages.ls20259444401');
-    }
+
     /**
      * Display the Help Desk page.
      *
@@ -320,4 +317,16 @@ class HomeController extends Controller
     {
         return view('pages.hispanic-initiative-grantees');
     }
+
+    /* temp url for approval */
+    public function ls20259444401(): View
+    {
+        return view('pages.tests.ls20259444401');
+    }
+    public function youngLideres20259444401(): View
+    {
+        return view('pages.tests.youngLideres20259444401');
+    }
+
+
 }

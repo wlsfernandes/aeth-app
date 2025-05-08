@@ -56,7 +56,8 @@ class MemberController extends Controller
         $membership_plan = $request->input('membership_plan');
         $period = $request->input('period');
         $amount = $request->input('amount');
-        return view('pages.payments.membership.page', compact('amount', 'type', 'program', 'membership_plan', 'period'));
+        $young_lideres_membership = $request->input('young_lideres_membership');
+        return view('pages.payments.membership.page', compact('amount', 'type', 'program', 'membership_plan', 'period', 'young_lideres_membership'));
     }
     /**
      * Redirects the user to the membership renewal payment page with selected details.
