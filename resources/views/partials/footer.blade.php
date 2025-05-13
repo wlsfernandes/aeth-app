@@ -19,8 +19,12 @@
 <footer class="main-footer">
     <div class="auto-container">
         <div class="footer-top">
-            <figure class="footer-logo"><a href="index.php"><img src="{{ asset('assets/images/logo-3.png') }}"
+            <figure class="footer-logo"><a href="/"><img src="{{ asset('assets/images/logo-3.png') }}"
                         alt="AETH Logo"></a></figure>
+            <figure class="footer-logo" style="max-width: 250px;"><a
+                    href="https://www.charitynavigator.org/ein/582022462" target="blank"><img
+                        src="{{ asset('assets/images/logo/Charity-Navigator.png') }}" alt="Charity Navigator"></a>
+            </figure>
             <ul class="social-links">
                 <li><a href="http://www.facebook.com/groups/somosaeth/" target="blank"><i
                             class="fab fa-facebook-f"></i></a></li>

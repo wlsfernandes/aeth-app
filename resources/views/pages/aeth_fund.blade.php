@@ -33,7 +33,7 @@
                 </div>
             </div>
             <!-- Donatin form -->
-            @include('pages.payments.donation.page', ['type' => 'Donation', 'program' => 'AETH']);
+            @include('pages.payments.donation.page', ['type' => 'Donation', 'program' => 'AETH'])
             <!-- Donatin form end -->
         </div>
     </section>

@@ -165,6 +165,7 @@
                                 </a>
                             </li>
 
+
                         </ul>
                     </div>
                     <div class="top-right">
@@ -172,6 +173,8 @@
                             <li>
                                 <a href="mailto:info@aeth.org" style="font-size: 12px;color:#4a235a">
                                     info@aeth.org</a>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -320,15 +323,17 @@
 
                                         </ul>
                                     </li>
+                                    <li> <a href="{{ route('login') }}" class="btn btn-sm btn-gradient"
+                                            style="padding:0px;margin-top:35px">
+                                            <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                                        </a></li>
                                 </ul>
                             </div>
                         </nav>
 
                     </div>
                     <ul class="nav-right">
-                        <!-- <li class="search-box-outer search-toggler">
-                            <i class="fa fa-life-ring"></i>
-                        </li> -->
+
                         <li class="cart-box">
                             <a href="{{ route('helpDesk') }}"> <i class="bi bi-headset"></i></a>
                         </li>
@@ -340,13 +345,12 @@
                                 </span>
                             </a>
                         </li>
-
-
-
-                        <a href="{{ route('login') }}" class="btn btn-sm btn-gradient">
-                            <i class="bi bi-box-arrow-in-right me-2"></i> Login
-                        </a>
-
+                        <li>
+                            <figure class="footer-logo" style="max-width:100px;"><a
+                                    href="https://www.charitynavigator.org/ein/582022462" target="blank"><img
+                                        src="{{ asset('assets/images/logo/charity-navigator-color.png') }}"
+                                        alt="Charity Navigator"></a></figure>
+                        </li>
                     </ul>
                 </div>
             </div>

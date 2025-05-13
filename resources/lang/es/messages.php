@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'proudly' => 'Orgullosamente calificados por Charity Navigator – Haz clic para ver nuestro perfil',
     'workshops' => 'Talleres',
     "gracias" => [
         'title' => '¡Gracias!',
