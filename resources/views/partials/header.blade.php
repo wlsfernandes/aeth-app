@@ -325,7 +325,7 @@
                                     </li>
                                     <li> <a href="{{ route('login') }}" class="btn btn-sm btn-gradient"
                                             style="padding:0px;margin-top:35px">
-                                            <i class="bi bi-box-arrow-in-right me-2"></i> Login
+                                            <i class="bi bi-box-arrow-in-right me-2"></i> @lang('header.login')
                                         </a></li>
                                 </ul>
                             </div>

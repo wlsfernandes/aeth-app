@@ -84,7 +84,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'es',
 
     /*
     |--------------------------------------------------------------------------
@@ -183,7 +183,7 @@ return [
     */
 
     'aliases' => Facade::defaultAliases()->merge([
-       
+
 
     ])->toArray(),
 
