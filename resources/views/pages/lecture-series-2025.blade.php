@@ -40,12 +40,15 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
+
                                                 <a href="https://www.eventbrite.com/e/8th-justo-and-catherine-gonzalez-lecture-series-tickets-1270760511899?aff=oddtdtcreator"
-                                                    target="blank">
-                                                    <div class="icon-box"><i
-                                                            class="bi bi-person-plus font-size-20"></i></i></i></div>
-                                                    <h3>@lang('header.register_here')</h3>
+                                                    target="_blank"
+                                                    class="donate-box-btn theme-btn-one d-block w-100 text-center">
+
+                                                    <span> <i class="bi bi-person-plus font-size-32"></i>
+                                                        @lang('header.register_here')</span>
                                                 </a>
+
                                             </div>
                                         </div>
                                     </div>
