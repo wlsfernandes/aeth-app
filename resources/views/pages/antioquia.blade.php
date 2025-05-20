@@ -130,7 +130,7 @@
                             </div>
                             <div class="lower-content">
                                 <div class="text">
-                                    <p>@lang('programs.antioquia.p11')</p>
+                                    <p>@lang('programs.antioquia.p15')</p>
                                 </div>
 
                             </div>
