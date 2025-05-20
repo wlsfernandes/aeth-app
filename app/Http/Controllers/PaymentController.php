@@ -266,10 +266,14 @@ class PaymentController extends Controller
             if ($donationResult['status'] === 'success') {
                 // send donation email
                 if (!empty($donationResult['email'])) {
-                    Mail::to($donationResult['email'])
-                        ->cc('administration@aeth.org')
-                        ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
-                        ->send(new DonationEmail($donationResult['email'] ?? ''));
+                    try {
+                        Mail::to($donationResult['email'])
+                            ->cc('administration@aeth.org')
+                            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
+                            ->send(new DonationEmail($donationResult['email'] ?? ''));
+                    } catch (Exception $e) {
+                        Log::error('Failed to send donation email: ' . $e->getMessage());
+                    }
                 } else {
                     Log::warning('Skipping email sending: No email found in donationResult.', $donationResult);
                 }
@@ -395,8 +399,11 @@ class PaymentController extends Controller
                         $youngLider->update(['young_lideres_membership' => true]);
                     }
                 }
-                // $request->period;
-                Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+                try {
+                    Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+                } catch (Exception $e) {
+                    Log::error('Failed to send welcome email: ' . $e->getMessage());
+                }
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
                 return redirect()->route('login');
@@ -596,7 +603,12 @@ class PaymentController extends Controller
             }
 
             // Send confirmation email
-            Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord->first_name, $order->order_number, $paymentRecord->email));
+            try {
+                Mail::to($paymentRecord->email)->send(new OrderEmail($paymentRecord->first_name, $order->order_number, $paymentRecord->email));
+            } catch (Exception $e) {
+                Log::error('Failed to send order email: ' . $e->getMessage());
+            }
+
             DB::commit();
             session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
             session()->flash('success', 'Your payment was processed successfully!');

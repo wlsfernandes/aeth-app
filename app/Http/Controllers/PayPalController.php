@@ -153,10 +153,14 @@ class PayPalController extends Controller
 
                 // Send confirmation email
                 if (!empty($payment->email)) {
-                    Mail::to($payment->email)
-                        ->cc('administration@aeth.org')
-                        ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
-                        ->send(new DonationEmail($payment->email ?? ''));
+                    try {
+                        Mail::to($payment->email)
+                            ->cc('administration@aeth.org')
+                            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
+                            ->send(new DonationEmail($payment->email ?? ''));
+                    } catch (Exception $e) {
+                        Log::error('Failed to send donation email: ' . $e->getMessage());
+                    }
                 }
 
                 return redirect()->route('gracias', ['text' => 'donation']);
@@ -372,8 +376,13 @@ class PayPalController extends Controller
                 // Update order status
                 $order->update(['status' => 'completed']);
 
-                // Send confirmation email **only now**
-                Mail::to($payment->email)->send(new OrderEmail($payment->first_name, $order->order_number, $payment->email));
+                try {   // Send confirmation email **only now**
+                    Mail::to($payment->email)->send(new OrderEmail($payment->first_name, $order->order_number, $payment->email));
+                } catch (Exception $e) {
+                    Log::error('Failed to send order email: ' . $e->getMessage());
+                }
+
+
                 session()->forget(['cart', 'cart_total', 'cart_total_weight', 'cart_count', 'amount', 'weight']);
                 return redirect()->route('gracias', ['text' => 'purchase']);
             }
@@ -611,7 +620,11 @@ class PayPalController extends Controller
                 }
             }
 
-            Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+            try {
+                Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+            } catch (Exception $e) {
+                Log::error('Failed to send welcome email: ' . $e->getMessage());
+            }
 
             DB::commit();
             Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
