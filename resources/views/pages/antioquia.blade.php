@@ -66,7 +66,7 @@
                             <div class="text mb_40">
                                 <p>@lang('programs.antioquia.p6') </p>
                                 <p>@lang('programs.antioquia.p7') </p>
-                                <p>@lang('programs.antioquia.p8') </p>
+
                             </div>
                         </div>
                     </div>
