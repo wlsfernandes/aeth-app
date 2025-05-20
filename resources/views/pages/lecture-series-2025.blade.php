@@ -213,8 +213,27 @@
             </div>
 
             <div class="workshop-speakers mt-5">
+
                 <div class="sec-title centred mb_55" style="margin:0px;">
                     <span class="sub-title calendar">@lang('messages.workshops')</span>
+                </div>
+                <div class="row justify-content-center text-center" style="margin:0px;">
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('segura') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Harold Segura.jpg" alt="Harold Segura"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Harold Segura</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('fraiser') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Elizabeth Conde Fraiser.jpg" alt="Fraiser"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Elizabeth Conde-Fraiser</p>
+                        </a>
+                    </div>
                 </div>
                 <div class="row justify-content-center text-center" style="margin:0px;">
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
@@ -266,18 +285,8 @@
                         </a>
                     </div>
                 </div>
-                <div class="sec-title centred mb_55" style="margin:0px;">
-                    <span class="sub-title calendar">@lang('messages.trauma')</span>
-                </div>
                 <div class="row justify-content-center text-center" style="margin:0px;">
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('segura') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Harold Segura.jpg" alt="Harold Segura"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Harold Segura</p>
-                        </a>
-                    </div>
+
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
                         <a href="{{ route('zareth') }}" class="text-decoration-none text-dark">
                             <img src="assets/images/resource/Alexandra Zareth.jpg" alt="Zareth"
@@ -292,7 +301,7 @@
                             <img src="assets/images/resource/Alexia Salvatierra.jpg" alt="Salvatierra"
                                 class="img-fluid rounded-circle mb-2"
                                 style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Alexandra Zareth</p>
+                            <p class="mb-0">Alexia Salvatierra</p>
                         </a>
                     </div>
 
@@ -322,6 +331,71 @@
                             <p class="mb-0">Yenny Delgado</p>
                         </a>
                     </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('rocha') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Robert Rocha.jpg" alt="rocha"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Robert Rocha</p>
+                        </a>
+                    </div>
+
+                </div>
+                <div class="row justify-content-center text-center" style="margin:0px;">
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('malave') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Carlos Malave.jpg" alt="Carlos Malave"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Carlos Malave</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('montanez') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Daniel Montañez.jpg" alt="Daniel Montañez"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Daniel Montañez</p>
+                        </a>
+                    </div>
+
+
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('viera') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Javier Viera.jpg" alt="Viera"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Javier Viera</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('caballero_ls2025') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Jeffry Caballero.jpg" alt="Caballero"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Jeffry Caballero</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('lugo_ls2025') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Jessica Lugo.jpg" alt="Lugo"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Yenny Delgado</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('merlo_ls2025') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Oscar Merlo.jpg" alt="Merlo"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Oscar Merlo</p>
+                        </a>
+                    </div>
+
 
                 </div>
 

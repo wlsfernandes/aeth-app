@@ -248,8 +248,48 @@ class TeamController extends Controller
         return view('pages.speakers.yenny-delgado');
     }
 
-    /*   *
+    public function malave()
+    {
+        return view('pages.speakers.carlos-malave');
+    }
+    public function montanez()
+    {
+        return view('pages.speakers.daniel-montanez');
+    }
+    public function fraiser()
+    {
+        return view('pages.speakers.elizabeth-conde-fraiser');
+    }
+    public function viera()
+    {
+        return view('pages.speakers.javier-viera');
+    }
 
+    public function caballero_ls2025()
+    {
+        return view('pages.speakers.jeffry-caballero');
+    }
+    public function lugo_ls2025()
+    {
+        return view('pages.speakers.jessica-lugo');
+    }
+    public function merlo_ls2025()
+    {
+        return view('pages.speakers.oscar-merlo');
+    }
+    public function rocha()
+    {
+        return view('pages.speakers.robert-rocha');
+    }
+    /*   *
+Route   ::get('/carlos-malave', [TeamController::class, 'malave'])->name('malave');
+Route::get('/daniel-montanez', [TeamController::class, 'montanez'])->name('montanez');
+Route::get('/elizabeth-conde-fraiser', [TeamController::class, 'fraiser'])->name('fraiser');
+Route::get('/javier-viera', [TeamController::class, 'viera'])->name('viera');
+Route::get('/jeffry-caballero-ls2025', [TeamController::class, 'caballero-ls2025'])->name('caballero-ls2025');
+Route::get('/jessica-lugo-ls2025', [TeamController::class, 'lugo-ls2025'])->name('lugo-ls2025');
+Route::get('/oscar-melo-ls2025', [TeamController::class, 'melo-ls2025'])->name('melo-ls2025');
+Route::get('/robert-rocha', [TeamController::class, 'rocha'])->name('rocha');
     Route::get('/alexandra-zareth', [TeamController::class, 'zareth'])->name('zareth');
     Route::get('/alexia-salvatierra', [TeamController::class, 'salvatierra'])->name('salvatierra');
     Route::get('/andrea-canales', [TeamController::class, 'canales'])->name('canales');

@@ -15,14 +15,15 @@
             <div class="team-details-content">
                 <div class="row clearfix">
                     <div class="col-lg-3 col-md-12 col-sm-12 image-column">
-                        <figure class="image-box"><img src="assets/images/resource/Yenny Delgado.jpg" alt="">
+                        <figure class="image-box"><img src="assets/images/resource/Carlos Malave.jpg" alt="">
                         </figure>
                     </div>
                     <div class="col-lg-9 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
-                            <h2>Roberto Chao Romero</h2>
-                            <p><b>@lang('ls25.speaker_title_delgado')</b></p>
-                            <p>@lang('ls25.speaker_desc_delgado')</p>
+                            <h2>Carlos Malave</h2>
+                            <p><b>@lang('ls25.speaker_title_malave')</b></p>
+                            <p>@lang('ls25.speaker_desc_malave')</p>
+
                         </div>
                     </div>
                 </div>

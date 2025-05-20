@@ -115,6 +115,16 @@ Route::get('/andrea-canales', [TeamController::class, 'canales'])->name('canales
 Route::get('/harold-segura', [TeamController::class, 'segura'])->name('segura');
 Route::get('/pablo-anabalon', [TeamController::class, 'anabalon'])->name('anabalon');
 Route::get('/yenny-delgado', [TeamController::class, 'delgado'])->name('delgado');
+Route::get('/carlos-malave', [TeamController::class, 'malave'])->name('malave');
+Route::get('/daniel-montanez', [TeamController::class, 'montanez'])->name('montanez');
+Route::get('/elizabeth-conde-fraiser', [TeamController::class, 'fraiser'])->name('fraiser');
+Route::get('/javier-viera', [TeamController::class, 'viera'])->name('viera');
+Route::get('/jeffry-caballero', [TeamController::class, 'caballero_ls2025'])->name('caballero_ls2025');
+Route::get('/jessica-lugo', [TeamController::class, 'lugo_ls2025'])->name('lugo_ls2025');
+Route::get('/oscar-merlo', [TeamController::class, 'merlo_ls2025'])->name('merlo_ls2025');
+Route::get('/robert-rocha', [TeamController::class, 'rocha'])->name('rocha');
+
+
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 Route::get('/hispanic-initiative', [HomeController::class, 'nishplc'])->name('nishplc');
