@@ -109,7 +109,12 @@ Route::get('/wilmer-estrada', [TeamController::class, 'estrada'])->name('estrada
 Route::get('/oscar-garcia-johnson', [TeamController::class, 'oscar'])->name('oscar');
 Route::get('/justo-gonzalez', [TeamController::class, 'justo'])->name('justo');
 Route::get('/alma-tinoco-ruiz', [TeamController::class, 'alma'])->name('alma');
-
+Route::get('/alexandra-zareth', [TeamController::class, 'zareth'])->name('zareth');
+Route::get('/alexia-salvatierra', [TeamController::class, 'salvatierra'])->name('salvatierra');
+Route::get('/andrea-canales', [TeamController::class, 'canales'])->name('canales');
+Route::get('/harold-segura', [TeamController::class, 'segura'])->name('segura');
+Route::get('/pablo-anabalon', [TeamController::class, 'anabalon'])->name('anabalon');
+Route::get('/yenny-delgado', [TeamController::class, 'delgado'])->name('delgado');
 
 Route::get('/testimonials', [HomeController::class, 'testimonials'])->name('testimonials');
 Route::get('/hispanic-initiative', [HomeController::class, 'nishplc'])->name('nishplc');

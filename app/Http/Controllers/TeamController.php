@@ -223,4 +223,41 @@ class TeamController extends Controller
         return view('pages.speakers.alma-tinoco-ruiz');
     }
 
+    public function zareth()
+    {
+        return view('pages.speakers.alexandra-zareth');
+    }
+    public function salvatierra()
+    {
+        return view('pages.speakers.alexia-salvatierra');
+    }
+    public function canales()
+    {
+        return view('pages.speakers.andrea-canales');
+    }
+    public function segura()
+    {
+        return view('pages.speakers.harold-segura');
+    }
+    public function anabalon()
+    {
+        return view('pages.speakers.pablo-anabalon');
+    }
+    public function delgado()
+    {
+        return view('pages.speakers.yenny-delgado');
+    }
+
+    /*   *
+
+    Route::get('/alexandra-zareth', [TeamController::class, 'zareth'])->name('zareth');
+    Route::get('/alexia-salvatierra', [TeamController::class, 'salvatierra'])->name('salvatierra');
+    Route::get('/andrea-canales', [TeamController::class, 'canales'])->name('canales');
+    Route::get('/harold-segura', [TeamController::class, 'segura'])->name('segura');
+    Route::get('/pablo-anabalon', [TeamController::class, 'anabalon'])->name('anabalon');
+    Route::get('/yenny-delgado', [TeamController::class, 'delgado'])->name('delgado');
+    */
+
+
+
 }

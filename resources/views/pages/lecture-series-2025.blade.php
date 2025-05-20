@@ -40,7 +40,6 @@
                                     <div class="col-lg-6 col-md-6 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
-
                                                 <a href="https://www.eventbrite.com/e/8th-justo-and-catherine-gonzalez-lecture-series-tickets-1270760511899?aff=oddtdtcreator"
                                                     target="_blank"
                                                     class="donate-box-btn theme-btn-one d-block w-100 text-center">
@@ -48,7 +47,6 @@
                                                     <span> <i class="bi bi-person-plus font-size-32"></i>
                                                         @lang('header.register_here')</span>
                                                 </a>
-
                                             </div>
                                         </div>
                                     </div>
@@ -154,12 +152,12 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="#"><img src="assets/images/resource/justo.png"
-                                                    alt=""></a></figure>
+                                        <figure class="image"><a href="{{ route('justo') }}"><img
+                                                    src="assets/images/resource/justo.png" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="#">Dr. Justo González</a></h3>
+                                            <h3><a href="{{ route('justo') }}">Dr. Justo González</a></h3>
                                             <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -173,12 +171,12 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="#"><img src="assets/images/resource/Dr.Alma.png"
-                                                    alt=""></a></figure>
+                                        <figure class="image"><a href="{{ route('alma') }}"><img
+                                                    src="assets/images/resource/Dr.Alma.png" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="#">Dra. Alma Tinoco Ruiz</a></h3>
+                                            <h3><a href="{{ route('alma') }}">Dra. Alma Tinoco Ruiz</a></h3>
                                             <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -192,12 +190,12 @@
                             <div class="team-block-one">
                                 <div class="inner-box">
                                     <div class="image-box">
-                                        <figure class="image"><a href="#"><img src="assets/images/resource/salvatierra.png"
-                                                    alt=""></a></figure>
+                                        <figure class="image"><a href="{{ route('oscar') }}"><img
+                                                    src="assets/images/resource/salvatierra.png" alt=""></a></figure>
                                     </div>
                                     <div class="lower-content">
                                         <div class="inner">
-                                            <h3><a href="#">Dr. Oscar Garcia Johnson</a></h3>
+                                            <h3><a href="{{ route('oscar') }}">Dr. Oscar Garcia Johnson</a></h3>
                                             <span class="designation">@lang('header.speaker')</span>
                                             <ul class="social-links clearfix">
                                                 <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
@@ -211,10 +209,126 @@
                         </div>
                     </div>
                 </div>
+
             </div>
-        </div>
+
+            <div class="workshop-speakers mt-5">
+                <div class="sec-title centred mb_55" style="margin:0px;">
+                    <span class="sub-title calendar">@lang('messages.workshops')</span>
+                </div>
+                <div class="row justify-content-center text-center" style="margin:0px;">
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('davi') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/David Vazquez LEvy.jpg" alt="Speaker 1"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">David Vazquez Levy</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('perea') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Guesnerth Perea.jpg" alt="Speaker 2"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Guesnerth Perea</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('tapia') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Lori Tapia.jpg" alt="Speaker 3"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Lori Tapia</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('harris') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Marty Harris.jpg" alt="Speaker 4"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Marty Harris</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('romero') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Robert Chao Romero (1).jpg" alt="Speaker 5"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Robert Chao Romero</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('estrada') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Wilmer Estrada.jpg" alt="Speaker 6"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Wilmer Estrada</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="sec-title centred mb_55" style="margin:0px;">
+                    <span class="sub-title calendar">@lang('messages.trauma')</span>
+                </div>
+                <div class="row justify-content-center text-center" style="margin:0px;">
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('segura') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Harold Segura.jpg" alt="Harold Segura"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Harold Segura</p>
+                        </a>
+                    </div>
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('zareth') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Alexandra Zareth.jpg" alt="Zareth"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Alexandra Zareth</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('salvatierra') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Alexia Salvatierra.jpg" alt="Salvatierra"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Alexandra Zareth</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('canales') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Andrea Canales.jpg" alt="Canales"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Andrea Canales</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('anabalon') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Pablo Anabalon.jpg" alt="Anabalon"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Pablo Anabalon</p>
+                        </a>
+                    </div>
+
+                    <div class="col-6 col-sm-4 col-md-2 mb-4">
+                        <a href="{{ route('delgado') }}" class="text-decoration-none text-dark">
+                            <img src="assets/images/resource/Yenny Delgado.jpg" alt="Delgado"
+                                class="img-fluid rounded-circle mb-2"
+                                style="width: 100px; height: 100px; object-fit: cover;">
+                            <p class="mb-0">Yenny Delgado</p>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+            </div>
     </section>
-    <!-- clients-section -->
     <section class="clients-section" style="background-color:#f5f1fb">
         <div class="sec-title centred mb_55">
             <span class="sub-title calendar">@lang('messages.important_partners')</span>
@@ -231,7 +345,7 @@
             </div>
         </div>
     </section>
-    <!-- clients-section end -->
+
 
     <section class="cause-section sec-pad">
         <div class="auto-container">
@@ -295,6 +409,24 @@
             </div>
         </div>
     </section>
+    <!-- clients-section -->
+    <section class="clients-section" style="background-color:#f5f1fb">
+        <div class="sec-title centred mb_55">
+            <span class="sub-title calendar">@lang('messages.important_partners')</span>
+        </div>
+        <div class="auto-container">
+            <div class="two-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+                <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
+                            src="assets/images/clients/clients-3.png" alt=""></a>
+                </figure>
+                <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
+                            src="assets/images/clients/clients-5.png" alt=""></a>
+                </figure>
+
+            </div>
+        </div>
+    </section>
+    <!-- clients-section end -->
 
 
 
