@@ -384,7 +384,7 @@
                             <img src="assets/images/resource/Jessica Lugo.jpg" alt="Lugo"
                                 class="img-fluid rounded-circle mb-2"
                                 style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Yenny Delgado</p>
+                            <p class="mb-0">Jessica Lugo</p>
                         </a>
                     </div>
                     <div class="col-6 col-sm-4 col-md-2 mb-4">
