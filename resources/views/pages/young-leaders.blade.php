@@ -12,20 +12,11 @@
 @section('content')
     <section class="page-title centred">
         <div
-            style="background-image: url(assets/images/gallery/young_lideres_10.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+            style="background-image: url(assets/images/banner/young_lideres_banner.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
         <div class="auto-container" style="position: relative; z-index: 2;">
             <div class="content-box">
 
-            </div>
-        </div>
-    </section>
-    <section class="cta-style-two">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-        <div class="auto-container">
-            <div class="inner-box">
-
-                <h2>@lang('programs.young_leaders.welcome')</h2><br>
             </div>
         </div>
     </section>

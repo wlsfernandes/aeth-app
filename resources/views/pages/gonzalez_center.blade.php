@@ -11,7 +11,7 @@
 
 @section('content')
     <section class="page-title centred">
-        <div class="bg-layer" style="background-image: url(assets/images/gallery/center-background.jpg);"></div>
+        <div class="bg-layer" style="background-image: url(assets/images/banner/gonzalez_center_banner.jpg);"></div>
         <div class="auto-container">
             <div class="content-box">
                 <h1>Centro de Recursos Justo & Catherine González</h1>

@@ -12,18 +12,18 @@
 @section('content')
     <section class="page-title centred">
         <div
-            style="background-image: url(assets/images/gallery/cp-program.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
+            style="background-image: url(assets/images/banner/capacity_building_banner.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
     </section>
-    <section class="cta-style-two">
-        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-        <div class="auto-container">
-            <div class="inner-box">
-                <img src="assets/images/logo/cp_logo_white_transparent.png">
-                <h1 style="color:#fff">@lang('programs.cp.cp_title')</h1><br>
-            </div>
-        </div>
-    </section>
+    <!--  <section class="cta-style-two">
+                        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                        <div class="auto-container">
+                            <div class="inner-box">
+                                <img src="assets/images/logo/cp_logo_white_transparent.png">
+                                <h1 style="color:#fff">@lang('programs.cp.cp_title')</h1><br>
+                            </div>
+                        </div>
+                    </section> -->
 
 
     <section class="about-style-two pt_120">
