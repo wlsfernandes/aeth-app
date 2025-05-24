@@ -608,11 +608,11 @@
                     <div class="team-block-two">
                         <div class="inner-box">
                             <figure class="image-box">
-                                <a href="{{ route('jessica-lugo')}}"><img src="assets/images/team/Jessica Lugo.jpg"
+                                <a href="{{ route('jessicaLugo')}}"><img src="assets/images/team/Jessica Lugo.jpg"
                                         alt=""></a>
                             </figure>
                             <div class="lower-content">
-                                <h3><a href="{{ route('jessica-lugo')}}" style="color:#4a235a;"> Jessica Lugo</a></h3>
+                                <h3><a href="{{ route('jessicaLugo')}}" style="color:#4a235a;"> Jessica Lugo</a></h3>
                                 <span class="designation">@lang('team.executive_director')</span>
                             </div>
                         </div>

@@ -85,7 +85,7 @@ Route::get('/capacity-building', [HomeController::class, 'capacityBuilding'])->n
 Route::get('/capacity-building/application', [CapacityBuildingController::class, 'application'])->name('application');
 Route::get('/web-application', [HomeController::class, 'webApplication'])->name('webApplication');
 
-Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessica-lugo');
+Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessicaLugo');
 Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');
 Route::get('/glorie-acevedo', [TeamController::class, 'glorieAcevedo'])->name('glorie-acevedo');
 Route::get('/marta-luna', [TeamController::class, 'martaLuna'])->name('marta-luna');
@@ -119,9 +119,9 @@ Route::get('/carlos-malave', [TeamController::class, 'malave'])->name('malave');
 Route::get('/daniel-montanez', [TeamController::class, 'montanez'])->name('montanez');
 Route::get('/elizabeth-conde-fraiser', [TeamController::class, 'fraiser'])->name('fraiser');
 Route::get('/javier-viera', [TeamController::class, 'viera'])->name('viera');
-Route::get('/jeffry-caballero', [TeamController::class, 'caballero_ls2025'])->name('caballero_ls2025');
-Route::get('/jessica-lugo', [TeamController::class, 'lugo_ls2025'])->name('lugo_ls2025');
-Route::get('/oscar-merlo', [TeamController::class, 'merlo_ls2025'])->name('merlo_ls2025');
+Route::get('/jcaballero', [TeamController::class, 'caballero_ls2025'])->name('caballero_ls2025');
+Route::get('/jlugo', [TeamController::class, 'lugo_ls2025'])->name('lugo_ls2025');
+Route::get('/omerlo', [TeamController::class, 'merlo_ls2025'])->name('merlo_ls2025');
 Route::get('/robert-rocha', [TeamController::class, 'rocha'])->name('rocha');
 
 
