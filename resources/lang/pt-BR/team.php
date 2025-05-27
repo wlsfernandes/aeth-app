@@ -1,5 +1,6 @@
 <?php
 return [
+    'ex_oficcio' => 'Ex Ofício',
     'staff' => 'Equipe',
     'consultants' => 'Consultores',
     'service_partners' => 'Parceiros de Serviço',

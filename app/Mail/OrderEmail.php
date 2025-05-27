@@ -28,7 +28,7 @@ class OrderEmail extends Mailable
                 'name' => $this->firstName,
                 'orderNumber' => $this->orderNumber,
             ])
-            ->cc('administration@aeth.org')
+            ->cc('info@aeth.org')
             ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org']);
     }
 }

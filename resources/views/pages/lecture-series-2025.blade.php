@@ -211,197 +211,56 @@
                 </div>
 
             </div>
-
             <div class="workshop-speakers mt-5">
-
                 <div class="sec-title centred mb_55" style="margin:0px;">
                     <span class="sub-title calendar">@lang('messages.workshops')</span>
                 </div>
+
                 <div class="row justify-content-center text-center" style="margin:0px;">
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('segura') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Harold Segura.jpg" alt="Harold Segura"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Harold Segura</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('fraiser') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Elizabeth Conde Fraiser.jpg" alt="Fraiser"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Elizabeth Conde-Fraiser</p>
-                        </a>
-                    </div>
+                    @php
+                        $speakers = [
+                            ['name' => 'Alexandra Zareth', 'route' => 'zareth', 'image' => 'Alexandra Zareth.jpg'],
+                            ['name' => 'Alexia Salvatierra', 'route' => 'salvatierra', 'image' => 'Alexia Salvatierra.jpg'],
+                            ['name' => 'Andrea Canales', 'route' => 'canales', 'image' => 'Andrea Canales.jpg'],
+                            ['name' => 'Carlos Malave', 'route' => 'malave', 'image' => 'Carlos Malave.jpg'],
+                            ['name' => 'Daniel Montañez', 'route' => 'montanez', 'image' => 'Daniel Montañez.jpg'],
+                            ['name' => 'David Vazquez Levy', 'route' => 'davi', 'image' => 'David Vazquez LEvy.jpg'],
+                            ['name' => 'Elizabeth Conde-Fraiser', 'route' => 'fraiser', 'image' => 'Elizabeth Conde Fraiser.jpg'],
+                            ['name' => 'Guesnerth Perea', 'route' => 'perea', 'image' => 'Guesnerth Perea.jpg'],
+                            ['name' => 'Harold Segura', 'route' => 'segura', 'image' => 'Harold Segura.jpg'],
+                            ['name' => 'Javier Viera', 'route' => 'viera', 'image' => 'Javier Viera.jpg'],
+                            ['name' => 'Jeffry Caballero', 'route' => 'caballero_ls2025', 'image' => 'Jeffry Caballero.jpg'],
+                            ['name' => 'Jessica Lugo', 'route' => 'lugo_ls2025', 'image' => 'Jessica Lugo.jpg'],
+                            ['name' => 'Lori Tapia', 'route' => 'tapia', 'image' => 'Lori Tapia.jpg'],
+                            ['name' => 'Marty Harris', 'route' => 'harris', 'image' => 'Marty Harris.jpg'],
+                            ['name' => 'Oscar Merlo', 'route' => 'merlo_ls2025', 'image' => 'Oscar Merlo.jpg'],
+                            ['name' => 'Pablo Anabalon', 'route' => 'anabalon', 'image' => 'Pablo Anabalon.jpg'],
+                            ['name' => 'Robert Chao Romero', 'route' => 'romero', 'image' => 'Robert Chao Romero (1).jpg'],
+                            ['name' => 'Robert Rocha', 'route' => 'rocha', 'image' => 'Robert Rocha.jpg'],
+                            ['name' => 'Wilmer Estrada', 'route' => 'estrada', 'image' => 'Wilmer Estrada.jpg'],
+                            ['name' => 'Yenny Delgado', 'route' => 'delgado', 'image' => 'Yenny Delgado.jpg'],
+                        ];
+
+                        usort($speakers, fn($a, $b) => strcmp($a['name'], $b['name']));
+                    @endphp
+
+                    @foreach(array_chunk($speakers, 5) as $chunk)
+                        </div>
+                        <div class="row justify-content-center text-center" style="margin:0px;">
+                            @foreach($chunk as $speaker)
+                                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                                    <a href="{{ route($speaker['route']) }}" class="text-decoration-none text-dark">
+                                        <img src="assets/images/resource/{{ $speaker['image'] }}" alt="{{ $speaker['name'] }}"
+                                            class="img-fluid rounded-circle mb-2"
+                                            style="width: 100px; height: 100px; object-fit: cover;">
+                                        <p class="mb-0">{{ $speaker['name'] }}</p>
+                                    </a>
+                                </div>
+                            @endforeach
+                    @endforeach
                 </div>
-                <div class="row justify-content-center text-center" style="margin:0px;">
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('davi') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/David Vazquez LEvy.jpg" alt="Speaker 1"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">David Vazquez Levy</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('perea') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Guesnerth Perea.jpg" alt="Speaker 2"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Guesnerth Perea</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('tapia') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Lori Tapia.jpg" alt="Speaker 3"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Lori Tapia</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('harris') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Marty Harris.jpg" alt="Speaker 4"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Marty Harris</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('romero') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Robert Chao Romero (1).jpg" alt="Speaker 5"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Robert Chao Romero</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('estrada') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Wilmer Estrada.jpg" alt="Speaker 6"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Wilmer Estrada</p>
-                        </a>
-                    </div>
-                </div>
-                <div class="row justify-content-center text-center" style="margin:0px;">
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('zareth') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Alexandra Zareth.jpg" alt="Zareth"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Alexandra Zareth</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('salvatierra') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Alexia Salvatierra.jpg" alt="Salvatierra"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Alexia Salvatierra</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('canales') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Andrea Canales.jpg" alt="Canales"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Andrea Canales</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('anabalon') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Pablo Anabalon.jpg" alt="Anabalon"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Pablo Anabalon</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('delgado') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Yenny Delgado.jpg" alt="Delgado"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Yenny Delgado</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('rocha') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Robert Rocha.jpg" alt="rocha"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Robert Rocha</p>
-                        </a>
-                    </div>
-
-                </div>
-                <div class="row justify-content-center text-center" style="margin:0px;">
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('malave') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Carlos Malave.jpg" alt="Carlos Malave"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Carlos Malave</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('montanez') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Daniel Montañez.jpg" alt="Daniel Montañez"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Daniel Montañez</p>
-                        </a>
-                    </div>
-
-
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('viera') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Javier Viera.jpg" alt="Viera"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Javier Viera</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('caballero_ls2025') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Jeffry Caballero.jpg" alt="Caballero"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Jeffry Caballero</p>
-                        </a>
-                    </div>
-
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('lugo_ls2025') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Jessica Lugo.jpg" alt="Lugo"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Jessica Lugo</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('merlo_ls2025') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Oscar Merlo.jpg" alt="Merlo"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Oscar Merlo</p>
-                        </a>
-                    </div>
-
-
-                </div>
-
-
-
             </div>
+
     </section>
     <section class="clients-section" style="background-color:#f5f1fb">
         <div class="sec-title centred mb_55">

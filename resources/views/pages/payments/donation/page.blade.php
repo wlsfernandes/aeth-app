@@ -72,7 +72,7 @@
         <div class="title-text centred">
             <button type="submit" class="theme-btn-one" style="margin:50px;">Donate Now</button>
             <figure class="footer-logo"><a href="https://www.charitynavigator.org/ein/582022462" target="blank"><img
-                        src="{{ asset('assets/images/logo/charity-navigator-color.png') }}" alt="Charity Navigator"></a>
+                        src="{{ asset('assets/images/logo/charity-donation.png') }}" alt="Charity Navigator"></a>
                 <p style="margin:25px"><b><a href="https://www.charitynavigator.org/ein/582022462" target="blank">
                             @lang('messages.proudly')</a></b></p>
             </figure>

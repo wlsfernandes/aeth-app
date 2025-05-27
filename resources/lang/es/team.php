@@ -1,5 +1,6 @@
 <?php
 return [
+    'ex_oficio' => 'Ex oficio',
     'staff' => 'Personal',
     'consultants' => 'Consultores',
     'service_partners' => 'Socios de Servicio',
@@ -7,7 +8,7 @@ return [
     'board_directors' => 'Junta Directiva',
     'president' => 'Presidente',
     'vice_president' => 'Vicepresidente',
-    'secretary' => 'Secretario',
+    'secretary' => 'Secretaria',
     'treasurer' => 'Tesorero',
     'vocal' => 'Vocal',
     'member' => 'Miembro',
