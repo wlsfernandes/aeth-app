@@ -63,6 +63,15 @@ class HomeController extends Controller
         return view('pages.gracias', compact('text'));
     }
 
+    /**
+     * Display the Thank You page to members.
+     *
+     * @return View
+     */
+    public function thankYouMember(): View
+    {
+        return view('pages.thank-you-member');
+    }
 
     /**
      * Display the About Us page.

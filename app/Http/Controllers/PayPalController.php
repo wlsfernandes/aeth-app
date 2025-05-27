@@ -628,7 +628,7 @@ class PayPalController extends Controller
 
             DB::commit();
             Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
-            return redirect()->route('login');
+            return redirect()->route('thankYouMember');
         } catch (Exception $e) {
             DB::rollBack();
             ErrorLog::create([

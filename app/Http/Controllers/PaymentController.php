@@ -406,7 +406,7 @@ class PaymentController extends Controller
                 }
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
-                return redirect()->route('login');
+                return redirect()->route('thankYouMember');
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();
                 ErrorLog::create([
@@ -485,7 +485,7 @@ class PaymentController extends Controller
                 }
                 DB::commit();
                 Session::flash('success', 'Congratulations ! The operation was successful!');
-                return redirect()->route('login');
+                return redirect()->route('thankYouMember');
 
             } elseif ($paymentResult['status'] === 'error') {
                 DB::rollBack();

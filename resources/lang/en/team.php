@@ -1,6 +1,6 @@
 <?php
 return [
-    'ex_oficcio' => 'Ex Officio',
+    'ex_oficio' => 'Ex Officio',
     'staff' => 'Staff',
     'consultants' => 'Consultants',
     'service_partners' => 'Service Partners',

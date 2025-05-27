@@ -139,6 +139,7 @@ Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
 Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
 Route::get('/gracias/{text}', [HomeController::class, 'gracias'])->name('gracias');
+Route::get('/thank-you-member', [HomeController::class, 'thankYouMember'])->name('thankYouMember');
 
 /*******************************************************Temporary tests URL for approval */
 Route::get('/ls20259444401', [HomeController::class, 'ls20259444401'])->name('ls20259444401');
