@@ -118,9 +118,9 @@
                                 <p>@lang('pages.lectures.p3') </p>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Lecture+Series+25+Agenda+English+Version.pdf"
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Program+Lecture+Series+-+English.pdf"
                                     class="theme-btn-one" target="blank"><small>@lang('header.down_en')</small></a>
-                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Agenda+Lecture+Series+25+Espan%CC%83ol.pdf"
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Program+Lecture+Series+-+Espan%CC%83ol.pdf"
                                     class="theme-btn-one" target="_blank"><small>@lang('header.down_es')</small></a>
                             </div>
 
