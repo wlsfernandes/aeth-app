@@ -342,24 +342,76 @@
             </div>
         </div>
     </section>
-    <!-- clients-section -->
-    <section class="clients-section" style="background-color:#f5f1fb">
-        <div class="sec-title centred mb_55">
-            <span class="sub-title calendar">@lang('messages.important_partners')</span>
-        </div>
-        <div class="auto-container">
-            <div class="two-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
-                            src="assets/images/clients/clients-3.png" alt=""></a>
-                </figure>
-                <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
-                            src="assets/images/clients/clients-5.png" alt=""></a>
-                </figure>
 
+
+    <!-- faq-section -->
+    <section class="faq-section bg-color-1 sec-pad" style="background-color:#f5f1fb">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_three">
+                        <div class="content-box mr_30">
+                            <div class="sec-title mb_55">
+                                <span class="sub-title">Pacific Stay Hotel</span>
+                                <h2>@lang('ls25.hotel_information')</h2>
+                            </div>
+                            <div class="accordion-inner">
+                                <ul class="accordion-box">
+                                    <li class="accordion block">
+                                        <div class="acc-btn active">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_procedures')</h4>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="upper">
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Procedures+of+making+a+reservation+at+Pacific+Stay+Hotel.pdf"
+                                                    target="_blank"
+                                                    class="donate-box-btn theme-btn-one d-block w-100 text-center">
+                                                    <span> <i class="bi bi-download font-size-32"></i>
+                                                        @lang('ls25.hotel_click_here')</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_address')</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>3223 East Garvey Avenue NorthWest Covina - CA 91791 </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_front_desk')</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>(866) 994-3523</p>
+                                                <p>(626) 966 8311</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box ml_30 mt_19">
+                        <figure class="image"><img src="assets/images/resource/hotel-pacific.jpg" alt=""></figure>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- clients-section end -->
+    <!-- faq-section end -->
 
 
 

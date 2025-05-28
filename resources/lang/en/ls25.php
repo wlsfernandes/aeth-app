@@ -1,5 +1,10 @@
 <?php
 return [
+    'hotel_information' => 'Hotel Information',
+    'hotel_address' => 'Address',
+    'hotel_front_desk' => 'Front Desk Info',
+    'hotel_procedures' => 'Procedures of make a reservation',
+    'hotel_click_here' => 'Click here to download',
     'speaker_title_1' => 'Identity Keynote Speaker',
     'speaker_desc_1' => 'Dr. Justo L. González was born and raised in Cuba. In 1957 he was ordained as a minister within the Methodist Church, and in 1961 he became the youngest person to earn a doctorate in theological history from Yale University. For thirty years Dr. González taught at various theological institutions, beginning with eight years at the Seminario Evangélico de Puerto Rico (1961-1969). He has given hundreds of lectures in North America, South America, Europe, and Asia. He has also written over one hundred books, perhaps the best known of which are his two-volume set, History of Christianity, and his three volumes, History of Christian Thought, which have been translated into eight languages. After retiring from full-time teaching (1977) and the ministry (1992), he has dedicated his time to research, writing, and promoting Hispanic theological education. As part of the latter, Dr. González was involved in the founding of the Asociación para la Educación Teológica Hispana (AETH), the Hispanic Theological Initiative (HTI), and the Hispanic Summer Program (HSP). The activity he most values and appreciates is mentoring and encouraging Latinas and Latinos and other minority students.',
     'speaker_title_2' => 'Identity Workshop',
