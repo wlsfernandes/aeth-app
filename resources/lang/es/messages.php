@@ -36,7 +36,7 @@ return [
     'our_vision' => 'Nuestra Visión',
     'our_vision_p1' => 'Que en todas las congregaciones y ministerios de la iglesia hispana haya líderes capacitados para el servicio de toda la iglesia y la sociedad para la gloria de Dios.',
     'our_mission' => 'Nuestra Misión',
-    'our_mission_p1' => 'Promover una educación teológica de excelencia y relevancia para los líderes hispanos en su servicio a la iglesia y al mundo.',
+    'our_mission_p1' => 'Promover la educación teológica de excelencia y relevancia de los líderes hispanos en su servicio a la iglesia y al mundo.',
     'open_positions' => 'Posiciones Abiertas',
     'open_positions_p1' => 'Descubra oportunidades inspiradoras en la Asociación para la Educación Teológica Hispana. Buscamos personas apasionadas y comprometidas que deseen formar parte de nuestro equipo dedicado a avanzar en la excelencia en la educación teológica. Explore las posiciones abiertas a continuación y únase a nosotros en el camino de enriquecer la educación teológica hispana.',
     'our_team' => 'Nuestro Equipo',
