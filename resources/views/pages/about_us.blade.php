@@ -67,7 +67,7 @@
         <div class="auto-container">
             <div class="inner-box">
                 <h2>@lang('messages.core_values')</h2>
-                <p style="color: #000000;">
+                <p style="color: white;">
                     @lang('messages.fundamental_beliefs')
                 </p>
             </div>
@@ -100,7 +100,7 @@
                     <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-check-circle"
                             style="color:#4a235a"></i>
                         @lang('messages.approach')</h5>
-                    <p>@lang('messages.approach_p1')</p>
+                    <p>@lang('messages.approach_p1').</p>
                 </div>
             </div>
         </div>
@@ -119,7 +119,7 @@
                     <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-arrow-repeat"
                             style="color:#4a235a"></i>
                         @lang('messages.agility')</h5>
-                    <p>@lang('messages.agility_p1')</p>
+                    <p>@lang('messages.agility_p1').</p>
                 </div>
             </div>
         </div>
@@ -136,7 +136,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-chat-dots" style="color:#4a235a"></i>
                         @lang('messages.responsiveness')</h5>
-                    <p>@lang('messages.responsiveness_p1')</p>
+                    <p>@lang('messages.responsiveness_p1').</p>
                 </div>
             </div>
         </div>
@@ -153,7 +153,7 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi bi-eye" style="color:#4a235a"></i>
                         @lang('messages.self_reflection')</h5>
-                    <p>@lang('messages.self_reflection_p1')</p>
+                    <p>@lang('messages.self_reflection_p1').</p>
                 </div>
             </div>
         </div>
@@ -169,8 +169,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <h5 style="text-align: center; margin-bottom: 20px;"><i class="bi-person-check"
                             style="color:#4a235a"></i>
-                        @lang('messages.responsibility')</h5>
-                    <p>@lang('messages.responsibility_p1')</p>
+                        @lang('messages.accountability')</h5>
+                    <p>@lang('messages.accountability_p1').</p>
                 </div>
             </div>
         </div>

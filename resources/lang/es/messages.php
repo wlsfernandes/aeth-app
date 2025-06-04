@@ -58,27 +58,37 @@ return [
     'values' => 'Valores:',
     'principles' => 'Principios:',
     'commitment' => 'Compromiso',
-    'commitment_p1' => 'Hemos tomado una decisión consciente de lograr nuestra misión y visión invirtiendo nuestros mejores recursos, esfuerzos y enfoque.',
+    'commitment_p1' => 'Tomamos una decisión consciente para alcanzar nuestra misión y visión invirtiendo nuestros mejores recursos, esfuerzos y enfoque',
+
     'approach' => 'Enfoque',
-    'approach_p1' => 'Prestamos atención al detalle, trabajamos con claridad de propósito, intencionalidad y persistencia mientras mantenemos claridad, disciplina y resiliencia en nuestros objetivos.',
+    'approach_p1' => 'Prestamos atención a los detalles, trabajamos con claridad de propósito, intención y persistencia, manteniendo claridad, disciplina y resiliencia en nuestras metas',
+
     'collaboration' => 'Colaboración',
-    'collaboration_p1' => 'Fomentamos la innovación, el apoyo, el aprovechamiento y el trabajo en equipo entre los miembros, socios, interesados y comunidades mientras trabajamos en unidad para lograr nuestros objetivos compartidos.',
+    'collaboration_p1' => 'Fomentamos la innovación, el apoyo y el trabajo en equipo entre miembros, socios, partes interesadas y comunidades, trabajando en unidad para alcanzar nuestros objetivos compartidos',
+
     'agility' => 'Agilidad',
-    'agility_p1' => 'Podemos tomar decisiones rápidamente, sin sacrificar la calidad, y al mismo tiempo reconocer los momentos para ajustarnos, evolucionar y prosperar entre circunstancias, entornos cambiantes y/o requisitos.',
+    'agility_p1' => 'Tomamos decisiones rápidamente sin sacrificar la calidad, reconociendo también los tiempos y temporadas para ajustarnos, evolucionar y prosperar en medio de circunstancias, entornos o requerimientos cambiantes',
+
     'service' => 'Servicio',
-    'service_p1' => 'Existimos para servir, y lo hacemos priorizando las necesidades de nuestras comunidades y brindando apoyo, orientación y asistencia en asuntos educativos de la educación teológica cristiana.',
-    'responsiveness' => 'Capacidad de Respuesta',
-    'responsiveness_p1' => 'Somos proactivos, empáticos al proporcionar soluciones para cumplir con las expectativas sobre lo que hacemos y atentos a nuestro entorno.',
+    'service_p1' => 'Existimos para servir, priorizando las necesidades de nuestras comunidades y brindando apoyo, orientación y asistencia en asuntos educativos',
+
+    'responsiveness' => 'Capacidad de respuesta',
+    'responsiveness_p1' => 'Somos proactivos y empáticos al brindar soluciones que respondan a las expectativas sobre lo que hacemos, y estamos atentos a nuestro entorno',
+
     'integrity' => 'Integridad',
-    'integrity_p1' => 'Somos honestos, confiables, transparentes y consistentes en nuestras acciones.',
+    'integrity_p1' => 'Somos honestos, confiables, transparentes y consistentes en nuestras acciones',
+
     'self_reflection' => 'Autorreflexión',
-    'self_reflection_p1' => 'Reflexionamos continuamente sobre nuestras acciones y resultados para mejorar nuestra labor.',
+    'self_reflection_p1' => 'Nos comprometemos con una comprensión continua de nuestra condición y la de las comunidades a las que servimos, reconociendo y gestionando áreas de mejora continua',
+
     'excellence' => 'Excelencia',
-    'excellence_p1' => 'Operamos y actuamos con los más altos estándares, demostrando maestría en lo que hacemos y comprometiéndonos con el aprendizaje continuo, el crecimiento y la mejora.',
+    'excellence_p1' => 'Actuamos y desempeñamos nuestras funciones con los más altos estándares, demostrando dominio en lo que hacemos y comprometiéndonos con el aprendizaje, el crecimiento y la mejora constante',
+
     'responsibility' => 'Responsabilidad',
-    'responsibility_p1' => 'Cumplimos con nuestras obligaciones y rendimos cuentas por las acciones y decisiones realizadas mientras usamos los recursos de manera sabia y con cuidado.',
-    'accountability' => 'Responsabilidad',
-    'accountability_p1' => 'Asumimos y rendimos cuentas por las acciones y decisiones realizadas mientras usamos los recursos sabiamente y con cuidado.',
+    'responsibility_p1' => 'Somos proactivos, demostramos empatía al brindar soluciones que cumplan con las expectativas sobre lo que hacemos y estamos atentos a nuestro entorno',
+
+    'accountability' => 'Rendición de cuentas',
+    'accountability_p1' => 'Actuamos con responsabilidad y asumimos la propiedad de nuestras acciones, decisiones y consecuencias para garantizar fiabilidad y confianza ante nuestras comunidades, partes interesadas, socios y miembros',
     'email_address' => 'Correo Electrónico',
     'our_location' => 'Nuestra Ubicación',
     'feel_free' => 'No dudes en contactarnos',
