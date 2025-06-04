@@ -317,6 +317,11 @@ class HomeController extends Controller
     {
         return view('pages.help-desk');
     }
+
+    public function calendar(): View
+    {
+        return view('pages.calendar');
+    }
     public function nishplc(): View
     {
         return view('pages.hispanic-initiative');
