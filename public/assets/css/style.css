@@ -3681,6 +3681,10 @@ div#mCSB_1_container {
   /* Apply the gradient background */
   background: -webkit-linear-gradient(to right, #4a235a, #a569bd, #e8daef);
   background: linear-gradient(to right, #4a235a, #a569bd, #e8daef);
+  /* logo color 
+   background: -webkit-linear-gradient(to bottom, #FFD7A3, #F275A0, #5A1A5D);
+  background: linear-gradient(to bottom, #FFD7A3, #F275A0, #5A1A5D);
+  */
 }
 
 

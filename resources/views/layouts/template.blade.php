@@ -40,11 +40,14 @@
     <link rel="stylesheet" href="{{ asset('assets/template/css/plugins/jodit.min.css') }}">
 
     <link rel="stylesheet" href="{{ asset('assets/template/css/styles.css') }}">
+
+
+
     @include('partials.header')
     @yield('scripts')
 </head>
 
-<body>
+<body class="rbt-header-sticky">
     <div>
 
         @yield('content')

@@ -60,14 +60,14 @@
                                 </h4>
                                 <p class="text-muted small">{{ $post->plain_summary }}</p>
                                 <div class="read-more-btn mt-2">
-                                    <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
-                                        href="{{ route('post.show', $post->slug) }}">
-                                        <span class="icon-reverse-wrapper">
-                                            <span style="font-family: Arial, sans-serif;">@lang('messages.read_more')</span>
-                                            <span class="btn-icon" style="font-family: Arial, sans-serif;"><i
-                                                    class="feather-arrow-right"></i></span>
-                                            <span class="btn-icon" style="font-family: Arial, sans-serif;"><i
-                                                    class="feather-arrow-right"></i></span>
+                                    <a class="rbt-btn btn-gradient btn-lg hover-icon-reverse btn-sm radius-round d-flex align-items-center justify-content-center"
+                                        href="{{ route('post.show', $post->slug) }}"
+                                        style="font-family: 'DM Sans', sans-serif; font-weight: 500;">
+                                        <span class="icon-reverse-wrapper d-flex align-items-center">
+                                            <span class="me-2"
+                                                style="font-family: 'DM Sans', sans-serif;">@lang('messages.read_more')</span>
+                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
                                         </span>
                                     </a>
                                 </div>
