@@ -45,7 +45,7 @@
                             <div class="rbt-card-body">
                                 <ul class="rbt-meta">
                                     <li><i class="feather-calendar"></i>{{ $post->date }}</li>
-                                    <li><i class="feather-map-pin"></i>{{ $post->location ?? 'Online' }}</li>
+                                    <!--   <li><i class="feather-map-pin"></i>{{ $post->location ?? 'Online' }}</li> -->
                                 </ul>
                                 <h4 class="rbt-card-title">
                                     <a href="{{ route('post.show', $post->slug) }}">
@@ -63,9 +63,11 @@
                                     <a class="rbt-btn btn-border hover-icon-reverse btn-sm radius-round"
                                         href="{{ route('post.show', $post->slug) }}">
                                         <span class="icon-reverse-wrapper">
-                                            <span class="btn-text">@lang('blog.read_more')</span>
-                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
-                                            <span class="btn-icon"><i class="feather-arrow-right"></i></span>
+                                            <span style="font-family: Arial, sans-serif;">@lang('messages.read_more')</span>
+                                            <span class="btn-icon" style="font-family: Arial, sans-serif;"><i
+                                                    class="feather-arrow-right"></i></span>
+                                            <span class="btn-icon" style="font-family: Arial, sans-serif;"><i
+                                                    class="feather-arrow-right"></i></span>
                                         </span>
                                     </a>
                                 </div>
