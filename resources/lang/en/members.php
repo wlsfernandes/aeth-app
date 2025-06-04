@@ -1,6 +1,19 @@
 <?php
 
 return [
+    // English
+    'yl_member_1' => 'The first 50 YLs will have the chance to join this promotion — sign up today!',
+    'yl_member_2' => 'Young Leaders between the ages of 18-35.',
+    'yl_member_3' => 'A space to connect with other leaders across the country.',
+    'yl_member_4' => 'Access to conferences and meetings.',
+    'yl_member_5' => 'Access to seminar recordings.',
+    'yl_member_6' => 'Opportunity to register for online and in-person gatherings for free.',
+    'yl_member_7' => 'Discounted or free participation in AETH-organized events.',
+    'yl_member_8' => '15% discount on purchases from the AETH bookstore.',
+    'yl_member_9' => 'Join the most extensive, diverse, and inclusive network of Hispanic theological education professionals and experts.',
+    'yl_member_10' => 'Support the maintenance and development of certification standards.',
+    'yl_member_11' => 'Partnerships with other institutions with benefits extended to AETH members. Examples: publishers, theological education institutions.',
+    'yl_member_12' => 'Opportunity to become certified to participate in quality certification processes for programs.',
     'p1' => 'Join our community and gain access to Hispanic experts and professionals in theological education. Enjoy exclusive access to the members portal, where you can explore literature, resources, and readings available only to our active membership.',
     'p2' => 'With this membership, you will have access to hours of conferences, interviews, workshops, discussions, and debates with field experts. Until 2024, 16 Biennial Assemblies and 7 Conference Series have been held.',
     'p3' => 'Join today for a low monthly or annual fee and gain access to exclusive discounts, access to our bookstore, resource center and much more. You`ll also have the opportunity to connect with like-minded people looking for mentors or just someone to talk theology with.',
@@ -36,13 +49,13 @@ return [
     '200' => '$200 a year',
 
     'renew' =>
-        [
-            'p1' => 'Do you want to renew your membership?',
-            'p2' => 'Renew your membership today and keep accessing exclusive theology content created just for you!',
-            'p3' => 'Or do you want to hoose a new AETH membership Plan',
-            'p4' => 'Choose another plan and continue enjoying all the exclusive theological content!',
-            'p5' => 'Renew',
-            'p6' => 'New Plan',
-        ],
+    [
+        'p1' => 'Do you want to renew your membership?',
+        'p2' => 'Renew your membership today and keep accessing exclusive theology content created just for you!',
+        'p3' => 'Or do you want to hoose a new AETH membership Plan',
+        'p4' => 'Choose another plan and continue enjoying all the exclusive theological content!',
+        'p5' => 'Renew',
+        'p6' => 'New Plan',
+    ],
 
 ];

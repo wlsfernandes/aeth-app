@@ -364,7 +364,7 @@
                                         </div>
                                         <div class="acc-content current">
                                             <div class="upper">
-                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Procedures+of+making+a+reservation+at+Pacific+Stay+Hotel.pdf"
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/17cae89c-f7a7-4ad9-a420-98dfc5047c41.pdf"
                                                     target="_blank"
                                                     class="donate-box-btn theme-btn-one d-block w-100 text-center">
                                                     <span> <i class="bi bi-download font-size-32"></i>

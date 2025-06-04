@@ -1,6 +1,18 @@
 <?php
 
 return [
+    'yl_member_1' => 'Los primeros 50 YL`s tendrán la oportunidad de esta promoción únete hoy!',
+    'yl_member_2' => 'Young Líderes de las edades 18-35',
+    'yl_member_3' => 'Un espacio de conexión con otros líderes a través del país.',
+    'yl_member_4' => 'Acceso a conferencias y reuniones.',
+    'yl_member_5' => 'Acceso a grabaciones de seminarios.',
+    'yl_member_6' => 'Oportunidad de registrarse a los online e in-person gatherings gratuitamente.',
+    'yl_member_7' => 'Participación con descuento o gratuita en eventos organizados por AETH.',
+    'yl_member_8' => '15% de descuento en compras en la librería de AETH.',
+    'yl_member_9' => 'Participa en la red más extensa, diversa e inclusiva de expertos y profesionales en educación teológica hispana.',
+    'yl_member_10' => 'Apoya el mantenimiento y desarrollo de estándares de certificación.',
+    'yl_member_11' => 'Alianzas con otras instituciones con beneficios que se extienden a los miembros de AETH. Ejemplos: editoriales, instituciones de educación teológica.',
+    'yl_member_12' => 'Oportunidad de certificarse para participar en procesos de certificación de calidad de programas.',
     'p1' => 'Únete a nuestra comunidad y ten acceso a expertos y profesionales hispanos en educación teológica. Ten acceso exclusivo al portal de miembros que te permite explorar literatura, recursos y lecturas únicamente disponibles para nuestra membresía activa.',
     'p2' => 'Con esta membresía, tendrás acceso a horas de conferencias, entrevistas, talleres, discusiones y debates con expertos en el campo. Hasta 2024, se han realizado 16 Asambleas Bienales y 7 Series de Conferencias.',
     'p3' => 'Únete hoy por una baja tarifa mensual o anual y obtén acceso a descuentos exclusivos, acceso a nuestra librería, centro de recursos y mucho más. También tendrás la oportunidad de conectarte con personas afines que buscan mentores o simplemente alguien con quien hablar de teología.',
