@@ -447,9 +447,9 @@ class PayPalController extends Controller
         try {
             // Validate input
             $request->validate([
+                'email' => 'required|email|unique:users,email',
                 'membership_plan' => 'required|string', // student, individual, institutional
                 'period' => 'required|string|in:month,year', // month or year
-                'email' => 'required|email',
             ]);
 
             // Define the plan IDs dynamically
