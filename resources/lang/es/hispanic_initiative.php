@@ -1,6 +1,9 @@
 <?php
 
 return [
+    'puerto_rico_1' => 'El Equipo de Coordinación anunció las fechas y el lugar del Encuentro Anual 2026, que se llevará a cabo en San Juan, Puerto Rico, del 29 de abril al 2 de mayo de 2026.',
+    'puerto_rico_2' => 'Los recursos electrónicos del encuentro 2025 están disponibles y además, las comunidades de aprendizaje comenzarán este otoño.',
+
     'grantee' => [
         'verse' => 'La Iniciativa Nacional para Fortalecer a los Líderes Pastorales y Congregaciones Hispanas celebra las contribuciones únicas que cada institución, congregación, denominación, seminario, universidad, colegio y organización sin fines de lucro desarrolla para fortalecer y apoyar la ecología de la Iglesia Hispano-Latina en los Estados Unidos y el Caribe.',
     ],

@@ -15,7 +15,35 @@
             </div>
         </div>
     </section>
-
+    <section class="about-style-two pt_120">
+        <div class="auto-container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box mr_40">
+                        <div class="image-shape" style="background-image: url(assets/images/shape/shape-1.png);"></div>
+                        <figure class="image"><img src="assets/images/resource/puerto_rico.jpg" alt=""></figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_two">
+                        <div class="content-box ml_40">
+                            <div class="sec-title mb_60">
+                                <span class="sub-title">@lang('hispanic_initiative.title')</span>
+                                <h2>Puerto Rico</h2>
+                            </div>
+                            <div class="text mb_40">
+                                <p>@lang('hispanic_initiative.puerto_rico_1')</p>
+                                <p>@lang('hispanic_initiative.puerto_rico_2')</p>
+                            </div>
+                            <!-- <div class="btn-box">
+                                            <a href="about.html" class="theme-btn-one">More About Us</a>
+                                        </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <div class="container py-5">
         <div class="text-center mb-5">
             <img src="{{ asset('assets/images/logo/hispanic-initiative.png') }}" alt="NISHPLC Logo" class="img-fluid mb-3"

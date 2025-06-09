@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'puerto_rico_1' => 'The Coordination Team announced the dates and location of the 2026 Annual Gathering, which will be in San Juan, Puerto Rico, from April 29 to May 2, 2026.',
+    'puerto_rico_2' => 'The 2025 gathering electronics resources are available and additionally learning communities are coming this fall.',
     'grantee' => [
         'verse' => 'The National Initiative to Strengthen Hispanic Pastoral Leaders and Congregations  celebrates the unique contributions that every institution, congregation, denomination, seminary, university, college and non-profit organizations develop to strengthen and support the ecology of the Hispanic-Latine Church in the US and the Caribbean. ',
     ],
