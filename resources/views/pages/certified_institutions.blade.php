@@ -667,6 +667,42 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xs-12 col-sm-6 col-md-4">
+                    <div class="image-flip">
+                        <div class="mainflip flip-0">
+                            <div class="frontside">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <p><img class=" img-fluid" src="assets/images/logo/la_mesa.png" alt="card image">
+                                        </p>
+                                        <h4 class="card-title" style="margin-top:30px;"> La Mesa Academy</h4>
+                                        <p class="card-text">Dr. Joanne Solis-Walker</p>
+                                        <p><a href="https://candler.emory.edu/la-mesa/" target="blank"
+                                                class="btn btn-primary btn-sm"
+                                                style="background-color: #4a235a;border-color:#4a235a"><i
+                                                    class="fa fa-plus"></i></a></p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="backside">
+                                <div class="card">
+                                    <div class="card">
+                                        <div class="card-body text-center">
+                                            <p style="margin-top:15px"><i class="bi bi-globe"></i> <a
+                                                    href="https://candler.emory.edu/la-mesa/"
+                                                    target="blank">https://candler.emory.edu/la-mesa/</a></b>
+                                            </p>
+                                            <p style="margin-top:15px"><i class="bi bi-telephone"></i> (470) 955-4568</p>
+                                            <p style="margin-top:15px"><i class="bi bi-geo-alt"></i> 1531 Dickey Drive
+                                                Atlanta, Ga, 30322</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

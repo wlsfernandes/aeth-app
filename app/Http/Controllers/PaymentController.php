@@ -400,10 +400,11 @@ class PaymentController extends Controller
                     }
                 }
                 try {
-                    Mail::to($user->email)->send(new WelcomeEmail($user, $password));
+                    Mail::to($user->email)->later(now()->addSeconds(2), new WelcomeEmail($user, $password));
                 } catch (Exception $e) {
-                    Log::error('Failed to send welcome email: ' . $e->getMessage());
+                    Log::error('Failed to queue welcome email: ' . $e->getMessage());
                 }
+
                 DB::commit();
                 Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
                 return redirect()->route('thankYouMember');
