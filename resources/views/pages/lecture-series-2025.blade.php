@@ -228,7 +228,7 @@
                             ['name' => 'Elizabeth Conde-Fraiser', 'route' => 'fraiser', 'image' => 'Elizabeth Conde Fraiser.jpg'],
                             ['name' => 'Guesnerth Perea', 'route' => 'perea', 'image' => 'Guesnerth Perea.jpg'],
                             ['name' => 'Harold Segura', 'route' => 'segura', 'image' => 'Harold Segura.jpg'],
-                            ['name' => 'Javier Viera', 'route' => 'viera', 'image' => 'Javier Viera.jpg'],
+                            //    ['name' => 'Javier Viera', 'route' => 'viera', 'image' => 'Javier Viera.jpg'],
                             ['name' => 'Jeffry Caballero', 'route' => 'caballero_ls2025', 'image' => 'Jeffry Caballero.jpg'],
                             ['name' => 'Jessica Lugo', 'route' => 'lugo_ls2025', 'image' => 'Jessica Lugo.jpg'],
                             ['name' => 'Lori Tapia', 'route' => 'tapia', 'image' => 'Lori Tapia.jpg'],
