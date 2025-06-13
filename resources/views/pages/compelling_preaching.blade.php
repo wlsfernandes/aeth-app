@@ -8,7 +8,11 @@
 
 
 <!-- Content here -->
-
+<style>
+    #custom-carousel .owl-nav {
+        display: none !important;
+    }
+</style>
 @section('content')
     <section class="page-title centred">
         <a href="{{ route('lectureSeries2025') }}">
@@ -19,14 +23,14 @@
 
     </section>
     <!-- <section class="cta-style-two">
-                    <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-                    <div class="auto-container">
-                        <div class="inner-box">
-                            <h2>@lang('programs.compelling.p4')</h2>
-                            <p style="color:#fff"><i>@lang('programs.compelling.p5')</i></p>
-                        </div>
-                    </div>
-                </section> -->
+                                                            <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                                                            <div class="auto-container">
+                                                                <div class="inner-box">
+                                                                    <h2>@lang('programs.compelling.p4')</h2>
+                                                                    <p style="color:#fff"><i>@lang('programs.compelling.p5')</i></p>
+                                                                </div>
+                                                            </div>
+                                                        </section> -->
 
 
     <section class="about-style-two pt_120">
@@ -81,31 +85,31 @@
     </section>
 
     <!--<section class="about-style-two pt_120">
-                                                                                                                                                                                <div class="auto-container">
-                                                                                                                                                                                    <div class="row align-items-center clearfix">
-                                                                                                                                                                                        <div class="col-lg-6 col-md-12 col-sm-12 image-column">
-                                                                                                                                                                                            <div class="image-box ml_30 mt_19">
-                                                                                                                                                                                                <figure class="image"><img src="assets/images/gallery/cp2.jpg" alt=""></figure>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                        <div class="col-lg-6 col-md-12 col-sm-12 content-column">
-                                                                                                                                                                                            <div class="content_block_two">
-                                                                                                                                                                                                <div class="content-box ml_40">
-                                                                                                                                                                                                    <div class="sec-title mb_55">
-                                                                                                                                                                                                        <h2>@lang('programs.compelling.p9')</h2>
-                                                                                                                                                                                                    </div>
-                                                                                                                                                                                                    <div class="text mb_40">
-                                                                                                                                                                                                        <div class="text">
-                                                                                                                                                                                                            <p>@lang('programs.compelling.p10') </p>
-                                                                                                                                                                                                        </div>
-                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                        <div class="auto-container">
+                                                                                                                                                                                                                            <div class="row align-items-center clearfix">
+                                                                                                                                                                                                                                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                                                                                                                                                                                                                                    <div class="image-box ml_30 mt_19">
+                                                                                                                                                                                                                                        <figure class="image"><img src="assets/images/gallery/cp2.jpg" alt=""></figure>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                                                                                                                                                                                                                                    <div class="content_block_two">
+                                                                                                                                                                                                                                        <div class="content-box ml_40">
+                                                                                                                                                                                                                                            <div class="sec-title mb_55">
+                                                                                                                                                                                                                                                <h2>@lang('programs.compelling.p9')</h2>
+                                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                                            <div class="text mb_40">
+                                                                                                                                                                                                                                                <div class="text">
+                                                                                                                                                                                                                                                    <p>@lang('programs.compelling.p10') </p>
+                                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                                            </div>
 
-                                                                                                                                                                                                </div>
-                                                                                                                                                                                            </div>
-                                                                                                                                                                                        </div>
-                                                                                                                                                                                    </div>
-                                                                                                                                                                                </div>
-                                                                                                                                                                            </section> -->
+                                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                                    </div>
+                                                                                                                                                                                                                                </div>
+                                                                                                                                                                                                                            </div>
+                                                                                                                                                                                                                        </div>
+                                                                                                                                                                                                                    </section> -->
 
 
     <section class="about-style-two pt_120" style="background-color:#f5f1fb;margin-top:25px;">
@@ -201,7 +205,29 @@
             </div>
         </div>
     </section>
+    <!-- event-section -->
+    <section class="event-section bg-color-2 sec-pad" style="background-color:#f5f1fb">
+        <div class="auto-container">
 
+            <div id="custom-carousel" class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
+                <div class="events-block-one">
+                    <div class="inner-box">
+                        <figure class="image-box" style="margin-top:20px;"><img src="assets/images/resource/lms_aeth.jpg"
+                                alt=""></figure>
+                        <div class="content-box">
+                            <img src="assets/images/resource/cp_logo.png" alt="Logo" style="width: 200px; height: auto;">
+                            <h3><a href="https://aeth.jenlms.com/" target="_blank">@lang('ls25.enroll_online')</a></h3>
+                            <div class="btn-box">
+                                <a href="https://aeth.jenlms.com/" class="theme-btn-one" target="_blank">
+                                    @lang('header.register_here')</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- event-section end -->
 
     @include('partials.contact')
 

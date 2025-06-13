@@ -5,11 +5,7 @@
 @section('meta-description', 'This is a brief description of the home page.')
 
 @section('meta-keywords', 'AETH, Antioquia, introduction')
-<style>
-    #custom-carousel .owl-nav {
-        display: none !important;
-    }
-</style>
+
 
 <!-- Content here -->
 
@@ -416,29 +412,7 @@
         </div>
     </section>
     <!-- faq-section end -->
-    <!-- event-section -->
-    <section class="event-section bg-color-2 sec-pad" style="background-color:#f5f1fb">
-        <div class="auto-container">
 
-            <div id="custom-carousel" class="single-item-carousel owl-carousel owl-theme owl-dots-none nav-style-one">
-                <div class="events-block-one">
-                    <div class="inner-box">
-                        <figure class="image-box" style="margin-top:20px;"><img src="assets/images/resource/lms_aeth.jpg"
-                                alt=""></figure>
-                        <div class="content-box">
-                            <img src="assets/images/resource/cp_logo.png" alt="Logo" style="width: 200px; height: auto;">
-                            <h3><a href="https://aeth.jenlms.com/" target="_blank">@lang('ls25.enroll_online')</a></h3>
-                            <div class="btn-box">
-                                <a href="https://aeth.jenlms.com/" class="theme-btn-one" target="_blank">
-                                    @lang('header.register_here')</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- event-section end -->
 
 
 
