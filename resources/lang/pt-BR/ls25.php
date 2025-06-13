@@ -1,5 +1,6 @@
 <?php
 return [
+    'enroll_online' => 'Matricule-se em nossos cursos e certificações.',
     'hotel_information' => 'Informações do Hotel',
     'hotel_address' => 'Endereço',
     'hotel_front_desk' => 'Informações da Recepção',

@@ -1,5 +1,6 @@
 <?php
 return [
+    'enroll_online' => 'Enroll in our courses and certifications.',
     'hotel_information' => 'Hotel Information',
     'hotel_address' => 'Address',
     'hotel_front_desk' => 'Front Desk Info',
