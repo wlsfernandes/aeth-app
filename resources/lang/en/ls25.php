@@ -1,5 +1,6 @@
 <?php
 return [
+    'virtual_academic_platform' => 'Virtual Academic Platform',
     'enroll_online' => 'Enroll in our courses and certifications.',
     'hotel_information' => 'Hotel Information',
     'hotel_address' => 'Address',

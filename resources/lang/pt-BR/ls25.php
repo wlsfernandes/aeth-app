@@ -1,5 +1,6 @@
 <?php
 return [
+    'virtual_academic_platform' => 'Plataforma Acadêmica Virtual',
     'enroll_online' => 'Matricule-se em nossos cursos e certificações.',
     'hotel_information' => 'Informações do Hotel',
     'hotel_address' => 'Endereço',
