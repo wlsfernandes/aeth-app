@@ -1,5 +1,8 @@
 <?php
 return [
+    'sponsorship_oportunities' => 'Sponsorship Opportunities',
+    'identidad_trauma_tecnica' => 'Identity, Trauma, and Technique',
+    'become_sponsor_today' => 'Become a Sponsor Today',
     'virtual_academic_platform' => 'Virtual Academic Platform',
     'enroll_online' => 'Enroll in our courses and certifications.',
     'hotel_information' => 'Hotel Information',

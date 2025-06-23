@@ -1,5 +1,8 @@
 <?php
 return [
+    'sponsorship_oportunities' => 'Oportunidades de patrocínio',
+    'identidad_trauma_tecnica' => 'Identidade, trauma e técnica',
+    'become_sponsor_today' => 'Torne-se um patrocinador hoje',
     'virtual_academic_platform' => 'Plataforma Acadêmica Virtual',
     'enroll_online' => 'Matricule-se em nossos cursos e certificações.',
     'hotel_information' => 'Informações do Hotel',

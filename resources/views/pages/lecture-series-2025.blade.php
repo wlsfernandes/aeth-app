@@ -413,6 +413,48 @@
     </section>
     <!-- faq-section end -->
 
+    <section class="about-section p_relative sec-pad" style="background-color: #f3e6f7;">
+
+        <div class="auto-container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_one">
+                        <div class="content-box p_relative mr_30">
+                            <!-- Section Title -->
+                            <div class="sec-title mb_40">
+                                <span class="sub-title">@lang('ls25.sponsorship_oportunities')</span>
+                                <h2>LS25 Predicación y Migración</h2>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="text mb_35">
+                                <p>@lang('ls25.identidad_trauma_tecnica')</p>
+                            </div>
+
+                            <!-- Sponsor Button -->
+                            <div class="inner mb_45">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <div class="upper">
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/3706a99b-752e-41f3-8399-fc1564a7e405.pdf"
+                                                    target="_blank"
+                                                    class="donate-box-btn theme-btn-one d-block w-100 text-center">
+                                                    <span>@lang('ls25.become_sponsor_today')</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sponsor Button -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
