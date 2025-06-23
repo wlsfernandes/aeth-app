@@ -1,19 +1,5 @@
 <div class="donate-content">
-    @if (session()->has('success'))
-        <div class="alert alert-success" role="alert">
-            <i class="fas fa-check-circle"></i> <!-- Success icon -->
-            {{ session('success') }}
-        </div>
-    @endif
-    @if ($errors->any())
-        <div class="alert alert-danger" role="alert">
-            <ul>
-                @foreach ($errors->all() as $error)
-                    <li><i class="bx bx-error"></i> {{ $error }}</li>
-                @endforeach
-            </ul>
-        </div>
-    @endif
+    <x-alert />
     <div class="title-text centred" style="margin:50px;">
         <h2 style="margin:50px;color:#330033"><i>Donate</i></h2>
     </div>

@@ -188,21 +188,7 @@
                 </div>
             </div>
             <!-- header-lower -->
-            @if (session()->has('success'))
-                <div class="alert alert-success" role="alert">
-                    <i class="fas fa-check-circle"></i> <!-- Success icon -->
-                    {{ session('success') }}
-                </div>
-            @endif
-            @if (session('error'))
-                <div class="alert alert-danger">
-                    @if (is_array(session('error')))
-                        {{ implode(', ', session('error')) }}
-                    @else
-                        {{ session('error') }}
-                    @endif
-                </div>
-            @endif
+            <x-alert />
 
             <div class="header-lower">
                 <div class="outer-box">
