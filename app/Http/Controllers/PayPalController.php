@@ -454,32 +454,17 @@ class PayPalController extends Controller
     public function createMembershipSubscription(Request $request)
     {
         try {
-            // -------- 1. Resolve the correct PayPal Plan ID ----------
-            $plans = $this->resolvePlanIds($request);          // see helper below
-            if (!isset($plans[$request->membership_plan][$request->period])) {
-                throw new Exception('Invalid membership plan or period.');
-            }
-            $planId = $plans[$request->membership_plan][$request->period];
+            // ---------------- 1. Pick the plan ----------------
+            $plans = $this->resolvePlanIds($request);               // helper below
+            $planId = $plans[$request->membership_plan][$request->period]
+                ?? throw new Exception('Invalid membership plan or period.');
 
-            // -------- 2. Stash everything we’ll need after the redirect ----
-            session([
-                'membership_context' => $request->only([
-                    'amount',
-                    'email',
-                    'first_name',
-                    'last_name',
-                    'membership_plan',
-                    'period',
-                    'young_lider_id',
-                ])
-            ]);
+            // ---------------- 2. Create the subscription ---------------
+            $pp = new PayPalClient;
+            $pp->setApiCredentials(config('paypal'));
+            $pp->setAccessToken($pp->getAccessToken());
 
-            // -------- 3. Create the subscription on PayPal ---------------
-            $provider = new PayPalClient;
-            $provider->setApiCredentials(config('paypal'));
-            $provider->setAccessToken($provider->getAccessToken());
-
-            $response = $provider->createSubscription([
+            $response = $pp->createSubscription([
                 'plan_id' => $planId,
                 'subscriber' => ['email_address' => $request->email],
                 'application_context' => [
@@ -488,15 +473,31 @@ class PayPalController extends Controller
                 ],
             ]);
 
-            if (!isset($response['id'])) {
-                throw new Exception('Failed to create PayPal subscription.');
+            if (empty($response['id'])) {
+                throw new Exception('PayPal did not return a subscription ID.');
             }
 
-            // -------- 4. Send buyer to PayPal approval URL ---------------
+            // ---------------- 3. Stash everything in session ------------
+            session([
+                'membership_context' => array_merge(
+                    $request->only([
+                        'amount',
+                        'email',
+                        'first_name',
+                        'last_name',
+                        'membership_plan',
+                        'period',
+                        'young_lider_id'
+                    ]),
+                    ['paypal_subscription_id' => $response['id']]
+                )
+            ]);
+
+            // ---------------- 4. Redirect for buyer approval ------------
             $approvalUrl = collect($response['links'])
                 ->firstWhere('rel', 'approve')['href'] ?? null;
             if (!$approvalUrl) {
-                throw new Exception('Approval URL not found in PayPal response.');
+                throw new Exception('Approval URL missing from PayPal response.');
             }
 
             return redirect()->away($approvalUrl);
@@ -532,38 +533,29 @@ class PayPalController extends Controller
     public function handleMembershipPayPalSuccess(Request $request)
     {
         try {
-            // -------- 1. Extract PayPal’s subscription identifier ----------
-            $subscriptionId = $request->query('subscription_id')
-                ?? $request->query('token')
-                ?? $request->query('ba_token');
-
-            if (!$subscriptionId || !str_starts_with($subscriptionId, 'I-')) {
-                Log::error('Unknown PayPal identifier', ['query' => $request->all()]);
-                throw new Exception('Missing or invalid PayPal subscription ID.');
-            }
-
-            // -------- 2. Get full subscription details --------------------
-            $provider = new PayPalClient;
-            $provider->setApiCredentials(config('paypal'));
-            $provider->setAccessToken($provider->getAccessToken());
-
-            $sub = json_decode(
-                json_encode($provider->showSubscriptionDetails($subscriptionId)),
-                true
-            );
-
-            if (($sub['status'] ?? null) !== 'ACTIVE') {
-                throw new Exception('Subscription is not active. Status: ' . ($sub['status'] ?? 'none'));
-            }
-
-            // -------- 3. Pull context we saved before redirect ------------
+            // -------- 1. Pull context + the subscription ID -------------
             $ctx = session('membership_context');
-            if (!$ctx) {
-                throw new Exception('Session expired—membership context missing.');
-            }
             session()->forget('membership_context');          // tidy up
 
-            // -------- 4. Persist user / member / payment ------------------
+            if (!$ctx || empty($ctx['paypal_subscription_id'])) {
+                throw new Exception('Session expired – membership context missing.');
+            }
+            $subscriptionId = $ctx['paypal_subscription_id'];
+
+            // -------- 2. Confirm subscription is really ACTIVE ----------
+            $pp = new PayPalClient;
+            $pp->setApiCredentials(config('paypal'));
+            $pp->setAccessToken($pp->getAccessToken());
+
+            $sub = json_decode(
+                json_encode($pp->showSubscriptionDetails($subscriptionId)),
+                true
+            );
+            if (($sub['status'] ?? null) !== 'ACTIVE') {
+                throw new Exception('Subscription is not active. Status: ' . ($sub['status'] ?? 'unknown'));
+            }
+
+            // -------- 3. Persist user / member / payment ----------------
             DB::beginTransaction();
 
             $password = Str::random(12);
@@ -572,8 +564,7 @@ class PayPalController extends Controller
                 'email' => $ctx['email'],
                 'password' => Hash::make($password),
             ]);
-            // Assign the Member role (ID 17)
-            $user->roles()->attach(17);
+            $user->roles()->attach(17);                       // member role
 
             Member::create([
                 'user_id' => $user->id,
@@ -582,7 +573,7 @@ class PayPalController extends Controller
                 'email' => $ctx['email'],
                 'membership_plan' => $ctx['membership_plan'],
                 'membership_start_date' => now(),
-                'membership_end_date' => '2099-12-31',       // recurring
+                'membership_end_date' => '2099-12-31',
                 'isYear' => $ctx['period'] === 'year',
                 'status' => 'active',
                 'is_recurring' => true,
@@ -612,17 +603,17 @@ class PayPalController extends Controller
             DB::commit();
             return redirect()->route('thankYouMember')
                 ->with('success', 'Membership created! Check your email.');
-
         } catch (Exception $e) {
             DB::rollBack();
             Log::error('PayPal success handler error', [
                 'msg' => $e->getMessage(),
-                'file' => $e->getFile() . ':' . $e->getLine(),
+                'file' => $e->getFile() . ':' . $e->getLine()
             ]);
             return redirect()->route('memberships')
-                ->with('error', 'Payment confirmed but we hit a problem. We’re on it—please contact support.');
+                ->with('error', 'Payment confirmed but we hit a problem. Please contact support.');
         }
     }
+
 
 
     private function resolvePlanIds(Request $request): array
