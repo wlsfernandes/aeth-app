@@ -414,22 +414,28 @@ class PayPalController extends Controller
         ]);
 
         if ($validator->fails()) {
-            $message = 'This email is already registered.';
-            Session::flash('error', ['email' => $message]);
-            return redirect()->route('payment-membership')->withInput()->withErrors(['email' => $message]);
+            return redirect()
+                ->route('payment-membership')
+                ->withInput()
+                ->withErrors($validator);
         }
 
         if ($request->has('young_lideres_membership') && $request->young_lideres_membership === 'true') {
             $young_lider_id = YoungLideres::where('email', $request->email)->value('id');
+
             if (!$young_lider_id) {
-                Session::flash('error', 'To be a participant of the Young Líderes Program, please email mescala@aeth.org.');
-                return redirect()->route('payment-membership')->withInput();
+                return redirect()
+                    ->route('payment-membership')
+                    ->withInput()
+                    ->with('error', 'To be a participant of the Young Líderes Program, please email mescala@aeth.org.');
             }
+
             $request->merge(['young_lider_id' => $young_lider_id]);
         }
 
         return $this->createMembershipSubscription($request);
     }
+
     /**
      * Initiates and processes a PayPal membership payment.
      *
@@ -445,16 +451,8 @@ class PayPalController extends Controller
     public function createMembershipSubscription(Request $request)
     {
         try {
-            // Validate input
-            $request->validate([
-                'email' => 'required|email|unique:users,email',
-                'membership_plan' => 'required|string', // student, individual, institutional
-                'period' => 'required|string|in:month,year', // month or year
-            ]);
-
             // Define the plan IDs dynamically
             $plans = [];
-
             if ($request->boolean('young_lideres_membership')) {
                 // Special plan for Young Líderes
                 $plans['Student'] = [
@@ -482,15 +480,12 @@ class PayPalController extends Controller
             if (!isset($plans[$request->membership_plan][$request->period])) {
                 throw new Exception('Invalid membership plan or period.');
             }
-
             // Assign the correct PayPal Plan ID
             $plan_id = $plans[$request->membership_plan][$request->period];
-
             // Initialize PayPal Client
             $provider = new PayPalClient;
             $provider->setApiCredentials(config('paypal'));
             $provider->setAccessToken($provider->getAccessToken());
-
             // Create Subscription
             $response = $provider->createSubscription([
                 "plan_id" => $plan_id,
@@ -511,7 +506,6 @@ class PayPalController extends Controller
                     "cancel_url" => route('payment-membership')
                 ]
             ]);
-
             if (!isset($response['id'])) {
                 throw new Exception('Failed to create PayPal subscription. Debug Info: ' . json_encode($response));
             }
@@ -534,7 +528,6 @@ class PayPalController extends Controller
                 'message' => $e->getMessage(),
                 'stack_trace' => $e->getTraceAsString(),
             ]);
-
             return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed: (0189)');
         }
     }

@@ -637,9 +637,11 @@
                             <div class="frontside">
                                 <div class="card">
                                     <div class="card-body text-center">
-                                        <p><img class=" img-fluid" src="assets/images/logo/nazarene.png" alt="card image">
+                                        <p><img class=" img-fluid" src="assets/images/logo/nazarenelogo.png"
+                                                alt="card image">
                                         </p>
-                                        <h4 class="card-title" style="margin-top:30px;"> Nazarene University</h4>
+                                        <h4 class="card-title" style="margin-top:30px;"> Educación Nazarena Teológica
+                                            Especializada (ENTE)</h4>
                                         <p class="card-text"> talvarez@nnu.edu</p>
                                         <p><a href="https://nazarene.org/es/nazarenosuscan/ente-online" target="blank"
                                                 class="btn btn-primary btn-sm"
