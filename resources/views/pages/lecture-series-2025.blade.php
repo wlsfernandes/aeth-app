@@ -417,6 +417,11 @@
 
         <div class="auto-container">
             <div class="row align-items-center clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box ml_30 mt_19">
+                        <figure class="image"><img src="assets/images/resource/sponsor_ls25.jpg" alt=""></figure>
+                    </div>
+                </div>
                 <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="content_block_one">
                         <div class="content-box p_relative mr_30">
