@@ -554,11 +554,15 @@ class PayPalController extends Controller
         $provider->setAccessToken($provider->getAccessToken());
 
         try {
-            $subscriptionId = $request->query('subscription_id');
+            $subscriptionId = $request->query('subscription_id')           // live REST
+                ?? $request->query('token')                    // sandbox REST
+                ?? $request->query('ba_token');                // smart buttons
 
             if (!$subscriptionId) {
-                throw new Exception('Missing subscription ID token from PayPal.');
+                Log::error('PayPal callback missing subscription identifier', ['query' => $request->all()]);
+                throw new Exception('Unable to locate PayPal subscription identifier in callback.');
             }
+
             $response = $provider->showSubscriptionDetails($subscriptionId);
             $response = json_decode(json_encode($response), true);
             Log::info('PayPal Subscription Response:', $response);
