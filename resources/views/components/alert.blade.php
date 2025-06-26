@@ -4,7 +4,11 @@
         {{ session('success') }}
     </div>
 @endif
-
+@if (session()->has('error'))
+    <div class="alert alert-danger" role="alert">
+        <i class="bx bx-error"></i> {{ session('error') }}
+    </div>
+@endif
 @if ($errors->any())
     <div class="alert alert-danger" role="alert">
         <ul>

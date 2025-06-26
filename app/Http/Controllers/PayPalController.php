@@ -501,7 +501,6 @@ class PayPalController extends Controller
                         'membership_plan' => $request->membership_plan,
                         'period' => $request->period,
                         'young_lider_id' => $request->young_lider_id ?? null,
-                        'subscription_id' => '{subscription_id}'
                     ]),
                     "cancel_url" => route('payment-membership')
                 ]
@@ -554,15 +553,22 @@ class PayPalController extends Controller
         $provider->setApiCredentials(config('paypal'));
         $provider->setAccessToken($provider->getAccessToken());
 
-        $subscriptionId = $request->query('subscription_id');
-        $response = $provider->showSubscriptionDetails($subscriptionId);
-        Log::info('PayPal Subscription Response:', $response);
-        if (!isset($response['status']) || $response['status'] !== 'ACTIVE') {
-            throw new Exception('Subscription was not successful.');
-        }
-
-        DB::beginTransaction();
         try {
+            $subscriptionId = $request->query('subscription_id');
+
+            if (!$subscriptionId) {
+                throw new Exception('Missing subscription ID token from PayPal.');
+            }
+            $response = $provider->showSubscriptionDetails($subscriptionId);
+            $response = json_decode(json_encode($response), true);
+            Log::info('PayPal Subscription Response:', $response);
+
+            if (!isset($response['status']) || $response['status'] !== 'ACTIVE') {
+                throw new Exception('Subscription is not active. Current status: ' . ($response['status'] ?? 'unknown'));
+            }
+
+            DB::beginTransaction();
+
             $password = 'adminAeth2025';
 
             $user = User::create([
@@ -573,7 +579,9 @@ class PayPalController extends Controller
 
             $roleId = 17;
             $user->roles()->attach($roleId);
-            $is_recurring = true; // make all memberships recurring
+
+            $is_recurring = true;
+
             Member::create([
                 'user_id' => $user->id,
                 'first_name' => $request->query('first_name'),
@@ -583,10 +591,10 @@ class PayPalController extends Controller
                 'membership_start_date' => now(),
                 'membership_end_date' => $is_recurring
                     ? '2099-12-31'
-                    : ($request->query('period') == 'year'
+                    : ($request->query('period') === 'year'
                         ? now()->addYear()
                         : now()->addDays(31)),
-                'isYear' => $request->query('period') == 'year' ? true : false,
+                'isYear' => $request->query('period') === 'year',
                 'status' => 'active',
                 'is_recurring' => true,
             ]);
@@ -597,13 +605,13 @@ class PayPalController extends Controller
                 'email' => $request->query('email') ?? '***@***.com',
                 'type' => 'Membership',
                 'program' => 'AETH',
-                'amount' => $request->query(key: 'amount') ?? 0,
+                'amount' => $request->query('amount') ?? 0,
                 'shipment_cost' => 0,
                 'isRecurring' => true,
                 'payment_date' => now(),
                 'processed_by' => 'Paypal',
                 'tax' => 0,
-                'totalAmount' => $request->query(key: 'amount') ?? 0,
+                'totalAmount' => $request->query('amount') ?? 0,
             ]);
 
             if ($request->query('young_lider_id')) {
@@ -620,10 +628,11 @@ class PayPalController extends Controller
             }
 
             DB::commit();
-            Session::flash('success', 'Payment and membership creation successful! Check you mailbox to get your credentials');
+            Session::flash('success', 'Payment and membership creation successful! Check your mailbox for credentials.');
             return redirect()->route('thankYouMember');
         } catch (Exception $e) {
             DB::rollBack();
+
             ErrorLog::create([
                 'error_message' => $e->getMessage() ?? 'Unknown error handlePayPalSuccess PaypalController',
                 'stack_trace' => $e->getTraceAsString(),
@@ -634,10 +643,11 @@ class PayPalController extends Controller
                 'message' => $e->getMessage(),
                 'stack_trace' => $e->getTraceAsString(),
             ]);
+
             return redirect()->route('memberships')->withInput()->with('error', 'User and membership creation failed:(0153) ');
         }
-
     }
+
 
 
 
