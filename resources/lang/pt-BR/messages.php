@@ -42,7 +42,7 @@ return [
     'our_team' => 'Nossa Equipe',
     'testimonials' => 'Depoimentos',
     'read_more' => 'Leia Mais',
-    'our_blog' => 'Blog & Artigos',
+    'our_blog' => 'Blog, Artigos e Notícias',
     'articles_news' => 'Artigos e Notícias',
     'testimonials_name1' => 'Esteban Austin',
     'testimonials_desc1' => 'Diretor do Instituto Bíblico Internacional do Texas',
