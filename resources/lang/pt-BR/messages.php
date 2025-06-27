@@ -43,7 +43,7 @@ return [
     'testimonials' => 'Depoimentos',
     'read_more' => 'Leia Mais',
     'our_blog' => 'Nosso Blog',
-    'articles_news' => 'Notícias e Eventos',
+    'articles_news' => 'Artigos e Notícias',
     'testimonials_name1' => 'Esteban Austin',
     'testimonials_desc1' => 'Diretor do Instituto Bíblico Internacional do Texas',
     'testimonials_p1' => 'Olá, sou Esteban Austin, diretor do Instituto Bíblico Internacional do Texas, com sede em Houston, TX. Um de nossos professores, Omar Palafox, nos falou sobre a AETH e nos incentivou a solicitar a adesão institucional à AETH. Aqui estão quatro razões importantes para buscar e manter nossa associação à AETH: 1. Expandir nossa rede de contatos com pessoas, igrejas e instituições nos Estados Unidos e Porto Rico. 2. Aprender com eles e suas experiências em como treinar irmãos e irmãs para servir no Reino e na igreja. 3. Aproveitar os recursos, sejam digitais ou escritos, que a AETH oferece, que antes não tínhamos. Em particular, estamos entusiasmados com a adição de recursos da biblioteca digital de Pitt na Emory University. 4. Obter a certificação oferecida pela AETH e ATS de nosso bacharelado em ministério e estudos bíblicos, obtendo assim uma validação externa importante para nosso programa e professores. Essas bênçãos, especialmente a certificação, nos ajudaram a crescer na qualidade do programa e no número de pessoas interessadas em estudar conosco. Na verdade, no primeiro ano após receber a certificação, os pedidos de bolsa de estudos cresceram 40%! Recomendo fortemente a AETH por essas razões! Deus abençoe!',

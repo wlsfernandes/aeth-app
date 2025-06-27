@@ -43,7 +43,7 @@ return [
 
     'read_more' => 'Read More',
     'our_blog' => 'Our Blog',
-    'articles_news' => 'News & Events',
+    'articles_news' => 'News & Articles',
 
     'core_values' => 'Core Values and Principles',
     'fundamental_beliefs' => 'These are the fundamental beliefs that drive our actions and our way of doing things.',

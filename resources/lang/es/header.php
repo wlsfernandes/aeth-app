@@ -17,7 +17,7 @@ return [
     'our_team' => 'Nuestro Equipo',
     'open_positions' => 'Posiciones Abiertas',
     'events' => 'Eventos',
-    'blog' => 'Blog',
+    'blog' => 'Blog & Artículos',
     'contact_us' => 'Contáctenos',
     'services' => 'Servicios',
     'certification_program' => 'Programa de Certificación',
