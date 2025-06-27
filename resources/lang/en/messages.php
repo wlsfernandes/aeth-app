@@ -42,7 +42,7 @@ return [
     'our_team' => 'Our Team',
 
     'read_more' => 'Read More',
-    'our_blog' => 'Our Blog',
+    'our_blog' => 'Blog & Articles',
     'articles_news' => 'News & Articles',
 
     'core_values' => 'Core Values and Principles',
