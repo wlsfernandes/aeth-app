@@ -216,7 +216,7 @@
                                             style="pointer-events: none;">@lang('header.about_us')</a>
                                         <ul>
                                             <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
-                                            <li><a href="{{ route('showAllPages') }}">@lang('header.articles')</a></li>
+                                            <!-- <li><a href="{{ route('showAllPages') }}">@lang('header.articles')</a></li> -->
                                             <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
                                             <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                             <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
