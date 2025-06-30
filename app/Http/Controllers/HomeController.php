@@ -46,8 +46,8 @@ class HomeController extends Controller
             ->orderBy('date_of_event', 'desc')
             ->limit(3)
             ->get();
-
-        return view('home', compact('articles', 'events'));
+        $testimonials = Testimonial::all();
+        return view('home', compact('articles', 'events', 'testimonials'));
         //    return view('soon', compact('articles', 'events'));
     }
 
