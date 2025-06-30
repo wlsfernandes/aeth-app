@@ -29,7 +29,7 @@
                     @case('es')
                       <img src="assets/images/banner/3.jpg" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
-                    @case('pt-BR')
+                    @case('pt')
                     <img src="assets/images/banner/3.jpg" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
                     @default
@@ -434,7 +434,7 @@
                                         <h3><a href="{{ route('post.show', $event->slug) }}">
                                                 @if(App::getLocale() == 'es')
                                                     {{ $event->title_es }}
-                                                @elseif(App::getLocale() == 'pt-BR')
+                                                @elseif(App::getLocale() == 'pt')
                                                     {{ $event->title_pt }}
                                                 @else
                                                     {{ $event->title_en }}

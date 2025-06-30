@@ -15,4 +15,10 @@ class Program extends Model
     {
         return $this->belongsToMany(PortalContent::class, 'portal_content_program');
     }
+
+    public function testimonials()
+    {
+        return $this->hasMany(Testimonial::class);
+    }
+
 }

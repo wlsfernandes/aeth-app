@@ -3,14 +3,14 @@
 @section('title')
     {{
         App::getLocale() === 'es' ? $post->title_es :
-        (App::getLocale() === 'pt-BR' ? $post->title_pt : $post->title_en)
+        (App::getLocale() === 'pt' ? $post->title_pt : $post->title_en)
     }}
 @endsection
 
 @section('meta-description')
     {{
         App::getLocale() === 'es' ? $post->summary_es :
-        (App::getLocale() === 'pt-BR' ? $post->summary_pt : $post->summary_en)
+        (App::getLocale() === 'pt' ? $post->summary_pt : $post->summary_en)
     }}
 @endsection
 
@@ -27,7 +27,7 @@
                             @case('es')
                                 {{ $post->title_es ?? '' }}
                                 @break
-                            @case('pt-BR')
+                            @case('pt')
                                 {{ $post->title_pt ?? '' }}
                                 @break
                             @default
@@ -51,7 +51,7 @@
                             @case('es')
                                 {{ $post->content_es ?? '' }}
                                 @break
-                            @case('pt-BR')
+                            @case('pt')
                                 {{ $post->content_pt ?? '' }}
                                 @break
                             @default
@@ -65,7 +65,7 @@
                                 @case('es')
                                     {!! $post->summary_es ?? '' !!}
                                     @break
-                                @case('pt-BR')
+                                @case('pt')
                                     {!! $post->summary_pt ?? '' !!}
                                     @break
                                 @default

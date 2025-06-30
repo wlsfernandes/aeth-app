@@ -96,7 +96,7 @@
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/es.svg"
                                         alt="Español" style="width: 24px;">
                                 </a>
-                                <a href="{{ route('lang.switch', ['lang' => 'pt-BR']) }}" title="Português">
+                                <a href="{{ route('lang.switch', ['lang' => 'pt']) }}" title="Português">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/br.svg"
                                         alt="Português" style="width: 24px;">
                                 </a>

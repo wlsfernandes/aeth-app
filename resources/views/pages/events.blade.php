@@ -51,7 +51,7 @@
                                     <a href="{{ route('post.show', $post->slug) }}">
                                         @if(App::getLocale() == 'es')
                                             {{ $post->title_es }}
-                                        @elseif(App::getLocale() == 'pt-BR')
+                                        @elseif(App::getLocale() == 'pt')
                                             {{ $post->title_pt }}
                                         @else
                                             {{ $post->title_en }}

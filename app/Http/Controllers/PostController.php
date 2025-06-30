@@ -25,7 +25,7 @@ class PostController extends Controller
                 $query->where('name', 'blog');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '<=', Carbon::today())
+            ->where('date_of_publication', '<=', Carbon::today())
             ->orderBy('date_of_publication', 'desc')
             ->paginate(6);
 
@@ -71,7 +71,7 @@ class PostController extends Controller
                 $query->where('name', 'event');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '<=', Carbon::today())
+            ->where('date_of_publication', '<=', Carbon::today())
             ->orderBy('date_of_event', 'desc')
             ->paginate(8);
 
@@ -85,7 +85,7 @@ class PostController extends Controller
                 $query->where('name', 'simple page');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '<=', Carbon::today())
+            ->where('date_of_publication', '<=', Carbon::today())
             ->orderBy('date_of_publication', 'desc')
             ->paginate(3);
 

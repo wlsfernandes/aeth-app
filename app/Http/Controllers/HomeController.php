@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Faq;
+use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\View\View;
 
@@ -31,7 +32,7 @@ class HomeController extends Controller
                 $query->where('name', 'blog');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '<=', Carbon::today())
+            ->where('date_of_publication', '<=', Carbon::today())
             ->orderBy('date_of_publication', 'desc')
             ->limit(3)
             ->get();
@@ -41,7 +42,7 @@ class HomeController extends Controller
                 $query->where('name', 'event');
             })
             ->where('published', true)
-            ->whereDate('date_of_publication', '<=', Carbon::today())
+            ->where('date_of_publication', '<=', Carbon::today())
             ->orderBy('date_of_event', 'desc')
             ->limit(3)
             ->get();
@@ -90,7 +91,8 @@ class HomeController extends Controller
      */
     public function testimonials(): View
     {
-        return view('pages.testimonials');
+        $testimonials = Testimonial::all();
+        return view('pages.testimonials', compact('testimonials'));
     }
 
     /**
