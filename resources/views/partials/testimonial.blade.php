@@ -2,13 +2,11 @@
     <section class="testimonial-style-two sec-pad">
         <div class="auto-container">
             <div class="row clearfix">
-                <div class="col-lg-4 col-md-12 col-sm-12 title-column">
-                    <div class="sec-title mr_70">
+                <div class="col-lg-12 col-md-12 col-sm-12 content-column">
+                    <div class="sec-title mr_70 text-center">
                         <span class="sub-title">Testimonials</span>
                     </div>
-                </div>
-                <div class="col-lg-8 col-md-12 col-sm-12 content-column">
-                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">
                         <div class="carousel-inner">
                             @foreach($testimonials as $testimonial)
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
@@ -30,7 +28,7 @@
                                                 <li><i class="icon-13"></i></li>
                                                 <li><i class="icon-13"></i></li>
                                                 <li><i class="icon-13"></i></li>
-                                                <li><i class="icon-14"></i></li>
+                                                <li><i class="icon-13"></i></li>
                                             </ul>
                                             <h3 class="mt-2">{{ $testimonial->name }}</h3>
                                             <span class="designation">{{ $testimonial->title }}</span>
