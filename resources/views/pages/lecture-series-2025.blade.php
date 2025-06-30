@@ -442,7 +442,7 @@
                                     <div class="col-lg-12 col-md-12 col-sm-12 single-column">
                                         <div class="single-item">
                                             <div class="upper">
-                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/3706a99b-752e-41f3-8399-fc1564a7e405.pdf"
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/43511291-cd2c-41b5-b1d5-d279bafe9d5b.pdf"
                                                     target="_blank"
                                                     class="donate-box-btn theme-btn-one d-block w-100 text-center">
                                                     <span>@lang('ls25.become_sponsor_today')</span>
