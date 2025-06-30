@@ -140,7 +140,7 @@
             </div>
         </div>
     </section>
-
+    @include('partials.testimonial', ['testimonials' => $testimonials])
     @include('partials.contact')
 
 @endsection

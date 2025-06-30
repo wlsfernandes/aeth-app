@@ -21,7 +21,7 @@
                                             </figure>
                                             <p class="fst-italic">
                                                 {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 120, '...') !!}
-                                                <a href="{{ route('testimonial') }}">@lang('Read more')</a>
+                                                <a href="{{ route('testimonials') }}">@lang('Read more')</a>
                                             </p>
 
                                             <ul class="rating d-flex justify-content-center list-unstyled mt-3 mb-2">

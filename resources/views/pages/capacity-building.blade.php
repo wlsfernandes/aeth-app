@@ -16,14 +16,14 @@
         </div>
     </section>
     <!--  <section class="cta-style-two">
-                        <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-                        <div class="auto-container">
-                            <div class="inner-box">
-                                <img src="assets/images/logo/cp_logo_white_transparent.png">
-                                <h1 style="color:#fff">@lang('programs.cp.cp_title')</h1><br>
-                            </div>
-                        </div>
-                    </section> -->
+                                                <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
+                                                <div class="auto-container">
+                                                    <div class="inner-box">
+                                                        <img src="assets/images/logo/cp_logo_white_transparent.png">
+                                                        <h1 style="color:#fff">@lang('programs.cp.cp_title')</h1><br>
+                                                    </div>
+                                                </div>
+                                            </section> -->
 
 
     <section class="about-style-two pt_120">
@@ -293,7 +293,7 @@
             </div>
         </div>
     </section>
-
+    @include('partials.testimonial', ['testimonials' => $testimonials])
 
     @include('partials.contact')
 

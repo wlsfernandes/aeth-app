@@ -212,37 +212,37 @@
         </div>
     </section>
     <!-- rede
-                                                                    <section class="about-style-two pt_120" style="background-color:#f5f1fb">
-                                                                        <div class="auto-container">
-                                                                            <div class="row align-items-center clearfix">
-                                                                                <div class="col-lg-12 col-md-12 col-sm-12 image-column">
-                                                                                    <div class="sec-title mb_55">
-                                                                                        <h1>@lang('programs.antioquia.p22')</h1>
-                                                                                        <h2 style="color:#4a235a;margin-top:15px;">@lang('programs.antioquia.p23')</h2>
-                                                                                    </div>
-                                                                                    <div class="image-box ml_30 mt_19">
-                                                                                        <a href="https://redet.us" target="blank">
-                                                                                            <figure class="image"><img src="assets/images/gallery/redet.png" alt=""></figure>
-                                                                                        </a>
-                                                                                    </div>
-                                                                                    <div class="text mb_40" style="margin-top:25px;">
-                                                                                        <div class="text">
-                                                                                            <p>
-                                                                                                @lang('programs.antioquia.p29')
-                                                                                            </p>
-                                                                                            <p>
-                                                                                                @lang('programs.antioquia.p25')
-                                                                                            </p>
-                                                                                            <p>
-                                                                                                @lang('programs.antioquia.p26')
-                                                                                            </p>
-                                                                                        </div>
-                                                                                    </div>
-                                                                                </div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </section>
-                                                                -->
+                                                                                                        <section class="about-style-two pt_120" style="background-color:#f5f1fb">
+                                                                                                            <div class="auto-container">
+                                                                                                                <div class="row align-items-center clearfix">
+                                                                                                                    <div class="col-lg-12 col-md-12 col-sm-12 image-column">
+                                                                                                                        <div class="sec-title mb_55">
+                                                                                                                            <h1>@lang('programs.antioquia.p22')</h1>
+                                                                                                                            <h2 style="color:#4a235a;margin-top:15px;">@lang('programs.antioquia.p23')</h2>
+                                                                                                                        </div>
+                                                                                                                        <div class="image-box ml_30 mt_19">
+                                                                                                                            <a href="https://redet.us" target="blank">
+                                                                                                                                <figure class="image"><img src="assets/images/gallery/redet.png" alt=""></figure>
+                                                                                                                            </a>
+                                                                                                                        </div>
+                                                                                                                        <div class="text mb_40" style="margin-top:25px;">
+                                                                                                                            <div class="text">
+                                                                                                                                <p>
+                                                                                                                                    @lang('programs.antioquia.p29')
+                                                                                                                                </p>
+                                                                                                                                <p>
+                                                                                                                                    @lang('programs.antioquia.p25')
+                                                                                                                                </p>
+                                                                                                                                <p>
+                                                                                                                                    @lang('programs.antioquia.p26')
+                                                                                                                                </p>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </section>
+                                                                                                    -->
 
     <section class="cta-style-two">
         <div class="pattern-layer"></div>
@@ -257,7 +257,7 @@
             </div>
         </div>
     </section>
-
+    @include('partials.testimonial', ['testimonials' => $testimonials])
 
     @include('partials.contact')
 

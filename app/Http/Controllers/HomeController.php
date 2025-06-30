@@ -197,7 +197,12 @@ class HomeController extends Controller
      */
     public function antioquia(): View
     {
-        return view('pages.antioquia');
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Antioquia');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.antioquia', compact('testimonials'));
     }
 
     /**
@@ -217,7 +222,13 @@ class HomeController extends Controller
      */
     public function youngLeaders(): View
     {
-        return view('pages.young-leaders');
+
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Young Líderes');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.young-leaders', compact('testimonials'));
     }
 
     /**
@@ -227,7 +238,12 @@ class HomeController extends Controller
      */
     public function compellingPreaching(): View
     {
-        return view('pages.compelling_preaching');
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Compelling Preaching');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.compelling_preaching', compact('testimonials'));
     }
 
     /**
@@ -300,7 +316,12 @@ class HomeController extends Controller
      */
     public function capacityBuilding(): View
     {
-        return view('pages.capacity-building');
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Capacity Building');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.capacity-building', compact('testimonials'));
     }
 
     /**

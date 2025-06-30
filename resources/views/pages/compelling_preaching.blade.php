@@ -193,7 +193,7 @@
         </div>
     </section>
     <!-- event-section end -->
-
+    @include('partials.testimonial', ['testimonials' => $testimonials])
     @include('partials.contact')
 
 @endsection
