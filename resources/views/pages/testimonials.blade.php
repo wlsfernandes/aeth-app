@@ -40,7 +40,7 @@
                                     <!-- Responsive, uniform image -->
                                     <figure class="photo photo-1" style="float: left; margin: 0 20px 20px 0; max-width: 300px;">
                                         <img src="{{ $testimonial->image_url }}" class="img-fluid"
-                                            style="max-height: 240px; width: 100%; object-fit: cover;"
+                                            style="width: 300px; height: 240px; object-fit: cover; border-radius: 6px;"
                                             alt="{{ $testimonial->name }}">
                                     </figure>
 
