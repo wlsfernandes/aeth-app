@@ -205,7 +205,7 @@
         </div>
     </section>
 
-    @include('partials.testimonial')
+    @include('partials.testimonial', ['testimonials' => $testimonials])
 
 
 @endsection

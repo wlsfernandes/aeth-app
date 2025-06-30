@@ -152,7 +152,12 @@ class HomeController extends Controller
      */
     public function certificationProgram(): View
     {
-        return view('pages.certification_program');
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Certification Program');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.certification_program', compact('testimonials'));
     }
 
     /**
