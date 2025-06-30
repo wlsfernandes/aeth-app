@@ -36,10 +36,12 @@
                         <div class="content_block_one">
                             <div class="content-box p_relative">
                                 <div class="text mb_35">
-                                    <!-- Image floated to the left with margin -->
-                                    <figure class="photo photo-1" style="float: left; margin: 0 20px 20px 0;">
-                                        <img src="{{ $testimonial->image_url }}" width="300" height="240"
-                                            style="display: block;">
+
+                                    <!-- Responsive, uniform image -->
+                                    <figure class="photo photo-1" style="float: left; margin: 0 20px 20px 0; max-width: 300px;">
+                                        <img src="{{ $testimonial->image_url }}" class="img-fluid"
+                                            style="max-height: 240px; width: 100%; object-fit: cover;"
+                                            alt="{{ $testimonial->name }}">
                                     </figure>
 
                                     <h2><b>{{ $testimonial->name }}</b></h2>
@@ -47,11 +49,10 @@
                                     <p style="margin-top:20px;text-align:justify">
                                         @php
                                             $locale = app()->getLocale();
-                                            $textField = 'text_' . $locale;
+                                            $text = $testimonial->{'text_' . $locale} ?? $testimonial->text_es;
                                         @endphp
 
-                                        {!! $testimonial->$textField ?? '' !!}
-
+                                        {!! $text !!}
                                     </p>
 
                                 </div>
