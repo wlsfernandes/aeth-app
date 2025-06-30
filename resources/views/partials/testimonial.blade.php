@@ -20,14 +20,15 @@
                                                     style="width: 100%; height: 100%; object-fit: cover;">
 
                                             </figure>
-                                            <a href="{{ route('testimonials') }}">
-                                                <p class="fst-italic">
-                                                    <i class="bi bi-chat-quote-fill"></i>
-                                                    {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 120, '...') !!}
 
-                                                    <i class="bi bi-chat-quote-fill"></i>
-                                                </p>
-                                            </a>
+                                            <p class="fst-italic">
+                                                <i class="bi bi-chat-quote-fill"></i>
+                                                {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 360, '...') !!}
+                                                <br>
+                                                <a href="{{ route('testimonials') }}">@lang('messages.read_more')</a>
+                                                <i class="bi bi-chat-quote-fill"></i>
+                                            </p>
+
                                             <ul class="rating d-flex justify-content-center list-unstyled mt-3 mb-2">
                                                 <li><i class="icon-13"></i></li>
                                                 <li><i class="icon-13"></i></li>
