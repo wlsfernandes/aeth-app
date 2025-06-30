@@ -1,9 +1,9 @@
 @if($testimonials->count())
-    <section class="testimonial-style-two sec-pad">
+    <section class="faq-style-two sec-pad">
         <div class="auto-container">
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 content-column">
-                    <div class="sec-title mr_70 text-center">
+                    <div class="sec-title mr_70 text-center" style="margin-top: 50px;">
                         <span class="sub-title">Testimonials</span>
                     </div>
                     <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="7000">

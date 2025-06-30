@@ -256,8 +256,7 @@
     </section>
 
  @include('partials.testimonial', ['testimonials' => $testimonials])
-
-    <section class="news-section home-3 sec-pad bg-color-1">
+    <section class="news-section home-3 sec-pad">
         <div class="auto-container">
             <div class="sec-title centred mb_55">
                 <span class="sub-title calendar"><b>@lang('messages.calendar')</b></span>
