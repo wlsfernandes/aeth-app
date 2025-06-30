@@ -14,16 +14,20 @@
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                     <div class="testimonial-block-one">
                                         <div class="inner-box text-center p-4">
-                                            <figure class="thumb-box mb-3">
+                                            <figure class="mb-3 position-relative">
                                                 <img src="{{ $testimonial->image_url }}" alt="{{ $testimonial->name }}"
-                                                    class="rounded-circle"
-                                                    style="width: 100px; height: 100px; object-fit: cover;">
-                                            </figure>
-                                            <p class="fst-italic">
-                                                {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 120, '...') !!}
-                                                <a href="{{ route('testimonials') }}">@lang('Read more')</a>
-                                            </p>
+                                                    class="rounded-circle img-fluid"
+                                                    style="width: 100%; height: 100%; object-fit: cover;">
 
+                                            </figure>
+                                            <a href="{{ route('testimonials') }}">
+                                                <p class="fst-italic">
+                                                    <i class="bi bi-chat-quote-fill"></i>
+                                                    {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 120, '...') !!}
+
+                                                    <i class="bi bi-chat-quote-fill"></i>
+                                                </p>
+                                            </a>
                                             <ul class="rating d-flex justify-content-center list-unstyled mt-3 mb-2">
                                                 <li><i class="icon-13"></i></li>
                                                 <li><i class="icon-13"></i></li>
