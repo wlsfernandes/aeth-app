@@ -14,13 +14,10 @@
                                 <div class="carousel-item {{ $loop->first ? 'active' : '' }}">
                                     <div class="testimonial-block-one">
                                         <div class="inner-box text-center p-4">
-                                            <figure class="mb-3 position-relative">
-
+                                            <figure class="thumb-box mb-3">
                                                 <img src="{{ $testimonial->image_url }}" alt="{{ $testimonial->name }}"
-                                                    class="rounded-circle img-fluid"
-                                                    style="width: 100%; height: 100%; object-fit: cover;"> <i
-                                                    class="bi bi-chat-quote-fill"></i>
-
+                                                    class="rounded-circle"
+                                                    style="width: 100px; height: 100px; object-fit: cover;">
                                             </figure>
                                             <p class="fst-italic">
                                                 {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 360, '...') !!}
