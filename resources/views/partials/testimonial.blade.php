@@ -20,8 +20,10 @@
                                                     style="width: 100px; height: 100px; object-fit: cover;">
                                             </figure>
                                             <p class="fst-italic">
-                                                {!! $testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es !!}
+                                                {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 120, '...') !!}
+                                                <a href="{{ route('testimonial') }}">@lang('Read more')</a>
                                             </p>
+
                                             <ul class="rating d-flex justify-content-center list-unstyled mt-3 mb-2">
                                                 <li><i class="icon-13"></i></li>
                                                 <li><i class="icon-13"></i></li>
