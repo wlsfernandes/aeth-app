@@ -19,8 +19,9 @@
                                                     class="rounded-circle"
                                                     style="width: 100px; height: 100px; object-fit: cover;">
                                             </figure>
-                                            <p class="fst-italic">
+                                            <p class="fst-italic text-muted">
                                                 {!! Str::limit(strip_tags($testimonial->{'text_' . (app()->getLocale() ?? 'es')} ?? $testimonial->text_es), 360, '...') !!}
+                                                <br />
                                                 <a href="{{ route('testimonials') }}"> @lang('Read more')</a>
                                             </p>
 
