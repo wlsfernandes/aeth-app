@@ -29,18 +29,22 @@ class AppServiceProvider extends ServiceProvider
         // Redirect all non-primary domains to aeth.org
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
+            $primaryDomain = 'aeth.org';
 
-            if (
-                in_array($host, [
-                    'aeth.info',
-                    'www.aeth.info',
-                    'somosaeth.org',
-                    'www.somosaeth.org',
-                    'aeth.org' // redirect aeth.org → www.aeth.org
-                ])
-            ) {
-                Redirect::to('https://www.aeth.org' . request()->getRequestUri(), 301)->send();
+            // List domains you want to redirect TO the primary
+            $redirectDomains = [
+                'www.aeth.org',
+                'aeth.info',
+                'www.aeth.info',
+                'somosaeth.org',
+                'www.somosaeth.org',
+            ];
+
+            // Redirect if current host is not the primary one
+            if ($host !== $primaryDomain && in_array($host, $redirectDomains)) {
+                Redirect::to('https://' . $primaryDomain . request()->getRequestUri(), 301)->send();
             }
         }
     }
+
 }
