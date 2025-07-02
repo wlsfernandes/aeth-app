@@ -22,13 +22,11 @@
                         <div class="content-box">
                             <h2>Elizabeth Conde Fraiser</h2>
                             <p><b>@lang('ls25.speaker_title_fraiser')</b></p>
-                            <p>@lang('ls25.speaker_desc_fraiser')</p>
-
+                            {!! __('ls25.speaker_desc_fraiser') !!}
                         </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 @endsection
