@@ -36,10 +36,10 @@ class AppServiceProvider extends ServiceProvider
                     'www.aeth.info',
                     'somosaeth.org',
                     'www.somosaeth.org',
-                    'aeth.org' // redirect aeth.org → www.aeth.org
+                    'www.aeth.org' // redirect aeth.org → aeth.org
                 ])
             ) {
-                Redirect::to('https://www.aeth.org' . request()->getRequestUri(), 301)->send();
+                Redirect::to('https://aeth.org' . request()->getRequestUri(), 301)->send();
             }
         }
     }
