@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-lg-9 col-md-12 col-sm-12 content-column">
                         <div class="content-box">
-                            <h2>Elizabeth Conde Fraiser</h2>
+                            <h2>Elizabeth Conde-Fraiser</h2>
                             <p><b>@lang('ls25.speaker_title_fraiser')</b></p>
                             {!! __('ls25.speaker_desc_fraiser') !!}
                         </div>
