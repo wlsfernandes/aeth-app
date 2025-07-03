@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Post;
 use App\Models\Faq;
+use App\Models\Speaker;
 use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\View\View;
@@ -328,10 +329,13 @@ class HomeController extends Controller
      * Display the Lecture Series 2025 page.
      *
      * @return View
-     */
+     * @var \Illuminate\Support\Collection|\App\Models\Speaker[] $speakers 
+     * 
+     *      */
     public function lectureSeries2025(): View
     {
-        return view('pages.lecture-series-2025');
+        $speakers = Speaker::all();
+        return view('pages.lecture-series-2025', compact('speakers'));
     }
 
 
@@ -360,10 +364,11 @@ class HomeController extends Controller
         return view('pages.hispanic-initiative-grantees');
     }
 
-    /* temp url for approval */
+    /** @var \Illuminate\Support\Collection|\App\Models\Speaker[] $speakers */
     public function ls20259444401(): View
     {
-        return view('pages.tests.ls20259444401');
+        $speakers = Speaker::all();
+        return view('pages.tests.ls20259444401', compact('speakers'));
     }
     public function youngLideres20259444401(): View
     {

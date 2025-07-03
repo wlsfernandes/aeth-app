@@ -16,6 +16,7 @@ use App\Http\Controllers\CertificationController;
 use App\Http\Controllers\CapacityBuildingController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\PayPalController;
+use App\Http\Controllers\SpeakerController;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\File;
@@ -86,6 +87,10 @@ Route::post('/members', [HomeController::class, 'store'])->name('members.store')
 Route::get('/capacity-building', [HomeController::class, 'capacityBuilding'])->name('capacityBuilding');
 Route::get('/capacity-building/application', [CapacityBuildingController::class, 'application'])->name('application');
 Route::get('/web-application', [HomeController::class, 'webApplication'])->name('webApplication');
+
+Route::get('/speaker/{slug}', [SpeakerController::class, 'show'])->name('speaker.show');
+
+
 
 Route::get('/jessica-lugo', [TeamController::class, 'jessicaLugo'])->name('jessicaLugo');
 Route::get('/oscar-merlo', [TeamController::class, 'oscarMerlo'])->name('oscar-merlo');

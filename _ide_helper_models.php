@@ -785,6 +785,41 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $name
+ * @property string|null $title_en
+ * @property string|null $title_es
+ * @property string|null $title_pt
+ * @property string|null $description_en
+ * @property string|null $description_es
+ * @property string|null $description_pt
+ * @property string|null $photo_url
+ * @property string|null $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereDescriptionEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereDescriptionEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereDescriptionPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker wherePhotoUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Speaker whereUpdatedAt($value)
+ */
+	class Speaker extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property int $program_id
  * @property string|null $image_url
  * @property string $name

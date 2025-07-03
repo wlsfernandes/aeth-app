@@ -2,9 +2,9 @@
 
 @section('title', '#somosAETH | Lecture Series 2025')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Lecture Series 2025: Predicación y Migración. Join us for an insightful event featuring keynote speakers Dr. Justo González, Dr. Alma Tinoco Ruiz, and Dr. Oscar Garcia Johnson. Explore the intersection of preaching and migration in a global context.')
 
-@section('meta-keywords', 'AETH, Antioquia, introduction')
+@section('meta-keywords', 'AETH, Lecture Series 2025, Predicación y Migración, Justo González, Alma Tinoco Ruiz, Oscar Garcia Johnson, Global Preaching, Migration Studies')
 
 
 <!-- Content here -->
@@ -118,9 +118,9 @@
                                 <p>@lang('pages.lectures.p3') </p>
                             </div>
                             <div class="d-flex justify-content-between">
-                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Lecture+Series+25+Agenda+English+Version.pdf"
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Program+Lecture+Series+-+English.pdf"
                                     class="theme-btn-one" target="blank"><small>@lang('header.down_en')</small></a>
-                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Agenda+Lecture+Series+25+Espan%CC%83ol.pdf"
+                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/pdf/Program+Lecture+Series+-+Espan%CC%83ol.pdf"
                                     class="theme-btn-one" target="_blank"><small>@lang('header.down_es')</small></a>
                             </div>
 
@@ -211,66 +211,30 @@
                 </div>
 
             </div>
-
             <div class="workshop-speakers mt-5">
                 <div class="sec-title centred mb_55" style="margin:0px;">
                     <span class="sub-title calendar">@lang('messages.workshops')</span>
                 </div>
+
                 <div class="row justify-content-center text-center" style="margin:0px;">
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('davi') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/David Vazquez LEvy.jpg" alt="Speaker 1"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">David Vazquez Levy</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('perea') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Guesnerth Perea.jpg" alt="Speaker 2"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Guesnerth Perea</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('tapia') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Lori Tapia.jpg" alt="Speaker 3"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Lori Tapia</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('harris') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Marty Harris.jpg" alt="Speaker 4"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Marty Harris</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('romero') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Robert Chao Romero (1).jpg" alt="Speaker 5"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Robert Chao Romero</p>
-                        </a>
-                    </div>
-                    <div class="col-6 col-sm-4 col-md-2 mb-4">
-                        <a href="{{ route('estrada') }}" class="text-decoration-none text-dark">
-                            <img src="assets/images/resource/Wilmer Estrada.jpg" alt="Speaker 6"
-                                class="img-fluid rounded-circle mb-2"
-                                style="width: 100px; height: 100px; object-fit: cover;">
-                            <p class="mb-0">Wilmer Estrada</p>
-                        </a>
-                    </div>
+                    @foreach($speakers->chunk(5) as $chunk)
+                        </div>
+                        <div class="row justify-content-center text-center" style="margin:0px;">
+                            @foreach($chunk as $speaker)
+                                <div class="col-6 col-sm-4 col-md-2 mb-4">
+                                    <a href="{{ route('speaker.show', $speaker->slug) }}" class="text-decoration-none text-dark">
+                                        <img src="{{ $speaker->photo_url }}"
+                                            alt="{{ $speaker->name }}" class="img-fluid rounded-circle mb-2"
+                                            style="width: 100px; height: 100px; object-fit: cover;">
+                                        <p class="mb-0">{{ $speaker->name }}</p>
+                                    </a>
+                                </div>
+                            @endforeach
+                    @endforeach
                 </div>
+
             </div>
 
-
-
-        </div>
     </section>
     <section class="clients-section" style="background-color:#f5f1fb">
         <div class="sec-title centred mb_55">
@@ -352,24 +316,124 @@
             </div>
         </div>
     </section>
-    <!-- clients-section -->
-    <section class="clients-section" style="background-color:#f5f1fb">
-        <div class="sec-title centred mb_55">
-            <span class="sub-title calendar">@lang('messages.important_partners')</span>
-        </div>
-        <div class="auto-container">
-            <div class="two-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
-                            src="assets/images/clients/clients-3.png" alt=""></a>
-                </figure>
-                <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
-                            src="assets/images/clients/clients-5.png" alt=""></a>
-                </figure>
 
+
+    <!-- faq-section -->
+    <section class="faq-section bg-color-1 sec-pad" style="background-color:#f5f1fb">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_three">
+                        <div class="content-box mr_30">
+                            <div class="sec-title mb_55">
+                                <span class="sub-title">Pacific Stay Hotel</span>
+                                <h2>@lang('ls25.hotel_information')</h2>
+                            </div>
+                            <div class="accordion-inner">
+                                <ul class="accordion-box">
+                                    <li class="accordion block">
+                                        <div class="acc-btn active">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_procedures')</h4>
+                                        </div>
+                                        <div class="acc-content current">
+                                            <div class="upper">
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/17cae89c-f7a7-4ad9-a420-98dfc5047c41.pdf"
+                                                    target="_blank"
+                                                    class="donate-box-btn theme-btn-one d-block w-100 text-center">
+                                                    <span> <i class="bi bi-download font-size-32"></i>
+                                                        @lang('ls25.hotel_click_here')</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_address')</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>3223 East Garvey Avenue NorthWest Covina - CA 91791 </p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li class="accordion block">
+                                        <div class="acc-btn">
+                                            <div class="icon-outer"></div>
+                                            <h4>@lang('ls25.hotel_front_desk')</h4>
+                                        </div>
+                                        <div class="acc-content">
+                                            <div class="text">
+                                                <p>(866) 994-3523</p>
+                                                <p>(626) 966 8311</p>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box ml_30 mt_19">
+                        <figure class="image"><img src="assets/images/resource/hotel-pacific.jpg" alt=""></figure>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
-    <!-- clients-section end -->
+    <!-- faq-section end -->
+
+    <section class="about-section p_relative sec-pad" style="background-color: #f3e6f7;">
+
+        <div class="auto-container">
+            <div class="row align-items-center clearfix">
+                <div class="col-lg-6 col-md-12 col-sm-12 image-column">
+                    <div class="image-box ml_30 mt_19">
+                        <figure class="image"><img src="assets/images/resource/sponsor_ls25.jpg" alt=""></figure>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-12 col-sm-12 content-column">
+                    <div class="content_block_one">
+                        <div class="content-box p_relative mr_30">
+                            <!-- Section Title -->
+                            <div class="sec-title mb_40">
+                                <span class="sub-title">@lang('ls25.sponsorship_oportunities')</span>
+                                <h2>LS25 Predicación y Migración</h2>
+                            </div>
+
+                            <!-- Description -->
+                            <div class="text mb_35">
+                                <p>@lang('ls25.identidad_trauma_tecnica')</p>
+                            </div>
+
+                            <!-- Sponsor Button -->
+                            <div class="inner mb_45">
+                                <div class="row clearfix">
+                                    <div class="col-lg-12 col-md-12 col-sm-12 single-column">
+                                        <div class="single-item">
+                                            <div class="upper">
+                                                <a href="https://gonzalezcenter.s3.us-east-2.amazonaws.com/AETH_WEBSITE/blog/43511291-cd2c-41b5-b1d5-d279bafe9d5b.pdf"
+                                                    target="_blank"
+                                                    class="donate-box-btn theme-btn-one d-block w-100 text-center">
+                                                    <span>@lang('ls25.become_sponsor_today')</span>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End Sponsor Button -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
 
 
