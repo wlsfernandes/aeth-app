@@ -595,247 +595,43 @@
     </section>
     <section class="team-page-section centred">
         <div class="auto-container">
-            <div class="auto-container">
+            @foreach ($groupedResources as $group => $resources)
                 <div class="sec-title centred mb_55" style="text-align: center;">
-                    <h2 style="color:#4a235a;">@lang('team.staff')</h2>
-                </div>
-            </div>
-            <!-- ******************************************* row ******************* -->
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('jessicaLugo')}}"><img src="assets/images/team/Jessica Lugo.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('jessicaLugo')}}" style="color:#4a235a;"> Jessica Lugo</a></h3>
-                                <span class="designation">@lang('team.executive_director')</span>
-                            </div>
-                        </div>
-                    </div>
+                    <h2 style="color:#4a235a;">
+                        @lang('team.' . Str::slug($group, '_')) {{-- Ex: team.staff, team.service_partners --}}
+                    </h2>
                 </div>
 
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('glorie-acevedo')}}"><img src="assets/images/team/Glorie Acevedo.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('glorie-acevedo')}}" style="color:#4a235a;"> Glorie Acevedo</a></h3>
-                                <span class="designation">@lang('team.office_business_manager')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('marta-luna')}}"><img src="assets/images/team/Marta Luna.jpg" alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('marta-luna')}}" style="color:#4a235a;"> Marta Luna</a></h3>
-                                <span class="designation">@lang('team.community_engagement_manager')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- ******************************************* row ******************* -->
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('luz-ortiz')}}"><img src="assets/images/team/Luz Ortiz.jpg" alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('luz-ortiz')}}" style="color:#4a235a;"> Luz Ortiz</a></h3>
-                                <span class="designation">@lang('team.accounting_manager')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="auto-container">
-                <div class="sec-title centred mb_55" style="text-align: center;">
-                    <h2 style="color:#4a235a;">@lang('team.consultants')</h2>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('oscar-merlo')}}"><img src="assets/images/team/Oscar Merlo.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('oscar-merlo')}}" style="color:#4a235a;"> Oscar Merlo</a></h3>
-                                <span class="designation">@lang('team.compelling_preaching')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('shaila-munoz')}}"><img src="assets/images/team/Shaila Munoz.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('shaila-munoz')}}" style="color:#4a235a;"> Shaila Muñoz</a></h3>
-                                <span class="designation">@lang('team.fundraising_manager')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('coralys-santos')}}"><img src="assets/images/team/Coralys Santos.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('coralys-santos')}}" style="color:#4a235a;"> Coralys Santos</a></h3>
-                                <span class="designation">@lang('team.assistant_manager_preaching_program')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
                 <div class="row clearfix">
-                    <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <a href="{{ route('jeremy-villoch')}}"><img src="assets/images/team/Jeremy Villoch.jpg"
-                                            alt=""></a>
-                                </figure>
-                                <div class="lower-content">
-                                    <h3><a href="{{ route('jeremy-villoch')}}" style="color:#4a235a;"> Jeremy Villoch</a>
-                                    </h3>
-                                    <span class="designation">@lang('team.compelling_preaching')</span>
+                    @foreach ($resources as $hr)
+                        <div class="col-lg-4 col-md-6 col-sm-12 team-block">
+                            <div class="team-block-two">
+                                <div class="inner-box">
+                                    <figure class="image-box">
+                                        <a href="{{ route('profile.show', $hr->slug) }}">
+                                            <img src="{{ asset($hr->photo_url) }}" alt="{{ $hr->name }}">
+                                        </a>
+                                    </figure>
+                                    <div class="lower-content">
+                                        <h3>
+                                            <a href="{{ route('profile.show', $hr->slug) }}" style="color:#4a235a;">
+                                                {{ $hr->name }}
+                                            </a>
+                                        </h3>
+                                        <span class="designation">
+                                            {{ $hr->{'title_' . app()->getLocale()} }}
+                                        </span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <a href="{{ route('maylin-escala')}}"><img src="assets/images/team/Maylin Escala.jpg"
-                                            alt=""></a>
-                                </figure>
-                                <div class="lower-content">
-                                    <h3><a href="{{ route('maylin-escala')}}" style="color:#4a235a;">Maylin Escala</a></h3>
-                                    <span class="designation">@lang('team.young_leaders_program_manager')</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                        <div class="team-block-two">
-                            <div class="inner-box">
-                                <figure class="image-box">
-                                    <a href="{{ route('yajaira-ruiz')}}"><img src="assets/images/team/Yajaira Ruiz.jpg"
-                                            alt=""></a>
-                                </figure>
-                                <div class="lower-content">
-                                    <h3><a href="{{ route('yajaira-ruiz')}}" style="color:#4a235a;">Yajaira Ruiz</a></h3>
-                                    <span class="designation">@lang('team.yajaira.p1')</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="auto-container">
-                <div class="sec-title centred mb_55" style="text-align: center;">
-                    <h2 style="color:#4a235a;">@lang('team.service_partners')</h2>
-                </div>
-            </div>
-            <div class="row clearfix">
+                    @endforeach
 
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('ondina-gonzalez')}}"><img src="assets/images/team/Ondina Gonzalez.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('ondina-gonzalez')}}" style="color:#4a235a;"> Ondina González</a></h3>
-                                <span class="designation">@lang('team.director_gonzalez_resource_center')</span>
-                            </div>
-                        </div>
-                    </div>
                 </div>
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('wilson-fernandes-junior')}}"><img
-                                        src="assets/images/team/Wilson Fernandes.jpg" alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('wilson-fernandes-junior')}}" style="color:#4a235a;">Wilson Fernandes
-                                        Junior</a></h3>
-                                <span class="designation">@lang('team.it_solutions_software_developer')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- ******************************************* row ******************* -->
-            <div class="auto-container">
-                <div class="sec-title centred mb_55" style="text-align: center;">
-                    <h2 style="color:#4a235a;">@lang('team.interns')</h2>
-                </div>
-            </div>
-            <div class="row clearfix">
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('sophia-porter')}}"><img src="assets/images/team/Sophia Porter.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('sophia-porter')}}" style="color:#4a235a;">Sophia Porter</a></h3>
-                                <span class="designation">@lang('team.gonzalez_center_practitioner')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-lg-4 col-md-6 col-sm-12 team-block">
-                    <div class="team-block-two">
-                        <div class="inner-box">
-                            <figure class="image-box">
-                                <a href="{{ route('juan-martinez')}}"><img src="assets/images/team/Juan Martinez.jpg"
-                                        alt=""></a>
-                            </figure>
-                            <div class="lower-content">
-                                <h3><a href="{{ route('juan-martinez')}}" style="color:#4a235a;"> Juan Martínez</a></h3>
-                                <span class="designation">@lang('team.juan.p1')</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+            @endforeach
         </div>
-
-
     </section>
+
 
 
 @endsection

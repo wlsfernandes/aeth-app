@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileUpdateRequest;
+use App\Models\HumanResource;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +14,14 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
+
+    public function show($slug)
+    {
+        $hr = HumanResource::where('slug', $slug)->firstOrFail();
+
+        return view('pages.human-resource.show', compact('hr'));
+    }
+
     /**
      * Displays the profile edit page for the authenticated user.
      *

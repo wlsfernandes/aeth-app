@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\HumanResource;
 use App\Models\Post;
 use App\Models\Faq;
 use App\Models\Speaker;
@@ -103,7 +104,12 @@ class HomeController extends Controller
      */
     public function ourTeam(): View
     {
-        return view('pages.our_team');
+        $groupedResources = HumanResource::where('isActive', true)
+            ->orderBy('order')
+            ->get()
+            ->groupBy('group');
+
+        return view('pages.our_team', compact('groupedResources'));
     }
 
     /**

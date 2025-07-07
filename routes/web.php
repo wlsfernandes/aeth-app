@@ -17,6 +17,7 @@ use App\Http\Controllers\CapacityBuildingController;
 use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SpeakerController;
+use App\Http\Controllers\HumanResourceController;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\File;
@@ -89,6 +90,7 @@ Route::get('/capacity-building/application', [CapacityBuildingController::class,
 Route::get('/web-application', [HomeController::class, 'webApplication'])->name('webApplication');
 
 Route::get('/speaker/{slug}', [SpeakerController::class, 'show'])->name('speaker.show');
+Route::get('/profile/{slug}', [ProfileController::class, 'show'])->name('profile.show');
 
 
 

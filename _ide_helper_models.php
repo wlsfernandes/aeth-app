@@ -229,6 +229,81 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $email
+ * @property string|null $email_personal
+ * @property string|null $phone
+ * @property string|null $phone_personal
+ * @property string|null $address
+ * @property string|null $address_complement
+ * @property string|null $city
+ * @property string|null $state
+ * @property string|null $country
+ * @property string|null $zipcode
+ * @property string|null $emergency_contact
+ * @property string|null $emergency_contact_phone
+ * @property string|null $emergency_relationship
+ * @property string|null $restrictions
+ * @property string|null $title_en
+ * @property string|null $title_es
+ * @property string|null $title_pt
+ * @property string|null $description_en
+ * @property string|null $description_es
+ * @property string|null $description_pt
+ * @property string|null $photo_url
+ * @property string|null $slug
+ * @property bool $isActive
+ * @property string|null $contractorCompany
+ * @property string|null $timezone
+ * @property string|null $group
+ * @property \Illuminate\Support\Carbon|null $dateOfBirthday
+ * @property int $order
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource query()
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereAddress($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereAddressComplement($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereCity($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereContractorCompany($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereCountry($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereDateOfBirthday($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereDescriptionEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereDescriptionEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereDescriptionPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereEmailPersonal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereEmergencyContact($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereEmergencyContactPhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereEmergencyRelationship($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereGroup($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereIsActive($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource wherePhonePersonal($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource wherePhotoUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereRestrictions($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereState($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereTimezone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|HumanResource whereZipcode($value)
+ */
+	class HumanResource extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * Class Member
  * 
  * Represents a registered member with personal details and membership information.
