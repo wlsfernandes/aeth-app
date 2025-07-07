@@ -80,7 +80,34 @@ use Illuminate\Support\Facades\Log;
 class DigitalCollection extends Model
 {
     protected $fillable = [
-        'isLocked', 'itemNumber', 'omekaIdentifier', 'workflow', 'creator', 'title', 'publisher', 'occasion', 'place', 'copyright_id', 'typeOfDocument', 'subject', 'description', 'physicalLocation', 'downloadFile', 'media', 'jpegPreviewPath', 'isJpegUploaded', 'isFileUploaded', 'dateOfPublication', 'driveURL', 'jpegDateUpload', 'fileDateUpload', 'isWordFileUploaded', 'wordFileUrl', 'wordFileDateUpload','originalFileName', 'notes',
+        'isLocked',
+        'itemNumber',
+        'omekaIdentifier',
+        'workflow',
+        'creator',
+        'title',
+        'publisher',
+        'occasion',
+        'place',
+        'copyright_id',
+        'typeOfDocument',
+        'subject',
+        'description',
+        'physicalLocation',
+        'downloadFile',
+        'media',
+        'jpegPreviewPath',
+        'isJpegUploaded',
+        'isFileUploaded',
+        'dateOfPublication',
+        'driveURL',
+        'jpegDateUpload',
+        'fileDateUpload',
+        'isWordFileUploaded',
+        'wordFileUrl',
+        'wordFileDateUpload',
+        'originalFileName',
+        'notes',
     ];
 
     protected $casts = [
@@ -89,8 +116,16 @@ class DigitalCollection extends Model
         'wordFileDateUpload' => 'datetime'
     ];
 
+    public function scopePublished($query)
+    {
+        return $query->where('workflow', 'Published');
+    }
 
-   
+    public function series()
+    {
+        return $this->belongsTo(Series::class);
+    }
+
     public static function getTypeOfDocument(): array
     {
         try {
@@ -101,6 +136,19 @@ class DigitalCollection extends Model
         }
     }
 
+    public static function getCreator(): array
+    {
+        try {
+            return ['González, Justo L.', 'González, Justo L.|González, Catherine G.', 'González, Catherine G.'];
+        } catch (Exception $e) {
+            Log::error('Error retrieving creator: ' . $e->getMessage());
+            throw new Exception('Failed to retrieve creator.');
+        }
+    }
+    public function copyright()
+    {
+        return $this->belongsTo(Copyright::class, 'copyright_id');
+    }
 
     use HasFactory;
 }

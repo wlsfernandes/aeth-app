@@ -88,6 +88,19 @@ Route::post('/members', [HomeController::class, 'store'])->name('members.store')
 Route::get('/capacity-building', [HomeController::class, 'capacityBuilding'])->name('capacityBuilding');
 Route::get('/capacity-building/application', [CapacityBuildingController::class, 'application'])->name('application');
 Route::get('/web-application', [HomeController::class, 'webApplication'])->name('webApplication');
+/*** Gonzalez Acervo */
+Route::get('/gonzalez-all', [DigitalCollectionController::class, 'all'])->name('all');
+Route::any('/gonzalez-selector', [DigitalCollectionController::class, 'selector'])->name('selector');
+Route::get('/gonzalez-browse-collections', [DigitalCollectionController::class, 'browseCollections'])->name('browseCollections');
+Route::get('/gonzalez-item-collections/{id}', [DigitalCollectionController::class, 'itemCollection'])->name('itemCollection');
+Route::get('/gonzalez-acervo/{id}', [DigitalCollectionController::class, 'accessItem'])->name('accessItem');
+Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
+Route::any('/gonzalez-tag-cloud', [DigitalCollectionController::class, 'cloud'])->name('tag.cloud');
+Route::match(['get', 'post'], '/tag-cloud/filter', [DigitalCollectionController::class, 'filter'])->name('tag.cloud.filter');
+Route::match(['get', 'post'], '/digital-search', [DigitalCollectionController::class, 'globalSearch'])->name('globalSearch');
+Route::match(['get', 'post'], '/digital-selected-options', [DigitalCollectionController::class, 'selectedOptions'])->name('selectedOptions');
+Route::get('/gonzalez-exclusive', [AdminController::class, 'gonzalezExclusive'])->name('gonzalezExclusive');
+/*** Gonzalez Acervo End */
 
 Route::get('/speaker/{slug}', [SpeakerController::class, 'show'])->name('speaker.show');
 Route::get('/profile/{slug}', [ProfileController::class, 'show'])->name('profile.show');
@@ -242,13 +255,25 @@ Route::middleware('auth')->group(function () {
     Route::get('/antioquia-exclusive', [AdminController::class, 'antioquiaExclusive'])->name('antioquiaExclusive');
     Route::get('/capacity-building-exclusive', [AdminController::class, 'capacityBuildingExclusive'])->name('capacityBuildingExclusive');
     Route::get('/compelling-preaching-exclusive', [AdminController::class, 'compellingPreachingExclusive'])->name('compellingPreachingExclusive');
-    Route::get('/gonzalez-exclusive', [AdminController::class, 'gonzalezExclusive'])->name('gonzalezExclusive');
+
     Route::get('/young-lideres-exclusive', [AdminController::class, 'youngLideresExclusive'])->name('youngLideresExclusive');
 
 
     Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
 
-
+    /*** Gonzalez Acervo */
+    Route::get('/gonzalez-exclusive', [DigitalCollectionController::class, 'all'])->name('all');
+    Route::any('/gonzalez-selector', [DigitalCollectionController::class, 'selector'])->name('selector');
+    Route::get('/gonzalez-browse-collections', [DigitalCollectionController::class, 'browseCollections'])->name('browseCollections');
+    Route::get('/gonzalez-item-collections/{id}', [DigitalCollectionController::class, 'itemCollection'])->name('itemCollection');
+    Route::get('/gonzalez-acervo/{id}', [DigitalCollectionController::class, 'accessItem'])->name('accessItem');
+    Route::get('/gonzalez-acervo', [DigitalCollectionController::class, 'acervo'])->name('acervo');
+    Route::any('/gonzalez-tag-cloud', [DigitalCollectionController::class, 'cloud'])->name('tag.cloud');
+    Route::match(['get', 'post'], '/tag-cloud/filter', [DigitalCollectionController::class, 'filter'])->name('tag.cloud.filter');
+    Route::match(['get', 'post'], '/digital-search', [DigitalCollectionController::class, 'globalSearch'])->name('globalSearch');
+    Route::match(['get', 'post'], '/digital-selected-options', [DigitalCollectionController::class, 'selectedOptions'])->name('selectedOptions');
+    /*Route::get('/gonzalez-exclusive', [AdminController::class, 'gonzalezExclusive'])->name('gonzalezExclusive');
+    /*** Gonzalez Acervo End */
 
 });
 

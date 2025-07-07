@@ -76,7 +76,7 @@
                     </div><!-- end card -->
 
                     <div class="card">
-                        <a href="{{route('gonzalezExclusive')}}">
+                        <a href="{{route('all')}}">
                             <img class="card-img-top img-fluid" src="{{asset('assets/images/gonzalez-program.jpg')}}"
                                 alt="Card image cap">
                             <div class="card-body">

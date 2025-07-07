@@ -137,6 +137,25 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Copyright whereUpdatedAt($value)
+ */
+	class Copyright extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property bool $isLocked
  * @property float $itemNumber
  * @property string|null $omekaIdentifier
@@ -207,6 +226,9 @@ namespace App\Models{
  * @property int|null $series_id
  * @property bool $isProblematic
  * @property string|null $problematicNotes
+ * @property-read \App\Models\Copyright|null $copyright
+ * @property-read \App\Models\Series|null $series
+ * @method static \Illuminate\Database\Eloquent\Builder|DigitalCollection published()
  * @method static \Illuminate\Database\Eloquent\Builder|DigitalCollection whereFullTextContent($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DigitalCollection whereFullTextVector($value)
  * @method static \Illuminate\Database\Eloquent\Builder|DigitalCollection whereIsProblematic($value)
@@ -866,6 +888,27 @@ namespace App\Models{
  * @mixin \Eloquent
  */
 	class Role extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\DigitalCollection> $digitalCollections
+ * @property-read int|null $digital_collections_count
+ * @method static \Illuminate\Database\Eloquent\Builder|Series newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Series newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Series query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Series whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Series whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Series whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Series whereUpdatedAt($value)
+ */
+	class Series extends \Eloquent {}
 }
 
 namespace App\Models{
