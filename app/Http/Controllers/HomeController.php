@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Board;
 use App\Models\HumanResource;
 use App\Models\Post;
 use App\Models\Faq;
@@ -108,8 +109,9 @@ class HomeController extends Controller
             ->orderBy('order')
             ->get()
             ->groupBy('group');
-
-        return view('pages.our_team', compact('groupedResources'));
+        $boardMembers = Board::orderBy('order')
+            ->get();
+        return view('pages.our_team', compact('groupedResources', 'boardMembers'));
     }
 
     /**

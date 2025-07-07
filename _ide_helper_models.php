@@ -13,6 +13,47 @@
 
 namespace App\Models{
 /**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $email
+ * @property string|null $phone
+ * @property string|null $title_en
+ * @property string|null $title_es
+ * @property string|null $title_pt
+ * @property string|null $description_en
+ * @property string|null $description_es
+ * @property string|null $description_pt
+ * @property string|null $photo_url
+ * @property string|null $slug
+ * @property int $order
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Board newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Board newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Board query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereDescriptionEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereDescriptionEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereDescriptionPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board wherePhone($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board wherePhotoUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Board whereUpdatedAt($value)
+ */
+	class Board extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * Class Cart
  * 
  * Represents a shopping cart associated with a user.
