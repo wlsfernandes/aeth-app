@@ -50,77 +50,42 @@ class PayPalController extends Controller
      */
     public function donate(Request $request)
     {
-        DB::beginTransaction(); // Start transaction
+        $amount = $request->input('amount', 100);
+        $program = $request->input('program');
 
-        try {
-            $amount = $request->input('amount', 100);
-            $program = $request->input('program');
-            // Create payment record first
-            $payment = Payment::create([
-                'first_name' => $request->input('first_name') ?? '***',
-                'last_name' => $request->input('last_name') ?? '***',
-                'email' => $request->input('email') ?? '***@***.com',
-                'type' => 'Donation',
-                'program' => $request->program ?? '',
-                'amount' => $amount ?? 0,
-                'shipment_cost' => 0,
-                'isRecurring' => $request->input('is_recurring', false),
-                'payment_date' => now(),
-                'processed_by' => 'Paypal',
-                'status' => 'pending', // Mark as pending until capture
-            ]);
+        $provider = new PayPalClient;
+        $provider->setApiCredentials(config('paypal'));
+        $provider->setAccessToken($provider->getAccessToken());
 
-            $provider = new PayPalClient;
-            $provider->setApiCredentials(config('paypal'));
-            $provider->setAccessToken($provider->getAccessToken());
-
-            $response = $provider->createOrder([
-                "intent" => "CAPTURE",
-                "purchase_units" => [
-                    [
-                        "amount" => [
-                            "currency_code" => "USD",
-                            "value" => $amount,
-                        ]
-                    ]
-                ],
-                "application_context" => [
-                    "return_url" => route('paypal.capture.donation', ['payment_id' => $payment->id]), // Pass payment ID
-                    "cancel_url" => route('test.paypal')
+        $order = $provider->createOrder([
+            'intent' => 'CAPTURE',
+            'purchase_units' => [
+                [
+                    'amount' => [
+                        'currency_code' => 'USD',
+                        'value' => $amount,
+                    ],
+                    // Pass anything you need later in custom_id
+                    'custom_id' => $program,
                 ]
-            ]);
+            ],
+            'application_context' => [
+                'return_url' => route('paypal.capture.donation'),   // PayPal sends ?token=...
+                'cancel_url' => route('donationRedirectPayment'),
+            ],
+        ]);
 
-            if (!isset($response['id'])) {
-                throw new Exception('PayPal order creation failed: ' . json_encode($response));
-            }
-
-            $approvalUrl = collect($response['links'])->firstWhere('rel', 'approve')['href'] ?? null;
-            if (!$approvalUrl) {
-                throw new Exception('Approval URL not found in PayPal response.');
-            }
-
-            DB::commit();
-            return redirect($approvalUrl); // Redirect user to PayPal
-
-        } catch (Exception $e) {
-            DB::rollBack();
-            // Log the error in the database
-            ErrorLog::create([
-                'error_message' => $e->getMessage() ?? 'Unknown error donate PaypalController',
-                'stack_trace' => $e->getTraceAsString(),
-                'error_code' => 'payment_error',
-            ]);
-
-            // Optionally, you can also log the error in Laravel's default log file
-            Log::error('Paypal Payment processing error', [
-                'message' => $e->getMessage(),
-                'stack_trace' => $e->getTraceAsString(),
-            ]);
-
-            return redirect()->route('donationRedirectPayment')->withInput()->with('error', 'PayPal Error: Error to process payment 0568');
-
+        $approve = collect($order['links'])->firstWhere('rel', 'approve')['href'] ?? null;
+        if (!$approve) {
+            return back()->withErrors('Could not start PayPal flow.');
         }
+
+        return redirect($approve);
     }
+
+
+
+
     /**
      * Capture PayPal donation payment.
      *
@@ -136,52 +101,48 @@ class PayPalController extends Controller
         $provider->setApiCredentials(config('paypal'));
         $provider->setAccessToken($provider->getAccessToken());
 
-        try {
-            $response = $provider->capturePaymentOrder($request->query('token'));
+        $response = $provider->capturePaymentOrder($request->query('token'));
+        Log::info('PayPal Donation Response:', $response);
 
-            Log::info('PayPal Donation Response:', $response);
-
-            if (isset($response['status']) && $response['status'] === 'COMPLETED') {
-                $transactionId = $response['id'] ?? 'unknown';
-
-                // Find the correct payment record using payment_id
-                $payment = Payment::findOrFail($request->query('payment_id'));
-                $payment->update([
-                    'status' => 'completed',
-                    'transaction_id' => $transactionId
-                ]);
-
-                // Send confirmation email
-                if (!empty($payment->email)) {
-                    try {
-                        Mail::to($payment->email)
-                            ->cc('administration@aeth.org')
-                            ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
-                            ->send(new DonationEmail($payment->email ?? ''));
-                    } catch (Exception $e) {
-                        Log::error('Failed to send donation email: ' . $e->getMessage());
-                    }
-                }
-
-                return redirect()->route('gracias', ['text' => 'donation']);
-            }
-
-            return redirect()->route('payment')->withErrors('Donation failed. Please try again.');
-        } catch (Exception $e) {
-            ErrorLog::create([
-                'error_message' => $e->getMessage() ?? 'Unknown error captureDonationPayment PaypalController',
-                'stack_trace' => $e->getTraceAsString(),
-                'error_code' => 'payment_error',
-            ]);
-
-            // Optionally, you can also log the error in Laravel's default log file
-            Log::error('Paypal Payment processing error', [
-                'message' => $e->getMessage(),
-                'stack_trace' => $e->getTraceAsString(),
-            ]);
-            return redirect()->route('payment')->withErrors('Paypal: An error occurred: ( 0690 ) ');
+        if (($response['status'] ?? '') !== 'COMPLETED') {
+            return redirect()->route('payment')
+                ->withErrors('Donation not completed on PayPal.');
         }
+
+        $capture = data_get($response, 'purchase_units.0.payments.captures.0');
+        $payer = $response['payer'] ?? [];
+
+        $data = [
+            'first_name' => data_get($payer, 'name.given_name', ''),
+            'last_name' => data_get($payer, 'name.surname', ''),
+            'email' => $payer['email_address'] ?? '',
+            'type' => 'Donation',
+            'program' => data_get($response, 'purchase_units.0.payments.captures.0.custom_id', ''),
+            'amount' => data_get($capture, 'amount.value', 0),
+            'paypal_fee' => data_get($capture, 'seller_receivable_breakdown.paypal_fee.value', 0),
+            'paypal_transaction_id' => $capture['id'] ?? '',
+            'payment_date' => now(),
+            'processed_by' => 'Paypal',
+            'status' => 'completed',
+        ];
+
+        $payment = Payment::create($data);
+
+        try {
+            if ($payment->email) {
+                //   Mail::to($payment->email)
+                //     ->cc('administration@aeth.org')
+                //   ->bcc(['wlsfernandes@aeth.org', 'lzortiz@aeth.org'])
+                // ->send(new DonationEmail($payment->email));
+            }
+        } catch (\Throwable $mailEx) {
+            Log::error('Donation e-mail failed: ' . $mailEx->getMessage());
+        }
+
+        return redirect()->route('gracias', ['text' => 'donation']);
     }
+
+
 
 
     /**

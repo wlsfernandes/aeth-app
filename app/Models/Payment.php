@@ -79,6 +79,7 @@ class Payment extends Model
         'processed_by',
         'tax',
         'totalAmount',
+        'paypal_transaction_id'
     ];
     use HasFactory;
 }
