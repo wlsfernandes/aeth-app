@@ -2,9 +2,9 @@
 
 @section('title', '#somosAETH | Lecture Series 2025')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'Lecture Series 2025: Predicación y Migración. Join us for an insightful event featuring keynote speakers Dr. Justo González, Dr. Alma Tinoco Ruiz, and Dr. Oscar Garcia Johnson. Explore the intersection of preaching and migration in a global context.')
 
-@section('meta-keywords', 'AETH, Antioquia, introduction')
+@section('meta-keywords', 'AETH, Lecture Series 2025, Predicación y Migración, Justo González, Alma Tinoco Ruiz, Oscar Garcia Johnson, Global Preaching, Migration Studies')
 
 
 <!-- Content here -->
@@ -217,48 +217,22 @@
                 </div>
 
                 <div class="row justify-content-center text-center" style="margin:0px;">
-                    @php
-                        $speakers = [
-                            ['name' => 'Alexandra Zareth', 'route' => 'zareth', 'image' => 'Alexandra Zareth.jpg'],
-                            ['name' => 'Alexia Salvatierra', 'route' => 'salvatierra', 'image' => 'Alexia Salvatierra.jpg'],
-                            ['name' => 'Andrea Canales', 'route' => 'canales', 'image' => 'Andrea Canales.jpg'],
-                            ['name' => 'Carlos Malave', 'route' => 'malave', 'image' => 'Carlos Malave.jpg'],
-                            ['name' => 'Daniel Montañez', 'route' => 'montanez', 'image' => 'Daniel Montañez.jpg'],
-                            ['name' => 'David Vazquez Levy', 'route' => 'davi', 'image' => 'David Vazquez LEvy.jpg'],
-                            ['name' => 'Elizabeth Conde-Fraiser', 'route' => 'fraiser', 'image' => 'Elizabeth Conde Fraiser.jpg'],
-                            ['name' => 'Guesnerth Perea', 'route' => 'perea', 'image' => 'Guesnerth Perea.jpg'],
-                            ['name' => 'Harold Segura', 'route' => 'segura', 'image' => 'Harold Segura.jpg'],
-                            //    ['name' => 'Javier Viera', 'route' => 'viera', 'image' => 'Javier Viera.jpg'],
-                            ['name' => 'Jeffry Caballero', 'route' => 'caballero_ls2025', 'image' => 'Jeffry Caballero.jpg'],
-                            ['name' => 'Jessica Lugo', 'route' => 'lugo_ls2025', 'image' => 'Jessica Lugo.jpg'],
-                            ['name' => 'Lori Tapia', 'route' => 'tapia', 'image' => 'Lori Tapia.jpg'],
-                            ['name' => 'Marty Harris', 'route' => 'harris', 'image' => 'Marty Harris.jpg'],
-                            ['name' => 'Oscar Merlo', 'route' => 'merlo_ls2025', 'image' => 'Oscar Merlo.jpg'],
-                            ['name' => 'Pablo Anabalon', 'route' => 'anabalon', 'image' => 'Pablo Anabalon.jpg'],
-                            ['name' => 'Robert Chao Romero', 'route' => 'romero', 'image' => 'Robert Chao Romero (1).jpg'],
-                            ['name' => 'Robert Rocha', 'route' => 'rocha', 'image' => 'Robert Rocha.jpg'],
-                            ['name' => 'Wilmer Estrada', 'route' => 'estrada', 'image' => 'Wilmer Estrada.jpg'],
-                            ['name' => 'Yenny Delgado', 'route' => 'delgado', 'image' => 'Yenny Delgado.jpg'],
-                        ];
-
-                        usort($speakers, fn($a, $b) => strcmp($a['name'], $b['name']));
-                    @endphp
-
-                    @foreach(array_chunk($speakers, 5) as $chunk)
+                    @foreach($speakers->chunk(5) as $chunk)
                         </div>
                         <div class="row justify-content-center text-center" style="margin:0px;">
                             @foreach($chunk as $speaker)
                                 <div class="col-6 col-sm-4 col-md-2 mb-4">
-                                    <a href="{{ route($speaker['route']) }}" class="text-decoration-none text-dark">
-                                        <img src="assets/images/resource/{{ $speaker['image'] }}" alt="{{ $speaker['name'] }}"
-                                            class="img-fluid rounded-circle mb-2"
+                                    <a href="{{ route('speaker.show', $speaker->slug) }}" class="text-decoration-none text-dark">
+                                        <img src="{{ $speaker->photo_url }}"
+                                            alt="{{ $speaker->name }}" class="img-fluid rounded-circle mb-2"
                                             style="width: 100px; height: 100px; object-fit: cover;">
-                                        <p class="mb-0">{{ $speaker['name'] }}</p>
+                                        <p class="mb-0">{{ $speaker->name }}</p>
                                     </a>
                                 </div>
                             @endforeach
                     @endforeach
                 </div>
+
             </div>
 
     </section>
