@@ -1,5 +1,12 @@
 <?php
 return [
+    'title' => 'All Pages',
+    'home' => 'Home',
+    'all_pages' => 'All Pages',
+    'articles' => 'Articles',
+    'description' => 'Discover all the resources, events, and pages that reflect the heart of AETH’s mission and work',
+    'read_article' => 'Read Article',
+    'no_pages_found' => 'No pages available at the moment.',
     'lectures' =>
         [
             'p1' => 'Migration is not just a movement; it is a story of identity, resilience, and faith. From Genesis to Revelation, the Bible bears witness to human mobility as an essential part of God’s people’s experience. Throughout history, the Church has walked alongside communities on the move, facing challenges and embracing new opportunities. This is reflected in the life of the Church, where migration has been a constant. Preachers are called to proclaim hope, just as Jesus did amid the trauma caused by human displacement.',

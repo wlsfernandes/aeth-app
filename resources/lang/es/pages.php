@@ -1,5 +1,12 @@
 <?php
 return [
+    'title' => 'Todas las páginas',
+    'home' => 'Inicio',
+    'all_pages' => 'Todas las páginas',
+    'articles' => 'Artículos',
+    'description' => 'Descubre todos los recursos, eventos y páginas que reflejan el corazón de la misión y el trabajo de AETH.',
+    'read_article' => 'Leer artículo',
+    'no_pages_found' => 'No hay páginas disponibles en este momento.',
     'lectures' =>
         [
             'p1' => 'La migración no es solo un movimiento; es una historia de identidad, resiliencia y fe. Desde el Génesis hasta el Apocalipsis, la Biblia da testimonio de la movilidad humana como parte esencial de la experiencia del pueblo de Dios. A lo largo de la historia, la iglesia ha caminado con comunidades en movimiento, enfrentando desafíos y abrazando nuevas oportunidades. Esto se refleja en  la vida de  la iglesia, donde la migración ha sido una constante.  Predicadores están llamados a proclamar esperanza como lo hizo Jesús en medio del trauma causado por el desplazamiento humano.',

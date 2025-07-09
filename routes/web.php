@@ -156,7 +156,7 @@ Route::get('/hispanic-initiative-grantees', [HomeController::class, 'grantees'])
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');
 Route::get('/program/info', [PostController::class, 'info'])->name('info');
-Route::get('/aeth-pages', [PostController::class, 'showAllPages'])->name('showAllPages');
+Route::get('/aeth-pages', [SimplePageController::class, 'showAllPages'])->name('showAllPages');
 
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
 
