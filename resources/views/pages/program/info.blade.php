@@ -58,7 +58,7 @@
 
                     {{-- Summary --}}
                     @if ($simplePage->{'summary_' . app()->getLocale()} ?? $simplePage->summary_es)
-                        <div class="mt-3 w-100 text-center">
+                        <div class="mt-3 w-100" style="text-align: justify; color: #6c757d;">
                             {!! $simplePage->{'summary_' . app()->getLocale()} ?? $simplePage->summary_es !!}
                         </div>
                     @endif
