@@ -54,7 +54,7 @@
                                 </h5>
                                 <div class="rbt-card-bottom">
                                     <a class="transparent-button" href="{{ route('simplePage.show', $page->slug) }}">
-                                        {{ __('page.read_article') }}
+                                        {{ __('pages.read_article') }}
                                         <i>
                                             <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">
                                                 <g stroke="#27374D" fill="none" fill-rule="evenodd">
