@@ -41,19 +41,19 @@
                         <!-- Start Card -->
                         <div class="rbt-card card-list variation-02 rbt-hover mt--30">
                             <div class="rbt-card-img">
-                                <a href="{{ route('simple-pages.show', $page->slug) }}">
+                                <a href="{{ route('simple-page.show', $page->slug) }}">
                                     <img src="{{ asset($page->image_url ?? 'assets/images/blog/blog-card-02.jpg') }}"
                                         alt="Page image">
                                 </a>
                             </div>
                             <div class="rbt-card-body">
                                 <h5 class="rbt-card-title">
-                                    <a href="{{ route('simple-pages.show', $page->slug) }}">
+                                    <a href="{{ route('simple-page.show', $page->slug) }}">
                                         {{ $page->{'title_' . app()->getLocale()} ?? $page->title_en }}
                                     </a>
                                 </h5>
                                 <div class="rbt-card-bottom">
-                                    <a class="transparent-button" href="{{ route('simple-pages.show', $page->slug) }}">
+                                    <a class="transparent-button" href="{{ route('simple-page.show', $page->slug) }}">
                                         {{ __('page.read_article') }}
                                         <i>
                                             <svg width="17" height="12" xmlns="http://www.w3.org/2000/svg">

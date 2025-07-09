@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', $simplePage->title_en ?? 'Simple Page')
+@section('title', 'AETH Programs')
 
 @section('content')
     <div class="rbt-overlay-page-wrapper">
