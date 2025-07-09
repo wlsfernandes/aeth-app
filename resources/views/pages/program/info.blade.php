@@ -44,7 +44,7 @@
 
         <div class="rbt-blog-details-area rbt-section-gapBottom breadcrumb-style-max-width">
             <div class="blog-content-wrapper rbt-article-content-wrapper">
-                <div class="content text-center d-flex flex-column align-items-center">
+                <div class="content  d-flex flex-column align-items-center">
 
                     {{-- Featured image --}}
                     @if ($simplePage->image_url)
