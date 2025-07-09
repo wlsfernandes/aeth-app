@@ -326,6 +326,8 @@ namespace App\Models{
  * @property int $order
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Program> $programs
+ * @property-read int|null $programs_count
  * @method static \Illuminate\Database\Eloquent\Builder|HumanResource newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|HumanResource newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|HumanResource query()
@@ -594,6 +596,8 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Payment whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $paypal_transaction_id
+ * @method static \Illuminate\Database\Eloquent\Builder|Payment wherePaypalTransactionId($value)
  */
 	class Payment extends \Eloquent {}
 }
@@ -850,14 +854,19 @@ namespace App\Models{
  * @property string $name
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int|null $human_resource_id
+ * @property-read \App\Models\HumanResource|null $humanResource
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\PortalContent> $portalContents
  * @property-read int|null $portal_contents_count
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\SimplePage> $simplePages
+ * @property-read int|null $simple_pages_count
  * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Testimonial> $testimonials
  * @property-read int|null $testimonials_count
  * @method static \Illuminate\Database\Eloquent\Builder|Program newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Program newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Program query()
  * @method static \Illuminate\Database\Eloquent\Builder|Program whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Program whereHumanResourceId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Program whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Program whereName($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Program whereUpdatedAt($value)
@@ -937,6 +946,72 @@ namespace App\Models{
  * @mixin \Eloquent
  */
 	class Shipping extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $title_en
+ * @property string|null $title_es
+ * @property string|null $title_pt
+ * @property string|null $content_en
+ * @property string|null $content_es
+ * @property string|null $content_pt
+ * @property string $slug
+ * @property bool $published
+ * @property \Illuminate\Support\Carbon|null $published_at
+ * @property string|null $summary_en
+ * @property string|null $summary_es
+ * @property string|null $summary_pt
+ * @property string|null $image_url
+ * @property string|null $file_url
+ * @property string|null $file_url_es
+ * @property string|null $file_url_ptBR
+ * @property string|null $button_text_en
+ * @property string|null $button_text_es
+ * @property string|null $button_text_pt
+ * @property string|null $external_link
+ * @property string|null $external_link_button
+ * @property \Illuminate\Support\Carbon|null $date_of_publication
+ * @property \Illuminate\Support\Carbon|null $date_of_event
+ * @property int|null $program_id
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \App\Models\Program|null $program
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereButtonTextEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereButtonTextEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereButtonTextPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereContentEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereContentEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereContentPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereDateOfEvent($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereDateOfPublication($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereExternalLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereExternalLinkButton($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereFileUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereFileUrlEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereFileUrlPtBR($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereImageUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereProgramId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage wherePublished($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage wherePublishedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereSummaryEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereSummaryEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereSummaryPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SimplePage whereUpdatedAt($value)
+ */
+	class SimplePage extends \Eloquent {}
 }
 
 namespace App\Models{

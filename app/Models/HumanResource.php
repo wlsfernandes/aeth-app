@@ -87,4 +87,9 @@ class HumanResource extends Model
             throw new Exception('Failed to retrieve groups.');
         }
     }
+    public function programs()
+    {
+        return $this->hasMany(Program::class);
+    }
+
 }

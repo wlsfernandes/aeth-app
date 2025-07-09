@@ -78,6 +78,13 @@ class PostController extends Controller
         return view('pages.events', compact('posts'));
     }
 
+    public function info()
+    {
+        $posts = null;
+
+        return view('pages.program.info', compact('posts'));
+    }
+
     public function showAllPages()
     {
         $posts = Post::where('published', true)

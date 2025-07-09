@@ -18,6 +18,7 @@ use App\Http\Controllers\ShippingController;
 use App\Http\Controllers\PayPalController;
 use App\Http\Controllers\SpeakerController;
 use App\Http\Controllers\HumanResourceController;
+use App\Http\Controllers\SimplePageController;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
 use Illuminate\Support\Facades\File;
@@ -154,9 +155,13 @@ Route::get('/hispanic-initiative-grantees', [HomeController::class, 'grantees'])
 
 Route::get('/post', [PostController::class, 'index'])->name('post');
 Route::get('/events', [PostController::class, 'showAllEvents'])->name('showAllEvents');
+Route::get('/program/info', [PostController::class, 'info'])->name('info');
 Route::get('/aeth-pages', [PostController::class, 'showAllPages'])->name('showAllPages');
 
 Route::get('/posts/{slug}', [PostController::class, 'show'])->name('post.show');
+
+Route::get('/program/{slug}', [SimplePageController::class, 'show'])->name('simplePage.show');
+
 
 Route::get('/certification', [CertificationController::class, 'generateImage'])->name('certification');
 Route::get('/renew', [MemberController::class, 'renew'])->name('renew');
