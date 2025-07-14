@@ -374,7 +374,7 @@ class HomeController extends Controller
         })
             ->orderBy('order')
             ->get();
-        return view('pages.hispanic-initiative');
+        return view('pages.hispanic-initiative', compact('testimonials'));
     }
 
     public function grantees(): View
