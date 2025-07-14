@@ -1,9 +1,7 @@
 @extends('layouts.app')
 
 @section('title', '#somosAETH | Certification Program')
-
 @section('meta-description', 'This is a brief description of the home page.')
-
 @section('meta-keywords', 'AETH, Antioquia, introduction')
 
 <style>
@@ -16,6 +14,7 @@
         padding: 50px 0 50px;
     }
 
+    /* central line */
     .history-wrapper:after {
         content: "";
         width: 3px;
@@ -34,34 +33,27 @@
 
     .history-wrapper .timeline-box {
         position: relative;
-    }
-
-    .one-of-two {
         width: 50%;
-        float: left;
+        float: left; /* base float – will be overridden for even items */
+        clear: both; /* NEW: start each item on a new row to avoid overlap */
+        margin-bottom: 180px; /* increased spacing for readability */
     }
 
-    .history-wrapper .timeline-box:not(:last-child) {
-        margin-bottom: 140px;
-    }
-
-    .timeline-box:nth-child(2n) {
-        padding: 0 0 0 140px;
-    }
-
+    /* Alternate sides properly */
     .history-wrapper .timeline-box:nth-child(2n) {
-        margin-bottom: 140px;
+        float: right; /* NEW: push even items to the right side */
+        padding: 0 0 0 140px; /* existing left padding keeps content away from center line */
+        text-align: left;
     }
 
-    .history-wrapper .timeline-box:nth-child(2n + 1) {
-        margin-top: -24%;
+    .history-wrapper .timeline-box:nth-child(2n+1) {
+        float: left;  /* odd items stay on the left */
+        padding: 0 140px 0 0;
+        margin-top: 0; /* NEW: remove the previous negative margin that caused overlap */
         text-align: right;
     }
 
-    .timeline-box:nth-child(2n + 1) {
-        padding: 0 140px 0 0;
-    }
-
+    /* Year circle */
     .year {
         width: 100px;
         height: 100px;
@@ -82,7 +74,7 @@
         left: 25px;
     }
 
-    .timeline-box:nth-child(2n + 1) .year {
+    .timeline-box:nth-child(2n+1) .year {
         right: 32px;
     }
 
@@ -103,11 +95,12 @@
         transform: rotate(45deg);
     }
 
-    .timeline-box:nth-child(2n + 1) .year:before {
+    .timeline-box:nth-child(2n+1) .year:before {
         right: -8px;
         transform: rotate(-135deg);
     }
 
+    /* the orange line growing on hover */
     .timeline-box:after {
         content: "";
         width: 3px;
@@ -117,14 +110,14 @@
         top: 30%;
         transform: translateY(-50%);
         z-index: 1;
-        transition: all 0.3s ease-in-out;
+        transition: height 0.3s ease-in-out;
     }
 
     .timeline-box:nth-child(2n):after {
         left: -1.5px;
     }
 
-    .timeline-box:nth-child(2n + 1):after {
+    .timeline-box:nth-child(2n+1):after {
         right: -1.5px;
     }
 
@@ -143,21 +136,22 @@
         z-index: 2;
         top: 30%;
         transform: translateY(-50%);
-        transition: all 0.3s ease-in-out;
+        transition: border 0.3s ease-in-out;
     }
 
     .timeline-box:nth-child(2n):before {
         left: -10.5px;
     }
 
-    .timeline-box:nth-child(2n + 1):before {
+    .timeline-box:nth-child(2n+1):before {
         right: -10.5px;
     }
 
     .timeline-box:hover:before {
-        border: 5px solid #ffa200;
+        border-color: #ffa200;
     }
 
+    /* Small desktop */
     @media screen and (max-width: 1199px) {
         .year {
             width: 90px;
@@ -167,6 +161,7 @@
         }
     }
 
+    /* Tablets */
     @media screen and (max-width: 991px) {
         .history-wrapper {
             padding: 30px 0 30px;
@@ -177,61 +172,32 @@
             margin-bottom: 30px;
         }
 
-        .title-wrap.one-of-two {
-            width: 100%;
-        }
-
         .history-wrapper:after {
-            left: 0;
+            left: 0; /* vertical line sticks to the left */
         }
 
-        .history-wrapper .timeline-box:nth-child(2n) {
-            padding: 0 0 0 140px;
-        }
-
-        .history-wrapper .timeline-box:not(:last-child) {
-            margin-bottom: 40px;
-        }
-
-        .timeline-box.one-of-two,
-        .timeline-box .img img {
-            width: 100%;
-        }
-
-        .history-wrapper .timeline-box:nth-child(2n + 1) {
-            margin-top: 0;
+        .history-wrapper .timeline-box {
+            width: 100%; /* stack full width */
+            float: none;
+            padding: 0 0 0 140px; /* keep content away from line */
             text-align: left;
         }
 
-        .timeline-box:nth-child(2n + 1) .year {
-            left: 32px;
+        .timeline-box .year {
+            left: 32px; /* year always left */
         }
 
-        .timeline-box:nth-child(2n + 1):before {
+        .timeline-box:before {
             left: -10.5px;
         }
 
-        .timeline-box:nth-child(2n + 1) .year:before {
-            left: -8px;
-            transform: rotate(45deg);
-        }
-
-        .timeline-box:nth-child(2n + 1):after {
+        .timeline-box:after {
             left: -1.5px;
-        }
-
-        .history-wrapper .timeline-box:nth-child(2n + 1) {
-            margin-top: 0;
-            text-align: left;
-        }
-
-        .timeline-box:nth-child(2n + 1) {
-            padding: 0 0 0 140px;
         }
     }
 
+    /* Mobile */
     @media screen and (max-width: 767px) {
-
         .history-wrapper:after,
         .year,
         .timeline-box:before {
@@ -242,66 +208,34 @@
             padding: 0;
         }
 
-        .history-wrapper .timeline-box:nth-child(2n),
-        .history-wrapper .timeline-box:nth-child(2n + 1) {
+        .history-wrapper .timeline-box {
             padding: 0 15px;
-        }
-
-        .history-wrapper .timeline-box:not(:last-child) {
-            margin-bottom: 30px;
+            margin-bottom: 50px; /* bigger gap for touch devices */
+            width: 100%;
         }
 
         .timeline-box .content {
             text-align: center;
         }
 
-        .timeline-box:nth-child(2n):after,
-        .timeline-box:nth-child(2n + 1):after {
-            display: none;
-        }
-    }
-
-    .mb-1-6,
-    .my-1-6 {
-        margin-bottom: 1.6rem;
-    }
-
-    /* Add top spacing to first timeline box to avoid collision */
-    .history-wrapper .timeline-box:first-of-type {
-        margin-top: 80px;
-    }
-
-    /* Increase spacing between timeline items for readability */
-    .history-wrapper .timeline-box {
-        margin-bottom: 180px;
-        /* previously 140px */
-    }
-
-    @media screen and (max-width: 767px) {
-        .history-wrapper .timeline-box:not(:last-child) {
-            margin-bottom: 50px;
-            /* was 30px */
-        }
+        .timeline-box:after { display: none; }
     }
 </style>
 
 @section('content')
-
     <section>
         <div class="container">
             <div class="row">
-
-                <div class="history-wrapper">
-                    <div class="title-wrap text-center one-of-two">
-                        <h5 class="h1 text-secondary mb-0 text-uppercase">Associátion para la Educación Teológica Hispana -
-                            AETH </h5>
-                        <p class="fs-3 font-weight-500">https://aeth.org</p>
+                <div class="history-wrapper w-100">
+                    <div class="title-wrap text-center w-100 mb-4">
+                        <h5 class="h1 text-secondary mb-0 text-uppercase">Asociación para la Educación Teológica Hispana - AETH</h5>
+                        <p class="fs-3 font-weight-500"><a href="https://aeth.org" target="_blank">https://aeth.org</a></p>
                     </div>
+
                     @foreach ($histories as $history)
-                        <div class="timeline-box one-of-two">
+                        <div class="timeline-box">
                             @if ($history->image_url)
-                                <img class="mb-1-6 rounded" src="{{ asset($history->image_url) }}"
-                                    alt="Image for {{ $history->title_en }}">
+                                <img class="mb-1-6 rounded" src="{{ asset($history->image_url) }}" alt="Image for {{ $history->title_en }}">
                             @endif
 
                             <div class="content">
