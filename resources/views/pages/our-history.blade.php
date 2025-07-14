@@ -265,6 +265,24 @@
     .my-1-6 {
         margin-bottom: 1.6rem;
     }
+
+    /* Add top spacing to first timeline box to avoid collision */
+    .history-wrapper .timeline-box:first-of-type {
+        margin-top: 80px;
+    }
+
+    /* Increase spacing between timeline items for readability */
+    .history-wrapper .timeline-box {
+        margin-bottom: 180px;
+        /* previously 140px */
+    }
+
+    @media screen and (max-width: 767px) {
+        .history-wrapper .timeline-box:not(:last-child) {
+            margin-bottom: 50px;
+            /* was 30px */
+        }
+    }
 </style>
 
 @section('content')
@@ -272,52 +290,32 @@
     <section>
         <div class="container">
             <div class="row">
+
                 <div class="history-wrapper">
                     <div class="title-wrap text-center one-of-two">
                         <h5 class="h1 text-secondary mb-0 text-uppercase">Associátion para la Educación Teológica Hispana -
                             AETH </h5>
                         <p class="fs-3 font-weight-500">https://aeth.org</p>
                     </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/87CEFA/000000" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Start with small space</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                odio dignissim qui blandit praesent luptatum</p>
+                    @foreach ($histories as $history)
+                        <div class="timeline-box one-of-two">
+                            @if ($history->image_url)
+                                <img class="mb-1-6 rounded" src="{{ asset($history->image_url) }}"
+                                    alt="Image for {{ $history->title_en }}">
+                            @endif
+
+                            <div class="content">
+                                <h3 class="h4 mb-2 mb-md-3">
+                                    {{ $history->{'title_' . app()->getLocale()} ?? $history->title_en }}
+                                </h3>
+                                <p class="mb-0">
+                                    {!! $history->{'description_' . app()->getLocale()} ?? $history->description_en !!}
+                                </p>
+                            </div>
+
+                            <div class="year">{{ $history->year }}</div>
                         </div>
-                        <div class="year">1995</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/FF7F50/000000" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Increase employee by 6 members</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="year">2003</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/008B8B/000000" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">We win the national awards</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="year">2018</div>
-                    </div>
-                    <div class="timeline-box one-of-two">
-                        <img class="mb-1-6 rounded" src="https://www.bootdey.com/image/280x280/00CED1/000000" alt="...">
-                        <div class="content">
-                            <h3 class="h4 mb-2 mb-md-3">Branches open in International</h3>
-                            <p class="mb-0">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie
-                                consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto
-                                odio dignissim qui blandit praesent luptatum</p>
-                        </div>
-                        <div class="year">2021</div>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>

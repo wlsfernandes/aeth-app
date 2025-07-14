@@ -7,6 +7,7 @@ use App\Models\HumanResource;
 use App\Models\Post;
 use App\Models\Faq;
 use App\Models\Speaker;
+use App\Models\OurHistory;
 use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\View\View;
@@ -369,7 +370,8 @@ class HomeController extends Controller
     }
     public function ourHistory(): View
     {
-        return view('pages.our-history');
+        $histories = OurHistory::orderBy('year', 'desc')->get();
+        return view('pages.our-history', compact('histories'));
     }
     public function nishplc(): View
     {

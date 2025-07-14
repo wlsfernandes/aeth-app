@@ -545,6 +545,39 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * 
+ *
+ * @property int $id
+ * @property int $year
+ * @property string $title_es
+ * @property string $title_en
+ * @property string $title_pt
+ * @property string $description_es
+ * @property string $description_en
+ * @property string $description_pt
+ * @property string|null $image_url
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory query()
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereDescriptionEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereDescriptionEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereDescriptionPt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereImageUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereTitleEn($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereTitleEs($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereTitlePt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|OurHistory whereYear($value)
+ */
+	class OurHistory extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * Class Payment
  * 
  * Represents a payment transaction within the system.
