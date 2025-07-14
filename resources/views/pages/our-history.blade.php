@@ -34,22 +34,29 @@
     .history-wrapper .timeline-box {
         position: relative;
         width: 50%;
-        float: left; /* base float – will be overridden for even items */
-        clear: both; /* NEW: start each item on a new row to avoid overlap */
-        margin-bottom: 180px; /* increased spacing for readability */
+        float: left;
+        /* base float – will be overridden for even items */
+        clear: both;
+        /* NEW: start each item on a new row to avoid overlap */
+        margin-bottom: 180px;
+        /* increased spacing for readability */
     }
 
     /* Alternate sides properly */
     .history-wrapper .timeline-box:nth-child(2n) {
-        float: right; /* NEW: push even items to the right side */
-        padding: 0 0 0 140px; /* existing left padding keeps content away from center line */
+        float: right;
+        /* NEW: push even items to the right side */
+        padding: 0 0 0 140px;
+        /* existing left padding keeps content away from center line */
         text-align: left;
     }
 
     .history-wrapper .timeline-box:nth-child(2n+1) {
-        float: left;  /* odd items stay on the left */
+        float: left;
+        /* odd items stay on the left */
         padding: 0 140px 0 0;
-        margin-top: 0; /* NEW: remove the previous negative margin that caused overlap */
+        margin-top: 0;
+        /* NEW: remove the previous negative margin that caused overlap */
         text-align: right;
     }
 
@@ -173,18 +180,22 @@
         }
 
         .history-wrapper:after {
-            left: 0; /* vertical line sticks to the left */
+            left: 0;
+            /* vertical line sticks to the left */
         }
 
         .history-wrapper .timeline-box {
-            width: 100%; /* stack full width */
+            width: 100%;
+            /* stack full width */
             float: none;
-            padding: 0 0 0 140px; /* keep content away from line */
+            padding: 0 0 0 140px;
+            /* keep content away from line */
             text-align: left;
         }
 
         .timeline-box .year {
-            left: 32px; /* year always left */
+            left: 32px;
+            /* year always left */
         }
 
         .timeline-box:before {
@@ -198,6 +209,7 @@
 
     /* Mobile */
     @media screen and (max-width: 767px) {
+
         .history-wrapper:after,
         .year,
         .timeline-box:before {
@@ -210,7 +222,8 @@
 
         .history-wrapper .timeline-box {
             padding: 0 15px;
-            margin-bottom: 50px; /* bigger gap for touch devices */
+            margin-bottom: 50px;
+            /* bigger gap for touch devices */
             width: 100%;
         }
 
@@ -218,7 +231,9 @@
             text-align: center;
         }
 
-        .timeline-box:after { display: none; }
+        .timeline-box:after {
+            display: none;
+        }
     }
 </style>
 
@@ -227,15 +242,12 @@
         <div class="container">
             <div class="row">
                 <div class="history-wrapper w-100">
-                    <div class="title-wrap text-center w-100 mb-4">
-                        <h5 class="h1 text-secondary mb-0 text-uppercase">Asociación para la Educación Teológica Hispana - AETH</h5>
-                        <p class="fs-3 font-weight-500"><a href="https://aeth.org" target="_blank">https://aeth.org</a></p>
-                    </div>
 
                     @foreach ($histories as $history)
                         <div class="timeline-box">
                             @if ($history->image_url)
-                                <img class="mb-1-6 rounded" src="{{ asset($history->image_url) }}" alt="Image for {{ $history->title_en }}">
+                                <img class="mb-1-6 rounded" src="{{ asset($history->image_url) }}"
+                                    alt="Image for {{ $history->title_en }}">
                             @endif
 
                             <div class="content">
