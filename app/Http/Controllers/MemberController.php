@@ -19,7 +19,9 @@ use Session;
 use Exception;
 
 
-
+/**
+ * Summary of MemberController
+ */
 class MemberController extends Controller
 {
 
