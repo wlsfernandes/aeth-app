@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'our_history' => 'Nossa História',
     'proudly' => 'Orgulhosamente avaliados pela Charity Navigator – Clique para ver nosso perfil',
     'workshops' => 'Talleres',
     "gracias" => [

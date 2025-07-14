@@ -241,6 +241,12 @@
     <section>
         <div class="container">
             <div class="row">
+                <div class="sec-title W-100 mb_55 centred">
+                    <a href="#"> <span class="sub-title"><b>@lang('messages.our_history')</b></span>
+                        <!-- <h4 style="color:#4a235a ">@lang('messages.articles_news')</h4> -->
+                    </a>
+                </div>
+
                 <div class="history-wrapper w-100">
 
                     @foreach ($histories as $history)
