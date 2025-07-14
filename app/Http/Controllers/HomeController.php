@@ -369,6 +369,11 @@ class HomeController extends Controller
     }
     public function nishplc(): View
     {
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Hispanic Initiative');
+        })
+            ->orderBy('order')
+            ->get();
         return view('pages.hispanic-initiative');
     }
 
