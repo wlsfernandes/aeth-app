@@ -25,6 +25,16 @@ use Illuminate\Http\RedirectResponse;
 class DigitalCollectionController extends Controller
 {
 
+    /**
+     * Display the digital collection (Acervo).
+     *
+     * This method retrieves all published digital collections from the database and
+     * passes them to the corresponding view. If an error occurs, it logs the error
+     * and redirects the user back with an error message.
+     *
+     * @return View|RedirectResponse Returns the view with the digital collections if successful,
+     *                               otherwise redirects back with an error message.
+     */
     public function globalSearch(Request $request)
     {
         $keyword = $request->input('search-input');
@@ -41,14 +51,20 @@ class DigitalCollectionController extends Controller
         return view('pages.exclusive.gonzalez.gonzalez-acervo', compact('digitalCollections'));
     }
 
-
-
+    /**
+     * Summary of cloud
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function cloud()
     {
         $digitalCollections = DigitalCollection::published()->get();
         return view('pages.exclusive.gonzalez.gonzalez-tag-cloud', compact('digitalCollections'));
     }
-
+    /**
+     * Summary of filter
+     * @param \Illuminate\Http\Request $request
+     * @return RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function filter(Request $request)
     {
         $tag = $request->query('tag');
@@ -63,7 +79,10 @@ class DigitalCollectionController extends Controller
 
         return view('pages.exclusive.gonzalez.gonzalez-acervo', compact('tag', 'digitalCollections'));
     }
-
+    /**
+     * Summary of all
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function all(): View|RedirectResponse
     {
         try {
@@ -80,6 +99,10 @@ class DigitalCollectionController extends Controller
             return redirect()->back();
         }
     }
+    /**
+     * Summary of selector
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function selector(): View|RedirectResponse
     {
         try {
@@ -94,7 +117,11 @@ class DigitalCollectionController extends Controller
             return redirect()->back();
         }
     }
-
+    /**
+     * Summary of selectedOptions
+     * @param \Illuminate\Http\Request $request
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function selectedOptions(Request $request): View|RedirectResponse
     {
         try {
@@ -143,7 +170,10 @@ class DigitalCollectionController extends Controller
             return redirect()->back();
         }
     }
-
+    /**
+     * Summary of browseCollections
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function browseCollections(): View|RedirectResponse
     {
         try {
@@ -158,7 +188,11 @@ class DigitalCollectionController extends Controller
             return redirect()->back();
         }
     }
-
+    /**
+     * Summary of itemCollection
+     * @param mixed $id
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function itemCollection($id): View|RedirectResponse
     {
         try {
@@ -170,7 +204,11 @@ class DigitalCollectionController extends Controller
             return redirect()->back();
         }
     }
-
+    /**
+     * Summary of accessItem
+     * @param mixed $id
+     * @return mixed|RedirectResponse|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function accessItem($id): View|RedirectResponse
     {
         try {
