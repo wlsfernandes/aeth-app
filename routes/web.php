@@ -79,7 +79,7 @@ Route::get('/compelling-preaching', [HomeController::class, 'compellingPreaching
 Route::get('/lecture-series-2025', [HomeController::class, 'lectureSeries2025'])->name('lectureSeries2025');
 Route::get('/help-desk', [HomeController::class, 'helpDesk'])->name('helpDesk');
 Route::get('/calendar', [HomeController::class, 'calendar'])->name('calendar');
-
+Route::get('/our-history', [HomeController::class, 'ourHistory'])->name('ourHistory');
 
 
 Route::get('/donations', [HomeController::class, 'donations'])->name('donations');

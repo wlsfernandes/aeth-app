@@ -367,6 +367,10 @@ class HomeController extends Controller
     {
         return view('pages.calendar');
     }
+    public function ourHistory(): View
+    {
+        return view('pages.our-history');
+    }
     public function nishplc(): View
     {
         $testimonials = Testimonial::whereHas('program', function ($query) {
