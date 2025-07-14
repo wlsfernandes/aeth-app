@@ -14,7 +14,15 @@ use App\Models\User;
 
 class ProfileController extends Controller
 {
-
+    /**
+     * Displays the human resource profile page based on the provided slug.
+     *
+     * This method retrieves the human resource profile by its slug and returns the view
+     * with the profile data.
+     *
+     * @param string $slug The slug of the human resource profile to display.
+     * @return \Illuminate\View\View Returns the view for the human resource profile.
+     */
     public function show($slug)
     {
         $hr = HumanResource::where('slug', $slug)->firstOrFail();

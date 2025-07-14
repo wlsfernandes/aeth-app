@@ -363,16 +363,31 @@ class HomeController extends Controller
     {
         return view('pages.help-desk');
     }
-
+    /**
+     * Display the Calendar page.
+     *
+     * @return View
+     */
     public function calendar(): View
     {
         return view('pages.calendar');
     }
+    /**
+     * Display the Our History page.
+     *
+     * @return View
+     */
     public function ourHistory(): View
     {
         $histories = OurHistory::orderBy('year', 'desc')->get();
         return view('pages.our-history', compact('histories'));
     }
+
+    /**
+     * Display the Hispanic Initiative page.
+     *
+     * @return View
+     */
     public function nishplc(): View
     {
         $testimonials = Testimonial::whereHas('program', function ($query) {
@@ -383,6 +398,11 @@ class HomeController extends Controller
         return view('pages.hispanic-initiative', compact('testimonials'));
     }
 
+    /**
+     * Display the Hispanic Initiative Grantees page.
+     *
+     * @return View
+     */
     public function grantees(): View
     {
         return view('pages.hispanic-initiative-grantees');

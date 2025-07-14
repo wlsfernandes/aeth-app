@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Speaker;
 use Illuminate\Http\Request;
 
+/**
+ * SpeakerController handles the display of speaker profiles.
+ */
 class SpeakerController extends Controller
 {
     public function show($slug)

@@ -8,6 +8,12 @@ use Carbon\Carbon;
 
 class SimplePageController extends Controller
 {
+    /**
+     * Show a specific simple page by slug.
+     *
+     * @param string $slug
+     * @return \Illuminate\View\View
+     */
     public function show($slug)
     {
         // Find the post by slug, ensuring it is published
