@@ -414,6 +414,10 @@ class HomeController extends Controller
         $speakers = Speaker::all();
         return view('pages.tests.ls20259444401', compact('speakers'));
     }
+    /**
+     * Summary of youngLideres20259444401
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View
+     */
     public function youngLideres20259444401(): View
     {
         return view('pages.tests.youngLideres20259444401');
