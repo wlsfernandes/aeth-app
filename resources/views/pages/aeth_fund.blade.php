@@ -35,6 +35,8 @@
             <!-- Donatin form -->
             @include('pages.payments.donation.page', ['type' => 'Donation', 'program' => 'AETH'])
             <!-- Donatin form end -->
+
+            @include('partials.testimonial', ['testimonials' => $testimonials])
         </div>
     </section>
 

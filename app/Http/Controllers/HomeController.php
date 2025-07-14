@@ -272,7 +272,12 @@ class HomeController extends Controller
      */
     public function aethFund(): View
     {
-        return view('pages.aeth_fund');
+        $testimonials = Testimonial::whereHas('program', function ($query) {
+            $query->where('name', 'Growth & Fundraising');
+        })
+            ->orderBy('order')
+            ->get();
+        return view('pages.aeth_fund', compact('testimonials'));
     }
 
     /**
