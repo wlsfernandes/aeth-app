@@ -82,7 +82,7 @@ Route::get('/calendar', [HomeController::class, 'calendar'])->name('calendar');
 Route::get('/our-history', [HomeController::class, 'ourHistory'])->name('ourHistory');
 
 
-Route::get('/donations', [HomeController::class, 'donations'])->name('donations');
+Route::get('/test/template/2025944', [HomeController::class, 'donations'])->name('donations');
 Route::get('/aeth-fund', [HomeController::class, 'aethFund'])->name('aeth_fund');
 Route::get('/gonzalez-center', [HomeController::class, 'gonzalezCenter'])->name('gonzalez_center');
 Route::post('/members', [HomeController::class, 'store'])->name('members.store');
