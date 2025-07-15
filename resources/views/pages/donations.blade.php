@@ -213,7 +213,7 @@
                                                 <img src="{{ url('assets/donation/assets/img/user-1.png') }}" alt="Person">
                                                 <img src="{{ url('assets/donation/assets/img/user-3.png') }}" alt="Person">
                                                 <img src="{{ url('assets/donation/assets/img/user-2.png') }}" alt="Person">
-                                                <span class="number">2.M</span>
+                                                <span class="number">2k</span>
                                             </div>
                                             <span class="txt">Active donors</span>
                                         </div>
@@ -231,8 +231,8 @@
                                 <div class="img-wrapper">
                                     <img src="{{ url('assets/donation/assets/img/banner-img.png') }}" alt="Banner Image">
                                     <!-- <div class="ul-banner-video-btn">
-                                                                                                                                                                                                                                                                                                                                            <a href=""></a>
-                                                                                                                                                                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                            <a href=""></a>
+                                                                                                                                                                                                                                                                                                                                                        </div> -->
                                 </div>
                                 <div class="ul-banner-img-vectors">
                                     <img src="{{ url('assets/donation/assets/img/banner-img-vector-1.png') }}" alt="vector"
