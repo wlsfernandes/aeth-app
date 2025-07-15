@@ -1,6 +1,6 @@
 @extends('layouts.template')
 
-@section('title', __('page.title'))
+@section('title', __('header.highlights'))
 
 @section('content')
 
@@ -17,9 +17,9 @@
 
                             <!-- Title + Badge -->
                             <div class="title-wrapper">
-                                <h1 class="title mb--0">{{ __('pages.all_pages') }}</h1>
+                                <h1 class="title mb--0">{{ __('header.highlights') }}</h1>
                                 <a href="#" class="rbt-badge-2">
-                                    <div class="image">📄</div> {{ $simplePages->total() }} {{ __('pages.articles') }}
+                                    <div class="image">📄</div> {{ $simplePages->total() }} {{ __('header.highlights') }}
                                 </a>
                             </div>
 

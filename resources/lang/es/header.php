@@ -1,5 +1,7 @@
 <?php
 return [
+    'our_history' => 'Nuestra Historia',
+    'highlights' => 'Destacados',
     'login' => 'Iniciar Sesión',
     'certification' => 'Certificatión',
     'articles' => 'Artículos',

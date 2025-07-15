@@ -216,7 +216,7 @@
                                             style="pointer-events: none;">@lang('header.about_us')</a>
                                         <ul>
                                             <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
-                                            <!-- <li><a href="{{ route('showAllPages') }}">@lang('header.articles')</a></li> -->
+                                            <li><a href="{{ route('ourHistory') }}">@lang('header.our_history')</a></li>
                                             <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
                                             <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
                                             <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
@@ -253,8 +253,12 @@
                                                     </li>
                                                 </ul>
                                             </li>
-
                                             <li><a href="{{ route('young-leaders') }}">@lang('header.young_leaders')</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('aeth-pages') }}">
+                                                    <i class="fas fa-star text-warning"></i> @lang('header.highlights')
+                                                </a>
                                             </li>
                                         </ul>
                                     </li>

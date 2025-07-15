@@ -1,5 +1,7 @@
 <?php
 return [
+    'our_history' => 'Our History',
+    'highlights' => 'Highlights',
     'login' => 'Login',
     'certification' => 'Certification',
     'articles' => 'Articles',
