@@ -1,5 +1,6 @@
 <?php
 return [
+    'comming_soon' => 'Em Breve',
     'our_history' => 'Nossa História',
     'highlights' => 'Destaques',
     'login' => 'Entrar',

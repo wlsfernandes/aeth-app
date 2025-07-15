@@ -180,8 +180,10 @@
                             <h2><b><a href="https://aeth.jenlms.com/"
                                         target="_blank">@lang('ls25.virtual_academic_platform')</a></b></h2>
                             <div class="btn-box" style="margin-top:20px;">
-                                <a href="https://aeth.jenlms.com/" class="theme-btn-one" target="_blank">
-                                    @lang('header.register_here')</a>
+                                <!--<a href="https://aeth.jenlms.com/" class="theme-btn-one" target="_blank">
+                                                        @lang('header.register_here')</a> -->
+                                <a class="theme-btn-one" target="_blank">
+                                    @lang('header.comming_soon')</a>
                                 <h5 style="margin-top:20px;"><a href="https://aeth.jenlms.com/"
                                         target="_blank">@lang('ls25.enroll_online')</a></h3>
                             </div>

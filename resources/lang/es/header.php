@@ -1,5 +1,6 @@
 <?php
 return [
+    'comming_soon' => 'Próximamente',
     'our_history' => 'Nuestra Historia',
     'highlights' => 'Destacados',
     'login' => 'Iniciar Sesión',
