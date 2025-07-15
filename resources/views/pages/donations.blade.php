@@ -2,12 +2,10 @@
 
 @section('title', '#somosAETH | Donations')
 
-@section('meta-description', 'This is a brief description of the home page.')
+@section('meta-description', 'AETH Donations Page')
 
 @section('meta-keywords', 'home, welcome, introduction')
 
-
-<!-- Content here -->
 
 @section('content')
 
@@ -67,74 +65,112 @@
                         <a href="index.html" class="d-inline-block"><img
                                 src="{{ url('assets/donation/assets/img/aeth-logo.png') }}" alt="logo" class="logo"></a>
                     </div>
+                    <div class="ul-header-actions">
 
+                        <a href="{{ route('lang.switch', ['lang' => 'en']) }}" title="English">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/us.svg"
+                                alt="English" style="width: 24px;">
+                        </a>
+                        <a href="{{ route('lang.switch', ['lang' => 'es']) }}" title="Español" style="margin-left: 5px;">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/es.svg"
+                                alt="Español" style="width: 24px;">
+                        </a>
+                        <a href="{{ route('lang.switch', ['lang' => 'pt']) }}" title="Português">
+                            <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/br.svg"
+                                alt="Português" style="width: 24px;">
+                        </a>
+
+                    </div>
                     <!-- header nav -->
                     <div class="ul-header-nav-wrapper">
                         <div class="to-go-to-sidebar-in-mobile">
                             <nav class="ul-header-nav">
+                                <a href="{{url('/')}}">Home</a>
+
                                 <div class="has-sub-menu">
-                                    <a role="button">Home</a>
+                                    <a role="button">@lang('header.about_us')</a>
 
                                     <div class="ul-header-submenu">
                                         <ul>
-                                            <li><a href="index.html">Home 1</a></li>
-                                            <li><a href="index-2.html">Home 2</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <a href="about.html">About</a>
-                                <div class="has-sub-menu">
-                                    <a role="button">Pages</a>
-
-                                    <div class="ul-header-submenu">
-                                        <ul>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                            <li><a href="projects.html">Projects</a></li>
-                                            <li><a href="project-details.html">Project Details</a></li>
-                                            <li><a href="team.html">Team</a></li>
-                                            <li><a href="team-details.html">Team Member Details</a></li>
-                                            <li><a href="pricing.html">Pricing Plans</a></li>
-                                            <li><a href="faq.html">FAQs</a></li>
-                                            <li><a href="404.html">404</a></li>
+                                            <li><a href="{{ route('about_us') }}">@lang('header.about_us')</a></li>
+                                            <li><a href="{{ route('ourHistory') }}">@lang('header.our_history')</a></li>
+                                            <li><a href="{{ route('post') }}">@lang('header.blog')</a></li>
+                                            <li><a href="{{ route('contact_us') }}">@lang('header.contact_us')</a></li>
+                                            <li><a href="{{ route('showAllEvents') }}">@lang('header.events')</a></li>
+                                            <li><a href="{{ route('helpDesk') }}">@lang('pages.help_desk')</a></li>
+                                            <li><a href="{{ route('open_positions') }}">@lang('header.open_positions')</a>
+                                            </li>
+                                            <li><a href="{{ route('our_team') }}">@lang('header.our_team')</a></li>
+                                            <li><a href="{{ route('testimonials') }}">@lang('testimonial.testimonials')</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div class="has-sub-menu">
-                                    <a role="button">Donation</a>
+                                    <a role="button">@lang('header.programs')</a>
 
                                     <div class="ul-header-submenu">
                                         <ul>
-                                            <li><a href="donations.html">Donation Listing</a></li>
-                                            <li><a href="donation-details.html">Donation Details</a></li>
+                                            <li><a href="{{ route('antioquia') }}">@lang('header.antioquia')</a></li>
+                                            <li><a
+                                                    href="{{ route('capacityBuilding') }}">@lang('header.capacity_building')</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('compelling_preaching') }}">@lang('header.compeling_preaching')</a>
+                                            </li>
+                                            <li><a href="https://gonzalezcenter.org"
+                                                    target="_blank">@lang('header.gonzalez_center')</a></li>
+
+                                            <li class="dropdown">
+                                                <a href="{{ route('nishplc') }}">@lang('header.hispanic_initiative')</a>
+                                            </li>
+                                            <li><a href="{{ route('young-leaders') }}">@lang('header.young_leaders')</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ url('aeth-pages') }}">
+                                                    <i class="fas fa-star text-warning"></i> @lang('header.highlights')
+                                                </a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
 
                                 <div class="has-sub-menu">
-                                    <a role="button">Event</a>
+                                    <a role="button">@lang('header.certification')</a>
 
                                     <div class="ul-header-submenu">
                                         <ul>
-                                            <li><a href="events.html">Events</a></li>
-                                            <li><a href="event-details.html">Event Details</a></li>
+                                            <li><a
+                                                    href="{{ route('certification_program') }}">@lang('header.certification_program')</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('certified_institutions') }}">@lang('header.certified_institutions')</a>
+                                            </li>
+                                            <li><a
+                                                    href="{{ route('requestCertification') }}">@lang('header.request_certification')</a>
+                                            </li>
+
                                         </ul>
                                     </div>
                                 </div>
-
+                                <a href="{{ route('bookstore') }}">@lang('header.bookstore')</a>
+                                <a href="{{ route('donations') }}">@lang('header.donations')</a>
                                 <div class="has-sub-menu">
-                                    <a role="button">Blog</a>
+                                    <a role="button"> @lang('header.memberships')</a>
 
                                     <div class="ul-header-submenu">
                                         <ul>
-                                            <li><a href="blog.html">Blogs</a></li>
-                                            <li><a href="blog-2.html">Blogs Layout 2</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
+                                            <li><a href="{{ route('memberships') }}">Info</a>
+                                            </li>
+                                            <li><a href="{{ route('memberships') }}"><i class="bi bi-person-plus"></i>
+                                                    @lang('header.signup_member')</a></li>
+                                            <li><a href="{{ route('renew') }}"> <i class="bi bi-arrow-clockwise"></i>
+                                                    @lang('header.renew')</a>
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
-                                <a href="contact.html">Contact</a>
                             </nav>
                         </div>
                     </div>
@@ -195,8 +231,8 @@
                                 <div class="img-wrapper">
                                     <img src="{{ url('assets/donation/assets/img/banner-img.png') }}" alt="Banner Image">
                                     <!-- <div class="ul-banner-video-btn">
-                                                                                                                                    <a href=""></a>
-                                                                                                                                </div> -->
+                                                                                                                                                                                                                                                                                                                                            <a href=""></a>
+                                                                                                                                                                                                                                                                                                                                        </div> -->
                                 </div>
                                 <div class="ul-banner-img-vectors">
                                     <img src="{{ url('assets/donation/assets/img/banner-img-vector-1.png') }}" alt="vector"
