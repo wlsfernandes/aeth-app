@@ -42,8 +42,12 @@ use Illuminate\Support\Facades\File;
 /*PUBLIC*****************************************************************************************************************/
 /* Redirection 301 */
 Route::redirect('/en/programa-de-certificationes', '/certification-program', 301);
+Route::redirect('en/certificacion-de-programas-de-educacion-teologica', '/certification-program', 301);
+Route::redirect('/en/product-category/libros', '/bookstore', 301);
+Route::redirect('/en/category/articulos', '/post', 301);
+Route::redirect('/lectures-series', '/lecture-series-2025', 301);
+Route::redirect('/alianza-entre-aeth-y-seminario-teologico-evangelico-garett-partnership-between-aeth-and-garett-evangelical-theological-seminary', '/posts/tres-nuevos-acuerdos', 301);
 
-//Route::get('/', function () {  return view('welcome'); });
 Route::get('/lang/{lang}', function ($lang) {
     Session::put('locale', $lang);
     return redirect()->back();
