@@ -40,6 +40,8 @@ use Illuminate\Support\Facades\File;
 
 
 /*PUBLIC*****************************************************************************************************************/
+/* Redirection 301 */
+Route::redirect('/en/programa-de-certificationes', '/certification-program', 301);
 
 //Route::get('/', function () {  return view('welcome'); });
 Route::get('/lang/{lang}', function ($lang) {
@@ -68,7 +70,6 @@ Route::get('/open-positions', [HomeController::class, 'openPositions'])->name('o
 Route::get('/blog', [HomeController::class, 'blog'])->name('blog');
 Route::get('/contact', [HomeController::class, 'contactUs'])->name('contact_us');
 Route::get('/services', [HomeController::class, 'services'])->name('services');
-Route::redirect('/es/programa-de-certificaciones', '/certification-program', 301);
 Route::get('/certification-program', [HomeController::class, 'certificationProgram'])->name('certification_program');
 Route::get('/request-certification', [HomeController::class, 'requestCertification'])->name('requestCertification');
 Route::get('/certified-institutions', [HomeController::class, 'certifiedInstitutions'])->name('certified_institutions');
