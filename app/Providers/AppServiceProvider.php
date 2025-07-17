@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Redirect;
 
@@ -26,14 +27,21 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        // Redirect all non-primary domains to aeth.org
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
 
-            // ✅ Only redirect if NOT already on www.aeth.org
             if ($host !== 'www.aeth.org') {
                 Redirect::to('https://www.aeth.org' . request()->getRequestUri(), 301)->send();
+                exit; // make sure script stops after redirect
             }
         }
+
+        // Define a macro for consistent HTML response headers
+        Response::macro('htmlCache', function ($content) {
+            return response($content)
+                ->header('Cache-Control', 'public, max-age=900')
+                ->header('Content-Type', 'text/html; charset=UTF-8');
+        });
+
     }
 }

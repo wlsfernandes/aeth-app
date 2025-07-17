@@ -12510,6 +12510,16 @@ namespace Illuminate\Support\Facades {
         {
                         \Illuminate\Routing\ResponseFactory::flushMacros();
         }
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @param mixed $content
+         * @static 
+         */        public static function htmlCache($content)
+        {
+                        return \Illuminate\Routing\ResponseFactory::htmlCache($content);
+        }
             }
             /**
      * 
@@ -17721,6 +17731,24 @@ namespace Illuminate\Http {
          */        public static function hasValidSignatureWhileIgnoring($ignoreQuery = [], $absolute = true)
         {
                         return \Illuminate\Http\Request::hasValidSignatureWhileIgnoring($ignoreQuery, $absolute);
+        }
+            }
+    }
+
+namespace Illuminate\Routing {
+            /**
+     * 
+     *
+     */        class ResponseFactory {
+                    /**
+         * 
+         *
+         * @see \App\Providers\AppServiceProvider::boot()
+         * @param mixed $content
+         * @static 
+         */        public static function htmlCache($content)
+        {
+                        return \Illuminate\Routing\ResponseFactory::htmlCache($content);
         }
             }
     }
