@@ -109,9 +109,7 @@
                         <div class="video-inner centred"
                             style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
                             <!-- Correct Vimeo Embed for Play Button -->
-                            <iframe src="https://player.vimeo.com/video/767301063?title=0&byline=0&portrait=0"
-                                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" frameborder="0"
-                                allow="autoplay; fullscreen" allowfullscreen>
+                            <iframe src="https://player.vimeo.com/video/767301063?title=0&byline=0&portrait=0" loading="lazy" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
                             </iframe>
                         </div>
                     </div>
