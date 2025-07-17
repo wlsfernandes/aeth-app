@@ -1,6 +1,9 @@
 @extends('layouts.template')
 
-@section('title', 'AETH Programs')
+@section('title', __('pages.memberships') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
+
 
 @section('content')
     <div class="rbt-overlay-page-wrapper">

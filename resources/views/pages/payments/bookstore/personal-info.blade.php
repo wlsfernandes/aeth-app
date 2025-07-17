@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Payment')
-
-@section('meta-description', 'This is a brief description of the home page.')
-
-@section('meta-keywords', 'home, welcome, introduction')
+@section('title', __('pages.shop') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 @section('content')
     <section>

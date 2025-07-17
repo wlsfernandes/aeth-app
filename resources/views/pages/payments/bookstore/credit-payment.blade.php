@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Payment')
+@section('title', __('pages.bookstore') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description', 'This is a brief description of the home page.')
-
-@section('meta-keywords', 'home, welcome, introduction')
-
-@section('content')
     <section>
         <div class="container d-flex justify-content-center mt-5 mb-5" style="height:100%">
             <div class="col-md-12">

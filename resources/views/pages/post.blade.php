@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Blog & Articles')
+@section('title', __('pages.blog') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description', 'This is a brief description of the blog page.')
-
-@section('meta-keywords', 'blog, posts, news')
 
 @section('content')
     <div class="container my-5">

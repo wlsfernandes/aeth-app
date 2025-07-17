@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Lecture Series 2025')
-
-@section('meta-description', 'Lecture Series 2025: Predicación y Migración. Join us for an insightful event featuring keynote speakers Dr. Justo González, Dr. Alma Tinoco Ruiz, and Dr. Oscar Garcia Johnson. Explore the intersection of preaching and migration in a global context.')
-
-@section('meta-keywords', 'AETH, Lecture Series 2025, Predicación y Migración, Justo González, Alma Tinoco Ruiz, Oscar Garcia Johnson, Global Preaching, Migration Studies')
+@section('title', __('header.lecture_series') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 
 <!-- Content here -->

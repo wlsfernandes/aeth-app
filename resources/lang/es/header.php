@@ -1,5 +1,6 @@
 <?php
 return [
+    'lecture_series' => 'Serie de Conferencias',
     'comming_soon' => 'Próximamente',
     'our_history' => 'Nuestra Historia',
     'highlights' => 'Destacados',

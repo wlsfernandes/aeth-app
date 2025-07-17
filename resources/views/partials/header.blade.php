@@ -7,11 +7,12 @@
         gtag('js', new Date());
         gtag('config', 'G-C5TB0VJCW3');
     </script>
+    <meta name="robots" content="index, follow">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>AETH.org</title>
+    <title>@yield('title', 'AETH - Educación Teológica Hispana')</title>
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
     <!-- Google Fonts -->
@@ -294,17 +295,7 @@
                                         </a>
                                     </li>
                                     <!-- Donations -->
-                                    <li class="dropdown">
-                                        <a href="#" class="dropdown-title"
-                                            style="pointer-events: none;">@lang('header.donations')</a>
-                                        <ul>
-                                            <li><a href="{{ route('aeth_fund') }}">@lang('header.aeth_fund')</a></li>
-                                            <li><a
-                                                    href="{{ route('gonzalez_center') }}">@lang('header.gonzalez_center')</a>
-                                            </li>
-
-                                        </ul>
-                                    </li>
+                                    <li><a href="{{ route('aeth_fund') }}">@lang('pages.donate')</a></li>
 
                                     <!-- Memberships -->
                                     <li class="dropdown">

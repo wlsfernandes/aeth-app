@@ -1,30 +1,14 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Bookstore')
-
-@section('meta-description', 'This is a brief description of the home page.')
-
-@section('meta-keywords', 'home, welcome, introduction')
+@section('title', __('pages.bookstore') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 
 <!-- Content here -->
 
 @section('content')
-    <!-- Page Title -->
-    <!--<section class="page-title centred">
-                <div class="bg-layer" style="background-image: url(assets/images/background/page-title-3.jpg);"></div>
-                <div class="auto-container">
-                    <div class="content-box">
-                        <h1>Our Shop</h1>
-                        <ul class="bread-crumb clearfix">
-                            <li><a href="index.html">Home</a></li>
-                            <li>Our Shop</li>
-                        </ul>
-                    </div>
-                </div>
-            </section> -->
-    <!-- End Page Title -->
-    <!-- shop-page-section -->
+
     <section class="shop-page-section">
         <div class="auto-container">
             <div class="row clearfix">

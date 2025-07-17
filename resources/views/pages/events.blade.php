@@ -1,10 +1,9 @@
 @extends('layouts.template')
 
-@section('title', '#somosAETH | González Center')
+@section('title', __('pages.events') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description', 'This is a brief description of the home page.')
-
-@section('meta-keywords', 'home, welcome, introduction')
 
 
 <!-- Content here -->

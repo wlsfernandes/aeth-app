@@ -1,18 +1,9 @@
 @extends('layouts.app')
 
-@section('title')
-    {{
-        App::getLocale() === 'es' ? $post->title_es :
-        (App::getLocale() === 'pt' ? $post->title_pt : $post->title_en)
-    }}
-@endsection
+@section('title', __('pages.blog') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description')
-    {{
-        App::getLocale() === 'es' ? $post->summary_es :
-        (App::getLocale() === 'pt' ? $post->summary_pt : $post->summary_en)
-    }}
-@endsection
 
 @section('content')
 <div class="container py-5">

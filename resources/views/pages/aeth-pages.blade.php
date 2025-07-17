@@ -1,6 +1,8 @@
 @extends('layouts.template')
 
-@section('title', __('header.highlights'))
+@section('title', __('header.highlights') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 @section('content')
 

@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Blog')
-
-@section('meta-description', __('hispanic_initiative.meta_description'))
-@section('meta-keywords', __('hispanic_initiative.meta_keywords'))
+@section('title', __('pages.hispanic_initiative') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 @section('content')
     <section class="page-title centred">
@@ -36,8 +35,8 @@
                                 <p>@lang('hispanic_initiative.puerto_rico_2')</p>
                             </div>
                             <!-- <div class="btn-box">
-                                                                                                                <a href="about.html" class="theme-btn-one">More About Us</a>
-                                                                                                            </div> -->
+                                                                                                                                            <a href="about.html" class="theme-btn-one">More About Us</a>
+                                                                                                                                        </div> -->
                         </div>
                     </div>
                 </div>

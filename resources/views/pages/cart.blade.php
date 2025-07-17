@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Fund')
-
-@section('meta-description', 'This is a brief description of the cart page.')
-
-@section('meta-keywords', 'AETH, Cart, Fund, Shop')
+@section('title', __('pages.cart') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 @section('content')
 

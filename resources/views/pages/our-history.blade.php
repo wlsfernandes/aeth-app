@@ -1,8 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Certification Program')
-@section('meta-description', 'This is a brief description of the home page.')
-@section('meta-keywords', 'AETH, Antioquia, introduction')
+@section('title', __('pages.our_history') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
+
 
 <style>
     body {

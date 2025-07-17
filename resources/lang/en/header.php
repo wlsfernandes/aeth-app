@@ -1,5 +1,6 @@
 <?php
 return [
+    'lecture_series' => 'Lecture Series',
     'comming_soon' => 'Coming Soon',
     'our_history' => 'Our History',
     'highlights' => 'Highlights',

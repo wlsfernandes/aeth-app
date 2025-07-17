@@ -1,10 +1,8 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Our Team')
-
-@section('meta-description', 'This is a brief description of the home page.')
-
-@section('meta-keywords', 'home, welcome, introduction')
+@section('title', __('pages.our_team') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 <style>
     /* FontAwesome for working BootSnippet :> */

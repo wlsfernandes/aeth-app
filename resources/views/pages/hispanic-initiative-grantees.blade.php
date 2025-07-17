@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Blog')
 
-@section('meta-description', __('hispanic_initiative.meta_description'))
-@section('meta-keywords', __('hispanic_initiative.meta_keywords'))
+@section('title', __('pages.hispaninc_initiative') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 @section('content')
     <section class="page-title centred">

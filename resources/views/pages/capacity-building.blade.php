@@ -1,13 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Certification Program')
+@section('title', __('pages.capacity_building') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description', 'Explore our mission to empower Hispanic communities through accessible and contextualized theological education. We foster leadership development, intergenerational engagement, and capacity building with workshops, mentorship, and resources. Join a network of scholars, students, and faith leaders dedicated to critical thinking, practical theology, and community transformation. Learn more about grants, subawards, and initiatives driving impactful change.')
-
-@section('meta-keywords', 'somosAETH,mission, vision, theological education, theology, experts, Bible institutes, students, lay persons, accessible theological education, empower, certification, community, communities of practice, instructor education, leadership, capacity building, young, leaders, intergenerational, values, nonprofit, organization, Hispanic, Latino, Latine, Latinx, curriculum, contextualized, library resources, collaboration, relations, workshops, membership, network, study, reflection, practical theology, mentorship, publications, resources, evaluation, scholars, relevancy, critical thinking, initiatives, engagement, learning experiences, grant, subaward, proposal, application,misión, visión, educación teológica, teología, expertos, institutos bíblicos, estudiantes, laicos, educación teológica accesible, empoderamiento, certificación, comunidad, comunidades de práctica, formación de instructores, liderazgo, desarrollo de capacidades, jóvenes, líderes, intergeneracional, valores, sin fines de lucro, organización, hispano, latino, latinx, currículo, contextualizado, recursos de biblioteca, colaboración, relaciones, talleres, membresía, red, estudio, reflexión, teología práctica, tutoría, publicaciones, recursos, evaluación, académicos, relevancia, pensamiento crítico, iniciativas, compromiso, experiencias de aprendizaje, subvención, subvención, propuesta')
-
-
-<!-- Content here -->
 
 @section('content')
     <section class="page-title centred">
@@ -15,15 +11,6 @@
             style="background-image: url(assets/images/banner/capacity_building_banner.jpg); background-size: cover; background-position: center; width: 100%; height: 100%; position: absolute; top: 0; left: 0; z-index: 1;">
         </div>
     </section>
-    <!--  <section class="cta-style-two">
-                                                <div class="pattern-layer" style="background-image: url(assets/images/shape/shape-2.png);"></div>
-                                                <div class="auto-container">
-                                                    <div class="inner-box">
-                                                        <img src="assets/images/logo/cp_logo_white_transparent.png">
-                                                        <h1 style="color:#fff">@lang('programs.cp.cp_title')</h1><br>
-                                                    </div>
-                                                </div>
-                                            </section> -->
 
 
     <section class="about-style-two pt_120">

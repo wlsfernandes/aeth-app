@@ -1,10 +1,7 @@
 @extends('layouts.donation')
-
-@section('title', '#somosAETH | Donations')
-
-@section('meta-description', 'AETH Donations Page')
-
-@section('meta-keywords', 'home, welcome, introduction')
+@section('title', __('pages.donate') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
 
 @section('content')
@@ -231,8 +228,8 @@
                                 <div class="img-wrapper">
                                     <img src="{{ url('assets/donation/assets/img/banner-img.png') }}" alt="Banner Image">
                                     <!-- <div class="ul-banner-video-btn">
-                                                                                                                                                                                                                                                                                                                                                            <a href=""></a>
-                                                                                                                                                                                                                                                                                                                                                        </div> -->
+                                                                                                                                                                                                                                                                                                                                                                        <a href=""></a>
+                                                                                                                                                                                                                                                                                                                                                                    </div> -->
                                 </div>
                                 <div class="ul-banner-img-vectors">
                                     <img src="{{ url('assets/donation/assets/img/banner-img-vector-1.png') }}" alt="vector"

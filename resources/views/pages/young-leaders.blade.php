@@ -1,10 +1,9 @@
 @extends('layouts.app')
 
-@section('title', '#somosAETH | Young Leaders')
+@section('title', __('pages.young_lideres') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
 
-@section('meta-description', 'Young leaders')
-
-@section('meta-keywords', 'AETH, Young Leaders, introduction')
 
 
 <!-- Content here -->

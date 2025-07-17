@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
-@section('title', 'Thank You')
+@section('title', __('pages.gracias') . ' | AETH')
+@section('meta-description', __('meta.description'))
+@section('meta-keywords', __('meta.keywords'))
+
 
 @section('content')
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
