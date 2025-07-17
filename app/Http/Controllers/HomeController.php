@@ -9,6 +9,7 @@ use App\Models\Faq;
 use App\Models\Speaker;
 use App\Models\Sponsor;
 use App\Models\OurHistory;
+use App\Models\Partner;
 use App\Models\Testimonial;
 use Carbon\Carbon;
 use Illuminate\View\View;
@@ -52,7 +53,8 @@ class HomeController extends Controller
             ->limit(3)
             ->get();
         $testimonials = Testimonial::all();
-        return view('home', compact('articles', 'events', 'testimonials'));
+        $partners = Partner::orderBy('order')->get();
+        return view('home', compact('articles', 'events', 'testimonials', 'partners'));
         //    return view('soon', compact('articles', 'events'));
     }
 

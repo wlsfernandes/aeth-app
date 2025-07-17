@@ -578,6 +578,31 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property string|null $image_url
+ * @property string|null $website_url
+ * @property int $order
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereImageUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Partner whereWebsiteUrl($value)
+ */
+	class Partner extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * Class Payment
  * 
  * Represents a payment transaction within the system.
