@@ -306,12 +306,12 @@
     @include('partials.contact')
 
     <!-- clients-section -->
-    <section class="clients-section" style="background:#f7f5f1">
+    <section class="clients-section" style="background:#f7f5f1; border-color: #F8D7A1; color: #000;"">
         <div class="sec-title centred mb_55">
             <span class="sub-title calendar"><b>@lang('messages.important_partners')</b></span>
         </div>
         <div class="auto-container">
-            <div class="five-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
+           <div class="five-item-carousel owl-carousel owl-theme owl-dots-none">
                 <figure class="clients-logo"><a href="https://candler.emory.edu/" target="blank"><img
                             src="assets/images/clients/clients-2.png" alt=""></a>
                 </figure>

@@ -1087,6 +1087,55 @@ namespace App\Models{
  * 
  *
  * @property int $id
+ * @property string $name
+ * @property string|null $image_url
+ * @property int $sponsor_type_id
+ * @property int $order
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property string|null $website_url
+ * @property-read \App\Models\SponsorType $sponsorType
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereImageUrl($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereSponsorTypeId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Sponsor whereWebsiteUrl($value)
+ */
+	class Sponsor extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
+ * @property string $name
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \App\Models\Sponsor> $sponsors
+ * @property-read int|null $sponsors_count
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType query()
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|SponsorType whereUpdatedAt($value)
+ */
+	class SponsorType extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * 
+ *
+ * @property int $id
  * @property int $program_id
  * @property string|null $image_url
  * @property string $name

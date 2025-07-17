@@ -7,6 +7,7 @@ use App\Models\HumanResource;
 use App\Models\Post;
 use App\Models\Faq;
 use App\Models\Speaker;
+use App\Models\Sponsor;
 use App\Models\OurHistory;
 use App\Models\Testimonial;
 use Carbon\Carbon;
@@ -349,7 +350,8 @@ class HomeController extends Controller
     public function lectureSeries2025(): View
     {
         $speakers = Speaker::all();
-        return view('pages.lecture-series-2025', compact('speakers'));
+        $sponsors = Sponsor::orderBy('order')->get();
+        return view('pages.lecture-series-2025', compact('speakers', 'sponsors'));
     }
 
 

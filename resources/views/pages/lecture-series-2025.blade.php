@@ -223,8 +223,8 @@
                             @foreach($chunk as $speaker)
                                 <div class="col-6 col-sm-4 col-md-2 mb-4">
                                     <a href="{{ route('speaker.show', $speaker->slug) }}" class="text-decoration-none text-dark">
-                                        <img src="{{ $speaker->photo_url }}"
-                                            alt="{{ $speaker->name }}" class="img-fluid rounded-circle mb-2"
+                                        <img src="{{ $speaker->photo_url }}" alt="{{ $speaker->name }}"
+                                            class="img-fluid rounded-circle mb-2"
                                             style="width: 100px; height: 100px; object-fit: cover;">
                                         <p class="mb-0">{{ $speaker->name }}</p>
                                     </a>
@@ -232,26 +232,9 @@
                             @endforeach
                     @endforeach
                 </div>
-
             </div>
-
     </section>
-    <section class="clients-section" style="background-color:#f5f1fb">
-        <div class="sec-title centred mb_55">
-            <span class="sub-title calendar">@lang('messages.important_partners')</span>
-        </div>
-        <div class="auto-container">
-            <div class="two-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                <figure class="clients-logo"><a href="https://www.garrett.edu/" target="blank"><img
-                            src="assets/images/clients/clients-3.png" alt=""></a>
-                </figure>
-                <figure class="clients-logo"><a href="https://lillyendowment.org/" target="blank"><img
-                            src="assets/images/clients/clients-5.png" alt=""></a>
-                </figure>
 
-            </div>
-        </div>
-    </section>
 
 
     <section class="cause-section sec-pad">
@@ -386,7 +369,24 @@
         </div>
     </section>
     <!-- faq-section end -->
-
+    <!-- Sponsors Section -->
+    <section class="clients-section" style="background:none; border-color: #F8D7A1; color: #000;">
+        <div class="sec-title centred mb_55">
+            <span class="sub-title calendar"><b>@lang('messages.our_sponsors')</b></span>
+        </div>
+        <div class="auto-container">
+            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none">
+                @foreach($sponsors as $sponsor)
+                    <figure class="clients-logo" style="width:150px;">
+                        <a href="{{ $sponsor->website_url }}" target="_blank">
+                            <img src="{{ asset($sponsor->image_url) }}" alt="{{ $sponsor->name }}">
+                        </a>
+                    </figure>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    <!-- Sponsors Section End -->
     <section class="about-section p_relative sec-pad" style="background-color: #f3e6f7;">
 
         <div class="auto-container">
@@ -434,7 +434,6 @@
             </div>
         </div>
     </section>
-
 
 
     @include('partials.contact')

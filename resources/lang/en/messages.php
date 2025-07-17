@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'our_sponsors' => 'Our Sponsors',
     'our_history' => 'Our History',
     'proudly' => 'Proudly Rated by Charity Navigator – Click to View Our Profile',
     'workshops' => 'Workshops',
