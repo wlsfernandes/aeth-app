@@ -1,5 +1,5 @@
 <head>
-    <!-- Google tag (gtag.js) -->
+    <!-- Google Tag Manager -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5TB0VJCW3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -7,43 +7,80 @@
         gtag('js', new Date());
         gtag('config', 'G-C5TB0VJCW3');
     </script>
+
+    <!-- Meta Tags -->
     <meta name="robots" content="index, follow">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <!-- Page Title -->
     <title>@yield('title', 'AETH - Educación Teológica Hispana')</title>
+
+    <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
-    <!-- Google Fonts -->
-    <link
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts (Deferred) -->
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-        rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap"
+        media="print" onload="this.media='all'">
+    <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    </noscript>
 
-    <!-- Icon Libraries -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <!-- Icon Libraries (Deferred) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    </noscript>
 
-    <!-- Local Stylesheets -->
-    <link href="{{ asset('assets/css/font-awesome-all.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/flaticon.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/owl.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet"> <!-- Bootstrap 5 CSS -->
-    <link href="{{ asset('assets/css/jquery.fancybox.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/nice-select.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/jquery-ui.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/jquery.bootstrap-touchspin.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/color.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/elpath.css') }}" rel="stylesheet">
+    <!-- Critical Stylesheets (Bootstrap + Main Style) -->
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet">
 
-    <!-- Bootstrap 5 Bundle JS (includes Popper) – Required for carousel -->
+    <!-- Deferred Local Stylesheets -->
+    @php
+        $deferredStyles = [
+            'assets/css/font-awesome-all.css',
+            'assets/css/flaticon.css',
+            'assets/css/owl.css',
+            'assets/css/jquery.fancybox.min.css',
+            'assets/css/animate.css',
+            'assets/css/nice-select.css',
+            'assets/css/jquery-ui.css',
+            'assets/css/jquery.bootstrap-touchspin.css',
+            'assets/css/color.css',
+            'assets/css/elpath.css',
+            'assets/css/responsive.css',
+        ];
+    @endphp
+
+    @foreach($deferredStyles as $style)
+        <link rel="stylesheet" href="{{ asset($style) }}" media="print" onload="this.media='all'">
+    @endforeach
+    <noscript>
+        @foreach($deferredStyles as $style)
+            <link rel="stylesheet" href="{{ asset($style) }}">
+        @endforeach
+    </noscript>
+
+    <!-- Bootstrap JS Bundle (deferred) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 </head>
 
