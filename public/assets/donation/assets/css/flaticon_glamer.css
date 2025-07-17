@@ -1,8 +1,11 @@
 @font-face {
   font-family: "flaticon_glamer";
+  font-display: swap;
   src: url("./flaticon_glamer.woff2?24803c051e93a302acbde5e7f33469cc") format("woff2"), url("./flaticon_glamer.woff?24803c051e93a302acbde5e7f33469cc") format("woff"), url("./flaticon_glamer.eot?24803c051e93a302acbde5e7f33469cc#iefix") format("embedded-opentype"), url("./flaticon_glamer.ttf?24803c051e93a302acbde5e7f33469cc") format("truetype"), url("./flaticon_glamer.svg?24803c051e93a302acbde5e7f33469cc#flaticon_glamer") format("svg");
 }
-i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+
+i[class^=flaticon-]:before,
+i[class*=" flaticon-"]:before {
   font-family: flaticon_glamer !important;
   font-style: normal;
   font-weight: normal !important;
@@ -243,4 +246,6 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 
 .flaticon-editing:before {
   content: "\f13a";
-}/*# sourceMappingURL=flaticon_glamer.css.map */
+}
+
+/*# sourceMappingURL=flaticon_glamer.css.map */

@@ -1,8 +1,11 @@
 @font-face {
   font-family: "flaticon_charitics";
+  font-display: swap;
   src: url("./flaticon_charitics.woff2?46578acd7effe4a6a4f6b87164297015") format("woff2"), url("./flaticon_charitics.woff?46578acd7effe4a6a4f6b87164297015") format("woff"), url("./flaticon_charitics.eot?46578acd7effe4a6a4f6b87164297015#iefix") format("embedded-opentype"), url("./flaticon_charitics.ttf?46578acd7effe4a6a4f6b87164297015") format("truetype"), url("./flaticon_charitics.svg?46578acd7effe4a6a4f6b87164297015#flaticon_charitics") format("svg");
 }
-i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
+
+i[class^=flaticon-]:before,
+i[class*=" flaticon-"]:before {
   font-family: flaticon_charitics !important;
   font-style: normal;
   font-weight: normal !important;
@@ -291,4 +294,6 @@ i[class^=flaticon-]:before, i[class*=" flaticon-"]:before {
 
 .flaticon-close-1:before {
   content: "\f146";
-}/*# sourceMappingURL=flaticon_charitics.css.map */
+}
+
+/*# sourceMappingURL=flaticon_charitics.css.map */
