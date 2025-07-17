@@ -1,5 +1,5 @@
 <head>
-    <!-- Google Tag Manager -->
+    <!-- Google Tag Manager (Async) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-C5TB0VJCW3"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -9,11 +9,11 @@
     </script>
 
     <!-- Meta Tags -->
-    <meta name="robots" content="index, follow">
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
     <!-- Page Title -->
     <title>@yield('title', 'AETH - Educación Teológica Hispana')</title>
@@ -21,18 +21,18 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
-    <!-- Preconnect for Google Fonts -->
+    <!-- Preconnect to speed up Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Fonts (Deferred) -->
+    <!-- Google Fonts (deferred with fallback) -->
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
         media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap"
         media="print" onload="this.media='all'">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         media="print" onload="this.media='all'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
@@ -40,7 +40,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     </noscript>
 
-    <!-- Icon Libraries (Deferred) -->
+    <!-- Icon Libraries (deferred) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
         media="print" onload="this.media='all'">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"
@@ -50,11 +50,15 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
     </noscript>
 
-    <!-- Critical Stylesheets (Bootstrap + Main Style) -->
+    <!-- Critical Stylesheets -->
     <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
 
-    <!-- Deferred Local Stylesheets -->
+    <!-- Optional: Preload hero image (if large and above the fold) -->
+    {{--
+    <link rel="preload" as="image" href="{{ asset('assets/images/hero.jpg') }}" type="image/jpeg"> --}}
+
+    <!-- Deferred Local Styles -->
     @php
         $deferredStyles = [
             'assets/css/font-awesome-all.css',
@@ -80,8 +84,15 @@
         @endforeach
     </noscript>
 
-    <!-- Bootstrap JS Bundle (deferred) -->
+    <!-- JS: Bootstrap Bundle (deferred) -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+
+    <!-- Optional: Defer your custom JS below -->
+    {{--
+    <script src="{{ asset('assets/js/jquery.js') }}" defer></script>
+    <script src="{{ asset('assets/js/wow.js') }}" defer></script>
+    <script src="{{ asset('assets/js/owl.js') }}" defer></script>
+    --}}
 </head>
 
 
