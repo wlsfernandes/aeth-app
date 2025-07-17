@@ -30,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
         if (!app()->runningInConsole()) {
             $host = request()->getHost();
 
+            // ✅ Only redirect if NOT already on www.aeth.org
             if ($host !== 'www.aeth.org') {
                 Redirect::to('https://www.aeth.org' . request()->getRequestUri(), 301)->send();
             }
