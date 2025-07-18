@@ -493,3 +493,10 @@
   color: #fff !important;
   text-decoration: none;
 }
+
+.no-margin-section {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}

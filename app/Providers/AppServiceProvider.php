@@ -27,7 +27,7 @@ class AppServiceProvider extends ServiceProvider
             URL::forceScheme('https');
         }
 
-        if (!app()->runningInConsole()) {
+        if (!app()->runningInConsole() && app()->environment('production')) {
             $host = request()->getHost();
 
             if ($host !== 'www.aeth.org') {

@@ -65,41 +65,35 @@
             </button>
         </div>
     </section>
+<section class="clients-section no-margin-section gradient-bg text-white">
+    <div class="auto-container">
+        <div class="five-item-carousel owl-carousel owl-theme owl-dots-none" aria-label="Partner logos carousel">
+            <figure class="clients-logo" style="width:120px;">
+                <a href="{{ route('antioquia') }}">
+                    <img src="{{ asset('assets/images/logo/antioquia-logo.png') }}" alt="Antioquia Logo" >
+                </a>
+            </figure>
 
-    <section class="clients-section"
-        style="background: linear-gradient(to right,#4a235a, #a569bd); border-color: #4a235a; color: #fff;">
-        <div class="auto-container">
-            <div class="four-item-carousel owl-carousel owl-theme owl-nav-none owl-dots-none">
-                <div class="client-logo-item">
-                    <figure class="clients-logo">
-                        <a href="{{ route('antioquia') }}">
-                            <img src="assets/images/logo/antioquia-logo.png" alt="">
-                        </a>
-                    </figure>
-                </div>
-                <div class="client-logo-item">
-                    <figure class="clients-logo">
-                        <a href="{{ route('capacityBuilding') }}">
-                            <img src="assets/images/logo/cp_logo_white_transparent.png" alt="">
-                        </a>
-                    </figure>
-                </div>
-                <div class="client-logo-item">
-                    <figure class="clients-logo">
-                        <a href="{{ route('compelling_preaching') }}">
-                            <img src="assets/images/logo/predication-logo.png" alt="">
-                        </a>
-                    </figure>
-                </div>
-                <div class="client-logo-item">
-                    <figure class="clients-logo">
-                        <a href="https://gonzalezcenter.org" target="_blank">
-                            <img src="assets/images/logo/jcg-logo.png" alt="">
-                        </a>
-                    </figure>
-                </div>
-            </div>
-    </section>
+            <figure class="clients-logo" style="width:120px;">
+                <a href="{{ route('capacityBuilding') }}">
+                    <img src="{{ asset('assets/images/logo/cp_logo_white_transparent.png') }}" alt="Capacity Building Logo" >
+                </a>
+            </figure>
+
+            <figure class="clients-logo" style="width:180px;">
+                <a href="{{ route('compelling_preaching') }}">
+                    <img src="{{ asset('assets/images/logo/predication-logo.png') }}" alt="Compelling Preaching Logo" >
+                </a>
+            </figure>
+
+            <figure class="clients-logo" style="width:200px;">
+                <a href="https://gonzalezcenter.org" target="_blank" rel="noopener">
+                    <img src="{{ asset('assets/images/logo/jcg-logo.png') }}" alt="Justo Gonzalez Center Logo" >
+                </a>
+            </figure>
+        </div>
+    </div>
+</section>
 
     <section class="faq-style-two sec-pad">
         <div class="auto-container">
