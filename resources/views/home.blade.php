@@ -65,35 +65,7 @@
             </button>
         </div>
     </section>
-<section class="clients-section no-margin-section gradient-bg text-white">
-    <div class="auto-container">
-        <div class="five-item-carousel owl-carousel owl-theme owl-dots-none" aria-label="Partner logos carousel">
-            <figure class="clients-logo" style="width:120px;">
-                <a href="{{ route('antioquia') }}">
-                    <img src="{{ asset('assets/images/logo/antioquia-logo.png') }}" alt="Antioquia Logo" >
-                </a>
-            </figure>
 
-            <figure class="clients-logo" style="width:120px;">
-                <a href="{{ route('capacityBuilding') }}">
-                    <img src="{{ asset('assets/images/logo/cp_logo_white_transparent.png') }}" alt="Capacity Building Logo" >
-                </a>
-            </figure>
-
-            <figure class="clients-logo" style="width:180px;">
-                <a href="{{ route('compelling_preaching') }}">
-                    <img src="{{ asset('assets/images/logo/predication-logo.png') }}" alt="Compelling Preaching Logo" >
-                </a>
-            </figure>
-
-            <figure class="clients-logo" style="width:200px;">
-                <a href="https://gonzalezcenter.org" target="_blank" rel="noopener">
-                    <img src="{{ asset('assets/images/logo/jcg-logo.png') }}" alt="Justo Gonzalez Center Logo" >
-                </a>
-            </figure>
-        </div>
-    </div>
-</section>
 
     <section class="faq-style-two sec-pad">
     <div class="auto-container">
@@ -124,6 +96,36 @@
                     </div>
                 </div>
            
+        </div>
+    </div>
+</section>
+
+<section class="clients-section no-margin-section gradient-bg text-white">
+    <div class="auto-container">
+        <div class="five-item-carousel owl-carousel owl-theme owl-dots-none" aria-label="Partner logos carousel">
+            <figure class="clients-logo" style="width:120px;">
+                <a href="{{ route('antioquia') }}">
+                    <img src="{{ asset('assets/images/logo/antioquia-logo.png') }}" alt="Antioquia Logo" >
+                </a>
+            </figure>
+
+            <figure class="clients-logo" style="width:120px;">
+                <a href="{{ route('capacityBuilding') }}">
+                    <img src="{{ asset('assets/images/logo/cp_logo_white_transparent.png') }}" alt="Capacity Building Logo" >
+                </a>
+            </figure>
+
+            <figure class="clients-logo" style="width:180px;">
+                <a href="{{ route('compelling_preaching') }}">
+                    <img src="{{ asset('assets/images/logo/predication-logo.png') }}" alt="Compelling Preaching Logo" >
+                </a>
+            </figure>
+
+            <figure class="clients-logo" style="width:200px;">
+                <a href="https://gonzalezcenter.org" target="_blank" rel="noopener">
+                    <img src="{{ asset('assets/images/logo/jcg-logo.png') }}" alt="Justo Gonzalez Center Logo" >
+                </a>
+            </figure>
         </div>
     </div>
 </section>

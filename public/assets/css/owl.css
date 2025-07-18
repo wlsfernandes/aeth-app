@@ -112,6 +112,9 @@
   max-width: 100%;
   height: auto;
   display: inline-block;
+  display: block;
+  height: 60px;
+  object-fit: contain;
 }
 
 /* Section Container Positioning */
