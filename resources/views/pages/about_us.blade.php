@@ -1,7 +1,5 @@
 @extends('layouts.app')
 
-@extends('layouts.app')
-
 @section('title', __('pages.about') . ' | AETH')
 @section('meta-description', __('meta.description'))
 @section('meta-keywords', __('meta.keywords'))

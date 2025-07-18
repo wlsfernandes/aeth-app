@@ -26,8 +26,10 @@
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
     <!-- Preconnects -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com?display=swap">
+    <link rel="preconnect" href="https://fonts.gstatic.com?display=swap" crossorigin>
+    <link rel="preload" href="/fonts/icomoon.woff?tin97q" as="font" type="font/woff" crossorigin="anonymous">
+
 
     <!-- Google Fonts (deferred loading with fallback) -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
@@ -173,7 +175,8 @@
         <div id="search-popup" class="search-popup">
             <div class="popup-inner">
                 <div class="upper-box clearfix">
-                    <figure class="logo-box pull-left"><a href=""><img src="assets/images/aeth-logo.png" alt=""></a>
+                    <figure class="logo-box pull-left"><a href=""><img src="assets/images/aeth-logo.png" width="180"
+                                height="60" alt="AETH"></a>
                     </figure>
                     <div class="close-search pull-right"><span class="far fa-times"></span></div>
                 </div>
@@ -214,16 +217,18 @@
                             <li>
                                 <a href="{{ route('lang.switch', ['lang' => 'en']) }}" title="English">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/us.svg"
-                                        alt="English" width="24" height="18" style="width: 24px; height: auto;">
+                                        alt="English" width="24" height="18" style="width: 24px; height:18">
                                 </a>
                                 <a href="{{ route('lang.switch', ['lang' => 'es']) }}" title="Español"
                                     style="margin-left: 5px;">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/es.svg"
-                                        alt="Español" width="24" height="18" style="width: 24px; height: auto;">
+                                        alt="Español" width="24" height="18"
+                                        style="width: 24px; height: auto;height:18">
                                 </a>
                                 <a href="{{ route('lang.switch', ['lang' => 'pt']) }}" title="Português">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/br.svg"
-                                        alt="Português" width="24" height="18" style="width: 24px; height: auto;">
+                                        alt="Português" width="24" height="18"
+                                        style="width: 24px; height: auto;height:18">
                                 </a>
                             </li>
                         </ul>
@@ -246,7 +251,7 @@
                 <div class="outer-box">
                     <div class="logo-box">
                         <figure class="logo"> <a href="{{ url('/') }}"><img src="assets/images/aeth-logo.png"
-                                    alt=""></a>
+                                    width="180" height="60" alt="AETH"></a>
                         </figure>
                     </div>
                     <div class="menu-area clearfix">
@@ -400,7 +405,8 @@
                 <div class="outer-container">
                     <div class="outer-box">
                         <div class="logo-box">
-                            <figure class="logo"><a href=""><img src="assets/images/aeth-logo.png" alt=""></a>
+                            <figure class="logo"><a href=""><img src="assets/images/aeth-logo.png" width="180"
+                                        height="60" alt="AETH"></a>
                             </figure>
                         </div>
                         <div class="menu-area clearfix">

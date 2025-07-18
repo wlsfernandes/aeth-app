@@ -10,7 +10,8 @@
                 <div class="col-md-6 col-lg-4">
                     <div class="card h-100 shadow-sm border-0 hover-shadow transition">
                         <a href="{{ route('post.show', $article->slug) }}">
-                            <img src="{{ $article->image_url }}" class="card-img-top" alt="{{ $article->title_en }}">
+                            <img src="{{ $article->image_url }}" class="card-img-top" alt="{{ $article->title_en }}"
+                                width="400" height="250" style="object-fit: cover; width: 100%; height: auto;">
                         </a>
                         <div class="card-body d-flex flex-column">
                             <h5 class="card-title">

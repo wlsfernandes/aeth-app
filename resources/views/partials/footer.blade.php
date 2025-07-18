@@ -9,7 +9,7 @@
     </div>
 </div>
 
-</div> <!-- close from header <div class="boxed_wrapper"> -->
+<!--</div> Attention div  close from header <div class="boxed_wrapper"> -->
 
 <!-- Scripts -->
 

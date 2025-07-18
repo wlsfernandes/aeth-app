@@ -757,6 +757,7 @@ img {
 
 .header-lower {
   position: relative;
+  min-height: 100px;
   width: 100%;
 }
 
