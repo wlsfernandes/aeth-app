@@ -426,7 +426,8 @@
             <div class="close-btn"><i class="fas fa-times"></i></div>
 
             <nav class="menu-box">
-                <div class="nav-logo"><a href=""><img src="assets/images/aeth-logo.png" alt="" title=""></a>
+                <div class="nav-logo"><a href=""><img src="assets/images/aeth-logo.png" width="180" height="60"
+                            alt="AETH"></a>
                 </div>
                 <div class="menu-outer">
                     <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
