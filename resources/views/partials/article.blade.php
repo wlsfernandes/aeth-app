@@ -27,8 +27,7 @@
                             </p>
 
                             <div class="mt-3 d-flex justify-content-between align-items-center">
-                                <a href="{{ route('post.show', $article->slug) }}" width="370" height="400"
-                                    class="btn btn-sm btn-gradient">
+                                <a href="{{ route('post.show', $article->slug) }}" class="btn btn-sm btn-gradient">
                                     <i class="bi bi-box-arrow-in-right me-1"></i> @lang('messages.read_more')
                                 </a>
                                 <small class="text-muted">{{ $article->date }}</small>
