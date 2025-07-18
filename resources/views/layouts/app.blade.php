@@ -14,7 +14,7 @@
   <link rel="canonical" href="{{ url()->current() }}">
 
   @include('partials.header')
-  @yield('scripts')
+  <!-- @yield('scripts') -->
 </head>
 
 <body>
@@ -23,6 +23,7 @@
   </div>
 
   @include('partials.footer')
+  @stack('scripts') <!-- Recommended location -->
 </body>
 
 </html>

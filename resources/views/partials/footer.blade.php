@@ -97,37 +97,36 @@
 </footer>
 <!-- main-footer end -->
 
+<!-- Set current year in footer -->
 <script>
-    // Get the current year
-    document.getElementById("currentYear").textContent = new Date().getFullYear();
-</script>
-<script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}"></script>
-<script>
-    grecaptcha.ready(function () {
-        grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contact' }).then(function (token) {
-            if (document.getElementById('recaptcha-token')) {
-                document.getElementById('recaptcha-token').value = token;
-            }
-        });
+    document.addEventListener("DOMContentLoaded", function () {
+        const yearEl = document.getElementById("currentYear");
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
     });
 </script>
-<!-- jQuery plugins -->
-<script src="{{ asset('assets/js/jquery.js') }}"></script>
-<script src="{{ asset('assets/js/popper.min.js') }}"></script>
-<script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('assets/js/owl.js') }}"></script>
-<script src="{{ asset('assets/js/wow.js') }}"></script>
-<script src="{{ asset('assets/js/validation.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.fancybox.js') }}"></script>
-<script src="{{ asset('assets/js/appear.js') }}"></script>
-<script src="{{ asset('assets/js/scrollbar.js') }}"></script>
-<script src="{{ asset('assets/js/isotope.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
-<script src="{{ asset('assets/js/parallax-scroll.js') }}"></script>
-<script src="{{ asset('assets/js/jquery-ui.js') }}"></script>
-<script src="{{ asset('assets/js/nav-tool.js') }}"></script>
-<script src="{{ asset('assets/js/jquery.bootstrap-touchspin.js') }}"></script>
-<script src="{{ asset('assets/js/bxslider.js') }}"></script>
 
-<!-- main-js -->
-<script src="{{ asset('assets/js/script.js') }}"></script>
+
+<!-- 🐘 Core libraries: defer to prevent render-blocking -->
+<script src="{{ asset('assets/js/jquery.js') }}" defer></script>
+<script src="{{ asset('assets/js/popper.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/bootstrap.min.js') }}" defer></script>
+
+<!-- 🐇 Carousel, animation, validation -->
+<script src="{{ asset('assets/js/owl.js') }}" defer></script>
+<script src="{{ asset('assets/js/wow.js') }}" defer></script>
+<script src="{{ asset('assets/js/validation.js') }}" defer></script>
+
+<!-- 🎨 UI + interaction scripts -->
+<script src="{{ asset('assets/js/jquery.fancybox.js') }}" defer></script>
+<script src="{{ asset('assets/js/appear.js') }}" defer></script>
+<script src="{{ asset('assets/js/scrollbar.js') }}" defer></script>
+<script src="{{ asset('assets/js/isotope.js') }}" defer></script>
+<script src="{{ asset('assets/js/jquery.nice-select.min.js') }}" defer></script>
+<script src="{{ asset('assets/js/parallax-scroll.js') }}" defer></script>
+<script src="{{ asset('assets/js/jquery-ui.js') }}" defer></script>
+<script src="{{ asset('assets/js/nav-tool.js') }}" defer></script>
+<script src="{{ asset('assets/js/jquery.bootstrap-touchspin.js') }}" defer></script>
+<script src="{{ asset('assets/js/bxslider.js') }}" defer></script>
+
+<!-- 🧠 Main logic -->
+<script src="{{ asset('assets/js/script.js') }}" defer></script>

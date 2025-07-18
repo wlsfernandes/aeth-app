@@ -50,3 +50,16 @@
         </div>
     </div>
 </section>
+@push('scripts')
+    <script src="https://www.google.com/recaptcha/api.js?render={{ env('RECAPTCHA_SITE_KEY') }}" async defer></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            grecaptcha.ready(function () {
+                grecaptcha.execute('{{ env('RECAPTCHA_SITE_KEY') }}', { action: 'contact' }).then(function (token) {
+                    const input = document.getElementById('recaptcha-token');
+                    if (input) input.value = token;
+                });
+            });
+        });
+    </script>
+@endpush
