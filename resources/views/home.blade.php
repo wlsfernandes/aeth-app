@@ -24,27 +24,27 @@
             <div class="carousel-item active">
                 @switch(App::getLocale())
                     @case('es')
-                      <img src="assets/images/banner/3.webp" class="d-block w-100" alt="Slide 1 (ES)">
+                      <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
                     @case('pt')
-                    <img src="assets/images/banner/3.webp" class="d-block w-100" alt="Slide 1 (ES)">
+                    <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)">
                     @break
                     @default
-                    <img src="assets/images/banner/4.webp" class="d-block w-100" alt="Slide 1 (EN)">
+                    <img src="assets/images/banner/4.webp" width="1920" height="790" class="d-block w-100" alt="Slide 1 (EN)">
                 @endswitch
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/banner/Banner-Website-Impactando.webp" class="d-block w-100" alt="Slide 1">
+                    <img src="assets/images/banner/Banner-Website-Impactando.webp" width="1920" height="790" class="d-block w-100" alt="Slide 1">
                 </div>
                 <div class="carousel-item">
-                    <img src="assets/images/banner/banner3.webp" class="d-block w-100" alt="Slide 2">
+                    <img src="assets/images/banner/banner3.webp" width="1920" height="790" class="d-block w-100" alt="Slide 2">
                 </div>
                 <div class="carousel-item">
-                    <a href="{{  route('lectureSeries2025')}}"> <img src="assets/images/gallery/LS_25.webp"
+                    <a href="{{  route('lectureSeries2025')}}"> <img src="assets/images/gallery/LS_25.webp" width="1920" height="790"
                             class="d-block w-100" alt="Slide 3"></a>
                 </div>
                 <div class="carousel-item">
-                    <a href="{{  route('bookstore')}}"><img src="assets/images/banner/bookstore.webp" class="d-block w-100"
+                    <a href="{{  route('bookstore')}}"><img src="assets/images/banner/bookstore.webp" width="1920" height="790" class="d-block w-100"
                             alt="Slide 4"></a>
                     <div class="carousel-caption d-none d-md-block">
                         <div class="content-box">
