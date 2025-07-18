@@ -105,7 +105,7 @@
         <div class="five-item-carousel owl-carousel owl-theme owl-dots-none" aria-label="Partner logos carousel">
             <figure class="clients-logo" style="width:120px;">
                 <a href="{{ route('antioquia') }}">
-                    <img src="{{ asset('assets/images/logo/antioquia-logo.webp') }}" alt="Antioquia Logo" >
+                    <img src="{{ asset('assets/images/logo/antioquia.webp') }}" alt="Antioquia Logo" >
                 </a>
             </figure>
 
