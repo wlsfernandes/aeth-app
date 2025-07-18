@@ -7,7 +7,7 @@
 
 @section('content')
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script|Source+Sans+Pro&display=swap" rel="stylesheet">
 
     <style>
         * {

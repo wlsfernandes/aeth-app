@@ -5346,6 +5346,7 @@ input[type="button"].btn-block {
 
 .card-img,
 .card-img-top {
+  aspect-ratio: 3 / 4;
   border-top-left-radius: calc(0.25rem - 1px);
   border-top-right-radius: calc(0.25rem - 1px);
   max-width: 100%;
