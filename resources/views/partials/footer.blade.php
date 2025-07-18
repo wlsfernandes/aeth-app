@@ -117,13 +117,14 @@
 <script src="{{ asset('assets/js/validation.js') }}" defer></script>
 
 <!-- 🎨 UI + interaction scripts -->
-<script src="{{ asset('assets/js/jquery.fancybox.js') }}" defer></script>
+
 <script src="{{ asset('assets/js/appear.js') }}" defer></script>
 <script src="{{ asset('assets/js/scrollbar.js') }}" defer></script>
 <script src="{{ asset('assets/js/isotope.js') }}" defer></script>
 <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}" defer></script>
 <script src="{{ asset('assets/js/parallax-scroll.js') }}" defer></script>
-<script src="{{ asset('assets/js/jquery-ui.js') }}" defer></script>
+<!--<script src="{{ asset('assets/js/jquery-ui.js') }}" defer></script>
+    <script src="{{ asset('assets/js/jquery.fancybox.js') }}" defer></script>-->
 <script src="{{ asset('assets/js/nav-tool.js') }}" defer></script>
 <script src="{{ asset('assets/js/jquery.bootstrap-touchspin.js') }}" defer></script>
 <script src="{{ asset('assets/js/bxslider.js') }}" defer></script>
