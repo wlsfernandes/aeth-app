@@ -211,24 +211,21 @@
                             </ul>
                         </div>
                         <ul class="info">
-
                             <li>
                                 <a href="{{ route('lang.switch', ['lang' => 'en']) }}" title="English">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/us.svg"
-                                        alt="English" style="width: 24px;">
+                                        alt="English" width="24" height="18" style="width: 24px; height: auto;">
                                 </a>
                                 <a href="{{ route('lang.switch', ['lang' => 'es']) }}" title="Español"
                                     style="margin-left: 5px;">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/es.svg"
-                                        alt="Español" style="width: 24px;">
+                                        alt="Español" width="24" height="18" style="width: 24px; height: auto;">
                                 </a>
                                 <a href="{{ route('lang.switch', ['lang' => 'pt']) }}" title="Português">
                                     <img src="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.6/flags/4x3/br.svg"
-                                        alt="Português" style="width: 24px;">
+                                        alt="Português" width="24" height="18" style="width: 24px; height: auto;">
                                 </a>
                             </li>
-
-
                         </ul>
                     </div>
                     <div class="top-right">
