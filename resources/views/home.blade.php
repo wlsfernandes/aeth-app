@@ -105,25 +105,25 @@
         <div class="five-item-carousel owl-carousel owl-theme owl-dots-none" aria-label="Partner logos carousel">
             <figure class="clients-logo" style="width:120px;">
                 <a href="{{ route('antioquia') }}">
-                    <img src="{{ asset('assets/images/logo/antioquia-logo.png') }}" alt="Antioquia Logo" >
+                    <img src="{{ asset('assets/images/logo/antioquia-logo.webp') }}" alt="Antioquia Logo" >
                 </a>
             </figure>
 
             <figure class="clients-logo" style="width:120px;">
                 <a href="{{ route('capacityBuilding') }}">
-                    <img src="{{ asset('assets/images/logo/cp_logo_white_transparent.png') }}" alt="Capacity Building Logo" >
+                    <img src="{{ asset('assets/images/logo/cp_logo_white_transparent.webp') }}" alt="Capacity Building Logo" >
                 </a>
             </figure>
 
             <figure class="clients-logo" style="width:180px;">
                 <a href="{{ route('compelling_preaching') }}">
-                    <img src="{{ asset('assets/images/logo/predication-logo.png') }}" alt="Compelling Preaching Logo" >
+                    <img src="{{ asset('assets/images/logo/predication-logo.webp') }}" alt="Compelling Preaching Logo" >
                 </a>
             </figure>
 
             <figure class="clients-logo" style="width:200px;">
                 <a href="https://gonzalezcenter.org" target="_blank" rel="noopener">
-                    <img src="{{ asset('assets/images/logo/jcg-logo.png') }}" alt="Justo Gonzalez Center Logo" >
+                    <img src="{{ asset('assets/images/logo/jcg-logo.webp') }}" alt="Justo Gonzalez Center Logo" >
                 </a>
             </figure>
         </div>
@@ -137,7 +137,7 @@
         <div class="pattern-layer"></div>
         <div class="auto-container">
             <div class="inner-box">
-                <h1 style="color:#fff"><img src="assets/images/logo-3.png" alt="">@lang('messages.program_resources')</h1>
+                <h1 style="color:#fff"><img src="assets/images/logo-3.webp" alt="">@lang('messages.program_resources')</h1>
             </div>
         </div>
     </section>
