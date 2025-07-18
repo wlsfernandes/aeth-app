@@ -24,13 +24,13 @@
             <div class="carousel-item active">
                 @switch(App::getLocale())
                     @case('es')
-                      <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)">
+                      <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)"  fetchpriority="high">
                     @break
                     @case('pt')
-                    <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)">
+                    <img src="assets/images/banner/3.webp"  width="1920" height="790" class="d-block w-100" alt="Slide 1 (ES)" fetchpriority="high">
                     @break
                     @default
-                    <img src="assets/images/banner/4.webp" width="1920" height="790" class="d-block w-100" alt="Slide 1 (EN)">
+                    <img src="assets/images/banner/4.webp" width="1920" height="790" class="d-block w-100" alt="Slide 1 (EN)" fetchpriority="high">
                 @endswitch
                 </div>
                 <div class="carousel-item">
