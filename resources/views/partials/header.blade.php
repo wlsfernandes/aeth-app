@@ -28,7 +28,6 @@
     <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com?display=swap">
     <link rel="preconnect" href="https://fonts.gstatic.com?display=swap" crossorigin>
-    <link rel="preload" href="/fonts/icomoon.woff?tin97q" as="font" type="font/woff" crossorigin="anonymous">
 
 
     <!-- Google Fonts (deferred loading with fallback) -->
