@@ -10,10 +10,14 @@
 
     <!-- Meta Tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta name="robots" content="index, follow">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- SEO -->
+    <meta name="description" content="@yield('meta-description', 'AETH - Educación Teológica Hispana')">
+    <meta name="keywords" content="@yield('meta-keywords', 'educación teológica, liderazgo, AETH, seminarios')">
 
     <!-- Page Title -->
     <title>@yield('title', 'AETH - Educación Teológica Hispana')</title>
@@ -21,44 +25,111 @@
     <!-- Favicon -->
     <link rel="icon" href="{{ asset('assets/images/favicon.ico') }}" type="image/x-icon">
 
-    <!-- Preconnect to speed up Google Fonts -->
+    <!-- Preconnects -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- Google Fonts (deferred with fallback) -->
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+    <!-- Google Fonts (deferred loading with fallback) -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
         media="print" onload="this.media='all'">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap"
         media="print" onload="this.media='all'">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
         media="print" onload="this.media='all'">
+
+    <!-- Fallback for JS-disabled environments -->
     <noscript>
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cabin&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Cabin:wght@300;400;500;600;700&display=swap">
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap">
     </noscript>
 
-    <!-- Icon Libraries (deferred) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        media="print" onload="this.media='all'">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet"
-        media="print" onload="this.media='all'">
+    <!-- Fallback system fonts (critical rendering path) -->
+    <!-- START BODY -->
+    <style>
+        html,
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+                Roboto, 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        .cart-count {
+            background-color: #4a235a;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            width: 18px;
+            height: 18px;
+            text-align: center;
+            border-radius: 50%;
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .lecture-series-pulse {
+            position: relative;
+            color: #4a235a;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .lecture-series-pulse .rounded-circle {
+            background-color: #4a235a;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+            border-radius: 50%;
+            animation: pulse 1.8s infinite ease-in-out;
+            box-shadow: 0 0 8px rgba(74, 35, 90, 0.5);
+        }
+
+        .pulse-icon {
+            font-size: 1rem;
+            animation: pulse 1.5s infinite ease-in-out;
+            color: #f39c12;
+            /* Deep warm orange - better than plain yellow */
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 0.9;
+                text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
+            }
+
+            50% {
+                transform: scale(1.4) translate(-50%, -50%);
+                opacity: 0.5;
+                text-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
+            }
+
+            100% {
+                transform: scale(1) translate(-50%, -50%);
+                opacity: 0.9;
+                text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
+            }
+        }
+    </style>
+    <!-- Preload Core CSS -->
+    <link rel="preload" href="{{ asset('assets/css/bootstrap.css') }}" as="style">
+    <link rel="preload" href="{{ asset('assets/css/style.css') }}" as="style">
+
+    <!-- Defer Core CSS -->
+    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
+        <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     </noscript>
 
-    <!-- Critical Stylesheets -->
-    <link href="{{ asset('assets/css/bootstrap.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-
-    <!-- Optional: Preload hero image (if large and above the fold) -->
-    {{--
-    <link rel="preload" as="image" href="{{ asset('assets/images/hero.jpg') }}" type="image/jpeg"> --}}
-
-    <!-- Deferred Local Styles -->
+    <!-- Deferred Stylesheets -->
     @php
         $deferredStyles = [
             'assets/css/font-awesome-all.css',
@@ -84,81 +155,16 @@
         @endforeach
     </noscript>
 
-    <!-- JS: Bootstrap Bundle (deferred) -->
+    <!-- Defer Bootstrap Bundle -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
 
-    <!-- Optional: Defer your custom JS below -->
+    <!-- Defer Custom JS (Uncomment if needed) -->
     {{--
     <script src="{{ asset('assets/js/jquery.js') }}" defer></script>
     <script src="{{ asset('assets/js/wow.js') }}" defer></script>
     <script src="{{ asset('assets/js/owl.js') }}" defer></script>
     --}}
 </head>
-
-
-<!-- START BODY -->
-<style>
-    .cart-count {
-        background-color: #4a235a;
-        color: white;
-        font-size: 12px;
-        font-weight: bold;
-        width: 18px;
-        height: 18px;
-        text-align: center;
-        border-radius: 50%;
-        position: absolute;
-        top: -5px;
-        right: -5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    .lecture-series-pulse {
-        position: relative;
-        color: #4a235a;
-        font-weight: bold;
-        text-align: center;
-    }
-
-    .lecture-series-pulse .rounded-circle {
-        background-color: #4a235a;
-        width: 16px;
-        height: 16px;
-        display: inline-block;
-        border-radius: 50%;
-        animation: pulse 1.8s infinite ease-in-out;
-        box-shadow: 0 0 8px rgba(74, 35, 90, 0.5);
-    }
-
-    .pulse-icon {
-        font-size: 1rem;
-        animation: pulse 1.5s infinite ease-in-out;
-        color: #f39c12;
-        /* Deep warm orange - better than plain yellow */
-    }
-
-    @keyframes pulse {
-        0% {
-            transform: scale(1) translate(-50%, -50%);
-            opacity: 0.9;
-            text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
-        }
-
-        50% {
-            transform: scale(1.4) translate(-50%, -50%);
-            opacity: 0.5;
-            text-shadow: 0 0 12px rgba(243, 156, 18, 0.6);
-        }
-
-        100% {
-            transform: scale(1) translate(-50%, -50%);
-            opacity: 0.9;
-            text-shadow: 0 0 4px rgba(243, 156, 18, 0.4);
-        }
-    }
-</style>
 
 <body>
     <div class="boxed_wrapper">
