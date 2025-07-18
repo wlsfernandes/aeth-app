@@ -96,35 +96,37 @@
 </section>
 
     <section class="faq-style-two sec-pad">
-        <div class="auto-container">
-            <div class="row clearfix">
-                <div class="col-lg-6 col-md-12 col-sm-12 video-column">
-                    <div class="video-content p_relative d_block mr_30">
-                        <div class="video-inner centred"
-                            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-                            <!-- Correct Vimeo Embed for Play Button -->
-                            <iframe src="https://player.vimeo.com/video/767301063?title=0&byline=0&portrait=0" loading="lazy" frameborder="0" allow="autoplay; fullscreen" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;">
-                            </iframe>
-                        </div>
-                    </div>
+    <div class="auto-container">
+        <div class="row align-items-center">
+            <!-- Video column -->
+            <div class="col-lg-6 col-md-12" style="padding-top:150px;">
+                <div class="video-wrap">
+                    <a href="https://player.vimeo.com/video/767301063?autoplay=1&title=0&byline=0&portrait=0"
+                       class="lightbox-image video-btn">
+                        <i class="fas fa-play"></i>
+                    </a>
                 </div>
-                <div class="col-lg-6 col-md-12 col-sm-12 image-column" style="margin-top:100px;">
+            </div>
+            <div class="col-lg-6 col-md-12 col-sm-12 content-column">
                     <div class="content_block_two">
                         <div class="content-box ml_40">
                             <div class="sec-title mb_55">
                                 <h2>@lang('messages.what_we_do')</h2>
                             </div>
                             <div class="text mb_40">
-                                <p>@lang('messages.what_we_do_p1')</p>
-                                <p>@lang('messages.what_we_do_p2')</p>
+                                <div class="text">
+                                    <p>@lang('messages.what_we_do_p1') </p>
+                                    <p>@lang('messages.what_we_do_p2')</p>
+                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
-            </div>
+           
         </div>
-    </section>
-
+    </div>
+</section>
     <!--------------- partials.post --------------------------->
     @include('partials.article', ['articles' => $articles])
 
@@ -245,6 +247,27 @@
     </section>
 
  @include('partials.testimonial', ['testimonials' => $testimonials])
+
+ <section class="cta-style-two">
+        <div class="pattern-layer"></div>
+    </section>
+<section class="clients-section" style="background:none; border-color: #F8D7A1; color: #000;">
+        <div class="sec-title centred mb_55">
+            <span class="sub-title calendar"><b>@lang('messages.important_partners')</b></span>
+        </div>
+        <div class="auto-container">
+            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none">
+                @foreach($partners as $partner)
+                    <figure class="clients-logo" style="width:150px;">
+                        <a href="{{ $partner->website_url }}" target="_blank">
+                            <img src="{{ asset($partner->image_url) }}" alt="{{ $partner->name }}">
+                        </a>
+                    </figure>
+                @endforeach
+            </div>
+        </div>
+    </section>
+
     <section class="news-section home-3 sec-pad">
         <div class="auto-container">
             <div class="sec-title centred mb_55">
@@ -291,25 +314,11 @@
             </div>
         </div>
     </section>
-<section class="clients-section" style="background:none; border-color: #F8D7A1; color: #000;">
-        <div class="sec-title centred mb_55">
-            <span class="sub-title calendar"><b>@lang('messages.important_partners')</b></span>
-        </div>
-        <div class="auto-container">
-            <div class="five-item-carousel owl-carousel owl-theme owl-dots-none">
-                @foreach($partners as $partner)
-                    <figure class="clients-logo" style="width:150px;">
-                        <a href="{{ $partner->website_url }}" target="_blank">
-                            <img src="{{ asset($partner->image_url) }}" alt="{{ $partner->name }}">
-                        </a>
-                    </figure>
-                @endforeach
-            </div>
-        </div>
-    </section>
-
+    
     @include('partials.contact')
-
+ <section class="cta-style-two">
+        <div class="pattern-layer"></div>
+    </section>
 
   
 @endsection

@@ -4875,17 +4875,16 @@ div#mCSB_1_container {
 
 .faq-style-two {
   position: relative;
-  padding-top: 0px;
+  padding-block: 0 4rem;
 }
 
-.faq-style-two:before {
-  position: absolute;
+.faq-style-two::before {
   content: '';
-  background: #f5f1fb;
-  width: 100%;
+  position: absolute;
+  inset: 0 0 auto 0;
   height: 265px;
-  left: 0px;
-  top: 0px;
+  background: #f5f1fb;
+  z-index: -1;
 }
 
 .faq-style-two .video-inner {
@@ -4939,18 +4938,65 @@ div#mCSB_1_container {
   animation-delay: .6s;
 }
 
-@-webkit-keyframes ripple {
-  70% {
-    -webkit-box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
-  }
-
-  100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
-  }
+/* ---------- VIDEO BOX ---------- */
+.video-wrap {
+  position: relative;
+  width: 100%;
+  /* 16:9 aspect ratio */
+  padding-bottom: 56.25%;
+  background: url('../images/background/video-bg.jpg') center/cover no-repeat;
+  border-radius: 2px;
+  overflow: hidden;
 }
 
+/* ---------- PLAY BUTTON ---------- */
+.video-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  color: #E5AC1B;
+  border: 8px solid currentColor;
+  border-radius: 50%;
+  transition: background-color .3s;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  -webkit-animation-delay: .9s;
+  animation-delay: .9s;
+  content: "";
+  position: absolute;
+  -webkit-box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.5);
+  -webkit-animation: ripple 3s infinite;
+  animation: ripple 3s infinite;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease;
+}
+
+.video-btn::before,
+.video-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0 rgba(255, 255, 255, .5);
+  animation: ripple 3s infinite;
+}
+
+.video-btn::after {
+  animation-delay: .6s;
+}
+
+.video-btn:hover {
+  background-color: rgba(229, 172, 27, .15);
+}
+
+/* ---------- RIPPLE ---------- */
 @keyframes ripple {
   70% {
     -webkit-box-shadow: 0 0 0 40px rgba(255, 255, 255, 0);
@@ -4962,6 +5008,16 @@ div#mCSB_1_container {
     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
   }
 }
+
+/* (optional) small spacing when columns stack */
+@media (max-width: 992px) {
+  .content-box {
+    margin-top: 2rem;
+  }
+}
+
+
+
 
 .faq-style-two .content_block_three .content-box {
   margin-top: 71px;
